@@ -1,0 +1,14 @@
+# results and the artifact are deliberately not versioned: the results are
+# large binary parquet/checkpoint files that live on the GPU box, and the paper
+# is published as an artifact rather than from here.
+results/
+paper/
+figures/
+logs/
+
+# local scratch
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+*:Zone.Identifier
+ref_jlens_repo/
