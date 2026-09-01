@@ -74,8 +74,10 @@ picks = [("refused, harmful", pick((y_ref == 1) & (y_harm == 1), a.n)),
          ("complied, benign", pick((y_ref == 0) & (y_harm == 0), a.n))]
 
 
+PI_PATH = f"{a.out}/{name}_{a.axis}_peritem.npz"
+PI_CACHE = dict(np.load(PI_PATH)) if os.path.exists(PI_PATH) else {}
 M_MODEL = None
-if a.per_item:
+if a.per_item and not PI_CACHE:
     import jvlm
     from jvlm import corpus, readout
     from jlens.hooks import ActivationRecorder
@@ -86,6 +88,8 @@ if a.per_item:
 def per_item_maps(i):
     """This item's own gradient of r . h_L[a] at every image position and cached depth,
     times its centred activation: the per-item member of the same family."""
+    if str(i) in PI_CACHE:
+        return PI_CACHE[str(i)]
     it = its[i]
     b = M_MODEL.chat(side["prompt"], [corpus.load_image(it["path"], square=448)])
     ip = readout.image_positions(M_MODEL, b); S = b["input_ids"].shape[1]
@@ -99,7 +103,8 @@ def per_item_maps(i):
         gp = gl[0, ip.to(gl.device)].float().cpu().numpy()
         hp = al[0, ip.to(al.device)].detach().float().cpu().numpy() - MU[l]
         out.append((gp * hp).sum(-1).reshape(grid, grid))
-    return np.stack(out)
+    M_ = np.stack(out); PI_CACHE[str(i)] = M_
+    return M_
 
 
 def maps_for(i):
@@ -114,26 +119,28 @@ def maps_for(i):
 
 def draw(i, tag):
     V, I = maps_for(i)
-    rows = [(V, "lens, fixed direction"), (I, "identity")]
+    rows = [(V, "writer,\ncorpus mean"), (I, "identity")]
     if M_MODEL is not None:
-        rows.append((per_item_maps(i), "lens, this item's gradient"))
+        rows.append((per_item_maps(i), "writer,\nthis item"))
     it = its[i]
-    fig = plt.figure(figsize=(1.9 * (len(L) + 1), 2.15 * len(rows)))
-    gs = fig.add_gridspec(len(rows), len(L) + 1, width_ratios=[1.4] + [1] * len(L), wspace=0.08, hspace=0.25)
+    fig = plt.figure(figsize=(1.75 * (len(L) + 1) + 1.3, 1.9 * len(rows) + 0.5))
+    gs = fig.add_gridspec(len(rows), len(L) + 2, width_ratios=[1.5, 0.75] + [1] * len(L), wspace=0.06, hspace=0.18,
+                          left=0.01, right=0.99, top=0.93, bottom=0.08)
     ax = fig.add_subplot(gs[:, 0]); ax.imshow(Image.open(it["path"]).convert("RGB")); ax.set_axis_off()
-    reply = it["reply"].replace("\n", " ")[:70]
     ax.set_title(tag, fontsize=9, loc="left", color=plot.INK2)
-    ax.text(0, -0.03, f"{judge.kind(it['reply'])}: “{reply}…”", transform=ax.transAxes, ha="left", va="top",
-            fontsize=7.5, color=plot.INK2, wrap=True)
+    reply = it["reply"].replace("\n", " ")[:110]
+    fig.text(0.01, 0.015, f"{judge.kind(it['reply'])}: “{reply}…”", ha="left", va="bottom", fontsize=7.8, color=plot.INK2)
     for row, (M, lab) in enumerate(rows):
-        s = np.abs(M).max() or 1.0
+        # the scale is set by the 99th percentile so one outlier position cannot flatten the map
+        s = float(np.percentile(np.abs(M), 99)) or 1.0
+        axl = fig.add_subplot(gs[row, 1]); axl.set_axis_off()
+        axl.text(0.95, 0.5, lab, ha="right", va="center", fontsize=8.6, color=plot.INK2, wrap=True)
         for j, l in enumerate(L):
-            ax = fig.add_subplot(gs[row, j + 1])
-            ax.imshow(M[j], cmap="RdBu_r", vmin=-s, vmax=s, interpolation="nearest")
+            ax = fig.add_subplot(gs[row, j + 2])
+            ax.imshow(np.clip(M[j], -s, s), cmap="RdBu_r", vmin=-s, vmax=s, interpolation="nearest")
             ax.set_xticks([]); ax.set_yticks([])
             for sp in ax.spines.values(): sp.set_visible(False)
             if row == 0: ax.set_title(f"depth {frac[l]:.2f}", fontsize=9, color=plot.INK2)
-            if j == 0: ax.set_ylabel(lab, fontsize=9.5, color=plot.INK2)
     p = f"{a.out}/{name}_{a.axis}_{tag.replace(', ', '_').replace(' ', '')}_{i}.png"
     plot.save(fig, p, dpi=170)
     return p, V, I, (rows[2][0] if len(rows) > 2 else None)
@@ -156,9 +163,10 @@ typo = [i for i in range(len(its)) if its[i].get("variant") == "SD_TYPO"]
 if typo:
     print(f"\ntypography band (bottom quarter) share of |map|, chance 0.25, over {len(typo)} SD_TYPO items:")
     per = {}
-    if M_MODEL is not None:
+    if M_MODEL is not None or PI_CACHE:
         for i in typo[:60]:
-            per[i] = per_item_maps(i)
+            try: per[i] = per_item_maps(i)
+            except Exception: pass
     for l_i, l in enumerate(L):
         bv = np.mean([band_share(maps_for(i)[0][l_i]) for i in typo[:300]])
         bi = np.mean([band_share(maps_for(i)[1][l_i]) for i in typo[:300]])
@@ -177,6 +185,8 @@ for l_i, l in enumerate(L):
     ci = [conc(maps_for(i)[1][l_i]) for _, idx in picks for i in idx]
     stats[l] = dict(frac=frac[l], verdict_top10_share=float(np.mean(cv)), identity_top10_share=float(np.mean(ci)))
     print(f"  depth {frac[l]:.2f}: share of |map| in the top 10% of patches  verdict {np.mean(cv):.2f}  identity {np.mean(ci):.2f}")
+if PI_CACHE:
+    np.savez(PI_PATH, **PI_CACHE)
 json.dump(dict(items=[dict(tag=t, i=int(i), png=p) for t, i, p, _, _ in sheet], concentration=stats),
           open(f"{a.out}/{name}_{a.axis}_gallery.json", "w"), indent=1)
 print("done")
