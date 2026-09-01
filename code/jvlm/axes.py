@@ -105,7 +105,7 @@ def direction_axis(name: str, r: torch.Tensor, detail: dict | None = None) -> Ax
     """``r . h_final`` for a unit direction ``r`` in the final residual space."""
     r = (r / r.norm().clamp_min(1e-8)).float()
     return Axis(name, lambda lg, h: (h.float() @ r.to(h.device)), "direction",
-                dict(detail or {}, norm=1.0))
+                dict(detail or {}, norm=1.0, r=r))
 
 
 @torch.no_grad()
