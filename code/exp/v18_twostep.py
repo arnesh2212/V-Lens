@@ -45,7 +45,7 @@ ap.add_argument("--repo", default="Qwen/Qwen3-VL-2B-Instruct")
 ap.add_argument("--n", type=int, default=40)
 ap.add_argument("--n-mu", type=int, default=40, help="scenes for the average state per position")
 ap.add_argument("--n-fit", type=int, default=60, help="scenes to fit the colour push directions")
-ap.add_argument("--swap-alphas", type=float, nargs="*", default=[0.1, 0.2, 0.4])
+ap.add_argument("--swap-alphas", type=float, nargs="*", default=[0.1, 0.2, 0.4, 0.8])
 ap.add_argument("--out", default="/workspace/vlm/results/twostep")
 ap.add_argument("--figs", default="/workspace/vlm/figures/twostep")
 a = ap.parse_args()
@@ -146,20 +146,21 @@ def read_item(it, which):
     ans_c = it["answer_main"] if which == "main" else it["answer_control"]
     other_c = it["answer_control"] if which == "main" else it["answer_main"]
     t_ans = CTOK[ans_c]
-    with ActivationRecorder(m.layers, at=[*L6, *ALLL, LAST], start_graph_at=min(L6)) as rec, torch.enable_grad():
+    REC_AT = sorted(set([*L6, *ALLL, LAST]))
+    with ActivationRecorder(m.layers, at=REC_AT, start_graph_at=min(REC_AT)) as rec, torch.enable_grad():
         m.forward(b)
         A = [rec.activations[l] for l in L6]
         hL = rec.activations[LAST][0, S - 1]
         lg = m.unembed(hL[None])[0]
         val = torch.log_softmax(lg.float(), -1)[t_ans]
         g = torch.autograd.grad(val, A)
-        ANS = np.stack([rec.activations[l][0, S - 1].detach().float().cpu().numpy() for l in range(m.n_layers)])
+        ANS = {l: rec.activations[l][0, S - 1].detach().float().cpu().numpy() for l in REC_AT}
     maps = {}
     for i, l in enumerate(L6):
         gp = g[i][0, pos.to(g[i].device)].float().cpu()
         hp = A[i][0, pos.to(A[i].device)].detach().float().cpu() - MU[l]
         maps[l] = (gp * hp).sum(-1).numpy()
-    return ANS.astype(np.float32), maps, dict(ans=ans_c, other=other_c, dist=it["colour_distractor"]), pos, b
+    return {l: v.astype(np.float32) for l, v in ANS.items()}, maps, dict(ans=ans_c, other=other_c, dist=it["colour_distractor"]), pos, b
 
 
 def region_share(mp, it):
@@ -283,52 +284,63 @@ for n2, it in enumerate(ev[: min(len(ev), 24)]):
             g1 = torch.Generator().manual_seed(n2); g2 = torch.Generator().manual_seed(1000 + n2)
             d_src = unit(torch.randn(m.d_model, generator=g1)); d_tgt = unit(torch.randn(m.d_model, generator=g2))
         for al in a.swap_alphas:
-            iv = readout.Intervention(m, {lmid: torch.stack([d_src, d_tgt])}, channel="all", mode="ablate", alpha=al)
-            iv.set_batch(b)
-            with iv:
-                out_ablate = sc.generate(b, max_new_tokens=6).strip().lower()
-            iv2 = readout.Intervention(m, {lmid: d_tgt}, channel="all", mode="add", alpha=al)
-            iv2.set_batch(b)
-            with iv2:
-                out_add = sc.generate(b, max_new_tokens=6).strip().lower()
-            swap_rows.append(dict(item=n2, direction=dname, alpha=al, base=base, src=src, tgt=tgt,
-                                  said_tgt_add=bool(tgt in out_add), said_src_add=bool(src in out_add),
-                                  said_tgt_ablate=bool(tgt in out_ablate), said_src_ablate=bool(src in out_ablate),
-                                  add=out_add[:24], ablate=out_ablate[:24]))
+            for chan in ("img", "all"):
+                iv = readout.Intervention(m, {lmid: torch.stack([d_src, d_tgt])}, channel=chan, mode="clamp", alpha=al)
+                iv.set_batch(b)
+                with iv:
+                    out_swap = sc.generate(b, max_new_tokens=6).strip().lower()
+                iv2 = readout.Intervention(m, {lmid: d_tgt}, channel=chan, mode="add", alpha=al)
+                iv2.set_batch(b)
+                with iv2:
+                    out_add = sc.generate(b, max_new_tokens=6).strip().lower()
+                swap_rows.append(dict(item=n2, direction=dname, alpha=al, channel=chan, base=base, src=src, tgt=tgt,
+                                      said_tgt_add=bool(tgt in out_add), said_src_add=bool(src in out_add),
+                                      said_tgt_swap=bool(tgt in out_swap), said_src_swap=bool(src in out_swap),
+                                      add=out_add[:24], swap=out_swap[:24]))
 base_right = np.mean([tgt in r["base"] for r in swap_rows if r["alpha"] == a.swap_alphas[0] and r["direction"] == "push"])
-say(f"\nwriting another colour at the answer spot, depth {frac[lmid]:.2f}; the answer says that colour:")
-say(f"{'direction':<22} " + " ".join(f"{'a=%g' % al:>8}" for al in a.swap_alphas) + "   | still says the true colour at the largest dose")
-for dname in ("push", "output-layer row", "random"):
-    cells = []
-    for al in a.swap_alphas:
-        v = [r["said_tgt_add"] for r in swap_rows if r["direction"] == dname and r["alpha"] == al]
-        cells.append(f"{np.mean(v):>8.2f}" if v else f"{'-':>8}")
-    keep = [r["said_src_add"] for r in swap_rows if r["direction"] == dname and r["alpha"] == a.swap_alphas[-1]]
-    say(f"{dname:<22} " + " ".join(cells) + f"   | {np.mean(keep) if keep else float('nan'):.2f}")
+for chan in ("img", "all"):
+    say(f"\nwriting another colour at depth {frac[lmid]:.2f}, on {'the picture' if chan == 'img' else 'every position'}; the spoken answer becomes that colour:")
+    say(f"{'direction':<22} " + " ".join(f"{'a=%g' % al:>8}" for al in a.swap_alphas) + "   | swap instead of add, largest dose | still says the true colour")
+    for dname in ("push", "output-layer row", "random"):
+        cells = []
+        for al in a.swap_alphas:
+            v = [r["said_tgt_add"] for r in swap_rows if r["direction"] == dname and r["alpha"] == al and r["channel"] == chan]
+            cells.append(f"{np.mean(v):>8.2f}" if v else f"{'-':>8}")
+        sw = [r["said_tgt_swap"] for r in swap_rows if r["direction"] == dname and r["alpha"] == a.swap_alphas[-1] and r["channel"] == chan]
+        keep = [r["said_src_add"] for r in swap_rows if r["direction"] == dname and r["alpha"] == a.swap_alphas[-1] and r["channel"] == chan]
+        say(f"{dname:<22} " + " ".join(cells) + f"   | {np.mean(sw) if sw else float('nan'):>32.2f} | {np.mean(keep) if keep else float('nan'):.2f}")
 
 # ---- figures
 xs = [frac[l] for l in ALLL]
 fig, axs = plt.subplots(1, 2, figsize=(7.8, 2.9), sharey=True)
 for ax, t in zip(axs, ("preview", "logit lens")):
-    for key, lab, c in (("top_is_answer", "the sphere’s colour, the answer", plot.SERIES[0]),
-                        ("top_is_landmark", "the cube’s colour, the trap", plot.SERIES[1])):
+    lab_ = []
+    for key, lab, c in (("top_is_answer", "the sphere, the answer", plot.SERIES[0]),
+                        ("top_is_landmark", "the cube, the trap", plot.SERIES[1])):
         y = [np.mean([r[key] for r in R[("main", t)][l]]) for l in ALLL]
-        ax.plot(xs, y, color=c, lw=1.5)
-        plot.end_label(ax, xs[-1], y[-1], lab, c)
+        ax.plot(xs, y, color=c, lw=1.5); lab_.append((y[-1], lab, c))
     y = [np.mean([r["top_is_answer"] for r in R[("control", t)][l]]) for l in ALLL]
-    ax.plot(xs, y, color=plot.SERIES[2], lw=1.1, ls="--")
-    plot.end_label(ax, xs[-1], y[-1], "one-step control", plot.SERIES[2])
+    ax.plot(xs, y, color=plot.SERIES[2], lw=1.1, ls="--"); lab_.append((y[-1], "one-step control", plot.SERIES[2]))
+    lab_.sort(key=lambda z: -z[0])
+    for (yv, lab, c), yy in zip(lab_, plot.stagger([z[0] for z in lab_], 0.07)):
+        plot.end_label(ax, xs[-1], yy, lab, c)
     ax.set_title(t, loc="left", fontsize=9.5, color=plot.INK2); ax.set_xlabel("depth"); plot.despine(ax)
 axs[0].set_ylabel("top colour is this one"); axs[0].set_ylim(0, 1.02)
 fig.tight_layout(); plot.save(fig, f"{a.figs}/{name}_twostep_answer.png"); plt.close(fig)
 
 fig, axs = plt.subplots(1, 2, figsize=(7.8, 2.9))
 xs6 = [frac[l] for l in L6]
+E0, E1 = [], []
 for k, c in zip(KEYS, plot.SERIES):
     y = [np.median([s[k] for s in shares if s["which"] == "main" and s["layer"] == l and k in s]) for l in L6]
-    axs[0].plot(xs6, y, color=c, lw=1.4); plot.end_label(axs[0], xs6[-1], y[-1], k, c)
+    axs[0].plot(xs6, y, color=c, lw=1.4); E0.append((y[-1], k, c))
     y2 = [np.median([abs(cc[k]) for cc in cov if cc["layer"] == l and k in cc]) for l in L6]
-    axs[1].plot(xs6, y2, color=c, lw=1.4); plot.end_label(axs[1], xs6[-1], y2[-1], k, c)
+    axs[1].plot(xs6, y2, color=c, lw=1.4); E1.append((y2[-1], k, c))
+for ax_, E in ((axs[0], E0), (axs[1], E1)):
+    E.sort(key=lambda z: -z[0])
+    span = max(z[0] for z in E) - min(z[0] for z in E) or 1.0
+    for (yv, k, c), yy in zip(E, plot.stagger([z[0] for z in E], 0.13 * span)):
+        plot.end_label(ax_, xs6[-1], yy, k, c)
 plot.chance_line(axs[0], 1.0)
 axs[0].set_title("where the push sits", loc="left", fontsize=9.5, color=plot.INK2); axs[0].set_ylabel("share over chance")
 axs[1].set_title("what covering the region costs", loc="left", fontsize=9.5, color=plot.INK2); axs[1].set_ylabel("|change| in the answer’s log-odds")
