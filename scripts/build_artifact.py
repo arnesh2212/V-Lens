@@ -21,8 +21,10 @@ import sys
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, "paper", "atlas.html")
-DST = os.path.join(ROOT, "paper", "atlas_artifact.html")
+# which page: `build_artifact.py tool` builds paper/tool.html -> paper/tool_artifact.html
+PAGE = sys.argv[1] if len(sys.argv) > 1 else "atlas"
+SRC = os.path.join(ROOT, "paper", f"{PAGE}.html")
+DST = os.path.join(ROOT, "paper", f"{PAGE}_artifact.html")
 FIGS = os.path.join(ROOT, "figures")
 BUDGET = 15.0 * 1024 * 1024          # 16 MB cap, with room for the prose
 LADDER = [(2300, 82), (2100, 78), (1900, 72), (1700, 66), (1500, 60)]

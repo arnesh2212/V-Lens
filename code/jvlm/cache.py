@@ -104,7 +104,10 @@ def collect(m, items: list[dict], layers: list[int], prompt: str, out: str, *,
     for l, v in txt.items():
         if v:
             arrays[f"TXT{l}"] = torch.cat(v).numpy()
-    np.savez_compressed(out, **arrays)
+    # Uncompressed on purpose: zlib on a six-gigabyte cache is a single
+    # thread for ten minutes while the card sits idle, and disk is not the
+    # constraint on this box.
+    np.savez(out, **arrays)
     side = dict(prompt=prompt, layers=layers, n=len(kept), image_tokens=P,
                 pool=pool, square=square, dropped=dropped, items=kept,
                 final_layer=LAST, n_layers=int(m.n_layers), answer_all_layers=answer_all_layers,
