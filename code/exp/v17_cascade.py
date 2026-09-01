@@ -82,9 +82,17 @@ def content_token(txt):
         if t is not None:
             return int(t), w
     return None, None
-TOKW = [content_token(it.get("text_only") or it.get("q")) for it in its]
+# the cache stores the image path, not the item's own harmful phrase, so recover it from the loader
+phrase = {}
+for v in a.variants:
+    for rec_ in safedata.mm_safetybench(None, v):
+        if rec_.get("image_path"):
+            phrase[rec_["image_path"]] = rec_.get("text_only") or rec_.get("question") or ""
+TOKW = [content_token(phrase.get(it["path"], "")) for it in its]
 has_content = np.array([t is not None for t, _ in TOKW])
-say(f"content word found for {has_content.mean():.2f} of items, e.g. " + ", ".join(w for _, w in TOKW[:6] if w))
+say(f"content word found for {has_content.mean():.2f} of items, e.g. " + ", ".join(w for _, w in TOKW[:8] if w))
+if has_content.sum() < 20:
+    say("too few content words; the content axis is dropped")
 
 HARM = axes.token_set(m.tokenizer, axes.HARM_WORDS); BEN = axes.token_set(m.tokenizer, axes.BENIGN_WORDS)
 SR = axes.token_set(m.tokenizer, axes.REFUSE_STARTERS); SC = axes.token_set(m.tokenizer, axes.COMPLY_STARTERS)
@@ -118,7 +126,9 @@ for l in ALLL:
         order = lp.argsort(-1, descending=True)
         rk = np.array([int((order[i] == first_tok[i]).float().argmax()) if first_tok[i] >= 0 else -1 for i in range(len(its))])
         ranks[tname][l] = rk
-        au = lambda s, msk=None: float(roc_auc_score(y_h[msk] if msk is not None else y_h, s))
+        def au(s, msk=None):
+            yy = y_h[msk] if msk is not None else y_h
+            return float(roc_auc_score(yy, s)) if len(np.unique(yy)) == 2 and len(s) >= 20 else float("nan")
         rows.append(dict(layer=l, frac=frac[l], transport=tname,
                          auroc=dict(content=au(cont[has_content], has_content), harm=au(mg["harm"]), refusal=au(ref), opener=au(mg["opener"])),
                          rank_median=float(np.median(rk[rk >= 0])), top1=float(np.mean(rk[rk >= 0] == 0)),
@@ -130,12 +140,13 @@ for l in ALLL:
                 EX[l].setdefault("logit_" + str(i), [m.tokenizer.decode([int(t)]) for t in order[i, :6]])
 say(f"read {len(ALLL)} depths x 2 transports in {(time.time() - t0) / 60:.1f} min")
 
-AX = ["content", "harm", "refusal", "opener"]
+AX = [k for k in ("content", "harm", "refusal", "opener") if k != "content" or has_content.sum() >= 20]
 def curve(t, k): return np.array([x["auroc"][k] for x in rows if x["transport"] == t])
 xs = np.array([frac[l] for l in ALLL])
 
 def onset(c, thr=0.7):
-    ok = np.where(c >= thr)[0]
+    c = np.asarray(c, float)
+    ok = np.where(np.nan_to_num(c, nan=0.0) >= thr)[0]
     return float(xs[ok[0]]) if len(ok) else None
 
 say(f"\nAUROC separating harmful from benign, read through the reader")
@@ -155,10 +166,18 @@ say(f"\nonset depth (first depth with AUROC >= 0.7)")
 for t in ons:
     say(f"  {t:<11} " + "  ".join(f"{k} {('%.2f' % v) if v is not None else 'never'}" for k, v in ons[t].items()))
 
-# bootstrap the onset order over items
+# bootstrap the onset order over items, from the per-layer scalars rather than the full
+# log-probability matrices: one number per item per layer per axis is all the onset needs
 rng = np.random.default_rng(0)
-Hs = {l: RD.to_final(ANS[:, l], l) for l in ALLL}
-LPs = {l: unembed(Hs[l]) for l in ALLL}
+S_ax = {k: {} for k in AX}
+for l in ALLL:
+    H = RD.to_final(ANS[:, l], l)
+    lp = unembed(H); mg = margins(lp)
+    for k in AX:
+        if k == "refusal": S_ax[k][l] = H @ r_ref
+        elif k == "content": S_ax[k][l] = np.array([float(lp[i, t]) if t is not None else np.nan for i, (t, _) in enumerate(TOKW)])
+        else: S_ax[k][l] = mg[k]
+    del lp
 boot = {k: [] for k in AX}
 for _ in range(a.boot):
     idx = rng.integers(0, len(its), len(its))
@@ -167,14 +186,9 @@ for _ in range(a.boot):
     for k in AX:
         c = []
         for l in ALLL:
-            lp = LPs[l][idx]; mg = margins(lp)
-            if k == "refusal": s = Hs[l][idx] @ r_ref
-            elif k == "content":
-                s = np.array([float(lp[j, TOKW[idx[j]][0]]) if TOKW[idx[j]][0] is not None else np.nan for j in range(len(idx))])
-                msk = ~np.isnan(s)
-                c.append(float(roc_auc_score(y_h[idx][msk], s[msk]))); continue
-            else: s = mg[k]
-            c.append(float(roc_auc_score(y_h[idx], s)))
+            sv = S_ax[k][l][idx]; yy = y_h[idx]
+            msk = ~np.isnan(sv)
+            c.append(float(roc_auc_score(yy[msk], sv[msk])) if msk.sum() >= 20 and len(np.unique(yy[msk])) == 2 else np.nan)
         o = onset(np.array(c))
         boot[k].append(o if o is not None else 1.2)
 say(f"\nonset with a bootstrap over items (median [10th, 90th])")
