@@ -28,10 +28,19 @@ def cluster_bootstrap_ci(df: pd.DataFrame, value: str, cluster: str = "concept",
 
 
 def paired(df: pd.DataFrame, cond_a: str, cond_b: str, value: str,
-           item: str = "i") -> pd.DataFrame:
+           item: str = "i", cond: str = "cond") -> pd.DataFrame:
     """Align two conditions item by item; returns columns ``a`` and ``b``."""
-    A = df[df.cond == cond_a].set_index(item)[value]
-    B = df[df.cond == cond_b].set_index(item)[value]
+    # attribute access resolves to a DataFrame *method* when the column is
+    # absent -- df.agg and df.cond both exist as methods -- so the comparison
+    # silently yields a scalar and every selection comes back empty.  Two runs
+    # have died several minutes in on exactly that, so the column is named
+    # explicitly and a missing one is an error here rather than a mystery later.
+    for col in (cond, item, value):
+        if col not in df.columns:
+            raise KeyError(
+                f"paired() needs a {col!r} column; got {sorted(df.columns)}")
+    A = df[df[cond] == cond_a].set_index(item)[value]
+    B = df[df[cond] == cond_b].set_index(item)[value]
     idx = A.index.intersection(B.index)
     out = pd.DataFrame({"a": A.loc[idx], "b": B.loc[idx]})
     key = df.drop_duplicates(item).set_index(item)
@@ -42,9 +51,9 @@ def paired(df: pd.DataFrame, cond_a: str, cond_b: str, value: str,
 
 
 def wilcoxon(df: pd.DataFrame, cond_a: str, cond_b: str, value: str,
-             item: str = "i") -> dict:
+             item: str = "i", cond: str = "cond") -> dict:
     """Paired signed-rank test of ``cond_b`` against ``cond_a``."""
-    p = paired(df, cond_a, cond_b, value, item=item)
+    p = paired(df, cond_a, cond_b, value, item=item, cond=cond)
     if len(p) < 6 or (p.a == p.b).all():
         return dict(n=len(p), stat=float("nan"), p=float("nan"), delta=0.0)
     st, pv = stats.wilcoxon(p.a, p.b)
@@ -55,7 +64,7 @@ def wilcoxon(df: pd.DataFrame, cond_a: str, cond_b: str, value: str,
 def mcnemar(df: pd.DataFrame, cond_a: str, cond_b: str, value: str) -> dict:
     """Exact McNemar on a paired binary outcome (values thresholded at 0.5)."""
     p = paired(df, cond_a, cond_b, value)
-    a, b = p.a > 0.5, p.b > 0.5
+    a, b = p["a"] > 0.5, p["b"] > 0.5
     n01 = int((a & ~b).sum())
     n10 = int((~a & b).sum())
     if n01 + n10 == 0:

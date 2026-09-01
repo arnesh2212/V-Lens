@@ -40,7 +40,7 @@ from matplotlib.patches import Rectangle
 HOT = "#b8481f"
 
 
-def _head(ax, title, sub, sub_colour=None, fs_title=12.5, fs=9.5,
+def _head(ax, title, sub=None, sub_colour=None, fs_title=20.6, fs=18.8,
           note=None, note_colour=None, min_lines=0):
     """Panel title, a quieter second block, and an optional third in its own ink.
 
@@ -51,36 +51,43 @@ def _head(ax, title, sub, sub_colour=None, fs_title=12.5, fs=9.5,
     """
     n_sub = str(sub).count("\n") + 1 if sub else 0
     n_note = str(note).count("\n") + 1 if note else 0
+    # with neither block the heading keeps only its own pad, and the row of
+    # panels rises into the band the blocks used to hold
     step = fs * 1.35
     pad = 10 + max(n_sub + n_note, min_lines) * step
-    ax.set_title(title, loc="left", color=INK, pad=pad, fontsize=fs_title)
+    ax.set_title(title, loc="center", color=INK, pad=pad, fontsize=fs_title)
     if note:
-        ax.annotate(note, xy=(0, 1), xytext=(0, 7), xycoords="axes fraction",
-                    textcoords="offset points", ha="left", va="bottom",
+        ax.annotate(note, xy=(0.5, 1), xytext=(0, 7), xycoords="axes fraction",
+                    textcoords="offset points", ha="center", va="bottom",
                     color=note_colour or INK2, fontsize=fs, linespacing=1.35)
     if sub:
-        ax.annotate(sub, xy=(0, 1), xytext=(0, 7 + n_note * step),
+        ax.annotate(sub, xy=(0.5, 1), xytext=(0, 7 + n_note * step),
                     xycoords="axes fraction", textcoords="offset points",
-                    ha="left", va="bottom", color=sub_colour or INK2,
+                    ha="center", va="bottom", color=sub_colour or INK2,
                     fontsize=fs, linespacing=1.35)
 
 
-def _figure_head(fig, main, sub, x=0.006, fs=17.0, fss=11.5, gap=7.0,
+def _figure_head(fig, main, sub=None, x=0.5, fs=23.5, fss=21.8, gap=7.0,
                  clear=11.0):
-    """Figure title and a quieter block under it; returns where the plot may start.
+    """The figure's heading; returns where the plot may start.
 
-    The same rule the panel titles use, one level up: the space the header
-    takes is computed from the type sizes and from how many lines the subtitle
-    actually has.  A fixed pair of y positions is what printed the first line
-    of the subtitle on top of the title in the first version of every one of
-    these figures.
+    ``sub`` survives as an argument, but the figures in this module pass a
+    heading and nothing else: what a figure means belongs in the caption
+    beneath it, where it can be read as prose rather than squeezed into a
+    hyphenated block above the axes.  With no block the header is one line of
+    type and the plot starts directly under it, which is what stops a stripped
+    figure from carrying an empty band where the block used to be.
     """
     H = fig.get_figheight()
     unit = 1.0 / (72.0 * H)                       # one point, in figure fraction
     y_main = 1.0 - 6.0 * unit
+    if not style.FIGURE_TITLES:
+        return y_main                  # the caption names the figure
+    fig.text(x, y_main, main, ha="center", va="top", color=INK, fontsize=fs)
+    if not sub:
+        return y_main - (fs * 1.22 + clear) * unit
     y_sub = y_main - (fs * 1.22 + gap) * unit
-    fig.text(x, y_main, main, ha="left", va="top", color=INK, fontsize=fs)
-    fig.text(x, y_sub, sub, ha="left", va="top", color=INK2, fontsize=fss,
+    fig.text(x, y_sub, sub, ha="center", va="top", color=INK2, fontsize=fss,
              linespacing=1.42)
     lines = str(sub).count("\n") + 1
     return y_sub - lines * fss * 1.42 * unit - clear * unit
@@ -117,7 +124,7 @@ def _end_label(ax, x, y, text, dx=7, dy=0, fs=None, colour=None, y_true=None,
                 va="center", ha="left", color=INK2, fontsize=fs)
 
 
-def _panel_top(fig, head_top, lines, fs=9.5, fs_title=12.5, clear=8.0):
+def _panel_top(fig, head_top, lines, fs=18.8, fs_title=20.6, clear=8.0):
     """Leave the row of panel heads exactly the room its tallest member needs."""
     unit = 1.0 / (72.0 * fig.get_figheight())
     return head_top - (10 + lines * fs * 1.35 + fs_title * 1.25 + clear) * unit
@@ -138,10 +145,26 @@ def _save(fig, out, name, dpi=200):
 # is a measured number with a knob on it -- how many points of the path were
 # evaluated -- so it draws as a curve rather than a claim.
 
-DEPTH_COLOUR = [style.BLUE, style.ORANGE, style.AQUA, style.MAGENTA]
+# Depth is not a lens.  These three curves are the same three depths that the
+# path figure and the cost figure beside them draw, and those wear a neutral
+# light-to-dark ramp with a marker shape per depth -- so this one does too.
+# It used to wear BLUE, ORANGE and AQUA, which are the contribution reading,
+# the plain logit lens and the one-point reading: three lens hues on a chart
+# with no lens in it, two figures away from a caption that says depths wear
+# no lens colour.
+DEPTH_COLOUR = ["#b6b3ab", "#7c7970", "#26251f", style.MUTED]
+DEPTH_MARK = ["o", "s", "^", "D"]
 
 
-def completeness(stats: dict, out: str, name="f66_complete.png"):
+#: how many points of the path the paper's method actually evaluates.  The
+#: sweep runs further than that to show the curve flattening, so the tick that
+#: gets named is this one and not simply the last one drawn -- an earlier
+#: version named the last tick, which put "the paper's path" under eight and
+#: contradicted the three places in the text that say four.
+SHIPS = 4
+
+
+def completeness(stats: dict, out: str, name="f66_complete.png", ships=SHIPS):
     rows = stats.get("by_step_layer") or []
     if not rows:
         return None
@@ -151,7 +174,7 @@ def completeness(stats: dict, out: str, name="f66_complete.png"):
     x = list(range(len(steps)))
 
     style.use()
-    fig, axes = plt.subplots(1, 2, figsize=(12.4, 5.2))
+    fig, axes = plt.subplots(1, 2, figsize=(13.6, 5.8))
     panels = [("corr", "predicted change against true change,\n"
                        "across the whole vocabulary  (r)", (None, 1.02), 1.0),
               ("rel_error", "what is left over\n"
@@ -165,7 +188,8 @@ def completeness(stats: dict, out: str, name="f66_complete.png"):
             if all(v is None for v in y):
                 continue
             c = DEPTH_COLOUR[k % len(DEPTH_COLOUR)]
-            ax.plot(x, y, color=c, marker="o", ms=6.5, lw=2.2, clip_on=False,
+            mk = DEPTH_MARK[k % len(DEPTH_MARK)]
+            ax.plot(x, y, color=c, marker=mk, ms=6.5, lw=2.2, clip_on=False,
                     zorder=3)
             ends.append([float(y[-1]),
                          f"{100 * l / max(n_layers - 1, 1):.0f}% deep",
@@ -176,11 +200,14 @@ def completeness(stats: dict, out: str, name="f66_complete.png"):
         # the line's own label
         ax.set_xticklabels(
             [f"{s}\nplain gradient" if s == steps[0]
-             else f"{s}\nthe paper's path" if s == steps[-1]
+             else f"{s}\nthe paper's path" if s == ships
              else str(s) for s in steps])
         ax.set_ylabel(lab)
         ax.set_xlabel("points evaluated on the path")
-        ax.set_xlim(-0.22, len(steps) - 1 + 0.10)
+        # "plain gradient" is centred under the first tick and is far wider
+        # than the tick it names, so at -0.22 its left half reached back past
+        # the spine and touched the bottom y tick
+        ax.set_xlim(-0.42, len(steps) - 1 + 0.10)
         ax.margins(x=0.30, y=0.16)
         if ylim[0] is not None:
             ax.set_ylim(bottom=ylim[0])
@@ -215,18 +242,17 @@ def completeness(stats: dict, out: str, name="f66_complete.png"):
                      fontsize=plt.rcParams["axes.labelsize"] * 0.82)
     axes[1].axhline(0.0, color=GRID, lw=1.2, zorder=1)
 
-    n = stats.get("n", "")
+    # the construction, the sample size and the reason no prior lens can be
+    # given this figure are all read out in the caption
+    print(f"  completeness: n = {stats.get('n', '?')} photographs, "
+          f"layers {layers}, steps {steps}", flush=True)
     top = _figure_head(
-        fig, "The readings add up to the intervention they decompose",
-        "Every image position's contribution to a word is read, the "
-        "contributions are summed, and then the whole image is actually "
-        "replaced by the baseline\nto see what the word's logit really does.  "
-        f"{n} photographs, three depths, a vocabulary of everyday nouns per "
-        "photograph, so the closure is checked for\nmany words at once rather "
-        "than for a chosen one.  Neither prior lens can be given this figure: "
-        "neither produces a quantity in the units of a logit change.")
-    fig.subplots_adjust(left=0.085, right=0.900, top=top, bottom=0.205,
-                        wspace=0.40)
+        fig, "The readings add up to the intervention they decompose")
+    # the series are named at the line ends rather than in a legend, so the
+    # gap between the panels has to hold a label as well as an axis title;
+    # at 0.40 the left panel's names ran into the right panel's y label
+    fig.subplots_adjust(left=0.085, right=0.900, top=min(top, 0.885),
+                        bottom=0.205, wspace=0.62)
     return _save(fig, out, name)
 
 
@@ -286,21 +312,29 @@ def doses(stats: dict, out: str, name="f67_doses.png", ops=None):
     style.use()
     # six panels have to be a little narrower, or the row runs past any page
     wide = len(ops) <= 5
-    pw, fs_title = (3.62, 12.5) if wide else (3.28, 11.5)
-    fig, axes = plt.subplots(1, len(ops), figsize=(pw * len(ops), 5.6),
+    pw, fs_title = (4.25, 16.5) if wide else (3.85, 15.0)
+    fig, axes = plt.subplots(1, len(ops), figsize=(pw * len(ops), 6.2),
                              squeeze=False)
     # The runs did not all cover all five operations, so the sample size is
     # per operation and is printed under each name, exactly as the taxonomy
     # table in the paper assembles it.
     op_n = stats.get("op_n") or {}
-    heads = {}
+    # What each operation does, the damage its dose range costs, how many
+    # trials stand behind it and which of them a random direction already
+    # matches are four facts, and all four now live in the caption.  The panel
+    # keeps the operation's name.  They are printed here so the caption can be
+    # written from the same run that drew the figure.
     for op in ops:
         top_ = td.get(op) or {}
+        dis_ = [v for v in (_g(r, "disturb") for _, r in by[op].get("edit", []))
+                if v == v]
+        dmg = (f"damage {min(dis_):.2f}\u2192{max(dis_):.2f}" if dis_
+               else "damage unrecorded")
         dead_ = _g(top_, "follow", 0.0) <= _g(top_, "follow_random", 0.0)
-        # description, damage-and-sample line, and a verdict line where there
-        # is one
-        heads[op] = (OP_SUB.get(op, "").count("\n") + 1) + 1 + int(dead_)
-    n_lines = max(heads.values())
+        print(f"  {op:11s} n={op_n.get(op) or n:<5} {dmg}"
+              f"{'   MATCHED BY A RANDOM DIRECTION' if dead_ else ''}",
+              flush=True)
+    n_lines = 0
     for j, op in enumerate(ops):
         ax = axes[0][j]
         arms = by[op]
@@ -321,29 +355,16 @@ def doses(stats: dict, out: str, name="f67_doses.png", ops=None):
         ax.set_xticklabels([f"{d:g}" for d in ds])
         ax.set_xlabel(OP_X.get(op, "dose"))
         if j == 0:
-            ax.set_ylabel("the model prefers the answer\nthe edit asked for")
+            # Set over two lines this reached the dose ticks below it however
+            # far the size came down, because two lines of a rotated label are
+            # wider than the margin the panel leaves.  One line is narrower
+            # than two, rotated.
+            ax.set_ylabel("the answer the edit asked for",
+                          fontsize=plt.rcParams["axes.labelsize"] * 0.86)
         else:
             ax.set_yticklabels([])
-        dis = [_g(r, "disturb") for _, r in arms.get("edit", [])]
-        dis = [v for v in dis if v == v]
-        sub = OP_SUB.get(op, "")
-        nn = op_n.get(op) or n
-        if dis:
-            sub += (f"\ndamage {min(dis):.3f} → {max(dis):.3f} over the doses"
-                    + (f",  {nn} trials" if nn else ""))
-        top = td.get(op) or {}
-        # The one thing worth printing in the alarm colour is an operation the
-        # matched random direction already matches; everything else is a number
-        # a reader can weigh off the curve.  The verdict is scoped to the doses
-        # actually drawn, because one of these operations has been run at a
-        # wider range elsewhere and does move the answer at the top of it, so
-        # an unqualified "does nothing" is a claim this panel cannot support.
-        dead = _g(top, "follow", 0.0) <= _g(top, "follow_random", 0.0)
-        _head(ax, OP_DISPLAY.get(op, op), sub, min_lines=n_lines,
-              fs_title=fs_title,
-              note=("at no dose shown better than a random direction"
-                    if dead else None),
-              note_colour=HOT)
+        _head(ax, OP_DISPLAY.get(op, op), min_lines=n_lines,
+              fs_title=fs_title)
         style.despine(ax)
 
     a0 = axes[0][0]
@@ -358,15 +379,7 @@ def doses(stats: dict, out: str, name="f67_doses.png", ops=None):
     n_dose = max(len(v.get("edit", [])) for v in by.values())
     dword = {2: "two", 3: "three", 4: "four", 5: "five"}.get(n_dose, str(n_dose))
     top = _figure_head(
-        fig, f"{word} edits, {dword} doses each, one coordinate system",
-        "Each photograph carries a source concept and a question only the "
-        "picture settles; the target concept is one whose answer differs, and "
-        "the model never sees\neither name.  Every trial starts with the model "
-        "answering correctly, so the unedited rate is exactly zero and the "
-        "whole curve is the edit's doing.  The\ncontrol is the same formula "
-        "pointed at a random direction and rescaled to do the same measured "
-        "damage.  Each panel states the damage its own dose range does, and "
-        "the number of trials behind it.")
+        fig, f"{word} edits, {dword} doses each, one coordinate system")
     fig.subplots_adjust(left=0.072, right=0.992,
                         top=_panel_top(fig, top, n_lines),
                         bottom=0.115, wspace=0.16)
@@ -464,21 +477,16 @@ def efficiency(stats: dict, out: str, name="f68_efficiency.png", ops=None):
     style.legend(ax, loc="upper left")
     ax.set_xlabel("damage done to the residual stream at the edited positions"
                   "   ‖Δh‖ / ‖h‖   (log)")
-    ax.set_ylabel("the model prefers the answer the edit asked for")
+    # one line, quieter: at the shared size this ran into the dose ticks
+    ax.set_ylabel("the answer the edit asked for",
+                  fontsize=plt.rcParams["axes.labelsize"] * 0.86)
     style.despine(ax)
 
-    top = _figure_head(
-        fig, "What each edit costs for what it buys",
-        "Up and to the left is better: the answer follows and the residual "
-        "stream is barely touched.  Inject and transplant — the two operations\n"
-        "that write a coordinate in — carry the answer past seventy percent at "
-        "two to four percent of damage; the exchange read against the\n"
-        "baseline gets to fifty-six, at nine.  The other three stay under a "
-        "third, and reach even that only at the far end of their own dose\n"
-        "range.  The number beside each name is that operation's effect per "
-        "unit of damage at its own top dose"
-        + (f", over {n} trials." if same_n and n
-           else ", and the count after it is that operation's own n."))
+    # which corner is the good one, and what the number beside each name is,
+    # are the caption's to say
+    print(f"  efficiency: n = {n}, same n across operations: {same_n}",
+          flush=True)
+    top = _figure_head(fig, "Cost against effect")
     fig.subplots_adjust(left=0.090, right=0.775, top=top, bottom=0.135)
     return _save(fig, out, name)
 
@@ -532,8 +540,8 @@ def _runs(words):
 
 
 def layerstrip(card, order, out, name="f69_strip.png", n_layers=None,
-               display=None, img=None, per_layer=0.455, row_h=0.86,
-               gutter=1.34, fs_word=9.0):
+               display=None, img=None, per_layer=0.62, row_h=1.10,
+               gutter=1.34, fs_word=12.5, above=1.55):
     """One photograph, three lenses, every layer.
 
     ``order`` names the rows in the order they are drawn; ``display`` may
@@ -548,6 +556,13 @@ def layerstrip(card, order, out, name="f69_strip.png", n_layers=None,
     lenses = [l for l in order if l in card["lenses"]]
     if not lenses:
         return None
+    # the gutter is the room the row names stand in, so it is measured from
+    # the names themselves: at the paper's type size the fixed gutter was
+    # narrower than "path reading", which then printed over the photograph
+    FS_NAME = 21.8
+    widest = max((len(ln) for l in lenses
+                  for ln in str(display.get(l, l)).split("\n")), default=8)
+    gutter = max(gutter, widest * FS_NAME * 0.50 / 72.0 + 0.20)
     layers = sorted(int(k) for k in card["lenses"][lenses[0]])
     L = len(layers)
     R = len(lenses)
@@ -559,7 +574,9 @@ def layerstrip(card, order, out, name="f69_strip.png", n_layers=None,
     photo_in = max(rows_in, 2.1)
     left_in, right_in = 0.10, 0.14
     strip_in = per_layer * L
-    below_in, above_in = 1.16, 1.98
+    # ``above`` holds the heading, the gap under it and the shade key; it used
+    # to hold a three-line block as well, and shrinks by what that block took
+    below_in, above_in = 1.16, above
     W = left_in + photo_in + gutter + strip_in + right_in
     H = photo_in + below_in + above_in
     fig = plt.figure(figsize=(W, H))
@@ -616,7 +633,7 @@ def layerstrip(card, order, out, name="f69_strip.png", n_layers=None,
                 ax.plot([i0, i0], [r + .05, r + .95], color=style.SURFACE,
                         lw=3.0, zorder=3, solid_capstyle="butt")
     ax.set_yticks([r + 0.5 for r in range(R)])
-    ax.set_yticklabels([display.get(l, l) for l in lenses], fontsize=12.0,
+    ax.set_yticklabels([display.get(l, l) for l in lenses], fontsize=FS_NAME,
                        color=INK)
     ax.tick_params(axis="y", length=0, pad=9)
 
@@ -627,12 +644,12 @@ def layerstrip(card, order, out, name="f69_strip.png", n_layers=None,
             continue
         ax.annotate(str(l), xy=(j + 0.5, R), xytext=(0, -6),
                     textcoords="offset points", ha="center", va="top",
-                    color=INK2, fontsize=9.5, annotation_clip=False)
+                    color=INK2, fontsize=18.8, annotation_clip=False)
     for xpos, ha, txt in ((0.0, "left", "just after the picture is read in"),
                           (float(L), "right", "just before the answer")):
-        ax.annotate(txt, xy=(xpos, R), xytext=(0, -25),
+        ax.annotate(txt, xy=(xpos, R), xytext=(0, -28),
                     textcoords="offset points", ha=ha, va="top", color=MUTED,
-                    fontsize=9.5, annotation_clip=False)
+                    fontsize=18.8, annotation_clip=False)
     # every other figure in this paper puts depth on its x axis as a
     # percentage, so the two ends are given in both units here and a reader can
     # carry a layer number between figures
@@ -641,8 +658,8 @@ def layerstrip(card, order, out, name="f69_strip.png", n_layers=None,
     ax.annotate(f"layer of the language model   (layer {layers[0]} is "
                 f"{d0:.0f}% of the way through, layer {layers[-1]} is "
                 f"{d1:.0f}%)",
-                xy=(L / 2, R), xytext=(0, -47), textcoords="offset points",
-                ha="center", va="top", color=INK, fontsize=12.5,
+                xy=(L / 2, R), xytext=(0, -54), textcoords="offset points",
+                ha="center", va="top", color=INK, fontsize=21.8,
                 annotation_clip=False)
 
     # ---- the photograph, with the human's box on it
@@ -660,41 +677,39 @@ def layerstrip(card, order, out, name="f69_strip.png", n_layers=None,
         sp.set_visible(False)
     fig.text(left_in / W, ax_b - 0.020,
              f"the model answers \u201c{card.get('caption', concept)}\u201d",
-             ha="left", va="top", color=INK2, fontsize=10.0)
+             ha="left", va="top", color=INK2, fontsize=19.6)
 
     # ---- the key, so a shade is never a guess
-    kh = 0.26 / H
-    ky = ax_b + (photo_in + rows_in) / (2 * H) + 0.30 / H
-    kw = 0.52 / W
+    kh = 0.30 / H
+    ky = ax_b + (photo_in + rows_in) / (2 * H) + 0.34 / H
+    # wide enough that two neighbouring bin names cannot meet: "12-21" and
+    # "22-41" are five characters each at the paper's type size
+    kw = 0.88 / W
     fig.text(ax_l, ky + kh + 0.13 / H,
              f"where \u201c{concept}\u201d itself ranks in the vocabulary at "
-             "that region", ha="left", va="bottom", color=INK2, fontsize=10.0)
+             "that region", ha="left", va="bottom", color=INK2, fontsize=19.6)
     for i, (_, lab) in enumerate(RANK_BINS):
         fig.patches.append(Rectangle(
             (ax_l + i * kw * 1.05, ky), kw, kh,
             facecolor=RANK_RAMP[len(RANK_BINS) - 1 - i], edgecolor="none",
             transform=fig.transFigure, figure=fig))
         fig.text(ax_l + i * kw * 1.05 + kw / 2, ky - 0.05 / H, lab,
-                 ha="center", va="top", color=MUTED, fontsize=8.8)
+                 ha="center", va="top", color=MUTED, fontsize=18.8)
     bx = ax_l + len(RANK_BINS) * kw * 1.05 + 0.30 / W
     fig.patches.append(Rectangle((bx, ky), 0.34 / W, kh, fill=False,
                                  edgecolor=HOT, lw=2.0,
                                  transform=fig.transFigure, figure=fig))
     fig.text(bx + 0.46 / W, ky + kh / 2,
              "the first layer at which it wins outright", ha="left",
-             va="center", color=INK2, fontsize=9.5)
+             va="center", color=INK2, fontsize=19.6)
 
-    bits = []
-    for l in lenses:
-        nm = display.get(l, l)
-        bits.append(f"{nm} at layer {firsts[l]}" if firsts[l] is not None
-                    else f"{nm} never")
-    _figure_head(
-        fig, "One photograph, one region, layer by layer",
-        "The region is the object's own tiles; the word in a cell is what that "
-        "region is reading at that depth, against the rest of the same "
-        "photograph.\nA word is printed where it changes and holds until the "
-        "next one.  The object's own name first wins outright: "
-        + "; ".join(bits) + ".",
-        fs=16.0, fss=11.0)
+    # where each lens first ranks the object's own name first is a fact about
+    # this photograph, so it is printed for the caption rather than drawn into
+    # the strip -- the ringed cell already marks it on the figure itself
+    print("  first wins outright: " + "; ".join(
+        (f"{display.get(l, l).replace(chr(10), ' ')} at layer {firsts[l]}"
+         if firsts[l] is not None
+         else f"{display.get(l, l).replace(chr(10), ' ')} never")
+        for l in lenses), flush=True)
+    _figure_head(fig, "One region, by layer")
     return _save(fig, out, name)

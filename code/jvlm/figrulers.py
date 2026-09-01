@@ -10,9 +10,14 @@ in size, and the whole point of these figures is to show the disagreement
 rather than to report the flattering half of it.
 
 Conventions are borrowed from :mod:`jvlm.figcausal` on purpose -- one colour
-per lens everywhere in the paper, square tiles, titles padded by the line count
-of their own subtitle, end-of-line labels staggered when two series finish at
-the same value.
+per lens everywhere in the paper, square tiles, end-of-line labels staggered
+when two series finish at the same value.
+
+Neither figure carries explanatory text any more.  A figure here is a heading
+and a plot; the sample sizes, the meaning of each dashed line, the size of the
+shrinkage and the caveats about which run stored what all live in the caption
+this figure is published under, in ``paper/atlas.html``.  Moving them out is
+what let the axes grow into the two inches of prose that used to sit on top.
 """
 from __future__ import annotations
 
@@ -38,8 +43,10 @@ PANEL = "#eef2f6"
 SOFT = "#a5cce4"
 NEUTRAL = "#d5dbe3"          # a truth is not a lens, so it wears no lens hue
 
-ACT = "covered in the\nactivations"
-PIX = "greyed out in\nthe picture"
+# three short lines rather than two long ones: at the paper's type size the
+# two-line forms were wider than the gap between the two x positions
+ACT = "covered\nin the\nactivations"
+PIX = "greyed out\nin the\npicture"
 
 
 # ------------------------------------------------------------------ utilities
@@ -69,36 +76,40 @@ def _per_item(df, lens: str, col: str):
     return d.groupby("i")[col].mean().values
 
 
-def _head(ax, title, sub, sub_colour=None, fs=9.6, tfs=12.5):
-    """Panel title with a quieter second line; the pad follows the line count."""
-    lines = str(sub).count("\n") + 1 if sub else 0
-    pad = 9 + lines * fs * 1.36
-    ax.set_title(title, loc="left", color=INK, pad=pad, fontsize=tfs)
-    if sub:
-        ax.annotate(sub, xy=(0, 1), xytext=(0, 6), xycoords="axes fraction",
-                    textcoords="offset points", ha="left", va="bottom",
-                    color=sub_colour or INK2, fontsize=fs, linespacing=1.36)
+#: how tall a panel heading is, in points -- the room :func:`_headline` has to
+#: leave above the axes rectangle for :func:`_head` to draw into
+HEAD_PT = 9 + 16.5 * 1.35
 
 
-def _figtext(fig, head, sub, fs_head=16.0, fs=10.8, x=0.006,
-             width=225, pad_pts=0.0):
-    """Figure title and subtitle, and the top the axes may rise to.
+def _head(ax, title, tfs=20.6):
+    """A panel's one-line heading.  There is no second line by design.
 
-    The subtitle is WRAPPED here rather than trusted to the newlines an author
-    typed: a line that runs past the figure prints straight over the first
-    panel's title, which is exactly what the first draft of this figure did.
+    What used to hang here -- what the dashed line is, how many photographs,
+    which run stored the map -- is in the figure's caption now.  A panel title
+    is a label for the panel, not a paragraph about it.
     """
-    import textwrap
+    ax.set_title(title, loc="center", color=INK, pad=9, fontsize=tfs)
 
-    sub = "\n".join(textwrap.fill(par, width) for par in sub.split("\n"))
+
+#: a heading set over two lines needs a second line's worth of room above the
+#: axes; the headline leaves it
+HEAD2_PT = HEAD_PT + 20.6 * 1.32
+
+
+def _headline(fig, head, fs_head=21.0, x=0.5, pad_pts=0.0):
+    """The figure's one-line heading, and the top the axes may rise to.
+
+    This used to draw a five-line paragraph under the heading as well, and the
+    axes started below it at 0.59 of the figure.  The paragraph is in the
+    caption now; ``pad_pts`` is the only thing still reserved here, and it is
+    the panel headings, which are drawn above their own axes rectangles.
+    """
     unit = 1.0 / (72.0 * fig.get_figheight())
-    fig.text(x, 1 - 6 * unit, head, ha="left", va="top", color=INK,
-             fontsize=fs_head)
-    y = 1 - (6 + fs_head * 1.22 + 8) * unit
-    fig.text(x, y, sub, ha="left", va="top", color=INK2, fontsize=fs,
-             linespacing=1.45)
-    return (y - (sub.count("\n") + 1) * fs * 1.45 * unit
-            - (13 + pad_pts) * unit)
+    if not style.FIGURE_TITLES:
+        return 1 - 6 * unit            # the caption names the figure
+    fig.text(x, 1 - 6 * unit, head, ha="center" if x == 0.5 else "left",
+             va="top", color=INK, fontsize=fs_head)
+    return 1 - (6 + fs_head * 1.30 + 11 + pad_pts) * unit
 
 
 def _stagger(ends, y0, y1, gap_frac=0.155):
@@ -135,7 +146,7 @@ def _num(v, pct: bool) -> str:
 
 # ------------------------------------------------------- A. the two rulers
 
-def _slope(ax, rows, ylab, head, sub, chance=None, pct=False, mult_for=None):
+def _slope(ax, rows, ylab, head, chance=None, pct=False, mult_for=None):
     """One measure, both rulers, one line per lens.
 
     Two x positions and nothing else on the axis: the figure is a comparison of
@@ -148,16 +159,16 @@ def _slope(ax, rows, ylab, head, sub, chance=None, pct=False, mult_for=None):
     pad = (hi - lo) * 0.16 or 0.05
     y0, y1 = lo - pad, hi + pad * 1.5
     ax.set_ylim(y0, y1)
-    ax.set_xlim(-0.30, 2.42)
+    ax.set_xlim(-0.26, 2.20)
     ax.set_xticks([0, 1])
-    ax.set_xticklabels([ACT, PIX], fontsize=10.6, linespacing=1.3)
+    ax.set_xticklabels([ACT, PIX], fontsize=19.6, linespacing=1.3)
 
-    # the dashed line is named in this panel's own subtitle rather than beside
-    # itself: every position an inline label can take here is one the three
-    # lens lines already pass through
+    # the dashed line is named in the caption rather than beside itself: every
+    # position an inline label could take here is one the three lens lines
+    # already pass through.
     # it stops before the label column: run across the whole axes it prints
     # through the two-line names, which is where the first draft put it
-    ax.plot([-0.30, 1.15], [chance if chance is not None else 0.0] * 2,
+    ax.plot([-0.26, 1.15], [chance if chance is not None else 0.0] * 2,
             color=MUTED, lw=1.2, ls=(0, (4, 3)), zorder=1)
 
     ends = []
@@ -178,14 +189,20 @@ def _slope(ax, rows, ylab, head, sub, chance=None, pct=False, mult_for=None):
             t += f"\n{m0 / chance:.0f}× → {m1 / chance:.0f}× chance"
         ends.append(dict(x=1 + j, y=m1, c=c, t=t))
 
-    for e in _stagger(ends, y0, y1, 0.175):
-        style.label_end(ax, e["x"], e["y"], e["t"], e["c"],
-                        y_true=e["y_true"], fontsize=10.4, linespacing=1.32)
+    # every name stands in one column to the right of both rulers, with a
+    # hairline back to the dot it belongs to.  Set beside its own dot, a name
+    # this wide starts on the marker itself and runs across the dashed rule.
+    x_lab = 1.16
+    for e in _stagger(ends, y0, y1, 0.26):
+        ax.plot([e["x"], x_lab], [e["y_true"], e["y"]], color=e["c"], lw=0.8,
+                alpha=0.35, ls=(0, (1, 2)), zorder=1, clip_on=False)
+        style.label_end(ax, x_lab, e["y"], e["t"], e["c"],
+                        fontsize=18.8, linespacing=1.32)
 
     ax.set_ylabel(ylab)
     if pct:
         ax.yaxis.set_major_formatter(mtick.PercentFormatter(1.0, decimals=0))
-    _head(ax, head, sub)
+    _head(ax, head)
     style.despine(ax)
 
 
@@ -212,16 +229,17 @@ def _paired(ax, act, pix, lens="VJ-Lens"):
     ax.plot([A.mean()], [P.mean()], marker="D", ms=11, mfc=SURFACE, mec=c,
             mew=2.0, zorder=4)
     below = int((P < A).sum())
-    ax.annotate(f"{below} of {len(A)} photographs fall below the line",
-                xy=(0.97, 0.06), xycoords="axes fraction", ha="right",
-                va="bottom", color=INK2, fontsize=10.0)
+    # over two lines: on one it is wider than the panel and reaches back into
+    # the panel beside it
+    # above the diagonal, which is the half of the panel the photographs
+    # left empty; under it the sentence printed over the dots it counts
+    ax.annotate(f"{below} of {len(A)} photographs\nfall below the line",
+                xy=(0.03, 0.97), xycoords="axes fraction", ha="left",
+                va="top", color=INK2, fontsize=18.8, linespacing=1.32)
     ax.set_xlabel("ρ against the activation ruler")
     ax.set_ylabel("ρ against the pixel ruler")
     ax.grid(axis="both")
-    _head(ax, "photograph by photograph",
-          f"our reading on the {len(A)} photographs measured under both;\n"
-          f"the open diamond is the pair of means, {A.mean():.2f} and "
-          f"{P.mean():.2f}")
+    _head(ax, "photograph by\nphotograph")
     style.despine(ax)
     return len(A), below, float(A.mean()), float(P.mean())
 
@@ -235,54 +253,39 @@ def tworulers(act, pix, out, name="f74_tworulers.png"):
                          _boot(_per_item(pix, l, col))) for l in LENSES}
     R = int(act.R.iloc[0]) if "R" in act else 49
 
-    fig, axes = plt.subplots(1, 4, figsize=(17.4, 6.6))
+    # wide enough that the column of names to the right of each slope has the
+    # room the names actually need at the paper's type size
+    fig, axes = plt.subplots(1, 4, figsize=(23.6, 6.5))
+    # every heading is set over two lines: on one line each is wider than the
+    # column it names and runs into the heading beside it
     _slope(axes[0], rows["spearman"],
-           "Spearman ρ over all 49 regions",
-           "agreement with the whole map",
-           "how well the reading ranks every region by what covering it\n"
-           "costs; the dashed line is no relation at all",
-           chance=None)
-    _slope(axes[1], rows["hit_cause"],
-           "share of photographs",
-           "names the single most damaging region",
-           "the region whose covering costs the model's own word the\n"
-           f"most; the dashed line is chance, 1 region in {R}",
+           f"Spearman ρ over all {R} regions",
+           "agreement with\nthe whole map", chance=None)
+    _slope(axes[1], rows["hit_cause"], "share of photographs",
+           "names the single most\ndamaging region",
            chance=1.0 / R, pct=True, mult_for="VJ-Lens")
-    _slope(axes[2], rows["top3_cause"],
-           "share of photographs",
-           "names one of the three most damaging",
-           "the looser question the paper's claim is made on; the dashed\n"
-           f"line is chance, 3 regions in {R}",
+    _slope(axes[2], rows["top3_cause"], "share of photographs",
+           "names one of the\nthree most damaging",
            chance=3.0 / R, pct=True, mult_for="VJ-Lens")
     n_p, below, ma, mp = _paired(axes[3], act, pix)
 
+    # Everything that stood here as a five-line paragraph -- which ruler is
+    # which, the whiskers, the 70/40 photographs and their depths, the
+    # 0.195 -> 0.056 shrinkage, why the point-sample variant is absent -- is
+    # in this figure's caption in paper/atlas.html.  It is still computed and
+    # printed, because the caption has to be written off the same run that
+    # drew the plot or the two drift apart.
     na, np_ = act.i.nunique(), pix.i.nunique()
-    da, dp = act.depth.nunique(), pix.depth.nunique()
-    sub = (
-        "Left of each of the first three panels: cover a region by replacing "
-        "its activations with the corpus mean — the intervention this lens is "
-        "defined against, so the comparison is partly won by construction.  "
-        "Right: grey the same region out of the photograph and re-encode it, "
-        "an intervention the lens has never seen.  Whiskers are 95% bootstrap "
-        "intervals over photographs.  Our agreement with the whole map falls "
-        "to under a third of itself when the ruler changes, "
-        f"{rows['spearman']['VJ-Lens'][0][0]:.3f} to "
-        f"{rows['spearman']['VJ-Lens'][1][0]:.3f}, and that is the honest size "
-        "of it; what survives is the part the claim rests on — naming the "
-        "region that matters, at several times chance, where both prior lenses "
-        "sit at chance or below and turn negative on the whole map.\n"
-        f"{na} photographs at {da} depths against the activation ruler, {np_} "
-        f"at {dp} depths against the pixel one; the point-sample variant of "
-        "our reading was run only against the activation ruler and is left out "
-        f"of a figure whose subject is the difference between the two.  "
-        f"Rightmost: the {n_p} photographs measured under both, our reading on "
-        f"each, mean ρ {ma:.3f} against {mp:.3f}.")
-    # the panel titles rise above the axes rectangle, so the space they need
-    # is reserved here rather than discovered by collision
-    top = _figtext(fig, "Two rulers for one claim, and they do not agree in size",
-                   sub, pad_pts=9 + 2 * 9.6 * 1.36 + 12.5 * 1.35)
-    fig.subplots_adjust(left=0.052, right=0.995, top=top, bottom=0.115,
-                        wspace=0.44)
+    print(f"  tworulers: activation ruler {na} photographs at "
+          f"{act.depth.nunique()} depths, pixel ruler {np_} at "
+          f"{pix.depth.nunique()}; paired {n_p} photographs, {below} of them "
+          f"below the line, mean rho {ma:.2f} against {mp:.2f}; VJ-Lens "
+          f"spearman {rows['spearman']['VJ-Lens'][0][0]:.2f} -> "
+          f"{rows['spearman']['VJ-Lens'][1][0]:.2f}", flush=True)
+    top = _headline(fig, "Two rulers for one claim, and they do not agree "
+                    "in size", pad_pts=HEAD2_PT)
+    fig.subplots_adjust(left=0.052, right=0.995, top=top, bottom=0.185,
+                        wspace=0.30)
     os.makedirs(out, exist_ok=True)
     p = os.path.join(out, name)
     fig.savefig(p, dpi=200)
@@ -318,7 +321,7 @@ def boxdissociation(act, pix, cards, out, name="f75_boxmiss.png"):
     """The most damaging region is not in the object's box, under either ruler."""
     style.use()
     R = int(act.R.iloc[0]) if "R" in act else 49
-    fig, axes = plt.subplots(1, 3, figsize=(16.6, 5.9))
+    fig, axes = plt.subplots(1, 3, figsize=(19.2, 6.3))
 
     # ---- panel 1: how often the truth lands inside the box, against chance
     ax = axes[0]
@@ -339,10 +342,10 @@ def boxdissociation(act, pix, cards, out, name="f75_boxmiss.png"):
         # and on the pixel side the whisker reaches the dashed line
         ax.annotate(f"{m * 100:.0f}%", xy=(i, 0), xytext=(0, 7),
                     textcoords="offset points", ha="center", va="bottom",
-                    color=INK, fontsize=12.5)
+                    color=INK, fontsize=20.3)
         ax.annotate(f"{area * 100:.0f}%", xy=(i, area), xytext=(0, 5),
                     textcoords="offset points", ha="center", va="bottom",
-                    color=INK, fontsize=11.5)
+                    color=INK, fontsize=19.6)
         d = df.groupby("depth").truth_in_box.mean()
         # only the activation ruler has a depth: pixel occlusion happens before
         # the model runs, so drawing two identical dots there says nothing
@@ -356,17 +359,14 @@ def boxdissociation(act, pix, cards, out, name="f75_boxmiss.png"):
     ax.set_ylim(0, top * 1.34)
     ax.set_xlim(-0.62, len(bars) - 0.38)
     ax.set_xticks(x)
-    ax.set_xticklabels([b[0] for b in bars], fontsize=10.6, linespacing=1.3)
+    ax.set_xticklabels([b[0] for b in bars], fontsize=19.6, linespacing=1.3)
     ax.yaxis.set_major_formatter(mtick.PercentFormatter(1.0, decimals=0))
     ax.set_ylabel("share of photographs")
     if dots:
         ax.plot([], [], marker="o", ms=6.5, lw=0, mfc=SURFACE, mec=INK2,
                 mew=1.4, label="one depth of covering, shallow to deep")
         style.legend(ax, loc="upper left")
-    _head(ax, "how often it lands inside the human's box",
-          "the dashed line is the box's own share of the grid, which is what a\n"
-          "dart would score; only the activation ruler has a depth, since "
-          "greyed-out\npixels are gone before the model runs at all")
+    _head(ax, "how often it lands\ninside the human's box")
     style.despine(ax)
 
     # ---- panel 2: the share of the damage the box holds, against its area
@@ -386,11 +386,7 @@ def boxdissociation(act, pix, cards, out, name="f75_boxmiss.png"):
     ax.set_xlabel("share of the grid the box covers")
     ax.set_ylabel("share of the total damage inside it")
     ax.grid(axis="both")
-    _head(ax, "the box holds no more of the damage than its area",
-          f"one dot per photograph, {act.i.nunique()} of them; on the dashed "
-          "line the box\nis worth exactly its own area.  The open diamond is "
-          f"the pair of means,\n{g.area.mean() * 100:.0f}% of the grid and "
-          f"{g.share.mean() * 100:.0f}% of the damage")
+    _head(ax, "the box holds no more of\nthe damage than its area")
     style.despine(ax)
 
     # ---- panel 3: where the box's own regions rank
@@ -409,32 +405,27 @@ def boxdissociation(act, pix, cards, out, name="f75_boxmiss.png"):
     ax.plot([med, med], [0, 0.5], color=INK2, lw=1.0, ls=(0, (2, 3)), zorder=2)
     ax.annotate(f"median rank {med:.0f} of {R};\nchance is {(R + 1) / 2:.0f}",
                 xy=(med, 0.28), xytext=(9, 0), textcoords="offset points",
-                ha="left", va="center", color=INK2, fontsize=10.6,
+                ha="left", va="center", color=INK2, fontsize=18.8,
                 linespacing=1.34)
     ax.grid(axis="both")
-    _head(ax, "the box's regions rank where a dart would put them",
-          f"every region of the {len(per_card)} photographs whose full map was "
-          "saved,\npooled, with ties held at their average rank; the dashed "
-          "line is\nwhat a random subset of the regions would give")
+    _head(ax, "the box's regions rank\nwhere a dart would put them")
     style.despine(ax)
 
-    sub = (
-        "The pointing game asks whether a map's strongest cell lands in a "
-        "human's bounding box.  That is the wrong test here, and this is why: "
-        "on these photographs the box is not where the answer is decided.  "
-        "Left, under both rulers, the single most damaging region falls inside "
-        "the object's own box less often than a dart thrown at the picture "
-        "would — removing the object from the pixels before the model has seen "
-        "it at all gives the same answer as removing it from the activations, "
-        "so this is not an artefact of reading at one depth.  On 40 "
-        "photographs the pixel interval does reach its own chance line and the "
-        "activation interval, on 70, does not.\n"
-        "Middle and right use the activation run, the only one of the two that "
-        "stored the map itself.  Whiskers and intervals are 95% bootstrap over "
-        "photographs.")
-    top = _figtext(fig, "The object's box is not where the answer is decided",
-                   sub, pad_pts=9 + 2 * 9.6 * 1.36 + 12.5 * 1.35)
-    fig.subplots_adjust(left=0.055, right=0.988, top=top, bottom=0.145,
+    # the paragraph that stood here -- what the pointing game is, that the
+    # pixel interval reaches its own chance line on 40 photographs where the
+    # activation one on 70 does not, that the middle and right panels use the
+    # activation run because it is the only one that stored the map -- is in
+    # this figure's caption now.  Printed, so the caption can be written off
+    # the run that drew the plot.
+    print(f"  boxmiss: {act.i.nunique()} photographs under the activation "
+          f"ruler, {pix.i.nunique()} under the pixel one; box covers "
+          f"{g.area.mean() * 100:.0f}% of the grid and holds "
+          f"{g.share.mean() * 100:.0f}% of the damage; full maps saved for "
+          f"{len(per_card)} photographs, median rank {med:.0f} of {R}, "
+          f"chance {(R + 1) / 2:.0f}", flush=True)
+    top = _headline(fig, "The object's box is not where the answer is decided",
+                    pad_pts=HEAD2_PT)
+    fig.subplots_adjust(left=0.055, right=0.988, top=top, bottom=0.165,
                         wspace=0.34)
     os.makedirs(out, exist_ok=True)
     p = os.path.join(out, name)
@@ -503,14 +494,15 @@ def pixel_gallery(pix, items, out, name="f76_pixelphotos.png", per_row=10,
     nband = int(np.ceil(n / ncol))
 
     # ---- the whole layout, in inches
-    cw, gx = 1.32, 0.10                       # photograph width, column gap
-    rh, gy = 0.26, 0.055                      # lens row height, gap between
-    g_photo, g_band = 0.11, 0.44
-    ml, mr, mb = 1.20, 0.10, 0.12
+    cw, gx = 1.60, 0.12                       # photograph width, column gap
+    rh, gy = 0.30, 0.06                       # lens row height, gap between
+    g_photo, g_band = 0.13, 0.50
+    ml, mr, mb = 1.55, 0.10, 0.12
     band_h = cw + g_photo + len(order) * rh + (len(order) - 1) * gy
-    fs_h, fs_s = 15.5, 10.6
-    sub_lines = 5
-    hh = (10 + fs_h * 1.28 + 10 + sub_lines * fs_s * 1.5 + 10 + 15 + 14) / 72.0
+    fs_h, fs_s = 20.0, 13.0
+    # the heading, the key under it, and then a clear band for the row of
+    # photograph names: at the paper's type size the key sat on those names
+    hh = (10 + fs_h * 1.28 + 12 + fs_s * 1.45 + 10 + 18.8 * 1.15 + 4) / 72.0
     fig_w = ml + ncol * cw + (ncol - 1) * gx + mr
     fig_h = hh + nband * band_h + (nband - 1) * g_band + mb
     fig = plt.figure(figsize=(fig_w, fig_h))
@@ -544,7 +536,7 @@ def pixel_gallery(pix, items, out, name="f76_pixelphotos.png", per_row=10,
             sp.set_visible(False)
         _box_outline(ax, rec["inside"], coarse, square / coarse,
                      HOT if tib else INK)
-        ax.set_title(rec["concept"], fontsize=10.5,
+        ax.set_title(rec["concept"], fontsize=18.8,
                      color=HOT if tib else INK, pad=3)
 
         for j, lens in enumerate(order):
@@ -569,39 +561,27 @@ def pixel_gallery(pix, items, out, name="f76_pixelphotos.png", per_row=10,
                                        lw=0.8))
             if col == 0:
                 ax.text(-0.06, 0.5, lens, ha="right", va="center",
-                        fontsize=10.2, color=INK2, transform=ax.transAxes)
+                        fontsize=18.8, color=INK2, transform=ax.transAxes)
 
     unit = 1.0 / (72.0 * fig_h)
-    fig.text(0.008, 1 - 10 * unit,
+    fig.text(0.5, 1 - 10 * unit,
              "Every photograph of the pixel-occlusion run, and what each lens "
-             "made of it", ha="left", va="top", fontsize=fs_h, color=INK)
+             "made of it", ha="center", va="top", fontsize=fs_h, color=INK)
     tal = "      ".join(
         f"{l}: {tally[l]['top1']} of {tally[l]['n']} exact, "
         f"{tally[l]['top3']} in the top three" for l in order)
-    sub = ("Each region of each photograph is greyed out and the photograph "
-           "re-encoded from scratch; the truth is whichever region costs the "
-           "model's own next word the most.  Under every photograph there is "
-           "one row per lens, and within a row one cell per depth read — "
-           + " and ".join(f"{d * 100:.0f}%" for d in depths) +
-           " of the way through the language model, left to right.  The dashed "
-           "outline on a photograph is the human's bounding box, drawn in "
-           f"orange on the {n_in} photographs of {n} where the most damaging "
-           "region did fall inside it — on the other "
-           f"{n - n_in} the model's answer turned on something outside the "
-           "object.\n" + tal)
-    import textwrap
-    sub = "\n".join(textwrap.fill(par, 178) for par in sub.split("\n"))
-    y_sub = 1 - (10 + fs_h * 1.28 + 10) * unit
-    fig.text(0.008, y_sub, sub, ha="left", va="top", fontsize=fs_s, color=INK2,
-             linespacing=1.5)
+    # the five-line construction paragraph is in the caption now; the tallies
+    # are printed so the caption quotes the run that drew the plot
+    print("  pixel gallery: " + tal + f"; box hit on {n_in} of {n}",
+          flush=True)
+    y_sub = 1 - (10 + fs_h * 1.28 + 12) * unit
     key = [Patch(facecolor=BLUE, edgecolor="none",
                  label="its strongest region was the most damaging one"),
            Patch(facecolor=SOFT, edgecolor="none",
                  label="one of the three most damaging"),
            Patch(facecolor=PANEL, edgecolor="#dfe4ea", label="neither")]
-    fig.legend(handles=key, loc="upper left",
-               bbox_to_anchor=(0.008, y_sub - (sub.count("\n") + 1)
-                               * fs_s * 1.5 * unit - 4 * unit),
+    fig.legend(handles=key, loc="upper center",
+               bbox_to_anchor=(0.5, y_sub),
                ncols=3, frameon=False, fontsize=fs_s, handlelength=1.3,
                handleheight=1.05, borderaxespad=0.0, columnspacing=2.2)
     os.makedirs(out, exist_ok=True)

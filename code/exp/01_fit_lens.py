@@ -19,12 +19,17 @@ p.add_argument("--target", default="future", choices=["future", "answer"],
                help="where the cotangent goes (V-Lens: answer)")
 p.add_argument("--out", default="/workspace/vlm/results/lenses")
 p.add_argument("--max-seconds", type=float, default=None)
+p.add_argument("--layers", default=None,
+               help="comma-separated source layers.  Fitting every layer of an "
+                    "8B costs hours and we read at four of them, so a subset is "
+                    "the whole difference between a run and an afternoon.")
 a = p.parse_args()
 
 os.makedirs(a.out, exist_ok=True)
-tag = (f"{a.repo.split('/')[-1]}__{a.kind}__{a.policy}__{a.target}__n{a.n}"
+_lsuf = f"__L{a.layers.replace(',', '-')}" if a.layers else ""
+tag = (f"{a.repo.split('/')[-1]}__{a.kind}__{a.policy}__{a.target}__n{a.n}{_lsuf}"
        if a.target != "future" else
-       f"{a.repo.split('/')[-1]}__{a.kind}__{a.policy}__n{a.n}")
+       f"{a.repo.split('/')[-1]}__{a.kind}__{a.policy}__n{a.n}{_lsuf}")
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%H:%M:%S",
     handlers=[logging.StreamHandler(sys.stdout),
@@ -41,6 +46,7 @@ log.info("corpus: %d items", len(batches))
 t0 = time.time()
 lens = jvlm.fit(
     m, batches,
+    source_layers=([int(x) for x in a.layers.split(",")] if a.layers else None),
     dim_batch=a.dim_batch,
     position_policy=a.policy,
     target_policy=a.target,

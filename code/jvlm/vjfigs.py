@@ -290,7 +290,7 @@ def f51_strip(point: pd.DataFrame, out: str, dele: pd.DataFrame | None = None,
     fig.suptitle(f"The same {nimg} photographs, read "
                  f"{_n.get(len(lenses), len(lenses))} ways, at "
                  f"{_n.get(len(deps), len(deps))} depths",
-                 x=0.006, ha="left", color=INK)
+                 x=0.5, ha="center", color=INK)
     fig.tight_layout(rect=(0, 0, 1, 0.945))
     return _save(fig, out, name)
 
@@ -406,7 +406,7 @@ def f52_ribbon(df: pd.DataFrame, out: str, stats: dict | None = None,
                 axs.add_patch(plt.Rectangle((l - 1, len(rows) - r - 1), 2, 0.92,
                                             facecolor="none", edgecolor=c,
                                             lw=1.6))
-            fs = float(np.clip(144.0 / max(len(w), 1), 7.5, 11.5))
+            fs = float(np.clip(163.0 / max(len(w), 1), 9.5, 13.5))
             # every cell's word is a measurement and has to be readable; the
             # fill already says how strong it is, so the type does not also
             # need to fade out
@@ -514,7 +514,7 @@ def f53_deletion3(df: pd.DataFrame, out: str, name="f53_deletion3.png"):
     xmax = max(float(c.index.max()) for c, _ in curves.values()) * 100
 
     pw = 5.0
-    fig, axes = plt.subplots(1, len(layers), figsize=(pw * len(layers), 5.9),
+    fig, axes = plt.subplots(1, len(layers), figsize=(pw * len(layers), 5.5),
                              sharey=True)
     axes = np.atleast_1d(axes)
     for ax, l in zip(axes, layers):
@@ -533,24 +533,19 @@ def f53_deletion3(df: pd.DataFrame, out: str, name="f53_deletion3.png"):
         ax.set_ylim(lo - pad, hi + pad)
         ax.set_xlim(-0.03 * xmax, xmax * 1.52)
         ax.set_xlabel("patches covered  (% of the frame)")
-        best = min(aucs, key=aucs.get) if aucs else None
-        sub = f"Fastest: {best}, area {aucs[best]:.2f}." if best else None
-        style.title(ax, f"layer {l} of {nl}", sub, width=_subw(pw))
+        # "Fastest: VJ-Lens, area 0.91" stood here as a second line under
+        # every panel title.  It repeats what the end-of-line labels already
+        # print beside their own curves, and the sentence that explains why the
+        # lowest curve wins is in this figure's caption now.
+        style.title(ax, f"layer {l} of {nl}")
         if ends:
             _end_label(ax, [e[0] for e in ends], [e[1] for e in ends],
                        [f"{e[2]}   area {e[3]:.2f}" for e in ends],
                        gap_frac=0.075, dx=0.025, fs_scale=0.86)
-    axes[0].set_ylabel("object's score left, relative to the untouched image")
-    fig.suptitle("Deleting in the map's own order", x=0.006, y=0.985,
-                 ha="left", va="top", color=INK)
-    fig.text(0.006, 0.928,
-             "Cover the patches a map ranks highest, a few at a time, and "
-             "watch what is left of the model's score for the object's own "
-             "word. A map that knows where the object is destroys it fastest, "
-             "so the lowest curve — the smallest area under it — is "
-             "the best map.", ha="left", va="top", color=INK2,
-             fontsize=plt.rcParams["axes.labelsize"] * 0.9)
-    fig.tight_layout(rect=(0, 0, 1, 0.905))
+    axes[0].set_ylabel("object's score left, relative\nto the untouched image")
+    fig.suptitle("Deleting in the map's own order", x=0.5, y=0.985,
+                 ha="center", va="top", color=INK)
+    fig.tight_layout(rect=(0, 0, 1, 0.945))
     return _save(fig, out, name)
 
 

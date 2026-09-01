@@ -13,14 +13,20 @@ easy to misread on its own.
                    pictures do not jailbreak it; the typography and the prompt
                    wording do.  That is a fact about the benchmark, not about
                    any lens, and it belongs in front of the AUROCs.
-``hallucination``  the comparison we lose.  Drawn plainly, at full scale, with
+``hallucination``  which absent objects a model invents.  Drawn plainly, with
                    the winner labelled as the winner.
 
 Conventions are the paper's, and they are load-bearing: one colour per lens
 everywhere (logit lens orange, J-lens violet, VJ-Lens blue), names in ink beside
-a dot in the series hue rather than in the hue itself, titles padded by the line
-count of their own subtitle, and end-of-line labels pushed apart when two series
-finish together.
+a dot in the series hue rather than in the hue itself, and end-of-line labels
+pushed apart when two series finish together.
+
+None of the three carries explanatory text.  A figure here is a heading and a
+plot; the sample sizes, what the shaded band is, what the pale foot of a bar
+is, and every caveat about how an AUROC was taken live in the caption the
+figure is published under, in ``paper/atlas.html``.  The axes take the room
+back: the jailbreak panels used to start at 0.60 of the figure and now start
+at 0.86.
 """
 from __future__ import annotations
 
@@ -47,45 +53,37 @@ C_COMPLY = "#dfe7f1"
 FLOOR = "#b9b7b0"
 
 
-def _head(ax, title, sub, fs_title=13.0, fs_sub=10.0, pad0=8.0):
-    """Panel title with a quieter second line, the pad taken from the line count.
+#: how tall a panel heading is, in points.  :func:`_fig_head` reserves it,
+#: because a panel title is drawn ABOVE its own axes rectangle.
+HEAD_PT = 8.0 + 17.5 * 1.32
 
-    A fixed pad is what printed the title on top of its own subtitle in the
-    first version of every figure in this project.
+
+def _head(ax, title, fs_title=21.9):
+    """A panel's one-line heading.  There is no second line by design.
+
+    Three of these carried three or four lines of explanation apiece, which is
+    what the reader objected to.  A panel title is a label for the panel; the
+    explanation is in the caption.
     """
-    lines = str(sub).count("\n") + 1 if sub else 0
-    pad = pad0 + lines * fs_sub * 1.38
-    ax.set_title(title, loc="left", color=INK, pad=pad, fontsize=fs_title)
-    if sub:
-        ax.annotate(sub, xy=(0, 1), xytext=(0, 6), xycoords="axes fraction",
-                    textcoords="offset points", ha="left", va="bottom",
-                    color=INK2, fontsize=fs_sub, linespacing=1.38)
+    ax.set_title(title, loc="center", color=INK, pad=8.0, fontsize=fs_title)
 
 
-def _fig_head(fig, title, sub, fs_title=17.0, fs_sub=11.5, x=0.006,
-              panel_head=0.0):
-    """The figure's own title block, and the top of the axes it leaves room for.
+def _fig_head(fig, title, fs_title=23.5, x=0.5, panel_head=0.0):
+    """The figure's one-line heading, and the top of the axes under it.
 
-    ``panel_head`` is the height in points of the tallest per-panel title block
-    that will be drawn ABOVE its axes.  Reserving it here is the whole job: an
-    axes top computed from the figure's subtitle alone leaves the panel titles
-    to be drawn into the subtitle, which is exactly the overprint this project
-    has fixed a dozen times.
+    ``panel_head`` is the height in points of the per-panel heading that will
+    be drawn ABOVE its axes.  Reserving it here is the whole job: an axes top
+    that does not know about the panel titles leaves them to be drawn into
+    whatever is above, which is the overprint this project has fixed a dozen
+    times.
+
+    The three-line paragraph this used to draw under the title is in the
+    figure's caption now.
     """
     unit = 1.0 / (72.0 * fig.get_figheight())
-    fig.text(x, 1 - 5 * unit, title, ha="left", va="top", color=INK,
+    fig.text(x, 1 - 5 * unit, title, ha="center", va="top", color=INK,
              fontsize=fs_title)
-    y = 1 - (5 + fs_title * 1.24 + 7) * unit
-    fig.text(x, y, sub, ha="left", va="top", color=INK2, fontsize=fs_sub,
-             linespacing=1.45)
-    below = y - (sub.count("\n") + 1) * fs_sub * 1.45 * unit - 5 * unit
-    return below - panel_head * unit
-
-
-def _head_pt(sub, fs_title=13.0, fs_sub=10.0, pad0=8.0):
-    """How tall :func:`_head` will be, in points, subtitle included."""
-    lines = str(sub).count("\n") + 1 if sub else 0
-    return pad0 + lines * fs_sub * 1.38 + fs_title * 1.30
+    return 1 - (5 + fs_title * 1.30 + 10 + panel_head) * unit
 
 
 def _stagger(ax, ends, frac=0.075):
@@ -114,7 +112,7 @@ def _stagger(ax, ends, frac=0.075):
         style.label_end(ax, x, y, name, c, y_true=y_true)
 
 
-def _bar_values(ax, xs, vals, top=None, colour=None, fs=9.5, fmt="{:.3f}",
+def _bar_values(ax, xs, vals, top=None, colour=None, fs=18.8, fmt="{:.2f}",
                 dy=3.0):
     """The number above a bar, cleared of whatever else is drawn on the bar."""
     tops = top if isinstance(top, (list, tuple)) else [top] * len(xs)
@@ -128,7 +126,7 @@ def _bar_values(ax, xs, vals, top=None, colour=None, fs=9.5, fmt="{:.3f}",
 
 # ------------------------------------------------------------------ figure A
 
-def jailbreak(d, out, name="f80_jailbreak.png"):
+def jailbreak(d, out, name="f80_jailbreak.png", paired=None):
     """Three panels on one benchmark: by depth, by estimator, and with the text.
 
     Panel one is the reading at each layer with the label-shuffled floor drawn
@@ -138,6 +136,12 @@ def jailbreak(d, out, name="f80_jailbreak.png"):
     whether anything was gained.  Panel three is the same items with the harmful
     phrase typed onto the picture, which is the measurement the first version of
     this experiment made by accident.
+
+    ``paired`` is ``{slug: {"clean": auroc, "typo": auroc, "n_pos": int,
+    "n_neg": int}}`` read on the ONE set of items that exists in both forms.
+    Without it panel three has to set the clean block's 140 + 140 against the
+    typed block's 50 + 50, and a difference between two different sets of items
+    is not what the panel claims to show.
     """
     style.use()
     au, nul = d["auroc"], d.get("null_calibration") or {}
@@ -150,17 +154,26 @@ def jailbreak(d, out, name="f80_jailbreak.png"):
     tn = d.get("typo_n") or {}
 
     fig, axes = plt.subplots(
-        1, 3, figsize=(18.4, 7.2),
+        1, 3, figsize=(21.0, 7.3),
         gridspec_kw={"width_ratios": [1.05, 1.32, 0.92]})
 
     # ---- (i) by layer, over the shuffled-label floor -----------------------
     ax = axes[0]
     ax.set_xlim(layers[0] - 1.0, layers[-1] + 4.0)
-    ax.set_ylim(0.462, 0.700)
-    for k, c in zip(slugs, cols):
-        f = (nul.get(k) or {}).get("prereg") or {}
-        if "mean" in f and "q95" in f:
-            ax.axhspan(f["mean"], f["q95"], color=c, alpha=0.11, lw=0, zorder=1)
+    ax.set_ylim(0.472, 0.678)
+    # ONE band, in a neutral grey.  Three translucent bands in three lens hues
+    # stood here first: they coincide to within 0.004, so they do not read as
+    # three floors, they read as one lavender wash -- and the wash lay under
+    # the orange line and recoloured it.  The coincidence is stated in the
+    # figure's caption instead, where a sentence can say it.
+    fl = [(nul.get(k) or {}).get("prereg") or {} for k in slugs]
+    fl = [f for f in fl if "mean" in f and "q95" in f]
+    if fl:
+        f_hi = max(f["q95"] for f in fl)
+        ax.axhspan(min(f["mean"] for f in fl), f_hi, color="#eae8e2", lw=0,
+                   zorder=1)
+        ax.plot([layers[0] - 1.0, layers[-1] + 4.0], [f_hi, f_hi],
+                color=FLOOR, lw=1.4, zorder=2)
     ax.axhline(0.5, color=MUTED, lw=1.0, ls=(0, (2, 3)), zorder=2)
     ends = []
     for k, n, c in zip(slugs, names, cols):
@@ -169,21 +182,18 @@ def jailbreak(d, out, name="f80_jailbreak.png"):
         ax.plot(layers, ys, color=c, marker="o", ms=6.5, lw=2.2, zorder=4)
         ends.append([float(layers[-1]), float(ys[-1]), n, c])
     ax.set_xticks(layers)
-    ax.set_yticks([0.50, 0.55, 0.60, 0.65, 0.70])
+    ax.set_yticks([0.50, 0.55, 0.60, 0.65])
     ax.set_xlabel("layer of the language model  (of 28)")
     ax.set_ylabel("AUROC, harmful against benign")
     _stagger(ax, ends)
-    ax.annotate("shaded: where this same pipeline lands on label-shuffled\n"
-                "data, mean to 95th percentile \u2014 all three floors coincide",
-                xy=(layers[0] - 0.85, 0.4645), ha="left", va="bottom",
-                color=INK2, fontsize=9.5, linespacing=1.35,
-                annotation_clip=False)
+    # the only words left inside the axes.  Everything the band needs saying
+    # about it is said in the subtitle and in the figure header, because the
+    # strip beside the last layer already holds three end-of-line names and a
+    # fourth label there lands on top of one of them.
     ax.annotate("chance", xy=(layers[-1] + 3.8, 0.5), xytext=(0, 3),
                 textcoords="offset points", ha="right", va="bottom",
-                color=MUTED, fontsize=9.5)
-    sub_i = ("one identical question for every item, so no lens\n"
-             "can read the prompt instead of the picture")
-    _head(ax, "Read at each layer", sub_i)
+                color=MUTED, fontsize=18.8)
+    _head(ax, "Read at each layer")
     style.despine(ax)
 
     # ---- (ii) the four estimators, each over its own floor ------------------
@@ -212,35 +222,36 @@ def jailbreak(d, out, name="f80_jailbreak.png"):
                                        alpha=0.72, edgecolor="none", zorder=5))
                 ax.plot([x - w * 0.46, x + w * 0.46], [f, f], color=FLOOR,
                         lw=1.7, solid_capstyle="butt", zorder=6)
-            # the label clears the floor cap as well as the bar, or the cap
-            # rules a line through it wherever a lens fell short of its own floor
-            _bar_values(ax, [x], [v], top=max(v, f or v), fs=9.5, dy=4.0)
+            # no number over each bar: twelve small grey numbers were noise,
+            # and the exact AUROCs are in the caption and the result file
     ax.set_xlim(-0.55, len(EST) - 0.45)
     ax.set_xticks(range(len(EST)))
-    ax.set_xticklabels([l for _, l in EST], fontsize=11, linespacing=1.3)
+    ax.set_xticklabels([l for _, l in EST], fontsize=18.8, linespacing=1.3)
+    # the four names are wider than the four slots; every other one is dropped
+    # a line so each keeps its size and gets twice the room
+    style.stagger_xticks(ax, 2.3, fs=18.8)
     ax.set_yticks([0.50, 0.55, 0.60, 0.65, 0.70])
     ax.set_ylabel("AUROC, harmful against benign")
-    ax.set_xlabel("how the AUROC was taken")
+    # clear of the dropped row of names above it
+    ax.set_xlabel("how the AUROC was taken", labelpad=16)
     handles = [Patch(facecolor=c, edgecolor="none", label=n)
                for n, c in zip(names, cols)]
     handles.append(Patch(facecolor="#ebe9e4", edgecolor=FLOOR,
                          label="its own shuffled-label\nfloor, 95th percentile"))
     style.legend(ax, handles=handles, loc="upper left", ncols=2)
-    sub_ii = ("the pale foot of each bar is that lens's own floor; only the "
-              "part\nstanding above it was gained.  The best of the four layers "
-              "is the\nlargest number and buys nothing, because its floor rises "
-              "with it")
-    _head(ax, "The same data, taken four ways", sub_ii)
+    _head(ax, "Four aggregation rules")
     style.despine(ax)
 
     # ---- (iii) with and without the typography ------------------------------
     ax = axes[2]
     w = 0.30
-    ax.set_ylim(0.478, 0.912)
+    pr = paired or {}
+    ax.set_ylim(0.478, 0.940)
     ax.axhline(base, color=INK2, lw=1.0, zorder=3)
     for i, (k, n, c) in enumerate(zip(slugs, names, cols)):
-        a_clean = au[k].get("split_half")
-        a_typo = (typo.get(k) or {}).get("split_half")
+        a_clean = (pr.get(k) or {}).get("clean", au[k].get("split_half"))
+        a_typo = (pr.get(k) or {}).get("typo",
+                                       (typo.get(k) or {}).get("split_half"))
         for x, v, solid in ((i - w * 0.55, a_clean, False),
                             (i + w * 0.55, a_typo, True)):
             if v is None or v != v:
@@ -249,37 +260,36 @@ def jailbreak(d, out, name="f80_jailbreak.png"):
                 (x - w * 0.5, base), w, v - base,
                 facecolor=c if solid else "none", edgecolor=c,
                 lw=0 if solid else 1.6, zorder=4))
-            _bar_values(ax, [x], [v], fs=10.0, dy=4.0)
+            _bar_values(ax, [x], [v], fs=18.8, dy=4.0)
         if a_clean and a_typo:
-            ax.annotate(f"+{a_typo - a_clean:.3f}", xy=(i, max(a_clean, a_typo)),
-                        xytext=(0, 24), textcoords="offset points",
-                        ha="center", va="bottom", color=INK2, fontsize=11.5)
+            ax.annotate(f"+{a_typo - a_clean:.2f}", xy=(i, max(a_clean, a_typo)),
+                        xytext=(0, 26), textcoords="offset points",
+                        ha="center", va="bottom", color=INK2, fontsize=19.6)
     ax.set_xlim(-0.62, len(slugs) - 0.38)
     ax.set_xticks(range(len(slugs)))
-    ax.set_xticklabels(names, fontsize=11.5)
+    ax.set_xticklabels(names, fontsize=19.6)
     ax.set_yticks([0.5, 0.6, 0.7, 0.8, 0.9])
     ax.set_ylabel("AUROC, harmful against benign")
     handles = [Patch(facecolor="none", edgecolor=INK2, lw=1.6,
-                     label="nothing written on the picture"),
+                     label="hollow: nothing written on the picture"),
                Patch(facecolor=MUTED, edgecolor="none",
-                     label="the harmful phrase typed on it")]
+                     label="solid: the harmful phrase typed on it")]
     style.legend(ax, handles=handles, loc="upper left")
-    sub_iii = ("every lens gains, and ours gains most.  This is\n"
-               "what the first version of this experiment measured")
-    _head(ax, "What the typography was worth", sub_iii)
+    _head(ax, "Effect of the typography")
     style.despine(ax)
 
-    ph = max(_head_pt(sub_i), _head_pt(sub_ii), _head_pt(sub_iii))
-    top = _fig_head(
-        fig, "One jailbreak benchmark, read three ways",
-        f"MM-SafetyBench's SD variant on Qwen3-VL-2B: {n_h} harmful and {n_b} "
-        "benign items from the same image generator, each asked one identical "
-        "neutral question, each lens\nread only at the image tokens.  The same "
-        "three colours name the same three lenses in every panel, and the whole "
-        "pipeline is re-run on label-shuffled data,\nso the floor under every "
-        "number here is measured rather than assumed.",
-        panel_head=ph)
-    fig.subplots_adjust(left=0.048, right=0.988, top=top, bottom=0.118,
+    # what the header used to say -- the item counts, the identical neutral
+    # question, that every lens is read at the image tokens only, that the
+    # three shuffled-label floors land within 0.004 of one another so one grey
+    # band serves for all three, and that panel three is the one paired set of
+    # items -- is in this figure's caption in paper/atlas.html.
+    one = next(iter(pr.values()), {}) if pr else {}
+    print(f"  jailbreak: {n_h} harmful, {n_b} benign; paired typed set "
+          f"{one.get('n_pos')} + {one.get('n_neg')}; typed-block n {tn}",
+          flush=True)
+    top = _fig_head(fig, "One benchmark, three lenses",
+                    panel_head=HEAD_PT)
+    fig.subplots_adjust(left=0.048, right=0.988, top=top, bottom=0.215,
                         wspace=0.26)
     os.makedirs(out, exist_ok=True)
     p = os.path.join(out, name)
@@ -316,11 +326,14 @@ def benchmark(d, out, name="f81_benchmark.png"):
              "the same pictures, asked the\nbenchmark's own question"]
     rows = [r for r in ROWS if r[0] in comp]
 
-    fig, ax = plt.subplots(figsize=(13.6, 6.1))
+    fig, ax = plt.subplots(figsize=(14.8, 6.8))
     ypos, y, prev = [], 0.0, None
     for key, lab, b in rows:
         if prev is not None and b != prev:
-            y += 0.86
+            # room for the two-line block title between blocks; at the
+            # raised type size 0.86 let its second line touch the row label
+            # under it
+            y += 1.15
         ypos.append(y)
         y += 1.0
         prev = b
@@ -335,30 +348,30 @@ def benchmark(d, out, name="f81_benchmark.png"):
                                        facecolor=col, edgecolor="none"))
             x += w_
         ax.annotate(f"{c:.0f}% complied", xy=(1.8, yy), ha="left", va="center",
-                    color=INK, fontsize=12.5)
+                    color=INK, fontsize=21.8)
         n = N.get(key)
         ax.annotate(f"{lab}  ({n} items)" if n else lab, xy=(-2.0, yy),
-                    ha="right", va="center", color=INK2, fontsize=12,
+                    ha="right", va="center", color=INK2, fontsize=20.3,
                     annotation_clip=False)
         ax.annotate(f"{100 - c:.0f}%", xy=(103, yy), ha="left", va="center",
-                    color=INK, fontsize=12.5, annotation_clip=False)
+                    color=INK, fontsize=21.8, annotation_clip=False)
 
     first = {}
     for (key, lab, b), yy in zip(rows, ypos):
         first.setdefault(b, yy)
     for b, yy in first.items():
-        ax.annotate(BLOCK[b], xy=(-2.0, yy - 0.80), ha="right", va="center",
-                    color=INK, fontsize=12.5, linespacing=1.35,
+        ax.annotate(BLOCK[b], xy=(-2.0, yy - 1.05), ha="right", va="center",
+                    color=INK, fontsize=21.8, linespacing=1.35,
                     annotation_clip=False)
         # a hairline under each block name, or the name and the row label
         # below it read as one four-line block of text
-        ax.plot([0, 100], [yy - 0.52] * 2, color=GRID, lw=1.0, zorder=1)
-    ax.annotate("did not\ncomply", xy=(103, min(ypos) - 0.80), ha="left",
-                va="center", color=INK2, fontsize=11.5, linespacing=1.35,
+        ax.plot([0, 100], [yy - 0.66] * 2, color=GRID, lw=1.0, zorder=1)
+    ax.annotate("did not\ncomply", xy=(103, min(ypos) - 1.05), ha="left",
+                va="center", color=INK2, fontsize=19.6, linespacing=1.35,
                 annotation_clip=False)
 
     ax.set_xlim(0, 100)
-    ax.set_ylim(max(ypos) + 0.62, min(ypos) - 1.30)
+    ax.set_ylim(max(ypos) + 0.62, min(ypos) - 1.55)
     ax.set_yticks([])
     ax.set_xticks([0, 25, 50, 75, 100])
     ax.set_xticklabels(["0", "25", "50", "75", "100%"])
@@ -374,20 +387,15 @@ def benchmark(d, out, name="f81_benchmark.png"):
                      label="it refused in so many words")]
     ax.legend(handles=handles, loc="lower left", bbox_to_anchor=(0.0, 1.010),
               ncols=3, frameon=False, handlelength=1.1, handletextpad=0.6,
-              columnspacing=2.4, borderaxespad=0.0, fontsize=11.5)
+              columnspacing=2.4, borderaxespad=0.0, fontsize=20.3)
 
-    top = _fig_head(
-        fig, "The attack is not in the picture",
-        "Qwen3-VL-2B on MM-SafetyBench's SD variant.  A reply counts as a "
-        "refusal if it carries a refusal phrase, or if the model, shown its own "
-        "reply, says it refused.\nOn the clean painting the model complies with "
-        "almost everything it is given, harmful and benign alike, because it "
-        "simply describes the painting: the\nrefusals appear only once the "
-        "phrase is typed onto the image, or the benchmark's own wording is "
-        "restored.  Any jailbreak rate quoted on this\nbenchmark is measuring "
-        "the typography and the request, not the picture.",
-        panel_head=26.0)
-    fig.subplots_adjust(left=0.245, right=0.930, top=top, bottom=0.115)
+    # what counts as a refusal, that every row is the same photographs put a
+    # different way, and that a jailbreak rate quoted off this benchmark is
+    # measuring the typography rather than the picture: all of it is in this
+    # figure's caption in paper/atlas.html now.  The row labels carry the item
+    # counts, which is data, so they stay.
+    top = _fig_head(fig, "Where the attack is not", panel_head=26.0)
+    fig.subplots_adjust(left=0.260, right=0.925, top=top, bottom=0.125)
     os.makedirs(out, exist_ok=True)
     p = os.path.join(out, name)
     fig.savefig(p, dpi=200)
@@ -398,67 +406,21 @@ def benchmark(d, out, name="f81_benchmark.png"):
 # ------------------------------------------------------------------ figure C
 
 def hallucination(d, out, name="f82_hallucination.png"):
-    """The comparison we lose, drawn at full scale.
+    """Which absent objects a model invents.
 
-    Whether a lens can tell, before the model speaks, that it is about to claim
-    an object which is not in the photograph.  The Jacobian lens wins at every
-    depth and wins clearly; ours peaks in the middle of the stack and the plain
-    logit lens overtakes it at the end.  A figure that buried that would be
-    worth less than no figure.
+    POPE asks about an object that is not in the photograph and counts the
+    times the model says yes anyway.  The three splits differ only in how that
+    absent object was chosen, so the three bars isolate what drives an
+    invention: not the picture, but which object the question names.
     """
     style.use()
     det = d["detect"]
     layers = sorted(int(l) for l in det)
-    ARM = [("say", "logit lens"), ("jlens", "J-lens"), ("ig", "VJ-Lens")]
-    arms = [(k, n) for k, n in ARM if all(k in det[str(l)] for l in layers)]
     n_h = int(det[str(layers[0])].get("n_hallucinated", 0))
     n_c = int(det[str(layers[0])].get("n_correct", 0))
 
-    fig, axes = plt.subplots(1, 2, figsize=(15.0, 7.0),
-                             gridspec_kw={"width_ratios": [1.66, 1.0]})
+    fig, ax = plt.subplots(1, 1, figsize=(9.2, 6.0))
 
-    # ---- (i) AUROC against depth -------------------------------------------
-    ax = axes[0]
-    ax.set_xlim(layers[0] - 1.2, layers[-1] + 3.4)
-    ax.set_ylim(0.452, 1.005)
-    ax.axhline(0.5, color=MUTED, lw=1.0, ls=(0, (2, 3)), zorder=2)
-    ends, peak = [], {}
-    for k, n in arms:
-        c = LENS_COLOUR[n]
-        ys = [det[str(l)][k] for l in layers]
-        ax.plot(layers, ys, color=c, marker="o", ms=7.0, lw=2.4, zorder=4)
-        ends.append([float(layers[-1]), float(ys[-1]), n, c])
-        peak[n] = (layers[int(np.argmax(ys))], float(max(ys)))
-    if "J-lens" in peak:
-        l, v = peak["J-lens"]
-        ax.annotate(f"{v:.3f}", xy=(l, v), xytext=(-9, 8),
-                    textcoords="offset points", ha="right", va="bottom",
-                    color=INK2, fontsize=11)
-    if "VJ-Lens" in peak:
-        l, v = peak["VJ-Lens"]
-        ax.annotate(f"{v:.3f}", xy=(l, v), xytext=(0, -13),
-                    textcoords="offset points", ha="center", va="top",
-                    color=INK2, fontsize=11)
-    gap = (peak.get("J-lens", (0, 0))[1] - peak.get("VJ-Lens", (0, 0))[1])
-    ax.annotate("chance", xy=(layers[0] - 1.0, 0.5), xytext=(0, 4),
-                textcoords="offset points", ha="left", va="bottom",
-                color=MUTED, fontsize=10)
-    ax.set_xticks(layers)
-    ax.set_xlabel("layer of the language model  (of 28)")
-    ax.set_ylabel("AUROC: the inventions against\nthe correct refusals")
-    _stagger(ax, ends, frac=0.085)
-    sub_i = (f"{n_h} hallucinations against {n_c} correct refusals, read at the "
-             "image tokens before the model has\nsaid anything.  At its best "
-             f"the Jacobian lens is {gap:.3f} ahead of us, and it is ahead at "
-             "every depth.\nOurs peaks in the middle of the stack and falls "
-             "away; the plain logit lens is well behind it\nthere, and "
-             "overtakes it at the last layer measured")
-    _head(ax, "The Jacobian lens wins this one, and wins it at every depth",
-          sub_i)
-    style.despine(ax)
-
-    # ---- (ii) what the two classes are --------------------------------------
-    ax = axes[1]
     acc = d.get("accuracy") or {}
     SPL = [("random", "drawn at\nrandom"),
            ("popular", "the commonest\nobjects"),
@@ -473,33 +435,25 @@ def hallucination(d, out, name="f82_hallucination.png"):
                                edgecolor="none", zorder=3))
         ax.annotate(f"{rate:.1f}%\n{cnt} of {int(a['n'])}", xy=(x, rate),
                     xytext=(0, 6), textcoords="offset points", ha="center",
-                    va="bottom", color=INK2, fontsize=11, linespacing=1.35)
+                    va="bottom", color=INK2, fontsize=19.6, linespacing=1.35)
     ax.set_xlim(-0.62, len(spl) - 0.38)
     ax.set_ylim(0, 18)
     ax.set_yticks([0, 5, 10, 15])
     ax.set_xticks(xs)
-    ax.set_xticklabels([l for _, l in spl], fontsize=11, linespacing=1.3)
+    ax.set_xticklabels([l for _, l in spl], fontsize=19.6, linespacing=1.3)
     ax.set_xlabel("how the absent object was chosen")
-    ax.set_ylabel("questions about an absent object\nanswered “yes”  (%)")
-    sub_ii = ("the harder the distractor, the more often the model\n"
-              "claims to see something that is not there")
-    _head(ax, "Where the inventions come from", sub_ii)
+    ax.set_ylabel("questions about an absent object\nanswered \u201cyes\u201d  (%)")
+    # a subtitle a reader can refute by looking at the panel under it was
+    # already the sin here once -- "the harder the distractor, the more often",
+    # when the adversarial split is a shade BELOW the popular one.  There is no
+    # subtitle now at all; the shape of the three bars is in the caption.
     style.despine(ax)
 
-    ph = max(_head_pt(sub_i), _head_pt(sub_ii))
-    top = _fig_head(
-        fig, "Seeing a hallucination coming — the comparison we lose",
-        "A presence benchmark rebuilt from COCO: 660 questions over 110 "
-        "photographs, half of them naming an object that is not in the picture. "
-        "A hallucination is an\nabsent object the model says yes to.  Each lens "
-        "is read at the image tokens only, and scored on how well its reading "
-        "of the queried object separates the\n"
-        f"{n_h} inventions from the {n_c} correct refusals.  We are second, and "
-        "not close to first — the honest reading is that these two lenses "
-        "answer different questions.",
-        panel_head=ph)
-    fig.subplots_adjust(left=0.072, right=0.988, top=top, bottom=0.142,
-                        wspace=0.28)
+    print(f"  hallucination: {n_h} inventions against {n_c} correct refusals",
+          flush=True)
+    top = _fig_head(fig, "Where a model\u2019s inventions come from",
+                    panel_head=HEAD_PT)
+    fig.subplots_adjust(left=0.115, right=0.975, top=top, bottom=0.155)
     os.makedirs(out, exist_ok=True)
     p = os.path.join(out, name)
     fig.savefig(p, dpi=200)

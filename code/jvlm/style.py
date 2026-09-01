@@ -9,6 +9,7 @@ series colour -- identity is carried by the mark beside it.
 from __future__ import annotations
 
 import glob
+import os as _os
 
 import matplotlib
 import matplotlib.font_manager as fm
@@ -32,8 +33,8 @@ SERIES = [BLUE, ORANGE, AQUA, YELLOW, MAGENTA, GREEN, VIOLET, RED]
 
 SURFACE = "#fcfcfb"
 INK = "#0b0b0b"
-INK2 = "#52514e"
-MUTED = "#8a8880"
+INK2 = "#3f3e3b"
+MUTED = "#6f6d66"
 GRID = "#e6e5e1"
 
 # role colours used throughout the paper, so a reader learns them once
@@ -42,6 +43,17 @@ C_KEY = BLUE         # the forced-choice channel
 C_CTRL = MUTED       # controls and reference lines
 C_JLENS = BLUE
 C_LOGIT = ORANGE
+
+
+#: Draw a title inside the figure itself?
+#:
+#: A paper's figure carries no heading of its own: the caption names it, and a
+#: sentence set across the top of the image duplicates the caption in a place
+#: the typesetter does not control.  These figures were written with editorial
+#: headings, so the switch turns them off in one place rather than in fifteen
+#: modules, and each figure-level helper returns the space back to the panels
+#: instead of leaving a band of white where the heading used to be.
+FIGURE_TITLES = False
 
 
 def use(scale: float = 1.0) -> None:
@@ -56,13 +68,13 @@ def use(scale: float = 1.0) -> None:
         "axes.labelweight": "normal",
         "figure.titleweight": "normal",
 
-        "font.size": s(13),
-        "axes.titlesize": s(15),
-        "axes.labelsize": s(13.5),
-        "xtick.labelsize": s(12),
-        "ytick.labelsize": s(12),
-        "legend.fontsize": s(12),
-        "figure.titlesize": s(16),
+        "font.size": s(17),
+        "axes.titlesize": s(20),
+        "axes.labelsize": s(17),
+        "xtick.labelsize": s(15),
+        "ytick.labelsize": s(15),
+        "legend.fontsize": s(15),
+        "figure.titlesize": s(22),
 
         "figure.facecolor": SURFACE,
         "axes.facecolor": SURFACE,
@@ -104,10 +116,140 @@ def use(scale: float = 1.0) -> None:
         "savefig.pad_inches": 0.04,
         "axes.prop_cycle": plt.cycler(color=SERIES),
     })
+    _install_overlap_check()
+
+
+# --------------------------------------------------------------------------
+# Overlap checking
+#
+# Reviewers of this artifact kept finding collided text -- a tick label under a
+# legend, two end-labels on top of each other -- and the only way anyone caught
+# them was by looking at every figure, which does not scale past a few dozen.
+# So the check runs where the figure is written, from the same renderer that
+# lays the text out, and reports in the coordinates that actually matter.
+#
+# savefig is wrapped rather than each module edited: every figure module here
+# already calls style.use(), so one wrap reaches all of them and no new figure
+# can be added that skips the check.
+_WRAPPED = False
+#: intersection must cover this fraction of the smaller box before it counts.
+#: Adjacent tick labels routinely share a pixel or two of padding without
+#: reading as collided, and flagging those buries the real ones.  Set at
+#: 0.14 this missed two captions whose tails genuinely ran together, so it
+#: sits low enough to catch a clipped word and high enough to stay quiet on
+#: a clean chart.
+_MIN_FRAC = 0.07
+#: written beside the figures, wherever the checkout happens to live
+OVERLAP_LOG = _os.path.join(
+    _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))),
+    "figures", "overlaps.log")
+
+
+def _boxes(fig):
+    """Visible, non-empty text artists with their rendered extents.
+
+    The draw is forced first.  savefig renders at savefig.dpi while the cached
+    canvas renderer sits at figure.dpi, and measuring against the stale one puts
+    axis labels on top of tick labels that are nowhere near them.
+    """
+    import matplotlib.text as mtext
+    fig.canvas.draw()
+    r = fig.canvas.get_renderer()
+
+    # Tick labels for ticks outside the axes' view still exist as artists and
+    # still report a window extent, but nothing is drawn for them: they sit
+    # above the panel, right where the panel's title is, and read as a
+    # collision that is not on the page.  Drop them before comparing.
+    ghosts = set()
+    for ax in fig.axes:
+        for axis in (ax.xaxis, ax.yaxis):
+            try:
+                lo, hi = sorted(axis.get_view_interval())
+                pad = (hi - lo) * 1e-6
+                for tk in axis.get_major_ticks() + axis.get_minor_ticks():
+                    if not (lo - pad <= tk.get_loc() <= hi + pad):
+                        ghosts.add(id(tk.label1))
+                        ghosts.add(id(tk.label2))
+            except Exception:
+                continue
+
+    out = []
+    for t in fig.findobj(mtext.Text):
+        try:
+            if id(t) in ghosts:
+                continue
+            if not t.get_visible() or not t.get_text().strip():
+                continue
+            bb = t.get_window_extent(renderer=r)
+            if bb.width <= 0 or bb.height <= 0:
+                continue
+            out.append((t.get_text().strip().replace("\n", " "), bb))
+        except Exception:
+            continue
+    return out
+
+
+def overlaps(fig):
+    """Pairs of text artists whose rendered boxes genuinely collide."""
+    items, hits = _boxes(fig), []
+    for i in range(len(items)):
+        ti, bi = items[i]
+        for j in range(i + 1, len(items)):
+            tj, bj = items[j]
+            w = min(bi.x1, bj.x1) - max(bi.x0, bj.x0)
+            h = min(bi.y1, bj.y1) - max(bi.y0, bj.y0)
+            if w <= 0 or h <= 0:
+                continue
+            small = min(bi.width * bi.height, bj.width * bj.height)
+            if small > 0 and (w * h) / small >= _MIN_FRAC:
+                hits.append((ti[:38], tj[:38], (w * h) / small))
+    return sorted(hits, key=lambda x: -x[2])
+
+
+def _install_overlap_check():
+    global _WRAPPED
+    if _WRAPPED:
+        return
+    import os
+
+    from matplotlib.figure import Figure
+    inner = Figure.savefig
+
+    def savefig(self, fname, *a, **kw):
+        res = inner(self, fname, *a, **kw)
+        try:
+            hits = overlaps(self)
+            if hits:
+                name = os.path.basename(str(fname))
+                head = f"{name}: {len(hits)} overlapping text pair(s)"
+                print("  ! " + head, flush=True)
+                for x, y, f in hits[:6]:
+                    print(f"      {f:4.0%}  {x!r} <> {y!r}", flush=True)
+                try:
+                    os.makedirs(os.path.dirname(OVERLAP_LOG), exist_ok=True)
+                    with open(OVERLAP_LOG, "a") as fh:
+                        fh.write(head + "\n")
+                        for x, y, f in hits:
+                            fh.write(f"    {f:4.0%}  {x!r} <> {y!r}\n")
+                except Exception:
+                    pass
+        except Exception:
+            pass                      # a check must never lose a figure
+        return res
+
+    # A figure-level heading drawn with suptitle is the same duplication of the
+    # caption as one drawn by hand, and there are a dozen call sites.  Silencing
+    # it here reaches all of them; suptitle reserves no layout space of its own,
+    # so nothing moves when it stops drawing.
+    if not FIGURE_TITLES:
+        Figure.suptitle = lambda self, *a, **k: None
+
+    Figure.savefig = savefig
+    _WRAPPED = True
 
 
 def title(ax, text: str, sub: str | None = None, pad: float = 5,
-          legend_rows: int = 0, width: int = 74) -> None:
+          legend_rows: int = 0, width: int | None = None) -> None:
     """Left-aligned title with an optional quieter second line.
 
     The space above the axes is sized to the text that is actually there.  The
@@ -122,6 +264,12 @@ def title(ax, text: str, sub: str | None = None, pad: float = 5,
 
     fs = plt.rcParams["axes.labelsize"] * 0.9
     lfs = plt.rcParams["axes.labelsize"] * 0.88
+    if width is None:
+        # wrapped to the axes it belongs to, not to a fixed column count: a
+        # count that suits a full-width single plot is half again too wide for
+        # one panel of three, and the overflow prints into the next panel
+        w_in = ax.get_position().width * ax.figure.get_figwidth()
+        width = max(18, int(w_in * 72.0 / (fs * 0.50)))
     lines = textwrap.wrap(sub, width) if sub else []
     block = len(lines) * fs * 1.32
     # A legend anchored just above the axes lands in exactly the strip the
@@ -130,12 +278,12 @@ def title(ax, text: str, sub: str | None = None, pad: float = 5,
     # figures.  Reserve the legend's rows here and the subtitle sits above it.
     strip = legend_rows * lfs * 1.9 if legend_rows else 0.0
     ax._sty_legend_gap = strip
-    ax.set_title(text, loc="left", color=INK,
+    ax.set_title(text, loc="center", color=INK,
                  pad=pad + strip + block + (3 if lines else 0))
     if lines:
-        ax.annotate("\n".join(lines), xy=(0, 1), xytext=(0, pad + strip),
+        ax.annotate("\n".join(lines), xy=(0.5, 1), xytext=(0, pad + strip),
                     xycoords="axes fraction", textcoords="offset points",
-                    ha="left", va="bottom", color=INK2, fontsize=fs,
+                    ha="center", va="bottom", color=INK2, fontsize=fs,
                     linespacing=1.32)
 
 
@@ -147,8 +295,8 @@ def legend_above(ax, ncols: int = 2, **kw):
     without reserving the room is what printed the legend on top of the
     subtitle in the first version of this paper's figures.
     """
-    kw.setdefault("loc", "lower left")
-    kw.setdefault("bbox_to_anchor", (0, 1.005))
+    kw.setdefault("loc", "lower center")
+    kw.setdefault("bbox_to_anchor", (0.5, 1.005))
     kw.setdefault("ncols", ncols)
     kw.setdefault("frameon", False)
     kw.setdefault("borderaxespad", 0.0)
@@ -184,6 +332,22 @@ def legend(ax, **kw):
     kw.setdefault("labelspacing", 0.35)
     kw.setdefault("fontsize", plt.rcParams["axes.labelsize"] * 0.88)
     return ax.legend(**kw)
+
+
+def stagger_xticks(ax, drop_lines: float = 2.2, fs: float | None = None):
+    """Drop every other x tick label, and return the room that took, in inches.
+
+    Long category names standing side by side are wider than the slots the axis
+    gives them, and at this paper's type size several of them met.  Dropping
+    alternate names doubles the room each one has without taking a point off
+    any of them; the caller adds the returned height to the bottom margin.
+    """
+    fs = fs or plt.rcParams["xtick.labelsize"]
+    dy = drop_lines * fs * 1.30                      # points
+    base = plt.rcParams["xtick.major.pad"]
+    for t in ax.xaxis.get_major_ticks()[1::2]:
+        t.set_pad(base + dy)
+    return dy / 72.0
 
 
 def despine(ax) -> None:

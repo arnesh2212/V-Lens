@@ -58,10 +58,11 @@ def f1_dissociation(df: pd.DataFrame, out: str, name="f1_dissociation.png"):
         "Erasing a concept from the verbalizable workspace",
         "One question, one photograph, answered twice: once with the object's "
         "name, once with an arbitrary letter.",
-        figsize=(11.8, 5.8))
+        figsize=(12.6, 6.4), stagger=True)
 
 
-def _grouped_pair(mean, sem, xlabels, out, name, ttl, sub, figsize=(11.5, 5.6)):
+def _grouped_pair(mean, sem, xlabels, out, name, ttl, sub, figsize=(11.5, 5.6),
+                  stagger=False):
     fig, ax = plt.subplots(figsize=figsize)
     x = np.arange(len(xlabels))
     w = 0.34
@@ -74,10 +75,12 @@ def _grouped_pair(mean, sem, xlabels, out, name, ttl, sub, figsize=(11.5, 5.6)):
            error_kw=dict(lw=1, ecolor=MUTED))
     ax.axhline(50, color=MUTED, lw=1, ls=(0, (4, 3)), zorder=1)
     ax.annotate("chance", xy=(len(xlabels) - 0.42, 50), xytext=(5, 3),
-                textcoords="offset points", color=MUTED, fontsize=11,
+                textcoords="offset points", color=MUTED, fontsize=18.8,
                 annotation_clip=False)
     ax.set_xticks(x)
     ax.set_xticklabels(xlabels)
+    if stagger:
+        style.stagger_xticks(ax, 2.2)
     ax.set_ylabel("correct on the same question  (%)")
     ax.set_ylim(0, 108)
     ax.set_yticks([0, 25, 50, 75, 100])
@@ -88,7 +91,7 @@ def _grouped_pair(mean, sem, xlabels, out, name, ttl, sub, figsize=(11.5, 5.6)):
             v = mean[col].iloc[i]
             ax.annotate(f"{v:.0f}", xy=(i + off, v), xytext=(0, 5),
                         textcoords="offset points", ha="center",
-                        color=INK2, fontsize=11.5)
+                        color=INK2, fontsize=18.8)
     return _save(fig, out, name)
 
 
@@ -125,7 +128,7 @@ def f2_dose(df: pd.DataFrame, out: str, name="f2_dose.png"):
         ax.fill_between(r.a, r[col] - r[err], r[col] + r[err], color=c, alpha=0.14, lw=0)
     ax.axhline(0, color=MUTED, lw=1, ls=(0, (4, 3)))
     ax.annotate("wrong answer below this line", xy=(r.a.max(), 0), xytext=(-4, -16),
-                textcoords="offset points", ha="right", color=MUTED, fontsize=11)
+                textcoords="offset points", ha="right", color=MUTED, fontsize=18.8)
     style.title(ax, "The two channels come apart as the erasure strengthens",
                 "Logit margin in favour of the correct option.")
     ax.set_xlabel(r"erasure strength  $\alpha$")
@@ -198,10 +201,10 @@ def f5_provenance(df: pd.DataFrame, out: str, name="f5_provenance.png"):
                error_kw=dict(lw=1, ecolor=MUTED))
         for xi, v in zip(x + (i - 0.5) * w, m):
             ax.annotate(f"{v:.0f}", xy=(xi, v), xytext=(0, 5), ha="center",
-                        textcoords="offset points", color=INK2, fontsize=11.5)
+                        textcoords="offset points", color=INK2, fontsize=18.8)
     ax.axhline(50, color=MUTED, lw=1, ls=(0, (4, 3)))
     ax.annotate("chance", xy=(len(views) - 0.45, 50), xytext=(4, 3),
-                textcoords="offset points", color=MUTED, fontsize=11)
+                textcoords="offset points", color=MUTED, fontsize=18.8)
     ax.set_xticks(x); ax.set_xticklabels([labels[v] for v in views])
     ax.set_ylabel("linear probe  (AUC, %)")
     ax.set_ylim(40, 105)
@@ -215,7 +218,7 @@ def f5_provenance(df: pd.DataFrame, out: str, name="f5_provenance.png"):
 
 def f6_forgery(df: pd.DataFrame, out: str, name="f6_forgery.png"):
     """The attack has two objectives that pull apart, so plot the frontier."""
-    fig, axes = plt.subplots(1, 2, figsize=(12.8, 5.2))
+    fig, axes = plt.subplots(1, 2, figsize=(14.0, 6.2))
 
     ax = axes[0]
     lo = df[df.beta == df.beta.min()]
@@ -229,7 +232,7 @@ def f6_forgery(df: pd.DataFrame, out: str, name="f6_forgery.png"):
     ax.set_yscale("log")
     ax.set_xlim(-0.5, 1.5)
     ax.set_xticks([0, 1]); ax.set_xticklabels(["clean image", "perturbed image"])
-    ax.set_ylabel("rank of the planted word in the readout")
+    ax.set_ylabel("rank of the planted word\nin the readout")
     style.title(ax, "The monitor reads a word that is not there",
                 "Each point is one photograph.")
 
@@ -241,9 +244,9 @@ def f6_forgery(df: pd.DataFrame, out: str, name="f6_forgery.png"):
     for _, r in f.iterrows():
         ax.annotate(f"$\\beta$={r.beta:g}", xy=(r.same * 100, r.hit * 100),
                     xytext=(8, -3), textcoords="offset points",
-                    color=INK2, fontsize=11.5)
+                    color=INK2, fontsize=18.8)
     ax.set_xlabel("generated text left byte-identical  (%)")
-    ax.set_ylabel("planted word in the readout's top 10  (%)")
+    ax.set_ylabel("planted word in the\nreadout's top 10  (%)")
     # The frontier occupies under a tenth of a 0-100 axis, so nine tenths of
     # the panel was blank.  Fit the axis to the sweep and say in the subtitle
     # that the whole range is 0-100.
@@ -275,7 +278,7 @@ def f7_routes(df: pd.DataFrame, out: str, name="f7_routes.png"):
     g = df.groupby("arm")[cols].mean().reindex(arms) * 100
     e = (df.groupby("arm")[cols].sem().reindex(arms) * 100).fillna(0)
 
-    fig, ax = plt.subplots(figsize=(12.4, 5.8))
+    fig, ax = plt.subplots(figsize=(13.6, 6.4))
     x = np.arange(len(arms))
     w = 0.78 / len(cols)
     # three verbal routes in warm slots, the arbitrary key in blue -- the same
@@ -288,6 +291,8 @@ def f7_routes(df: pd.DataFrame, out: str, name="f7_routes.png"):
                label=ROUTE_LABELS[c], error_kw=dict(lw=1, ecolor=MUTED))
     ax.axhline(50, color=MUTED, lw=1, ls=(0, (4, 3)))
     ax.set_xticks(x); ax.set_xticklabels([ARM_LABELS[a] for a in arms])
+    # the five names are wider than the five slots; every other one drops clear
+    style.stagger_xticks(ax, 2.2)
     ax.set_ylabel("correct  (%)"); ax.set_ylim(0, 100)
     style.title(ax, "Which route does the erasure cut?",
                 "The same visual question, answered through four different "
@@ -390,7 +395,7 @@ def f11_families(df: pd.DataFrame, out: str, name="f11_families.png"):
                label=lab, error_kw=dict(lw=1, ecolor=MUTED))
     ax.axhline(50, color=MUTED, lw=1, ls=(0, (4, 3)))
     ax.annotate("chance", xy=(len(fams) - 0.42, 50), xytext=(5, 3),
-                textcoords="offset points", color=MUTED, fontsize=11,
+                textcoords="offset points", color=MUTED, fontsize=18.8,
                 annotation_clip=False)
     ax.set_xticks(x); ax.set_xticklabels([FAMILY_LABEL[f] for f in fams])
     ax.set_ylabel("correct  (%)"); ax.set_ylim(0, 100)
@@ -406,7 +411,7 @@ def f11_families(df: pd.DataFrame, out: str, name="f11_families.png"):
 def f12_verbalizable(geo: pd.DataFrame, pred: pd.DataFrame, out: str,
                      name="f12_verbalizable.png"):
     """How much of what a picture writes is verbalizable, and what that predicts."""
-    fig, axes = plt.subplots(1, 2, figsize=(12.8, 5.2))
+    fig, axes = plt.subplots(1, 2, figsize=(13.6, 5.6))
 
     ax = axes[0]
     g = geo.groupby("depth")[["in_vocab_jspace", "null_vocab"]].mean().reset_index()
@@ -418,7 +423,8 @@ def f12_verbalizable(geo: pd.DataFrame, pred: pd.DataFrame, out: str,
     ax.set_ylabel("share inside the workspace  (%)")
     style.title(ax, "The verbalizable fraction",
                 "Energy of the perceptual direction lying in the workspace.")
-    ax.legend(loc="upper left")
+    # upper right: the curve climbs through the upper left, where the legend was
+    ax.legend(loc="upper right")
 
     ax = axes[1]
     if pred is not None and len(pred) >= 4:
@@ -489,16 +495,22 @@ def f14_collateral(df: pd.DataFrame, out: str, name="f14_collateral.png"):
     # Adjacent channels differ in y by about as much as any single offset, so
     # stepping only the height still stacks them.  Alternate the side as well
     # and no two neighbours can share an anchor.
+    y_lo, y_hi = ax.get_ylim()
     for k, (gx, gy, r) in enumerate(marks):
         ax.scatter([gx], [gy], s=130, color=BLUE, edgecolors=SURFACE,
                    linewidths=2, zorder=5)
         dy = 16 + 18 * (k % 3)
+        # a channel near the top of the axes takes its name from below: above
+        # it there is no axes left, and the name printed into the subtitle
+        if gy > y_lo + 0.74 * (y_hi - y_lo):
+            dy = -dy
         left = k % 2 == 0
         ax.annotate(ROUTE_NAME[r], xy=(gx, gy),
                     xytext=(-10 if left else 10, dy),
                     textcoords="offset points",
+                    va="bottom" if dy > 0 else "top",
                     ha="right" if left else "left", color=INK,
-                    fontsize=12.5, zorder=6,
+                    fontsize=18.8, zorder=6,
                     arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8,
                                     shrinkA=2, shrinkB=9))
     # the trend the geometry predicts, fitted on the channel means only
@@ -520,7 +532,7 @@ def f14_collateral(df: pd.DataFrame, out: str, name="f14_collateral.png"):
 
 def f15_patch(df: pd.DataFrame, out: str, name="f15_patch.png"):
     """Injecting the verbal copy and the use copy of one perceptual direction."""
-    fig, axes = plt.subplots(1, 2, figsize=(12.8, 5.2))
+    fig, axes = plt.subplots(1, 2, figsize=(13.8, 5.8))
     arms = [("verbal", VIOLET, "the verbal copy"),
             ("use", AQUA, "the use copy"),
             ("random", MUTED, "a random direction")]
@@ -579,7 +591,7 @@ def f16_reality(beh: pd.DataFrame, probes: pd.DataFrame, out: str,
     ax.bar(range(len(vals)), vals, 0.55, color=hues)
     for i, v in enumerate(vals):
         ax.annotate(f"{v:.0f}", xy=(i, v), xytext=(0, 5), ha="center",
-                    textcoords="offset points", color=INK2, fontsize=12)
+                    textcoords="offset points", color=INK2, fontsize=18.8)
     ax.axhline(50, color=MUTED, lw=1, ls=(0, (4, 3)))
     ax.set_xticks(range(len(vals))); ax.set_xticklabels(labs)
     ax.set_ylabel("correct  (%)"); ax.set_ylim(0, 100)
@@ -599,7 +611,7 @@ def f16_reality(beh: pd.DataFrame, probes: pd.DataFrame, out: str,
         for i, v in enumerate(vs):
             ax.annotate(f"{g.loc[v, 'mean']*100:.0f}", xy=(i, g.loc[v, "mean"]*100),
                         xytext=(0, 5), ha="center", textcoords="offset points",
-                        color=INK2, fontsize=12)
+                        color=INK2, fontsize=18.8)
         ax.axhline(50, color=MUTED, lw=1, ls=(0, (4, 3)))
         ax.set_xticks(range(len(vs))); ax.set_xticklabels([lab[v] for v in vs])
         # starting this axis at 40 turned a three-point spread into bars of
@@ -669,7 +681,7 @@ def forgery_pair(clean_path, adv_path, delta_path, out, caption_bits,
         style.title(ax, ttl)
     for ax, bit in zip(axes, caption_bits):
         ax.annotate(bit, xy=(0.5, -0.04), xycoords="axes fraction",
-                    ha="center", va="top", color=INK2, fontsize=12)
+                    ha="center", va="top", color=INK2, fontsize=18.8)
     fig.tight_layout()
     return _save(fig, out, name)
 
@@ -695,7 +707,7 @@ def f18_depthcross(df: pd.DataFrame, out: str, name="f18_depthcross.png"):
                error_kw=dict(lw=1, ecolor=MUTED))
     ax.axhline(clean, color=MUTED, lw=1, ls=(0, (4, 3)))
     ax.annotate("no intervention", xy=(len(bands) - 0.45, clean), xytext=(5, 3),
-                textcoords="offset points", color=MUTED, fontsize=11,
+                textcoords="offset points", color=MUTED, fontsize=18.8,
                 annotation_clip=False)
     cos = df[df.band != "none"].groupby("band").cos.mean().reindex(bands)
     ax.set_xticks(x)
@@ -760,10 +772,10 @@ def f20_source(df: pd.DataFrame, out: str, name="f20_source.png"):
            color=[c for _, _, c in spec], error_kw=dict(lw=1, ecolor=MUTED))
     for i, v in enumerate(vals):
         ax.annotate(f"{v:.0f}", xy=(i, v), xytext=(0, 6), ha="center",
-                    textcoords="offset points", color=INK2, fontsize=12.5)
+                    textcoords="offset points", color=INK2, fontsize=18.8)
     ax.axhline(50, color=MUTED, lw=1, ls=(0, (4, 3)))
     ax.annotate("chance", xy=(len(spec) - 0.42, 50), xytext=(5, 3),
-                textcoords="offset points", color=MUTED, fontsize=11,
+                textcoords="offset points", color=MUTED, fontsize=18.8,
                 annotation_clip=False)
     ax.set_xticks(range(len(spec)))
     ax.set_xticklabels([lab for _, lab, _ in spec])
@@ -791,7 +803,7 @@ def f21_secant(stats: dict, summ: pd.DataFrame, out: str,
     when it is available the fidelity panels come from it, because the online
     numbers chose the shrinkage parameter on the photographs they reported on.
     """
-    fig, axes = plt.subplots(1, 3, figsize=(15.8, 5.0))
+    fig, axes = plt.subplots(1, 3, figsize=(17.2, 6.4))
     if refit:
         lad = {l: (refit[l].get("full_patch") or refit[l]["ladder"])
                for l in refit}
@@ -814,7 +826,7 @@ def f21_secant(stats: dict, summ: pd.DataFrame, out: str,
     ax.axhline(0, color=GRID, lw=1)
     ax.set_xticks(x)
     ax.set_xticklabels([f"layer {l}" for l in layers])
-    ax.set_ylabel("variance explained in the true effect of a\nreal resample patch, at each lens's best gain")
+    ax.set_ylabel("variance explained in the\ntrue effect of a real\nresample patch, at each\nlens's best gain")
     style.title(ax, "How much of a real patch each lens predicts",
                 "Each lens at its best gain, on held-out photographs.",
                 width=48)
@@ -855,7 +867,7 @@ def f21_secant(stats: dict, summ: pd.DataFrame, out: str,
         ax.plot(d.depth * 100, d.auc, color=c, marker="o", ms=5, label=lab)
     ax.axhline(0.5, color=MUTED, lw=1, ls=(0, (4, 3)))
     ax.set_xlabel("depth through the language model  (%)")
-    ax.set_ylabel("present objects ranked above absent ones\n(AUC)")
+    ax.set_ylabel("present objects ranked\nabove absent ones  (AUC)")
     style.title(ax, "And what each one reads",
                 "Whether the object's own name outranks objects that are not "
                 "in the picture.", width=48)
@@ -870,7 +882,7 @@ def f22_certificate(stats: dict, out: str, name="f22_certificate.png"):
     ls = sorted(ell, key=int)
     if not ls:
         raise ValueError("no ellipticity measurement")
-    fig, axes = plt.subplots(1, 2, figsize=(11.0, 4.6))
+    fig, axes = plt.subplots(1, 2, figsize=(13.6, 5.8))
     ax = axes[0]
     x = np.arange(len(ls))
     ax.bar(x - 0.19, [ell[l]["kurtosis_spread"] for l in ls], 0.36,
@@ -878,7 +890,7 @@ def f22_certificate(stats: dict, out: str, name="f22_certificate.png"):
     ax.bar(x + 0.19, [ell[l]["gaussian_null"] for l in ls], 0.36, color=MUTED,
            label="a Gaussian of the same size")
     ax.set_xticks(x); ax.set_xticklabels([f"layer {l}" for l in ls])
-    ax.set_ylabel("spread of kurtosis across directions")
+    ax.set_ylabel("spread of kurtosis\nacross directions")
     style.title(ax, "The deviations are not elliptical",
                 "Any elliptical law has direction-independent whitened "
                 "kurtosis, and would force the two lenses to coincide.")
@@ -905,7 +917,7 @@ def f23_tradeoff(stats: dict, summ: pd.DataFrame, out: str,
     layers = sorted(path, key=int)
     if not layers:
         raise ValueError("no shrinkage path recorded")
-    fig, ax = plt.subplots(figsize=(7.4, 5.6))
+    fig, ax = plt.subplots(figsize=(8.6, 6.2))
     cols = [C_WORD, BLUE, AQUA, VIOLET, ORANGE]
     ends = []
     for l, c in zip(layers, cols):
@@ -931,23 +943,27 @@ def f23_tradeoff(stats: dict, summ: pd.DataFrame, out: str,
     if ends:
         a = min(ends, key=lambda e: e[0])
         b = max(ends, key=lambda e: e[3])
+        # well below its own point: at the shorter drop it lay across all
+        # four curves on their way up
         ax.annotate("all four start at the derivative", (a[0], a[1]),
-                    xytext=(10, -16), textcoords="offset points",
-                    fontsize=11.5, color=INK2, ha="left",
+                    xytext=(10, -34), textcoords="offset points",
+                    fontsize=18.8, color=INK2, ha="left",
                     arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.9,
                                     shrinkA=1, shrinkB=5))
         ax.annotate("and end at the fitted secant", (b[2], b[3]),
                     xytext=(-10, 14), textcoords="offset points",
-                    fontsize=11.5, color=INK2, ha="right",
+                    fontsize=18.8, color=INK2, ha="right",
                     arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.9,
                                     shrinkA=1, shrinkB=5))
     ax.set_xlabel("held-out variance explained in the true patching effect")
-    ax.set_ylabel("reads the photographed object's name  (AUC)")
+    ax.set_ylabel("reads the photographed\nobject's name  (AUC)")
     style.title(ax, "One scalar, moved from the derivative to the data",
                 "One lens, one layer, swept by its shrinkage parameter.")
     style.legend(ax, loc="lower right")
     x0, x1 = ax.get_xlim()
     ax.set_xlim(x0 - 0.06 * (x1 - x0), x1 + 0.10 * (x1 - x0))
+    y0, y1 = ax.get_ylim()
+    ax.set_ylim(y0 - 0.16 * (y1 - y0), y1)
     fig.tight_layout()
     return _save(fig, out, name)
 
@@ -963,7 +979,7 @@ def f24_evalgate(df: pd.DataFrame, out: str, name="f24_evalgate.png"):
     g = off.groupby("cond").agg(e=("energy", "mean"), y=("said_banana", "mean"),
                                 arm=("arm", "first"))
     rnd = g[g.arm == "random"].sort_values("e")
-    fig, ax = plt.subplots(figsize=(7.6, 5.4))
+    fig, ax = plt.subplots(figsize=(9.0, 6.0))
     if len(rnd) >= 2:
         sl, ic = np.polyfit(rnd.e.values, rnd.y.values, 1)
         xs = np.linspace(0, max(g.e) * 1.08, 50)
@@ -982,13 +998,17 @@ def f24_evalgate(df: pd.DataFrame, out: str, name="f24_evalgate.png"):
         ax.scatter(d.e, d.y, s=62, color=c, zorder=4, label=lab)
         for cond, r in d.iterrows():
             ax.annotate(cond.split("@")[-1] if "@" in cond else "",
-                        (r.e, r.y), fontsize=8, color=c,
+                        (r.e, r.y), fontsize=18.8, color=c,
                         xytext=(6, -3), textcoords="offset points")
     ax.set_xlabel(r"removed energy   $\|\Delta h\| / \|h\|$")
     ax.set_ylabel("obeys the order painted into the photograph")
     style.title(ax, "Refusal runs partly through knowing it is a test",
                 "Above the line is more obedience than the damage alone explains.")
-    style.legend(ax)
+    # under the axes: six entries inside them cover a third of the plane, and
+    # the dose printed beside each point landed on one of the rows
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.16), ncols=3,
+              frameon=False, handletextpad=0.5, columnspacing=1.8,
+              fontsize=plt.rcParams["axes.labelsize"] * 0.88)
     fig.tight_layout()
     return _save(fig, out, name)
 
@@ -1002,7 +1022,7 @@ def f25_crossing(refit: dict, summ: pd.DataFrame, out: str,
              "Jacobian lens": (INK2, "Jacobian lens"),
              "the corrected derivative": (BLUE, "corrected derivative"),
              "VJ-Lens": (C_WORD, "VJ-Lens")}
-    fig, axes = plt.subplots(1, 2, figsize=(12.4, 5.0), sharex=True)
+    fig, axes = plt.subplots(1, 2, figsize=(13.2, 5.8), sharex=True)
 
     ax = axes[0]
     for rung, n in KEY.items():
@@ -1017,7 +1037,11 @@ def f25_crossing(refit: dict, summ: pd.DataFrame, out: str,
     ax.set_ylabel("names the photographed object\n(AUC over 65 categories)")
     style.title(ax, "How well each lens reads",
                 "Higher is a better reading of what is in the picture.")
-    style.legend(ax, loc="lower left")
+    # under the axes: inside them every corner is a corner some line runs
+    # through, and the chance rule struck the bottom row out
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.20), ncols=2,
+              frameon=False, handletextpad=0.5, columnspacing=1.8,
+              fontsize=plt.rcParams["axes.labelsize"] * 0.88)
 
     ax = axes[1]
     layers = sorted(refit, key=int)
@@ -1038,7 +1062,9 @@ def f25_crossing(refit: dict, summ: pd.DataFrame, out: str,
     ax.set_ylabel("predicts a real patch\n(held-out variance explained)")
     style.title(ax, "How well each lens predicts",
                 "The mirror of the panel on the left.")
-    style.legend(ax, loc="upper right")
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.20), ncols=2,
+              frameon=False, handletextpad=0.5, columnspacing=1.8,
+              fontsize=plt.rcParams["axes.labelsize"] * 0.88)
     fig.tight_layout()
     return _save(fig, out, name)
 
@@ -1051,7 +1077,7 @@ def f26_radius(refit: dict, out: str, name="f26_radius.png"):
            "our tangent": (BLUE, "corrected derivative"),
            "the secant": (C_WORD, "VJ-Lens")}
     layers = sorted(refit, key=int)
-    fig, axes = plt.subplots(1, len(layers), figsize=(3.5 * len(layers), 4.2),
+    fig, axes = plt.subplots(1, len(layers), figsize=(3.7 * len(layers), 5.4),
                              sharey=True)
     axes = np.atleast_1d(axes)
     for ax, l in zip(axes, layers):
@@ -1070,23 +1096,28 @@ def f26_radius(refit: dict, out: str, name="f26_radius.png"):
         # figure title that the first panel also carries
         style.panel(ax, f"layer {l}", loc="upper left")
     axes[0].set_ylabel("held-out variance explained")
-    # every panel's data hugs the bottom left, so the legend goes top right
-    style.legend(axes[-1], loc="upper right")
-    fig.suptitle("A linear lens is more faithful for big changes", x=0.004,
-                 ha="left", fontsize=plt.rcParams["figure.titlesize"],
-                 color=INK)
-    fig.text(0.004, 0.925,
+    # one legend for the row, under it: inside the last panel it sat on that
+    # panel's own name in the corner
+    h, lb = axes[0].get_legend_handles_labels()
+    fig.legend(h, lb, loc="lower center", bbox_to_anchor=(0.5, 0.012),
+               ncols=len(lb), frameon=False, handletextpad=0.5,
+               columnspacing=2.0,
+               fontsize=plt.rcParams["axes.labelsize"] * 0.88)
+    fig.suptitle("A linear lens is more faithful for big changes", x=0.5,
+                 y=0.985, ha="center",
+                 fontsize=plt.rcParams["figure.titlesize"], color=INK)
+    fig.text(0.5, 0.918,
              "$t=1$ replaces the patch with another photograph's; smaller "
-             "$t$ moves it part of the way.", ha="left", va="top",
+             "$t$ moves it part of the way.", ha="center", va="top",
              color=INK2, fontsize=plt.rcParams["axes.labelsize"] * 0.9)
-    fig.tight_layout(rect=(0, 0, 1, 0.885))
+    fig.tight_layout(rect=(0, 0.085, 1, 0.868))
     return _save(fig, out, name)
 
 
 def f27_traject(traj: dict, out: str, name="f27_traject.png"):
     """Every photograph's trajectory, and the median through them."""
     import math
-    fig, axes = plt.subplots(1, 2, figsize=(12.6, 5.0), sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(13.4, 5.6), sharey=True)
     layers = traj["layers"]
     dep = [traj["depths"][str(l)] * 100 for l in layers]
     n_vocab = len(traj["vocab"])
@@ -1132,7 +1163,7 @@ def f31_validate(summ: pd.DataFrame, stats: dict, out: str,
     LAB = {"logit lens": (C_WORD, "logit lens  ($say$)"),
            "V-Lens (donor baseline)": (BLUE, "VJ-Lens"),
            "V-Lens (mean baseline)": (AQUA, "VJ-Lens  (corpus-mean baseline)")}
-    fig, axes = plt.subplots(1, 2, figsize=(11.2, 4.4))
+    fig, axes = plt.subplots(1, 2, figsize=(12.6, 5.8))
 
     ax = axes[0]
     cor = stats.get("predicts_drop", {})
@@ -1146,7 +1177,7 @@ def f31_validate(summ: pd.DataFrame, stats: dict, out: str,
             ms=6, label="logit lens  ($say$)")
     ax.axhline(0, color=GRID, lw=1)
     ax.set_xlabel("depth through the language model  (%)")
-    ax.set_ylabel("predicts what covering the object does\n(Spearman)")
+    ax.set_ylabel("predicts what covering\nthe object does\n(Spearman)")
     # width=52 keeps this panel's subtitle inside its own axes; at the
     # default it ran across the gutter and printed over the next panel's
     # title.
@@ -1168,10 +1199,10 @@ def f31_validate(summ: pd.DataFrame, stats: dict, out: str,
     ax.annotate("chance", xy=(100.0 * summ.layer.max() / (n_layers - 1), ch),
                 xytext=(-4, 5),
                 textcoords="offset points", ha="right", color=MUTED,
-                fontsize=8)
+                fontsize=18.8)
     ax.set_ylim(0, max(0.7, summ.point.max() * 1.15))
     ax.set_xlabel("depth through the language model  (%)")
-    ax.set_ylabel("strongest patch lands on the object")
+    ax.set_ylabel("strongest patch lands\non the object")
     style.title(ax, "Where the object is",
                 "The pointing game: does the map's peak fall inside the "
                 "object's own box?", width=52)
@@ -1187,7 +1218,7 @@ def f32_deletion(curve: pd.DataFrame, stats: dict, out: str,
            "logit lens": (C_WORD, "logit lens  ($say$)"),
            "random": (MUTED, "random order")}
     layers = sorted(curve.layer.unique())
-    fig, axes = plt.subplots(1, len(layers), figsize=(3.6 * len(layers), 4.2),
+    fig, axes = plt.subplots(1, len(layers), figsize=(3.9 * len(layers), 5.0),
                              sharey=True)
     axes = np.atleast_1d(axes)
     n_layers = stats.get("n_layers", max(layers) + 3)
@@ -1198,25 +1229,26 @@ def f32_deletion(curve: pd.DataFrame, stats: dict, out: str,
             if len(s):
                 ax.plot(s.frac * 100, s.rel, color=c, marker="o", ms=4,
                         label=lab)
-        ax.set_xlabel("share of image tokens covered  (%)")
+        # over two lines: on one line the three copies of it ran together
+        ax.set_xlabel("share of image tokens\ncovered  (%)")
         style.panel(ax, f"{100 * l / (n_layers - 1):.0f}% depth",
                     loc="upper right")
         ax.axhline(0, color=GRID, lw=1)
     axes[0].set_ylabel("share of the object's score left")
     style.legend(axes[-1], loc="lower left")
-    fig.suptitle("Covering the patches each map ranks highest", x=0.004,
-                 ha="left", fontsize=plt.rcParams["figure.titlesize"],
-                 color=INK)
-    fig.text(0.004, 0.928, "Falling faster is a better ordering.",
-             ha="left", va="top", color=INK2,
+    fig.suptitle("Covering the patches each map ranks highest", x=0.5,
+                 y=0.985, ha="center",
+                 fontsize=plt.rcParams["figure.titlesize"], color=INK)
+    fig.text(0.5, 0.916, "Falling faster is a better ordering.",
+             ha="center", va="top", color=INK2,
              fontsize=plt.rcParams["axes.labelsize"] * 0.9)
-    fig.tight_layout(rect=(0, 0, 1, 0.895))
+    fig.tight_layout(rect=(0, 0, 1, 0.866))
     return _save(fig, out, name)
 
 
 def f40_swap(df: pd.DataFrame, out: str, name="f40_swap.png"):
     """Swap strength against how often the model believes the swap."""
-    fig, axes = plt.subplots(1, 2, figsize=(11.0, 4.3))
+    fig, axes = plt.subplots(1, 2, figsize=(12.6, 5.6))
     KIND = {"colour": (C_WORD, "what colour is it"),
             "legs": (BLUE, "how many legs"),
             "wheels": (AQUA, "how many wheels")}
@@ -1230,7 +1262,7 @@ def f40_swap(df: pd.DataFrame, out: str, name="f40_swap.png"):
     ax.plot(tot.index, tot.values * 100, color=INK2, marker="s", ms=6, lw=2.2,
             label="all questions")
     ax.set_xlabel(r"swap strength  $\alpha$")
-    ax.set_ylabel("model gives the swapped answer  (%)")
+    ax.set_ylabel("model gives the\nswapped answer  (%)")
     ax.set_ylim(0, 75)
     style.legend(ax, loc="upper left")
 
@@ -1246,20 +1278,21 @@ def f40_swap(df: pd.DataFrame, out: str, name="f40_swap.png"):
     ax.set_xticks(x)
     ax.set_xticklabels([f"$\\alpha$ = {v:g}" for v in d.index])
     ax.set_ylabel("share of trials  (%)")
-    # loc="upper right" put the two-line legend straight across the tallest
-    # pair of bars; the strip above the axes is the only place it does not
-    # cover data.
     ax.set_ylim(0, max(d.dst.max(), d.src.max()) * 100 * 1.12)
-    style.title(ax, "And the original answer goes away",
-                "Before any edit the photograph's answer is given on every "
-                "retained trial.", legend_rows=1, width=46)
-    style.legend_above(ax, ncols=2)
+    # both panels carried a two- or three-line subtitle; what they said -- that
+    # the score is between the two answers the concepts disagree about, and
+    # that before any edit the photograph's own answer is given on every
+    # retained trial -- is in this figure's caption in paper/atlas.html.
+    #
+    # The legend used to sit in the strip ABOVE this axes, which is where the
+    # subtitle used to be: with the subtitle gone that strip pushed this
+    # panel's heading a line higher than the left panel's, and two headings at
+    # two heights read as a mistake.  Two stacked rows at the upper right clear
+    # the tallest bars, which stand at the left of this panel.
+    style.legend(ax, loc="upper right")
+    style.title(ax, "And the original answer goes away")
 
-    # the left panel's title is long enough to run into the right panel's
-    style.title(axes[0], "The answer follows the swap",
-                "Between the two answers the concepts disagree about; the "
-                "model is answering about the photograph it was shown.",
-                width=46)
+    style.title(axes[0], "The answer follows the swap")
     fig.tight_layout()
     return _save(fig, out, name)
 
@@ -1278,7 +1311,9 @@ def f41_lenses(stats: dict, out: str, name="f41_lenses.png"):
             ("predicts", "predicts the real damage", False),
             ("deletion", "deletion area (lower better)", True)]
     MEAS = [t for t in MEAS if any(t[0] in best.get(l, {}) for l, _ in LENS)]
-    fig, axes = plt.subplots(1, len(MEAS), figsize=(2.9 * len(MEAS), 4.2))
+    import textwrap
+
+    fig, axes = plt.subplots(1, len(MEAS), figsize=(3.7 * len(MEAS), 5.4))
     axes = np.atleast_1d(axes)
     for ax, (key, lab, lower) in zip(axes, MEAS):
         vals, cols, names = [], [], []
@@ -1287,21 +1322,25 @@ def f41_lenses(stats: dict, out: str, name="f41_lenses.png"):
                 vals.append(best[l][key]); cols.append(c); names.append(l)
         ax.bar(np.arange(len(vals)), vals, 0.62, color=cols)
         ax.set_xticks(np.arange(len(vals)))
-        ax.set_xticklabels([NICE.get(n, n) for n in names], fontsize=10.5)
-        ax.set_title(lab + ("  ↓" if lower else ""), fontsize=11,
-                     color=INK2, pad=6)
+        ax.set_xticklabels([NICE.get(n, n) for n in names], fontsize=18.8)
+        # three lens names are wider than three slots of a fifth of this row;
+        # the middle one drops a line and each keeps its size
+        style.stagger_xticks(ax, 2.2, fs=18.8)
+        ax.set_title("\n".join(
+            textwrap.wrap(lab + ("  ↓" if lower else ""), 21)),
+            fontsize=18.8, color=INK2, pad=6)
         for xx, vv in enumerate(vals):
             ax.annotate(f"{vv:.2f}", xy=(xx, vv), xytext=(0, 4),
                         textcoords="offset points", ha="center", va="bottom",
-                        color=INK2, fontsize=10)
+                        color=INK2, fontsize=18.8)
         ax.set_ylim(0, max(vals) * 1.20)
         if key in ("points", "top5", "energy") and "chance" in stats:
             ax.axhline(stats["chance"], color=MUTED, lw=1, ls=(0, (4, 3)))
     axes[0].set_ylabel("best over depth")
-    fig.suptitle("Five measures, each lens at its own best depth", x=0.005,
-                 ha="left", fontsize=plt.rcParams["figure.titlesize"],
-                 color=INK)
-    fig.tight_layout(rect=(0, 0, 1, 0.94))
+    fig.suptitle("Five measures, each lens at its own best depth", x=0.5,
+                 y=0.985, ha="center",
+                 fontsize=plt.rcParams["figure.titlesize"], color=INK)
+    fig.tight_layout(rect=(0, 0, 1, 0.925))
     return _save(fig, out, name)
 
 
@@ -1321,7 +1360,7 @@ def f42_attacks(stats: dict, out: str, name="f42_attacks.png"):
     cols = [MUTED if k in ("refuseable", "direct") else C_WORD for k in order]
     ax.barh(np.arange(len(order))[::-1], v, 0.62, color=cols)
     ax.set_yticks(np.arange(len(order))[::-1])
-    ax.set_yticklabels([NICE.get(k, k) for k in order], fontsize=9)
+    ax.set_yticklabels([NICE.get(k, k) for k in order], fontsize=18.8)
     ax.set_xlabel("model complies  (%)")
     style.title(ax, "Four routes through the picture",
                 "Grey is the request made plainly, which the model refuses.")
@@ -1340,7 +1379,7 @@ def f42_attacks(stats: dict, out: str, name="f42_attacks.png"):
                label=lab)
     ax.axhline(0.5, color=MUTED, lw=1, ls=(0, (4, 3)))
     ax.set_xticks(x)
-    ax.set_xticklabels([NICE.get(k, k) for k in atk], fontsize=8,
+    ax.set_xticklabels([NICE.get(k, k) for k in atk], fontsize=18.8,
                        rotation=18, ha="right")
     ax.set_ylabel("tells the attack from an ordinary request  (AUROC)")
     style.title(ax, "And which lens notices",
@@ -1350,33 +1389,111 @@ def f42_attacks(stats: dict, out: str, name="f42_attacks.png"):
     return _save(fig, out, name)
 
 
-def f43_posvar(stats: dict, out: str, name="f43_posvar.png"):
-    """How much each lens's reading changes from place to place in a picture."""
+def f43_posvar(stats: dict, out: str, name="f43_posvar.png", raw=None,
+               lexicon: int = 216, n_layers: int | None = None):
+    """How much each lens's reading changes from place to place in a picture.
+
+    Both axes used to float on the data: the left one ran from 48 to 112 and
+    the right one from 0.01 to 0.08, so a reader could see that one lens was
+    above another and had no way at all to know whether either was near the top
+    of what is possible.  They now carry their own extremes.  The left axis
+    reaches the ceiling -- one different word at every one of the 196 patches,
+    which is attainable because the vocabulary these readings are ranked over is
+    larger than the grid -- and its floor, the same word everywhere.  The right
+    axis carries the agreement a lens would reach if the top word at each patch
+    were an independent uniform draw from that vocabulary.
+
+    ``raw`` is the per-photograph table.  With it the lines get the spread they
+    are means of, drawn as the middle half of the photographs, which is the
+    difference between a claim about a population and a claim about a curve.
+    """
+    style.use()
     by = stats.get("by_layer", {})
     if not by:
         raise ValueError("no position-variation results")
     d = pd.DataFrame(list(by.values()) if isinstance(by, dict) else by)
     if "depth" not in d.columns:
-        nl = stats.get("n_layers") or (int(d.layer.max()) + 3)
-        d["depth"] = d.layer / (nl - 1)
+        # depth is layer / (n_layers - 1) everywhere else in the paper -- the
+        # strips say "layer 3 is 11% of the way through" on a 28-layer model.
+        # Guessing the model's depth from the deepest layer measured put
+        # layer 24 at 92% here and 89% two figures away, so it is passed in.
+        nl = int(n_layers or stats.get("n_layers") or (int(d.layer.max()) + 3))
+        d["depth"] = d.layer / max(nl - 1, 1)
     STY = {"logit lens": (C_WORD, "logit lens"), "J-lens": (VIOLET, "J-lens")}
     STY.update({k: (BLUE, "VJ-Lens") for k in _VJ_ALIASES})
-    fig, axes = plt.subplots(1, 2, figsize=(11.0, 4.3))
-    P = stats.get("n_patches", 196)
+    # wide enough that each panel holds the name of its own ceiling or floor
+    # on one line -- at the paper's type size those names are five inches --
+    # and tall enough that the name of the chance rule fits in the band
+    # between that rule and the lens that runs just above it
+    fig, axes = plt.subplots(1, 2, figsize=(19.6, 7.6))
+    seen: dict = {}
+    P = int(stats.get("n_patches", 196))
+    dep = dict(zip(d.layer, d.depth))
     for ax, (key, lab, inv) in zip(
-            axes, (("distinct", f"distinct top words across {P} patches", False),
-                   ("agree", "two random patches give the same word", True))):
+            axes, (("distinct", f"distinct top words\nacross the {P} patches",
+                    False),
+                   ("agree", "two random patches\ngive the same word", True))):
         for lens, (c, nm) in STY.items():
             s = d[d.lens == lens].sort_values("layer")
-            if len(s):
-                ax.plot(s.depth * 100, s[key], color=c, marker="o", ms=6,
-                        label=nm)
+            if not len(s):
+                continue
+            if raw is not None and len(raw):
+                r = raw[raw.lens == lens]
+                if len(r):
+                    q = r.groupby("layer")[key].quantile([0.25, 0.75]).unstack()
+                    xs = [100 * dep.get(l, l) for l in q.index]
+                    ax.fill_between(xs, q[0.25].values, q[0.75].values,
+                                    color=c, alpha=0.13, lw=0, zorder=1)
+            ln, = ax.plot(s.depth * 100, s[key], color=c, marker="o", ms=6,
+                          label=nm, zorder=3)
+            if nm not in seen:
+                seen[nm] = ln
         ax.set_xlabel("depth through the language model  (%)")
         ax.set_ylabel(lab)
-        style.legend(ax, loc="best")
-    style.title(axes[0], "A lens with no position in its transport",
-                "cannot tell one part of a picture from another.")
-    fig.tight_layout()
+        # the extremes of the measure, so the level can be read and not only
+        # the ordering
+        if key == "distinct":
+            ax.set_ylim(0, P * 1.10)
+            ax.axhline(P, color=INK, lw=1.0, ls=(0, (2, 3)), zorder=2)
+            ax.annotate(f"a different word at every one of the {P} patches",
+                        xy=(0.015, P), xycoords=("axes fraction", "data"),
+                        xytext=(0, -5), textcoords="offset points", ha="left",
+                        va="top", color=INK2, fontsize=18.8)
+            ax.annotate("the same word everywhere", xy=(0.015, 1),
+                        xycoords=("axes fraction", "data"), xytext=(0, 6),
+                        textcoords="offset points", ha="left", va="bottom",
+                        color=INK2, fontsize=18.8)
+        else:
+            ch = 1.0 / max(int(lexicon), 2)
+            ax.set_ylim(bottom=0)
+            ax.axhline(ch, color=INK, lw=1.0, ls=(0, (2, 3)), zorder=2)
+            # one line, because the band between this rule and the lens above
+            # it is one line tall; the panel is wide enough to hold it
+            ax.annotate(f"an independent draw from the {lexicon}-word "
+                        "vocabulary", xy=(0.015, ch),
+                        xycoords=("axes fraction", "data"), xytext=(0, 3),
+                        textcoords="offset points", ha="left", va="bottom",
+                        color=INK2, fontsize=18.8)
+    # One legend for the pair, in the strip under the heading.  Inside the
+    # left panel it had nowhere to go: the ceiling's dashed rule runs the whole
+    # width of the axes at 196 and struck through the descender of "logit
+    # lens" in the upper-right corner, and the corners below are where the
+    # curves and the floor's own name are.  It is also the same legend twice.
+    if seen:
+        fig.legend(handles=[seen[k] for k in
+                            ("logit lens", "J-lens", "VJ-Lens") if k in seen],
+                   loc="upper center", bbox_to_anchor=(0.5, 0.925),
+                   ncols=3, frameon=False, handlelength=1.4,
+                   handletextpad=0.5, columnspacing=2.2,
+                   fontsize=plt.rcParams["axes.labelsize"] * 0.88,
+                   labelcolor=INK2)
+    # one heading for the pair, rather than a title on the left panel whose
+    # second line finished the sentence and whose right panel had no heading
+    # at all.  The sample size and what is plotted are in the caption.
+    fig.suptitle("A lens with no position in its transport cannot tell one "
+                 "part of a picture from another", x=0.5, y=0.985,
+                 ha="center", va="top", color=INK)
+    fig.tight_layout(rect=(0, 0, 1, 0.868))
     return _save(fig, out, name)
 
 
@@ -1534,7 +1651,7 @@ def _boxed_tiles(ax, inside, C, lw=2.4):
 
 
 def f50_wordgrid(stats: dict, out: str, name="f50_wordgrid.png", which=0,
-                 lenses=None, base_fs=13.0, headline=None, note=None):
+                 lenses=None, base_fs=18.8, headline=None, note=None):
     """One photograph, one word per tile, three lenses reading the same places.
 
     The whole point is that every tile is legible: the word is the measurement
@@ -1649,7 +1766,7 @@ def f50_wordgrid(stats: dict, out: str, name="f50_wordgrid.png", which=0,
     x = np.arange(len(have))
     n_ph = stats.get("n", 0)
 
-    def _bars(a2, xs, vals, w, colours, fmt, fs=11.5):
+    def _bars(a2, xs, vals, w, colours, fmt, fs=16.7):
         a2.bar(xs, vals, w, color=colours)
         for xx, vv in zip(xs, vals):
             a2.annotate(fmt.format(vv), xy=(xx, vv), xytext=(0, 4),
@@ -1659,7 +1776,7 @@ def f50_wordgrid(stats: dict, out: str, name="f50_wordgrid.png", which=0,
     axL = fig.add_subplot(gs[1, :half])
     v = [best[l]["distinct"] for l in have]
     _bars(axL, x, v, 0.56, cols, "{:.0f}")
-    axL.set_xticks(x); axL.set_xticklabels(labs, fontsize=11.5)
+    axL.set_xticks(x); axL.set_xticklabels(labs, fontsize=18.8)
     axL.set_ylim(0, max(v) * 1.22)
     axL.set_ylabel(f"words in {C*C} tiles")
     style.title(axL, "How much of the picture each lens can tell apart",
@@ -1674,7 +1791,7 @@ def f50_wordgrid(stats: dict, out: str, name="f50_wordgrid.png", which=0,
     _bars(axR, x + 0.175, outs, 0.33, [_tint(c, 0.34) for c in cols], "{:.0f}%")
     axR.bar([np.nan], [0], color=INK2, label="tiles inside the object's box")
     axR.bar([np.nan], [0], color=_tint(INK2, 0.34), label="tiles outside it")
-    axR.set_xticks(x); axR.set_xticklabels(labs, fontsize=11.5)
+    axR.set_xticks(x); axR.set_xticklabels(labs, fontsize=18.8)
     axR.set_ylim(0, max(max(ins), 1) * 1.40)
     axR.set_ylabel("tiles reading it  (%)")
     style.title(axR, "And whether the word lands where the object is",
@@ -1684,30 +1801,11 @@ def f50_wordgrid(stats: dict, out: str, name="f50_wordgrid.png", which=0,
                 width=76)
     style.legend(axR, loc="upper left")
 
-    fig.text(L, 1 - 0.22 / fh,
+    fig.text(0.5, 1 - 0.22 / fh,
              headline or "Every lens reads the same places.  "
              "They do not read the same thing.",
-             fontsize=21, color=INK, ha="left", va="top")
-    fig.text(L, 1 - 0.66 / fh,
-             "The image tokens form a %dx%d grid; neighbouring tokens are "
-             "pooled into %d regions, and each lens prints in each region the "
-             "one word, out of %d everyday nouns, that it scores highest."
-             % (stats.get("grid", 0), stats.get("grid", 0), C * C,
-                len(stats.get("vocab", []))),
-             fontsize=13.6, color=INK2, ha="left", va="top")
-    fig.text(L, 0.20 / fh, "\n".join(textwrap.wrap(
-             "Tile shade is how far the printed word stands above the rest of "
-             "the vocabulary at that region, and green marks a tile whose word "
-             "is the photographed object's own name; the outline encloses exactly "
-             "the tiles the object's box covers, which are the tiles the "
-             "inside/outside bars are counted over.  Nothing here is fitted "
-             "-- the VJ-Lens "
-             "transport is the answer's own gradient at that region, and the "
-             "region is the coordinate the pooling is done in.  "
-             + (note or "Read the tiles the outline covers: that is each "
-                "lens's account, in its own words, of what is there."), 152)),
-             fontsize=12.6, color=INK2, ha="left", va="bottom",
-             linespacing=1.35)
+             fontsize=23.5, color=INK, ha="center", va="top")
+    # the construction and the reading instructions are in the caption now
     return _save(fig, out, name)
 
 

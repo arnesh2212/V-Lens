@@ -40,7 +40,7 @@ def _ink_for(q: float) -> str:
     return "#ffffff" if q > 0.62 else INK
 
 
-def _tiles(ax, vals, C, keep, words=None, ring=(), box=(), fs=8.0):
+def _tiles(ax, vals, C, keep, words=None, ring=(), box=(), fs=16.7):
     """Draw a C x C grid of labelled tiles.  ``keep`` maps tile -> grid cell."""
     v = np.asarray(vals, dtype=float)
     lo, hi = float(np.nanmin(v)), float(np.nanmax(v))
@@ -75,22 +75,25 @@ def _tiles(ax, vals, C, keep, words=None, ring=(), box=(), fs=8.0):
                                lw=1.0, linestyle=(0, (3, 2))))
 
 
-def _head(ax, title, sub, sub_colour=None):
-    """Panel title with a quieter second line, both above the axes, no overlap.
+def _head(ax, title, sub=None, sub_colour=None):
+    """Panel heading above the axes, and nothing else.
 
-    The pad is computed from how many lines the subtitle actually has.  A fixed
-    pad is what put the title on top of its own subtitle in the first version.
+    A panel carries a name; what the panel means is the caption's job.  ``sub``
+    survives as an argument so a caller can pass one deliberately, but the
+    figures in this module no longer do, and with no second line the pad is the
+    heading's own -- which is what reclaims the band the block used to sit in.
     """
-    fs = 9.5
-    lines = str(sub).count("\n") + 1
+    fs = 13.0
+    lines = (str(sub).count("\n") + 1) if sub else 0
     pad = 10 + lines * fs * 1.35
-    ax.set_title(title, loc="left", color=INK, pad=pad, fontsize=12.5)
-    ax.annotate(sub, xy=(0, 1), xytext=(0, 7), xycoords="axes fraction",
-                textcoords="offset points", ha="left", va="bottom",
-                color=sub_colour or INK2, fontsize=fs, linespacing=1.35)
+    ax.set_title(title, loc="center", color=INK, pad=pad, fontsize=20.6)
+    if sub:
+        ax.annotate(sub, xy=(0.5, 1), xytext=(0, 7), xycoords="axes fraction",
+                    textcoords="offset points", ha="center", va="bottom",
+                    color=sub_colour or INK2, fontsize=fs, linespacing=1.35)
 
 
-def card(rec, img, order, rho, out, name, top_k: int = 3, fs: float = 8.0):
+def card(rec, img, order, rho, out, name, top_k: int = 3, fs: float = 11.5):
     """One photograph: the truth, then each lens, side by side.
 
     Four panels at most.  An earlier version put five 7x7 word grids in a row
@@ -104,7 +107,13 @@ def card(rec, img, order, rho, out, name, top_k: int = 3, fs: float = 8.0):
     box = set(rec.get("inside", []))
     order = list(order)[:3]
     n = len(order) + (2 if img is not None else 1)
-    fig, axes = plt.subplots(1, n, figsize=(4.7 * n, 5.6))
+    # the panels are square (the tiles have to be, or the words never fit), so
+    # the canvas is only as tall as one panel is wide plus the heading; the
+    # taller canvas the explanatory block needed left a white band under it
+    # the tile has to be wide enough for the longest word a tile may carry:
+    # at the narrower panel an eight-letter word ran the full width of its
+    # square and touched the word in the next one
+    fig, axes = plt.subplots(1, n, figsize=(6.5 * n, 6.6))
     axes = np.atleast_1d(axes)
     i = 0
     if img is not None:
@@ -113,17 +122,17 @@ def card(rec, img, order, rho, out, name, top_k: int = 3, fs: float = 8.0):
         axes[0].set_aspect("equal")
         for sp in axes[0].spines.values():
             sp.set_visible(False)
-        _head(axes[0], "the photograph",
-              f"the model answers \u201c{rec['concept']}\u201d")
+        # the answered word is what every tile in the other panels is scored
+        # against, so it stays -- as part of the heading, not under it
+        _head(axes[0],
+              f"the photograph: the model answers "
+              f"\u201c{rec['concept']}\u201d")
         i = 1
 
     _tiles(axes[i], truth, C, keep, words=None, ring=ring, box=box)
-    # the dashed outline was drawn on all four panels and named on none of
-    # them; a figure has to carry its own key, because a figure travels
-    _head(axes[i], "what covering it really does",
-          "darker = the word falls further\n"
-          "ringed = the three that matter most, repeated on every panel\n"
-          "dashed = the human's box for the word")
+    # the shade, the ring and the dashed outline are read out in the figure's
+    # caption; they are what the caption is for
+    _head(axes[i], "what covering it really does")
     i += 1
 
     for nm in order:
@@ -134,13 +143,12 @@ def card(rec, img, order, rho, out, name, top_k: int = 3, fs: float = 8.0):
             continue
         _tiles(ax, d["z"], C, keep, words=d["word"], ring=ring, box=box, fs=fs)
         r = rho.get(nm)
-        hit = int(np.argmax(d["z"])) in ring
-        sub = (f"agrees with the truth at \u03c1 = {r:.2f}\n" if r is not None
-               else "")
-        sub += ("its strongest tile is one of the three"
-                if hit else "its strongest tile is none of the three")
-        _head(ax, nm, sub, sub_colour=(INK2 if hit else HOT))
-    fig.subplots_adjust(left=0.012, right=0.988, top=0.78, bottom=0.03,
+        # this photograph's own agreement is a number, not a sentence about
+        # one, so it rides along in the heading; whether the lens's strongest
+        # tile is a ringed one is legible from the panel itself
+        _head(ax, nm if r is None
+              else f"{nm}: \u03c1 = {r:.2f}".replace("-", "\u2212"))
+    fig.subplots_adjust(left=0.012, right=0.988, top=0.92, bottom=0.02,
                         wspace=0.10)
     os.makedirs(out, exist_ok=True)
     p = os.path.join(out, name)
@@ -171,10 +179,10 @@ def summary(df, out, name="f60_causal.png"):
     lenses = [l for l in ("logit lens", "J-lens", "VJ-Lens (point)", "VJ-Lens")
               if l in set(df.lens)]
     lenses += [l for l in df.lens.unique() if l not in lenses]
-    fig, axes = plt.subplots(1, 3, figsize=(16.4, 4.9))
+    fig, axes = plt.subplots(1, 3, figsize=(19.8, 6.2))
     panels = [("spearman", "agreement with the causal map  (ρ)"),
-              ("top3_cause", "names one of the three most damaging regions"),
-              ("hit_box", "names a region inside the human's box")]
+              ("top3_cause", "names one of the three\nmost damaging regions"),
+              ("hit_box", "names a region inside\nthe human's box")]
     for ax, (col, lab) in zip(axes, panels):
         ends = []
         for lens in lenses:
@@ -204,26 +212,23 @@ def summary(df, out, name="f60_causal.png"):
                 for e in ends:
                     e[1] -= over
             for x, y, lens, c, y_true in ends:
-                style.label_end(ax, x, y, lens, c, y_true=y_true)
+                style.label_end(ax, x, y, lens, c, y_true=y_true,
+                                fontsize=19.6)
         ax.set_xlabel("depth through the language model  (%)")
         ax.set_ylabel(lab)
-        ax.margins(x=0.34)
+        # the four names are the widest thing in the panel; the margin is the
+        # room they stand in, inside their own panel
+        ax.margins(x=0.62)
         style.despine(ax)
-    sub = ("Every lens read at the same regions of the same photographs; the "
-           "truth is measured by covering each region in turn.\nEach name "
-           "sits beside a dot in its own line's colour — where two lines "
-           "finish together the names are moved apart, and a hairline leads "
-           "back.")
-    fs = 10.5
+    # a heading and the three plots.  What was read where, how the truth was
+    # measured, and how the end labels are drawn are all in the caption now,
+    # and the strip they used to take goes back to the axes.
     unit = 1.0 / (72.0 * fig.get_figheight())
-    fig.text(0.006, 1 - 6 * unit, "Graded against what the model actually does",
-             ha="left", va="top", color=INK, fontsize=15)
-    y_sub = 1 - (6 + 15 * 1.22 + 7) * unit
-    fig.text(0.006, y_sub, sub, ha="left", va="top", color=INK2, fontsize=fs,
-             linespacing=1.4)
-    top = y_sub - (sub.count("\n") + 1) * fs * 1.4 * unit - 12 * unit
-    fig.subplots_adjust(left=0.065, right=0.985, top=top, bottom=0.13,
-                        wspace=0.36)
+    fig.text(0.5, 1 - 6 * unit, "Graded against what the model actually does",
+             ha="center", va="top", color=INK, fontsize=25)
+    top = 1 - (6 + 20 * 1.22 + 12) * unit
+    fig.subplots_adjust(left=0.062, right=0.988, top=top, bottom=0.13,
+                        wspace=0.46)
     os.makedirs(out, exist_ok=True)
     p = os.path.join(out, name)
     fig.savefig(p, dpi=200)
@@ -274,7 +279,7 @@ def _series(ax, x, mean, sem, colour, lw, ms, alpha=1.0, z=2):
                     capsize=0, alpha=alpha * 0.85, zorder=z, clip_on=False)
 
 
-def edits(df, out, name="f65_edits.png", ops=None, fs_tick=11.0):
+def edits(df, out, name="f65_edits.png", ops=None, fs_tick=13.5):
     """Answer and reading against dose, one column per operation.
 
     Two rows, because an edit has to be shown twice to be believed: once at the
@@ -298,7 +303,7 @@ def edits(df, out, name="f65_edits.png", ops=None, fs_tick=11.0):
 
     # six panels have to be a little narrower or the row runs past any page
     w = 3.85 if n <= 5 else 3.42
-    fig, axes = plt.subplots(2, n, figsize=(w * n, 9.1), squeeze=False)
+    fig, axes = plt.subplots(2, n, figsize=(w * n, 9.9), squeeze=False)
     for j, op in enumerate(ops):
         d = ed[ed.op == op]
         doses = sorted(d.dose.unique())
@@ -330,11 +335,11 @@ def edits(df, out, name="f65_edits.png", ops=None, fs_tick=11.0):
         dm = e.groupby("dose").d_margin.mean()
         sub = OP_SUB.get(op, "")
         if len(dis):
-            # n is printed per panel because these panels are not always filled
-            # from one run, and a reader should never have to ask
-            sub += (f"\nn = {int(e.groupby('dose').size().iloc[-1])}"
-                    f" \u00b7 at the top dose: damage {dis.iloc[-1]:.3f}, "
-                    f"margin {dm.iloc[-1]:+.1f}")
+            # the per-operation n, damage and margin are the caption's to
+            # quote; printed here so it can be written from the same run
+            print(f"    {op}: n={int(e.groupby('dose').size().iloc[-1])} "
+                  f"top-dose damage {dis.iloc[-1]:.2f} "
+                  f"margin {dm.iloc[-1]:+.1f}", flush=True)
         _head(ax, op, sub)
         style.despine(ax)
 
@@ -349,7 +354,7 @@ def edits(df, out, name="f65_edits.png", ops=None, fs_tick=11.0):
                             xy=(0, base), xytext=(2, 5),
                             xycoords=("axes fraction", "data"),
                             textcoords="offset points", ha="left", va="bottom",
-                            color=INK2, fontsize=9.0, linespacing=1.3)
+                            color=INK2, fontsize=18.8, linespacing=1.3)
         for arm, colour, lw, ms, al, z in (("random", C_RAND, 1.6, 4.5, 0.85, 2),
                                            ("edit", C_EDIT, 2.4, 7.0, 1.0, 3)):
             g = d[d.arm == arm].groupby("dose")[rcol]
@@ -363,10 +368,27 @@ def edits(df, out, name="f65_edits.png", ops=None, fs_tick=11.0):
         ax.set_xticklabels([_dose_label(v) for v in doses], fontsize=fs_tick)
         ax.set_xlabel(OP_X.get(op, "dose"))
         ax.margins(y=0.22)
+        # the baseline is named once, in the first panel, in a band opened for
+        # it above the line: printed at the top of the axes as they came, the
+        # two lines ran into the heading over the panel
+        if j == 0 and base is not None:
+            lo_, hi_ = ax.get_ylim()
+            need = base + 0.36 * (hi_ - lo_)
+            if need > hi_:
+                ax.set_ylim(lo_, need)
+            ax.annotate("what this reading is on the\nunedited photograph",
+                        xy=(0, base), xytext=(2, 6),
+                        xycoords=("axes fraction", "data"),
+                        textcoords="offset points", ha="left", va="bottom",
+                        color=INK2, fontsize=18.8, linespacing=1.3,
+                        bbox=dict(facecolor=style.SURFACE, edgecolor="none",
+                                  pad=1.0), zorder=6)
         # above the axes, not inside them: the erase curve starts in the top
         # left corner, which is exactly where an inside label would sit
-        ax.set_title("lens reading " + rlab, loc="left", color=INK2,
-                     fontsize=11.0, pad=7)
+        # over two lines: on one line this heading is wider than the column
+        # and prints into the heading beside it
+        ax.set_title("lens reading\n" + rlab, loc="center", color=INK2,
+                     fontsize=20.3, pad=7)
         if j == 0:
             ax.set_ylabel("reading of that concept,\neach panel on its own scale")
         style.despine(ax)
@@ -379,25 +401,12 @@ def edits(df, out, name="f65_edits.png", ops=None, fs_tick=11.0):
             label="a random direction,\nsame ||dh||")
     style.legend(a0, loc="upper left")
 
-    fs = 11.5
     word = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six",
             7: "Seven"}.get(n, str(n))
-    fig.text(0.006, 0.988, f"{word} edits in one coordinate system",
-             ha="left", va="top", color=INK, fontsize=17)
-    fig.text(0.006, 0.955,
-             "Each photograph contains a source concept and is asked a short "
-             "question only the picture settles; the target concept is one whose "
-             "answer differs.\nAll " + word.lower() +
-             " operations are aimed at the same goal \u2014 "
-             "make the model give the target's answer \u2014 at the same layers, the "
-             "same image positions, and, against the\ncontrol, the same measured "
-             "damage.  Every trial starts with the model answering correctly, so "
-             "the unedited rate is exactly zero.  Under each name: the damage "
-             "\u2016dh\u2016/\u2016h\u2016\nat the edited positions, and how far "
-             "the edit moved the target answer's logit lead, both at the top dose.",
-             ha="left", va="top", color=INK2, fontsize=fs, linespacing=1.45)
-    fig.subplots_adjust(left=0.055, right=0.992, top=0.755, bottom=0.072,
-                        wspace=0.17, hspace=0.40)
+    fig.text(0.5, 0.990, f"{word} edits in one coordinate system",
+             ha="center", va="top", color=INK, fontsize=23.5)
+    fig.subplots_adjust(left=0.055, right=0.992, top=0.855, bottom=0.068,
+                        wspace=0.17, hspace=0.58)
     os.makedirs(out, exist_ok=True)
     p = os.path.join(out, name)
     fig.savefig(p, dpi=200)
@@ -434,7 +443,9 @@ def causal_gallery(cards, order, out, name="f73_causalgallery.png",
     # the gap between two of them, and one uniform hspace cannot do that.
     gap = 1 if nrow > 1 else 0
     rows = len(order) + 1 + gap
-    fig_h = nrow * (2.05 + 0.42 * len(order)) + 0.30 * gap * max(nrow - 1, 0) + 2.1
+    # the header is one line now, so the canvas gives back the three-quarters of
+    # an inch the block under it used to occupy
+    fig_h = nrow * (2.05 + 0.42 * len(order)) + 0.30 * gap * max(nrow - 1, 0) + 1.35
     # the closing row of the LAST band is a strip of white at the foot of the
     # figure that nothing sits in, so it is flattened to nothing
     ratios = []
@@ -475,7 +486,7 @@ def causal_gallery(cards, order, out, name="f73_causalgallery.png",
         ax.set_anchor("N")
         for sp in ax.spines.values():
             sp.set_visible(False)
-        ax.set_title(c["concept"], fontsize=11, color=INK, pad=4)
+        ax.set_title(c["concept"], fontsize=19.6, color=INK, pad=4)
 
         for j, nm in enumerate(order):
             ax = axes[band * rows + 1 + j, col]
@@ -500,9 +511,9 @@ def causal_gallery(cards, order, out, name="f73_causalgallery.png",
                                    edgecolor=BLUE if ok else "#dfe4ea",
                                    linewidth=1.2 if ok else 0.8))
             ax.text(0.5, 0.5, f"#{rank}", ha="center", va="center",
-                    fontsize=9.5, color=INK if ok else INK2)
+                    fontsize=18.8, color=INK if ok else INK2)
             if col == 0:
-                ax.text(-0.06, 0.5, nm, ha="right", va="center", fontsize=9.5,
+                ax.text(-0.06, 0.5, nm, ha="right", va="center", fontsize=18.8,
                         color=INK2, transform=ax.transAxes)
 
     for k in range(n, nrow * ncol):
@@ -510,25 +521,214 @@ def causal_gallery(cards, order, out, name="f73_causalgallery.png",
         for j in range(rows):
             axes[band * rows + j, col].axis("off")
 
-    head = 0.42 / fig_h
-    fig.text(0.012, 1 - head * 0.9,
-             "Which region each lens calls strongest, and where that region "
-             "really ranks", ha="left", va="top", fontsize=15, color=INK)
+    head = 0.50 / fig_h
+    fig.text(0.5, 1 - head * 0.9, "Which region each lens calls strongest",
+             ha="center", va="top", fontsize=25, color=INK)
     # a top-three tally over twelve photographs is a noisy statistic; the rank
-    # itself is the continuous one, so the header reports its median
-    tally = "      ".join(
-        f"{nm}: median rank {np.median(ranks[nm]):.0f}" for nm in order
-        if ranks[nm])
-    sub = ("The number in each cell is where the region that lens called "
-           "strongest really ranks, out of 49, and a cell is tinted\nwhen it "
-           "is one of the three that matter most.  Rank 1 is the region whose "
-           "covering costs the model most.\n" + tally)
-    fig.text(0.012, 1 - head * 2.05, sub, ha="left", va="top", fontsize=11,
-             color=INK2, linespacing=1.5)
-    fig.subplots_adjust(left=0.135, right=0.995, top=1 - head * 4.1,
+    # itself is the continuous one, so its median is printed for the caption to
+    # quote rather than drawn into the figure
+    print("  median rank over these cards: "
+          + ",  ".join(f"{nm} {np.median(ranks[nm]):.0f}" for nm in order
+                       if ranks[nm]), flush=True)
+    fig.subplots_adjust(left=0.135, right=0.995, top=1 - head * 2.3,
                         bottom=0.012, hspace=0.26, wspace=0.10)
     os.makedirs(out, exist_ok=True)
     p = os.path.join(out, name)
     fig.savefig(p, dpi=200)
     plt.close(fig)
+    return p
+
+
+# ------------------------------------------------- the region-size sweep (f62)
+#
+# The function that drew f62_region and f63_promptblind was lost when this
+# module was rewritten; both drivers (exp/63_regionfig.py, exp/64_blindfig.py)
+# survived and still call them, so they are restored here -- heading and plot
+# only, with everything the old blocks explained moved into the captions in
+# paper/atlas.html.
+#
+# The reference line the old figure drew was passed on the command line and no
+# record of the command survives.  It is not guessed: the shipped PNG's own
+# axis was solved from the eight plotted sizes (log-linear, residuals under one
+# pixel over 1080 px of axis) and the dashed column falls at 30.03 patches,
+# where 30 predicts the column to a fifth of a pixel and the nearest rival
+# reading, 29.2, misses it by six.  It is also what COCO gives: the mean
+# bounding box of the largest instance of a single-word category, over
+# val2017, is 0.1489 of the frame -- 29.2 of these 196 patches.
+BOX_PATCHES = 30.0
+
+
+def regionsweep(rows, n_patches, out, name="f62_region.png",
+                box_patches: float | None = None):
+    """How well a region's reading predicts covering it, against region size.
+
+    One line per depth over a log axis whose two ends are the two prior lenses:
+    a region of one patch is the logit lens's unit, a region of every patch is
+    what averaging the transport over positions amounts to.  What that means,
+    what the dashed line is and how many photographs are behind each point are
+    the caption's job, not the picture's.
+    """
+    style.use()
+    rows = [r for r in rows if r.get("spearman") is not None]
+    if not rows:
+        raise ValueError("no region-sweep rows")
+    P = int(n_patches or 196)
+    box = BOX_PATCHES if box_patches is None else float(box_patches)
+    sizes = sorted({int(r["size"]) for r in rows})
+    layers = sorted({int(r["layer"]) for r in rows})
+    n = max(int(r.get("n", 0)) for r in rows)
+
+    # wide enough that the three names under the axis stand apart: at the
+    # paper's type size "an average object's box" and "the whole frame" met
+    fig, ax = plt.subplots(figsize=(10.6, 5.0))
+    ends = []
+    for j, l in enumerate(layers):
+        c = style.SERIES[j % len(style.SERIES)]
+        d = {int(r["size"]): float(r["spearman"])
+             for r in rows if int(r["layer"]) == l}
+        xs = [s for s in sizes if s in d]
+        ys = [d[s] for s in xs]
+        ax.plot(xs, ys, color=c, marker="o", ms=7, lw=2.4, zorder=3)
+        ends.append((xs[-1], ys[-1], f"layer {l}", c))
+    for x, y, lab, c in ends:
+        style.label_end(ax, x, y, lab, c)
+
+    ax.axvline(box, color=MUTED, lw=1.4, ls=(0, (5, 4)), zorder=1)
+    ax.set_xscale("log")
+    ax.set_xticks([1, 4, 16, 64, P])
+    ax.set_xticklabels(["1", "4", "16", "64", str(P)])
+    ax.minorticks_off()
+    ax.set_xlim(0.62, P * 1.75)
+    ax.set_xlabel("region size, in image patches")
+    ax.set_ylabel("reading against true effect  ($\\rho$)")
+    style.despine(ax)
+    ax.margins(x=0.02)
+
+    # three tick annotations, each naming a place on the axis.  They are labels
+    # and stay; the sentences that used to explain them are in the caption.
+    for x, txt, ha in ((1, "a single patch", "left"),
+                       (box, "an average object's box", "center"),
+                       (P, "the whole frame", "right")):
+        ax.annotate(txt, xy=(x, 0), xytext=(0, -58),
+                    xycoords=("data", "axes fraction"),
+                    textcoords="offset points", ha=ha, va="top",
+                    color=MUTED, annotation_clip=False,
+                    fontsize=plt.rcParams["axes.labelsize"] * 0.84)
+
+    unit = 1.0 / (72.0 * fig.get_figheight())
+    fig.text(0.5, 1 - 6 * unit, "Both prior lenses sit at an end of this axis",
+             ha="center", va="top", color=INK, fontsize=25)
+    top = 1 - (6 + 20 * 1.22 + 10) * unit
+    fig.subplots_adjust(left=0.095, right=0.985, top=top, bottom=0.235)
+    os.makedirs(out, exist_ok=True)
+    p = os.path.join(out, name)
+    fig.savefig(p, dpi=200)
+    plt.close(fig)
+    print(f"  region sweep: {len(layers)} depths x {len(sizes)} sizes, "
+          f"n = {n} photographs, reference line at {box:g} of {P} patches")
+    for j, l in enumerate(layers):
+        d = {int(r["size"]): float(r["spearman"])
+             for r in rows if int(r["layer"]) == l}
+        best = max(d, key=lambda s: d[s])
+        print(f"    layer {l}: one patch {d.get(1, float('nan')):+.3f}, "
+              f"whole frame {d.get(P, float('nan')):+.3f}, "
+              f"best {best} patches {d[best]:+.3f}")
+    return p
+
+
+# ----------------------------------------------- the prompt-blindness figure
+#
+# Conditions, in the order the panels read them (exp/52_crossmodal.py):
+#   plain       no framing at all
+#   control     the text asserts a different, harmless object
+#   substitute  the text asserts the dangerous one
+#   ask         asserts it, then asks for the harmful thing
+# set over short lines: rotated, a long line's horizontal reach is most of
+# its length, and at the paper's type size the one-line forms printed across
+# each other under the axis
+_FRAMINGS = [
+    ("plain", "just\ndescribe it"),
+    ("control", "“it is actually\na bowl”"),
+    ("substitute", "“it is actually\na knife”"),
+    ("ask", "…and now do\nsomething harmful\nwith it"),
+]
+
+
+def promptblind(df, dj, out, name="f63_promptblind.png",
+                layers=(8, 13, 18, 23), word="knife"):
+    """The same photographs and the same image tokens, read under four framings.
+
+    Both fixed transports return the identical number in all four -- not close,
+    identical -- so they plot as one flat line at zero and the orange covers
+    the violet exactly.  The caption says so; the picture only shows it.
+    """
+    style.use()
+    layers = [l for l in layers if f"atlas_{l}" in df.columns]
+    if not layers:
+        raise ValueError("no atlas_<layer> columns in the crossmodal frame")
+    conds = [(k, lab) for k, lab in _FRAMINGS if k in set(df.cond)]
+    x = list(range(len(conds)))
+
+    fig, axes = plt.subplots(1, len(layers), figsize=(21.4, 5.4))
+    axes = np.atleast_1d(axes)
+    spreads = []
+    for ax, l in zip(axes, layers):
+        piv = df.pivot_table(index="i", columns="cond", values=f"atlas_{l}",
+                             aggfunc="first")
+        base = piv["plain"]
+        ys = [float((piv[k] - base).mean()) for k, _ in conds]
+        spreads.append((l, max(ys) - min(ys), int(len(base))))
+        # the two fixed transports, drawn violet-then-orange so that the flat
+        # line a reader sees is the one the label names first
+        for col, colour in ((f"jlens_{l}", style.VIOLET),
+                            (f"say_{l}", style.ORANGE)):
+            src = dj if (dj is not None and col in dj.columns) else df
+            if col not in src.columns:
+                continue
+            q = src.pivot_table(index="i", columns="cond", values=col,
+                                aggfunc="first")
+            b = q["plain"]
+            zs = [float((q[k] - b).mean()) for k, _ in conds if k in q.columns]
+            ax.plot(x[:len(zs)], zs, color=colour, marker="o", ms=6, lw=2.2,
+                    zorder=3)
+        ax.plot(x, ys, color=style.BLUE, marker="o", ms=8, lw=3.0, zorder=4)
+        style.label_end(ax, x[-1], ys[-1], "VJ-Lens", style.BLUE,
+                        fontsize=18.8)
+        # the label goes UNDER the flat line, not above it: above it is where
+        # the VJ-Lens line climbs out of the same corner, and at the shallow
+        # depths the two print on top of each other
+        ax.annotate("logit lens and J-lens, identical",
+                    xy=((len(conds) - 1) / 2.0, 0), xytext=(0, -8),
+                    textcoords="offset points", ha="center",
+                    va="top", color=INK2,
+                    fontsize=plt.rcParams["axes.labelsize"] * 0.82)
+        style.panel(ax, f"layer {l}", loc="upper left")
+        ax.set_xticks(x)
+        ax.set_xticklabels([lab for _, lab in conds], rotation=42,
+                           ha="right", rotation_mode="anchor")
+        ax.set_xlim(-0.35, len(conds) + 0.55)
+        hi = max(ys) * 1.16 + 0.004
+        ax.set_ylim(min(0, min(ys)) - 0.20 * hi, hi)
+        # the band under zero is there to hold the label, not to be read: no
+        # series goes negative, so it gets no ticks
+        lo_, hi_ = ax.get_ylim()
+        ax.set_yticks([t for t in ax.get_yticks() if t >= -1e-9])
+        ax.set_ylim(lo_, hi_)
+        style.despine(ax)
+    axes[0].set_ylabel(f"change in the “{word}” reading\n"
+                       "at the image tokens")
+
+    unit = 1.0 / (72.0 * fig.get_figheight())
+    fig.text(0.5, 1 - 6 * unit, "Only one of the three can see the question",
+             ha="center", va="top", color=INK, fontsize=25)
+    top = 1 - (6 + 20 * 1.22 + 10) * unit
+    fig.subplots_adjust(left=0.080, right=0.992, top=top, bottom=0.315,
+                        wspace=0.32)
+    os.makedirs(out, exist_ok=True)
+    p = os.path.join(out, name)
+    fig.savefig(p, dpi=200)
+    plt.close(fig)
+    for l, sp, n in spreads:
+        print(f"  layer {l}: VJ-Lens spread over the four framings {sp:.2f}, "
+              f"n = {n} photographs")
     return p

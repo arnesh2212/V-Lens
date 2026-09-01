@@ -44,8 +44,10 @@ def passes(c):
 
 if a.only in ("", "edits"):
     cases = json.load(open(a.cases))
+    rate = {}
     for op, v in cases.items():
         ok = [c for c in v if passes(c)]
+        rate[op] = (len(ok), len(v))
         print(f"{op:11s} {len(ok):3d} of {len(v):3d} cases pass the rule",
               flush=True)
     picks = []
@@ -56,7 +58,11 @@ if a.only in ("", "edits"):
         if not hit:
             print(f"  MISSING {op} {s}->{t} at dose {dose}", flush=True)
             continue
-        picks.append(hit[0])
+        # the card prints how rare it is; six cards in a row otherwise read as
+        # six operations that work equally well, and they do not
+        c = dict(hit[0])
+        c["pass_n"], c["pass_m"] = rate[op]
+        picks.append(c)
     print(f"\n{len(picks)} cards:", flush=True)
     for c in picks:
         print(f"  {c['op']:11s} {c['kind']:7s} {c['src']:11s} -> "

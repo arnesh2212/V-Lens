@@ -344,3 +344,25 @@ def image_positions(model, batch: dict) -> torch.Tensor:
 def text_positions(model, batch: dict) -> torch.Tensor:
     """Indices of non-image tokens in the sequence."""
     return (~model.image_mask(batch["input_ids"])[0]).nonzero(as_tuple=True)[0].cpu()
+
+
+def snap_to_lens(layers, lens, *, read=None):
+    """Move read depths onto the layers a Jacobian lens was actually fitted at.
+
+    A fitted lens exists only where it was fitted.  Read anywhere else and the
+    comparison does not fail loudly: the arm is dropped, the table ships with
+    one column missing, and it reads as though the method had nothing to say.
+    That has now happened twice, both times because a script chose its depths
+    from the model's geometry while the lens had been fitted from a different
+    list.
+
+    Returns ``(layers, read)`` with each depth replaced by the nearest fitted
+    one, preserving order and dropping duplicates.  With no lens, or a lens
+    carrying no jacobians, the input is returned unchanged.
+    """
+    fitted = sorted(getattr(lens, "jacobians", {}) or {}) if lens is not None else []
+    if not fitted:
+        return sorted(set(layers)), read
+    near = lambda x: min(fitted, key=lambda f: (abs(f - x), f))
+    out = sorted({near(l) for l in layers})
+    return out, (near(read) if read is not None else None)

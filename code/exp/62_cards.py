@@ -25,6 +25,10 @@ ap.add_argument("--raw", default=None, help="the run's _raw.parquet")
 ap.add_argument("--out", default="/workspace/vlm/figures")
 ap.add_argument("--n", type=int, default=6)
 ap.add_argument("--prefix", default="f61_card")
+ap.add_argument("--pick", type=int, nargs="*", default=None,
+                help="explicit card indices, so the photographs shown can be "
+                     "chosen by a measured rule rather than by file order. "
+                     "File order put a card whose agreement is negative first.")
 ap.add_argument("--select", default="order",
                 choices=["order", "typical"],
                 help="'order' takes the file order; 'typical' takes\n                     the cards whose VJ-Lens agreement is closest to\n                     the run average, which is a stated rule rather\n                     than a look at the pictures")
@@ -35,6 +39,8 @@ a = ap.parse_args()
 style.use()
 cards = json.load(open(a.cards))
 df = pd.read_parquet(a.raw) if a.raw and os.path.exists(a.raw) else None
+if a.pick:
+    cards = [cards[i] for i in a.pick if i < len(cards)]
 print(f"{len(cards)} cards; lenses present: "
       f"{sorted(cards[0]['lenses']) if cards else '-'}", flush=True)
 

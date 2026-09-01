@@ -64,6 +64,9 @@ ap.add_argument("--max-rank", type=int, default=0,
                 help="how far down the object may sit in the model's\n                     own ranking and still be used")
 ap.add_argument("--chunk", type=int, default=12,
                 help="regions covered per forward pass")
+ap.add_argument("--cards-every-layer", action="store_true",
+                help="save a card at every layer, not just the middle\n                     one, so the map can be watched moving with depth")
+ap.add_argument("--max-cards", type=int, default=14)
 ap.add_argument("--vocab", type=int, default=40,
                 help="scoring words per photograph; the cost is one\n                     backward pass per word, so this is the main dial")
 ap.add_argument("--square", type=int, default=448)
@@ -304,7 +307,8 @@ for k, it in enumerate(items):
                              truth_top3_in_box=truth_top3_in_box,
                              box_share=box_share,
                              box_area=len(inside) / max(R, 1)))
-        if l == LAYERS[len(LAYERS) // 2] and len(cards) < 14:
+        if (a.cards_every_layer or l == LAYERS[len(LAYERS) // 2]) \
+                and len(cards) < a.max_cards:
             # the card carries, per region: the true drop, each lens's score for
             # the photographed word, and each lens's single top word out of the
             # whole vocabulary -- the last is what makes a panel readable rather

@@ -297,6 +297,7 @@ def load_vlm(
     device: str = "cuda",
     attn: str = "sdpa",
     max_pixels: int | None = None,
+    device_map: str | dict | None = None,
 ) -> VLMLensModel:
     """Load a VLM by HF repo id and wrap it.
 
@@ -322,9 +323,17 @@ def load_vlm(
         proc_kw.pop("max_pixels", None)
         processor = transformers.AutoProcessor.from_pretrained(repo, **proc_kw)
 
-    model = cls.from_pretrained(
-        repo, dtype=dtype, attn_implementation=attn, trust_remote_code=True
-    ).to(device)
+    load_kw = dict(dtype=dtype, attn_implementation=attn,
+                   trust_remote_code=True)
+    if device_map is not None:
+        # a model too large for one card: accelerate places the layers and the
+        # hooks still fire, but activations then live on several devices, so
+        # anything that indexes them must move its own tensors rather than
+        # assume a single device
+        load_kw["device_map"] = device_map
+        model = cls.from_pretrained(repo, **load_kw)
+    else:
+        model = cls.from_pretrained(repo, **load_kw).to(device)
     return VLMLensModel(model, processor, name=repo)
 
 

@@ -118,9 +118,7 @@ def _depth():
             ser[lens] = (s.index.values * 100, s.values)
         panels.append(dict(
             title="agrees with the causal map",
-            sub=("rank correlation between a lens's map and\n"
-                 "what covering each region really costs\n"
-                 f"49 regions · n = {n} photographs"),
+            sub=f"49 regions · n = {n} photographs",
             ylabel="agreement  (ρ)", series=ser, zero=True))
         ser = {}
         for lens, g in cm.groupby("lens"):
@@ -128,9 +126,7 @@ def _depth():
             ser[lens] = (s.index.values * 100, s.values)
         panels.append(dict(
             title="names the most damaging region",
-            sub=("the share of photographs where the region\n"
-                 "a lens called strongest is the one that\n"
-                 f"costs the most to cover · n = {n}"),
+            sub=f"n = {n} photographs",
             ylabel="share of photographs", series=ser,
             ref=(1 / 49, "chance, 1 in 49"), ylim=(0, 0.46)))
     else:
@@ -155,9 +151,7 @@ def _depth():
             ser[lens] = (np.array(xs)[o], np.array(ys)[o])
         panels.append(dict(
             title="destroys the answer fastest",
-            sub=("area under the deletion curve: cover the\n"
-                 "patches a lens ranks highest first and watch\n"
-                 f"the answer go · n = {int(dl.i.nunique())}"),
+            sub=f"n = {int(dl.i.nunique())} photographs",
             ylabel="deletion area  (lower is better)", series=ser))
     else:
         print("  no compare/_del parquet; dropping the deletion panel")
@@ -172,9 +166,7 @@ def _depth():
             ser[lens] = (s.index.values * 100, s.values)
         panels.append(dict(
             title="tells one patch from another",
-            sub=("different top-ranked words across the 196\n"
-                 "patches of one photograph, the whole point\n"
-                 f"of a region coordinate · n = {int(pv.i.nunique())}"),
+            sub=f"196 patches · n = {int(pv.i.nunique())} photographs",
             ylabel="distinct words per photograph", series=ser,
             ylim=(0, 130)))
     else:
@@ -200,9 +192,7 @@ def _depth():
                 ser[lens] = (np.array(xs), np.array(ys))
         panels.append(dict(
             title="moves when the question changes",
-            sub=("how far the reading of one photograph\n"
-                 "moves across four framings of a question\n"
-                 f"— the two priors do not · n = {int(cx.i.nunique())}"),
+            sub=f"four framings · n = {int(cx.i.nunique())} photographs",
             ylabel="change in the reading  (z units)", series=ser,
             zero=True, ylim=(-0.06, 0.62),
             dashed={"logit lens": (0, (4, 3))},
