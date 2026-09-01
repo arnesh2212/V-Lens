@@ -46,6 +46,10 @@ T0 = time.time()
 
 m = jvlm.load_vlm(a.repo)
 acts, side = cache.load(f"{a.out}/{name}__eval.npz")
+import os as _os
+_VARS = _os.environ.get("VLM_VARIANTS", "SD_TYPO").split(",")
+acts, side = cache.subset(acts, side, [it.get("variant") in _VARS for it in side["items"]])
+print(f"using {side['n']} items in variants {_VARS}", flush=True)
 VL = verdict.VerdictLens.load(f"{a.out}/{name}__verdict_carrier.pt")
 G = json.load(open(f"{a.out}/{name}_gate.json"))
 ANS = side["_extra"]["ANS"].astype(np.float32)

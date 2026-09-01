@@ -48,6 +48,10 @@ name = a.repo.split("/")[-1]
 plot.use()
 os.makedirs(a.out, exist_ok=True)
 acts, side = cache.load(f"{a.gate_dir}/{name}__eval.npz")
+import os as _os
+_VARS = _os.environ.get("VLM_VARIANTS", "SD_TYPO").split(",")
+acts, side = cache.subset(acts, side, [it.get("variant") in _VARS for it in side["items"]])
+print(f"using {side['n']} items in variants {_VARS}", flush=True)
 VL = verdict.VerdictLens.load(f"{a.gate_dir}/{name}__verdict_carrier.pt")
 ANS = side["_extra"]["ANS"].astype(np.float32)
 its = side["items"]; L = VL.layers; grid = int(round(side["image_tokens"] ** 0.5))

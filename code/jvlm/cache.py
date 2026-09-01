@@ -137,3 +137,15 @@ def labels(side: dict, field: str) -> np.ndarray:
     uniq = sorted(set(vals))
     return np.array([uniq.index(v) for v in vals]) if len(uniq) > 2 else np.array(
         [int(v == uniq[-1]) for v in vals])
+
+
+def subset(acts: dict, side: dict, keep) -> tuple[dict, dict]:
+    """Restrict a loaded cache to the items where ``keep`` (a boolean array) is true."""
+    import numpy as _np
+    keep = _np.asarray(keep, bool)
+    acts = {l: v[keep] for l, v in acts.items()}
+    side = dict(side)
+    side["_extra"] = {k: v[keep] for k, v in side.get("_extra", {}).items()}
+    side["items"] = [it for it, k in zip(side["items"], keep) if k]
+    side["n"] = int(keep.sum())
+    return acts, side

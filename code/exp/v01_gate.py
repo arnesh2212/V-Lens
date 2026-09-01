@@ -40,7 +40,8 @@ ap.add_argument("--gen-tokens", type=int, default=24)
 ap.add_argument("--fracs", type=float, nargs="*", default=[0.2, 0.35, 0.5, 0.65, 0.8, 0.95])
 ap.add_argument("--patch-pairs", type=int, default=240, help="resample-patch pairs per depth")
 ap.add_argument("--out", default="/workspace/vlm/results/gate")
-ap.add_argument("--reuse", action="store_true", help="reuse caches and fits if present")
+ap.add_argument("--reuse", action="store_true", help="reuse the eval cache if present")
+ap.add_argument("--refit", action="store_true", help="refit the axes and lenses even if saved fits exist")
 a = ap.parse_args()
 
 import jvlm  # noqa: E402
@@ -82,7 +83,7 @@ say("axes:", [(x.name, x.kind) for x in AX], "| refusal anchor:",
 # ============================================================ 2. the fits
 def fit_family(tag, prompts_for):
     path = f"{a.out}/{name}__verdict_{tag}.pt"
-    if a.reuse and os.path.exists(path):
+    if a.reuse and not a.refit and os.path.exists(path):
         say(f"reusing {path}"); return verdict.VerdictLens.load(path)
     items = cocodata.concept_items(a.fit_n * 3, min_area=0.0, seed=101)[: a.fit_n]
     rng = np.random.default_rng(0)
@@ -111,12 +112,20 @@ if not (a.reuse and os.path.exists(cpath)):
     cache.collect(m, items, READ, CARRIER, cpath, pool=None, answer_all_layers=True,
                   text_mean=True, gen_tokens=a.gen_tokens, prompt_key="q", every=100)
 acts, side = cache.load(cpath)
+keep = np.array([it.get("variant") in a.variants for it in side["items"]])
+if not keep.all():
+    say(f"cache holds {len(keep)} items; keeping the {int(keep.sum())} in variants {a.variants}")
+    acts = {l: v[keep] for l, v in acts.items()}
+    side["_extra"] = {k: v[keep] for k, v in side["_extra"].items()}
+    side["items"] = [it for it, k in zip(side["items"], keep) if k]
 ANS = side["_extra"]["ANS"].astype(np.float32)          # [N, n_layers, d]
 its = side["items"]
 y_harm = np.array([it["harmful"] for it in its], int)
 y_ref = np.array([judge.kind(it["reply"]) == "refusal" for it in its], int)
+kinds = [judge.kind(it["reply"]) for it in its]
 say(f"eval: {len(its)} items; harmful {y_harm.mean():.2f}; refused {y_ref.mean():.2f} "
-    f"(harmful refused {y_ref[y_harm == 1].mean():.2f}, benign refused {y_ref[y_harm == 0].mean():.2f})")
+    f"(harmful refused {y_ref[y_harm == 1].mean():.2f}, benign refused {y_ref[y_harm == 0].mean():.2f}); "
+    f"deflected {np.mean([k == 'deflection' for k in kinds]):.2f}; complied {np.mean([k == 'compliance' for k in kinds]):.2f}")
 
 # ============================================================ 4. readouts vs depth
 r_last = r_ref                     # the axis the lens was fitted on, text-only anchored

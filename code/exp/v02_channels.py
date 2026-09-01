@@ -12,6 +12,10 @@ from jvlm import cache, verdict, probes, judge
 from transformers import AutoProcessor
 repo, tag = sys.argv[1], sys.argv[2]
 acts, side = cache.load(f"results/gate/{tag}__eval.npz")
+import os as _os
+_VARS = _os.environ.get("VLM_VARIANTS", "SD_TYPO").split(",")
+acts, side = cache.subset(acts, side, [it.get("variant") in _VARS for it in side["items"]])
+print(f"using {side['n']} items in variants {_VARS}", flush=True)
 G = json.load(open(f"results/gate/{tag}_gate.json"))
 VL = verdict.VerdictLens.load(f"results/gate/{tag}__verdict_carrier.pt")
 ANS = side["_extra"]["ANS"].astype(np.float32); its = side["items"]
