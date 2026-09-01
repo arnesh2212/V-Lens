@@ -80,10 +80,22 @@ ben = [it for it in its if not it["harmful"] and judge.kind(it["reply"]) != "ref
 say(f"{len(harm)} harmful items the model refuses, {len(ben)} benign items it answers")
 
 
+def chat_with_prefill(text, images, pre):
+    """The chat template with the assistant's answer already begun.
+
+    The template is rendered as usual and the prefilled words are appended to the
+    prompt string, so the model is generating a continuation of its own answer
+    rather than starting one. The last position is then the position right after
+    the forced commitment, which is where the reading is taken."""
+    content = [{"type": "image"} for _ in images or []] + [{"type": "text", "text": text}]
+    prompt = m.processor.apply_chat_template([{"role": "user", "content": content}], tokenize=False, add_generation_prompt=True)
+    return m.build(prompt + (pre or ""), images)
+
+
 def run(it, cond):
     """Answer-slot residual at every block with the prefill in place, plus the continuation."""
     pre = PREFILL[cond]
-    b = m.chat(CARRIER, [corpus.load_image(it["path"], square=448)], prefill=pre) if pre else m.chat(CARRIER, [corpus.load_image(it["path"], square=448)])
+    b = chat_with_prefill(CARRIER, [corpus.load_image(it["path"], square=448)], pre)
     with torch.no_grad(), ActivationRecorder(m.layers, at=list(range(m.n_layers))) as rec:
         m.forward(b)
         ans = np.stack([rec.activations[l][0, -1].float().cpu().numpy() for l in range(m.n_layers)])
@@ -95,11 +107,7 @@ rows, t0 = [], time.time()
 for kind, group in (("harmful", harm), ("benign", ben)):
     for n_, it in enumerate(group):
         for cond in PREFILL:
-            try:
-                ans, rep = run(it, cond)
-            except TypeError:
-                say("model.chat has no prefill argument; falling back to text concatenation")
-                raise
+            ans, rep = run(it, cond)
             rows.append(dict(kind=kind, cond=cond, path=it["path"], ans=ans, reply=rep,
                              backtracked=bool(judge.kind(rep) == "refusal" or judge.REINTERPRET.search(rep or "")),
                              complied=bool(judge.complied(rep))))
