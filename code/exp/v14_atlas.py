@@ -238,7 +238,7 @@ def glimpse_map(b, item, clean_lg):
         gb = G.prepare(m, b, ids)
         pos = readout.image_positions(m, gb)
         out = G.maps(m, gb, pos, answer_start=gb["_answer_start"], answer_ids=gb["_answer_ids"])
-        return out["visual"].detach().float().cpu().numpy()
+        return np.asarray(out["visual"], dtype=float)
     except Exception as e:  # noqa: BLE001
         say(f"  GLIMPSE failed: {type(e).__name__}: {e}")
         return None
