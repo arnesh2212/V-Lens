@@ -80,13 +80,28 @@ COLOURS = [c for c in COLOURS if CTOK[c] is not None]
 say(f"colours with a single token: {COLOURS}")
 
 GRID = None
-items = []
-for it in clevrdata.pointer_items(14, limit=a.n + a.n_mu + a.n_fit):
-    items.append(it)
-ev = [it for it in items if it["answer_main"] in COLOURS and it["answer_control"] in COLOURS and it["colour_distractor"] in COLOURS][: a.n]
-rest = items[len(ev):]
-mu_items = rest[: a.n_mu]; fit_items = rest[a.n_mu: a.n_mu + a.n_fit]
-say(f"{len(ev)} scenes to read, {len(mu_items)} for the average state, {len(fit_items)} to fit the write directions")
+# the two-step scenes are rare: only a few hundred CLEVR renders carry an unambiguous
+# landmark-and-referent pair.  The average state and the colour directions do not need
+# that structure, so they are fitted on ordinary renders that are not in the test set.
+ev = []
+for it in clevrdata.pointer_items(14, limit=a.n * 3):
+    if it["answer_main"] in COLOURS and it["answer_control"] in COLOURS and it["colour_distractor"] in COLOURS:
+        ev.append(it)
+    if len(ev) >= a.n:
+        break
+used = {it["image_index"] for it in ev}
+SHAPES = ["cube", "sphere", "cylinder"]; SIZES = ["large", "small"]; MATS = ["metal", "rubber"]
+rng0 = np.random.default_rng(3)
+plain = []
+for sc_ in clevrdata.scenes():
+    if sc_["image_index"] in used or not clevrdata.have(sc_):
+        continue
+    q = f"What colour is the {rng0.choice(SIZES)} {rng0.choice(MATS)} {rng0.choice(SHAPES)}?"
+    plain.append(dict(path=clevrdata.image_path(sc_), question_main=q, question_control=q))
+    if len(plain) >= a.n_mu + a.n_fit:
+        break
+mu_items = plain[: a.n_mu]; fit_items = plain[a.n_mu: a.n_mu + a.n_fit]
+say(f"{len(ev)} two-step scenes to read, {len(mu_items)} plain renders for the average state, {len(fit_items)} to fit the write directions")
 
 
 def img(it): return corpus.load_image(it["path"], square=448)
