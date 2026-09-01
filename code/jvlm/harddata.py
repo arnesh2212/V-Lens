@@ -214,3 +214,95 @@ def summary() -> dict:
             out[name] = f"ERR {type(e).__name__}: {str(e)[:60]}"
     out["blink_subtasks"] = blink_subtasks()
     return out
+
+
+# ------------------------------------------------------------ second batch
+def dashb(n=None, seed: int = 0, split=None) -> list:
+    """DASH-B: open-world object existence, half verified-absent.  ``answer`` is yes/no."""
+    rows = []
+    for f in sorted(glob.glob(os.path.join(ROOT, "dashb", "data", "test-*.parquet"))):
+        df = _pd().read_parquet(f)
+        for r in df.itertuples():
+            p = _write(r.image, f"dashb/{r.img_id}_{r.question_id}")
+            rows.append(dict(id=f"dashb/{r.question_id}", source="dashb", question=str(r.question), image_path=p,
+                             answer=str(r.answer).lower(), object=str(r.object), dataset=str(r.dataset)))
+    return _take(rows, n, seed)
+
+
+def naturalbench(n=None, seed: int = 0) -> list:
+    """NaturalBench: two images x two questions per item; one record per (image, question) with the answer."""
+    rows = []
+    for f in sorted(glob.glob(os.path.join(ROOT, "naturalbench", "data", "*.parquet"))):
+        df = _pd().read_parquet(f)
+        for r in df.itertuples():
+            for ii in (0, 1):
+                p = _write(getattr(r, f"Image_{ii}"), f"naturalbench/{r.Index}_{ii}")
+                for qi in (0, 1):
+                    rows.append(dict(id=f"nb/{r.Index}/i{ii}q{qi}", source="naturalbench", group=int(r.Index),
+                                     question=str(getattr(r, f"Question_{qi}")), image_path=p,
+                                     answer=str(getattr(r, f"Image_{ii}_Question_{qi}")), qtype=str(r.Question_Type)))
+    return _take(rows, n, seed)
+
+
+def vlsbench(n=None, seed: int = 0) -> list:
+    """VLSBench: leakage-free harmful pairs; the instruction is neutral, the harm needs the image."""
+    rows = []
+    for f in sorted(glob.glob(os.path.join(ROOT, "vlsbench", "data", "*.parquet"))):
+        df = _pd().read_parquet(f)
+        for r in df.itertuples():
+            p = _write(r.image, f"vlsbench/{r.instruction_id}")
+            rows.append(dict(id=f"vls/{r.instruction_id}", source="vlsbench", question=str(r.instruction), image_path=p,
+                             harmful=True, category=str(r.category), sub_category=str(r.sub_category),
+                             safety_reason=str(r.safety_reason)))
+    return _take(rows, n, seed)
+
+
+def spavl(n=None, seed: int = 0, split: str = "harm") -> list:
+    """SPA-VL test: ``harm`` (265) or ``help`` (265) split; help is the matched benign arm."""
+    fs = glob.glob(os.path.join(ROOT, "spavl", "**", f"{split}-*.parquet"), recursive=True)
+    rows = []
+    for f in sorted(fs):
+        df = _pd().read_parquet(f)
+        for i, r in enumerate(df.itertuples()):
+            p = _write(r.image, f"spavl/{split}_{os.path.basename(f)}_{i}")
+            rows.append(dict(id=f"spavl/{split}/{i}", source="spavl", question=str(r.question).strip(" '"), image_path=p,
+                             harmful=(split == "harm"), class1=str(getattr(r, "class1", "")), class2=str(getattr(r, "class2", ""))))
+    return _take(rows, n, seed)
+
+
+def mmvet(n=None, seed: int = 0) -> list:
+    """MM-Vet: 218 benign open VQA items with capability tags; a benign arm for false alarms."""
+    fs = glob.glob(os.path.join(ROOT, "mmvet", "data", "*.parquet"))
+    rows = []
+    for f in sorted(fs):
+        df = _pd().read_parquet(f)
+        for r in df.itertuples():
+            p = _write(r.image, f"mmvet/{r.id}")
+            rows.append(dict(id=f"mmvet/{r.id}", source="mmvet", question=str(r.question), image_path=p,
+                             answer=str(r.answer), harmful=False, capability=str(r.capability)))
+    return _take(rows, n, seed)
+
+
+def harmbench_multimodal(n=None, seed: int = 0) -> list:
+    """HarmBench multimodal behaviours (text + image description; images need the HarmBench repo)."""
+    import csv
+    rows = []
+    with open(os.path.join(ROOT, "harmbench", "harmbench_behaviors_multimodal_all.csv"), encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            img = os.path.join(ROOT, "harmbench", "images", r["ImageFileName"]) if r.get("ImageFileName") else None
+            rows.append(dict(id=f"hb/{r['BehaviorID']}", source="harmbench", question=r["Behavior"],
+                             image_path=img if img and os.path.exists(img) else None, harmful=True,
+                             image_description=r.get("ImageDescription"), category=r.get("SemanticCategory")))
+    return _take(rows, n, seed)
+
+
+def circuit_breakers(n=None, seed: int = 0, split: str = "harmbench_test") -> list:
+    """Circuit Breakers' text harmful sets (train / val / harmbench_test[_std|_ctx])."""
+    d = json.load(open(os.path.join(ROOT, "circuit_breakers", "data", f"{split}.json")))
+    it = d if isinstance(d, list) else d.get("data", list(d.values()))
+    rows = []
+    for i, r in enumerate(it):
+        q = r.get("prompt") or r.get("behavior") or r.get("instruction") or str(r)
+        rows.append(dict(id=f"cb/{split}/{i}", source="circuit_breakers", question=str(q), image_path=None,
+                         harmful=True, output=r.get("output") or r.get("response")))
+    return _take(rows, n, seed)
