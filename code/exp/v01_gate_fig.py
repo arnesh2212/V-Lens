@@ -2,7 +2,7 @@
 """The gate figures, drawn from the saved JSON so they can be redrawn at will.
 
 Two panels per model: the decision (refused vs complied) read at the answer
-slot against depth, for the lens, the identity transport, the labelled
+slot against depth, for the lens, the raw reading, the labelled
 difference of means and the trained probe; and the interventional check, the
 held-out R^2 with which each direction predicts what patching the answer slot
 does to the refusal margin.  With several models, one figure per panel with a
@@ -52,8 +52,8 @@ for ax, d in zip(axs, runs):
     ax.set_ylim(0.4, 1.02); ax.set_xlim(0, 1)
     ax.set_xlabel("depth"); plot.panel_label(ax, f"{short(d)}, refused {d['refused_rate']:.0%} of items")
 axs[0].set_ylabel("AUROC, refused vs complied")
-h = [plt.Line2D([], [], color=C["verdict"], marker="o", label="Verdict Lens (no labels)"),
-     plt.Line2D([], [], color=C["identity"], label="identity transport (HiddenDetect)"),
+h = [plt.Line2D([], [], color=C["verdict"], marker="o", label="push (no labels)"),
+     plt.Line2D([], [], color=C["identity"], label="raw reading (HiddenDetect)"),
      plt.Line2D([], [], color=C["dim"], label="difference of means (labelled)"),
      plt.Line2D([], [], color=C["probe"], marker="s", ls=":", label="linear probe (labelled)")]
 fig.legend(handles=h, loc="upper center", bbox_to_anchor=(0.5, -0.06), ncols=2, frameon=False)
@@ -70,8 +70,8 @@ for ax, d in zip(axs, runs):
     ax.set_ylim(-0.1, 1.02); ax.set_xlim(0, 1)
     ax.set_xlabel("depth"); plot.panel_label(ax, short(d))
 axs[0].set_ylabel("held-out R², predicted vs measured\nchange in the refusal margin")
-h = [plt.Line2D([], [], color=C["verdict"], marker="o", label="Verdict Lens direction"),
-     plt.Line2D([], [], color=C["identity"], marker="o", label="identity direction")]
+h = [plt.Line2D([], [], color=C["verdict"], marker="o", label="push direction"),
+     plt.Line2D([], [], color=C["identity"], marker="o", label="raw direction")]
 fig.legend(handles=h, loc="upper center", bbox_to_anchor=(0.5, -0.06), ncols=2, frameon=False)
 plot.save(fig, f"{a.out}/gate_calibration.png")
 
@@ -88,8 +88,8 @@ for ax, d in zip(axs, runs):
     ax.set_ylim(0, 1.02); ax.set_xlim(0, 1)
     ax.set_xlabel("depth"); plot.panel_label(ax, short(d))
 axs[0].set_ylabel("|cos| with the labelled\ndifference-of-means direction")
-h = [plt.Line2D([], [], color=C["verdict"], marker="o", label="Verdict Lens direction"),
-     plt.Line2D([], [], color=C["identity"], marker="o", label="identity (final-layer refusal axis)")]
+h = [plt.Line2D([], [], color=C["verdict"], marker="o", label="push direction"),
+     plt.Line2D([], [], color=C["identity"], marker="o", label="raw (the final refusal score)")]
 fig.legend(handles=h, loc="upper center", bbox_to_anchor=(0.5, -0.06), ncols=2, frameon=False)
 plot.save(fig, f"{a.out}/gate_distinct.png")
 print("wrote", a.out)

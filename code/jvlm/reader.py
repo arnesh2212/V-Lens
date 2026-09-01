@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""The Verdict reader: an affine transport of the answer slot to its final state.
+"""The preview: one small map per layer from the answer spot to its final state.
 
 The writer direction (verdict.py) is the gradient of an outcome with respect
 to a token: the coordinate along which a push changes the answer.  It is not

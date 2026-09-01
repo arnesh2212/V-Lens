@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: Apache-2.0
-"""E0, the gate.  Does the Verdict Lens earn the rest of the plan?
+"""E0, the gate.  Does the Answer Lens earn the rest of the plan?
 
 Three questions, on one model, before anything scales:
 
   1. Does the answer-targeted direction read the refusal decision earlier in
-     depth than the identity transport (HiddenDetect's reading) does?
+     depth than the raw reading (HiddenDetect's reading) does?
   2. Does its calibrated reading predict what an activation patch actually does
-     to the outcome better than the identity direction does, at mid depth?
+     to the outcome better than the raw direction does, at mid depth?
   3. Is it distinct from Arditi's labelled difference-of-means direction?
 
 Pass: AUROC-versus-depth reaches 95% of its final value at a depth fraction at
@@ -146,7 +146,7 @@ def auroc_curve(fn_scores, label, y):
     results["curves"][label] = out
     return out
 
-# (a) Verdict Lens: u_l^{ans} . (h_l[a] - mu), carrier family, refusal axis, at every read layer
+# (a) Answer Lens: u_l^{ans} . (h_l[a] - mu), carrier family, refusal axis, at every read layer
 def verdict_scores(VL, axis):
     def f(l):
         if l not in VL.layers:
@@ -154,7 +154,7 @@ def verdict_scores(VL, axis):
         return VL.read(ANS[:, l], axis, "ans", l)
     return f
 
-# (b) identity transport (HiddenDetect): r_last . h_l[a], uncentred, every layer
+# (b) raw reading (HiddenDetect): r_last . h_l[a], uncentred, every layer
 def identity_scores(l):
     return ANS[:, l] @ r_last.numpy()
 
@@ -298,7 +298,7 @@ def line(curve, label, color, marker="o"):
     ax.plot(xs, ys, color=color, marker=marker, ms=4 if len(xs) > 8 else 6, label=label)
 line(C_i, "identity (HiddenDetect)", plot.ORANGE, marker="")
 line(C_d, "difference of means (labelled)", plot.MUTED, marker="")
-line(C_v, "Verdict Lens", plot.BLUE)
+line(C_v, "Answer Lens", plot.BLUE)
 pxs = [FRAC[r.layer] for r in pr]; ax.plot(pxs, [r.score for r in pr], color=plot.AQUA, marker="s", ls=":", label="linear probe (labelled)")
 plot.chance_line(ax, 0.5)
 ax.set_xlabel("depth (fraction of the language model)"); ax.set_ylabel("AUROC, refused vs complied")

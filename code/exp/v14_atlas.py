@@ -12,11 +12,11 @@ rank correlation between its predicted change and the measured change, and by
 whether its strongest region is the region that matters most.
 
 Instruments
-  writer, path      this item's gradient of the axis, integrated from the
+  push, path      this item's gradient of the axis, integrated from the
                     per-position corpus mean to the activation (8 midpoints),
                     times the centred activation: the method's attribution
-  writer, one point the same at a single point (gradient x centred activation)
-  writer, fixed     the corpus-mean direction u at image tokens, centred
+  push, one point the same at a single point (gradient x centred activation)
+  push, averaged     the corpus-mean direction u at image tokens, centred
   identity          the final axis read at the patch with no transport
                     (r . h for refusal; the yes/no logit margin of the unembedded
                     patch for yes/no, i.e. the logit lens)
@@ -245,7 +245,7 @@ def glimpse_map(b, item, clean_lg):
 
 
 # ------------------------------------------------------------------ pass 1: readings and residuals for every item
-INSTR = ["writer, path", "writer, one point", "writer, fixed", "identity", "grad x act"]
+INSTR = ["push, path", "push, one point", "push, averaged", "identity", "grad x act"]
 store = []
 t0 = time.time()
 for n_, it in enumerate(items):
@@ -257,15 +257,15 @@ for n_, it in enumerate(items):
     for l in L6:
         mu = MU[it["kind"]][l]
         u, c = fixed_dir(it["kind"], l)
-        maps["writer, one point"][l] = (Gr[l] * (H[l] - mu)).sum(-1).numpy()
+        maps["push, one point"][l] = (Gr[l] * (H[l] - mu)).sum(-1).numpy()
         maps["grad x act"][l] = (Gr[l] * H[l]).sum(-1).numpy()
-        maps["writer, fixed"][l] = ((H[l] - c) @ u).numpy()
+        maps["push, averaged"][l] = ((H[l] - c) @ u).numpy()
         if it["kind"] == "refusal":
             maps["identity"][l] = (H[l] @ r).numpy()
         else:
             with torch.no_grad():
                 maps["identity"][l] = margin(m.unembed(H[l].to(m.device).to(torch.bfloat16))).cpu().numpy()
-        maps["writer, path"][l] = path_reading(b, fn, l, pos, H[l], mu, a.steps)
+        maps["push, path"][l] = path_reading(b, fn, l, pos, H[l], mu, a.steps)
     gl = glimpse_map(b, it, clean_lg)
     store.append(dict(item=it, b=b, pos=pos, H={l: H[l].to(torch.float16) for l in L6}, maps=maps, clean=clean, glimpse=gl))
     say(f"  readings {n_ + 1}/{len(items)}  ({(time.time() - t0) / 60:.1f} min)")
@@ -295,7 +295,7 @@ for st in store:
         T = st["truth"][l]
         t_res = np.mean([T[k] for k in T if k.startswith("donor")], 0) if any(k.startswith("donor") for k in T) else T["cover"]
         t_cov = T["cover"]
-        rec = dict(kind=it["kind"], tag=it["tag"], layer=l, frac=frac[l], cover_all=T["cover_all"], sum_path=float(-region_sum(st["maps"]["writer, path"][l]).sum()))
+        rec = dict(kind=it["kind"], tag=it["tag"], layer=l, frac=frac[l], cover_all=T["cover_all"], sum_path=float(-region_sum(st["maps"]["push, path"][l]).sum()))
         for k in INSTR:
             pred = -region_sum(st["maps"][k][l])         # removing the deviation removes the reading
             rec[k] = dict(rho_resample=sp(pred, t_res), rho_cover=sp(pred, t_cov), rho_abs=sp(np.abs(pred), np.abs(t_res)),
@@ -332,7 +332,7 @@ for kind in ("refusal", "yesno"):
             f"median relative error {np.median(np.abs(s_ - c_) / np.maximum(np.abs(c_), 1e-6)):.2f}")
 
 # ------------------------------------------------------------------ figures
-ICOL = {"writer, path": plot.SERIES[0], "writer, one point": plot.SERIES[4], "writer, fixed": plot.SERIES[2], "identity": plot.SERIES[1],
+ICOL = {"push, path": plot.SERIES[0], "push, one point": plot.SERIES[4], "push, averaged": plot.SERIES[2], "identity": plot.SERIES[1],
         "grad x act": plot.SERIES[3], "GLIMPSE": "#7a7a7a"}
 xs = [frac[l] for l in L6]
 fig, axs = plt.subplots(2, 2, figsize=(8.4, 5.0), sharex=True)
@@ -342,9 +342,9 @@ for j, kind in enumerate(("refusal", "yesno")):
         met = "rho_abs" if k == "GLIMPSE" else "rho_resample"
         ys = [summary(kind, k, met)[l][0] for l in L6]
         if all(np.isnan(ys)): continue
-        axs[0, j].plot(xs, ys, color=ICOL[k], lw=1.7 if k == "writer, path" else 1.1, ls="--" if k == "GLIMPSE" else "-")
+        axs[0, j].plot(xs, ys, color=ICOL[k], lw=1.7 if k == "push, path" else 1.1, ls="--" if k == "GLIMPSE" else "-")
         ends.setdefault(j, []).append((ys[-1], k))
-        axs[1, j].plot(xs, [summary(kind, k, "top1")[l][1] for l in L6], color=ICOL[k], lw=1.7 if k == "writer, path" else 1.1, ls="--" if k == "GLIMPSE" else "-")
+        axs[1, j].plot(xs, [summary(kind, k, "top1")[l][1] for l in L6], color=ICOL[k], lw=1.7 if k == "push, path" else 1.1, ls="--" if k == "GLIMPSE" else "-")
     plot.chance_line(axs[0, j], 0.0); plot.chance_line(axs[1, j], 1 / NREG)
     lab = sorted(ends.get(j, []), key=lambda t: -t[0])
     ys_ = plot.stagger([v for v, _ in lab], 0.055)

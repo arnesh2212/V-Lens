@@ -12,7 +12,7 @@ Two asymmetries this makes visible rather than hides:
 
 *Aggregation is not neutral.*  Our per-position values are constructed to add:
 summing them over a region is the defined operation and the sum has a
-conservation law behind it.  A logit-lens or Jacobian-lens readout has no such
+conservation law behind it.  A output-layer row or Jacobian-lens readout has no such
 property, so summing it is a choice made *for* it rather than *by* it.  The
 harness therefore treats aggregation as a free axis and reports every method at
 its own best setting, not at ours.

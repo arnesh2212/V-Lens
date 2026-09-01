@@ -4,8 +4,8 @@
 For a handful of items from a gate cache, draw the photograph beside a row of
 per-patch maps at each cached depth, for two readings of the same activations:
 
-  Verdict Lens   V_l(p) = u_l^img . (h_l[p] - mu_l^img)   for the chosen axis
-  identity       r . h_l[p]                               (the prompt-blind logit-lens-style read)
+  Answer Lens   V_l(p) = u_l^img . (h_l[p] - mu_l^img)   for the chosen axis
+  identity       r . h_l[p]                               (the prompt-blind output-layer row-style read)
 
 Both are label-free.  The identity map cannot depend on the request at image
 positions (causal mask), and neither can ours at those positions; the

@@ -7,7 +7,7 @@ prompt and under generic prompts), anchor the refusal axis at the final layer
 on text-only prompts, then read every test item at every depth with no test
 label touched.  Score (A) input harmfulness, harmful vs benign by dataset, and
 (B) the model's own decision where the refusal rate is non-degenerate, against
-the identity transport (HiddenDetect) and a labelled probe.  Writes JSON and
+the raw reading (HiddenDetect) and a labelled probe.  Writes JSON and
 a per-depth table; the cache with the model's replies is reused.
 """
 from __future__ import annotations

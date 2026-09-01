@@ -14,7 +14,7 @@ Three panels per example:
                  coloured by the word with the largest reading and shaded by
                  its margin over the runner-up -- the paper's slice, on the
                  request tokens.  Beside it, the same slice read through the
-                 identity (logit-lens) transport.
+                 identity (output-layer row) transport.
   image grids    for the top words, a 14x14 patch map at six depths -- where in
                  the picture each concept is pushed from, and when.
   answer trace   each word's reading at the answer slot against depth, with the
@@ -100,7 +100,7 @@ def residuals_all(batch):
 
 
 def readings(batch, H):
-    """{word: array[n_layers, S]} of lens readings, plus the logit-lens rank of each word at each (layer, pos)."""
+    """{word: array[n_layers, S]} of lens readings, plus the output-layer row rank of each word at each (layer, pos)."""
     S = batch["input_ids"].shape[1]
     img = m.image_mask(batch["input_ids"])[0].cpu().numpy()
     ch = np.where(img, "img", "txt"); ch[S - 1] = "ans"
@@ -114,7 +114,7 @@ def readings(batch, H):
             hc = h[pos] - VL.centre(c, l).numpy()
             for w in words:
                 R[w][li, pos] = hc @ VL.dir(f"word:{w}", c, l).numpy()
-    # identity / logit-lens: rank of each word's token at each (layer, pos)
+    # identity / output-layer row: rank of each word's token at each (layer, pos)
     ranks = {w: np.zeros((len(ALL), S), np.int32) for w in words}
     with torch.no_grad():
         for li, l in enumerate(ALL):
@@ -193,7 +193,7 @@ for k, ex in enumerate(examples):
             if j == 0: ax.set_ylabel(f"“{w}”", fontsize=9, color=plot.INK2)
     plot.save(fig, f"{a.figdir}/{name}_slice_grid_{k}.png")
 
-    # ---- figure 3: the answer slot against depth, lens reading vs logit-lens rank
+    # ---- figure 3: the answer slot against depth, lens reading vs output-layer row rank
     fig, axs = plt.subplots(1, 2, figsize=(9.5, 3.2), gridspec_kw=dict(wspace=0.3))
     x = [depth.to_frac(m, l) for l in ALL]
     for w in words:
@@ -201,8 +201,8 @@ for k, ex in enumerate(examples):
         axs[0].plot(x, R[w][:, S - 1], color=WCOL[w], lw=lw, alpha=al)
         axs[1].plot(x, ranks[w][:, S - 1] + 1, color=WCOL[w], lw=lw, alpha=al)
     axs[0].set_xlabel("depth"); axs[0].set_ylabel("lens reading at the answer slot\n(logits toward the word)")
-    axs[1].set_xlabel("depth"); axs[1].set_ylabel("logit-lens rank of the word\n(lower is better)"); axs[1].set_yscale("log"); axs[1].invert_yaxis()
-    plot.panel_label(axs[0], "writer"); plot.panel_label(axs[1], "logit lens")
+    axs[1].set_xlabel("depth"); axs[1].set_ylabel("output-layer row rank of the word\n(lower is better)"); axs[1].set_yscale("log"); axs[1].invert_yaxis()
+    plot.panel_label(axs[0], "push"); plot.panel_label(axs[1], "logit lens")
     fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, -0.04), ncols=min(6, len(words)), frameon=False)
     plot.save(fig, f"{a.figdir}/{name}_slice_answer_{k}.png")
 

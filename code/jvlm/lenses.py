@@ -23,7 +23,7 @@ class Lens(Protocol):
 
 
 class LogitLens:
-    """The identity transport: unembed the residual where it stands."""
+    """The raw reading: unembed the residual where it stands."""
     name = "logit lens"
 
     def __init__(self, layers: list[int]):
