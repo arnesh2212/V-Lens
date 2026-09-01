@@ -46,6 +46,8 @@ ap.add_argument("--n-fit", type=int, default=80, help="COCO images for the word 
 ap.add_argument("--n-fit-yn", type=int, default=200, help="COCO images for the yes/no writer and reader")
 ap.add_argument("--n-eval", type=int, default=120)
 ap.add_argument("--n-examples", type=int, default=4)
+ap.add_argument("--absent", choices=["supercategory", "cooccurring"], default="cooccurring",
+                help="how the absent word is chosen: a sibling category, or the absent word that most often appears with what is here (the harder POPE-style negative)")
 ap.add_argument("--out", default="/workspace/vlm/results/regions")
 ap.add_argument("--figs", default="/workspace/vlm/figures/regions")
 a = ap.parse_args()
@@ -157,14 +159,25 @@ for it in eval_pool:
         continue
     seen.add(iid)
     absent = [w for w in BANK if w not in pres_all]
-    # hard absent words: same supercategory as a present object when possible
-    hard = [w for w in absent if any(COCO["super_of"].get(w) == COCO["super_of"].get(p) for p in pres)]
-    rng.shuffle(pres); rng.shuffle(hard); rng.shuffle(absent)
+    if a.absent == "cooccurring":
+        # the absent word that most often shares a photograph with what is here: the
+        # negative a model is most likely to hallucinate, as in POPE's adversarial split
+        score = {w: 0 for w in absent}
+        for p in pres_all:
+            for w, c in COCO["cooc"].get(p, {}).items():
+                if w in score:
+                    score[w] += int(c)
+        hard = sorted(absent, key=lambda w: -score[w])[:6]
+    else:
+        hard = [w for w in absent if any(COCO["super_of"].get(w) == COCO["super_of"].get(p) for p in pres)]
+    rng.shuffle(pres); rng.shuffle(absent)
+    if a.absent != "cooccurring":
+        rng.shuffle(hard)
     ev.append(dict(image_id=iid, path=it["path"], present=pres, present_all=sorted(pres_all),
                    ask_present=pres[:2], ask_absent=(hard + [w for w in absent if w not in hard])[:2]))
     if len(ev) >= a.n_eval:
         break
-say(f"{len(ev)} evaluation images, {sum(len(e['present']) for e in ev)} present bank objects")
+say(f"{len(ev)} evaluation images, {sum(len(e['present']) for e in ev)} present bank objects; absent words chosen by {a.absent}")
 
 
 def region_masks(e):
