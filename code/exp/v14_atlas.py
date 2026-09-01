@@ -65,7 +65,7 @@ name = a.repo.split("/")[-1]
 os.makedirs(a.out, exist_ok=True); os.makedirs(a.figs, exist_ok=True)
 say = lambda *x: print(*x, flush=True)
 T0 = time.time()
-m = jvlm.load_vlm(a.repo)
+m = jvlm.load_vlm(a.repo, attn="eager")   # GLIMPSE needs the attention matrices, which SDPA never materialises
 L6 = depth.layers_at(m, depth.STANDARD); LAST = m.n_layers - 1
 frac = {l: depth.to_frac(m, l) for l in range(m.n_layers)}
 plot.use()
@@ -335,16 +335,21 @@ for kind in ("refusal", "yesno"):
 ICOL = {"writer, path": plot.SERIES[0], "writer, one point": plot.SERIES[4], "writer, fixed": plot.SERIES[2], "identity": plot.SERIES[1],
         "grad x act": plot.SERIES[3], "GLIMPSE": "#7a7a7a"}
 xs = [frac[l] for l in L6]
-fig, axs = plt.subplots(2, 2, figsize=(7.6, 5.0), sharex=True)
+fig, axs = plt.subplots(2, 2, figsize=(8.4, 5.0), sharex=True)
+ends = {}
 for j, kind in enumerate(("refusal", "yesno")):
     for k in ALLK:
         met = "rho_abs" if k == "GLIMPSE" else "rho_resample"
         ys = [summary(kind, k, met)[l][0] for l in L6]
         if all(np.isnan(ys)): continue
         axs[0, j].plot(xs, ys, color=ICOL[k], lw=1.7 if k == "writer, path" else 1.1, ls="--" if k == "GLIMPSE" else "-")
-        plot.end_label(axs[0, j], xs[-1], ys[-1], k, ICOL[k])
+        ends.setdefault(j, []).append((ys[-1], k))
         axs[1, j].plot(xs, [summary(kind, k, "top1")[l][1] for l in L6], color=ICOL[k], lw=1.7 if k == "writer, path" else 1.1, ls="--" if k == "GLIMPSE" else "-")
     plot.chance_line(axs[0, j], 0.0); plot.chance_line(axs[1, j], 1 / NREG)
+    lab = sorted(ends.get(j, []), key=lambda t: -t[0])
+    ys_ = plot.stagger([v for v, _ in lab], 0.055)
+    for (v, k), yy in zip(lab, ys_):
+        plot.end_label(axs[0, j], xs[-1], yy, k, ICOL[k])
     axs[0, j].set_title({"refusal": "refusal margin, typography items", "yesno": "yes/no margin, COCO photographs"}[kind], loc="left", fontsize=9.5, color=plot.INK2)
     axs[1, j].set_xlabel("depth")
 axs[0, 0].set_ylabel("rank agreement with patching"); axs[1, 0].set_ylabel("strongest region is the right one")
@@ -359,10 +364,10 @@ for i_, st in enumerate(store):
     gs = fig.add_gridspec(len(L6), len(cols) + 1, width_ratios=[1.6] + [1] * len(cols), wspace=0.08, hspace=0.12, left=0.01, right=0.99, top=0.9, bottom=0.03)
     ax = fig.add_subplot(gs[:2, 0]); ax.imshow(Image.open(it["path"]).convert("RGB").resize((448, 448))); ax.set_axis_off()
     ax.set_title(f"{it['tag']}", loc="left", fontsize=9, color=plot.INK2)
-    q = it["prompt"] if len(it["prompt"]) < 60 else it["prompt"][:57] + "..."
-    fig.text(0.01, 0.55, f"“{q}”", fontsize=7.5, color=plot.INK2, wrap=True)
+    q = it["prompt"] if len(it["prompt"]) < 44 else it["prompt"][:41] + "..."
+    ax.text(0, -0.04, f"“{q}”", transform=ax.transAxes, fontsize=7.5, color=plot.INK2, ha="left", va="top")
     if st["glimpse"] is not None:
-        axg = fig.add_subplot(gs[3:5, 0]); g = region_sum(st["glimpse"]).reshape(NB, NB)
+        axg = fig.add_subplot(gs[4:6, 0]); g = region_sum(st["glimpse"]).reshape(NB, NB)
         axg.imshow(g, cmap="Greys", interpolation="nearest"); axg.set_xticks([]); axg.set_yticks([]); axg.set_title("GLIMPSE", fontsize=8.5, color=plot.INK2, loc="left")
         for sp_ in axg.spines.values(): sp_.set_visible(False)
     for r_, l in enumerate(L6):
