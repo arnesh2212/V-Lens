@@ -297,6 +297,11 @@ def fit(
             )
         for l in source_layers:
             jac_sum[l] += per[l]
+            # The expansion point.  This line was missing: mean_sum was
+            # allocated, carried through every checkpoint, divided by n_done at
+            # the end, and never added to, so every "centred" lens this code
+            # produced was centred at the origin.
+            mean_sum[l] += per_mean[l].to(mean_sum[l].dtype)
         n_done += 1
         next_idx = i + 1
         logger.info(
