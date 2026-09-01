@@ -43,6 +43,9 @@ import torch
 ap = argparse.ArgumentParser()
 ap.add_argument("--repo", default="Qwen/Qwen3-VL-2B-Instruct")
 ap.add_argument("--n", type=int, default=40)
+ap.add_argument("--min-sep", type=float, default=0.06)
+ap.add_argument("--balance", type=float, default=5.0)
+ap.add_argument("--max-obj", type=int, default=7)
 ap.add_argument("--n-mu", type=int, default=40, help="scenes for the average state per position")
 ap.add_argument("--n-fit", type=int, default=60, help="scenes to fit the colour write directions")
 ap.add_argument("--swap-alphas", type=float, nargs="*", default=[0.1, 0.2, 0.4, 0.8])
@@ -84,7 +87,7 @@ GRID = None
 # landmark-and-referent pair.  The average state and the colour directions do not need
 # that structure, so they are fitted on ordinary renders that are not in the test set.
 ev = []
-for it in clevrdata.pointer_items(14, limit=a.n * 3):
+for it in clevrdata.pointer_items(14, n_obj=(3, a.max_obj), min_sep=a.min_sep, balance=a.balance, limit=a.n * 4):
     if it["answer_main"] in COLOURS and it["answer_control"] in COLOURS and it["colour_distractor"] in COLOURS:
         ev.append(it)
     if len(ev) >= a.n:
@@ -105,7 +108,11 @@ say(f"{len(ev)} two-step scenes to read, {len(mu_items)} plain renders for the a
 
 
 def img(it): return corpus.load_image(it["path"], square=448)
-def batch(it, which="main"): return m.chat(it[f"question_{which}"], [img(it)])
+ONE_WORD = " Answer with one word."
+def batch(it, which="main"):
+    # the reading is taken at the first answer token, so the answer has to start there:
+    # without this the model opens with "The", and every colour score is about the word after it
+    return m.chat(it[f"question_{which}"] + ONE_WORD, [img(it)])
 
 
 # ---- the average state per image position, on CLEVR renders
