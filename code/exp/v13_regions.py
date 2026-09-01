@@ -290,7 +290,7 @@ HAL = {k: {} for k in EM}
 with torch.no_grad():
     for l in ALLL:
         X = ANS[:, l]
-        s_w = VLy.read(torch.as_tensor(X), "yesno", "ans", l).numpy() if hasattr(VLy, "read") else ((X - VLy.centre("ans", l).numpy()) @ VLy.dir("yesno", "ans", l).numpy())
+        s_w = np.asarray(VLy.read(X, "yesno", "ans", l), dtype=float)
         s_r = margin(m.unembed(torch.as_tensor(RD.to_final(X, l)).to(m.device).to(torch.bfloat16))).cpu().numpy()
         s_i = margin(m.unembed(torch.as_tensor(X).to(m.device).to(torch.bfloat16))).cpu().numpy()
         s_p = probe_scores(X, y)
