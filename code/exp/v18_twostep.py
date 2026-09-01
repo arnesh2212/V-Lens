@@ -9,13 +9,13 @@ picture.  This is the visual version of watching an arithmetic answer form.
 
 Three things are measured on the same scenes.
 
-(a) When the answer arrives.  At the answer spot, at every depth, the preview
+(a) When the answer arrives.  At the answer spot, at every depth, the read
     gives the log-odds of each of the eight colours.  We track the answer's
     colour, the landmark's colour (the trap: naming the cube instead of the
     sphere) and a third colour that is in the picture but in neither role.  The
     same is read with no map, which is the logit lens, for comparison.
 
-(b) Where the model is looking, and when.  The per-item push over image
+(b) Where the model is looking, and when.  The per-item write over image
     positions for the score "the answer's colour", summed over the landmark's
     patches, the referent's patches, a third object's, and an equal number of
     bare floor patches.
@@ -44,7 +44,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--repo", default="Qwen/Qwen3-VL-2B-Instruct")
 ap.add_argument("--n", type=int, default=40)
 ap.add_argument("--n-mu", type=int, default=40, help="scenes for the average state per position")
-ap.add_argument("--n-fit", type=int, default=60, help="scenes to fit the colour push directions")
+ap.add_argument("--n-fit", type=int, default=60, help="scenes to fit the colour write directions")
 ap.add_argument("--swap-alphas", type=float, nargs="*", default=[0.1, 0.2, 0.4, 0.8])
 ap.add_argument("--out", default="/workspace/vlm/results/twostep")
 ap.add_argument("--figs", default="/workspace/vlm/figures/twostep")
@@ -86,7 +86,7 @@ for it in clevrdata.pointer_items(14, limit=a.n + a.n_mu + a.n_fit):
 ev = [it for it in items if it["answer_main"] in COLOURS and it["answer_control"] in COLOURS and it["colour_distractor"] in COLOURS][: a.n]
 rest = items[len(ev):]
 mu_items = rest[: a.n_mu]; fit_items = rest[a.n_mu: a.n_mu + a.n_fit]
-say(f"{len(ev)} scenes to read, {len(mu_items)} for the average state, {len(fit_items)} to fit the push directions")
+say(f"{len(ev)} scenes to read, {len(mu_items)} for the average state, {len(fit_items)} to fit the write directions")
 
 
 def img(it): return corpus.load_image(it["path"], square=448)
@@ -109,7 +109,7 @@ MU = {l: MU[l] / n_ for l in L6}
 P = MU[L6[0]].shape[0]; GRID = int(round(np.sqrt(P)))
 say(f"{P} image positions = {GRID}x{GRID}; averages over {n_} renders")
 
-# ---- the preview, fitted on CLEVR answer spots with no labels
+# ---- the read, fitted on CLEVR answer spots with no labels
 ANS_fit = []
 with torch.no_grad():
     for it in fit_items:
@@ -118,17 +118,17 @@ with torch.no_grad():
             m.forward(b)
         ANS_fit.append(np.stack([rec.activations[l][0, -1].float().cpu().numpy() for l in range(m.n_layers)]))
 RD = reader.fit(np.stack(ANS_fit).astype(np.float32), ALLL, meta=dict(repo=a.repo, corpus="CLEVR answer spots", n=len(ANS_fit)))
-RD.save(f"{a.out}/{name}__preview_clevr.pt")
-say(f"preview fitted on {len(ANS_fit)} answer spots")
+RD.save(f"{a.out}/{name}__read_clevr.pt")
+say(f"read fitted on {len(ANS_fit)} answer spots")
 
-# ---- the push direction for each colour at the answer spot, for the swap
+# ---- the write direction for each colour at the answer spot, for the swap
 AXC = [axes.Axis(f"colour:{c}", (lambda lg, h, t=CTOK[c]: lg[t].float()), "word", dict(token=CTOK[c])) for c in COLOURS]
 def fit_batches():
     for it in fit_items:
         yield batch(it)
 F = verdict.fit(m, fit_batches(), AXC, ALLL, every=100)
 VL = verdict.VerdictLens.from_fit(F, dict(repo=a.repo, colours=COLOURS))
-say("colour push directions fitted")
+say("colour write directions fitted")
 
 TOKS = [CTOK[c] for c in COLOURS]
 
@@ -140,7 +140,7 @@ def colour_logodds(H):
         return torch.log_softmax(lg, -1)[..., TOKS].cpu().numpy()
 
 
-# ---- (a) when the answer arrives, and (b) where the push is
+# ---- (a) when the answer arrives, and (b) where the write is
 def read_item(it, which):
     b = batch(it, which); pos = readout.image_positions(m, b); S = b["input_ids"].shape[1]
     ans_c = it["answer_main"] if which == "main" else it["answer_control"]
@@ -182,7 +182,7 @@ for n2, it in enumerate(ev):
         ANS, maps, cols, pos, b = read_item(it, which)
         i_ans, i_oth, i_dst = COLOURS.index(cols["ans"]), COLOURS.index(cols["other"]), COLOURS.index(cols["dist"])
         for l in ALLL:
-            for tname, H in (("preview", RD.to_final(ANS[l][None], l)), ("logit lens", ANS[l][None])):
+            for tname, H in (("read", RD.to_final(ANS[l][None], l)), ("logit lens", ANS[l][None])):
                 lo = colour_logodds(H)[0]
                 rows.append(dict(item=n2, which=which, layer=l, frac=frac[l], transport=tname,
                                  answer=float(lo[i_ans]), landmark=float(lo[i_oth]), distractor=float(lo[i_dst]),
@@ -192,18 +192,18 @@ for n2, it in enumerate(ev):
     if (n2 + 1) % 10 == 0:
         say(f"  read {n2 + 1}/{len(ev)}  ({(time.time() - t0) / 60:.1f} min)")
 
-R = {(w, t): {l: [r for r in rows if r["which"] == w and r["transport"] == t and r["layer"] == l] for l in ALLL} for w in ("main", "control") for t in ("preview", "logit lens")}
+R = {(w, t): {l: [r for r in rows if r["which"] == w and r["transport"] == t and r["layer"] == l] for l in ALLL} for w in ("main", "control") for t in ("read", "logit lens")}
 say(f"\nthe two-step question: how often the top colour is the right one, by depth")
-say(f"{'depth':>6} {'preview':>9} {'logit lens':>11}   | names the landmark instead: {'preview':>9} {'logit lens':>11}   | the one-step control, preview: {'right':>7}")
+say(f"{'depth':>6} {'read':>9} {'logit lens':>11}   | names the landmark instead: {'read':>9} {'logit lens':>11}   | the one-step control, read: {'right':>7}")
 for l in ALLL:
-    a_p = np.mean([r["top_is_answer"] for r in R[("main", "preview")][l]])
+    a_p = np.mean([r["top_is_answer"] for r in R[("main", "read")][l]])
     a_i = np.mean([r["top_is_answer"] for r in R[("main", "logit lens")][l]])
-    l_p = np.mean([r["top_is_landmark"] for r in R[("main", "preview")][l]])
+    l_p = np.mean([r["top_is_landmark"] for r in R[("main", "read")][l]])
     l_i = np.mean([r["top_is_landmark"] for r in R[("main", "logit lens")][l]])
-    c_p = np.mean([r["top_is_answer"] for r in R[("control", "preview")][l]])
+    c_p = np.mean([r["top_is_answer"] for r in R[("control", "read")][l]])
     say(f"{frac[l]:>6.2f} {a_p:>9.2f} {a_i:>11.2f}   | {'':>26} {l_p:>9.2f} {l_i:>11.2f}   | {'':>29} {c_p:>7.2f}")
 
-say(f"\nwhere the push sits, over chance for the region's size (main question)")
+say(f"\nwhere the write sits, over chance for the region's size (main question)")
 say(f"{'depth':>6} {'landmark':>10} {'referent':>10} {'distractor':>11} {'floor':>8}")
 for l in L6:
     sl = [s for s in shares if s["which"] == "main" and s["layer"] == l]
@@ -262,7 +262,7 @@ for l in L6:
     if pairs:
         A_, B_ = np.array(pairs).T
         sp[l] = float(np.corrcoef(np.argsort(np.argsort(A_)), np.argsort(np.argsort(B_)))[0, 1])
-say("rank agreement between the push's share and what covering costs: " + ", ".join(f"{frac[l]:.2f}: {sp.get(l, float('nan')):.2f}" for l in L6))
+say("rank agreement between the write's share and what covering costs: " + ", ".join(f"{frac[l]:.2f}: {sp.get(l, float('nan')):.2f}" for l in L6))
 
 
 # ---- the swap: exchange the answer colour's coordinate with another colour's
@@ -274,8 +274,8 @@ lmid = L6[len(L6) // 2]
 for n2, it in enumerate(ev[: min(len(ev), 24)]):
     b = batch(it); base = sc.generate(b, max_new_tokens=6).strip().lower()
     src, tgt = it["answer_main"], it["colour_distractor"]
-    for dname in ("push", "output-layer row", "random"):
-        if dname == "push":
+    for dname in ("write", "output-layer row", "random"):
+        if dname == "write":
             d_src, d_tgt = unit(VL.dir(f"colour:{src}", "ans", lmid)), unit(VL.dir(f"colour:{tgt}", "ans", lmid))
         elif dname == "output-layer row":
             W = m._lm_head.weight
@@ -297,11 +297,11 @@ for n2, it in enumerate(ev[: min(len(ev), 24)]):
                                       said_tgt_add=bool(tgt in out_add), said_src_add=bool(src in out_add),
                                       said_tgt_swap=bool(tgt in out_swap), said_src_swap=bool(src in out_swap),
                                       add=out_add[:24], swap=out_swap[:24]))
-base_right = np.mean([tgt in r["base"] for r in swap_rows if r["alpha"] == a.swap_alphas[0] and r["direction"] == "push"])
+base_right = np.mean([tgt in r["base"] for r in swap_rows if r["alpha"] == a.swap_alphas[0] and r["direction"] == "write"])
 for chan in ("img", "all"):
     say(f"\nwriting another colour at depth {frac[lmid]:.2f}, on {'the picture' if chan == 'img' else 'every position'}; the spoken answer becomes that colour:")
     say(f"{'direction':<22} " + " ".join(f"{'a=%g' % al:>8}" for al in a.swap_alphas) + "   | swap instead of add, largest dose | still says the true colour")
-    for dname in ("push", "output-layer row", "random"):
+    for dname in ("write", "output-layer row", "random"):
         cells = []
         for al in a.swap_alphas:
             v = [r["said_tgt_add"] for r in swap_rows if r["direction"] == dname and r["alpha"] == al and r["channel"] == chan]
@@ -313,7 +313,7 @@ for chan in ("img", "all"):
 # ---- figures
 xs = [frac[l] for l in ALLL]
 fig, axs = plt.subplots(1, 2, figsize=(7.8, 2.9), sharey=True)
-for ax, t in zip(axs, ("preview", "logit lens")):
+for ax, t in zip(axs, ("read", "logit lens")):
     lab_ = []
     for key, lab, c in (("top_is_answer", "the sphere, the answer", plot.SERIES[0]),
                         ("top_is_landmark", "the cube, the trap", plot.SERIES[1])):
@@ -342,7 +342,7 @@ for ax_, E in ((axs[0], E0), (axs[1], E1)):
     for (yv, k, c), yy in zip(E, plot.stagger([z[0] for z in E], 0.13 * span)):
         plot.end_label(ax_, xs6[-1], yy, k, c)
 plot.chance_line(axs[0], 1.0)
-axs[0].set_title("where the push sits", loc="left", fontsize=9.5, color=plot.INK2); axs[0].set_ylabel("share over chance")
+axs[0].set_title("where the write sits", loc="left", fontsize=9.5, color=plot.INK2); axs[0].set_ylabel("share over chance")
 axs[1].set_title("what covering the region costs", loc="left", fontsize=9.5, color=plot.INK2); axs[1].set_ylabel("|change| in the answer’s log-odds")
 for ax in axs: ax.set_xlabel("depth"); plot.despine(ax)
 fig.tight_layout(); plot.save(fig, f"{a.figs}/{name}_twostep_regions.png"); plt.close(fig)
@@ -351,8 +351,8 @@ json.dump(dict(repo=a.repo, n=len(ev), colours=COLOURS, depth_swap=frac[lmid],
                answer_curves={t: {str(frac[l]): dict(main_answer=float(np.mean([r["top_is_answer"] for r in R[("main", t)][l]])),
                                                      main_landmark=float(np.mean([r["top_is_landmark"] for r in R[("main", t)][l]])),
                                                      control_answer=float(np.mean([r["top_is_answer"] for r in R[("control", t)][l]])))
-                                  for l in ALLL} for t in ("preview", "logit lens")},
-               push_share={str(frac[l]): {k: float(np.median([s[k] for s in shares if s["which"] == "main" and s["layer"] == l and k in s])) for k in KEYS} for l in L6},
+                                  for l in ALLL} for t in ("read", "logit lens")},
+               write_share={str(frac[l]): {k: float(np.median([s[k] for s in shares if s["which"] == "main" and s["layer"] == l and k in s])) for k in KEYS} for l in L6},
                covering={str(frac[l]): {k: float(np.median([c[k] for c in cov if c["layer"] == l and k in c])) for k in KEYS} for l in L6},
                agreement={str(frac[l]): sp.get(l) for l in L6},
                swap=swap_rows[:400]),

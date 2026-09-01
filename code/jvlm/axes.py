@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Outcome axes: scalar functions of the model's final state at the answer slot.
 
-The Answer Lens reads how hard a token pushes the first answer token toward an
+The Two-Way Lens reads how hard a token pushes the first answer token toward an
 outcome.  The outcome is one of these axes.  Each is a differentiable scalar of
 ``(logits, h_final)`` at the answer position, so one backward pass gives its
 gradient at every layer and every position.

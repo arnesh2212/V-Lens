@@ -5,7 +5,7 @@ Five directions per layer at matched norm, added on benign items and ablated on
 harmful ones, at the answer slot and at the text tokens:
 
   writer      u^{ans}_refusal, the corpus-mean gradient of the refusal margin
-  preview inverted  the reader's map inverted: the layer-l direction that maps onto the
+  read inverted  the reader's map inverted: the layer-l direction that maps onto the
               final refusal axis under A_l (what "reading" would suggest steering along)
   DIM         labelled difference of means at layer l
   output-layer row  W_U-derived refusal starters direction (raw reading)
@@ -60,12 +60,12 @@ RD = reader.Reader.load(a.reader or f"/workspace/vlm/results/reader/{name}__read
 
 def unit(v): v = torch.as_tensor(v).float(); return v / v.norm().clamp_min(1e-8)
 def directions(l):
-    d = {"push": unit(VL.dir("refusal", "ans", l)),
+    d = {"write": unit(VL.dir("refusal", "ans", l)),
          "DIM (labelled)": unit(verdict.dim_direction(ANS[:, l], y_r)),
          "raw (the final score)": unit(torch.as_tensor(r_final))}          # the refusal axis itself, no transport
     if RD is not None and l in RD.maps:
-        A, b = RD.maps[l]; d["preview inverted"] = unit(A.T @ torch.as_tensor(r_final).float())     # A^T r: the layer-l direction that maps onto r
-    g = torch.Generator().manual_seed(l); d["random"] = unit(torch.randn(d["push"].shape, generator=g))
+        A, b = RD.maps[l]; d["read inverted"] = unit(A.T @ torch.as_tensor(r_final).float())     # A^T r: the layer-l direction that maps onto r
+    g = torch.Generator().manual_seed(l); d["random"] = unit(torch.randn(d["write"].shape, generator=g))
     return d
 
 harm = [it for it in its if it["harmful"]][: a.n]
@@ -103,7 +103,7 @@ results = [dict(layer=None, frac=None, direction="baseline", channel=None, alpha
 for l in LAYERS:
     for dname, d in directions(l).items():
         # every direction at the answer slot; the writer also at the request tokens, where it has its own direction
-        chans = [("ans", "all")] + ([("txt", "txt")] if dname == "push" else [])
+        chans = [("ans", "all")] + ([("txt", "txt")] if dname == "write" else [])
         for ch, chan in chans:
             dd = unit(VL.dir("refusal", "txt", l)) if ch == "txt" else d
             for alpha in a.alphas:

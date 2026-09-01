@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-r"""Answer Lens: how hard each token, at each layer, pushes the first answer token.
+r"""Two-Way Lens: how hard each token, at each layer, pushes the first answer token.
 
 For an outcome axis :math:`m` (a scalar of the final state at the answer slot
 :math:`a`) and a token class :math:`c` (image, text, or the answer slot itself),
@@ -148,7 +148,7 @@ def fit(model, batches, axes, layers, *, every: int = 20) -> Fit:
 class VerdictLens:
     """A fitted lens: directions and expansion points per (axis, channel, layer)."""
 
-    name = "Answer Lens"
+    name = "Two-Way Lens"
 
     def __init__(self, d: dict, meta: dict | None = None):
         self.layers = [int(l) for l in d["layers"]]
@@ -194,7 +194,7 @@ class VerdictLens:
         return (H @ u).numpy()
 
     def reachability(self, axis: str, layer: int) -> dict:
-        """``||u||`` per channel: how much of the axis a unit push at that class reaches."""
+        """``||u||`` per channel: how much of the axis a unit write at that class reaches."""
         return {c: float(self.dir(axis, c, layer).norm()) for c in ("img", "txt", "ans")
                 if f"{axis}|{c}|{int(layer)}" in self.u}
 

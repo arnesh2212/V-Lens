@@ -508,7 +508,7 @@ if a.only in ("", "naming"):
     made.append(naming_sheet())
 if a.only in ("", "where"):
     made.append(where_sheet())
-if a.only in ("", "push"):
+if a.only in ("", "write"):
     made.append(push_sheet())
 say("")
 for p in made:

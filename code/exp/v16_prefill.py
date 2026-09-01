@@ -126,7 +126,7 @@ for c in PREFILL:
 
 
 def scores(X, l):
-    out = {"identity": X @ r_np, "push": np.asarray(VL.read(X, "refusal", "ans", l), float)}
+    out = {"identity": X @ r_np, "write": np.asarray(VL.read(X, "refusal", "ans", l), float)}
     if RD is not None and l in RD.maps:
         out["reader"] = RD.read(X, l, r_np)
     return out
@@ -141,7 +141,7 @@ def probe_cv(X, yy, seed=0):
 sel = conds == "compliance"
 yy = (kinds[sel] == "harmful").astype(int)
 say(f"\nafter a compliance prefill: does the reading tell a harmful request from a benign one, while the model complies with both?")
-say(f"{'depth':>6} {'reader':>8} {'push':>8} {'identity':>9} {'probe':>8}   | predicts a later refusal (harmful items): {'reader':>7} {'push':>7} {'identity':>8}")
+say(f"{'depth':>6} {'reader':>8} {'write':>8} {'identity':>9} {'probe':>8}   | predicts a later refusal (harmful items): {'reader':>7} {'write':>7} {'identity':>8}")
 res = []
 for l in ALLL:
     S = scores(ANSP[sel][:, l], l); S["probe"] = probe_cv(ANSP[sel][:, l], yy)
@@ -152,8 +152,8 @@ for l in ALLL:
         rec["backtrack_auroc"] = {k: float(roc_auc_score(bb, v[hsel])) for k, v in S.items() if k != "probe"}
     res.append(rec)
     bt = rec.get("backtrack_auroc", {})
-    say(f"{frac[l]:>6.2f} {rec['auroc'].get('reader', float('nan')):>8.3f} {rec['auroc']['push']:>8.3f} {rec['auroc']['identity']:>9.3f} {rec['auroc']['probe']:>8.3f}   | "
-        f"{'':>40} {bt.get('reader', float('nan')):>7.3f} {bt.get('push', float('nan')):>7.3f} {bt.get('identity', float('nan')):>8.3f}")
+    say(f"{frac[l]:>6.2f} {rec['auroc'].get('reader', float('nan')):>8.3f} {rec['auroc']['write']:>8.3f} {rec['auroc']['identity']:>9.3f} {rec['auroc']['probe']:>8.3f}   | "
+        f"{'':>40} {bt.get('reader', float('nan')):>7.3f} {bt.get('write', float('nan')):>7.3f} {bt.get('identity', float('nan')):>8.3f}")
 
 # the reading itself, by condition, at the middle depth
 lmid = L6[len(L6) // 2]
@@ -163,7 +163,7 @@ by_cond = {}
 for c in PREFILL:
     s_h = (conds == c) & (kinds == "harmful"); s_b = (conds == c) & (kinds == "benign")
     S_h = scores(ANSP[s_h][:, lmid], lmid); S_b = scores(ANSP[s_b][:, lmid], lmid)
-    key = "reader" if "reader" in S_h else "push"
+    key = "reader" if "reader" in S_h else "write"
     by_cond[c] = dict(harmful=float(np.mean(S_h[key])), benign=float(np.mean(S_b[key])),
                       harmful_sd=float(np.std(S_h[key])), benign_sd=float(np.std(S_b[key])), instrument=key)
     say(f"{c:<12} {by_cond[c]['harmful']:>12.2f} {by_cond[c]['benign']:>12.2f}")
@@ -171,7 +171,7 @@ for c in PREFILL:
 # ---- figures
 fig, axs = plt.subplots(1, 2, figsize=(7.8, 2.9))
 xs = [frac[l] for l in ALLL]
-for k, c in (("reader", plot.SERIES[0]), ("push", plot.SERIES[2]), ("identity", plot.SERIES[1]), ("probe", plot.INK2)):
+for k, c in (("reader", plot.SERIES[0]), ("write", plot.SERIES[2]), ("identity", plot.SERIES[1]), ("probe", plot.INK2)):
     ys = [x["auroc"].get(k, float("nan")) for x in res]
     if all(np.isnan(ys)): continue
     axs[0].plot(xs, ys, color=c, lw=1.5 if k == "reader" else 1.1, ls=":" if k == "probe" else "-")

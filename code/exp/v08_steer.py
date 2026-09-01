@@ -99,10 +99,10 @@ say(f"DIM directions for {len(DIM)} words")
 
 def unit(v): return v / v.norm().clamp_min(1e-8)
 def directions(w, l):
-    d = {"push": unit(VL.dir(f"word:{w}", "img", l)),
+    d = {"write": unit(VL.dir(f"word:{w}", "img", l)),
          "logit lens": unit(readout.unembed_direction(m, tok_of[w]).float().cpu())}
     if w in DIM: d["difference of means (labelled)"] = unit(DIM[w][l])
-    g = torch.Generator().manual_seed(hash((w, l)) % (2**31)); d["random"] = unit(torch.randn(d["push"].shape, generator=g))
+    g = torch.Generator().manual_seed(hash((w, l)) % (2**31)); d["random"] = unit(torch.randn(d["write"].shape, generator=g))
     return d
 
 # ---- measure
@@ -163,7 +163,7 @@ for mode in ("add", "swap"):
     say(f"\n[{mode}]  {'direction':<16}{'depth':>6}" + "".join(f"{'a=%g'%al:>9}" for al in a.alphas) + "   |  d(margin) at max dose  |  retention at max dose")
     for l in LAYERS:
         f = depth.to_frac(m, l)
-        for dname in ("push", "difference of means (labelled)", "logit lens", "random"):
+        for dname in ("write", "difference of means (labelled)", "logit lens", "random"):
             cells = []
             for al in a.alphas:
                 v = agg.get((mode if al else "add", dname, f, al)) or agg.get(("add", dname, f, 0.0))
@@ -178,7 +178,7 @@ plot.use()
 import matplotlib.pyplot as plt
 fig, axs = plt.subplots(1, 2, figsize=(9.6, 3.4), gridspec_kw=dict(wspace=0.3))
 lmid = LAYERS[len(LAYERS) // 2]; fmid = depth.to_frac(m, lmid)
-cols = {"push": plot.BLUE, "difference of means (labelled)": plot.MUTED, "logit lens": plot.ORANGE, "random": plot.AXIS}
+cols = {"write": plot.BLUE, "difference of means (labelled)": plot.MUTED, "logit lens": plot.ORANGE, "random": plot.AXIS}
 for dname, c in cols.items():
     ys = [np.mean([x[0] for x in (agg.get(("add", dname, fmid, al)) if al else agg.get(("add", dname, fmid, 0.0)))]) for al in a.alphas]
     rs = [np.mean([x[2] for x in (agg.get(("add", dname, fmid, al)) if al else agg.get(("add", dname, fmid, 0.0))) if x[2] is not None]) for al in a.alphas]

@@ -195,19 +195,19 @@ def maps_for(e):
     with torch.no_grad(), ActivationRecorder(m.layers, at=L6) as rec:
         m.forward(b)
     H = {l: rec.activations[l][0, pos.to(rec.activations[l].device)].float().cpu() for l in L6}
-    out = {"push": {}, "logit lens": {}, "logit lens, centred": {}}
+    out = {"write": {}, "logit lens": {}, "logit lens, centred": {}}
     with torch.no_grad():
         for l in L6:
-            out["push"][l] = ((H[l] - CW[l]) @ UW[l].T).T.numpy()                              # [W, P]
+            out["write"][l] = ((H[l] - CW[l]) @ UW[l].T).T.numpy()                              # [W, P]
             lg = m.unembed(H[l].to(m.device).to(torch.bfloat16)).float()[:, TOKS].cpu().numpy()  # [P, W]
             out["logit lens"][l] = lg.T
             lgc = m.unembed((H[l] - MU[l]).to(m.device).to(torch.bfloat16)).float()[:, TOKS].cpu().numpy()
             out["logit lens, centred"][l] = lgc.T
     pi = vmap.do_map(m, b, TOKS, L6, pos, means=MU)                                              # {l: [W, P]}
-    out["push, this item"] = {l: pi[l].numpy() for l in L6}
+    out["write, this item"] = {l: pi[l].numpy() for l in L6}
     return out
 
-INSTR = ["push, this item", "push", "logit lens", "logit lens, centred"]
+INSTR = ["write, this item", "write", "logit lens", "logit lens, centred"]
 acc = {k: {l: [] for l in L6} for k in INSTR}
 bg_present = {k: {l: [] for l in L6} for k in INSTR}
 conc = {k: {l: [] for l in L6} for k in INSTR}      # concentration ratio, per (image, word)
@@ -285,7 +285,7 @@ def probe_scores(X, yy, seed=0):
         out[te] = clf.decision_function(sc.transform(X[te]))
     return out
 
-EM = {"push": {}, "reader": {}, "logit lens": {}, "probe": {}}
+EM = {"write": {}, "reader": {}, "logit lens": {}, "probe": {}}
 HAL = {k: {} for k in EM}
 with torch.no_grad():
     for l in ALLL:
@@ -294,15 +294,15 @@ with torch.no_grad():
         s_r = margin(m.unembed(torch.as_tensor(RD.to_final(X, l)).to(m.device).to(torch.bfloat16))).cpu().numpy()
         s_i = margin(m.unembed(torch.as_tensor(X).to(m.device).to(torch.bfloat16))).cpu().numpy()
         s_p = probe_scores(X, y)
-        for k, s in (("push", s_w), ("reader", s_r), ("logit lens", s_i), ("probe", s_p)):
+        for k, s in (("write", s_w), ("reader", s_r), ("logit lens", s_i), ("probe", s_p)):
             EM[k][l] = auc(s, y)
             HAL[k][l] = auc(s[says_yes], y[says_yes]) if says_yes.sum() >= 20 and (y[says_yes] == 0).sum() >= 8 else float("nan")
 
 say(f"\nemergence: AUROC present vs absent at the answer slot")
-say(f"{'depth':>6} {'push':>8} {'reader':>8} {'logit':>8} {'probe':>8}   | true yes vs hallucinated yes: {'push':>7} {'reader':>7} {'logit':>7} {'probe':>7}")
+say(f"{'depth':>6} {'write':>8} {'reader':>8} {'logit':>8} {'probe':>8}   | true yes vs hallucinated yes: {'write':>7} {'reader':>7} {'logit':>7} {'probe':>7}")
 for l in ALLL:
-    say(f"{frac[l]:>6.2f} {EM['push'][l]:>8.3f} {EM['reader'][l]:>8.3f} {EM['logit lens'][l]:>8.3f} {EM['probe'][l]:>8.3f}   | "
-        f"{'':>29} {HAL['push'][l]:>7.3f} {HAL['reader'][l]:>7.3f} {HAL['logit lens'][l]:>7.3f} {HAL['probe'][l]:>7.3f}")
+    say(f"{frac[l]:>6.2f} {EM['write'][l]:>8.3f} {EM['reader'][l]:>8.3f} {EM['logit lens'][l]:>8.3f} {EM['probe'][l]:>8.3f}   | "
+        f"{'':>29} {HAL['write'][l]:>7.3f} {HAL['reader'][l]:>7.3f} {HAL['logit lens'][l]:>7.3f} {HAL['probe'][l]:>7.3f}")
 def first_depth(curve, thr=0.9):
     for l in ALLL:
         if curve[l] >= thr:
@@ -314,7 +314,7 @@ say("first depth with AUROC >= 0.9: " + ", ".join(f"{k} {first_depth(EM[k])}" fo
 # ------------------------------------------------------------------ figures
 COL = {w: (plot.SERIES + ["#7a7a7a", "#c9a227", "#5b8c5a", "#b05a7a", "#3f7f9f", "#9f6b3f", "#6b9f3f", "#9f3f6b",
                           "#3f9f9f", "#9f9f3f", "#3f3f9f", "#9f3f3f", "#6b6b9f", "#9f6b6b", "#6b9f9f", "#9f9f6b"])[i] for i, w in enumerate(BANK)}
-ICOL = {"push, this item": plot.SERIES[0], "push": plot.SERIES[2], "logit lens": plot.SERIES[1], "logit lens, centred": plot.SERIES[3],
+ICOL = {"write, this item": plot.SERIES[0], "write": plot.SERIES[2], "logit lens": plot.SERIES[1], "logit lens, centred": plot.SERIES[3],
         "reader": plot.SERIES[0], "probe": plot.INK2}
 
 # F1 region accuracy and concentration vs depth
@@ -344,7 +344,7 @@ for ei, (e, M, masks) in enumerate(examples):
     ax.set_title("in the picture: " + ", ".join(words), loc="left", fontsize=8.5, color=plot.INK2)
     for r, w in enumerate(words):
         for j, l in enumerate(L6):
-            A = M["push, this item"][l][BANK.index(w)].reshape(G, G); s = float(np.percentile(np.abs(A), 99)) or 1.0
+            A = M["write, this item"][l][BANK.index(w)].reshape(G, G); s = float(np.percentile(np.abs(A), 99)) or 1.0
             ax = fig.add_subplot(gs[r, j + 1]); ax.imshow(np.clip(A, -s, s), cmap="RdBu_r", vmin=-s, vmax=s, interpolation="nearest")
             for (x0, y0, bw, bh) in COCO["boxes"][e["image_id"]][w]:
                 ax.add_patch(Rectangle((x0 * G - 0.5, y0 * G - 0.5), bw * G, bh * G, fill=False, ec=COL[w], lw=1.2))
@@ -377,7 +377,7 @@ for ei, (e, M, masks) in enumerate(examples):
     # F4 the slice: rows = depth, columns = regions, cell = winning word, shade = margin
     regions = words + ["background"]
     fig, axs = plt.subplots(1, 3, figsize=(9.4, 0.42 * len(L6) + 1.6), sharey=True)
-    for ax, k in zip(axs, ["push, this item", "push", "logit lens"]):
+    for ax, k in zip(axs, ["write, this item", "write", "logit lens"]):
         for i, l in enumerate(L6):
             for j, rg in enumerate(regions):
                 mk = masks[rg]
@@ -400,7 +400,7 @@ for ei, (e, M, masks) in enumerate(examples):
 # F3 emergence
 fig, axs = plt.subplots(1, 2, figsize=(7.4, 2.9))
 xs = [frac[l] for l in ALLL]
-for k, c in (("reader", plot.SERIES[0]), ("push", plot.SERIES[2]), ("logit lens", plot.SERIES[1]), ("probe", plot.INK2)):
+for k, c in (("reader", plot.SERIES[0]), ("write", plot.SERIES[2]), ("logit lens", plot.SERIES[1]), ("probe", plot.INK2)):
     axs[0].plot(xs, [EM[k][l] for l in ALLL], color=c, lw=1.5 if k == "reader" else 1.1, ls=":" if k == "probe" else "-")
     plot.end_label(axs[0], xs[-1], EM[k][ALLL[-1]], k, c)
     hv = [HAL[k][l] for l in ALLL]

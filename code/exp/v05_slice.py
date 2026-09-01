@@ -202,7 +202,7 @@ for k, ex in enumerate(examples):
         axs[1].plot(x, ranks[w][:, S - 1] + 1, color=WCOL[w], lw=lw, alpha=al)
     axs[0].set_xlabel("depth"); axs[0].set_ylabel("lens reading at the answer slot\n(logits toward the word)")
     axs[1].set_xlabel("depth"); axs[1].set_ylabel("output-layer row rank of the word\n(lower is better)"); axs[1].set_yscale("log"); axs[1].invert_yaxis()
-    plot.panel_label(axs[0], "push"); plot.panel_label(axs[1], "logit lens")
+    plot.panel_label(axs[0], "write"); plot.panel_label(axs[1], "logit lens")
     fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, -0.04), ncols=min(6, len(words)), frameon=False)
     plot.save(fig, f"{a.figdir}/{name}_slice_answer_{k}.png")
 
