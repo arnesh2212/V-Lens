@@ -580,6 +580,94 @@ def build_refusalsteer():
     return {"html": html, "col_labels": col_labels, "notes": notes}
 
 
+def build_steerdose():
+    """Writing a chosen word into the picture: does the one-word answer become it,
+    and does an unrelated question about the same photograph survive the edit?
+
+    The rate of saying the target is over all 60 items at depth 0.48 in add mode.
+    The last two columns are the unrelated presence question at dose 0.5, counted
+    only over the items the clean model already answers correctly, since an item
+    the model gets wrong before the edit says nothing about the edit's collateral.
+    """
+    NAMES = {"lens": "V-Write", "DIM (labelled)": "difference of means, labelled",
+             "logit-lens": "output-layer row", "random": "random, same strength"}
+    ORDER = ["V-Write", "difference of means, labelled", "output-layer row", "random, same strength"]
+    LABELLED = {"difference of means, labelled"}
+    notes, per_model = [], {}
+    for key, _nice in MODELS:
+        d = load_json(os.path.join(RESULTS, "steer", f"{key}_steer.json"))
+        if d is None:
+            notes.append(f"missing {key}_steer.json")
+            return None
+        runs = [(it, r) for it in d["items"] for r in it["runs"]]
+        fr = nearest_float(sorted({round(r["frac"], 2) for _it, r in runs}), 0.48)
+        base = [it for it in d["items"] if it.get("base_retained")]
+        notes.append(f"{key}: {len(base)} of {len(d['items'])} items have the unrelated question right before any edit")
+        say_rate, keep_rate = {}, {}
+        for dn in ORDER:
+            for al in (0.5, 1.0):
+                v = [r for _it, r in runs if r["mode"] == "add" and NAMES.get(r["direction"]) == dn
+                     and round(r["frac"], 2) == fr and r["alpha"] == al]
+                say_rate[(dn, al)] = float(sum(x["said_B"] for x in v) / len(v)) if v else None
+            v = [r for it in base for r in it["runs"] if r["mode"] == "add" and NAMES.get(r["direction"]) == dn
+                 and round(r["frac"], 2) == fr and r["alpha"] == 0.5]
+            keep_rate[dn] = float(sum(bool(x.get("retained")) for x in v) / len(v)) if v else None
+        per_model[key] = (say_rate, keep_rate)
+
+    rows, col_labels = [], []
+    for dn in ORDER:
+        vals = []
+        for key, _nice in MODELS:
+            for al in (0.5, 1.0):
+                vals.append((per_model[key][0][(dn, al)], dn in LABELLED))
+        for key, _nice in MODELS:
+            vals.append((per_model[key][1][dn], dn in LABELLED))
+        rows.append((dn, vals))
+    for _key, nice in MODELS:
+        col_labels += [f"{nice} dose 0.5", f"{nice} dose 1"]
+    for _key, nice in MODELS:
+        col_labels.append(f"{nice} unrelated still right")
+    groups = [[0, 4], [1, 5], [2, 6], [3, 7]] if False else [[i] for i in range(len(col_labels))]
+    thead = ('    <thead><tr><th rowspan="2">direction</th>'
+             f'<th colspan="2">{MODELS[0][1]}</th><th colspan="2">{MODELS[1][1]}</th>'
+             '<th colspan="2">unrelated question still right</th></tr>\n'
+             "    <tr><th>dose 0.5</th><th>dose 1</th><th>dose 0.5</th><th>dose 1</th>"
+             f"<th>{MODELS[0][1].split('-')[-1]}</th><th>{MODELS[1][1].split('-')[-1]}</th></tr></thead>")
+    html = build_block(thead, rows, groups, decimals=2)
+    return {"html": html, "col_labels": col_labels, "notes": notes}
+
+
+def build_swap():
+    """Held-out R2 of the swap check: how much of the real change in the score
+    each direction predicted, V-Write against the raw direction, per depth."""
+    per, depths, notes = {}, None, []
+    for key, _nice in MODELS:
+        d = load_json(os.path.join(RESULTS, "gate", f"{key}_gate.json"))
+        if d is None:
+            notes.append(f"missing {key}_gate.json")
+            return None
+        cal = d["calibration"]
+        ls = sorted(cal, key=int)
+        per[key] = [(cal[l]["frac"], cal[l]["verdict"]["r2_heldout"], cal[l]["identity"]["r2_heldout"]) for l in ls]
+        depths = depths or [round(cal[l]["frac"], 2) for l in ls]
+    rows, col_labels = [], []
+    for key, nice in MODELS:
+        col_labels += [f"{nice} V-Write", f"{nice} raw"]
+    n = min(len(per[k]) for k, _ in MODELS)
+    for i in range(n):
+        label = f"{per[MODELS[0][0]][i][0]:.2g}"
+        vals = []
+        for key, _nice in MODELS:
+            vals.append((per[key][i][1], False))
+            vals.append((per[key][i][2], False))
+        rows.append((label, vals))
+    groups = [[0, 1], [2, 3]]
+    thead = ('    <thead><tr><th rowspan="2">depth</th>'
+             f'<th colspan="2">{MODELS[0][1]}</th><th colspan="2">{MODELS[1][1]}</th></tr>\n'
+             "    <tr><th>V-Write</th><th>raw</th><th>V-Write</th><th>raw</th></tr></thead>")
+    return {"html": build_block(thead, rows, groups, decimals=2), "col_labels": col_labels, "notes": notes}
+
+
 TABLE_BUILDERS = [
     ("readdecision", build_readdecision),
     ("presence", build_presence),
@@ -589,6 +677,8 @@ TABLE_BUILDERS = [
     ("twostepregions", build_twostepregions),
     ("atlas", build_atlas),
     ("writeinto", build_writeinto),
+    ("steerdose", build_steerdose),
+    ("swap", build_swap),
     ("refusalsteer", build_refusalsteer),
 ]
 

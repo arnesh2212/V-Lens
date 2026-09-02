@@ -42,9 +42,9 @@ if d.get("write_share"):
     axs[0].plot(xs, [d["write_share"][str(x)][k] for x in xs], color=COL[k], lw=1.5)
     axs[1].plot(xs, [abs(d["covering"][str(x)][k]) for x in xs], color=COL[k], lw=1.5)
  plot.chance_line(axs[0], 1.0)
- axs[0].set_yscale("log"); axs[0].set_ylabel("share of the write, over chance")
+ axs[0].set_yscale("log"); axs[0].set_ylabel("share of V-Write, over chance")
  axs[1].set_ylabel("cost of covering it,\nin the answer’s log-odds")
- axs[0].set_title("where the write sits", loc="left", fontsize=10, color=plot.INK2)
+ axs[0].set_title("where V-Write sits", loc="left", fontsize=10, color=plot.INK2)
  axs[1].set_title("what the region is worth", loc="left", fontsize=10, color=plot.INK2)
  for ax in axs: ax.set_xlabel("depth"); plot.despine(ax)
  h = [plt.Line2D([], [], color=COL[k], label=LAB[k]) for k in KEYS]
