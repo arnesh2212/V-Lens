@@ -48,7 +48,8 @@ ap.add_argument("--balance", type=float, default=5.0)
 ap.add_argument("--max-obj", type=int, default=7)
 ap.add_argument("--n-mu", type=int, default=40, help="scenes for the average state per position")
 ap.add_argument("--n-fit", type=int, default=60, help="scenes to fit the colour write directions")
-ap.add_argument("--swap-alphas", type=float, nargs="*", default=[0.1, 0.2, 0.4, 0.8])
+ap.add_argument("--swap-alphas", type=float, nargs="*", default=[0.2, 0.4, 0.8])
+ap.add_argument("--swap-depths", type=float, nargs="*", default=[0.35, 0.5, 0.65])
 ap.add_argument("--out", default="/workspace/vlm/results/twostep")
 ap.add_argument("--figs", default="/workspace/vlm/figures/twostep")
 a = ap.parse_args()
@@ -292,7 +293,8 @@ def unit(v):
     v = torch.as_tensor(v).float(); return v / v.norm().clamp_min(1e-8)
 
 swap_rows = []
-lmid = L6[len(L6) // 2]
+SWAP_L = depth.layers_at(m, a.swap_depths)
+lmid = SWAP_L[-1]
 for n2, it in enumerate(ev[: min(len(ev), 24)]):
     b = batch(it); base = sc.generate(b, max_new_tokens=6).strip().lower()
     src, tgt = it["answer_main"], it["colour_distractor"]
@@ -305,32 +307,36 @@ for n2, it in enumerate(ev[: min(len(ev), 24)]):
         else:
             g1 = torch.Generator().manual_seed(n2); g2 = torch.Generator().manual_seed(1000 + n2)
             d_src = unit(torch.randn(m.d_model, generator=g1)); d_tgt = unit(torch.randn(m.d_model, generator=g2))
-        for al in a.swap_alphas:
-            for chan in ("img", "all"):
-                iv = readout.Intervention(m, {lmid: torch.stack([d_src, d_tgt])}, channel=chan, mode="clamp", alpha=al)
-                iv.set_batch(b)
-                with iv:
-                    out_swap = sc.generate(b, max_new_tokens=6).strip().lower()
-                iv2 = readout.Intervention(m, {lmid: d_tgt}, channel=chan, mode="add", alpha=al)
-                iv2.set_batch(b)
-                with iv2:
-                    out_add = sc.generate(b, max_new_tokens=6).strip().lower()
-                swap_rows.append(dict(item=n2, direction=dname, alpha=al, channel=chan, base=base, src=src, tgt=tgt,
-                                      said_tgt_add=bool(tgt in out_add), said_src_add=bool(src in out_add),
-                                      said_tgt_swap=bool(tgt in out_swap), said_src_swap=bool(src in out_swap),
-                                      add=out_add[:24], swap=out_swap[:24]))
+        for lsw in SWAP_L:
+            if dname == "write":
+                d_src, d_tgt = unit(VL.dir(f"colour:{src}", "ans", lsw)), unit(VL.dir(f"colour:{tgt}", "ans", lsw))
+            for al in a.swap_alphas:
+                for chan in ("img", "all"):
+                    iv2 = readout.Intervention(m, {lsw: d_tgt}, channel=chan, mode="add", alpha=al)
+                    iv2.set_batch(b)
+                    with iv2:
+                        out_add = sc.generate(b, max_new_tokens=6).strip().lower()
+                    row = dict(item=n2, direction=dname, alpha=al, channel=chan, layer=lsw, frac=frac[lsw], base=base, src=src, tgt=tgt,
+                               said_tgt_add=bool(tgt in out_add), said_src_add=bool(src in out_add), add=out_add[:24])
+                    if al == a.swap_alphas[-1]:
+                        iv = readout.Intervention(m, {lsw: torch.stack([d_src, d_tgt])}, channel=chan, mode="clamp", alpha=al)
+                        iv.set_batch(b)
+                        with iv:
+                            out_swap = sc.generate(b, max_new_tokens=6).strip().lower()
+                        row.update(said_tgt_swap=bool(tgt in out_swap), said_src_swap=bool(src in out_swap), swap=out_swap[:24])
+                    swap_rows.append(row)
 base_right = np.mean([tgt in r["base"] for r in swap_rows if r["alpha"] == a.swap_alphas[0] and r["direction"] == "write"])
 for chan in ("img", "all"):
-    say(f"\nwriting another colour at depth {frac[lmid]:.2f}, on {'the picture' if chan == 'img' else 'every position'}; the spoken answer becomes that colour:")
-    say(f"{'direction':<22} " + " ".join(f"{'a=%g' % al:>8}" for al in a.swap_alphas) + "   | swap instead of add, largest dose | still says the true colour")
-    for dname in ("write", "output-layer row", "random"):
-        cells = []
-        for al in a.swap_alphas:
-            v = [r["said_tgt_add"] for r in swap_rows if r["direction"] == dname and r["alpha"] == al and r["channel"] == chan]
-            cells.append(f"{np.mean(v):>8.2f}" if v else f"{'-':>8}")
-        sw = [r["said_tgt_swap"] for r in swap_rows if r["direction"] == dname and r["alpha"] == a.swap_alphas[-1] and r["channel"] == chan]
-        keep = [r["said_src_add"] for r in swap_rows if r["direction"] == dname and r["alpha"] == a.swap_alphas[-1] and r["channel"] == chan]
-        say(f"{dname:<22} " + " ".join(cells) + f"   | {np.mean(sw) if sw else float('nan'):>32.2f} | {np.mean(keep) if keep else float('nan'):.2f}")
+    say(f"\nwriting another colour on {'the picture' if chan == 'img' else 'every position'}; the spoken answer becomes that colour:")
+    say(f"{'depth':>6} {'direction':<20} " + " ".join(f"{'a=%g' % al:>8}" for al in a.swap_alphas) + "   | exchange the two colours, largest dose")
+    for lsw in SWAP_L:
+        for dname in ("write", "output-layer row", "random"):
+            cells = []
+            for al in a.swap_alphas:
+                v = [r["said_tgt_add"] for r in swap_rows if r["direction"] == dname and r["alpha"] == al and r["channel"] == chan and r["layer"] == lsw]
+                cells.append(f"{np.mean(v):>8.2f}" if v else f"{'-':>8}")
+            sw = [r.get("said_tgt_swap") for r in swap_rows if r["direction"] == dname and r["channel"] == chan and r["layer"] == lsw and "said_tgt_swap" in r]
+            say(f"{frac[lsw]:>6.2f} {dname:<20} " + " ".join(cells) + f"   | {np.mean(sw) if sw else float('nan'):.2f}")
 
 # ---- figures
 xs = [frac[l] for l in ALLL]
@@ -377,6 +383,6 @@ json.dump(dict(repo=a.repo, n=len(ev), colours=COLOURS, depth_swap=frac[lmid],
                write_share={str(frac[l]): {k: float(np.median([s[k] for s in shares if s["which"] == "main" and s["layer"] == l and k in s])) for k in KEYS} for l in L6},
                covering={str(frac[l]): {k: float(np.median([c[k] for c in cov if c["layer"] == l and k in c])) for k in KEYS} for l in L6},
                agreement={str(frac[l]): sp.get(l) for l in L6},
-               swap=swap_rows[:400]),
+               swap=swap_rows, swap_depths=[frac[l] for l in SWAP_L]),
           open(f"{a.out}/{name}_twostep.json", "w"), indent=1, default=float)
 say(f"\nwrote {a.out}/{name}_twostep.json  ({(time.time() - T0) / 60:.1f} min)")
