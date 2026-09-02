@@ -130,6 +130,23 @@ PALETTE = plot.SERIES + ["#7a7a7a", "#c9a227", "#5b8c5a", "#b05a7a", "#3f7f9f", 
 WCOL = {w: PALETTE[i % len(PALETTE)] for i, w in enumerate(words)}
 
 
+
+def pretty(tok: str) -> str:
+    """A short, readable name for a token on an axis: the chat template's markers are
+    long enough to collide with each other when every position gets a label."""
+    t = tok.strip()
+    if not t:
+        return "\u2423"
+    low = t.lower()
+    if "vision_start" in low or "image_pad" in low or "vision_end" in low:
+        return "picture"
+    if "im_start" in low:
+        return "turn"
+    if "im_end" in low:
+        return "end"
+    return t[:9]
+
+
 def draw_slice(ax, R, ch, tokens, which, title):
     """Layer x text-token grid; cell = word with the largest reading, alpha = margin."""
     pos = np.where(ch == "txt")[0].tolist() + [len(ch) - 1]
@@ -142,7 +159,9 @@ def draw_slice(ax, R, ch, tokens, which, title):
             c = to_rgba(WCOL[words[top[i, j]]]); img[i, j] = (*c[:3], float(min(margin[i, j] / mx, 1.0)))
     ax.imshow(img, aspect="auto", interpolation="nearest", origin="lower")
     ax.set_yticks(range(0, len(ALL), max(1, len(ALL) // 6))); ax.set_yticklabels([f"{depth.to_frac(m, ALL[i]):.2f}" for i in range(0, len(ALL), max(1, len(ALL) // 6))])
-    ax.set_xticks(range(len(pos))); ax.set_xticklabels([tokens[p][:9] for p in pos], rotation=60, ha="right", fontsize=7.5)
+    lab = [pretty(tokens[p]) for p in pos]
+    lab = [x if i == 0 or x != lab[i - 1] else "" for i, x in enumerate(lab)]   # one label per run of repeats
+    ax.set_xticks(range(len(pos))); ax.set_xticklabels(lab, rotation=60, ha="right", fontsize=7.5)
     ax.set_ylabel("depth"); plot.panel_label(ax, title)
     ax.grid(False)
 
@@ -157,7 +176,9 @@ def draw_ranks(ax, ranks, ch, tokens, title):
         for j in range(len(pos)):
             c = to_rgba(WCOL[words[top[i, j]]]); img[i, j] = (*c[:3], float(np.clip(1 - np.log10(best[i, j] + 1) / 4, 0, 1)))
     ax.imshow(img, aspect="auto", interpolation="nearest", origin="lower")
-    ax.set_yticks([]); ax.set_xticks(range(len(pos))); ax.set_xticklabels([tokens[p][:9] for p in pos], rotation=60, ha="right", fontsize=7.5)
+    lab = [pretty(tokens[p]) for p in pos]
+    lab = [x if i == 0 or x != lab[i - 1] else "" for i, x in enumerate(lab)]
+    ax.set_yticks([]); ax.set_xticks(range(len(pos))); ax.set_xticklabels(lab, rotation=60, ha="right", fontsize=7.5)
     plot.panel_label(ax, title); ax.grid(False)
 
 
