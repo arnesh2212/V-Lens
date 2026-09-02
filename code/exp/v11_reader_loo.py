@@ -18,6 +18,7 @@ import argparse
 import json
 import os
 import sys
+import time
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import numpy as np
@@ -66,6 +67,26 @@ def axis_excluding(held):
     H = np.concatenate([D[s]["ANS"][:, -1] for s in D if s != held]); y = np.concatenate([D[s]["refused"] for s in D if s != held])
     return verdict.dim_direction(H, y.astype(int)).numpy()
 
+def family_scores(held, r_axis, layers, folds=5, seed=0):
+    """The same read, but with the map fitted on the held-out set's own states.
+
+    That is the setting a practitioner is actually in: the traffic is available,
+    its labels are not.  Five folds over items, so no item is ever read through
+    a map that saw it, which makes this comparable with the cross-validated
+    probe on the same rows.
+    """
+    A = D[held]["ANS"]
+    n = len(A)
+    idx = np.random.default_rng(seed).permutation(n)
+    out = {int(l): np.zeros(n) for l in layers}
+    for te in np.array_split(idx, folds):
+        tr = np.setdiff1d(np.arange(n), te)
+        Rf = reader.fit(A[tr], layers, final_layer=A.shape[1] - 1)
+        for l in layers:
+            out[int(l)][te] = Rf.read(A[te, l], l, r_axis)
+    return out
+
+
 def tpr_at_fpr(y, s, fpr_target):
     fpr, tpr, _ = roc_curve(y, s); return float(np.interp(fpr_target, fpr, tpr))
 def fpr_at_tpr(y, s, tpr_target):
@@ -77,9 +98,12 @@ for held in a.sets:
         continue
     ben = np.concatenate([D[b]["ANS"] for b in a.benign if b in D]) if any(b in D for b in a.benign) else None
     say(f"\n== held out: {held}  (n={D[held]['n']}, harmful {D[held]['harmful'].mean():.2f}, refused {D[held]['refused'].mean():.2f})")
-    say(f"{'depth':>6} {'reader':>7} {'HiddenD':>8} {'probe':>6} | {'TPR@1%':>7} {'TPR@5%':>7} {'FPR@95':>7} | {'FA-benign':>9} | {'read':>7} {'raw':>7} {'probe':>7}")
+    say(f"{'depth':>6} {'reader':>7} {'HiddenD':>8} {'probe':>6} | {'TPR@1%':>7} {'TPR@5%':>7} {'FPR@95':>7} | {'FA-benign':>9} | {'read':>7} {'read-fam':>7} {'raw':>7} {'probe':>7}")
     say(f"{'':>6} {'[A: is the input harmful, against the shared benign arm]':<60} {'':>12} | {'[B: does the model refuse it]':<24}")
     r = axis_excluding(held)
+    t_fam = time.time()
+    FAM = family_scores(held, r, layers)
+    say(f"   map refitted on this set's own states, 5 folds over {D[held]['n']} items ({time.time() - t_fam:.0f}s)")
     for l in layers:
         # (A) harmful (held-out set) vs benign arms
         X_pos = D[held]["ANS"][:, l][D[held]["harmful"]]
@@ -115,10 +139,13 @@ for held in a.sets:
             except Exception:
                 sb_probe = np.zeros(len(Xb))
             row["decision"] = dict(reader=roc_auc_score(ref, sb_reader), hidden=roc_auc_score(ref, sb_id),
-                                   probe=roc_auc_score(ref, sb_probe), n_refused=int(ref.sum()), n=int(len(ref)))
+                                   probe=roc_auc_score(ref, sb_probe),
+                                   reader_family=roc_auc_score(ref, FAM[int(l)]),
+                                   n_refused=int(ref.sum()), n=int(len(ref)))
         out["results"].append(row)
         dec = row.get("decision", {})
         say(f"{row['frac']:>6.2f} {row['auroc']['reader']:>7.3f} {row['auroc']['hidden']:>8.3f} {row['auroc']['probe']:>6.3f} | {row['tpr1']:>7.3f} {row['tpr5']:>7.3f} {row['fpr95']:>7.3f} | {row['fa_benign']:>9.3f}"
-            f" | {dec.get('reader', float('nan')):>7.3f} {dec.get('hidden', float('nan')):>7.3f} {dec.get('probe', float('nan')):>7.3f}")
+            f" | {dec.get('reader', float('nan')):>7.3f} {dec.get('reader_family', float('nan')):>7.3f}"
+            f" {dec.get('hidden', float('nan')):>7.3f} {dec.get('probe', float('nan')):>7.3f}")
 json.dump(out, open(f"/workspace/vlm/results/reader/{name}_loo.json", "w"), indent=1, default=float)
 say("wrote loo json")

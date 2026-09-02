@@ -687,9 +687,11 @@ def build_swap():
 
 
 def build_benchmarks():
-    """Leave-one-benchmark-out: with the map fitted on COCO photographs, does the
-    reading say whether Qwen3-VL-8B refuses that item?  Every held-out set the
-    run produced, at the two depths the page reads."""
+    """Leave-one-benchmark-out: does the reading say whether Qwen3-VL-8B refuses
+    that item?  Two maps are compared: one fitted on COCO photographs, which is
+    the foreign map, and one refitted on the held-out set's own unlabelled
+    states, five folds over items.  The probe is trained with labels on the same
+    rows, cross-validated, which is the ceiling."""
     d = load_json(os.path.join(RESULTS, "reader", "Qwen3-VL-8B-Instruct_loo.json"))
     if d is None:
         return None
@@ -697,30 +699,29 @@ def build_benchmarks():
              "vlguard": "VLGuard", "vlsbench": "VLSBench", "siuo": "SIUO",
              "mossbench_contrast": "MOSSBench, the contrast set", "spavl_harm": "SPA-VL, harmful"}
     ORDER = ["mmsb_typo", "figstep", "hades", "vlguard", "vlsbench", "siuo", "mossbench_contrast", "spavl_harm"]
-    DEPTHS = [0.48, 0.65]
-    by = {}
-    for r in d["results"]:
-        by[(r["held"], round(r["frac"], 2))] = r
-    fr = {t: nearest_float(sorted({round(r["frac"], 2) for r in d["results"]}), t) for t in DEPTHS}
+    DEPTHS = [0.2, 0.48]
+    by = {(r["held"], round(r["frac"], 2)): r for r in d["results"] if r.get("decision")}
+    fracs = sorted({round(r["frac"], 2) for r in d["results"]})
+    fr = {t: nearest_float(fracs, t) for t in DEPTHS}
     rows, notes = [], []
     for held in ORDER:
         if (held, fr[DEPTHS[0]]) not in by:
-            notes.append(f"no rows for {held}; skipped")
+            notes.append(f"no decision rows for {held}; skipped")
             continue
         first = by[(held, fr[DEPTHS[0]])]["decision"]
         vals = [(first["n"], False), (first["n_refused"] / first["n"], False)]
         for t in DEPTHS:
             dec = by[(held, fr[t])]["decision"]
-            vals += [(dec["reader"], False), (dec["hidden"], False), (dec["probe"], True)]
+            vals += [(dec["reader_family"], False), (dec["reader"], False), (dec["hidden"], False), (dec["probe"], True)]
         rows.append((NAMES.get(held, held), vals))
-    groups = [[2, 3, 4], [5, 6, 7]]
-    col_labels = ["items", "refused"] + [f"depth {t} {k}" for t in DEPTHS for k in ("V-Read", "raw", "probe")]
+    groups = [[2, 3, 4, 5], [6, 7, 8, 9]]
+    col_labels = ["items", "refused"] + [f"depth {t} {k}" for t in DEPTHS
+                                          for k in ("V-Read refit here", "V-Read foreign map", "raw", "probe")]
     thead = ('    <thead><tr><th rowspan="2">held-out benchmark</th><th rowspan="2">items</th>'
              '<th rowspan="2">refused</th>'
-             f'<th colspan="3">depth {DEPTHS[0]}</th><th colspan="3">depth {DEPTHS[1]}</th></tr>\n'
-             "    <tr><th>V-Read</th><th>raw</th><th>probe</th>"
-             "<th>V-Read</th><th>raw</th><th>probe</th></tr></thead>")
-    # the first two columns are counts, not scores: format them separately
+             f'<th colspan="4">depth {fr[DEPTHS[0]]:.2g}</th><th colspan="4">depth {fr[DEPTHS[1]]:.2g}</th></tr>\n'
+             "    <tr><th>refit here</th><th>foreign map</th><th>raw</th><th>probe</th>"
+             "<th>refit here</th><th>foreign map</th><th>raw</th><th>probe</th></tr></thead>")
     lines = ['  <div class="tblwrap">', "  <table>", thead, "    <tbody>"]
     for label, vals in rows:
         marked = set()
