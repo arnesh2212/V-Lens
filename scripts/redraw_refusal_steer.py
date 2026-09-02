@@ -10,10 +10,10 @@ ap = argparse.ArgumentParser(); ap.add_argument("json"); ap.add_argument("--out"
 a = ap.parse_args(); plot.use()
 d = json.load(open(a.json)); rows = d["results"]
 base = [r for r in rows if r["direction"] == "baseline"][0]
-NAME = {"write": "the write", "DIM (labelled)": "difference of means, labelled", "raw (the final score)": "the raw direction",
-        "read inverted": "the read, inverted", "random": "random, same strength"}
-COL = {"the write": plot.SERIES[0], "difference of means, labelled": plot.SERIES[5], "the raw direction": plot.SERIES[1],
-       "the read, inverted": plot.SERIES[6], "random, same strength": plot.MUTED}
+NAME = {"V-Write": "V-Write", "DIM (labelled)": "difference of means, labelled", "raw (the final score)": "the raw direction",
+        "read inverted": "V-Read, inverted", "random": "random, same strength"}
+COL = {"V-Write": plot.SERIES[0], "difference of means, labelled": plot.SERIES[5], "the raw direction": plot.SERIES[1],
+       "V-Read, inverted": plot.SERIES[6], "random, same strength": plot.MUTED}
 agg = defaultdict(dict)
 for r in rows:
     if r["direction"] == "baseline" or r["channel"] != "ans":

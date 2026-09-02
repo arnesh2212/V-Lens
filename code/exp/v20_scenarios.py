@@ -4,7 +4,7 @@
 Each scenario is a picture and a question.  For each one the figure shows, in order:
 
   the picture and the question, with the model's actual reply underneath;
-  the word strip, what the read says the model is about to say at each depth,
+  the word strip, what V-Read says the model is about to say at each depth,
       with the same strip from the logit lens beneath it for contrast;
   the score traces, two or three scores read at every depth, each shown as the
       fraction of its own final value that the instrument has recovered, since the two
@@ -22,6 +22,7 @@ import argparse
 import json
 import math
 import os
+import random
 import sys
 import time
 
@@ -166,7 +167,7 @@ def fit_family(paths, prompt_of):
 t0 = time.time()
 RD_FAM = {"refusal": fit_family(FAM_REF[: a.n_fit_family], lambda p_: CARRIER),
           "yesno": fit_family(FAM_COCO[: a.n_fit_family],
-                              lambda p_: f"Is there a {rng.choice(BANK_WORDS)} in this picture? Answer yes or no.")}
+                              lambda p_, _r=random.Random(3): f"Is there a {_r.choice(BANK_WORDS)} in this picture? Answer yes or no.")}
 RD_FAM["present"] = RD_FAM["absent"] = RD_FAM["word"] = RD_FAM["yesno"]
 say(f"read maps fitted per prompt family on {a.n_fit_family} unlabelled states each ({(time.time() - t0) / 60:.1f} min)")
 
@@ -199,10 +200,10 @@ def read_scenario(s):
         ANS = np.stack([rec.activations[l][0, S - 1].float().cpu().numpy() for l in range(m.n_layers)])
     # word strips and score traces
     fns = score_fns(s)
-    strips, traces = {"read": {}, "logit lens": {}}, {k: {"read": [], "logit lens": []} for k, _ in fns}
+    strips, traces = {"V-Read": {}, "logit lens": {}}, {k: {"V-Read": [], "logit lens": []} for k, _ in fns}
     with torch.no_grad():
         for l in ALLL:
-            for tname, H in (("read", RD.to_final(ANS[l][None], l)), ("logit lens", ANS[l][None])):
+            for tname, H in (("V-Read", RD.to_final(ANS[l][None], l)), ("logit lens", ANS[l][None])):
                 hL = torch.as_tensor(H).to(m.device).to(torch.bfloat16)
                 lg = m.unembed(hL).float()
                 strips[tname][l] = [m.tokenizer.decode([int(t)]).strip() for t in lg[0].argsort(descending=True)[:3]]
@@ -244,13 +245,13 @@ def draw(s, r, path):
     for j, l in enumerate(show):
         x = 0.10 + 0.90 * j / max(len(show) - 1, 1)
         axs.text(x, 1.0, f"{frac[l]:.2f}", ha="center", va="top", fontsize=8.5, color=plot.INK3)
-        for i, w in enumerate(r["strips"]["read"][l]):
+        for i, w in enumerate(r["strips"]["V-Read"][l]):
             axs.text(x, 0.82 - 0.13 * i, w[:11] or "·", ha="center", va="top", fontsize=9.5 - 0.8 * i,
                      color=plot.INK if i == 0 else plot.INK2)
         for i, w in enumerate(r["strips"]["logit lens"][l]):
             axs.text(x, 0.36 - 0.13 * i, w[:11] or "·", ha="center", va="top", fontsize=9.5 - 0.8 * i,
                      color=plot.INK2 if i == 0 else plot.INK3)
-    axs.text(0.055, 0.86, "the read", ha="right", va="top", fontsize=9, color=plot.SERIES[0])
+    axs.text(0.055, 0.86, "V-Read", ha="right", va="top", fontsize=9, color=plot.SERIES[0])
     axs.text(0.055, 0.40, "logit lens", ha="right", va="top", fontsize=9, color=plot.SERIES[1])
     axs.text(0.55, 1.13, "what the model is about to say, by depth", ha="center", fontsize=9.5, color=plot.INK2)
     axs.set_xlim(-0.06, 1.06); axs.set_ylim(0, 1.18)
@@ -258,7 +259,7 @@ def draw(s, r, path):
     xs = [frac[l] for l in ALLL]
     for j, k in enumerate(fns[:3]):
         ax = fig.add_subplot(gs[1, 2 * j: 2 * j + 2])
-        for tname, col, lw in (("read", plot.SERIES[0], 1.7), ("logit lens", plot.SERIES[1], 1.2)):
+        for tname, col, lw in (("V-Read", plot.SERIES[0], 1.7), ("logit lens", plot.SERIES[1], 1.2)):
             v = np.asarray(r["traces"][k][tname], float)
             final = v[-1] if abs(v[-1]) > 1e-6 else (np.sign(v[-1]) or 1.0)
             ax.plot(xs, v / final, color=col, lw=lw)
@@ -277,7 +278,7 @@ def draw(s, r, path):
             sp.set_visible(False)
         ax.set_title(f"depth {frac[l]:.2f}", fontsize=8.5, color=plot.INK2)
     axm = fig.add_subplot(gs[2, 0]); axm.set_axis_off()
-    axm.text(1.0, 0.6, f"the write on\n“{r['score']}”\nred pushes it up,\nblue pushes it down", ha="right", va="center",
+    axm.text(1.0, 0.6, f"V-Write on\n“{r['score']}”\nred pushes it up,\nblue pushes it down", ha="right", va="center",
              fontsize=8.6, color=plot.INK2)
     plot.save(fig, path); plt.close(fig)
 
@@ -288,7 +289,7 @@ for i, s in enumerate(scen):
     p = f"{a.figs}/{name}_scenario_{i}_{s['kind']}.png"
     draw(s, r, p)
     out.append(dict(tag=s["tag"], kind=s["kind"], question=s["q"], reply=r["reply"][:300], png=os.path.basename(p),
-                    top_words={str(frac[l]): r["strips"]["read"][l] for l in ALLL},
+                    top_words={str(frac[l]): r["strips"]["V-Read"][l] for l in ALLL},
                     top_words_logit={str(frac[l]): r["strips"]["logit lens"][l] for l in ALLL},
                     traces={k: {t: v for t, v in r["traces"][k].items()} for k in r["traces"]},
                     depths=[frac[l] for l in ALLL]))

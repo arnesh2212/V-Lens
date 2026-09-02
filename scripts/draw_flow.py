@@ -122,7 +122,7 @@ ax.text(sum(SCORE_X) / 2, SCORE_Y[0] + 0.09, "m(x) = m(h_L[a])", ha="center", va
 read_x = ANS_X[1]
 arrow((read_x, LAYERL_Y[1] + 0.02), (read_x, LAYERLAST_Y[0] - 0.02), BLUE, rad=0.75, lw=1.7, ms=12)
 rx = STACK_X1 + 0.35
-ax.text(rx, 2.78, "the read", color=BLUE, fontsize=9, ha="left", va="bottom", **TXT)
+ax.text(rx, 2.78, "V-Read", color=BLUE, fontsize=9, ha="left", va="bottom", **TXT)
 ax.text(rx, 2.58,
         "A_l h_l[a] + b_l ≈ h_L[a]", ha="left", fontsize=6.9, color=INK, family="monospace", **TXT)
 ax.text(rx, 2.38,
@@ -141,7 +141,7 @@ for g in ("pic", "word", "ans"):
     arrow(starts[g], targets[g], ORANGE, rad=rad_for[g], lw=1.5, ms=11)
 
 wx = 0.0
-ax.text(wx, LAYERL_Y[1] + 0.30, "the write", color=ORANGE, fontsize=9, ha="left", **TXT)
+ax.text(wx, LAYERL_Y[1] + 0.30, "V-Write", color=ORANGE, fontsize=9, ha="left", **TXT)
 ax.text(wx, LAYERL_Y[1] + 0.06, "u_l^c = mean of d m(x)/d h_l[p]",
         ha="left", fontsize=6.9, color=INK, family="monospace", **TXT)
 ax.text(wx, LAYERL_Y[0] + 0.24, "reading of p:  u_l^c . (h_l[p] - mu_l^c)",

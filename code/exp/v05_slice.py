@@ -194,7 +194,7 @@ for k, ex in enumerate(examples):
     # ---- figure 1: the two slices over the text tokens
     fig, axs = plt.subplots(1, 2, figsize=(11.5, 4.9), gridspec_kw=dict(width_ratios=[1, 1], wspace=0.06))
     fig.text(0.5, 0.985, "which word each token is pushing the answer toward, by depth", ha="center", fontsize=10, color=plot.INK2)
-    draw_slice(axs[0], R, ch, toks, words, "the write")
+    draw_slice(axs[0], R, ch, toks, words, "V-Write")
     draw_ranks(axs[1], ranks, ch, toks, "the logit lens")
     handles = [plt.Line2D([], [], marker="s", ls="", color=WCOL[w], label=w + (" (in picture)" if w in ex["present"] else "")) for w in words]
     fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, -0.02), ncols=min(6, len(words)), frameon=False)
@@ -224,7 +224,7 @@ for k, ex in enumerate(examples):
         axs[1].plot(x, ranks[w][:, S - 1] + 1, color=WCOL[w], lw=lw, alpha=al)
     axs[0].set_xlabel("depth"); axs[0].set_ylabel("lens reading at the answer slot\n(logits toward the word)")
     axs[1].set_xlabel("depth"); axs[1].set_ylabel("output-layer row rank of the word\n(lower is better)"); axs[1].set_yscale("log"); axs[1].invert_yaxis()
-    plot.panel_label(axs[0], "write"); plot.panel_label(axs[1], "logit lens")
+    plot.panel_label(axs[0], "V-Write"); plot.panel_label(axs[1], "logit lens")
     fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, -0.04), ncols=min(6, len(words)), frameon=False)
     plot.save(fig, f"{a.figdir}/{name}_slice_answer_{k}.png")
 

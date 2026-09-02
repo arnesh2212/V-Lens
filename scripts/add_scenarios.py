@@ -16,7 +16,7 @@ NICE = {"Qwen3-VL-2B-Instruct": "Qwen3-VL-2B", "Qwen3-VL-8B-Instruct": "Qwen3-VL
 out = []
 out.append(f'<h2>The tool on six scenarios</h2>')
 out.append('  <p>Each page below is one picture, one question and one forward pass on '
-           f'{NICE.get(name, name)}. The strip along the top is what the read says the model is about to say at '
+           f'{NICE.get(name, name)}. The strip along the top is what V-Read says the model is about to say at '
            'each depth, with the logit lens beneath it for contrast. The middle row is two or three scores read '
            'at every depth. The bottom row is the write over the image patches, which is where the answer is being '
            'pushed from. Nothing is averaged over items.</p>')

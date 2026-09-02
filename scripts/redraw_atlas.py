@@ -29,9 +29,9 @@ if not os.path.exists(a.json):
 
 plot.use()
 NICE = {"Qwen3-VL-2B-Instruct": "Qwen3-VL-2B", "Qwen3-VL-8B-Instruct": "Qwen3-VL-8B"}
-INSTR = [("write, path", plot.SERIES[0]),
-          ("write, one point", plot.SERIES[4]),
-          ("write, averaged", plot.SERIES[2]),
+INSTR = [("V-Write, path", plot.SERIES[0]),
+          ("V-Write, one point", plot.SERIES[4]),
+          ("V-Write, averaged", plot.SERIES[2]),
           ("identity", plot.SERIES[1]),
           ("grad x act", plot.SERIES[3]),
           ("GLIMPSE", "#7a7a7a")]
@@ -63,12 +63,12 @@ for j, (kind, title) in enumerate(KINDS):
         ys = [vals[l][0] if l in vals else None for l in layers]
         if all(y is None for y in ys):
             continue
-        axs[0, j].plot(xs, ys, color=c, lw=1.7 if key == "write, path" else 1.1, ls=ls)
+        axs[0, j].plot(xs, ys, color=c, lw=1.7 if key == "V-Write, path" else 1.1, ls=ls)
         used.add(key)
         t1 = S[key].get("top1", {})
         ys1 = [t1[l][1] if l in t1 else None for l in layers]
         if not all(y is None for y in ys1):
-            axs[1, j].plot(xs, ys1, color=c, lw=1.7 if key == "write, path" else 1.1, ls=ls)
+            axs[1, j].plot(xs, ys1, color=c, lw=1.7 if key == "V-Write, path" else 1.1, ls=ls)
     plot.chance_line(axs[0, j], 0.0)
     if regions:
         plot.chance_line(axs[1, j], 1.0 / regions)
@@ -80,7 +80,7 @@ axs[1, 0].set_ylabel("strongest region is the right one")
 for ax in axs.flat:
     plot.despine(ax)
 
-LAB = {"write, path": "write, path", "write, one point": "write, one point", "write, averaged": "write, averaged",
+LAB = {"V-Write, path": "V-Write, path", "V-Write, one point": "V-Write, one point", "V-Write, averaged": "V-Write, averaged",
        "identity": "identity (logit lens)", "grad x act": "grad x act", "GLIMPSE": "GLIMPSE (|.| version, dashed)"}
 handles = [plt.Line2D([], [], color=c, lw=1.5, ls="--" if key == "GLIMPSE" else "-", label=LAB[key])
            for key, c in INSTR if key in used]

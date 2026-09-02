@@ -82,7 +82,7 @@ def kl_of(mapper, l):
         got = torch.log_softmax(m.unembed(torch.as_tensor(mapper(ANS[:, l], l)).to(m.device)).float(), -1)
         return float((ref.exp() * (ref - got)).sum(-1).mean())
 
-MAPPERS = {"read": lambda X, l: R.to_final(X, l),
+MAPPERS = {"V-Read": lambda X, l: R.to_final(X, l),
            "tuned lens": lambda X, l: (torch.as_tensor(X).float() @ TL.maps[l][0].T + TL.maps[l][1]).numpy(),
            "identity": lambda X, l: X}
 rows = []

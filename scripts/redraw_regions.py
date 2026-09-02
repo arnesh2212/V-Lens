@@ -23,8 +23,8 @@ a = ap.parse_args()
 plot.use()
 
 NICE = {"Qwen3-VL-2B-Instruct": "Qwen3-VL-2B", "Qwen3-VL-8B-Instruct": "Qwen3-VL-8B"}
-INSTR = [("write, this item", plot.SERIES[0]),
-          ("write", plot.SERIES[4]),
+INSTR = [("V-Write, this item", plot.SERIES[0]),
+          ("V-Write", plot.SERIES[4]),
           ("logit lens", plot.SERIES[1]),
           ("logit lens, centred", plot.SERIES[2])]
 PANELS = [("accuracy", "naming the object", None),

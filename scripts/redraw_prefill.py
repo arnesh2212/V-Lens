@@ -24,8 +24,8 @@ a = ap.parse_args()
 plot.use()
 
 NICE = {"Qwen3-VL-2B-Instruct": "Qwen3-VL-2B", "Qwen3-VL-8B-Instruct": "Qwen3-VL-8B"}
-INSTR = [("reader", "the read", plot.SERIES[0]),
-          ("write", "the write", plot.SERIES[2]),
+INSTR = [("reader", "V-Read", plot.SERIES[0]),
+          ("V-Write", "V-Write", plot.SERIES[2]),
           ("identity", "the raw reading", plot.SERIES[1]),
           ("probe", "linear probe (labelled)", plot.SERIES[3])]
 

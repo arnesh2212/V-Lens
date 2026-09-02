@@ -8,8 +8,8 @@ from jvlm import plot
 ap = argparse.ArgumentParser(); ap.add_argument("jsons", nargs="+"); ap.add_argument("--out", default="figures/presence.png")
 a = ap.parse_args(); plot.use()
 NICE = {"Qwen3-VL-2B-Instruct": "Qwen3-VL-2B", "Qwen3-VL-8B-Instruct": "Qwen3-VL-8B"}
-SER = [("reader", "the read (no labels)", plot.SERIES[0], "-"), ("probe", "linear probe (labelled)", plot.SERIES[2], ":"),
-       ("logit lens", "logit lens", plot.SERIES[1], "-"), ("write", "the write", "#8a8880", "-")]
+SER = [("reader", "V-Read (no labels)", plot.SERIES[0], "-"), ("probe", "linear probe (labelled)", plot.SERIES[2], ":"),
+       ("logit lens", "logit lens", plot.SERIES[1], "-"), ("write", "V-Write", "#8a8880", "-")]
 fig, axs = plt.subplots(2, len(a.jsons), figsize=(3.9 * len(a.jsons), 5.2), sharex=True, sharey=True)
 axs = np.atleast_2d(axs); axs = axs.reshape(2, -1)
 for j, path in enumerate(a.jsons):

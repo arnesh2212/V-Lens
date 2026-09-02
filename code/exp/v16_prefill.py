@@ -136,7 +136,7 @@ say(f"the write has directions at layers {sorted(W_LAYERS)}")
 def scores(X, l):
     out = {"identity": X @ r_np}
     if l in W_LAYERS:
-        out["write"] = np.asarray(VL.read(X, "refusal", "ans", l), float)
+        out["V-Write"] = np.asarray(VL.read(X, "refusal", "ans", l), float)
     if RD is not None and l in RD.maps:
         out["reader"] = RD.read(X, l, r_np)
     return out
@@ -173,7 +173,7 @@ by_cond = {}
 for c in PREFILL:
     s_h = (conds == c) & (kinds == "harmful"); s_b = (conds == c) & (kinds == "benign")
     S_h = scores(ANSP[s_h][:, lmid], lmid); S_b = scores(ANSP[s_b][:, lmid], lmid)
-    key = "reader" if "reader" in S_h else ("write" if "write" in S_h else "identity")
+    key = "reader" if "reader" in S_h else ("V-Write" if "V-Write" in S_h else "identity")
     by_cond[c] = dict(harmful=float(np.mean(S_h[key])), benign=float(np.mean(S_b[key])),
                       harmful_sd=float(np.std(S_h[key])), benign_sd=float(np.std(S_b[key])), instrument=key)
     say(f"{c:<12} {by_cond[c]['harmful']:>12.2f} {by_cond[c]['benign']:>12.2f}")
@@ -181,7 +181,7 @@ for c in PREFILL:
 # ---- figures
 fig, axs = plt.subplots(1, 2, figsize=(7.8, 2.9))
 xs = [frac[l] for l in ALLL]
-for k, c in (("reader", plot.SERIES[0]), ("write", plot.SERIES[2]), ("identity", plot.SERIES[1]), ("probe", plot.INK2)):
+for k, c in (("reader", plot.SERIES[0]), ("V-Write", plot.SERIES[2]), ("identity", plot.SERIES[1]), ("probe", plot.INK2)):
     ys = [x["auroc"].get(k, float("nan")) for x in res]
     if all(np.isnan(ys)): continue
     axs[0].plot(xs, ys, color=c, lw=1.5 if k == "reader" else 1.1, ls=":" if k == "probe" else "-")

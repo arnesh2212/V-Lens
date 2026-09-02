@@ -50,7 +50,7 @@ ap.add_argument("--n-mu", type=int, default=40, help="scenes for the average sta
 ap.add_argument("--n-fit", type=int, default=60, help="scenes to fit the colour write directions")
 ap.add_argument("--swap-alphas", type=float, nargs="*", default=[0.2, 0.4, 0.8])
 ap.add_argument("--swap-depths", type=float, nargs="*", default=[0.35, 0.5, 0.65])
-ap.add_argument("--only-write", action="store_true", help="skip the reading and covering passes, sweep the write only")
+ap.add_argument("--only-write", action="store_true", help="skip the reading and covering passes, sweep V-Write only")
 ap.add_argument("--out", default="/workspace/vlm/results/twostep")
 ap.add_argument("--figs", default="/workspace/vlm/figures/twostep")
 a = ap.parse_args()
@@ -206,7 +206,7 @@ for n2, it in enumerate([] if a.only_write else ev):
         ANS, maps, cols, pos, b = read_item(it, which)
         i_ans, i_oth, i_dst = COLOURS.index(cols["ans"]), COLOURS.index(cols["other"]), COLOURS.index(cols["dist"])
         for l in ALLL:
-            for tname, H in (("read", RD.to_final(ANS[l][None], l)), ("logit lens", ANS[l][None])):
+            for tname, H in (("V-Read", RD.to_final(ANS[l][None], l)), ("logit lens", ANS[l][None])):
                 lo = colour_logodds(H)[0]
                 rows.append(dict(item=n2, which=which, layer=l, frac=frac[l], transport=tname,
                                  answer=float(lo[i_ans]), landmark=float(lo[i_oth]), distractor=float(lo[i_dst]),
@@ -216,16 +216,16 @@ for n2, it in enumerate([] if a.only_write else ev):
     if (n2 + 1) % 10 == 0:
         say(f"  read {n2 + 1}/{len(ev)}  ({(time.time() - t0) / 60:.1f} min)")
 
-R = {(w, t): {l: [r for r in rows if r["which"] == w and r["transport"] == t and r["layer"] == l] for l in ALLL} for w in ("main", "control") for t in ("read", "logit lens")}
+R = {(w, t): {l: [r for r in rows if r["which"] == w and r["transport"] == t and r["layer"] == l] for l in ALLL} for w in ("main", "control") for t in ("V-Read", "logit lens")}
 if rows:
   say(f"\nthe two-step question: how often the top colour is the right one, by depth")
   say(f"{'depth':>6} {'read':>9} {'logit lens':>11}   | names the landmark instead: {'read':>9} {'logit lens':>11}   | the one-step control, read: {'right':>7}")
   for l in ALLL:
-    a_p = np.mean([r["top_is_answer"] for r in R[("main", "read")][l]])
+    a_p = np.mean([r["top_is_answer"] for r in R[("main", "V-Read")][l]])
     a_i = np.mean([r["top_is_answer"] for r in R[("main", "logit lens")][l]])
-    l_p = np.mean([r["top_is_landmark"] for r in R[("main", "read")][l]])
+    l_p = np.mean([r["top_is_landmark"] for r in R[("main", "V-Read")][l]])
     l_i = np.mean([r["top_is_landmark"] for r in R[("main", "logit lens")][l]])
-    c_p = np.mean([r["top_is_answer"] for r in R[("control", "read")][l]])
+    c_p = np.mean([r["top_is_answer"] for r in R[("control", "V-Read")][l]])
     say(f"{frac[l]:>6.2f} {a_p:>9.2f} {a_i:>11.2f}   | {'':>26} {l_p:>9.2f} {l_i:>11.2f}   | {'':>29} {c_p:>7.2f}")
 
   say(f"\nwhere the write sits, over chance for the region's size (main question)")
@@ -301,8 +301,8 @@ lmid = SWAP_L[-1]
 for n2, it in enumerate(ev[: min(len(ev), 24)]):
     b = batch(it); base = sc.generate(b, max_new_tokens=6).strip().lower()
     src, tgt = it["answer_main"], it["colour_distractor"]
-    for dname in ("write", "output-layer row", "random"):
-        if dname == "write":
+    for dname in ("V-Write", "output-layer row", "random"):
+        if dname == "V-Write":
             d_src, d_tgt = unit(VL.dir(f"colour:{src}", "ans", lmid)), unit(VL.dir(f"colour:{tgt}", "ans", lmid))
         elif dname == "output-layer row":
             W = m._lm_head.weight
@@ -313,7 +313,7 @@ for n2, it in enumerate(ev[: min(len(ev), 24)]):
         for lsw in SWAP_L:
             for al in a.swap_alphas:
                 for chan in ("img", "all"):
-                    if dname == "write":
+                    if dname == "V-Write":
                         # the write has its own direction for each group of positions: the one
                         # fitted at image positions is the one to write into the picture
                         ch_ = "img" if chan == "img" else "ans"
@@ -331,12 +331,12 @@ for n2, it in enumerate(ev[: min(len(ev), 24)]):
                             out_swap = sc.generate(b, max_new_tokens=6).strip().lower()
                         row.update(said_tgt_swap=bool(tgt in out_swap), said_src_swap=bool(src in out_swap), swap=out_swap[:24])
                     swap_rows.append(row)
-base_right = np.mean([tgt in r["base"] for r in swap_rows if r["alpha"] == a.swap_alphas[0] and r["direction"] == "write"])
+base_right = np.mean([tgt in r["base"] for r in swap_rows if r["alpha"] == a.swap_alphas[0] and r["direction"] == "V-Write"])
 for chan in ("img", "all"):
     say(f"\nwriting another colour on {'the picture' if chan == 'img' else 'every position'}; the spoken answer becomes that colour:")
     say(f"{'depth':>6} {'direction':<20} " + " ".join(f"{'a=%g' % al:>8}" for al in a.swap_alphas) + "   | exchange the two colours, largest dose")
     for lsw in SWAP_L:
-        for dname in ("write", "output-layer row", "random"):
+        for dname in ("V-Write", "output-layer row", "random"):
             cells = []
             for al in a.swap_alphas:
                 v = [r["said_tgt_add"] for r in swap_rows if r["direction"] == dname and r["alpha"] == al and r["channel"] == chan and r["layer"] == lsw]
@@ -348,7 +348,7 @@ for chan in ("img", "all"):
 xs = [frac[l] for l in ALLL]
 if rows:
     fig, axs = plt.subplots(1, 2, figsize=(7.8, 2.9), sharey=True)
-    for ax, t in zip(axs, ("read", "logit lens")):
+    for ax, t in zip(axs, ("V-Read", "logit lens")):
         lab_ = []
         for key, lab, c in (("top_is_answer", "the sphere, the answer", plot.SERIES[0]),
                             ("top_is_landmark", "the cube, the trap", plot.SERIES[1])):
@@ -386,7 +386,7 @@ json.dump(dict(repo=a.repo, n=len(ev), colours=COLOURS, depth_swap=frac[lmid],
                answer_curves={} if not rows else {t: {str(frac[l]): dict(main_answer=float(np.mean([r["top_is_answer"] for r in R[("main", t)][l]])),
                                                      main_landmark=float(np.mean([r["top_is_landmark"] for r in R[("main", t)][l]])),
                                                      control_answer=float(np.mean([r["top_is_answer"] for r in R[("control", t)][l]])))
-                                  for l in ALLL} for t in ("read", "logit lens")},
+                                  for l in ALLL} for t in ("V-Read", "logit lens")},
                write_share={} if not shares else {str(frac[l]): {k: float(np.median([s[k] for s in shares if s["which"] == "main" and s["layer"] == l and k in s])) for k in KEYS} for l in L6},
                covering={} if not cov else {str(frac[l]): {k: float(np.median([c[k] for c in cov if c["layer"] == l and k in c])) for k in KEYS} for l in L6},
                agreement={str(frac[l]): sp.get(l) for l in L6} if cov else {},

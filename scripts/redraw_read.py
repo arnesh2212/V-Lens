@@ -9,7 +9,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 d = json.load(open(os.path.join(ROOT, "results/gate/reader_regression.json")))
 plot.use()
 NICE = {"Qwen3-VL-2B-Instruct": "Qwen3-VL-2B", "Qwen3-VL-8B-Instruct": "Qwen3-VL-8B", "InternVL3-8B-hf": "InternVL3-8B"}
-SER = [("ridge", "the read (no labels)", plot.SERIES[0], "-", "o"),
+SER = [("ridge", "V-Read (no labels)", plot.SERIES[0], "-", "o"),
        ("probe", "linear probe (labelled)", plot.SERIES[2], ":", "s"),
        ("identity_perfold", "raw reading (HiddenDetect)", plot.SERIES[1], "-", None)]
 models = [k for k in d if k in NICE]

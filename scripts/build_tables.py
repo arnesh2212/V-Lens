@@ -164,10 +164,10 @@ def build_readdecision():
     thead = ('    <thead><tr><th rowspan="2">depth</th>'
              + "".join(f'<th colspan="3">{short}</th>' for _, short in models)
              + '</tr>\n    <tr>'
-             + "".join("<th>read</th><th>raw</th><th>probe</th>" for _ in models)
+             + "".join("<th>V-Read</th><th>raw</th><th>probe</th>" for _ in models)
              + "</tr></thead>")
     groups = [[3 * i, 3 * i + 1, 3 * i + 2] for i in range(len(models))]
-    col_labels = [f"{short} {c}" for _, short in models for c in ("read", "raw", "probe")]
+    col_labels = [f"{short} {c}" for _, short in models for c in ("V-Read", "raw", "probe")]
     html = build_block(thead, rows, groups, decimals=3)
     return {"html": html, "col_labels": col_labels, "notes": notes}
 
@@ -217,11 +217,11 @@ def build_presence():
     thead = ('    <thead><tr><th rowspan="2">depth</th>'
               '<th colspan="4">Qwen3-VL-2B</th>'
               '<th colspan="4">Qwen3-VL-8B</th></tr>\n'
-              "    <tr><th>the read</th><th>logit lens</th><th>the write</th><th>probe</th>"
-              "<th>the read</th><th>logit lens</th><th>the write</th><th>probe</th></tr></thead>")
+              "    <tr><th>V-Read</th><th>logit lens</th><th>V-Write</th><th>probe</th>"
+              "<th>V-Read</th><th>logit lens</th><th>V-Write</th><th>probe</th></tr></thead>")
     groups = [[0, 1, 2], [4, 5, 6]]
-    col_labels = ["2B read", "2B logit lens", "2B write", "2B probe",
-                  "8B read", "8B logit lens", "8B write", "8B probe"]
+    col_labels = ["2B V-Read", "2B logit lens", "2B V-Write", "2B probe",
+                  "8B V-Read", "8B logit lens", "8B V-Write", "8B probe"]
     html = build_block(thead, rows, groups, decimals=2)
     return {"html": html, "col_labels": col_labels, "notes": notes}
 
@@ -233,17 +233,17 @@ def build_hallucination():
     if rows is None:
         return None
     notes = list(notes)
-    notes.append("table now shows 'the write' alongside read/logit lens/probe, "
+    notes.append("table now shows 'V-Write' alongside read/logit lens/probe, "
                   "matching the instrument set the task specifies; the previous "
                   "hand-built table omitted a write column")
     thead = ('    <thead><tr><th rowspan="2">depth</th>'
               '<th colspan="4">Qwen3-VL-2B</th>'
               '<th colspan="4">Qwen3-VL-8B</th></tr>\n'
-              "    <tr><th>the read</th><th>logit lens</th><th>the write</th><th>probe</th>"
-              "<th>the read</th><th>logit lens</th><th>the write</th><th>probe</th></tr></thead>")
+              "    <tr><th>V-Read</th><th>logit lens</th><th>V-Write</th><th>probe</th>"
+              "<th>V-Read</th><th>logit lens</th><th>V-Write</th><th>probe</th></tr></thead>")
     groups = [[0, 1, 2], [4, 5, 6]]
-    col_labels = ["2B read", "2B logit lens", "2B write", "2B probe",
-                  "8B read", "8B logit lens", "8B write", "8B probe"]
+    col_labels = ["2B V-Read", "2B logit lens", "2B V-Write", "2B probe",
+                  "8B V-Read", "8B logit lens", "8B V-Write", "8B probe"]
     html = build_block(thead, rows, groups, decimals=2)
     return {"html": html, "col_labels": col_labels, "notes": notes}
 
@@ -283,11 +283,11 @@ def build_regionnaming():
     thead = ('    <thead><tr><th rowspan="2">depth</th>'
               '<th colspan="3">Qwen3-VL-2B</th>'
               '<th colspan="3">Qwen3-VL-8B</th></tr>\n'
-              "    <tr><th>the write</th><th>logit lens</th><th>logit lens, centred</th>"
-              "<th>the write</th><th>logit lens</th><th>logit lens, centred</th></tr></thead>")
+              "    <tr><th>V-Write</th><th>logit lens</th><th>logit lens, centred</th>"
+              "<th>V-Write</th><th>logit lens</th><th>logit lens, centred</th></tr></thead>")
     groups = [[0, 1, 2], [3, 4, 5]]
-    col_labels = ["2B write", "2B logit lens", "2B logit lens centred",
-                  "8B write", "8B logit lens", "8B logit lens centred"]
+    col_labels = ["2B V-Write", "2B logit lens", "2B logit lens centred",
+                  "8B V-Write", "8B logit lens", "8B logit lens centred"]
     html = build_block(thead, rows, groups, decimals=2)
     return {"html": html, "col_labels": col_labels, "notes": notes}
 
@@ -424,7 +424,7 @@ def build_atlas():
         rows.append((label, values))
     thead = ('    <thead><tr><th rowspan="2">depth</th>'
               '<th colspan="6">refusal score, typography items</th></tr>\n'
-              "    <tr><th>write, path</th><th>write, one point</th><th>write, averaged</th>"
+              "    <tr><th>V-Write, path</th><th>V-Write, one point</th><th>V-Write, averaged</th>"
               "<th>logit lens</th><th>grad × act</th><th>GLIMPSE</th></tr></thead>")
     groups = [[0, 1, 2, 3, 4, 5]]
     col_labels = ["write path", "write one point", "write averaged",
@@ -492,12 +492,12 @@ def build_writeinto():
               '<th colspan="3">into the picture, Qwen3-VL-2B</th>'
               '<th colspan="3">into the picture, Qwen3-VL-8B</th>'
               '<th colspan="2">at every position</th></tr>\n'
-              "    <tr><th>the write</th><th>output-layer row</th><th>random</th>"
-              "<th>the write</th><th>output-layer row</th><th>random</th>"
+              "    <tr><th>V-Write</th><th>output-layer row</th><th>random</th>"
+              "<th>V-Write</th><th>output-layer row</th><th>random</th>"
               "<th>write, 2B</th><th>write, 8B</th></tr></thead>")
     groups = [[0, 1, 2], [3, 4, 5]]
-    col_labels = ["2B write (img)", "2B output-layer row", "2B random",
-                  "8B write (img)", "8B output-layer row", "8B random",
+    col_labels = ["2B V-Write (img)", "2B output-layer row", "2B random",
+                  "8B V-Write (img)", "8B output-layer row", "8B random",
                   "write all 2B", "write all 8B"]
     html = build_block(thead, rows, groups, decimals=2)
     return {"html": html, "col_labels": col_labels, "notes": notes}
@@ -530,10 +530,10 @@ def build_refusalsteer():
         return None
 
     directions = [
-        ("the write", "write"),
+        ("write", "V-Write"),
         ("difference of means, labelled", "DIM (labelled)"),
         ("the raw direction", "raw (the final score)"),
-        ("the read, inverted", "read inverted"),
+        ("V-Read, inverted", "read inverted"),
         ("random, same strength", "random"),
     ]
     label_free_idxs = [i for i, (_lbl, key) in enumerate(directions) if key != "DIM (labelled)"]

@@ -7,10 +7,10 @@ from jvlm import plot
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODELS = [("Qwen3-VL-2B-Instruct", "Qwen3-VL-2B"), ("Qwen3-VL-8B-Instruct", "Qwen3-VL-8B")]
-SER = [("total", "write, everywhere", plot.SERIES[0], "-", "o"),
-       ("txt", "write, the words", "#4a3aa7", "-", "^"),
-       ("ans", "write, the answer spot", plot.SERIES[0], "--", None),
-       ("img", "write, the picture", "#8a8880", "-", None),
+SER = [("total", "V-Write, everywhere", plot.SERIES[0], "-", "o"),
+       ("txt", "V-Write, the words", "#4a3aa7", "-", "^"),
+       ("ans", "V-Write, the answer spot", plot.SERIES[0], "--", None),
+       ("img", "V-Write, the picture", "#8a8880", "-", None),
        ("identity", "raw reading", plot.SERIES[1], "-", None),
        ("probe", "linear probe (labelled)", plot.SERIES[2], ":", "s")]
 plot.use()

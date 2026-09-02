@@ -28,7 +28,7 @@ SCORES = [("content", "content", plot.SERIES[0]),
           ("harm", "harm", plot.SERIES[1]),
           ("refusal", "refusal", plot.SERIES[2]),
           ("opener", "opener", plot.SERIES[3])]
-TRANSPORTS = [("reader", "read"), ("logit lens", "logit lens")]
+TRANSPORTS = [("reader", "V-Read"), ("logit lens", "logit lens")]
 
 paths = []
 for p in a.jsons:

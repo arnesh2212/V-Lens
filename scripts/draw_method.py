@@ -25,14 +25,14 @@ ax.text(6.6, 4.75, "the first answer token", ha="center", fontsize=9, color=INK)
 # the read: from layer l to the last layer
 ax.add_patch(FancyArrowPatch((7.25, 1.72), (7.25, 3.95), arrowstyle="-|>", mutation_scale=13, color=BLUE, lw=1.6,
                              connectionstyle="arc3,rad=0.35"))
-ax.text(8.15, 3.3, "the read", color=BLUE, fontsize=10, ha="left")
+ax.text(8.15, 3.3, "V-Read", color=BLUE, fontsize=10, ha="left")
 ax.text(8.15, 2.95, "one small map per layer,\nfitted with no labels:\nwhat the answer\nis going to be", color=INK, fontsize=8.2, ha="left", va="top")
 
 # the write: gradient from the answer back to the picture and the words
 for x in (2.0, 4.9):
     ax.add_patch(FancyArrowPatch((6.2, 1.6), (x, 1.25), arrowstyle="-|>", mutation_scale=12, color=ORANGE, lw=1.5,
                                  connectionstyle="arc3,rad=0.28"))
-ax.text(0.4, 3.95, "the write", color=ORANGE, fontsize=10)
+ax.text(0.4, 3.95, "V-Write", color=ORANGE, fontsize=10)
 ax.text(0.4, 3.6, "the model’s own gradient of the score,\none direction for each group of positions:\nwhat moves the answer, and the handle\nto move it with", color=INK, fontsize=8.2, va="top")
 
 ax.text(6.6, 4.35, "a score", ha="center", fontsize=9, color=INK)

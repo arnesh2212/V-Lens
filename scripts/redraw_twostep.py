@@ -24,7 +24,7 @@ if AC:
         xs = sorted(float(k) for k in AC[t])
         for key, lab, c, ls in SER:
             ax.plot(xs, [AC[t][f"{x}"][key] if f"{x}" in AC[t] else AC[t][str(x)][key] for x in xs], color=c, lw=1.5, ls=ls)
-        ax.set_title(t, loc="left", fontsize=10, color=plot.INK2); ax.set_xlabel("depth"); plot.despine(ax)
+        ax.set_title({"read": "V-Read"}.get(t, t), loc="left", fontsize=10, color=plot.INK2); ax.set_xlabel("depth"); plot.despine(ax)
     axs[0].set_ylabel("top colour is this one"); axs[0].set_ylim(-0.02, 1.04)
     h = [plt.Line2D([], [], color=c, ls=ls, label=lab) for _, lab, c, ls in SER]
     fig.legend(handles=h, loc="lower center", ncol=3, frameon=False, fontsize=9, bbox_to_anchor=(0.5, -0.1))
