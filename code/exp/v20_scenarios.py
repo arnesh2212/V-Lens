@@ -168,7 +168,36 @@ t0 = time.time()
 RD_FAM = {"refusal": fit_family(FAM_REF[: a.n_fit_family], lambda p_: CARRIER),
           "yesno": fit_family(FAM_COCO[: a.n_fit_family],
                               lambda p_, _r=random.Random(3): f"Is there a {_r.choice(BANK_WORDS)} in this picture? Answer yes or no.")}
-RD_FAM["present"] = RD_FAM["absent"] = RD_FAM["word"] = RD_FAM["yesno"]
+RD_FAM["present"] = RD_FAM["absent"] = RD_FAM["yesno"]
+
+
+def clevr_colour_prompts(n):
+    """CLEVR renders with a one-word colour question, for the two-step page's map.
+
+    The two-step scenario asks for a colour word, which is neither the jailbreak
+    family nor the yes-or-no family; read through the yes-or-no map it comes out
+    as “yes” and “no” at every depth, which says more about the map than about
+    the model.
+    """
+    out = []
+    for sc_ in clevrdata.scenes():
+        if not clevrdata.have(sc_):
+            continue
+        objs = sc_["objects"]
+        for i, o in enumerate(objs):
+            others = [x for j, x in enumerate(objs) if j != i]
+            if all(any(x[k] != o[k] for k in ("size", "material", "shape")) for x in others):
+                out.append((clevrdata.image_path(sc_),
+                            f"What colour is {clevrdata.describe(o, colour=False)}? Answer with one word."))
+                break
+        if len(out) >= n:
+            break
+    return out
+
+
+_CQ = clevr_colour_prompts(a.n_fit_family)
+RD_FAM["word"] = fit_family([p_ for p_, _q in _CQ], lambda p_, _m=dict(_CQ): _m[p_])
+say(f"the two-step page reads through a map fitted on {len(_CQ)} CLEVR one-word questions")
 say(f"read maps fitted per prompt family on {a.n_fit_family} unlabelled states each ({(time.time() - t0) / 60:.1f} min)")
 
 
@@ -276,7 +305,7 @@ def draw(s, r, path):
         lo, hi = min(-0.25, float(np.min(y))), max(1.25, float(np.percentile(y, 97)))
         pad = 0.06 * (hi - lo)
         ax.set_ylim(lo - pad, hi + pad)
-        ax.set_title(f"the “{k}” score, as a fraction of what it ends at",
+        ax.set_title(f"{k}, as a fraction of the value it ends at",
                      loc="left", fontsize=9, color=plot.INK2)
         ax.set_xlabel("depth", fontsize=8.5)
         ax.text(0.02, 0.93, "V-Read", transform=ax.transAxes, fontsize=8.5, color=plot.SERIES[0], va="top")
@@ -292,7 +321,7 @@ def draw(s, r, path):
             sp.set_visible(False)
         ax.set_title(f"depth {frac[l]:.2f}", fontsize=8.5, color=plot.INK2)
     axm = fig.add_subplot(gs[2, 0]); axm.set_axis_off()
-    axm.text(1.0, 0.6, f"V-Write on\n“{r['score']}”\nred pushes it up,\nblue pushes it down", ha="right", va="center",
+    axm.text(1.0, 0.6, f"V-Write on\n{r['score']}\nred pushes it up,\nblue pushes it down", ha="right", va="center",
              fontsize=8.6, color=plot.INK2)
     plot.save(fig, path); plt.close(fig)
 

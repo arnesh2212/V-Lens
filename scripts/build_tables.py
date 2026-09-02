@@ -839,7 +839,7 @@ def build_prefillcont():
         rows.append((LABEL.get(k, k), [(c["backtrack_harmful"], False), (c["backtrack_benign"], False),
                                        (c["complied_harmful"], False), (c["complied_benign"], False)]))
     thead = ('    <thead><tr><th rowspan="2">how the reply is started</th>'
-             '<th colspan="2">refuses or backs out later</th><th colspan="2">complies</th></tr>\n'
+             '<th colspan="2">refuses or backs out later</th><th colspan="2">continues, pattern matched</th></tr>\n'
              "    <tr><th>harmful</th><th>benign</th><th>harmful</th><th>benign</th></tr></thead>")
     col_labels = ["backtrack harmful", "backtrack benign", "complied harmful", "complied benign"]
     return {"html": build_block(thead, rows, [], decimals=2), "col_labels": col_labels,
