@@ -24,7 +24,8 @@ a = ap.parse_args()
 plot.use()
 
 NICE = {"Qwen3-VL-2B-Instruct": "Qwen3-VL-2B", "Qwen3-VL-8B-Instruct": "Qwen3-VL-8B"}
-INSTR = [("reader", "V-Read", plot.SERIES[0]),
+INSTR = [("reader_family", "V-Read, map refit here", plot.SERIES[0]),
+          ("reader", "V-Read, map from elsewhere", plot.SERIES[4]),
           ("V-Write", "V-Write", plot.SERIES[2]),
           ("identity", "the raw reading", plot.SERIES[1]),
           ("probe", "linear probe (labelled)", plot.SERIES[3])]
@@ -77,7 +78,8 @@ for i, path in enumerate(paths):
         ax1.set_xticks(xsc)
         ax1.set_xticklabels(conditions, fontsize=9)
         instrument = next((rbc[c].get("instrument") for c in conditions if rbc[c].get("instrument")), None)
-        NICE_INSTR = {key: lab for key, lab, _ in INSTR}
+        # keep this short: it sits between the two panels
+        NICE_INSTR = {"reader_family": "V-Read", "reader": "V-Read", "V-Write": "V-Write", "identity": "raw"}
         lab = f"mean reading ({NICE_INSTR.get(instrument, instrument)})" if instrument else "mean reading"
         ax1.set_ylabel(lab)
         depth_mid = d.get("depth_mid")

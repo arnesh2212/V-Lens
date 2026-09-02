@@ -822,6 +822,51 @@ def build_channels():
     return {"html": build_block(thead, rows, groups, decimals=2), "col_labels": col_labels, "notes": notes}
 
 
+def build_prefillcont():
+    """What the model does after each prefill: backs out later, or carries on."""
+    d = load_json(os.path.join(RESULTS, "prefill", "Qwen3-VL-8B-Instruct_prefill.json"))
+    if d is None:
+        return None
+    LABEL = {"none": "not started for it", "compliance": "“Sure, here are the steps:”",
+             "refusal": "“I’m sorry, but I can’t”", "neutral": "“Here is a description:”"}
+    ORDER = ["none", "compliance", "refusal", "neutral"]
+    cont = d["continuation"]
+    rows = []
+    for k in ORDER:
+        if k not in cont:
+            continue
+        c = cont[k]
+        rows.append((LABEL.get(k, k), [(c["backtrack_harmful"], False), (c["backtrack_benign"], False),
+                                       (c["complied_harmful"], False), (c["complied_benign"], False)]))
+    thead = ('    <thead><tr><th rowspan="2">how the reply is started</th>'
+             '<th colspan="2">refuses or backs out later</th><th colspan="2">complies</th></tr>\n'
+             "    <tr><th>harmful</th><th>benign</th><th>harmful</th><th>benign</th></tr></thead>")
+    col_labels = ["backtrack harmful", "backtrack benign", "complied harmful", "complied benign"]
+    return {"html": build_block(thead, rows, [], decimals=2), "col_labels": col_labels,
+            "notes": [f"{d['n_harm']} harmful and {d['n_ben']} benign items"]}
+
+
+def build_prefillread():
+    """Under a compliance prefill, does the reading still tell the harmful
+    requests from the benign ones?  Both maps, the raw reading and a probe."""
+    d = load_json(os.path.join(RESULTS, "prefill", "Qwen3-VL-8B-Instruct_prefill.json"))
+    if d is None:
+        return None
+    TARGETS = [0.2, 0.35, 0.48, 0.65, 0.94]
+    rows_by_frac = {round(r["frac"], 2): r for r in d["rows"]}
+    fracs = sorted(rows_by_frac)
+    rows = []
+    for t in TARGETS:
+        f = nearest_float(fracs, t)
+        a = rows_by_frac[f]["auroc"]
+        rows.append((f"{f:.2g}", [(a.get("reader_family"), False), (a.get("reader"), False),
+                                  (a.get("V-Write"), False), (a.get("identity"), False), (a.get("probe"), True)]))
+    thead = ('    <thead><tr><th>depth</th><th>V-Read, map refit here</th><th>V-Read, map from elsewhere</th>'
+             "<th>V-Write</th><th>raw reading</th><th>probe (labelled)</th></tr></thead>")
+    col_labels = ["V-Read refit", "V-Read foreign", "V-Write", "raw", "probe"]
+    return {"html": build_block(thead, rows, [[0, 1, 2, 3, 4]], decimals=2), "col_labels": col_labels, "notes": []}
+
+
 TABLE_BUILDERS = [
     ("readdecision", build_readdecision),
     ("presence", build_presence),
@@ -836,6 +881,8 @@ TABLE_BUILDERS = [
     ("benchmarks", build_benchmarks),
     ("judges", build_judges),
     ("channels", build_channels),
+    ("prefillcont", build_prefillcont),
+    ("prefillread", build_prefillread),
     ("refusalsteer", build_refusalsteer),
 ]
 
