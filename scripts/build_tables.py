@@ -34,6 +34,9 @@ MODELS = [
     ("Qwen3-VL-8B-Instruct", "Qwen3-VL-8B"),
 ]
 
+#: the decision table has a third architecture; the others do not yet
+MODELS_DECISION = MODELS + [("InternVL3-8B-hf", "InternVL3-8B")]
+
 MINUS = "−"
 
 
@@ -142,9 +145,10 @@ def build_readdecision():
                (0.65, "0.65"), (0.8, "0.8"), (0.95, "0.95")]
     notes = []
     rows = []
+    models = [mk for mk in MODELS_DECISION if d.get(mk[0]) is not None]
     for target, label in targets:
         values = []
-        for model_key, _short in MODELS:
+        for model_key, _short in models:
             mdata = d.get(model_key)
             if mdata is None:
                 notes.append(f"model {model_key} missing from {path}")
@@ -158,13 +162,12 @@ def build_readdecision():
             values.append((entry.get("probe"), True))
         rows.append((label, values))
     thead = ('    <thead><tr><th rowspan="2">depth</th>'
-              '<th colspan="3">Qwen3-VL-2B</th>'
-              '<th colspan="3">Qwen3-VL-8B</th></tr>\n'
-              "    <tr><th>read</th><th>raw</th><th>probe</th>"
-              "<th>read</th><th>raw</th><th>probe</th></tr></thead>")
-    groups = [[0, 1, 2], [3, 4, 5]]
-    col_labels = ["2B read", "2B raw", "2B probe",
-                  "8B read", "8B raw", "8B probe"]
+             + "".join(f'<th colspan="3">{short}</th>' for _, short in models)
+             + '</tr>\n    <tr>'
+             + "".join("<th>read</th><th>raw</th><th>probe</th>" for _ in models)
+             + "</tr></thead>")
+    groups = [[3 * i, 3 * i + 1, 3 * i + 2] for i in range(len(models))]
+    col_labels = [f"{short} {c}" for _, short in models for c in ("read", "raw", "probe")]
     html = build_block(thead, rows, groups, decimals=3)
     return {"html": html, "col_labels": col_labels, "notes": notes}
 

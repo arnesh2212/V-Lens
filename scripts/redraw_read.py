@@ -8,12 +8,12 @@ from jvlm import plot
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 d = json.load(open(os.path.join(ROOT, "results/gate/reader_regression.json")))
 plot.use()
-NICE = {"Qwen3-VL-2B-Instruct": "Qwen3-VL-2B", "Qwen3-VL-8B-Instruct": "Qwen3-VL-8B"}
+NICE = {"Qwen3-VL-2B-Instruct": "Qwen3-VL-2B", "Qwen3-VL-8B-Instruct": "Qwen3-VL-8B", "InternVL3-8B-hf": "InternVL3-8B"}
 SER = [("ridge", "the read (no labels)", plot.SERIES[0], "-", "o"),
        ("probe", "linear probe (labelled)", plot.SERIES[2], ":", "s"),
        ("identity_perfold", "raw reading (HiddenDetect)", plot.SERIES[1], "-", None)]
 models = [k for k in d if k in NICE]
-fig, axs = plt.subplots(1, len(models), figsize=(3.9 * len(models), 3.0), sharey=True)
+fig, axs = plt.subplots(1, len(models), figsize=(3.5 * len(models), 3.0), sharey=True)
 axs = [axs] if len(models) == 1 else list(axs)
 for ax, mk in zip(axs, models):
     ls = sorted(d[mk], key=lambda z: d[mk][z]["frac"])

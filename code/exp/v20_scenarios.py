@@ -56,6 +56,7 @@ L4 = depth.layers_at(m, (0.2, 0.4, 0.6, 0.8))
 frac = {l: depth.to_frac(m, l) for l in range(m.n_layers)}
 plot.use()
 
+BANK_WORDS = ["dog", "cat", "car", "person", "chair", "bottle", "bus", "bird", "cup", "book"]
 YES = axes.token_set(m.tokenizer, axes.YES_FORMS); NO = axes.token_set(m.tokenizer, axes.NO_FORMS)
 SR = axes.token_set(m.tokenizer, axes.REFUSE_STARTERS); SC = axes.token_set(m.tokenizer, axes.COMPLY_STARTERS)
 
@@ -136,9 +137,11 @@ def per_position_means(paths, prompt, n=None):
     return {l: MU[l] / max(cnt, 1) for l in MU}
 
 
-mu_paths = [it["path"] for it in its_g[-a.n_mu:]]
+FAM_REF = [it["path"] for it in its_g[-(a.n_fit_family + a.n_mu):]]
+FAM_COCO = [it["path"] for it in pool[100: 100 + a.n_fit_family + a.n_mu]]
+mu_paths = FAM_REF[-a.n_mu:]
 MU_CARRIER = per_position_means(mu_paths, CARRIER)
-coco_paths = [it["path"] for it in pool[100: 100 + a.n_mu]]
+coco_paths = FAM_COCO[-a.n_mu:]
 MU_COCO = per_position_means(coco_paths, "Is there a dog in this picture? Answer yes or no.")
 P = MU_CARRIER[L4[0]].shape[0]; GRID = int(round(math.sqrt(P)))
 say(f"{P} image positions = {GRID}x{GRID}")
@@ -153,7 +156,7 @@ def fit_family(paths, prompt_of):
     A = []
     with torch.no_grad():
         for p_ in paths:
-            b = m.chat(prompt_of(p_), [img(p_)])
+            b = m.chat(prompt_of(p_), [corpus.load_image(p_, square=448)])
             with ActivationRecorder(m.layers, at=list(range(m.n_layers))) as rec:
                 m.forward(b)
             A.append(np.stack([rec.activations[l][0, -1].float().cpu().numpy() for l in range(m.n_layers)]))
@@ -161,9 +164,9 @@ def fit_family(paths, prompt_of):
 
 
 t0 = time.time()
-RD_FAM = {"refusal": fit_family(mu_items_ref[: a.n_fit_family], lambda p_: CARRIER),
-          "yesno": fit_family(coco_paths[: a.n_fit_family],
-                              lambda p_: YN_TEMPLATE.format(w=rng.choice(BANK_WORDS)))}
+RD_FAM = {"refusal": fit_family(FAM_REF[: a.n_fit_family], lambda p_: CARRIER),
+          "yesno": fit_family(FAM_COCO[: a.n_fit_family],
+                              lambda p_: f"Is there a {rng.choice(BANK_WORDS)} in this picture? Answer yes or no.")}
 RD_FAM["present"] = RD_FAM["absent"] = RD_FAM["word"] = RD_FAM["yesno"]
 say(f"read maps fitted per prompt family on {a.n_fit_family} unlabelled states each ({(time.time() - t0) / 60:.1f} min)")
 

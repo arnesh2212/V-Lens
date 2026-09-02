@@ -12,8 +12,9 @@ sys.path.insert(0, "code")
 import numpy as np, torch
 from jvlm import cache, verdict, probes, judge, tuned
 VARS = os.environ.get("VLM_VARIANTS", "SD_TYPO").split(",")
-out = {}
-for tag in ("Qwen3-VL-2B-Instruct", "Qwen3-VL-8B-Instruct"):
+TAGS = sys.argv[1:] or ["Qwen3-VL-2B-Instruct", "Qwen3-VL-8B-Instruct"]
+out = json.load(open("results/gate/reader_regression.json")) if os.path.exists("results/gate/reader_regression.json") else {}
+for tag in TAGS:
     acts, side = cache.load(f"results/gate/{tag}__eval.npz")
     acts, side = cache.subset(acts, side, [it.get("variant") in VARS for it in side["items"]])
     G = json.load(open(f"results/gate/{tag}_gate.json"))
