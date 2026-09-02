@@ -668,6 +668,59 @@ def build_swap():
     return {"html": build_block(thead, rows, groups, decimals=2), "col_labels": col_labels, "notes": notes}
 
 
+def build_benchmarks():
+    """Leave-one-benchmark-out: with the map fitted on COCO photographs, does the
+    reading say whether Qwen3-VL-8B refuses that item?  Every held-out set the
+    run produced, at the two depths the page reads."""
+    d = load_json(os.path.join(RESULTS, "reader", "Qwen3-VL-8B-Instruct_loo.json"))
+    if d is None:
+        return None
+    NAMES = {"mmsb_typo": "MM-SafetyBench, typography", "figstep": "FigStep", "hades": "HADES",
+             "vlguard": "VLGuard", "vlsbench": "VLSBench", "siuo": "SIUO",
+             "mossbench_contrast": "MOSSBench, the contrast set", "spavl_harm": "SPA-VL, harmful"}
+    ORDER = ["mmsb_typo", "figstep", "hades", "vlguard", "vlsbench", "siuo", "mossbench_contrast", "spavl_harm"]
+    DEPTHS = [0.48, 0.65]
+    by = {}
+    for r in d["results"]:
+        by[(r["held"], round(r["frac"], 2))] = r
+    fr = {t: nearest_float(sorted({round(r["frac"], 2) for r in d["results"]}), t) for t in DEPTHS}
+    rows, notes = [], []
+    for held in ORDER:
+        if (held, fr[DEPTHS[0]]) not in by:
+            notes.append(f"no rows for {held}; skipped")
+            continue
+        first = by[(held, fr[DEPTHS[0]])]["decision"]
+        vals = [(first["n"], False), (first["n_refused"] / first["n"], False)]
+        for t in DEPTHS:
+            dec = by[(held, fr[t])]["decision"]
+            vals += [(dec["reader"], False), (dec["hidden"], False), (dec["probe"], True)]
+        rows.append((NAMES.get(held, held), vals))
+    groups = [[2, 3, 4], [5, 6, 7]]
+    col_labels = ["items", "refused"] + [f"depth {t} {k}" for t in DEPTHS for k in ("V-Read", "raw", "probe")]
+    thead = ('    <thead><tr><th rowspan="2">held-out benchmark</th><th rowspan="2">items</th>'
+             '<th rowspan="2">refused</th>'
+             f'<th colspan="3">depth {DEPTHS[0]}</th><th colspan="3">depth {DEPTHS[1]}</th></tr>\n'
+             "    <tr><th>V-Read</th><th>raw</th><th>probe</th>"
+             "<th>V-Read</th><th>raw</th><th>probe</th></tr></thead>")
+    # the first two columns are counts, not scores: format them separately
+    lines = ['  <div class="tblwrap">', "  <table>", thead, "    <tbody>"]
+    for label, vals in rows:
+        marked = set()
+        for group in groups:
+            cands = [(i, vals[i][0]) for i in group if vals[i][0] is not None and not vals[i][1]]
+            if cands:
+                marked.add(max(cands, key=lambda t: t[1])[0])
+        tds = [f"<td>{label}</td>", f"<td>{int(vals[0][0])}</td>", f"<td>{fmt(vals[1][0], 2)}</td>"]
+        for i in range(2, len(vals)):
+            text = fmt(vals[i][0], 2)
+            if i in marked and text:
+                text = f'<span class="k">{text}</span>'
+            tds.append(f"<td>{text}</td>")
+        lines.append("      <tr>" + "".join(tds) + "</tr>")
+    lines += ["    </tbody>", "  </table>", "  </div>"]
+    return {"html": "\n".join(lines), "col_labels": col_labels, "notes": notes}
+
+
 TABLE_BUILDERS = [
     ("readdecision", build_readdecision),
     ("presence", build_presence),
@@ -679,6 +732,7 @@ TABLE_BUILDERS = [
     ("writeinto", build_writeinto),
     ("steerdose", build_steerdose),
     ("swap", build_swap),
+    ("benchmarks", build_benchmarks),
     ("refusalsteer", build_refusalsteer),
 ]
 
