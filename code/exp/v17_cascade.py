@@ -196,6 +196,36 @@ for k in AX:
     v = np.array(boot[k])
     say(f"  {k:<9} {np.median(v):.2f}  [{np.percentile(v, 10):.2f}, {np.percentile(v, 90):.2f}]")
 
+# ---- per item: the depth at which each score first leaves the benign range, and a paired test
+per_item = {k: {} for k in AX}
+for k in AX:
+    for l in ALLL:
+        sv = S_ax[k][l]
+        thr = np.nanpercentile(sv[~y_h], 95)
+        per_item[k][l] = (sv > thr)
+onsets = {k: [] for k in AX}
+harm_idx = np.where(y_h)[0]
+for i in harm_idx:
+    for k in AX:
+        d_ = [frac[l] for l in ALLL if per_item[k][l][i]]
+        onsets[k].append(d_[0] if d_ else np.nan)
+say(f"\nper item, the depth at which the score first leaves the benign range (harmful items only, n={len(harm_idx)})")
+say(f"{'score':<10} {'median':>8} {'quartiles':>18} {'never leaves it':>16}")
+for k in AX:
+    v = np.array(onsets[k], float); ok = ~np.isnan(v)
+    say(f"{k:<10} {np.median(v[ok]) if ok.any() else float('nan'):>8.2f} "
+        f"{('[%.2f, %.2f]' % (np.percentile(v[ok], 25), np.percentile(v[ok], 75))) if ok.any() else '':>18} {1 - ok.mean():>16.2f}")
+pairs = []
+if "harm" in AX and "refusal" in AX:
+    a_ = np.array(onsets["harm"], float); b_ = np.array(onsets["refusal"], float)
+    ok = ~np.isnan(a_) & ~np.isnan(b_)
+    if ok.sum() >= 10:
+        earlier = int((a_[ok] < b_[ok]).sum()); later = int((a_[ok] > b_[ok]).sum()); tied = int((a_[ok] == b_[ok]).sum())
+        from scipy.stats import binomtest
+        pv = float(binomtest(earlier, earlier + later, 0.5).pvalue) if earlier + later else float("nan")
+        say(f"harm before refusal on {earlier} items, after on {later}, tied on {tied}; sign test p = {pv:.4f}")
+        pairs = dict(earlier=earlier, later=later, tied=tied, p=pv, n=int(ok.sum()))
+
 # ---- figures
 fig, axs = plt.subplots(1, 2, figsize=(7.8, 2.9), sharey=True)
 for ax, t in zip(axs, ("reader", "logit lens")):
@@ -219,6 +249,7 @@ ax.set_xlabel("depth"); ax.set_ylabel("the model's own first token is ranked her
 fig.tight_layout(); plot.save(fig, f"{a.figs}/{name}_firsttoken.png"); plt.close(fig)
 
 json.dump(dict(repo=a.repo, n=len(its), variants=a.variants, rows=rows, onset=ons,
+               per_item_onset={k: [None if np.isnan(x) else float(x) for x in onsets[k]] for k in AX}, harm_before_refusal=pairs,
                onset_bootstrap={k: dict(median=float(np.median(boot[k])), p10=float(np.percentile(boot[k], 10)), p90=float(np.percentile(boot[k], 90))) for k in AX},
                examples={str(frac[l]): EX[l] for l in ALLL},
                example_items=[dict(harmful=bool(its[i]["harmful"]), scenario=its[i].get("scenario"), reply=its[i]["reply"][:120]) for i in range(min(a.n_examples, len(its)))]),
