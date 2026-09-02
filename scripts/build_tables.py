@@ -787,6 +787,40 @@ def build_judges():
     return {"html": "\n".join(lines), "col_labels": col_labels, "notes": notes}
 
 
+def build_channels():
+    """Where the upcoming refusal can be read: V-Write summed over the words,
+    over every position, the raw reading at the answer spot, and a labelled
+    probe, per depth and per model."""
+    per, notes = {}, []
+    models = []
+    for key, nice in MODELS_DECISION:
+        d = load_json(os.path.join(RESULTS, "gate", f"{key}_total_verdict.json"))
+        if d is None:
+            notes.append(f"missing {key}_total_verdict.json; that model is left out")
+            continue
+        ls = sorted(d, key=lambda z: d[z]["frac"])
+        per[key] = [(d[l]["frac"], d[l]["txt"], d[l]["total"], d[l]["identity"], d[l]["probe"]) for l in ls]
+        models.append((key, nice))
+    if not models:
+        return None
+    n = min(len(per[k]) for k, _ in models)
+    rows = []
+    for i in range(n):
+        label = f"{per[models[0][0]][i][0]:.2g}"
+        vals = []
+        for key, _nice in models:
+            f, txt, total, ident, probe = per[key][i]
+            vals += [(txt, False), (total, False), (ident, False), (probe, True)]
+        rows.append((label, vals))
+    groups = [[4 * j, 4 * j + 1, 4 * j + 2, 4 * j + 3] for j in range(len(models))]
+    col_labels = [f"{nice} {k}" for _key, nice in models for k in ("words", "everywhere", "raw", "probe")]
+    thead = ('    <thead><tr><th rowspan="2">depth</th>'
+             + "".join(f'<th colspan="4">{nice}</th>' for _k, nice in models) + "</tr>\n"
+             "    <tr>" + "".join("<th>words</th><th>everywhere</th><th>raw</th><th>probe</th>" for _ in models)
+             + "</tr></thead>")
+    return {"html": build_block(thead, rows, groups, decimals=2), "col_labels": col_labels, "notes": notes}
+
+
 TABLE_BUILDERS = [
     ("readdecision", build_readdecision),
     ("presence", build_presence),
@@ -800,6 +834,7 @@ TABLE_BUILDERS = [
     ("swap", build_swap),
     ("benchmarks", build_benchmarks),
     ("judges", build_judges),
+    ("channels", build_channels),
     ("refusalsteer", build_refusalsteer),
 ]
 
