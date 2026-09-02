@@ -311,10 +311,13 @@ for n2, it in enumerate(ev[: min(len(ev), 24)]):
             g1 = torch.Generator().manual_seed(n2); g2 = torch.Generator().manual_seed(1000 + n2)
             d_src = unit(torch.randn(m.d_model, generator=g1)); d_tgt = unit(torch.randn(m.d_model, generator=g2))
         for lsw in SWAP_L:
-            if dname == "write":
-                d_src, d_tgt = unit(VL.dir(f"colour:{src}", "ans", lsw)), unit(VL.dir(f"colour:{tgt}", "ans", lsw))
             for al in a.swap_alphas:
                 for chan in ("img", "all"):
+                    if dname == "write":
+                        # the write has its own direction for each group of positions: the one
+                        # fitted at image positions is the one to write into the picture
+                        ch_ = "img" if chan == "img" else "ans"
+                        d_src, d_tgt = unit(VL.dir(f"colour:{src}", ch_, lsw)), unit(VL.dir(f"colour:{tgt}", ch_, lsw))
                     iv2 = readout.Intervention(m, {lsw: d_tgt}, channel=chan, mode="add", alpha=al)
                     iv2.set_batch(b)
                     with iv2:
