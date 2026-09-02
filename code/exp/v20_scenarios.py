@@ -6,8 +6,9 @@ Each scenario is a picture and a question.  For each one the figure shows, in or
   the picture and the question, with the model's actual reply underneath;
   the word strip, what the read says the model is about to say at each depth,
       with the same strip from the logit lens beneath it for contrast;
-  the score traces, two or three scores read at every depth through the read and
-      through the logit lens, so a reader can see when each settles;
+  the score traces, two or three scores read at every depth, each shown as the
+      fraction of its own final value that the instrument has recovered, since the two
+      instruments are in different units and only the timing is comparable;
   the write maps, which patches are pushing the answer, at four depths.
 
 The scenarios are chosen to cover the cases a practitioner meets: a jailbreak the
@@ -31,6 +32,7 @@ import torch
 ap = argparse.ArgumentParser()
 ap.add_argument("--repo", default="Qwen/Qwen3-VL-8B-Instruct")
 ap.add_argument("--n-mu", type=int, default=30, help="images for the average state per position")
+ap.add_argument("--n-fit-family", type=int, default=150, help="unlabelled states per prompt family for that family's read map")
 ap.add_argument("--gen", type=int, default=40)
 ap.add_argument("--gate-dir", default="/workspace/vlm/results/gate")
 ap.add_argument("--out", default="/workspace/vlm/results/scenarios")
@@ -58,7 +60,7 @@ YES = axes.token_set(m.tokenizer, axes.YES_FORMS); NO = axes.token_set(m.tokeniz
 SR = axes.token_set(m.tokenizer, axes.REFUSE_STARTERS); SC = axes.token_set(m.tokenizer, axes.COMPLY_STARTERS)
 
 # ---- the instruments: the read from the disjoint corpus, the write from the gate fit
-RD = reader.Reader.load(f"/workspace/vlm/results/reader/{name}__reader.pt")
+RD_GLOBAL = reader.Reader.load(f"/workspace/vlm/results/reader/{name}__reader.pt")
 VL = verdict.VerdictLens.load(f"{a.gate_dir}/{name}__verdict_carrier.pt")
 acts, side = cache.load(f"{a.gate_dir}/{name}__eval.npz")
 its_g = [it for it in side["items"] if it.get("variant") == "SD_TYPO"]
@@ -142,6 +144,30 @@ P = MU_CARRIER[L4[0]].shape[0]; GRID = int(round(math.sqrt(P)))
 say(f"{P} image positions = {GRID}x{GRID}")
 
 
+# ---- one read map per prompt family, fitted on unlabelled states of that family.
+# The global map was fitted on COCO photographs under generic prompts, which is the wrong
+# distribution for a yes-or-no question or for a jailbreak carrier, and a map fitted
+# elsewhere is worse than no map at all. Refitting costs a few hundred forward passes
+# and no labels, which is exactly the recipe this page recommends.
+def fit_family(paths, prompt_of):
+    A = []
+    with torch.no_grad():
+        for p_ in paths:
+            b = m.chat(prompt_of(p_), [img(p_)])
+            with ActivationRecorder(m.layers, at=list(range(m.n_layers))) as rec:
+                m.forward(b)
+            A.append(np.stack([rec.activations[l][0, -1].float().cpu().numpy() for l in range(m.n_layers)]))
+    return reader.fit(np.stack(A).astype(np.float32), ALLL, meta=dict(repo=a.repo, n=len(A)))
+
+
+t0 = time.time()
+RD_FAM = {"refusal": fit_family(mu_items_ref[: a.n_fit_family], lambda p_: CARRIER),
+          "yesno": fit_family(coco_paths[: a.n_fit_family],
+                              lambda p_: YN_TEMPLATE.format(w=rng.choice(BANK_WORDS)))}
+RD_FAM["present"] = RD_FAM["absent"] = RD_FAM["word"] = RD_FAM["yesno"]
+say(f"read maps fitted per prompt family on {a.n_fit_family} unlabelled states each ({(time.time() - t0) / 60:.1f} min)")
+
+
 def score_fns(s):
     """The scores this scenario is read through, the first one leading, since the write maps
     are drawn for the leading score and it should be the one the question is about."""
@@ -161,6 +187,7 @@ def score_fns(s):
 
 
 def read_scenario(s):
+    RD = RD_FAM.get(s["kind"], RD_GLOBAL)
     img = corpus.load_image(s["path"], square=448)
     b = m.chat(s["q"], [img]); pos = readout.image_positions(m, b); S = b["input_ids"].shape[1]
     reply = sc.generate(b, max_new_tokens=a.gen)
@@ -228,9 +255,13 @@ def draw(s, r, path):
     xs = [frac[l] for l in ALLL]
     for j, k in enumerate(fns[:3]):
         ax = fig.add_subplot(gs[1, 2 * j: 2 * j + 2])
-        ax.plot(xs, r["traces"][k]["read"], color=plot.SERIES[0], lw=1.6)
-        ax.plot(xs, r["traces"][k]["logit lens"], color=plot.SERIES[1], lw=1.2)
+        for tname, col, lw in (("read", plot.SERIES[0], 1.7), ("logit lens", plot.SERIES[1], 1.2)):
+            v = np.asarray(r["traces"][k][tname], float)
+            final = v[-1] if abs(v[-1]) > 1e-6 else (np.sign(v[-1]) or 1.0)
+            ax.plot(xs, v / final, color=col, lw=lw)
+        ax.axhline(1, color=plot.INK3, lw=0.6, ls=":")
         ax.axhline(0, color=plot.INK3, lw=0.6)
+        ax.set_ylim(-0.6, 1.6)
         ax.set_title(k, loc="left", fontsize=9, color=plot.INK2); ax.set_xlabel("depth", fontsize=8.5)
         plot.despine(ax)
     # the write maps
