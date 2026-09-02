@@ -212,7 +212,7 @@ def draw(s, r, path):
     axs = fig.add_subplot(gs[0, 1:]); axs.set_axis_off()
     show = [l for l in ALLL][:: max(1, len(ALLL) // 8)][:8]
     for j, l in enumerate(show):
-        x = j / max(len(show) - 1, 1)
+        x = 0.10 + 0.90 * j / max(len(show) - 1, 1)
         axs.text(x, 1.0, f"{frac[l]:.2f}", ha="center", va="top", fontsize=8.5, color=plot.INK3)
         for i, w in enumerate(r["strips"]["read"][l]):
             axs.text(x, 0.82 - 0.13 * i, w[:11] or "·", ha="center", va="top", fontsize=9.5 - 0.8 * i,
@@ -220,10 +220,10 @@ def draw(s, r, path):
         for i, w in enumerate(r["strips"]["logit lens"][l]):
             axs.text(x, 0.36 - 0.13 * i, w[:11] or "·", ha="center", va="top", fontsize=9.5 - 0.8 * i,
                      color=plot.INK2 if i == 0 else plot.INK3)
-    axs.text(-0.02, 0.86, "the read", ha="right", va="top", fontsize=9, color=plot.SERIES[0])
-    axs.text(-0.02, 0.40, "logit lens", ha="right", va="top", fontsize=9, color=plot.SERIES[1])
-    axs.text(0.5, 1.13, "what the model is about to say, by depth", ha="center", fontsize=9.5, color=plot.INK2)
-    axs.set_xlim(-0.12, 1.06); axs.set_ylim(0, 1.18)
+    axs.text(0.055, 0.86, "the read", ha="right", va="top", fontsize=9, color=plot.SERIES[0])
+    axs.text(0.055, 0.40, "logit lens", ha="right", va="top", fontsize=9, color=plot.SERIES[1])
+    axs.text(0.55, 1.13, "what the model is about to say, by depth", ha="center", fontsize=9.5, color=plot.INK2)
+    axs.set_xlim(-0.06, 1.06); axs.set_ylim(0, 1.18)
     # the score traces
     xs = [frac[l] for l in ALLL]
     for j, k in enumerate(fns[:3]):
