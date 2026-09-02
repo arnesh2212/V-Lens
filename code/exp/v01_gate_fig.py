@@ -52,7 +52,7 @@ for ax, d in zip(axs, runs):
     ax.set_ylim(0.4, 1.02); ax.set_xlim(0, 1)
     ax.set_xlabel("depth"); plot.panel_label(ax, f"{short(d)}, refused {d['refused_rate']:.0%} of items")
 axs[0].set_ylabel("AUROC, refused vs complied")
-h = [plt.Line2D([], [], color=C["verdict"], marker="o", label="write (no labels)"),
+h = [plt.Line2D([], [], color=C["verdict"], marker="o", label="V-Write (no labels)"),
      plt.Line2D([], [], color=C["identity"], label="raw reading (HiddenDetect)"),
      plt.Line2D([], [], color=C["dim"], label="difference of means (labelled)"),
      plt.Line2D([], [], color=C["probe"], marker="s", ls=":", label="linear probe (labelled)")]
@@ -70,7 +70,7 @@ for ax, d in zip(axs, runs):
     ax.set_ylim(-0.1, 1.02); ax.set_xlim(0, 1)
     ax.set_xlabel("depth"); plot.panel_label(ax, short(d))
 axs[0].set_ylabel("held-out R², predicted vs measured\nchange in the refusal margin")
-h = [plt.Line2D([], [], color=C["verdict"], marker="o", label="write direction"),
+h = [plt.Line2D([], [], color=C["verdict"], marker="o", label="V-Write direction"),
      plt.Line2D([], [], color=C["identity"], marker="o", label="raw direction")]
 fig.legend(handles=h, loc="upper center", bbox_to_anchor=(0.5, -0.06), ncols=2, frameon=False)
 plot.save(fig, f"{a.out}/gate_calibration.png")
@@ -88,7 +88,7 @@ for ax, d in zip(axs, runs):
     ax.set_ylim(0, 1.02); ax.set_xlim(0, 1)
     ax.set_xlabel("depth"); plot.panel_label(ax, short(d))
 axs[0].set_ylabel("|cos| with the labelled\ndifference-of-means direction")
-h = [plt.Line2D([], [], color=C["verdict"], marker="o", label="write direction"),
+h = [plt.Line2D([], [], color=C["verdict"], marker="o", label="V-Write direction"),
      plt.Line2D([], [], color=C["identity"], marker="o", label="raw (the final refusal score)")]
 fig.legend(handles=h, loc="upper center", bbox_to_anchor=(0.5, -0.06), ncols=2, frameon=False)
 plot.save(fig, f"{a.out}/gate_distinct.png")

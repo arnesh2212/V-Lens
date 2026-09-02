@@ -259,13 +259,20 @@ def draw(s, r, path):
     xs = [frac[l] for l in ALLL]
     for j, k in enumerate(fns[:3]):
         ax = fig.add_subplot(gs[1, 2 * j: 2 * j + 2])
+        seen = []
         for tname, col, lw in (("V-Read", plot.SERIES[0], 1.7), ("logit lens", plot.SERIES[1], 1.2)):
             v = np.asarray(r["traces"][k][tname], float)
             final = v[-1] if abs(v[-1]) > 1e-6 else (np.sign(v[-1]) or 1.0)
             ax.plot(xs, v / final, color=col, lw=lw)
+            seen.append(v / final)
         ax.axhline(1, color=plot.INK3, lw=0.6, ls=":")
         ax.axhline(0, color=plot.INK3, lw=0.6)
-        ax.set_ylim(-0.6, 1.6)
+        # limits from the curves themselves: a reading that overshoots its own
+        # final value early is a real thing to show, not something to clip off
+        y = np.concatenate(seen)
+        lo, hi = min(-0.25, float(np.min(y))), max(1.25, float(np.percentile(y, 97)))
+        pad = 0.06 * (hi - lo)
+        ax.set_ylim(lo - pad, hi + pad)
         ax.set_title(k, loc="left", fontsize=9, color=plot.INK2); ax.set_xlabel("depth", fontsize=8.5)
         plot.despine(ax)
     # the write maps

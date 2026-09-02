@@ -330,8 +330,8 @@ def build_twostep():
     thead = ('    <thead><tr><th rowspan="2">depth</th>'
               '<th colspan="3">Qwen3-VL-2B</th>'
               '<th colspan="3">Qwen3-VL-8B</th></tr>\n'
-              "    <tr><th>two-step, the read</th><th>two-step, logit lens</th><th>one-step, the read</th>"
-              "<th>two-step, the read</th><th>two-step, logit lens</th><th>one-step, the read</th></tr></thead>")
+              "    <tr><th>two-step, V-Read</th><th>two-step, logit lens</th><th>one-step, V-Read</th>"
+              "<th>two-step, V-Read</th><th>two-step, logit lens</th><th>one-step, V-Read</th></tr></thead>")
     groups = [[0, 1, 2], [3, 4, 5]]
     col_labels = ["2B two-step read", "2B two-step logit lens", "2B one-step read",
                   "8B two-step read", "8B two-step logit lens", "8B one-step read"]
@@ -381,8 +381,8 @@ def build_twostepregions():
             cost.append((cov.get(cov_key, {}).get("landmark"), False))
         rows.append((label, values + cost))
     thead = ('    <thead><tr><th rowspan="2">depth</th>'
-              '<th colspan="3">Qwen3-VL-2B, share of the write over chance</th>'
-              '<th colspan="3">Qwen3-VL-8B, share of the write over chance</th>'
+              '<th colspan="3">Qwen3-VL-2B, share of V-Write over chance</th>'
+              '<th colspan="3">Qwen3-VL-8B, share of V-Write over chance</th>'
               '<th colspan="2">cost of covering the landmark</th></tr>\n'
               "    <tr><th>landmark</th><th>object asked about</th><th>bare floor</th>"
               "<th>landmark</th><th>object asked about</th><th>bare floor</th>"
@@ -537,15 +537,18 @@ def build_refusalsteer():
     doses = [0.1, 0.2, 0.4]
 
     def value(direction, frac, alpha):
+        # runs before and after the rename store the write direction under
+        # "write" and "V-Write"; accept either rather than blanking the row
+        names = {direction, direction.replace("V-Write", "write")}
         for r in records:
-            if (r["direction"] == direction and r.get("channel") == "ans"
+            if (r["direction"] in names and r.get("channel") == "ans"
                     and r["frac"] is not None and abs(r["frac"] - frac) < 1e-9
                     and r["alpha"] == alpha):
                 return r.get("refusal_benign_after_add")
         return None
 
     directions = [
-        ("write", "V-Write"),
+        ("V-Write", "V-Write"),
         ("difference of means, labelled", "DIM (labelled)"),
         ("the raw direction", "raw (the final score)"),
         ("V-Read, inverted", "read inverted"),

@@ -23,6 +23,8 @@ a = ap.parse_args()
 plot.use()
 
 NICE = {"Qwen3-VL-2B-Instruct": "Qwen3-VL-2B", "Qwen3-VL-8B-Instruct": "Qwen3-VL-8B"}
+#: (key in the JSON, colour); runs from before the rename wrote "write"
+ALIAS = {"V-Write, this item": "write, this item", "V-Write": "write"}
 INSTR = [("V-Write, this item", plot.SERIES[0]),
           ("V-Write", plot.SERIES[4]),
           ("logit lens", plot.SERIES[1]),
@@ -62,9 +64,10 @@ for i, path in enumerate(paths):
             continue
         met = regions[metric_key]
         for key, c in INSTR:
-            if key not in met:
+            src = key if key in met else ALIAS.get(key)
+            if src not in met:
                 continue
-            ys = [met[key].get(l) for l in layers]
+            ys = [met[src].get(l) for l in layers]
             if all(y is None for y in ys):
                 continue
             ax.plot(xs, ys, color=c, lw=1.5)

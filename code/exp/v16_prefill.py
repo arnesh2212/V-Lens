@@ -125,6 +125,29 @@ for c in PREFILL:
     say(f"{c:<12} {back[s_h].mean():>10.2f} {back[s_b].mean():>10.2f}                    {comp[s_h].mean():>10.2f} {comp[s_b].mean():>10.2f}")
 
 
+# ---- a map fitted on this family's own states ------------------------------
+# The saved map was fitted on ordinary captioning prompts.  A prefilled prompt
+# is a different family: the answer spot now sits after four words the model
+# did not choose, so a map fitted elsewhere is being asked to work off its own
+# distribution.  Fitting one here costs no labels, only states.  Five folds
+# over items, so no item is ever read through a map that saw it, and one map
+# pooled over the four prefill conditions, so the readings stay in the same
+# units and the conditions remain comparable.
+paths_row = np.array([x["path"] for x in rows])
+uniq = np.unique(paths_row)
+parts = np.array_split(np.random.default_rng(0).permutation(len(uniq)), 5)
+FAM = {int(l): np.zeros(len(rows)) for l in ALLL}
+tf = time.time()
+for pi in parts:
+    te_set = set(uniq[pi].tolist())
+    te = np.array([i for i, p_ in enumerate(paths_row) if p_ in te_set])
+    tr = np.setdiff1d(np.arange(len(rows)), te)
+    RDf = reader.fit(ANSP[tr], ALLL, final_layer=m.n_layers - 1)
+    for l in ALLL:
+        FAM[int(l)][te] = RDf.read(ANSP[te, l], l, r_np)
+say(f"family map fitted on prefilled states, 5 folds over {len(uniq)} items ({(time.time() - tf) / 60:.1f} min)")
+
+
 W_LAYERS = set()
 for k in getattr(VL, "u", {}):
     parts = k.split("|")
@@ -155,6 +178,7 @@ say(f"{'depth':>6} {'reader':>8} {'write':>8} {'identity':>9} {'probe':>8}   | p
 res = []
 for l in ALLL:
     S = scores(ANSP[sel][:, l], l); S["probe"] = probe_cv(ANSP[sel][:, l], yy)
+    S["reader_family"] = FAM[int(l)][np.where(sel)[0]]
     rec = dict(layer=l, frac=frac[l], auroc={k: float(roc_auc_score(yy, v)) for k, v in S.items()})
     hsel = kinds[sel] == "harmful"
     bb = back[sel][hsel]
@@ -173,19 +197,27 @@ by_cond = {}
 for c in PREFILL:
     s_h = (conds == c) & (kinds == "harmful"); s_b = (conds == c) & (kinds == "benign")
     S_h = scores(ANSP[s_h][:, lmid], lmid); S_b = scores(ANSP[s_b][:, lmid], lmid)
-    key = "reader" if "reader" in S_h else ("V-Write" if "V-Write" in S_h else "identity")
+    S_h["reader_family"] = FAM[int(lmid)][np.where(s_h)[0]]
+    S_b["reader_family"] = FAM[int(lmid)][np.where(s_b)[0]]
+    key = "reader_family"
     by_cond[c] = dict(harmful=float(np.mean(S_h[key])), benign=float(np.mean(S_b[key])),
-                      harmful_sd=float(np.std(S_h[key])), benign_sd=float(np.std(S_b[key])), instrument=key)
+                      harmful_sd=float(np.std(S_h[key])), benign_sd=float(np.std(S_b[key])), instrument=key,
+                      general_map=dict(harmful=float(np.mean(S_h["reader"])), benign=float(np.mean(S_b["reader"])))
+                      if "reader" in S_h else None)
     say(f"{c:<12} {by_cond[c]['harmful']:>12.2f} {by_cond[c]['benign']:>12.2f}")
 
 # ---- figures
 fig, axs = plt.subplots(1, 2, figsize=(7.8, 2.9))
 xs = [frac[l] for l in ALLL]
-for k, c in (("reader", plot.SERIES[0]), ("V-Write", plot.SERIES[2]), ("identity", plot.SERIES[1]), ("probe", plot.INK2)):
+LAB = {"reader_family": "V-Read", "reader": "V-Read, map from elsewhere", "V-Write": "V-Write",
+       "identity": "raw reading", "probe": "probe (labelled)"}
+for k, c in (("reader_family", plot.SERIES[0]), ("reader", plot.SERIES[4]), ("V-Write", plot.SERIES[2]),
+             ("identity", plot.SERIES[1]), ("probe", plot.INK2)):
     ys = [x["auroc"].get(k, float("nan")) for x in res]
     if all(np.isnan(ys)): continue
-    axs[0].plot(xs, ys, color=c, lw=1.5 if k == "reader" else 1.1, ls=":" if k == "probe" else "-")
-    plot.end_label(axs[0], xs[-1], ys[-1], k, c)
+    axs[0].plot(xs, ys, color=c, lw=1.6 if k == "reader_family" else 1.1,
+                ls=":" if k == "probe" else ("--" if k == "reader" else "-"))
+    plot.end_label(axs[0], xs[-1], ys[-1], LAB[k], c)
 plot.chance_line(axs[0], 0.5)
 axs[0].set_title("harmful vs benign, both complying under the prefill", loc="left", fontsize=9.5, color=plot.INK2)
 axs[0].set_xlabel("depth"); axs[0].set_ylabel("AUROC"); axs[0].set_ylim(0.4, 1.02); plot.despine(axs[0])

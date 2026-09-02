@@ -66,10 +66,21 @@ def fit_ridge(H_l: np.ndarray, H_L: np.ndarray, lam: float = 1e-2) -> tuple[torc
     Y = torch.as_tensor(H_L, dtype=torch.float64)
     mx, my = X.mean(0), Y.mean(0)
     Xc, Yc = X - mx, Y - my
-    d = X.shape[1]
-    G = Xc.T @ Xc
-    lam_eff = lam * G.diagonal().mean()
-    A = torch.linalg.solve(G + lam_eff * torch.eye(d, dtype=G.dtype), Xc.T @ Yc).T   # [d_out, d_in]
+    n, d = X.shape
+    if n < d:
+        # fewer rows than dimensions: solve the n x n system instead of the
+        # d x d one.  Xc (Xc^T Xc + cI)^-1 = (Xc Xc^T + cI)^-1 Xc, so this is
+        # the same map, and trace(Xc^T Xc) = trace(Xc Xc^T) keeps the same
+        # penalty scale.  A few hundred states against a few thousand
+        # dimensions is the usual case here, and the d x d solve dominates the
+        # cost of a fit.
+        K = Xc @ Xc.T
+        lam_eff = lam * K.diagonal().sum() / d
+        A = (Yc.T @ torch.linalg.solve(K + lam_eff * torch.eye(n, dtype=K.dtype), Xc))   # [d_out, d_in]
+    else:
+        G = Xc.T @ Xc
+        lam_eff = lam * G.diagonal().mean()
+        A = torch.linalg.solve(G + lam_eff * torch.eye(d, dtype=G.dtype), Xc.T @ Yc).T   # [d_out, d_in]
     b = my - A @ mx
     return A.float(), b.float()
 

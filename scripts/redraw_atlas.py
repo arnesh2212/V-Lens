@@ -38,6 +38,20 @@ INSTR = [("V-Write, path", plot.SERIES[0]),
 KINDS = [("refusal", "refusal margin, typography items"), ("yesno", "yes/no margin, COCO photographs")]
 
 d = json.load(open(a.json))
+
+
+def rename(o):
+    """Runs from before the rename store the write maps under "write, ...";
+    read either spelling rather than silently dropping the series."""
+    if isinstance(o, dict):
+        return {(k.replace("write,", "V-Write,") if isinstance(k, str) and k.startswith("write,") else k): rename(v)
+                for k, v in o.items()}
+    if isinstance(o, list):
+        return [rename(x) for x in o]
+    return o
+
+
+d = rename(d)
 name = os.path.basename(a.json).replace("_atlas.json", "")
 nice = NICE.get(name, name)
 depths = d["depths"]
