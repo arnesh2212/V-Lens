@@ -519,34 +519,12 @@ def build_writeinto():
 
 
 def build_refusalsteer():
-    path_8b = os.path.join(RESULTS, "steer", "Qwen3-VL-8B-Instruct_refusal_steer.json")
-    path_2b = os.path.join(RESULTS, "steer", "Qwen3-VL-2B-Instruct_refusal_steer.json")
-    notes = []
-    d2 = load_json(path_2b)
-    if d2 is None:
-        notes.append(f"missing {path_2b}; table stays Qwen3-VL-8B only, "
-                     "matching the original table's scope")
-    d = load_json(path_8b)
-    if d is None:
-        notes.append(f"missing {path_8b}")
-        return None
-    records = d["results"]
-
+    """Adding a direction at the answer spot and asking whether benign prompts are
+    now refused, both models, three doses at two depths.  Each model's own
+    no-edit rate is reported alongside, since the two differ enough that the
+    numbers only mean anything against it."""
     depth_targets = [0.35, 0.48]
-    fracs = sorted({r["frac"] for r in records if r["frac"] is not None})
     doses = [0.1, 0.2, 0.4]
-
-    def value(direction, frac, alpha):
-        # runs before and after the rename store the write direction under
-        # "write" and "V-Write"; accept either rather than blanking the row
-        names = {direction, direction.replace("V-Write", "write")}
-        for r in records:
-            if (r["direction"] in names and r.get("channel") == "ans"
-                    and r["frac"] is not None and abs(r["frac"] - frac) < 1e-9
-                    and r["alpha"] == alpha):
-                return r.get("refusal_benign_after_add")
-        return None
-
     directions = [
         ("V-Write", "V-Write"),
         ("difference of means, labelled", "DIM (labelled)"),
@@ -554,30 +532,68 @@ def build_refusalsteer():
         ("V-Read, inverted", "read inverted"),
         ("random, same strength", "random"),
     ]
-    label_free_idxs = [i for i, (_lbl, key) in enumerate(directions) if key != "DIM (labelled)"]
+    notes, blocks = [], []
+    for key, nice in MODELS:
+        d = load_json(os.path.join(RESULTS, "steer", f"{key}_refusal_steer.json"))
+        if d is None:
+            notes.append(f"missing {key}_refusal_steer.json; that model is left out")
+            continue
+        records = d["results"]
+        fracs = sorted({r["frac"] for r in records if r["frac"] is not None})
+        base = next((r for r in records if r["direction"] == "baseline"), None)
+        if base is not None:
+            notes.append(f"{nice}: with no edit, {base.get('refusal_benign_after_add'):.2f} of the benign "
+                         f"prompts are refused already")
 
-    col_labels = []
-    col_targets = []  # (frac, alpha)
-    for dt in depth_targets:
-        frac = nearest_float(fracs, dt) if fracs else None
-        for alpha in doses:
-            col_targets.append((frac, alpha))
-            col_labels.append(f"depth {dt} dose {alpha}")
+        def value(direction, frac, alpha):
+            # runs from before the rename spell the write direction "write"
+            names = {direction, direction.replace("V-Write", "write")}
+            for r in records:
+                if (r["direction"] in names and r.get("channel") == "ans"
+                        and r["frac"] is not None and abs(r["frac"] - frac) < 1e-9
+                        and r["alpha"] == alpha):
+                    return r.get("refusal_benign_after_add")
+            return None
 
-    rows = []
-    for label, key in directions:
-        vals = []
-        for frac, alpha in col_targets:
-            vals.append(value(key, frac, alpha) if frac is not None else None)
-        rows.append((label, vals))
+        targets = []
+        for dt in depth_targets:
+            frac = nearest_float(fracs, dt) if fracs else None
+            for alpha in doses:
+                targets.append((frac, alpha))
+        rows = [(label, [value(k, f, al) if f is not None else None for f, al in targets])
+                for label, k in directions]
+        blocks.append((nice, base.get("refusal_benign_after_add") if base else None, rows))
+    if not blocks:
+        return None
 
-    thead = ('    <thead><tr><th rowspan="2">direction added</th>'
+    col_labels = [f"{nice} depth {dt} dose {al}" for nice, _b, _r in blocks for dt in depth_targets for al in doses]
+    label_free = [i for i, (lbl, _k) in enumerate(directions) if lbl != "difference of means, labelled"]
+    lines = ['  <div class="tblwrap">', "  <table>",
+             ('    <thead><tr><th rowspan="2">direction added</th>'
               '<th colspan="3">benign prompts now refused, depth 0.35</th>'
               '<th colspan="3">depth 0.48</th></tr>\n'
               "    <tr><th>0.1</th><th>0.2</th><th>0.4</th>"
-              "<th>0.1</th><th>0.2</th><th>0.4</th></tr></thead>")
-    html = build_block_colmarked(thead, rows, label_free_idxs, decimals=2)
-    return {"html": html, "col_labels": col_labels, "notes": notes}
+              "<th>0.1</th><th>0.2</th><th>0.4</th></tr></thead>"),
+             "    <tbody>"]
+    for nice, base_rate, rows in blocks:
+        head = f"{nice}, {fmt(base_rate, 2)} refused with no edit" if base_rate is not None else nice
+        lines.append(f'      <tr><td colspan="7">{head}</td></tr>')
+        ncols = len(rows[0][1])
+        marks = {}
+        for c in range(ncols):
+            cands = [(r, rows[r][1][c]) for r in label_free if rows[r][1][c] is not None]
+            if cands:
+                marks[c] = max(cands, key=lambda t: t[1])[0]
+        for i, (label, vals) in enumerate(rows):
+            tds = [f"<td>{label}</td>"]
+            for c, v in enumerate(vals):
+                text = fmt(v, 2)
+                if marks.get(c) == i and text:
+                    text = f'<span class="k">{text}</span>'
+                tds.append(f"<td>{text}</td>")
+            lines.append("      <tr>" + "".join(tds) + "</tr>")
+    lines += ["    </tbody>", "  </table>", "  </div>"]
+    return {"html": "\n".join(lines), "col_labels": col_labels, "notes": notes}
 
 
 def build_steerdose():
@@ -721,6 +737,54 @@ def build_benchmarks():
     return {"html": "\n".join(lines), "col_labels": col_labels, "notes": notes}
 
 
+def build_judges():
+    """How the three judges score the same replies, on the harmful items each
+    model was asked, plus their pairwise agreement.  Rates are over the items
+    both guards actually judged, so the three columns are comparable."""
+    sys.path.insert(0, os.path.join(ROOT, "code"))
+    from jvlm import guards as _guards, judge as _judge  # noqa: E402
+    rows_by_model, kappa_by_model, notes = {}, {}, []
+    for key, _nice in MODELS:
+        d = load_json(os.path.join(RESULTS, "gate", f"{key}__eval.json"))
+        if d is None:
+            notes.append(f"missing {key}__eval.json")
+            return None
+        items = d if isinstance(d, list) else (d.get("items") or d.get("rows") or [])
+        harm = [it for it in items if it.get("harmful") and it.get("harmbench_complied") is not None
+                and it.get("qwen3guard_complied") is not None]
+        notes.append(f"{key}: {len(harm)} harmful items judged by both guards")
+        cols = {
+            "pattern matching": [bool(_judge.complied(it.get("reply_long") or it.get("reply", ""))) for it in harm],
+            "HarmBench classifier": [bool(it["harmbench_complied"]) for it in harm],
+            "Qwen3Guard": [bool(it["qwen3guard_complied"]) for it in harm],
+            "both guards agree": [bool(it.get("judge_majority_complied")) for it in harm],
+            "either guard": [bool(it.get("judge_any_complied")) for it in harm],
+        }
+        rows_by_model[key] = {k: (sum(v) / len(v) if v else None) for k, v in cols.items()}
+        three = ["pattern matching", "HarmBench classifier", "Qwen3Guard"]
+        kappa_by_model[key] = {k: [_guards.kappa(cols[k], cols[o]) for o in three if o != k] for k in three}
+
+    order = ["pattern matching", "HarmBench classifier", "Qwen3Guard", "both guards agree", "either guard"]
+    lines = ['  <div class="tblwrap">', "  <table>", 
+             ('    <thead><tr><th rowspan="2">judge</th>'
+              '<th colspan="2">says the reply carries out the request, harmful items</th>'
+              '<th colspan="2">agreement with the others (Cohen’s kappa)</th></tr>\n'
+              f'    <tr><th>{MODELS[0][1]}</th><th>{MODELS[1][1]}</th>'
+              f"<th>{MODELS[0][1].split('-')[-1]}</th><th>{MODELS[1][1].split('-')[-1]}</th></tr></thead>"),
+             "    <tbody>"]
+    col_labels = [f"{nice} rate" for _k, nice in MODELS] + [f"{nice} kappa" for _k, nice in MODELS]
+    for name in order:
+        tds = [f"<td>{name}</td>"]
+        for key, _nice in MODELS:
+            tds.append(f"<td>{fmt(rows_by_model[key][name], 2)}</td>")
+        for key, _nice in MODELS:
+            ks = kappa_by_model[key].get(name)
+            tds.append(f"<td>{' / '.join(fmt(k, 2) for k in ks) if ks else ''}</td>")
+        lines.append("      <tr>" + "".join(tds) + "</tr>")
+    lines += ["    </tbody>", "  </table>", "  </div>"]
+    return {"html": "\n".join(lines), "col_labels": col_labels, "notes": notes}
+
+
 TABLE_BUILDERS = [
     ("readdecision", build_readdecision),
     ("presence", build_presence),
@@ -733,6 +797,7 @@ TABLE_BUILDERS = [
     ("steerdose", build_steerdose),
     ("swap", build_swap),
     ("benchmarks", build_benchmarks),
+    ("judges", build_judges),
     ("refusalsteer", build_refusalsteer),
 ]
 
