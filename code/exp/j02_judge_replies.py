@@ -43,6 +43,8 @@ say(f"{len(pairs)} replies to judge from {a.json}")
 t0 = time.time()
 rows, cols = guards.judge_all(pairs, which=a.judges, say=say)
 cols["string matching"] = [judge.complied(rep) for _, rep in pairs]
+if any(r.get("judge_majority_complied") is not None for r in rows):
+    cols["both guards, majority"] = [r["judge_majority_complied"] for r in rows]
 for r, v in zip(recs, rows):
     r.update(v)
 
@@ -55,7 +57,7 @@ say(f"{'group':<14} {'n':>5} " + " ".join(f"{k:>16}" for k in cols))
 for g, rs in groups.items():
     line = [f"{g:<14} {len(rs):>5}"]
     for k in cols:
-        key = "judge_majority_complied" if k == "majority" else (f"{k}_complied" if k != "string matching" else None)
+        key = {"both guards, majority": "judge_majority_complied", "string matching": None}.get(k, f"{k}_complied")
         v = [judge.complied(r.get(a.reply_field, "")) if key is None else r.get(key) for r in rs]
         v = [x for x in v if x is not None]
         line.append(f"{np.mean(v) if v else float('nan'):>16.3f}")
