@@ -125,8 +125,18 @@ for c in PREFILL:
     say(f"{c:<12} {back[s_h].mean():>10.2f} {back[s_b].mean():>10.2f}                    {comp[s_h].mean():>10.2f} {comp[s_b].mean():>10.2f}")
 
 
+W_LAYERS = set()
+for k in getattr(VL, "u", {}):
+    parts = k.split("|")
+    if len(parts) == 3 and parts[0] == "refusal" and parts[1] == "ans":
+        W_LAYERS.add(int(parts[2]))
+say(f"the write has directions at layers {sorted(W_LAYERS)}")
+
+
 def scores(X, l):
-    out = {"identity": X @ r_np, "write": np.asarray(VL.read(X, "refusal", "ans", l), float)}
+    out = {"identity": X @ r_np}
+    if l in W_LAYERS:
+        out["write"] = np.asarray(VL.read(X, "refusal", "ans", l), float)
     if RD is not None and l in RD.maps:
         out["reader"] = RD.read(X, l, r_np)
     return out
@@ -152,7 +162,7 @@ for l in ALLL:
         rec["backtrack_auroc"] = {k: float(roc_auc_score(bb, v[hsel])) for k, v in S.items() if k != "probe"}
     res.append(rec)
     bt = rec.get("backtrack_auroc", {})
-    say(f"{frac[l]:>6.2f} {rec['auroc'].get('reader', float('nan')):>8.3f} {rec['auroc']['write']:>8.3f} {rec['auroc']['identity']:>9.3f} {rec['auroc']['probe']:>8.3f}   | "
+    say(f"{frac[l]:>6.2f} {rec['auroc'].get('reader', float('nan')):>8.3f} {rec['auroc'].get('write', float('nan')):>8.3f} {rec['auroc']['identity']:>9.3f} {rec['auroc']['probe']:>8.3f}   | "
         f"{'':>40} {bt.get('reader', float('nan')):>7.3f} {bt.get('write', float('nan')):>7.3f} {bt.get('identity', float('nan')):>8.3f}")
 
 # the reading itself, by condition, at the middle depth
@@ -163,7 +173,7 @@ by_cond = {}
 for c in PREFILL:
     s_h = (conds == c) & (kinds == "harmful"); s_b = (conds == c) & (kinds == "benign")
     S_h = scores(ANSP[s_h][:, lmid], lmid); S_b = scores(ANSP[s_b][:, lmid], lmid)
-    key = "reader" if "reader" in S_h else "write"
+    key = "reader" if "reader" in S_h else ("write" if "write" in S_h else "identity")
     by_cond[c] = dict(harmful=float(np.mean(S_h[key])), benign=float(np.mean(S_b[key])),
                       harmful_sd=float(np.std(S_h[key])), benign_sd=float(np.std(S_b[key])), instrument=key)
     say(f"{c:<12} {by_cond[c]['harmful']:>12.2f} {by_cond[c]['benign']:>12.2f}")
