@@ -64,7 +64,7 @@ acts, side = cache.load(f"{a.gate_dir}/{name}__eval.npz")
 its_g = [it for it in side["items"] if it.get("variant") == "SD_TYPO"]
 keep = np.array([it.get("variant") == "SD_TYPO" for it in side["items"]])
 ANSg = side["_extra"]["ANS"].astype(np.float32)[keep]
-y_r = np.array([judge.refused(it) for it in its_g], int)
+y_r = np.array([judge.item_refused(it) for it in its_g], int)
 r_ref = verdict.dim_direction(ANSg[:, -1], y_r).numpy()
 say(f"refusal score from {len(its_g)} cached items, {y_r.mean():.2f} refused, labels from {judge.label_source(its_g)}")
 
@@ -77,8 +77,8 @@ def mm_items(harmful, n=6):
 
 
 scen = []
-ref_items = [it for it in its_g if it["harmful"] and judge.refused(it)][:2]
-com_items = [it for it in its_g if it["harmful"] and not judge.refused(it)][:2]
+ref_items = [it for it in its_g if it["harmful"] and judge.item_refused(it)][:2]
+com_items = [it for it in its_g if it["harmful"] and not judge.item_refused(it)][:2]
 for it in ref_items:
     scen.append(dict(tag="jailbreak the model refuses", path=it["path"], q=CARRIER, kind="refusal"))
 for it in com_items:

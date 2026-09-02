@@ -55,7 +55,7 @@ print(f"using {side['n']} items in variants {_VARS}", flush=True)
 VL = verdict.VerdictLens.load(f"{a.gate_dir}/{name}__verdict_carrier.pt")
 ANS = side["_extra"]["ANS"].astype(np.float32)
 its = side["items"]; L = VL.layers; grid = int(round(side["image_tokens"] ** 0.5))
-y_ref = np.array([judge.refused(it) for it in its], int)
+y_ref = np.array([judge.item_refused(it) for it in its], int)
 y_harm = np.array([it["harmful"] for it in its], int)
 r = verdict.dim_direction(ANS[:, -1], y_ref).numpy()      # the final-layer refusal direction
 # per-position corpus mean at each depth, so both maps read a deviation from what

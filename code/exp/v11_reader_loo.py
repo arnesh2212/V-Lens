@@ -49,7 +49,7 @@ def load(s):
     acts, side = cache.load(p)
     A = side["_extra"]["ANS"].astype(np.float32)
     its = side["items"]
-    return dict(ANS=A, harmful=np.array([bool(it["harmful"]) for it in its]), refused=np.array([judge.refused(it) for it in its]),
+    return dict(ANS=A, harmful=np.array([bool(it["harmful"]) for it in its]), refused=np.array([judge.item_refused(it) for it in its]),
                 complied=np.array([bool(judge.label(it)) for it in its]), n=len(its))
 
 D = {s: load(s) for s in a.sets + a.benign}

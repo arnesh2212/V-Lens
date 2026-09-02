@@ -54,7 +54,7 @@ VL = verdict.VerdictLens.load(f"{a.out}/{name}__verdict_carrier.pt")
 G = json.load(open(f"{a.out}/{name}_gate.json"))
 ANS = side["_extra"]["ANS"].astype(np.float32)
 its = side["items"]; N = len(its)
-y = np.array([judge.refused(it) for it in its], int)
+y = np.array([judge.item_refused(it) for it in its], int)
 PROMPT = side["prompt"]; READ = VL.layers; L = m.n_layers - 1
 say(f"{name}: {N} items, refused {y.mean():.2f}; depths {READ}")
 

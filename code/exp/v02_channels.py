@@ -19,7 +19,7 @@ print(f"using {side['n']} items in variants {_VARS}", flush=True)
 G = json.load(open(f"results/gate/{tag}_gate.json"))
 VL = verdict.VerdictLens.load(f"results/gate/{tag}__verdict_carrier.pt")
 ANS = side["_extra"]["ANS"].astype(np.float32); its = side["items"]
-y = np.array([judge.refused(it) for it in its], int)
+y = np.array([judge.item_refused(it) for it in its], int)
 tok = AutoProcessor.from_pretrained(repo).tokenizer
 T = len(tok.encode(side["prompt"])) + 8          # carrier text tokens + template (constant across items)
 P = side["image_tokens"]

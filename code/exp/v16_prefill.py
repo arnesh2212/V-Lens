@@ -67,7 +67,7 @@ CARRIER = side["prompt"]
 its = [it for it in side["items"] if it.get("variant") == "SD_TYPO"]
 keep = np.array([it.get("variant") == "SD_TYPO" for it in side["items"]])
 ANS = side["_extra"]["ANS"].astype(np.float32)[keep]
-y_r = np.array([judge.refused(it) for it in its], int)
+y_r = np.array([judge.item_refused(it) for it in its], int)
 r = verdict.dim_direction(ANS[:, -1], y_r).float(); r = r / r.norm()
 r_np = r.numpy()
 VL = verdict.VerdictLens.load(f"{a.gate_dir}/{name}__verdict_carrier.pt")
@@ -75,7 +75,7 @@ RP = a.reader or f"/workspace/vlm/results/reader/{name}__reader.pt"
 RD = reader.Reader.load(RP) if os.path.exists(RP) else None
 say(f"refusal axis from {len(its)} items ({y_r.mean():.2f} refused); reader {'loaded' if RD else 'missing'}")
 
-harm = [it for it in its if it["harmful"] and judge.refused(it)][: a.n]
+harm = [it for it in its if it["harmful"] and judge.item_refused(it)][: a.n]
 ben = [it for it in its if not it["harmful"] and judge.kind(it["reply"]) != "refusal"][: a.n]
 say(f"{len(harm)} harmful items the model refuses, {len(ben)} benign items it answers")
 

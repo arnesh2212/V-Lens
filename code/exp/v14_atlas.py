@@ -86,7 +86,7 @@ its = [it for it in side["items"] if it.get("variant") == "SD_TYPO"]
 ANS = side["_extra"]["ANS"].astype(np.float32)
 keep = np.array([it.get("variant") == "SD_TYPO" for it in side["items"]])
 ANS = ANS[keep]
-y_r = np.array([judge.refused(it) for it in its], int)
+y_r = np.array([judge.item_refused(it) for it in its], int)
 r = verdict.dim_direction(ANS[:, -1], y_r).float()
 r = r / r.norm()
 R_DEV = r.to(m.device)

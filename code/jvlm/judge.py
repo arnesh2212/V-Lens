@@ -117,7 +117,7 @@ def label_source(items) -> str:
     return "string matching"
 
 
-def refused(item) -> bool:
+def item_refused(item) -> bool:
     """Refusal is the complement of compliance under whichever judge this cache carries.
 
     A reply that neither complies nor refuses outright (a deflection: "the image does
