@@ -62,13 +62,33 @@ class Reader:
 
 
 def fit(ANS: np.ndarray, layers, *, final_layer: int | None = None, lam: float = 1e-1,
-        meta: dict | None = None) -> Reader:
-    """Fit from ``ANS`` of shape ``[N, n_layers, d]`` (answer-slot residual at every block)."""
+        rescale: bool = True, meta: dict | None = None) -> Reader:
+    """Fit from ``ANS`` of shape ``[N, n_layers, d]`` (answer-spot residual at every block).
+
+    Ridge shrinks its prediction toward the mean, which is the right thing for squared
+    error and the wrong thing for reading a score off the prediction: every margin comes
+    out compressed toward the corpus average, so a per-item trace looks flat even when
+    the ranking across items is right.  ``rescale`` fixes that with one scalar per layer,
+    chosen so the predicted states vary as much as the real final states do.  It is a
+    positive affine map, so nothing about the ranking changes; only the units do.
+    """
     L = ANS.shape[1] - 1 if final_layer is None else int(final_layer)
-    maps = {}
+    Y = ANS[:, L]
+    mu_y = torch.as_tensor(Y.mean(0)).float()
+    var_y = float(((torch.as_tensor(Y).float() - mu_y) ** 2).sum(-1).mean())
+    maps, scales = {}, {}
     for l in sorted(set(int(x) for x in layers)):
-        maps[l] = tuned.fit_ridge(ANS[:, l], ANS[:, L], lam=lam)
-    m = dict(meta or {}, kind="ridge", lam=lam, n=int(ANS.shape[0]), final_layer=L, layers=sorted(maps))
+        A, b = tuned.fit_ridge(ANS[:, l], Y, lam=lam)
+        if rescale:
+            P = torch.as_tensor(ANS[:, l]).float() @ A.T + b
+            mu_p = P.mean(0)
+            var_p = float(((P - mu_p) ** 2).sum(-1).mean())
+            s = float((var_y / max(var_p, 1e-12)) ** 0.5)
+            A, b = s * A, s * (b - mu_p) + mu_y
+            scales[l] = s
+        maps[l] = (A, b)
+    m = dict(meta or {}, kind="ridge+scale" if rescale else "ridge", lam=lam, n=int(ANS.shape[0]),
+             final_layer=L, layers=sorted(maps), scales={str(k): v for k, v in scales.items()})
     return Reader(maps, m)
 
 
