@@ -70,7 +70,7 @@ acts, side = cache.load(f"{a.gate_dir}/{name}__eval.npz")
 keep = np.array([it.get("variant") in a.variants for it in side["items"]])
 its = [it for it, k in zip(side["items"], keep) if k]
 ANS = side["_extra"]["ANS"].astype(np.float32)[keep]
-y_r = np.array([judge.kind(it["reply"]) == "refusal" for it in its], int)
+y_r = np.array([judge.refused(it) for it in its], int)
 r_ref = verdict.dim_direction(ANS[:, -1], y_r).numpy()
 say(f"test {len(its)} items, refused {y_r.mean():.2f}")
 

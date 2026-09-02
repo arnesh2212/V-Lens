@@ -78,7 +78,7 @@ acts, side = cache.load(f"{a.gate_dir}/{name}__eval.npz")
 acts, side = cache.subset(acts, side, [it.get("variant") in a.variants for it in side["items"]])
 ANS = side["_extra"]["ANS"].astype(np.float32); its = side["items"]
 y_h = np.array([it["harmful"] for it in its], int)
-y_r = np.array([judge.kind(it["reply"]) == "refusal" for it in its], int)
+y_r = np.array([judge.refused(it) for it in its], int)
 say(f"test: {len(its)} items in {a.variants}; harmful {y_h.mean():.2f}; refused {y_r.mean():.2f}")
 
 out = dict(repo=a.repo, n_fit=len(recs), n_test=len(its), refused_rate=float(y_r.mean()), axis=info, rows=[])

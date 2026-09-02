@@ -54,7 +54,7 @@ VL = verdict.VerdictLens.load(f"{a.gate_dir}/{name}__verdict_carrier.pt")
 acts, side = cache.load(f"{a.gate_dir}/{name}__eval.npz")
 acts, side = cache.subset(acts, side, [it.get("variant") == "SD_TYPO" for it in side["items"]])
 ANS = side["_extra"]["ANS"].astype(np.float32); its = side["items"]
-y_r = np.array([judge.kind(it["reply"]) == "refusal" for it in its], int)
+y_r = np.array([judge.refused(it) for it in its], int)
 r_final = verdict.dim_direction(ANS[:, -1], y_r).numpy()
 RD = reader.Reader.load(a.reader or f"/workspace/vlm/results/reader/{name}__reader.pt") if os.path.exists(a.reader or f"/workspace/vlm/results/reader/{name}__reader.pt") else None
 

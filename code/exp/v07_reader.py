@@ -18,7 +18,7 @@ for tag in ("Qwen3-VL-2B-Instruct", "Qwen3-VL-8B-Instruct"):
     acts, side = cache.subset(acts, side, [it.get("variant") in VARS for it in side["items"]])
     G = json.load(open(f"results/gate/{tag}_gate.json"))
     ANS = side["_extra"]["ANS"].astype(np.float32); N, LN, d = ANS.shape
-    y = np.array([judge.kind(it["reply"]) == "refusal" for it in side["items"]], int)
+    y = np.array([judge.refused(it) for it in side["items"]], int)
     layers = sorted(int(l) for l in G["calibration"])
     rng = np.random.default_rng(0); folds = np.array_split(rng.permutation(N), 5)
     res = {}

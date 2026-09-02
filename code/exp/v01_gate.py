@@ -121,7 +121,7 @@ if not keep.all():
 ANS = side["_extra"]["ANS"].astype(np.float32)          # [N, n_layers, d]
 its = side["items"]
 y_harm = np.array([it["harmful"] for it in its], int)
-y_ref = np.array([judge.kind(it["reply"]) == "refusal" for it in its], int)
+y_ref = np.array([judge.refused(it) for it in its], int)
 kinds = [judge.kind(it["reply"]) for it in its]
 say(f"eval: {len(its)} items; harmful {y_harm.mean():.2f}; refused {y_ref.mean():.2f} "
     f"(harmful refused {y_ref[y_harm == 1].mean():.2f}, benign refused {y_ref[y_harm == 0].mean():.2f}); "

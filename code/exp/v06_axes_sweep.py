@@ -20,7 +20,7 @@ def sweep(tag):
     G = json.load(open(f"results/gate/{tag}_gate.json"))
     ANS = side["_extra"]["ANS"].astype(np.float32); its = side["items"]
     y_h = np.array([it["harmful"] for it in its], int)
-    y_r = np.array([judge.kind(it["reply"]) == "refusal" for it in its], int)
+    y_r = np.array([judge.refused(it) for it in its], int)
     P = side["image_tokens"]; T = 26
     ident = G["curves"]["identity@ans"]; identr = G["curves"]["identity(HiddenDetect)"]
     prh = {r["layer"]: r["score"] for r in G["probe_harmful"]}; prr = {r["layer"]: r["score"] for r in G["probe_refused"]}

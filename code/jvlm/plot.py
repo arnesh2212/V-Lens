@@ -43,10 +43,22 @@ GRID = "#e1e0d9"
 AXIS = "#c3c2b7"
 
 #: fixed categorical order; never cycled past what is listed
-SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a3aa7", "#e34948"]
+#:
+#: Chosen so the first four (the ones that actually appear together in a
+#: single panel -- the read, the write, the logit lens, a fourth condition)
+#: stay apart three ways at once: as ordinary colour, under a red-green or
+#: blue-yellow confusion (protanopia, deuteranopia, tritanopia simulated),
+#: and as plain grayscale luminance, where blue/orange/aqua used to crowd
+#: into the same mid-grey. Aqua now sits dark, yellow sits light, and blue
+#: and orange fall in between with real daylight between them.
+SERIES = ["#2a78d6", "#e97135", "#174f48", "#dab24e", "#cf638a", "#39672a", "#3b2785", "#ce2138"]
 BLUE, ORANGE, AQUA, YELLOW, MAGENTA, GREEN, VIOLET, RED = SERIES
 #: the three that survive every pairing; a scatter uses these and no more
 TRIO = SERIES[:3]
+#: a third, more recessive ink -- for a caption-like line inside a figure
+#: that should read as quieter than INK2 (axis labels) but is still text,
+#: never a series colour
+INK3 = MUTED
 
 #: one hue, light to dark, for magnitude
 BLUES = ["#cde2fb", "#b7d3f6", "#9ec5f4", "#86b6ef", "#6da7ec", "#5598e7",
