@@ -384,7 +384,9 @@ for i_, st in enumerate(store):
                 axl.text(0.95, 0.5, f"depth\n{frac[l]:.2f}", ha="right", va="center", fontsize=8.5, color=plot.INK2)
             if k != "patching (truth)":
                 rho = sp(M.reshape(-1), t_res)
-                if not np.isnan(rho): ax.text(0.02, 0.02, f"{rho:.2f}", transform=ax.transAxes, fontsize=6.5, color=plot.INK2)
+                if not np.isnan(rho):
+                    ax.text(0.03, 0.04, f"{rho:.2f}", transform=ax.transAxes, fontsize=6.5, color=plot.INK,
+                            bbox=dict(facecolor="white", edgecolor="none", alpha=0.82, pad=1.0))
     plot.save(fig, f"{a.figs}/{name}_atlas_{it['kind']}_{it['tag']}_{i_}.png"); plt.close(fig)
 
 json.dump(dict(repo=a.repo, n_items=len(store), regions=NREG, depths={str(l): frac[l] for l in L6}, rows=rows,
