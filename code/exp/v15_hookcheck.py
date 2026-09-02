@@ -74,7 +74,7 @@ gaps = []
 for al in (0.5, 1.0, 2.0, 4.0):
     iv = readout.Intervention(m, {l: d for l in L}, channel="all", mode="add", alpha=al)
     gaps.append(float(np.abs(logits(iv) - clean).max()))
-check("effect grows with the dose", all(gaps[i] < gaps[i + 1] + 1e-6 for i in range(len(gaps) - 1)), " -> ".join(f"{x:.2f}" for x in gaps))
+check("effect grows with the dose, 0.05 to 0.4", all(gaps[i] < gaps[i + 1] + 1e-6 for i in range(len(gaps) - 1)), " -> ".join(f"{x:.2f}" for x in gaps))
 
 # two different random directions must not give the same answer
 iv1 = readout.Intervention(m, {l: d for l in L}, channel="all", mode="add", alpha=2.0); l1 = logits(iv1)
