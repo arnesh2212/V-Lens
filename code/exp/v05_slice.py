@@ -171,9 +171,10 @@ for k, ex in enumerate(examples):
     P = int((ch == "img").sum()); grid = int(round(P ** 0.5)); ip = np.where(ch == "img")[0]
 
     # ---- figure 1: the two slices over the text tokens
-    fig, axs = plt.subplots(1, 2, figsize=(11.5, 4.6), gridspec_kw=dict(width_ratios=[1, 1], wspace=0.05))
-    draw_slice(axs[0], R, ch, toks, words, "writer: the word this token pushes the answer toward")
-    draw_ranks(axs[1], ranks, ch, toks, "logit lens: the best-ranked bank word here")
+    fig, axs = plt.subplots(1, 2, figsize=(11.5, 4.9), gridspec_kw=dict(width_ratios=[1, 1], wspace=0.06))
+    fig.text(0.5, 0.985, "which word each token is pushing the answer toward, by depth", ha="center", fontsize=10, color=plot.INK2)
+    draw_slice(axs[0], R, ch, toks, words, "the write")
+    draw_ranks(axs[1], ranks, ch, toks, "the logit lens")
     handles = [plt.Line2D([], [], marker="s", ls="", color=WCOL[w], label=w + (" (in picture)" if w in ex["present"] else "")) for w in words]
     fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, -0.02), ncols=min(6, len(words)), frameon=False)
     plot.save(fig, f"{a.figdir}/{name}_slice_text_{k}.png")
