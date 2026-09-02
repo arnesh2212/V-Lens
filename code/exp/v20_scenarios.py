@@ -143,8 +143,10 @@ say(f"{P} image positions = {GRID}x{GRID}")
 
 
 def score_fns(s):
-    """The scores this scenario is read through: a name, a function of the final state, and a word."""
-    out = [("refusal", lambda hL, lg: torch.as_tensor(hL).float() @ torch.as_tensor(r_ref).float())]
+    """The scores this scenario is read through, the first one leading, since the write maps
+    are drawn for the leading score and it should be the one the question is about."""
+    refusal = ("refusal", lambda hL, lg: torch.as_tensor(hL).float() @ torch.as_tensor(r_ref).float())
+    out = [refusal] if s["kind"] == "refusal" else []
     if s["kind"] in ("present", "absent"):
         out.append(("yes over no", lambda hL, lg: torch.logsumexp(torch.log_softmax(lg.float(), -1)[..., YES], -1)
                     - torch.logsumexp(torch.log_softmax(lg.float(), -1)[..., NO], -1)))
@@ -153,6 +155,8 @@ def score_fns(s):
         out.append((f"the word “{s['word']}”", lambda hL, lg, t=t: torch.log_softmax(lg.float(), -1)[..., t]))
     out.append(("refusal openers", lambda hL, lg: torch.logsumexp(torch.log_softmax(lg.float(), -1)[..., SR], -1)
                 - torch.logsumexp(torch.log_softmax(lg.float(), -1)[..., SC], -1)))
+    if s["kind"] != "refusal":
+        out.append(refusal)
     return out
 
 
