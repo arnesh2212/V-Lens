@@ -50,6 +50,7 @@ ap.add_argument("--n-mu", type=int, default=40, help="scenes for the average sta
 ap.add_argument("--n-fit", type=int, default=60, help="scenes to fit the colour write directions")
 ap.add_argument("--swap-alphas", type=float, nargs="*", default=[0.2, 0.4, 0.8])
 ap.add_argument("--swap-depths", type=float, nargs="*", default=[0.35, 0.5, 0.65])
+ap.add_argument("--only-write", action="store_true", help="skip the reading and covering passes, sweep the write only")
 ap.add_argument("--out", default="/workspace/vlm/results/twostep")
 ap.add_argument("--figs", default="/workspace/vlm/figures/twostep")
 a = ap.parse_args()
@@ -200,7 +201,7 @@ def region_share(mp, it):
 
 
 rows, shares, t0 = [], [], time.time()
-for n2, it in enumerate(ev):
+for n2, it in enumerate([] if a.only_write else ev):
     for which in ("main", "control"):
         ANS, maps, cols, pos, b = read_item(it, which)
         i_ans, i_oth, i_dst = COLOURS.index(cols["ans"]), COLOURS.index(cols["other"]), COLOURS.index(cols["dist"])
@@ -216,9 +217,10 @@ for n2, it in enumerate(ev):
         say(f"  read {n2 + 1}/{len(ev)}  ({(time.time() - t0) / 60:.1f} min)")
 
 R = {(w, t): {l: [r for r in rows if r["which"] == w and r["transport"] == t and r["layer"] == l] for l in ALLL} for w in ("main", "control") for t in ("read", "logit lens")}
-say(f"\nthe two-step question: how often the top colour is the right one, by depth")
-say(f"{'depth':>6} {'read':>9} {'logit lens':>11}   | names the landmark instead: {'read':>9} {'logit lens':>11}   | the one-step control, read: {'right':>7}")
-for l in ALLL:
+if rows:
+  say(f"\nthe two-step question: how often the top colour is the right one, by depth")
+  say(f"{'depth':>6} {'read':>9} {'logit lens':>11}   | names the landmark instead: {'read':>9} {'logit lens':>11}   | the one-step control, read: {'right':>7}")
+  for l in ALLL:
     a_p = np.mean([r["top_is_answer"] for r in R[("main", "read")][l]])
     a_i = np.mean([r["top_is_answer"] for r in R[("main", "logit lens")][l]])
     l_p = np.mean([r["top_is_landmark"] for r in R[("main", "read")][l]])
@@ -226,9 +228,9 @@ for l in ALLL:
     c_p = np.mean([r["top_is_answer"] for r in R[("control", "read")][l]])
     say(f"{frac[l]:>6.2f} {a_p:>9.2f} {a_i:>11.2f}   | {'':>26} {l_p:>9.2f} {l_i:>11.2f}   | {'':>29} {c_p:>7.2f}")
 
-say(f"\nwhere the write sits, over chance for the region's size (main question)")
-say(f"{'depth':>6} {'landmark':>10} {'referent':>10} {'distractor':>11} {'floor':>8}")
-for l in L6:
+  say(f"\nwhere the write sits, over chance for the region's size (main question)")
+  say(f"{'depth':>6} {'landmark':>10} {'referent':>10} {'distractor':>11} {'floor':>8}")
+  for l in L6:
     sl = [s for s in shares if s["which"] == "main" and s["layer"] == l]
     say(f"{frac[l]:>6.2f} " + " ".join(f"{np.median([s[k] for s in sl if k in s]):>10.2f}" for k in ("landmark", "referent", "distractor", "floor")))
 
@@ -265,27 +267,28 @@ def cover(it, l, keys, which="main"):
 
 KEYS = ["landmark", "referent", "distractor", "floor"]
 cov, t0 = [], time.time()
-for n2, it in enumerate(ev):
+for n2, it in enumerate([] if a.only_write else ev):
     for l in L6:
         d = cover(it, l, KEYS)
         cov.append(dict(item=n2, layer=l, frac=frac[l], **d))
     if (n2 + 1) % 10 == 0:
         say(f"  covering {n2 + 1}/{len(ev)}  ({(time.time() - t0) / 60:.1f} min)")
 
-say(f"\nwhat covering each region costs the answer's log-odds, by depth (median)")
-say(f"{'depth':>6} " + " ".join(f"{k:>11}" for k in KEYS))
-for l in L6:
-    cl = [c for c in cov if c["layer"] == l]
-    say(f"{frac[l]:>6.2f} " + " ".join(f"{np.median([c[k] for c in cl if k in c]):>11.2f}" for k in KEYS))
-sp = {}
-for l in L6:
-    cl = [c for c in cov if c["layer"] == l]
-    sl = [s for s in shares if s["which"] == "main" and s["layer"] == l]
-    pairs = [(abs(c[k]), s[k]) for c, s in zip(cl, sl) for k in KEYS if k in c and k in s]
-    if pairs:
-        A_, B_ = np.array(pairs).T
-        sp[l] = float(np.corrcoef(np.argsort(np.argsort(A_)), np.argsort(np.argsort(B_)))[0, 1])
-say("rank agreement between the write's share and what covering costs: " + ", ".join(f"{frac[l]:.2f}: {sp.get(l, float('nan')):.2f}" for l in L6))
+if cov:
+  say(f"\nwhat covering each region costs the answer's log-odds, by depth (median)")
+  say(f"{'depth':>6} " + " ".join(f"{k:>11}" for k in KEYS))
+  for l in L6:
+      cl = [c for c in cov if c["layer"] == l]
+      say(f"{frac[l]:>6.2f} " + " ".join(f"{np.median([c[k] for c in cl if k in c]):>11.2f}" for k in KEYS))
+  sp = {}
+  for l in L6:
+      cl = [c for c in cov if c["layer"] == l]
+      sl = [s for s in shares if s["which"] == "main" and s["layer"] == l]
+      pairs = [(abs(c[k]), s[k]) for c, s in zip(cl, sl) for k in KEYS if k in c and k in s]
+      if pairs:
+          A_, B_ = np.array(pairs).T
+          sp[l] = float(np.corrcoef(np.argsort(np.argsort(A_)), np.argsort(np.argsort(B_)))[0, 1])
+  say("rank agreement between the write's share and what covering costs: " + ", ".join(f"{frac[l]:.2f}: {sp.get(l, float('nan')):.2f}" for l in L6))
 
 
 # ---- the swap: exchange the answer colour's coordinate with another colour's
@@ -340,49 +343,50 @@ for chan in ("img", "all"):
 
 # ---- figures
 xs = [frac[l] for l in ALLL]
-fig, axs = plt.subplots(1, 2, figsize=(7.8, 2.9), sharey=True)
-for ax, t in zip(axs, ("read", "logit lens")):
-    lab_ = []
-    for key, lab, c in (("top_is_answer", "the sphere, the answer", plot.SERIES[0]),
-                        ("top_is_landmark", "the cube, the trap", plot.SERIES[1])):
-        y = [np.mean([r[key] for r in R[("main", t)][l]]) for l in ALLL]
-        ax.plot(xs, y, color=c, lw=1.5); lab_.append((y[-1], lab, c))
-    y = [np.mean([r["top_is_answer"] for r in R[("control", t)][l]]) for l in ALLL]
-    ax.plot(xs, y, color=plot.SERIES[2], lw=1.1, ls="--"); lab_.append((y[-1], "one-step control", plot.SERIES[2]))
-    lab_.sort(key=lambda z: -z[0])
-    for (yv, lab, c), yy in zip(lab_, plot.stagger([z[0] for z in lab_], 0.07)):
-        plot.end_label(ax, xs[-1], yy, lab, c)
-    ax.set_title(t, loc="left", fontsize=9.5, color=plot.INK2); ax.set_xlabel("depth"); plot.despine(ax)
-axs[0].set_ylabel("top colour is this one"); axs[0].set_ylim(0, 1.02)
-fig.tight_layout(); plot.save(fig, f"{a.figs}/{name}_twostep_answer.png"); plt.close(fig)
+if rows:
+    fig, axs = plt.subplots(1, 2, figsize=(7.8, 2.9), sharey=True)
+    for ax, t in zip(axs, ("read", "logit lens")):
+        lab_ = []
+        for key, lab, c in (("top_is_answer", "the sphere, the answer", plot.SERIES[0]),
+                            ("top_is_landmark", "the cube, the trap", plot.SERIES[1])):
+            y = [np.mean([r[key] for r in R[("main", t)][l]]) for l in ALLL]
+            ax.plot(xs, y, color=c, lw=1.5); lab_.append((y[-1], lab, c))
+        y = [np.mean([r["top_is_answer"] for r in R[("control", t)][l]]) for l in ALLL]
+        ax.plot(xs, y, color=plot.SERIES[2], lw=1.1, ls="--"); lab_.append((y[-1], "one-step control", plot.SERIES[2]))
+        lab_.sort(key=lambda z: -z[0])
+        for (yv, lab, c), yy in zip(lab_, plot.stagger([z[0] for z in lab_], 0.07)):
+            plot.end_label(ax, xs[-1], yy, lab, c)
+        ax.set_title(t, loc="left", fontsize=9.5, color=plot.INK2); ax.set_xlabel("depth"); plot.despine(ax)
+    axs[0].set_ylabel("top colour is this one"); axs[0].set_ylim(0, 1.02)
+    fig.tight_layout(); plot.save(fig, f"{a.figs}/{name}_twostep_answer.png"); plt.close(fig)
 
-fig, axs = plt.subplots(1, 2, figsize=(7.8, 2.9))
-xs6 = [frac[l] for l in L6]
-E0, E1 = [], []
-for k, c in zip(KEYS, plot.SERIES):
-    y = [np.median([s[k] for s in shares if s["which"] == "main" and s["layer"] == l and k in s]) for l in L6]
-    axs[0].plot(xs6, y, color=c, lw=1.4); E0.append((y[-1], k, c))
-    y2 = [np.median([abs(cc[k]) for cc in cov if cc["layer"] == l and k in cc]) for l in L6]
-    axs[1].plot(xs6, y2, color=c, lw=1.4); E1.append((y2[-1], k, c))
-for ax_, E in ((axs[0], E0), (axs[1], E1)):
-    E.sort(key=lambda z: -z[0])
-    span = max(z[0] for z in E) - min(z[0] for z in E) or 1.0
-    for (yv, k, c), yy in zip(E, plot.stagger([z[0] for z in E], 0.13 * span)):
-        plot.end_label(ax_, xs6[-1], yy, k, c)
-plot.chance_line(axs[0], 1.0)
-axs[0].set_title("where the write sits", loc="left", fontsize=9.5, color=plot.INK2); axs[0].set_ylabel("share over chance")
-axs[1].set_title("what covering the region costs", loc="left", fontsize=9.5, color=plot.INK2); axs[1].set_ylabel("|change| in the answer’s log-odds")
-for ax in axs: ax.set_xlabel("depth"); plot.despine(ax)
-fig.tight_layout(); plot.save(fig, f"{a.figs}/{name}_twostep_regions.png"); plt.close(fig)
+    fig, axs = plt.subplots(1, 2, figsize=(7.8, 2.9))
+    xs6 = [frac[l] for l in L6]
+    E0, E1 = [], []
+    for k, c in zip(KEYS, plot.SERIES):
+        y = [np.median([s[k] for s in shares if s["which"] == "main" and s["layer"] == l and k in s]) for l in L6]
+        axs[0].plot(xs6, y, color=c, lw=1.4); E0.append((y[-1], k, c))
+        y2 = [np.median([abs(cc[k]) for cc in cov if cc["layer"] == l and k in cc]) for l in L6]
+        axs[1].plot(xs6, y2, color=c, lw=1.4); E1.append((y2[-1], k, c))
+    for ax_, E in ((axs[0], E0), (axs[1], E1)):
+        E.sort(key=lambda z: -z[0])
+        span = max(z[0] for z in E) - min(z[0] for z in E) or 1.0
+        for (yv, k, c), yy in zip(E, plot.stagger([z[0] for z in E], 0.13 * span)):
+            plot.end_label(ax_, xs6[-1], yy, k, c)
+    plot.chance_line(axs[0], 1.0)
+    axs[0].set_title("where the write sits", loc="left", fontsize=9.5, color=plot.INK2); axs[0].set_ylabel("share over chance")
+    axs[1].set_title("what covering the region costs", loc="left", fontsize=9.5, color=plot.INK2); axs[1].set_ylabel("|change| in the answer’s log-odds")
+    for ax in axs: ax.set_xlabel("depth"); plot.despine(ax)
+    fig.tight_layout(); plot.save(fig, f"{a.figs}/{name}_twostep_regions.png"); plt.close(fig)
 
 json.dump(dict(repo=a.repo, n=len(ev), colours=COLOURS, depth_swap=frac[lmid],
-               answer_curves={t: {str(frac[l]): dict(main_answer=float(np.mean([r["top_is_answer"] for r in R[("main", t)][l]])),
+               answer_curves={} if not rows else {t: {str(frac[l]): dict(main_answer=float(np.mean([r["top_is_answer"] for r in R[("main", t)][l]])),
                                                      main_landmark=float(np.mean([r["top_is_landmark"] for r in R[("main", t)][l]])),
                                                      control_answer=float(np.mean([r["top_is_answer"] for r in R[("control", t)][l]])))
                                   for l in ALLL} for t in ("read", "logit lens")},
-               write_share={str(frac[l]): {k: float(np.median([s[k] for s in shares if s["which"] == "main" and s["layer"] == l and k in s])) for k in KEYS} for l in L6},
-               covering={str(frac[l]): {k: float(np.median([c[k] for c in cov if c["layer"] == l and k in c])) for k in KEYS} for l in L6},
-               agreement={str(frac[l]): sp.get(l) for l in L6},
+               write_share={} if not shares else {str(frac[l]): {k: float(np.median([s[k] for s in shares if s["which"] == "main" and s["layer"] == l and k in s])) for k in KEYS} for l in L6},
+               covering={} if not cov else {str(frac[l]): {k: float(np.median([c[k] for c in cov if c["layer"] == l and k in c])) for k in KEYS} for l in L6},
+               agreement={str(frac[l]): sp.get(l) for l in L6} if cov else {},
                swap=swap_rows, swap_depths=[frac[l] for l in SWAP_L]),
           open(f"{a.out}/{name}_twostep.json", "w"), indent=1, default=float)
 say(f"\nwrote {a.out}/{name}_twostep.json  ({(time.time() - T0) / 60:.1f} min)")
