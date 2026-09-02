@@ -361,25 +361,27 @@ for i_, st in enumerate(store):
     it = st["item"]
     cols = INSTR + ["patching (truth)"]
     fig = plt.figure(figsize=(1.35 * (len(cols) + 1) + 0.8, 1.3 * len(L6) + 0.9))
-    gs = fig.add_gridspec(len(L6), len(cols) + 1, width_ratios=[1.6] + [1] * len(cols), wspace=0.08, hspace=0.12, left=0.01, right=0.99, top=0.9, bottom=0.03)
+    gs = fig.add_gridspec(len(L6), len(cols) + 2, width_ratios=[1.6, 0.42] + [1] * len(cols), wspace=0.07, hspace=0.12, left=0.01, right=0.99, top=0.9, bottom=0.03)
     ax = fig.add_subplot(gs[:2, 0]); ax.imshow(Image.open(it["path"]).convert("RGB").resize((448, 448))); ax.set_axis_off()
     ax.set_title(f"{it['tag']}", loc="left", fontsize=9, color=plot.INK2)
     q = it["prompt"] if len(it["prompt"]) < 44 else it["prompt"][:41] + "..."
     ax.text(0, -0.04, f"“{q}”", transform=ax.transAxes, fontsize=7.5, color=plot.INK2, ha="left", va="top")
     if st["glimpse"] is not None:
-        axg = fig.add_subplot(gs[4:6, 0]); g = region_sum(st["glimpse"]).reshape(NB, NB)
+        axg = fig.add_subplot(gs[3:5, 0]); g = region_sum(st["glimpse"]).reshape(NB, NB)
         axg.imshow(g, cmap="Greys", interpolation="nearest"); axg.set_xticks([]); axg.set_yticks([]); axg.set_title("GLIMPSE", fontsize=8.5, color=plot.INK2, loc="left")
         for sp_ in axg.spines.values(): sp_.set_visible(False)
     for r_, l in enumerate(L6):
         T = st["truth"][l]; t_res = np.mean([T[k] for k in T if k.startswith("donor")], 0) if any(k.startswith("donor") for k in T) else T["cover"]
         panels = [(-region_sum(st["maps"][k][l])).reshape(NB, NB) for k in INSTR] + [t_res.reshape(NB, NB)]
         for c_, (k, M) in enumerate(zip(cols, panels)):
-            ax = fig.add_subplot(gs[r_, c_ + 1]); s = float(np.percentile(np.abs(M), 99)) or 1.0
+            ax = fig.add_subplot(gs[r_, c_ + 2]); s = float(np.percentile(np.abs(M), 99)) or 1.0
             ax.imshow(np.clip(M, -s, s), cmap="RdBu_r", vmin=-s, vmax=s, interpolation="nearest")
             ax.set_xticks([]); ax.set_yticks([])
             for sp_ in ax.spines.values(): sp_.set_visible(False)
             if r_ == 0: ax.set_title(k, fontsize=8, color=plot.INK2)
-            if c_ == 0: ax.set_ylabel(f"depth {frac[l]:.2f}", fontsize=8.5, color=plot.INK2)
+            if c_ == 0:
+                axl = fig.add_subplot(gs[r_, 1]); axl.set_axis_off()
+                axl.text(0.95, 0.5, f"depth\n{frac[l]:.2f}", ha="right", va="center", fontsize=8.5, color=plot.INK2)
             if k != "patching (truth)":
                 rho = sp(M.reshape(-1), t_res)
                 if not np.isnan(rho): ax.text(0.02, 0.02, f"{rho:.2f}", transform=ax.transAxes, fontsize=6.5, color=plot.INK2)
