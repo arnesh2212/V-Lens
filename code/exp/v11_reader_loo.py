@@ -77,7 +77,8 @@ for held in a.sets:
         continue
     ben = np.concatenate([D[b]["ANS"] for b in a.benign if b in D]) if any(b in D for b in a.benign) else None
     say(f"\n== held out: {held}  (n={D[held]['n']}, harmful {D[held]['harmful'].mean():.2f}, refused {D[held]['refused'].mean():.2f})")
-    say(f"{'depth':>6} {'reader':>7} {'HiddenD':>8} {'probe':>6} | {'TPR@1%':>7} {'TPR@5%':>7} {'FPR@95':>7} | {'FA-benign':>9}   [A: harmful vs benign]")
+    say(f"{'depth':>6} {'reader':>7} {'HiddenD':>8} {'probe':>6} | {'TPR@1%':>7} {'TPR@5%':>7} {'FPR@95':>7} | {'FA-benign':>9} | {'read':>7} {'raw':>7} {'probe':>7}")
+    say(f"{'':>6} {'[A: is the input harmful, against the shared benign arm]':<60} {'':>12} | {'[B: does the model refuse it]':<24}")
     r = axis_excluding(held)
     for l in layers:
         # (A) harmful (held-out set) vs benign arms
@@ -101,7 +102,23 @@ for held in a.sets:
         # false alarms on the benign arms at the threshold giving 95% TPR on this held-out set
         thr = np.sort(s_reader[y == 1])[int(0.05 * (y == 1).sum())]
         row["fa_benign"] = float((s_reader[y == 0] >= thr).mean())
+        # (B) the decision inside the held-out set: refused vs not, which no dataset
+        # identity can answer, unlike (A) where the benign arm is shared with training
+        ref = D[held]["refused"]
+        if 10 <= ref.sum() <= len(ref) - 10:
+            Xb = D[held]["ANS"][:, l]
+            sb_reader = R.read(Xb, l, r); sb_id = Xb @ r
+            try:
+                scb = StandardScaler().fit(Xb); clf_b = LogisticRegression(max_iter=600, C=0.1)
+                from sklearn.model_selection import cross_val_predict
+                sb_probe = cross_val_predict(clf_b, scb.transform(Xb), ref.astype(int), cv=5, method="decision_function")
+            except Exception:
+                sb_probe = np.zeros(len(Xb))
+            row["decision"] = dict(reader=roc_auc_score(ref, sb_reader), hidden=roc_auc_score(ref, sb_id),
+                                   probe=roc_auc_score(ref, sb_probe), n_refused=int(ref.sum()), n=int(len(ref)))
         out["results"].append(row)
-        say(f"{row['frac']:>6.2f} {row['auroc']['reader']:>7.3f} {row['auroc']['hidden']:>8.3f} {row['auroc']['probe']:>6.3f} | {row['tpr1']:>7.3f} {row['tpr5']:>7.3f} {row['fpr95']:>7.3f} | {row['fa_benign']:>9.3f}")
+        dec = row.get("decision", {})
+        say(f"{row['frac']:>6.2f} {row['auroc']['reader']:>7.3f} {row['auroc']['hidden']:>8.3f} {row['auroc']['probe']:>6.3f} | {row['tpr1']:>7.3f} {row['tpr5']:>7.3f} {row['fpr95']:>7.3f} | {row['fa_benign']:>9.3f}"
+            f" | {dec.get('reader', float('nan')):>7.3f} {dec.get('hidden', float('nan')):>7.3f} {dec.get('probe', float('nan')):>7.3f}")
 json.dump(out, open(f"/workspace/vlm/results/reader/{name}_loo.json", "w"), indent=1, default=float)
 say("wrote loo json")
