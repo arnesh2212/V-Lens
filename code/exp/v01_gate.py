@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""E0, the gate.  Does the Two-Way Lens earn the rest of the plan?
+"""E0, the gate.  Does the V-Lens earn the rest of the plan?
 
 Three questions, on one model, before anything scales:
 
@@ -146,7 +146,7 @@ def auroc_curve(fn_scores, label, y):
     results["curves"][label] = out
     return out
 
-# (a) Two-Way Lens: u_l^{ans} . (h_l[a] - mu), carrier family, refusal axis, at every read layer
+# (a) V-Lens: u_l^{ans} . (h_l[a] - mu), carrier family, refusal axis, at every read layer
 def verdict_scores(VL, axis):
     def f(l):
         if l not in VL.layers:
@@ -298,7 +298,7 @@ def line(curve, label, color, marker="o"):
     ax.plot(xs, ys, color=color, marker=marker, ms=4 if len(xs) > 8 else 6, label=label)
 line(C_i, "identity (HiddenDetect)", plot.ORANGE, marker="")
 line(C_d, "difference of means (labelled)", plot.MUTED, marker="")
-line(C_v, "Two-Way Lens", plot.BLUE)
+line(C_v, "V-Lens", plot.BLUE)
 pxs = [FRAC[r.layer] for r in pr]; ax.plot(pxs, [r.score for r in pr], color=plot.AQUA, marker="s", ls=":", label="linear probe (labelled)")
 plot.chance_line(ax, 0.5)
 ax.set_xlabel("depth (fraction of the language model)"); ax.set_ylabel("AUROC, refused vs complied")
