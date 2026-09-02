@@ -396,42 +396,57 @@ def build_twostepregions():
 
 
 def build_atlas():
-    path_2b = os.path.join(RESULTS, "atlas", "Qwen3-VL-2B-Instruct_atlas.json")
-    path_8b = os.path.join(RESULTS, "atlas", "Qwen3-VL-8B-Instruct_atlas.json")
-    d = load_json(path_2b)
-    notes = []
-    if load_json(path_8b) is None:
-        notes.append(f"missing {path_8b}; table stays Qwen3-VL-2B only, "
-                     "matching the original table's scope")
-    if d is None:
-        notes.append(f"missing {path_2b}")
-        return None
+    """Rank agreement with patching, per instrument, for every model whose atlas exists.
+
+    The instrument keys were renamed part way through the runs, so both spellings are
+    accepted and the display label is fixed here.
+    """
+    def pick(ref, *names):
+        for n in names:
+            if n in ref:
+                return ref[n]
+        return {}
+
     targets = [(0.22, "0.22"), (0.35, "0.35"), (0.48, "0.48"),
                (0.65, "0.65"), (0.78, "0.78"), (0.96, "0.96")]
-    depth_map = {k: float(v) for k, v in d["depths"].items()}
-    ref = d["summary"]["refusal"]
-    instruments = ["write, path", "write, one point", "write, averaged",
-                   "identity", "grad x act"]
+    notes = []
+    models, data = [], {}
+    for key, short in MODELS:
+        d = load_json(os.path.join(RESULTS, "atlas", f"{key}_atlas.json"))
+        if d is None:
+            notes.append(f"missing atlas for {key}")
+            continue
+        models.append((key, short)); data[key] = d
+    if not models:
+        return None
+    instruments = [("write, path", "V-Write, path"), ("write, one point", "V-Write, one point"),
+                   ("write, averaged", "V-Write, averaged"), ("identity", "logit lens"),
+                   ("grad x act", "grad × act")]
     rows = []
     for target, label in targets:
-        layer = nearest_key(depth_map, target)
         values = []
-        for instr in instruments:
-            entry = ref.get(instr, {}).get("rho_resample", {}).get(layer)
-            values.append((entry[0] if entry else None, False))
-        glimpse = ref.get("GLIMPSE", {}).get("rho_abs", {}).get(layer)
-        values.append((glimpse[0] if glimpse else None, False))
+        for key, _short in models:
+            d = data[key]
+            depth_map = {k: float(v) for k, v in d["depths"].items()}
+            layer = nearest_key(depth_map, target)
+            ref = d["summary"]["refusal"]
+            for raw, _disp in instruments:
+                entry = pick(ref, raw, "V-" + raw.capitalize().replace("Write", "Write"),
+                             raw.replace("write", "V-Write")).get("rho_resample", {}).get(layer)
+                values.append((entry[0] if entry else None, False))
+            g = pick(ref, "GLIMPSE").get("rho_abs", {}).get(layer)
+            values.append((g[0] if g else None, False))
         rows.append((label, values))
+    per = len(instruments) + 1
     thead = ('    <thead><tr><th rowspan="2">depth</th>'
-              '<th colspan="6">refusal score, typography items</th></tr>\n'
-              "    <tr><th>V-Write, path</th><th>V-Write, one point</th><th>V-Write, averaged</th>"
-              "<th>logit lens</th><th>grad × act</th><th>GLIMPSE</th></tr></thead>")
-    groups = [[0, 1, 2, 3, 4, 5]]
-    col_labels = ["write path", "write one point", "write averaged",
-                  "logit lens", "grad x act", "GLIMPSE"]
+             + "".join(f'<th colspan="{per}">{short}</th>' for _, short in models)
+             + '</tr>\n    <tr>'
+             + "".join("".join(f"<th>{disp}</th>" for _, disp in instruments) + "<th>GLIMPSE</th>" for _ in models)
+             + "</tr></thead>")
+    groups = [list(range(i * per, (i + 1) * per)) for i in range(len(models))]
+    col_labels = [f"{short} {disp}" for _, short in models for disp in [d for _, d in instruments] + ["GLIMPSE"]]
     html = build_block(thead, rows, groups, decimals=2)
     return {"html": html, "col_labels": col_labels, "notes": notes}
-
 
 def build_writeinto():
     targets = [(0.2, "0.2"), (0.35, "0.35"), (0.48, "0.48"),
