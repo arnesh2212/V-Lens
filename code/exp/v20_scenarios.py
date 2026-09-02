@@ -257,8 +257,11 @@ def draw(s, r, path):
     axs.set_xlim(-0.06, 1.06); axs.set_ylim(0, 1.18)
     # the score traces
     xs = [frac[l] for l in ALLL]
-    for j, k in enumerate(fns[:3]):
-        ax = fig.add_subplot(gs[1, 2 * j: 2 * j + 2])
+    # only the item's own score: the opener margin's final value is small enough
+    # that dividing by it turns ordinary noise into a large excursion, which
+    # says more about the divisor than about either instrument
+    for j, k in enumerate(fns[:1]):
+        ax = fig.add_subplot(gs[1, 1:4])
         seen = []
         for tname, col, lw in (("V-Read", plot.SERIES[0], 1.7), ("logit lens", plot.SERIES[1], 1.2)):
             v = np.asarray(r["traces"][k][tname], float)
@@ -273,7 +276,11 @@ def draw(s, r, path):
         lo, hi = min(-0.25, float(np.min(y))), max(1.25, float(np.percentile(y, 97)))
         pad = 0.06 * (hi - lo)
         ax.set_ylim(lo - pad, hi + pad)
-        ax.set_title(k, loc="left", fontsize=9, color=plot.INK2); ax.set_xlabel("depth", fontsize=8.5)
+        ax.set_title(f"the “{k}” score, as a fraction of what it ends at",
+                     loc="left", fontsize=9, color=plot.INK2)
+        ax.set_xlabel("depth", fontsize=8.5)
+        ax.text(0.02, 0.93, "V-Read", transform=ax.transAxes, fontsize=8.5, color=plot.SERIES[0], va="top")
+        ax.text(0.02, 0.80, "logit lens", transform=ax.transAxes, fontsize=8.5, color=plot.SERIES[1], va="top")
         plot.despine(ax)
     # the write maps
     for j, l in enumerate(L4):

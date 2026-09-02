@@ -28,7 +28,7 @@ plot.use()
 os.makedirs(a.out, exist_ok=True)
 
 runs = [json.load(open(p)) for p in a.jsons]
-short = lambda r: r["model"].split("/")[-1].replace("-Instruct", "")
+short = lambda r: r["model"].split("/")[-1].replace("-Instruct", "").replace("-hf", "")
 C = {"verdict": plot.BLUE, "identity": plot.ORANGE, "dim": plot.MUTED, "probe": plot.AQUA}
 
 

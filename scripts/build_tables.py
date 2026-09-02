@@ -657,7 +657,8 @@ def build_swap():
     """Held-out R2 of the swap check: how much of the real change in the score
     each direction predicted, V-Write against the raw direction, per depth."""
     per, depths, notes = {}, None, []
-    for key, _nice in MODELS:
+    models = [m for m in MODELS_DECISION]
+    for key, _nice in models:
         d = load_json(os.path.join(RESULTS, "gate", f"{key}_gate.json"))
         if d is None:
             notes.append(f"missing {key}_gate.json")
@@ -666,21 +667,22 @@ def build_swap():
         ls = sorted(cal, key=int)
         per[key] = [(cal[l]["frac"], cal[l]["verdict"]["r2_heldout"], cal[l]["identity"]["r2_heldout"]) for l in ls]
         depths = depths or [round(cal[l]["frac"], 2) for l in ls]
+    models = [m for m in models if m[0] in per]
     rows, col_labels = [], []
-    for key, nice in MODELS:
+    for _key, nice in models:
         col_labels += [f"{nice} V-Write", f"{nice} raw"]
-    n = min(len(per[k]) for k, _ in MODELS)
+    n = min(len(per[k]) for k, _ in models)
     for i in range(n):
-        label = f"{per[MODELS[0][0]][i][0]:.2g}"
+        label = f"{per[models[0][0]][i][0]:.2g}"
         vals = []
-        for key, _nice in MODELS:
+        for key, _nice in models:
             vals.append((per[key][i][1], False))
             vals.append((per[key][i][2], False))
         rows.append((label, vals))
-    groups = [[0, 1], [2, 3]]
+    groups = [[2 * j, 2 * j + 1] for j in range(len(models))]
     thead = ('    <thead><tr><th rowspan="2">depth</th>'
-             f'<th colspan="2">{MODELS[0][1]}</th><th colspan="2">{MODELS[1][1]}</th></tr>\n'
-             "    <tr><th>V-Write</th><th>raw</th><th>V-Write</th><th>raw</th></tr></thead>")
+             + "".join(f'<th colspan="2">{nice}</th>' for _k, nice in models) + "</tr>\n"
+             "    <tr>" + "".join("<th>V-Write</th><th>raw</th>" for _ in models) + "</tr></thead>")
     return {"html": build_block(thead, rows, groups, decimals=2), "col_labels": col_labels, "notes": notes}
 
 
