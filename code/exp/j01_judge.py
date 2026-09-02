@@ -53,7 +53,7 @@ say = lambda *x: print(*x, flush=True)
 say(f"{name}: judging {len(items)} items in variants {a.variants}")
 
 # ------------------------------------------------------------- 1. regenerate
-if a.regen:
+if a.regen and not all(it.get("reply_long") for it in items):
     import jvlm
     from jvlm import tasks
     m = jvlm.load_vlm(a.repo); sc = tasks.Scorer(m)
@@ -65,7 +65,17 @@ if a.regen:
             say(f"  regen {k + 1}/{len(items)}  {time.time() - t:.0f}s")
     del m; torch.cuda.empty_cache()
     say(f"regenerated {len(items)} replies to {a.regen} tokens in {(time.time() - t) / 60:.1f} min")
-REPLY = "reply_long" if a.regen else "reply"
+    # write the long replies back before judging: an hour of generation should not be lost
+    # to a crash in a judge, and a re-run should be able to skip straight to the judging
+    _by = {(it["path"], it.get("variant")): it["reply_long"] for it in items}
+    for it in side["items"]:
+        r_ = _by.get((it["path"], it.get("variant")))
+        if r_ is not None:
+            it["reply_long"] = r_
+    json.dump(side, open(cpath, "w"))
+    say(f"long replies saved to {cpath}")
+REPLY = "reply_long" if (a.regen or all(it.get("reply_long") for it in items)) else "reply"
+say(f"judging the field {REPLY!r}")
 
 # ------------------------------------------------------------- 2. the judges
 HB_PROMPT = '''[INST] <<SYS>>
