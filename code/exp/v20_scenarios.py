@@ -145,7 +145,7 @@ say(f"{P} image positions = {GRID}x{GRID}")
 def score_fns(s):
     """The scores this scenario is read through, the first one leading, since the write maps
     are drawn for the leading score and it should be the one the question is about."""
-    refusal = ("refusal", lambda hL, lg: torch.as_tensor(hL).float() @ torch.as_tensor(r_ref).float())
+    refusal = ("refusal", lambda hL, lg: torch.as_tensor(hL).float() @ torch.as_tensor(r_ref).float().to(torch.as_tensor(hL).device))
     out = [refusal] if s["kind"] == "refusal" else []
     if s["kind"] in ("present", "absent"):
         out.append(("yes over no", lambda hL, lg: torch.logsumexp(torch.log_softmax(lg.float(), -1)[..., YES], -1)
