@@ -144,6 +144,6 @@ for p, d in docs.items():
     from collections import Counter
     c = Counter((r["condition"], r.get("judge", {}).get("verdict")) for r in d["rows"])
     say(f"\n{os.path.basename(p)}")
-    for (cond, v), n in sorted(c.items()):
+    for (cond, v), n in sorted(c.items(), key=lambda kv: (str(kv[0][0]), str(kv[0][1]))):
         say(f"   {cond:<36} {str(v):<10} {n}")
 say("DONE d02")

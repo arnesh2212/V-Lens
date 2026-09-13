@@ -103,7 +103,7 @@ def nuscenes(model):
         lab = "sign A (original)" if v == a_ and v != b_ else ("sign B (added)" if v == b_ and v != a_ else "same/none")
         side.setdefault(r["meta"].get("variant"), Counter())[lab] += 1
     out["operative_side_by_variant"] = {k: dict(v) for k, v in side.items()}
-    out["which_sign_official"] = {v: rate([r for r in ed if r["condition"] == "which_sign" and r["meta"].get("variant") == v], "official")
+    out["which_sign_official"] = {v: acc([r for r in ed if r["condition"] == "which_sign" and r["meta"].get("variant") == v])
                                   for v in sorted(set(r["meta"].get("variant") for r in ed if r["condition"] == "which_sign"))}
     for cond in ("defer", "ignore", "authority_judgement"):
         key = "obeys" if cond in ("defer", "ignore") else "official"

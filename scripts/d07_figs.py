@@ -204,7 +204,7 @@ def steering_surface(model, nice):
 
 
 def reading_surface(model, nice):
-    fams = [("oi_orig", "Open Images"), ("vins_orig", "VINS"), ("nusc_edit", "nuScenes edits"), ("gemini_auth", "Gemini authority"), ("wmdp", "WMDP")]
+    fams = [("oi_orig", "Open Images"), ("vins_orig", "VINS"), ("nusc_edit", "nuScenes edits"), ("gemini_auth", "Authority"), ("wmdp", "WMDP")]
     rows_r, rows_l, labs = [], [], []
     for fam, lab in fams:
         d = J(os.path.join(RES, f"{model}__{fam}_vread.json"))
@@ -251,6 +251,66 @@ def attribution_surface(model, nice):
     print("attribution surface:", nice)
 
 
+# ---------------------------------------------------------------- authority: the answer arriving
+def authority_arrival(model, nice):
+    d = J(os.path.join(RES, f"{model}__authority_arrival.json"))
+    if not d:
+        return
+    dep = np.array(d["depths"]); items = d["items"]
+    # mean trace of the reference word and of the model's own word, by standing tier
+    fig, axs = plt.subplots(1, 2, figsize=(8.0, 3.1), sharey=True)
+    for ax, key, title in ((axs[0], "v_read_ref", "the reference answer's first word"), (axs[1], "v_read_own", "the model's own first word")):
+        for i, tier in enumerate(("D1", "D2", "D0", "D3")):
+            its = [np.array(it[key]) for it in items if it["standing"] == tier and np.isfinite(it[key]).all()]
+            if len(its) >= 3:
+                ax.plot(dep, np.mean(its, 0), color=plot.SERIES[i], lw=1.6, label=f"{tier} (n={len(its)})")
+        plot.despine(ax); ax.set_title(title, loc="left", fontsize=9.5, color=plot.INK2); ax.set_xlabel("depth"); ax.legend(frameon=False, fontsize=8)
+    axs[0].set_ylabel("log-probability, V-Read")
+    fig.tight_layout(); plot.save(fig, os.path.join(FIG, f"{model}_authority_arrival.png")); plt.close(fig)
+    # word strips for three D2 items where the reference and the model disagree, and three where they agree
+    picks = [it for it in items if it["standing"] == "D2" and it["judge"] == "incorrect"][:3] + [it for it in items if it["standing"] == "D2" and it["judge"] == "correct"][:3]
+    if picks:
+        show = sorted(d["show"], key=int)
+        fig, axs = plt.subplots(len(picks), 1, figsize=(9.0, 1.15 * len(picks) + 0.6), squeeze=False)
+        for ax, it in zip(axs[:, 0], picks):
+            ax.set_axis_off(); ax.set_xlim(0, 1); ax.set_ylim(0, 1)
+            ax.text(0.0, 0.85, f"{it['question'][:70]}   reference: {it['expected']}   |   reply: {it['reply_short'].strip()[:24]}   [{it['judge']}]", fontsize=8, color=plot.INK)
+            for j, l in enumerate(show):
+                x = 0.08 + 0.92 * j / max(len(show) - 1, 1)
+                ax.text(x, 0.55, f"{float(d['show'][l]):.2f}", fontsize=7, color=plot.INK3, ha="center")
+                ax.text(x, 0.32, it["strips"]["V-Read"][l][0][:10] or "·", fontsize=8.5, color=plot.SERIES[0], ha="center")
+                ax.text(x, 0.08, it["strips"]["logit lens"][l][0][:10] or "·", fontsize=8.5, color=plot.SERIES[1], ha="center")
+            ax.text(0.0, 0.32, "V-Read", fontsize=7.5, color=plot.SERIES[0]); ax.text(0.0, 0.08, "logit lens", fontsize=7.5, color=plot.SERIES[1])
+        fig.tight_layout(); plot.save(fig, os.path.join(FIG, f"{model}_authority_strips.png")); plt.close(fig)
+    print("authority arrival:", nice)
+
+
+def authority_removal_pages(model, nice):
+    d = J(os.path.join(RES, f"{model}__authority_removal.json"))
+    if not d:
+        return
+    rm = {r["id"]: r for r in (J(os.path.join(RES, f"{model}__gemini_removal.json")) or {"rows": []})["rows"]}
+    cs = [c for c in d["cases"] if c["depths"]][:4]
+    for c in cs:
+        r = rm.get(c["id"], {}); img_rel = r.get("image")
+        if not img_rel:
+            continue
+        im = Image.open(local_image(img_rel)).convert("RGB").resize((448, 448))
+        keys = sorted(c["depths"], key=int); G = int(round(len(c["depths"][keys[0]]["mask"]) ** 0.5))
+        fig, axs = plt.subplots(1, len(keys) + 2, figsize=(2.6 * (len(keys) + 2), 3.1))
+        axs[0].imshow(im); axs[0].set_axis_off(); axs[0].set_title("bearer text erased", loc="left", fontsize=9, color=plot.INK)
+        mask = np.array(c["depths"][keys[0]]["mask"]).reshape(G, G)
+        axs[1].imshow(im); axs[1].imshow(np.kron(mask, np.ones((448 // G, 448 // G))), cmap="Reds", alpha=0.45, vmin=0, vmax=1); axs[1].set_axis_off()
+        axs[1].set_title("what was erased", loc="left", fontsize=9, color=plot.INK2)
+        for ax, k in zip(axs[2:], keys):
+            dd = c["depths"][k]; M = np.array(dd["map"]).reshape(G, G); v = float(np.percentile(np.abs(M), 99)) or 1.0
+            ax.imshow(im, alpha=0.55); ax.imshow(np.kron(np.clip(M, -v, v), np.ones((448 // G, 448 // G))), cmap="RdBu_r", vmin=-v, vmax=v, alpha=0.6); ax.set_axis_off()
+            ax.set_title(f"depth {dd['frac']:.2f}\nrestore truth {dd['restore_truth']:+.1f}, V-Write {dd['restore_pred']:+.1f}", loc="left", fontsize=8, color=plot.INK2)
+        fig.text(0.01, 0.02, f"“{c['question'][:80]}”  original reply: {c['reply_original'].strip()[:24]}  |  after erasure: {c['reply_removed'].strip()[:40]}", fontsize=7.5, color=plot.INK2)
+        fig.tight_layout(rect=(0, 0.06, 1, 1)); plot.save(fig, os.path.join(FIG, f"{model}_removal_{c['id']}.png")); plt.close(fig)
+    print("removal pages:", nice, len(cs))
+
+
 for model, nice in MODELS:
     if not any(f.startswith(model) for f in os.listdir(RES)):
         continue
@@ -261,4 +321,6 @@ for model, nice in MODELS:
     steering_surface(model, nice)
     reading_surface(model, nice)
     attribution_surface(model, nice)
+    authority_arrival(model, nice)
+    authority_removal_pages(model, nice)
 print("figures written to", FIG)
