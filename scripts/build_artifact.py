@@ -54,8 +54,15 @@ html = open(SRC, encoding="utf-8").read()
 names = re.findall(r'src="FIG:([^"]+)"', html)
 uniq = sorted(set(names))
 missing = [n for n in uniq if source_for(n) is None]
-if missing:
+if missing and os.environ.get("ALLOW_MISSING") != "1":
     sys.exit("no figure behind these placeholders:\n  " + "\n  ".join(missing))
+elif missing:
+    # a draft build: drop the figure elements whose result has not landed yet, and say so in place
+    for n in missing:
+        html = re.sub(r'<figure[^>]*>\s*<img[^>]*src="FIG:' + re.escape(n) + r'"[^>]*>.*?</figure>',
+                      '<p class="note">Figure pending: this result has not landed yet.</p>', html, flags=re.S)
+    print(f"draft build: {len(missing)} pending figure(s) replaced with a note")
+    uniq = [n for n in uniq if n not in missing]
 
 for width, quality in LADDER:
     blobs = {n: encode(source_for(n), width, quality) for n in uniq}
