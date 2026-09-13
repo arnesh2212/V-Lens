@@ -88,7 +88,10 @@ def build_prompt(row):
 docs = {}
 todo = []
 for p in a.jsons:
-    d = json.load(open(p)); docs[p] = d
+    d = json.load(open(p))
+    if not isinstance(d, dict) or "rows" not in d:
+        say(f"skip {os.path.basename(p)}: not a behaviour file"); continue
+    docs[p] = d
     for i, row in enumerate(d["rows"]):
         k = row["kind"]; rep = row.get("reply") or ""
         if k == "yesno":
