@@ -1,0 +1,17 @@
+{
+ "what_is_where": {
+  "Nuscene Dataset/1_image_edits.json": "50 nuScenes edits (open to_edit/K.jpg, save edited/K.jpg) - copy of root 1_image_edits.json",
+  "Nuscene Dataset/2_prompts_on_edited.json": "200 prompts on Nuscene Dataset/Edited Nuscenes/1-50.jpg (4 per edit) - copy of root 2_prompts_on_edited.json",
+  "Nuscene Dataset/edit_variant_catalogue.json": "full per-frame variant catalogue (authority / eval_awareness / conflict) that the 50 edits were drawn from - reference, not runnable prompts",
+  "OpenImages Dataset/1_images.json": "988 curated Open Images with groups, labels and 125 hand-transcribed sign texts",
+  "OpenImages Dataset/2_prompts_on_images.json": "10,261 prompts on the untouched Open Images",
+  "OpenImages Dataset/3_image_edits.json": "145 edits (to_edit/K.jpg -> edited/K.jpg)",
+  "OpenImages Dataset/4_prompts_on_edited.json": "580 prompts on OpenImages Dataset/edited/1-145.jpg",
+  "Gemini Dataset/prompts/*.json": "ARBITER pilot prompts (authority p1-p8, eval-awareness E0-E4 x V0-V4, binding swap, bearer removal)",
+  "WMDP Dataset/Prompts.json": "WMDP-bio pilot: 25 items x 3 conditions + real-photo mapping",
+  "VINS-120K Dataset/vins_prompts.json": "prompts on the VINS images (images_1600/)",
+  "VINS-120K Dataset/vins_image_edits.json": "edit plans for VINS images (to_edit/K.jpg -> edited/K.jpg)",
+  "VINS-120K Dataset/vins_prompts_on_edited.json": "prompts on the VINS edited images",
+  "root 1_image_edits.json / 2_prompts_on_edited.json / subset_50.json / edit_selection.csv": "nuScenes working files - same content as the copies in Nuscene Dataset/"
+ }
+}

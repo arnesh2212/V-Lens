@@ -1,0 +1,275 @@
+{
+ "note": "64 street-level frames now (13 from pass 1-2, 13 from pass 3); rest of the fetched frames are aerial/landscape/animals",
+ "street_level": [
+  {
+   "clip": "148ee3d1-5d75-430b-9d91-cdb927d2a337",
+   "frame": "frames/148ee3d1-5d75-430b-9d91-cdb927d2a337.png",
+   "preview": "preview/148ee3d1-5d75-430b-9d91-cdb927d2a337.jpg",
+   "size": [
+    7680,
+    4320
+   ],
+   "scene": "wedding party crossing a residential street"
+  },
+  {
+   "clip": "201a3d24-a0a9-49c6-9baf-78c7c89574ab",
+   "frame": "frames/201a3d24-a0a9-49c6-9baf-78c7c89574ab.png",
+   "preview": "preview/201a3d24-a0a9-49c6-9baf-78c7c89574ab.jpg",
+   "size": [
+    7680,
+    4320
+   ],
+   "scene": "Indian street scene, mosque, scooters, shop signs"
+  },
+  {
+   "clip": "422b41de-2d28-4d0b-95fb-b8b470340630",
+   "frame": "frames/422b41de-2d28-4d0b-95fb-b8b470340630.png",
+   "preview": "preview/422b41de-2d28-4d0b-95fb-b8b470340630.jpg",
+   "size": [
+    7680,
+    4320
+   ],
+   "scene": "Japanese town at night, elevated street view"
+  },
+  {
+   "clip": "437ad136-cf8c-46c5-a4ea-e4f4c2151229",
+   "frame": "frames/437ad136-cf8c-46c5-a4ea-e4f4c2151229.png",
+   "preview": "preview/437ad136-cf8c-46c5-a4ea-e4f4c2151229.jpg",
+   "size": [
+    7680,
+    4320
+   ],
+   "scene": "city street at night, bus and shopfronts"
+  },
+  {
+   "clip": "4f46b38f-f0ed-4cb1-a750-25654a0d78ff",
+   "frame": "frames/4f46b38f-f0ed-4cb1-a750-25654a0d78ff.png",
+   "preview": "preview/4f46b38f-f0ed-4cb1-a750-25654a0d78ff.jpg",
+   "size": [
+    7680,
+    4320
+   ],
+   "scene": "Colosseum street with buses and road signs"
+  },
+  {
+   "clip": "69cb8705-656e-42ea-9226-0c29ce4fcd3a",
+   "frame": "frames/69cb8705-656e-42ea-9226-0c29ce4fcd3a.png",
+   "preview": "preview/69cb8705-656e-42ea-9226-0c29ce4fcd3a.jpg",
+   "size": [
+    7680,
+    4320
+   ],
+   "scene": "Akihabara street, dense signage, minibus"
+  },
+  {
+   "clip": "760a1da8-daa8-469d-b176-7133e6cbca14",
+   "frame": "frames/760a1da8-daa8-469d-b176-7133e6cbca14.png",
+   "preview": "preview/760a1da8-daa8-469d-b176-7133e6cbca14.jpg",
+   "size": [
+    7680,
+    4320
+   ],
+   "scene": "Korean city junction, buses, road markings"
+  },
+  {
+   "clip": "76493adb-d29c-44e8-b42d-e38d461616bf",
+   "frame": "frames/76493adb-d29c-44e8-b42d-e38d461616bf.png",
+   "preview": "preview/76493adb-d29c-44e8-b42d-e38d461616bf.jpg",
+   "size": [
+    7680,
+    4320
+   ],
+   "scene": "seaside promenade with palms"
+  },
+  {
+   "clip": "9810955e-6743-45f2-992c-2165c60958e1",
+   "frame": "frames/9810955e-6743-45f2-992c-2165c60958e1.png",
+   "preview": "preview/9810955e-6743-45f2-992c-2165c60958e1.jpg",
+   "size": [
+    7680,
+    4320
+   ],
+   "scene": "country lane with yellow sign, sheep on road"
+  },
+  {
+   "clip": "9d73fa50-df85-4d9f-aba8-d3c29c744279",
+   "frame": "frames/9d73fa50-df85-4d9f-aba8-d3c29c744279.png",
+   "preview": "preview/9d73fa50-df85-4d9f-aba8-d3c29c744279.jpg",
+   "size": [
+    7680,
+    4320
+   ],
+   "scene": "trade-show floor with people and machines"
+  },
+  {
+   "clip": "9ff67774-aa3a-47a8-af2c-80400ad769e2",
+   "frame": "frames/9ff67774-aa3a-47a8-af2c-80400ad769e2.png",
+   "preview": "preview/9ff67774-aa3a-47a8-af2c-80400ad769e2.jpg",
+   "size": [
+    7680,
+    4320
+   ],
+   "scene": "forest road with sign"
+  },
+  {
+   "clip": "ac92f0c8-f78b-48b8-a677-0a9a13f07b06",
+   "frame": "frames/ac92f0c8-f78b-48b8-a677-0a9a13f07b06.png",
+   "preview": "preview/ac92f0c8-f78b-48b8-a677-0a9a13f07b06.jpg",
+   "size": [
+    7680,
+    4320
+   ],
+   "scene": "Tbilisi street with tram"
+  },
+  {
+   "clip": "db8afa43-80c0-4b38-b473-f8d38fbdd618",
+   "frame": "frames/db8afa43-80c0-4b38-b473-f8d38fbdd618.png",
+   "preview": "preview/db8afa43-80c0-4b38-b473-f8d38fbdd618.jpg",
+   "size": [
+    7680,
+    4320
+   ],
+   "scene": "Shibuya crossing, pedestrians, neon"
+  },
+  {
+   "clip": "f8be8cae-b476-46d0-acdc-25fca29d8326",
+   "frame": "frames/f8be8cae-b476-46d0-acdc-25fca29d8326.jpg",
+   "preview": "preview/f8be8cae-b476-46d0-acdc-25fca29d8326.jpg",
+   "size": [
+    1280,
+    720
+   ],
+   "scene": "Bangkok street under an elevated expressway, traffic, shop signs"
+  },
+  {
+   "clip": "ef0e4159-7833-4f13-8ec3-221250bf2a04",
+   "frame": "frames/ef0e4159-7833-4f13-8ec3-221250bf2a04.jpg",
+   "preview": "preview/ef0e4159-7833-4f13-8ec3-221250bf2a04.jpg",
+   "size": [
+    1280,
+    720
+   ],
+   "scene": "Buckingham Palace gates with tourists on the forecourt"
+  },
+  {
+   "clip": "78b2d691-71c5-4356-bba4-e09b05875457",
+   "frame": "frames/78b2d691-71c5-4356-bba4-e09b05875457.jpg",
+   "preview": "preview/78b2d691-71c5-4356-bba4-e09b05875457.jpg",
+   "size": [
+    1280,
+    720
+   ],
+   "scene": "cyclists and a motorcyclist on a city street between brick buildings"
+  },
+  {
+   "clip": "b7a1994a-73f8-40d6-8635-a4ca4c81e02d",
+   "frame": "frames/b7a1994a-73f8-40d6-8635-a4ca4c81e02d.jpg",
+   "preview": "preview/b7a1994a-73f8-40d6-8635-a4ca4c81e02d.jpg",
+   "size": [
+    1280,
+    720
+   ],
+   "scene": "Apple store facade on a city street, passers-by"
+  },
+  {
+   "clip": "babe741f-0d05-4439-8c6c-efee9cb04b0b",
+   "frame": "frames/babe741f-0d05-4439-8c6c-efee9cb04b0b.jpg",
+   "preview": "preview/babe741f-0d05-4439-8c6c-efee9cb04b0b.jpg",
+   "size": [
+    1280,
+    720
+   ],
+   "scene": "Apple store with a taxi passing in the foreground"
+  },
+  {
+   "clip": "4c33f0b5-d117-4662-9b3e-d086261653cb",
+   "frame": "frames/4c33f0b5-d117-4662-9b3e-d086261653cb.jpg",
+   "preview": "preview/4c33f0b5-d117-4662-9b3e-d086261653cb.jpg",
+   "size": [
+    1280,
+    720
+   ],
+   "scene": "busy Korean intersection with crosswalks and traffic"
+  },
+  {
+   "clip": "69e4e69c-6751-435b-8504-1116adba4447",
+   "frame": "frames/69e4e69c-6751-435b-8504-1116adba4447.jpg",
+   "preview": "preview/69e4e69c-6751-435b-8504-1116adba4447.jpg",
+   "size": [
+    1280,
+    720
+   ],
+   "scene": "motorcyclist on a tree-lined road, small shops at the side"
+  },
+  {
+   "clip": "75a8d614-400b-4ed9-b702-1df72499aed6",
+   "frame": "frames/75a8d614-400b-4ed9-b702-1df72499aed6.jpg",
+   "preview": "preview/75a8d614-400b-4ed9-b702-1df72499aed6.jpg",
+   "size": [
+    1280,
+    720
+   ],
+   "scene": "Indian road with auto-rickshaws and a cyclist, roadside stalls"
+  },
+  {
+   "clip": "0543f201-6012-4393-a19b-14ce76604dad",
+   "frame": "frames/0543f201-6012-4393-a19b-14ce76604dad.jpg",
+   "preview": "preview/0543f201-6012-4393-a19b-14ce76604dad.jpg",
+   "size": [
+    1280,
+    720
+   ],
+   "scene": "housing estate with a children's playground and apartment blocks"
+  },
+  {
+   "clip": "85ba6791-2287-4511-b5f8-220c4a0f9c70",
+   "frame": "frames/85ba6791-2287-4511-b5f8-220c4a0f9c70.jpg",
+   "preview": "preview/85ba6791-2287-4511-b5f8-220c4a0f9c70.jpg",
+   "size": [
+    1280,
+    720
+   ],
+   "scene": "Humayun's tomb gateway with visitors walking in"
+  },
+  {
+   "clip": "01b91cee-dc23-4757-bc78-1855acc2594f",
+   "frame": "frames/01b91cee-dc23-4757-bc78-1855acc2594f.jpg",
+   "preview": "preview/01b91cee-dc23-4757-bc78-1855acc2594f.jpg",
+   "size": [
+    1280,
+    720
+   ],
+   "scene": "cyclist on a lakeside path"
+  },
+  {
+   "clip": "2b83d983-8107-48a8-a91a-5fcd590b3667",
+   "frame": "frames/2b83d983-8107-48a8-a91a-5fcd590b3667.jpg",
+   "preview": "preview/2b83d983-8107-48a8-a91a-5fcd590b3667.jpg",
+   "size": [
+    1280,
+    720
+   ],
+   "scene": "abandoned Soviet-era building with overgrown forecourt (Pripyat)"
+  },
+  {
+   "clip": "c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb",
+   "frame": "frames/c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb.jpg",
+   "preview": "preview/c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb.jpg",
+   "size": [
+    1280,
+    720
+   ],
+   "scene": "park entrance with railings and lamp posts"
+  },
+  {
+   "clip": "07dd054b-f2f3-4caa-8bb9-d8abf0086c29",
+   "frame": "frames/07dd054b-f2f3-4caa-8bb9-d8abf0086c29.jpg",
+   "preview": "preview/07dd054b-f2f3-4caa-8bb9-d8abf0086c29.jpg",
+   "size": [
+    1280,
+    720
+   ],
+   "scene": "Arch of Constantine, Rome, with tourists in the foreground"
+  }
+ ]
+}

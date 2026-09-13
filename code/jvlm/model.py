@@ -185,17 +185,39 @@ class VLMLensModel:
             for k, v in dict(batch).items()
         }
 
-    def chat(self, text: str, images: list | None = None, **kw) -> dict:
+    def chat_prompt(self, text: str, images: list | None = None, *, system: str | None = None,
+                    cue: str | None = None, history: list | None = None) -> str:
+        """The chat-templated prompt string.
+
+        ``cue`` is text placed *before* the image inside the user turn, so that
+        it can influence what is written into the image positions; ``text``
+        goes after.  ``system`` fills the system slot when given.  ``history``
+        is a list of prior (user_text, assistant_text) pairs for a follow-up turn.
+        """
+        def user_turn(t, with_image):
+            c: list[dict] = []
+            if with_image and cue:
+                c.append({"type": "text", "text": cue})
+            if with_image:
+                for _ in images or []:
+                    c.append({"type": "image"})
+            c.append({"type": "text", "text": t})
+            return {"role": "user", "content": c}
+
+        msgs: list[dict] = []
+        if system:
+            msgs.append({"role": "system", "content": [{"type": "text", "text": system}]})
+        # the image and the cue belong to the first user turn; a follow-up turn is text only
+        for j, (u, a_) in enumerate(history or []):
+            msgs.append(user_turn(u, with_image=(j == 0)))
+            msgs.append({"role": "assistant", "content": [{"type": "text", "text": a_}]})
+        msgs.append(user_turn(text, with_image=not history))
+        return self.processor.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
+
+    def chat(self, text: str, images: list | None = None, *, system: str | None = None,
+             cue: str | None = None, history: list | None = None, **kw) -> dict:
         """Same as :meth:`build` but wrapped in the model's chat template."""
-        content: list[dict] = []
-        for _ in images or []:
-            content.append({"type": "image"})
-        content.append({"type": "text", "text": text})
-        prompt = self.processor.apply_chat_template(
-            [{"role": "user", "content": content}],
-            tokenize=False,
-            add_generation_prompt=True,
-        )
+        prompt = self.chat_prompt(text, images, system=system, cue=cue, history=history)
         return self.build(prompt, images, **kw)
 
     def chat_batch(self, prompts: list[str], images: list | None = None) -> dict:

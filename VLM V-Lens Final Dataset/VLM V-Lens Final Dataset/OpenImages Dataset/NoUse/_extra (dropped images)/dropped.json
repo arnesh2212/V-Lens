@@ -1,0 +1,2548 @@
+{
+ "dropped": [
+  {
+   "id": "019e5df10a052b49",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "0b5cde64f4b0b523",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "0e083d0338e3c1a6",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "1a397e401591560e",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "1ce98658bd9b0032",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "1ee1713f61020a40",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "23e0d412deaa215b",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "244261458cd1b751",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "2561d02f269d3d7b",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "30f3022f8cb0da43",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "33b62da73c05e5f7",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "370059467ad6e1d6",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "3da5ee8a0212b733",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "3e32e9ecbfeeb0f3",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "3ec3f95f090577e5",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "3f9530b003cabd11",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "432a1f0c3228defb",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "47c21790ded1de42",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "4d8cb740e0fc5190",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "4f8cbf50feb07f9c",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "4fd56283324689d9",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "541dc740ab898723",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "5a60979585b4a570",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "5b42070d8cf3c59d",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "5f07146d58db46d4",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "615d353bd6fa0705",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "6459868e3854cb92",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "656771d4623464bf",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "6b8518cc3acae359",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "776a7f14a2e108c8",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "79db6cff4c814ce8",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "840b9a62c2b64a03",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "864fbf5ef07e8a21",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "87fb3a0ec096290f",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "8c88b34d47f38c0b",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "95585a0676f580fb",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "95aee485b8529a30",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "97c326a6fc1b93ad",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "9d7c3742f1cb9cf3",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "a352ad2085795d5d",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "e82f13b4a2fe69f3",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "da1352ab6054a2e4",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "453a77009b27e253",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "bbcac63e32bd8137",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "0f29f7f902bd5a60",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "548a985825bb991f",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "3ecd5af7c4f11963",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "593e594137f374ab",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "88df55ff4e13b90d",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "0f4bfc46402a9f52",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "7f9740e95a74f2b9",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "a6c901e7d9249908",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "6846c275ded01f85",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "1ca1155083156d72",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "ff69d090c735eccb",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "35875c388efcddf0",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "c274e026ac907eb9",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "6a0ef049e5ec4b16",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "39c193bcc0c00f9e",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "bf2f25f3ed9ff4d5",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "b01d46f9911d558b",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "f109eca7a1c9380c",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "3695e224e626d444",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "2c09fab0221652c5",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "08481c03daf6f35d",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "1ead26febde18ce9",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "944281d0485869f0",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "d8daed582e6cce2d",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "6c696cbeef67a052",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "fdd963edc28bf163",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "02bd7eab13eae386",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "032f25ebe829882c",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "06d8cae22f950afb",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "077c6c5d8f2ed248",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "07d69099b981f303",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "07f7c0f19ce87d9c",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "0961ff7d9629e5fd",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "0a86d324027cc121",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "0c54cbf5c613e962",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "0c7091e1a7da5191",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "0c9c2e98bc7cfcc0",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "0d13015f1676f3ec",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "0d4c2723317629a0",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "0e4e4734d030c87b",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "0ef7a8c6ac8963c1",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "112f815bb8e96a91",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "122cbe069b17af5a",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "126b45c982d40c49",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "1335112a6c996bd3",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "13e366b80a184868",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "14c1375d2f382e4f",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "151d6fc348b03c6c",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "15de222dd6582b82",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "1648063b97a5e622",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "16856ab62573ee37",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "178d7257c7927bca",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "17c417887e3d3232",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "182c2d9a97a46c19",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "182d6b20d582609c",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "1c19b9bc011e75db",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "22e3a8c0b0814e0e",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "23aa9268fa278ae1",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "23d15e371527f571",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "2650fbc60c5eb0c6",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "275c906da3ca9fac",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "279eed642e113c54",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "28a67c45b517997f",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "2a4d4c1f2d50baaa",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "2b1a1f55b4797626",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "2ca4c3cc0eeb50c4",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "2cc77bcfc8a8076d",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "2cef80f6846f0b52",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "2dfb08e566999729",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "2e3d3b0ceae06037",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "2e4bbde27130482c",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "2fffd6d4c3f1435d",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "3181e4e6fc8a52a4",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "31f1c87ac3dfca04",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "32ea1cad75b429f0",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "354c084fa1af1081",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "35ab1cb11458b46b",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "3767b86cb78bef13",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "37ddd2c1b4e82033",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "3811c83a6c390734",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "39c02be9e1d39ab3",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "3b069765a7166180",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "3ea70b176f52eb8c",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "3f2fd59f2100489a",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "42bc9df7efec3600",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "4336340444156088",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "4449fe54bbf2e778",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "4820ae470c4abd49",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "49ce6d1b95980132",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "4ac4cdcc4ff86fd3",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "4ad9295d442500a7",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "4d90f0b2efae6755",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "4e7a32f1106d8806",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "567ff418244a0d7a",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "573c40c9afce9fad",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "5aea3581c2289116",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "5b4857d26ac4a2a6",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "5bc2be822527339e",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "5be2214a0a374972",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "5cd219d2c77a634c",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "61656584cdaaa017",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "63c7a69e2ca8f893",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "6863b22fed67be77",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "68ccecafc5d28f79",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "6a94a397eef2e469",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "6dece41649de3dc7",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "6ee7de2ecc9e0569",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "7406863fd70ad3cc",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "76a5569275545b55",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "79061cf5517e1a42",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "7a26dceeb9757a2e",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "7b5266af4ae04169",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "7c0f77aa57e68715",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "7c3227414cc9293b",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "7dc745b810453682",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "7de27a422a47e45b",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "7f588825b75e241c",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "7ff64b55e176c872",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "804810ea2192c221",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "80bb619bce71a97e",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "85cbbb912bf9a677",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "866919ba968d11e0",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "87bed51a8f111c8c",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "8ad5f55e0718efff",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "8c0a47b0d17f0270",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "8e3ef19b9ba12f4f",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Poster"
+  },
+  {
+   "id": "de025b4ef8d8aa55",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "4adc174693cc7f52",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "db617b3512da4079",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "d21d2af338748a0f",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "4ba18991ade1fb2c",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "242727686a1843fa",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "9e7e489892a40fe0",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "cd318e4cef41315c",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "391e8f182e73a8c2",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "a6862c11d5f66f97",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "4daaf9ef1d7a5ce2",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "4202dfbb5cbd779d",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "61ec03bf3a057298",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "435b94bef89be70e",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "e0e5d953b408d704",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "6e217565290f2986",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "4ad77d06fa730c26",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "c1cd43ad02888916",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "f5560dc4f17176d0",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "122ea3f60b9b4f84",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "4e72da23e283d619",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "50a2e60138edeff9",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "39fdd58fa6bf8551",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "cb5203e8827fd4a0",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "9569b3ccb3f627fc",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "4da543202aa1cba3",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "16d76fde3c3c0b1e",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "7b52df7deadc10ca",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "0aef58955b126057",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "4e7f5ae4f89f83de",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "7ab240973288a405",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "b9804615bbd20c60",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "a4a20424bb27b3bf",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "4f334cc9fe688ad8",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "9e7e3458a88c47c9",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "3220a637910ccfa2",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "368d6c99470221a6",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "b96eaf657f441f9b",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "6b2f5478b1fffdee",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "87dbd8f9ff184216",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "968be28a5ca055d8",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "4af97d6829b28adb",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "7ab5bc1640831419",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "1ece14dbc32021fe",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "d86b9114a95f98d5",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "668b4313af410f75",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "8cf5fae6ee7660a7",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "de13007172a3c13f",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "3eb30bfd025546e2",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "0a9675f1b60f1786",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "af519c02bf308743",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "979aeb57d205ebd2",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "db0c4806943a2898",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "c62db447d9d278f5",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "c3368162455b7cf3",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "d8d75584d049cbdd",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "f5f354cdcc79254b",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "2d2b3918691efd8c",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "dde5214278fd42ae",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "9a256a5b9d1461f9",
+   "why": "group",
+   "group": "vehicle_plate",
+   "class": "Vehicle registration plate"
+  },
+  {
+   "id": "20680ed0b1432b10",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Syringe"
+  },
+  {
+   "id": "23e87e620f03ad91",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Syringe"
+  },
+  {
+   "id": "3de6083514fb3c33",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Syringe"
+  },
+  {
+   "id": "92de7044b30f8bec",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Syringe"
+  },
+  {
+   "id": "93808fbe0bb9dd09",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Syringe"
+  },
+  {
+   "id": "a47d8017a8106c57",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Syringe"
+  },
+  {
+   "id": "c0daa05df96c7f49",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Syringe"
+  },
+  {
+   "id": "c6643ebd07378055",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Syringe"
+  },
+  {
+   "id": "c7962f4c24e15b00",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Syringe"
+  },
+  {
+   "id": "dd8a2f0b95823265",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Syringe"
+  },
+  {
+   "id": "2759e7cf55279c13",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Beaker"
+  },
+  {
+   "id": "7443957e96159818",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Beaker"
+  },
+  {
+   "id": "9677f65557d5979b",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Beaker"
+  },
+  {
+   "id": "9705ce8f9e87357a",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Beaker"
+  },
+  {
+   "id": "9d33c41103c639dc",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Beaker"
+  },
+  {
+   "id": "aae9cf9cb02c2399",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Beaker"
+  },
+  {
+   "id": "00455ae2731e1046",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "0ae5dc18d135c1ea",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "15080a01b98e8ca4",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "2bf7fd02a8bd4991",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "2edccfbe9e6fb86d",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "3b0a4feaee0ff0ae",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "44a984badd8c419d",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "5061a7db87b5338e",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "5599897e944faaa1",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "8ade1b3cc865a0fb",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "9f72e24266db364c",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "a8053b964be546b0",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "af6201fb38e3f8d9",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "b5b8dc5611cad57b",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "d20067b4428645ca",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "d6c99fff82b352f0",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "eee762f22867b8d4",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "00a5f08a8fdc1cdb",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "0d19c09c197dc4b0",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "0de003bcdbe4e26b",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "11d354080039844c",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "1c4d76f4dc92008d",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "2075e67666c2fca3",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "325a9df80074eb3a",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "4737ae093ce27c3a",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "49cd2bbc078454f7",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "4c6e1a6b70e2008e",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "5d0731438606392b",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "63968e2b53c21267",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "6496f80282bbff28",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "71c71473338d948b",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "810869656a2c4e35",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "93040d20888d1fa7",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "98525c3be3ea7cf7",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "9897520d054d4088",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "9cfe9ce41fe4c5ca",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "a1ca80ac3f293805",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "a52fa45f6893bc87",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "a6c3a49a46b684b1",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "ab7bfd44819fecbd",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "ad7988f48367563f",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "afa6a6de77fcb5fb",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "b6a50dc88f8bba07",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "b9f1262f94ce1d33",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "c2a3af7736b69ec8",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "c69b9d7c44f15901",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "cfffbd07659c4342",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "d30e5cbd873b857b",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "db661b4577deb9a1",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "db72fe10a299d8df",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "e2e479a880481163",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "e77180b87e93ebb9",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "f59dcfc6801006ff",
+   "why": "group",
+   "group": "insect",
+   "class": "Mosquito"
+  },
+  {
+   "id": "047fb821481d7e6a",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Houseplant"
+  },
+  {
+   "id": "0c8846d95a7f59ad",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Houseplant"
+  },
+  {
+   "id": "10eacd88884c0037",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Houseplant"
+  },
+  {
+   "id": "1780fbb555087b69",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Houseplant"
+  },
+  {
+   "id": "18b50c75f51f1d6c",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Houseplant"
+  },
+  {
+   "id": "26af373912283066",
+   "why": "class",
+   "group": "lab_bio",
+   "class": "Houseplant"
+  },
+  {
+   "id": "cdd049a06fe6f979",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Construction worker"
+  },
+  {
+   "id": "6f77c153f44d6168",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Construction worker"
+  },
+  {
+   "id": "ba1228c564930751",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Construction worker"
+  },
+  {
+   "id": "3dd56713402e5428",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Construction worker"
+  },
+  {
+   "id": "05c6fc62d2980f50",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Construction worker"
+  },
+  {
+   "id": "4c7525afa256f650",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Construction worker"
+  },
+  {
+   "id": "2c17d01bf091b68f",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Construction worker"
+  },
+  {
+   "id": "f46c190486d50db2",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Construction worker"
+  },
+  {
+   "id": "4a1f59bae9ff036a",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Construction worker"
+  },
+  {
+   "id": "269ff4f33dff50d1",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Hard hat"
+  },
+  {
+   "id": "179846a7e34ba228",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Hard hat"
+  },
+  {
+   "id": "7425d828852c6e05",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Hard hat"
+  },
+  {
+   "id": "770be32f0ac1e270",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Hard hat"
+  },
+  {
+   "id": "e07438cdd4d9165a",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Hard hat"
+  },
+  {
+   "id": "c5794771103e5c12",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Hard hat"
+  },
+  {
+   "id": "7102edf071d209ca",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Hard hat"
+  },
+  {
+   "id": "c757cbcb7ea47f60",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Hard hat"
+  },
+  {
+   "id": "19d7a34a59ebdd50",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Hard hat"
+  },
+  {
+   "id": "5b1165f0bf45fa2b",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Hard hat"
+  },
+  {
+   "id": "8ff100c6b61f688a",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Hard hat"
+  },
+  {
+   "id": "65e83fbc987651cf",
+   "why": "portrait, no scene",
+   "group": "construction",
+   "class": "Hard hat"
+  },
+  {
+   "id": "cfe6b20bbac06601",
+   "why": "portrait, no scene",
+   "group": "authority_figure",
+   "class": "Police officer"
+  },
+  {
+   "id": "0a906c9cfe7fd5d0",
+   "why": "portrait, no scene",
+   "group": "authority_figure",
+   "class": "Police officer"
+  },
+  {
+   "id": "ccadd4db65eb686e",
+   "why": "portrait, no scene",
+   "group": "authority_figure",
+   "class": "Police officer"
+  },
+  {
+   "id": "f6db9536480ceef1",
+   "why": "portrait, no scene",
+   "group": "authority_figure",
+   "class": "Police officer"
+  },
+  {
+   "id": "fcd99d85eb17247d",
+   "why": "portrait, no scene",
+   "group": "authority_figure",
+   "class": "Police officer"
+  },
+  {
+   "id": "299cc67b813f68d6",
+   "why": "portrait, no scene",
+   "group": "authority_figure",
+   "class": "Police officer"
+  },
+  {
+   "id": "5afbfdb5d1722a08",
+   "why": "portrait, no scene",
+   "group": "authority_figure",
+   "class": "Police"
+  },
+  {
+   "id": "487d137e1bef43ab",
+   "why": "portrait, no scene",
+   "group": "authority_figure",
+   "class": "Police"
+  },
+  {
+   "id": "0cf9533d59b63c6f",
+   "why": "portrait, no scene",
+   "group": "authority_figure",
+   "class": "Firefighter"
+  },
+  {
+   "id": "114fb3a450f05d6b",
+   "why": "portrait, no scene",
+   "group": "authority_figure",
+   "class": "Firefighter"
+  },
+  {
+   "id": "41acdd44b67e784d",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "1765c1cb2f93e7cb",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "bdcfc349991f0327",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "e99c1f2ff44be00f",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "88997096c8139ad0",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "2cc972303ad488ed",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "92afd3550d7534e8",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "79e908b889177eb6",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "190f777e47baf0ad",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "96f5f7dd4689a8a5",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "a9e47891c92ad33b",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "6dc06682aec437ba",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "6ed640ab8d8913fc",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "ae56dba47d6b9126",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "20ac4fb3beaae43f",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "8d93ed503a7a9001",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "0a83767fbf9d5499",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "47c9c213c3df1e47",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "ee9dc7b3b8d30a57",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "70083637e1602db8",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "7c6e6a0f34e04c21",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "9cc35069c421ddf7",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "c0e7d13b2c701ea3",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "99fbf5f2ca7cd22e",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "2bedd3052776d828",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "c1f0ca1077c0ecb4",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "5228e63f624fc54a",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "fac0cf53f3676225",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "c87b47af9bfab142",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "fe245787ad0797a7",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "7705f1a0f248bbb4",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "46fb1ff26c75c73c",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "8a5d2f2a62e976c7",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "3985a2db3d82eb96",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "7cf856f5398d8138",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "c8d6a400e10d4296",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "2baf7ad2a96a12e8",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "c79856482fa840ac",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "3e8667b3060ee7db",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "93f9473ef4224164",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "49dcf46102f227a4",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "4428b57a96de0a03",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "7e2250248f6536ec",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "66fa13d38b761af6",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "b48ad51e692bf8d1",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "6ebd417842c32659",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "35a8ac609ec19c12",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "cea207ed30287ae6",
+   "why": "no text label",
+   "group": "informal_text",
+   "class": "Graffiti"
+  },
+  {
+   "id": "995243986ca2dd84",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "ae2cfe0830cde3c7",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "898f2dd130a0f88b",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "6456982155a4d193",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "e7718047a2159f42",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "4f7c524db6f6ec6f",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "fbc36864c6bf7f88",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "7afd4b54e85e4ad6",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "d8ae3fe5ccff5e59",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "7fa0dd625495dae2",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "df6dd70f7cc1aee6",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "90082c0d8a16e00b",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "c242cbc0c16ee376",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "7807f238ecb1af77",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "9108e6f4145b7b80",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "fe1949975ba5b5f8",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "36cac00b383af0fb",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "586f2110906b7da3",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "de684f4ecd0e7edd",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "794f7cd9d39efc04",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "d5adde5b74d26baa",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "b160ebeb15c5dd3c",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "c6d3ad7edbe90c97",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "b0f45fbef27728bb",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "d27d3770f361769b",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "248d73c01e87c898",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "3244bcda9de87cdf",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "3cecbee64373ce86",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "5040efe3a171dff9",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "d8ae9d468540bf23",
+   "why": "class",
+   "group": "informal_text",
+   "class": "Cardboard"
+  },
+  {
+   "id": "16bd4559588df3df",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Label"
+  },
+  {
+   "id": "434f959d9a2c34a4",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Label"
+  },
+  {
+   "id": "c5875c42b5fb1a2f",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Label"
+  },
+  {
+   "id": "c9f2829d935be7ad",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Label"
+  },
+  {
+   "id": "8655710e90aada20",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Label"
+  },
+  {
+   "id": "70916783ffbb539d",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Label"
+  },
+  {
+   "id": "c8cf5d456e1319f5",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Label"
+  },
+  {
+   "id": "ae5e9dd335bf7fa0",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Label"
+  },
+  {
+   "id": "66eb0474498b9cb0",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Label"
+  },
+  {
+   "id": "c9ba37f11ef28845",
+   "why": "class",
+   "group": "commercial_text",
+   "class": "Label"
+  }
+ ]
+}

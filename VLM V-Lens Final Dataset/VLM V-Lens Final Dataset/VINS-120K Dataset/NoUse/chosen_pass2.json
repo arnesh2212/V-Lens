@@ -1,0 +1,242 @@
+{
+ "88ae3183-77dd-4dbc-8039-ce9510946763": {
+  "edit_type": "camera movement",
+  "input": "clips_short_23/clips_short/88ae3183-77dd-4dbc-8039-ce9510946763/0019.png",
+  "output": "clips_short_23/clips_short/88ae3183-77dd-4dbc-8039-ce9510946763/0319.png",
+  "instruction": "Pan the frame slightly to the right, zoom in slightly, remove the swing on the left side of the frame, add a person walking in the background near the center-right area."
+ },
+ "4f46b38f-f0ed-4cb1-a750-25654a0d78ff": {
+  "edit_type": "object addition",
+  "input": "clips_short_17/clips_short/4f46b38f-f0ed-4cb1-a750-25654a0d78ff/0000.png",
+  "output": "clips_short_17/clips_short/4f46b38f-f0ed-4cb1-a750-25654a0d78ff/0274.png",
+  "instruction": "Remove the semi-transparent red bus on the left, the red bus in the center, and the blurred cyclist on the right. Add an emergency response area with a truck and tents on the left side. Add a motion-blurred person in the center of the road. Add a white bus to the traffic on the right. Add the text \"Rome City | Italy\" in the bottom right corner."
+ },
+ "db8afa43-80c0-4b38-b473-f8d38fbdd618": {
+  "edit_type": "object replacement",
+  "input": "clips_short_24/clips_short/db8afa43-80c0-4b38-b473-f8d38fbdd618/0069.png",
+  "output": "clips_short_24/clips_short/db8afa43-80c0-4b38-b473-f8d38fbdd618/0158.png",
+  "instruction": "Replace all pedestrians; in the foreground, replace the motion-blurred man on the left with a woman in a white top, and replace the group on the right containing a woman in a blue skirt with a different group of people, including a woman in a striped shirt and a man with a pink suitcase."
+ },
+ "6ff88827-9173-47f9-98f2-f3a9652ef397": {
+  "edit_type": "camera movement",
+  "input": "clips_short_35/clips_short/6ff88827-9173-47f9-98f2-f3a9652ef397/0139.png",
+  "output": "clips_short_35/clips_short/6ff88827-9173-47f9-98f2-f3a9652ef397/0417.png",
+  "instruction": "Pan the frame to the left. Add two people walking up the stairs in the background. Add a person sitting on the grass in the lower-left corner."
+ },
+ "513e33ba-976c-42a7-9fd2-c12c55915abd": {
+  "edit_type": "camera movement",
+  "input": "clips_short_30/clips_short/513e33ba-976c-42a7-9fd2-c12c55915abd/0064.png",
+  "output": "clips_short_30/clips_short/513e33ba-976c-42a7-9fd2-c12c55915abd/0178.png",
+  "instruction": "Pan the frame to the left, replace the dark building behind the central large white building with a taller structure covered in dark sheeting, and move the tram further to the left along its tracks."
+ },
+ "ab301848-0dab-4a2d-9fff-4b0a5cd06bb1": {
+  "edit_type": "object movement",
+  "input": "clips_short_10/clips_short/ab301848-0dab-4a2d-9fff-4b0a5cd06bb1/0302.png",
+  "output": "clips_short_10/clips_short/ab301848-0dab-4a2d-9fff-4b0a5cd06bb1/0383.png",
+  "instruction": "Move the cyclist to the right so he is exiting the frame."
+ },
+ "76493adb-d29c-44e8-b42d-e38d461616bf": {
+  "edit_type": "camera movement",
+  "input": "clips_short_26/clips_short/76493adb-d29c-44e8-b42d-e38d461616bf/0028.png",
+  "output": "clips_short_26/clips_short/76493adb-d29c-44e8-b42d-e38d461616bf/0479.png",
+  "instruction": "Move the camera forward, remove the scooter from the bottom right, and replace the wooden bench on the right with a grey trash can."
+ },
+ "760a1da8-daa8-469d-b176-7133e6cbca14": {
+  "edit_type": "object replacement",
+  "input": "clips_short_34/clips_short/760a1da8-daa8-469d-b176-7133e6cbca14/0060.png",
+  "output": "clips_short_34/clips_short/760a1da8-daa8-469d-b176-7133e6cbca14/0179.png",
+  "instruction": "Change the traffic lights from red to green.\nReplace the pedestrians on the crosswalk and most of the stationary vehicles with motion-blurred moving vehicles."
+ },
+ "7f16db21-4fbe-42ca-88a1-b03ea62fd819": {
+  "edit_type": "camera movement",
+  "input": "clips_short_11/clips_short/7f16db21-4fbe-42ca-88a1-b03ea62fd819/0050.png",
+  "output": "clips_short_11/clips_short/7f16db21-4fbe-42ca-88a1-b03ea62fd819/0131.png",
+  "instruction": "Pan the frame slightly to the right, rotate the frame 10\u00b0 clockwise, increase the water flow in the fountain, move the person in the blue jacket from the bottom right to the center-right area, add two people sitting on the pink bench at the bottom center, remove the person walking near the top left tree, adjust the lighting to be slightly brighter."
+ },
+ "f827b9ae-765b-4010-a95d-55c1396bc3a7": {
+  "edit_type": "camera movement",
+  "input": "clips_short_4/clips_short/f827b9ae-765b-4010-a95d-55c1396bc3a7/0164.png",
+  "output": "clips_short_4/clips_short/f827b9ae-765b-4010-a95d-55c1396bc3a7/0189.png",
+  "instruction": "Pan the frame slightly to the right, slightly zoom in, move the person walking near the bottom-left corner further left, adjust the position of the two people sitting on the pink bench at the bottom-center to be more centered on the bench, remove the person standing near the top-right edge of the fountain area."
+ },
+ "814dd2cf-e66f-44cb-862a-f3793695fda8": {
+  "edit_type": "object replacement",
+  "input": "clips_short_10/clips_short/814dd2cf-e66f-44cb-862a-f3793695fda8/0000.png",
+  "output": "clips_short_10/clips_short/814dd2cf-e66f-44cb-862a-f3793695fda8/0122.png",
+  "instruction": "Replace the large, motion-blurred red tram with a clear view of the street scene, and remove the person and bag from the left sidewalk."
+ },
+ "b4111821-ba01-4c50-8d0f-3dd9f496af13": {
+  "edit_type": "camera movement",
+  "input": "clips_short_15/clips_short/b4111821-ba01-4c50-8d0f-3dd9f496af13/0135.png",
+  "output": "clips_short_15/clips_short/b4111821-ba01-4c50-8d0f-3dd9f496af13/0203.png",
+  "instruction": "Slightly zoom in and pan to the right. Remove the yellow from the windows of the building in the bottom-right corner. Move the red tram forward along the tracks."
+ },
+ "64d0bf71-3f21-41b3-950f-2fa0fe00fa23": {
+  "edit_type": "camera movement",
+  "input": "clips_short_24/clips_short/64d0bf71-3f21-41b3-950f-2fa0fe00fa23/0000.png",
+  "output": "clips_short_24/clips_short/64d0bf71-3f21-41b3-950f-2fa0fe00fa23/0035.png",
+  "instruction": "Pan the frame to the left and slightly zoom in. Update the positions of the cars on the road and the pedestrians on the sidewalk."
+ },
+ "073756f3-897d-4450-aac1-af85cb2d2f86": {
+  "edit_type": "object movement",
+  "input": "clips_short_26/clips_short/073756f3-897d-4450-aac1-af85cb2d2f86/0000.png",
+  "output": "clips_short_26/clips_short/073756f3-897d-4450-aac1-af85cb2d2f86/0076.png",
+  "instruction": "Reposition the cyclist in the red jacket to the foreground to lead on the right, and place the cyclist in the orange helmet behind and to the left."
+ },
+ "ec0aeccb-9d76-4012-b13b-9c8ee5dc643d": {
+  "edit_type": "camera movement",
+  "input": "clips_short_30/clips_short/ec0aeccb-9d76-4012-b13b-9c8ee5dc643d/0026.png",
+  "output": "clips_short_30/clips_short/ec0aeccb-9d76-4012-b13b-9c8ee5dc643d/0326.png",
+  "instruction": "Slightly zoom out and add a person walking on the path in the lower right."
+ },
+ "01982ab8-a558-4f00-89d4-0bf49afb7628": {
+  "edit_type": "camera movement",
+  "input": "clips_short_34/clips_short/01982ab8-a558-4f00-89d4-0bf49afb7628/0066.png",
+  "output": "clips_short_34/clips_short/01982ab8-a558-4f00-89d4-0bf49afb7628/0197.png",
+  "instruction": "Pan the frame to the left, reduce the motion blur on the foreground walkway, and replace all pedestrians with new ones in different positions."
+ },
+ "9d73fa50-df85-4d9f-aba8-d3c29c744279": {
+  "edit_type": "camera movement",
+  "input": "clips_short_7/clips_short/9d73fa50-df85-4d9f-aba8-d3c29c744279/0028.png",
+  "output": "clips_short_7/clips_short/9d73fa50-df85-4d9f-aba8-d3c29c744279/0267.png",
+  "instruction": "Slightly pan the frame to the left and zoom in. Replace the man in the red jacket on the left with a man wearing a suit and glasses. Replace the woman holding a folder on the right with a man walking in the background while on his phone."
+ },
+ "2a6258c0-f4fb-4d32-940d-3bbbc881a08b": {
+  "edit_type": "object replacement",
+  "input": "clips_short_8/clips_short/2a6258c0-f4fb-4d32-940d-3bbbc881a08b/0012.png",
+  "output": "clips_short_8/clips_short/2a6258c0-f4fb-4d32-940d-3bbbc881a08b/0237.png",
+  "instruction": "Slightly zoom out. Replace the person walking on the grass with a person riding a bicycle on the center path."
+ },
+ "09113acd-7902-43c3-bc84-ae3df4235d1c": {
+  "edit_type": "camera movement",
+  "input": "clips_short_13/clips_short/09113acd-7902-43c3-bc84-ae3df4235d1c/0000.png",
+  "output": "clips_short_13/clips_short/09113acd-7902-43c3-bc84-ae3df4235d1c/0106.png",
+  "instruction": "Pan the frame slightly to the right and tilt down. Remove the truck and white SUV from the road in the foreground. Add a person walking on the sidewalk in the lower right."
+ },
+ "ac92f0c8-f78b-48b8-a677-0a9a13f07b06": {
+  "edit_type": "camera movement",
+  "input": "clips_short_13/clips_short/ac92f0c8-f78b-48b8-a677-0a9a13f07b06/0090.png",
+  "output": "clips_short_13/clips_short/ac92f0c8-f78b-48b8-a677-0a9a13f07b06/0180.png",
+  "instruction": "Significantly zoom out, and move the cyclist further down the trail to the right."
+ },
+ "fd65268a-dd28-47c8-b2d1-1b169cb07118": {
+  "edit_type": "object deletion",
+  "input": "clips_short_18/clips_short/fd65268a-dd28-47c8-b2d1-1b169cb07118/0003.png",
+  "output": "clips_short_18/clips_short/fd65268a-dd28-47c8-b2d1-1b169cb07118/0063.png",
+  "instruction": "Adjust the lighting to lengthen and shift shadows to the right. Remove the person walking on the foreground brick path. Remove the police car on the left road. Change the configuration of people at the base of the monument."
+ },
+ "a692a109-fa7a-4573-9872-dc4bb1ee43a6": {
+  "edit_type": "object replacement",
+  "input": "clips_short_20/clips_short/a692a109-fa7a-4573-9872-dc4bb1ee43a6/0087.png",
+  "output": "clips_short_20/clips_short/a692a109-fa7a-4573-9872-dc4bb1ee43a6/0237.png",
+  "instruction": "Replace the black car in the lower center with a white car, and replace the motorcycle further up the road with a black car; remove the cyclist from the lower right; add a light-colored car to the road just past the roundabout."
+ },
+ "201a3d24-a0a9-49c6-9baf-78c7c89574ab": {
+  "edit_type": "object deletion",
+  "input": "clips_short_22/clips_short/201a3d24-a0a9-49c6-9baf-78c7c89574ab/0005.png",
+  "output": "clips_short_22/clips_short/201a3d24-a0a9-49c6-9baf-78c7c89574ab/0155.png",
+  "instruction": "Remove the red scooter and the motorcycle carrying two people. Move the yellow auto-rickshaw from the left to the center of the road."
+ },
+ "9ff67774-aa3a-47a8-af2c-80400ad769e2": {
+  "edit_type": "camera movement",
+  "input": "clips_short_24/clips_short/9ff67774-aa3a-47a8-af2c-80400ad769e2/0116.png",
+  "output": "clips_short_24/clips_short/9ff67774-aa3a-47a8-af2c-80400ad769e2/0231.png",
+  "instruction": "Move the camera forward along the road, remove the person on the scooter, and remove the warning sign on the lower left."
+ },
+ "68886bc7-9648-4d6c-84c4-4ac70b7f7eb9": {
+  "edit_type": "object movement",
+  "input": "clips_short_25/clips_short/68886bc7-9648-4d6c-84c4-4ac70b7f7eb9/0000.png",
+  "output": "clips_short_25/clips_short/68886bc7-9648-4d6c-84c4-4ac70b7f7eb9/0024.png",
+  "instruction": "Move the red car to the left, remove the blue car from the bottom right corner, and add a pedestrian on the sidewalk on the left."
+ },
+ "437ad136-cf8c-46c5-a4ea-e4f4c2151229": {
+  "edit_type": "object replacement",
+  "input": "clips_short_31/clips_short/437ad136-cf8c-46c5-a4ea-e4f4c2151229/0371.png",
+  "output": "clips_short_31/clips_short/437ad136-cf8c-46c5-a4ea-e4f4c2151229/0557.png",
+  "instruction": "Replace the blurred vehicles and light trails on the road with new traffic, including a yellow bus on the right and a large motion-blurred truck with a blue side in the center. Add several orange traffic cones in the lower right. Add pedestrians to the sidewalk on the far right."
+ },
+ "70705efc-1f04-4059-a352-bfd2e2291ac4": {
+  "edit_type": "object addition",
+  "input": "clips_short_35/clips_short/70705efc-1f04-4059-a352-bfd2e2291ac4/0000.png",
+  "output": "clips_short_35/clips_short/70705efc-1f04-4059-a352-bfd2e2291ac4/0069.png",
+  "instruction": "Remove the cyclist from the road in the foreground. Add three pedestrians and a black car near the crosswalk. On the winding road to the right, replace the single dark car with a silver car followed by a black car."
+ },
+ "78126618-f5e4-4816-8b04-64420942434f": {
+  "edit_type": "camera movement",
+  "input": "clips_short_35/clips_short/78126618-f5e4-4816-8b04-64420942434f/0119.png",
+  "output": "clips_short_35/clips_short/78126618-f5e4-4816-8b04-64420942434f/0329.png",
+  "instruction": "Slightly zoom in. Increase the overall brightness and saturation. Remove the tall tree on the far left. Add a person wearing white to the balcony of the left hut. Remove the person sitting under the central hut. Move the person walking in the distant background to the right."
+ },
+ "c8007b04-ff64-455c-a28a-a24ccd2b7471": {
+  "edit_type": "object deletion",
+  "input": "clips_short_36/clips_short/c8007b04-ff64-455c-a28a-a24ccd2b7471/0010.png",
+  "output": "clips_short_36/clips_short/c8007b04-ff64-455c-a28a-a24ccd2b7471/0160.png",
+  "instruction": "Remove the person on the blue object in the lower-left quadrant. Remove the group of four people walking together in the middle-right of the dune. Remove the intersecting footprint trails in the foreground to smooth the sand."
+ },
+ "9abd5238-3cc6-4b2e-b297-bf502bb1d352": {
+  "edit_type": "object deletion",
+  "input": "clips_short_5/clips_short/9abd5238-3cc6-4b2e-b297-bf502bb1d352/0301.png",
+  "output": "clips_short_5/clips_short/9abd5238-3cc6-4b2e-b297-bf502bb1d352/0451.png",
+  "instruction": "Remove the two people walking on the path and remove the \"CLIFFS OF MOHER\" text overlay from the bottom-left corner."
+ },
+ "bfd194bc-7c88-433a-bb8b-8fb63e256966": {
+  "edit_type": "tone transform",
+  "input": "clips_short_6/clips_short/bfd194bc-7c88-433a-bb8b-8fb63e256966/0020.png",
+  "output": "clips_short_6/clips_short/bfd194bc-7c88-433a-bb8b-8fb63e256966/0131.png",
+  "instruction": "Decrease the overall brightness and make the color palette cooler. Remove the sun starburst, the lens flare, and the people walking on the right."
+ },
+ "f3b88754-ad14-4cdf-b4c5-c2e667357976": {
+  "edit_type": "camera movement",
+  "input": "clips_short_24/clips_short/f3b88754-ad14-4cdf-b4c5-c2e667357976/0034.png",
+  "output": "clips_short_24/clips_short/f3b88754-ad14-4cdf-b4c5-c2e667357976/0067.png",
+  "instruction": "Pan the frame to the left and remove the person walking on the road."
+ },
+ "a2b68364-a26f-447b-a5a1-d085fd7d9d88": {
+  "edit_type": "camera movement",
+  "input": "clips_short_26/clips_short/a2b68364-a26f-447b-a5a1-d085fd7d9d88/0001.png",
+  "output": "clips_short_26/clips_short/a2b68364-a26f-447b-a5a1-d085fd7d9d88/0151.png",
+  "instruction": "Pan the frame slightly to the right, move the cyclist in front closer to the center of the frame, adjust the foreground grass and path alignment to reflect a forward movement along the trail."
+ },
+ "f5a2b5cb-fa3e-4de8-90d7-ce66a3c44a3e": {
+  "edit_type": "camera movement",
+  "input": "clips_short_9/clips_short/f5a2b5cb-fa3e-4de8-90d7-ce66a3c44a3e/0156.png",
+  "output": "clips_short_9/clips_short/f5a2b5cb-fa3e-4de8-90d7-ce66a3c44a3e/0175.png",
+  "instruction": "Pan the frame slightly to the right, slightly zoom in, move the white van on the left side of the canal further into the background, adjust the position of the two people on the right sidewalk to be closer together."
+ },
+ "3ce14a21-01f5-40bb-83f9-611cb241c266": {
+  "edit_type": "camera movement",
+  "input": "clips_short_15/clips_short/3ce14a21-01f5-40bb-83f9-611cb241c266/0078.png",
+  "output": "clips_short_15/clips_short/3ce14a21-01f5-40bb-83f9-611cb241c266/0157.png",
+  "instruction": "Pan the frame slightly to the right, zoom in slightly, move the cyclist in red jacket closer to the foreground, adjust the position of the cyclist in black shirt to the left side of the frame, reduce the size of the snow patch on the ground."
+ },
+ "62736d63-d0f9-4634-9f53-d3cf376a57a8": {
+  "edit_type": "camera movement",
+  "input": "clips_short_1/clips_short/62736d63-d0f9-4634-9f53-d3cf376a57a8/0027.png",
+  "output": "clips_short_1/clips_short/62736d63-d0f9-4634-9f53-d3cf376a57a8/0080.png",
+  "instruction": "Pan the frame to the right. Remove the people standing on the sidewalk in front of the brick church on the left. On the road, replace the central black cars with a white SUV and a white sedan. Remove the blue car at the bottom of the angled parking spaces."
+ },
+ "b8bad80d-c77b-412c-b5ed-83791c84345f": {
+  "edit_type": "object addition",
+  "input": "clips_short_10/clips_short/b8bad80d-c77b-412c-b5ed-83791c84345f/0000.png",
+  "output": "clips_short_10/clips_short/b8bad80d-c77b-412c-b5ed-83791c84345f/0069.png",
+  "instruction": "Add a person on a scooter to the road on the left."
+ },
+ "c1dac5de-ec2c-47a5-8d5c-5bee10de6861": {
+  "edit_type": "object replacement",
+  "input": "clips_short_11/clips_short/c1dac5de-ec2c-47a5-8d5c-5bee10de6861/0012.png",
+  "output": "clips_short_11/clips_short/c1dac5de-ec2c-47a5-8d5c-5bee10de6861/0079.png",
+  "instruction": "Remove the person in the yellow swimsuit from the bottom-left corner, replace the man walking in the foreground with a person bending over on the sand, and change the person at the water's edge from a bending to a standing pose."
+ },
+ "148ee3d1-5d75-430b-9d91-cdb927d2a337": {
+  "edit_type": "action change",
+  "input": "clips_short_14/clips_short/148ee3d1-5d75-430b-9d91-cdb927d2a337/0080.png",
+  "output": "clips_short_14/clips_short/148ee3d1-5d75-430b-9d91-cdb927d2a337/0091.png",
+  "instruction": "Change the poses of the dancers and guests, notably by lowering the extended leg of the man dancing on the left. Change the action of the woman in the orange dress and the man in the suit on the far right so they are clapping. Reposition the pedestrians in the background farther down the street."
+ },
+ "d009f3d4-fbdd-47a6-8a44-d017f5dca3ee": {
+  "edit_type": "camera movement",
+  "input": "clips_short_14/clips_short/d009f3d4-fbdd-47a6-8a44-d017f5dca3ee/0047.png",
+  "output": "clips_short_14/clips_short/d009f3d4-fbdd-47a6-8a44-d017f5dca3ee/0071.png",
+  "instruction": "Pan the frame down.\nIncrease the overall contrast and saturation.\nRemove the person in the orange vest from the right sidewalk.\nAdd a black SUV turning the corner at the intersection in the bottom foreground."
+ }
+}

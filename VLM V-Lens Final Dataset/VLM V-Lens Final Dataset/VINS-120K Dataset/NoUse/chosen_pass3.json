@@ -1,0 +1,272 @@
+{
+ "a31f5143-e94a-4a78-96f1-43ab0528b1db": {
+  "edit_type": "camera movement",
+  "input": "clips_short_21/clips_short/a31f5143-e94a-4a78-96f1-43ab0528b1db/0014.png",
+  "output": "clips_short_21/clips_short/a31f5143-e94a-4a78-96f1-43ab0528b1db/0333.png",
+  "instruction": "Pan the frame slightly to the left, zoom out slightly, move the large rusted vehicle part from the right foreground to the bottom-left corner, remove the water reflection of the central pile of debris, adjust the position of the tire near the center-right to be partially submerged in water, and reposition the scattered metal pieces in the foreground to lie flat on the ground."
+ },
+ "f8be8cae-b476-46d0-acdc-25fca29d8326": {
+  "edit_type": "object replacement",
+  "input": "clips_short_12/clips_short/f8be8cae-b476-46d0-acdc-25fca29d8326/0363.png",
+  "output": "clips_short_12/clips_short/f8be8cae-b476-46d0-acdc-25fca29d8326/0455.png",
+  "instruction": "Pan the frame slightly to the right, adjust the lighting to slightly increase brightness, replace the green taxi with a blue van, add a silver minivan in the foreground lane, change the traffic light on the far right to red, and remove the red vehicle near the center of the road."
+ },
+ "2b83d983-8107-48a8-a91a-5fcd590b3667": {
+  "edit_type": "object addition",
+  "input": "clips_short_19/clips_short/2b83d983-8107-48a8-a91a-5fcd590b3667/0017.png",
+  "output": "clips_short_19/clips_short/2b83d983-8107-48a8-a91a-5fcd590b3667/0333.png",
+  "instruction": "Remove the purple color cast and slightly increase brightness and saturation. On the canopy above the entrance, add partial white text and a red emblem. Replace the thin tree to the left of the entrance with a taller, fuller one. Add a letter fragment to the end of the '\u0413\u041e\u0422\u0415\u041b\u042c' sign. Remove the piece of plywood from the bottom right g\u00f6rseli and rearrange the debris on the stairs."
+ },
+ "96e153b2-8ed9-4f2c-a6bd-d443589fee59": {
+  "edit_type": "tone transform",
+  "input": "clips_short_20/clips_short/96e153b2-8ed9-4f2c-a6bd-d443589fee59/0140.png",
+  "output": "clips_short_20/clips_short/96e153b2-8ed9-4f2c-a6bd-d443589fee59/0333.png",
+  "instruction": "Increase overall brightness and saturation, especially in the foliage. Change the text on the building sign from \"\u042d\u041d\u0415\u0420\u0413\u0415\u0422\u0418\u041a\" to \"\u042d\u041d\u0415\u0420\u0413\u0415\u0415\u041d\u041a\". Add a bush to the right of the existing main bush in the foreground. Expand the patch of moss around the bushes."
+ },
+ "011223a3-5658-4069-8754-889e4c64667e": {
+  "edit_type": "camera movement",
+  "input": "clips_short_25/clips_short/011223a3-5658-4069-8754-889e4c64667e/0163.png",
+  "output": "clips_short_25/clips_short/011223a3-5658-4069-8754-889e4c64667e/0181.png",
+  "instruction": "Pan the frame slightly to the right, move the foreground elephant\u2019s trunk slightly forward, adjust the positioning of the middle elephant to be more aligned with the foreground elephant."
+ },
+ "ef0e4159-7833-4f13-8ec3-221250bf2a04": {
+  "edit_type": "object replacement",
+  "input": "clips_short_11/clips_short/ef0e4159-7833-4f13-8ec3-221250bf2a04/0000.png",
+  "output": "clips_short_11/clips_short/ef0e4159-7833-4f13-8ec3-221250bf2a04/0025.png",
+  "instruction": "Replace the crowd of civilians with a different crowd that includes several police officers in the foreground."
+ },
+ "e9d35786-fc5b-4895-861e-f99d0a70430e": {
+  "edit_type": "camera movement",
+  "input": "clips_short_15/clips_short/e9d35786-fc5b-4895-861e-f99d0a70430e/0166.png",
+  "output": "clips_short_15/clips_short/e9d35786-fc5b-4895-861e-f99d0a70430e/0499.png",
+  "instruction": "Change the camera perspective by moving forward and to the right, placing the yellow bumper car in the foreground. Add the text 'The Art Inc' in the bottom-left corner."
+ },
+ "53ea182a-3976-432f-8aba-ffb7cc01a21c": {
+  "edit_type": "object deletion",
+  "input": "clips_short_17/clips_short/53ea182a-3976-432f-8aba-ffb7cc01a21c/0009.png",
+  "output": "clips_short_17/clips_short/53ea182a-3976-432f-8aba-ffb7cc01a21c/0095.png",
+  "instruction": "Remove the standing female impala from the mid-ground and the rearmost of the two male impalas in the foreground; lower the head of the remaining foreground male impala."
+ },
+ "78b2d691-71c5-4356-bba4-e09b05875457": {
+  "edit_type": "camera movement",
+  "input": "clips_short_21/clips_short/78b2d691-71c5-4356-bba4-e09b05875457/0000.png",
+  "output": "clips_short_21/clips_short/78b2d691-71c5-4356-bba4-e09b05875457/0313.png",
+  "instruction": "Remove the rider and motorcycle from the left foreground.\nRemove the large shadow from the road in the foreground.\nTilt the perspective of the frame upward.\nMove the rider doing a wheelie to the center of the frame and enlarge them."
+ },
+ "b7a1994a-73f8-40d6-8635-a4ca4c81e02d": {
+  "edit_type": "object replacement",
+  "input": "clips_short_17/clips_short/b7a1994a-73f8-40d6-8635-a4ca4c81e02d/0017.png",
+  "output": "clips_short_17/clips_short/b7a1994a-73f8-40d6-8635-a4ca4c81e02d/0251.png",
+  "instruction": "Replace the green taxi in the foreground with a yellow taxi, replace the silver sedan and the white van with a black truck, and remove the \"Apple store\" text from the bottom-left corner."
+ },
+ "28b38a01-b7ee-410e-824d-45171794516a": {
+  "edit_type": "camera movement",
+  "input": "clips_short_23/clips_short/28b38a01-b7ee-410e-824d-45171794516a/0166.png",
+  "output": "clips_short_23/clips_short/28b38a01-b7ee-410e-824d-45171794516a/0376.png",
+  "instruction": "Pan the frame to the left.\nRemove the pile of branches and the overgrown vine from the foreground.\nAdd a small green bush in the foreground.\nAdd the 'ProArtInc' watermark to the bottom-left corner."
+ },
+ "c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb": {
+  "edit_type": "object addition",
+  "input": "clips_short_25/clips_short/c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb/0003.png",
+  "output": "clips_short_25/clips_short/c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb/0138.png",
+  "instruction": "Add a motion-blurred person on a motorcycle in the lower-left foreground; add a second motion-blurred person in the lower-right foreground."
+ },
+ "babe741f-0d05-4439-8c6c-efee9cb04b0b": {
+  "edit_type": "object deletion",
+  "input": "clips_short_26/clips_short/babe741f-0d05-4439-8c6c-efee9cb04b0b/0000.png",
+  "output": "clips_short_26/clips_short/babe741f-0d05-4439-8c6c-efee9cb04b0b/0307.png",
+  "instruction": "Remove the motion-blurred yellow taxi and black truck from the foreground."
+ },
+ "fdd547dc-afed-41db-a505-918f99684e99": {
+  "edit_type": "object replacement",
+  "input": "clips_short_29/clips_short/fdd547dc-afed-41db-a505-918f99684e99/0119.png",
+  "output": "clips_short_29/clips_short/fdd547dc-afed-41db-a505-918f99684e99/0179.png",
+  "instruction": "Remove the text 'FLAMINGO' from the top-left corner; replace the two intertwined flamingos with a new composition showing one flamingo in profile in the foreground and a second flamingo's neck blurred in the background."
+ },
+ "ba67394e-8aa5-43ed-bdf6-e2623c711454": {
+  "edit_type": "action change",
+  "input": "clips_short_3/clips_short/ba67394e-8aa5-43ed-bdf6-e2623c711454/0153.png",
+  "output": "clips_short_3/clips_short/ba67394e-8aa5-43ed-bdf6-e2623c711454/0299.png",
+  "instruction": "Remove the text box in the bottom-left corner. Lower the wings of the flamingo on the far left. Change the pose of the flamingo in the bottom-left foreground to be fully visible and bent towards the water. Change the pose of the rightmost flamingo in the central group to be bent over. Adjust the head positions of the remaining flamingos in the central group."
+ },
+ "c2953bfd-13a7-4060-82a8-60397677c581": {
+  "edit_type": "camera movement",
+  "input": "clips_short_30/clips_short/c2953bfd-13a7-4060-82a8-60397677c581/0084.png",
+  "output": "clips_short_30/clips_short/c2953bfd-13a7-4060-82a8-60397677c581/0161.png",
+  "instruction": "Pan the frame to the right; increase overall brightness and adjust the color balance; add the text \"16K\" above the \"NHK WORLD\" watermark; move the background turtle forward and turn its head toward the camera; turn the foreground turtle's head slightly to the right."
+ },
+ "eb44f56b-7ebe-4824-bb5f-9abd29a7ee92": {
+  "edit_type": "object addition",
+  "input": "clips_short_7/clips_short/eb44f56b-7ebe-4824-bb5f-9abd29a7ee92/0006.png",
+  "output": "clips_short_7/clips_short/eb44f56b-7ebe-4824-bb5f-9abd29a7ee92/0024.png",
+  "instruction": "Add a person wearing a white shirt and blue pants, and a blue object next to them, on the sidewalk on the right side of the street below the brown business sign."
+ },
+ "b472f025-f976-45a4-a268-24ee0898889c": {
+  "edit_type": "camera movement",
+  "input": "clips_short_14/clips_short/b472f025-f976-45a4-a268-24ee0898889c/0009.png",
+  "output": "clips_short_14/clips_short/b472f025-f976-45a4-a268-24ee0898889c/0098.png",
+  "instruction": "Slightly zoom out and add a red \"SallieMae\" logo to the top of the foreground building."
+ },
+ "c79ce7d0-345b-43dd-898c-613e5a84924b": {
+  "edit_type": "camera movement",
+  "input": "clips_short_16/clips_short/c79ce7d0-345b-43dd-898c-613e5a84924b/0000.png",
+  "output": "clips_short_16/clips_short/c79ce7d0-345b-43dd-898c-613e5a84924b/0080.png",
+  "instruction": "Pan the frame to the left. Change the pose of the foreground chicken by moving its right feathered leg forward. Enhance the blue iridescence on the foreground chicken's back feathers."
+ },
+ "4c33f0b5-d117-4662-9b3e-d086261653cb": {
+  "edit_type": "object addition",
+  "input": "clips_short_2/clips_short/4c33f0b5-d117-4662-9b3e-d086261653cb/0023.png",
+  "output": "clips_short_2/clips_short/4c33f0b5-d117-4662-9b3e-d086261653cb/0086.png",
+  "instruction": "Remove the moving red bus and blurred cars from the intersection, and in their place, add a grid of stationary cars in the central lanes.\nMove the blue bus forward to the crosswalk and make it stationary.\nAdd the front of a stationary red bus at the bottom of the frame."
+ },
+ "69e4e69c-6751-435b-8504-1116adba4447": {
+  "edit_type": "object addition",
+  "input": "clips_short_20/clips_short/69e4e69c-6751-435b-8504-1116adba4447/0079.png",
+  "output": "clips_short_20/clips_short/69e4e69c-6751-435b-8504-1116adba4447/0210.png",
+  "instruction": "Add a bus approaching in the center of the road; add a motorcycle approaching to the right of the bus; add a cyclist on the far-right side of the road; move the motorcyclist in the white shirt further down the road."
+ },
+ "75a8d614-400b-4ed9-b702-1df72499aed6": {
+  "edit_type": "object replacement",
+  "input": "clips_short_21/clips_short/75a8d614-400b-4ed9-b702-1df72499aed6/0010.png",
+  "output": "clips_short_21/clips_short/75a8d614-400b-4ed9-b702-1df72499aed6/0160.png",
+  "instruction": "Replace the man on the bicycle in the foreground with a man on a motorcycle in the middle of the road.\nRemove the parked white bus from the left side of the road.\nReplace the parked white car on the left with an auto-rickshaw."
+ },
+ "0543f201-6012-4393-a19b-14ce76604dad": {
+  "edit_type": "camera movement",
+  "input": "clips_short_34/clips_short/0543f201-6012-4393-a19b-14ce76604dad/0012.png",
+  "output": "clips_short_34/clips_short/0543f201-6012-4393-a19b-14ce76604dad/0303.png",
+  "instruction": "Pan the frame to the right and pull the camera back. Replace the woman with a stroller with people sitting on a bench next to a bicycle in the foreground."
+ },
+ "d16e49fe-1256-425c-aaa8-f4c9dbf58f0f": {
+  "edit_type": "object deletion",
+  "input": "clips_short_36/clips_short/d16e49fe-1256-425c-aaa8-f4c9dbf58f0f/0000.png",
+  "output": "clips_short_36/clips_short/d16e49fe-1256-425c-aaa8-f4c9dbf58f0f/0378.png",
+  "instruction": "Remove the overall purple color cast.\nRemove the two metal cages, the small pine trees, and the patch of green grass from the foreground, filling the area with sandy ground.\nChange the watermark text in the bottom left from \"ProArtInc\" to \"ProArtLuc\"."
+ },
+ "85ba6791-2287-4511-b5f8-220c4a0f9c70": {
+  "edit_type": "camera movement",
+  "input": "clips_short_13/clips_short/85ba6791-2287-4511-b5f8-220c4a0f9c70/0000.png",
+  "output": "clips_short_13/clips_short/85ba6791-2287-4511-b5f8-220c4a0f9c70/0237.png",
+  "instruction": "Pan the frame slightly to the right, move the person in the black shirt to the foreground center, remove the pink signboards on the left, adjust the lighting to enhance brightness and contrast, shift the position of the woman in the red dress to the left side of the frame, and reposition the group of people near the entrance to appear closer to the viewer."
+ },
+ "01b91cee-dc23-4757-bc78-1855acc2594f": {
+  "edit_type": "object addition",
+  "input": "clips_short_18/clips_short/01b91cee-dc23-4757-bc78-1855acc2594f/0160.png",
+  "output": "clips_short_18/clips_short/01b91cee-dc23-4757-bc78-1855acc2594f/0310.png",
+  "instruction": "Move the two cyclists slightly to the right, add a bench on the right side of the path, add a person sitting on the new bench, and slightly adjust the lighting to increase brightness."
+ },
+ "2e558e9b-1331-4150-a029-ca7848e5a612": {
+  "edit_type": "camera movement",
+  "input": "clips_short_32/clips_short/2e558e9b-1331-4150-a029-ca7848e5a612/0170.png",
+  "output": "clips_short_32/clips_short/2e558e9b-1331-4150-a029-ca7848e5a612/0511.png",
+  "instruction": "Pan the frame slightly to the right, zoom out slightly, shift focus to a central building with \\\"HARMONY CITY\\\" signage, adjust lighting to enhance morning sunlight reflection on glass facades, add greenery and curved architectural elements in foreground."
+ },
+ "2032361d-4467-4789-a6d9-67544dad7f77": {
+  "edit_type": "camera movement",
+  "input": "clips_short_33/clips_short/2032361d-4467-4789-a6d9-67544dad7f77/0000.png",
+  "output": "clips_short_33/clips_short/2032361d-4467-4789-a6d9-67544dad7f77/0190.png",
+  "instruction": "Pan the frame slightly to the right, move the foreground penguin forward and to the right, adjust the background penguin's position to appear more centered, reduce water splash around the foreground penguin, slightly increase brightness and contrast."
+ },
+ "7e3a8701-8c26-46cc-97db-921e74cb2f40": {
+  "edit_type": "camera movement",
+  "input": "clips_short_34/clips_short/7e3a8701-8c26-46cc-97db-921e74cb2f40/0002.png",
+  "output": "clips_short_34/clips_short/7e3a8701-8c26-46cc-97db-921e74cb2f40/0166.png",
+  "instruction": "Pan the frame slightly to the right, slightly zoom in, close the large rusted cabinet door on the left, add a red and white \\\"MCS\\\" sign on the top of the central cabinet, adjust the lighting to increase brightness in the corridor, reposition the debris on the floor to the center-left area, remove the black panel near the foreground on the right side."
+ },
+ "a4388d4a-1e6f-444a-861a-535b5230c8fd": {
+  "edit_type": "camera movement",
+  "input": "clips_short_34/clips_short/a4388d4a-1e6f-444a-861a-535b5230c8fd/0014.png",
+  "output": "clips_short_34/clips_short/a4388d4a-1e6f-444a-861a-535b5230c8fd/0044.png",
+  "instruction": "Pan the frame slightly to the right, move the white bus further along the road, adjust the position of the trees along the sidewalk."
+ },
+ "6646f6b6-3d83-460c-be31-3ee7e7dbbf1d": {
+  "edit_type": "camera movement",
+  "input": "clips_short_1/clips_short/6646f6b6-3d83-460c-be31-3ee7e7dbbf1d/0173.png",
+  "output": "clips_short_1/clips_short/6646f6b6-3d83-460c-be31-3ee7e7dbbf1d/0323.png",
+  "instruction": "Pan the frame slightly to the right, slightly zoom in, update the content on the vertical billboard to display a new advertisement, change the image on the \\\"BENCH\\\" billboard to show a different person, update the content on the horizontal billboard near the bottom right to display a new scene."
+ },
+ "a23691bc-3f71-4ff5-be09-125575e31efb": {
+  "edit_type": "camera movement",
+  "input": "clips_short_12/clips_short/a23691bc-3f71-4ff5-be09-125575e31efb/0013.png",
+  "output": "clips_short_12/clips_short/a23691bc-3f71-4ff5-be09-125575e31efb/0597.png",
+  "instruction": "Pan the frame slightly to the right, increase brightness of the foreground buildings, add a white bus on the left side of the street, add more vehicles in the lower right area of the scene."
+ },
+ "fd9e187d-f7ef-4f31-833a-913d1b93a1e3": {
+  "edit_type": "camera movement",
+  "input": "clips_short_2/clips_short/fd9e187d-f7ef-4f31-833a-913d1b93a1e3/0011.png",
+  "output": "clips_short_2/clips_short/fd9e187d-f7ef-4f31-833a-913d1b93a1e3/0219.png",
+  "instruction": "Pan the frame 15% to the right, remove the cluster of buildings on the left, add a small group of people near the center-left area, replace the white building with a red sign with an open space and brick walls, adjust the vegetation distribution to include more shrubs in the foreground."
+ },
+ "0b85dc54-7b37-4812-a5bf-5fe272a734f1": {
+  "edit_type": "camera movement",
+  "input": "clips_short_30/clips_short/0b85dc54-7b37-4812-a5bf-5fe272a734f1/0000.png",
+  "output": "clips_short_30/clips_short/0b85dc54-7b37-4812-a5bf-5fe272a734f1/0053.png",
+  "instruction": "Pan the frame slightly to the right, adjust focus to sharpen the foreground cakes, rotate the sign label 180\u00b0, change the text on the sign from \\\"chocolate cake\\\" to \\\"tiramisu cake\\\"."
+ },
+ "0c04e27c-975a-45a5-a489-809b7f4b356f": {
+  "edit_type": "camera movement",
+  "input": "clips_short_30/clips_short/0c04e27c-975a-45a5-a489-809b7f4b356f/0000.png",
+  "output": "clips_short_30/clips_short/0c04e27c-975a-45a5-a489-809b7f4b356f/0167.png",
+  "instruction": "Pan the frame slightly to the left, rotate the robot's head to the right, move the robot's arms to a different pose, change the lighting on the robot's chest panel to show three vertical blue lights, add a woman in the foreground holding a phone, adjust the background to include additional people and signs, reposition the red carpet edge."
+ },
+ "4c026912-37dc-4106-9377-6b80fba8afcf": {
+  "edit_type": "camera movement",
+  "input": "clips_short_34/clips_short/4c026912-37dc-4106-9377-6b80fba8afcf/0134.png",
+  "output": "clips_short_34/clips_short/4c026912-37dc-4106-9377-6b80fba8afcf/0499.png",
+  "instruction": "Pan the frame 10% to the left, slightly zoom out, move the large rusted vehicle part from the right foreground to the left foreground, add a white plastic bag on the ground near the center-right, adjust the position of scattered metal debris to increase density in the center area, change the lighting to make the scene slightly darker and more overcast."
+ },
+ "398abaf9-4617-4cc9-896b-6807d634ccec": {
+  "edit_type": "object replacement",
+  "input": "clips_short_8/clips_short/398abaf9-4617-4cc9-896b-6807d634ccec/0184.png",
+  "output": "clips_short_8/clips_short/398abaf9-4617-4cc9-896b-6807d634ccec/0467.png",
+  "instruction": "Change the content of the large screen on the building from a solid red to a black background with white text and images, adjust the lighting slightly to enhance visibility of the screen details, remove the yellow traffic barrier in the foreground, reposition the vehicles on the road to reflect updated movement and placement."
+ },
+ "48f82050-cf7c-4023-9687-c02f657b6db8": {
+  "edit_type": "camera movement",
+  "input": "clips_short_24/clips_short/48f82050-cf7c-4023-9687-c02f657b6db8/0033.png",
+  "output": "clips_short_24/clips_short/48f82050-cf7c-4023-9687-c02f657b6db8/0100.png",
+  "instruction": "Pan the frame slightly to the right, zoom in slightly, adjust the position of the red awning structure to align with the building entrance, add a small group of people near the red awning area, remove the vehicle near the blue canopy on the left side of the frame."
+ },
+ "ec0f1343-0bc5-4160-85fa-f8e4cbcc60c0": {
+  "edit_type": "camera movement",
+  "input": "clips_short_16/clips_short/ec0f1343-0bc5-4160-85fa-f8e4cbcc60c0/0000.png",
+  "output": "clips_short_16/clips_short/ec0f1343-0bc5-4160-85fa-f8e4cbcc60c0/0025.png",
+  "instruction": "Pan the frame slightly to the right, zoom in slightly, move the white car on the left side of the road forward, add a person walking on the sidewalk near the center-right of the frame, adjust the position of the yellow school bus to be further down the road, and increase the brightness of the scene slightly."
+ },
+ "64543929-4f1a-407e-9f7f-2e08145978b8": {
+  "edit_type": "camera movement",
+  "input": "clips_short_10/clips_short/64543929-4f1a-407e-9f7f-2e08145978b8/0024.png",
+  "output": "clips_short_10/clips_short/64543929-4f1a-407e-9f7f-2e08145978b8/0166.png",
+  "instruction": "Adjust the camera perspective by pulling back and shifting left to reveal more of the room through the left doorway.\nReplace the dark view through the left doorway with a view of a larger, brighter room containing windows and debris.\nRemove the large, rectangular panel from the center of the floor.\nReduce the overall yellow color cast and lower the brightness of the highlights in the windows on the right."
+ },
+ "733e10df-fc7d-40de-8425-0b779eca0980": {
+  "edit_type": "camera movement",
+  "input": "clips_short_10/clips_short/733e10df-fc7d-40de-8425-0b779eca0980/0007.png",
+  "output": "clips_short_10/clips_short/733e10df-fc7d-40de-8425-0b779eca0980/0067.png",
+  "instruction": "Pan the frame slightly to the right.\nMove the two impalas forward and to the right.\nLower the foreground impala's raised left leg.\nAdd a baby antelope between the legs of the foreground impala."
+ },
+ "d1edddf3-2729-4ad5-ac0e-332d1bed830b": {
+  "edit_type": "object movement",
+  "input": "clips_short_10/clips_short/d1edddf3-2729-4ad5-ac0e-332d1bed830b/0007.png",
+  "output": "clips_short_10/clips_short/d1edddf3-2729-4ad5-ac0e-332d1bed830b/0307.png",
+  "instruction": "Reposition the two white geese on the left so they are nestled together, and lower the head of the front one. Open the beak of the central gray goose. Move the gray goose from the center foreground to the right foreground."
+ },
+ "cfcef3d1-b7aa-4153-932c-a2eb366d7bc1": {
+  "edit_type": "object deletion",
+  "input": "clips_short_13/clips_short/cfcef3d1-b7aa-4153-932c-a2eb366d7bc1/0014.png",
+  "output": "clips_short_13/clips_short/cfcef3d1-b7aa-4153-932c-a2eb366d7bc1/0089.png",
+  "instruction": "Remove the car from the road.\nChange the color of the purple and yellow vegetation in the foreground to muted greens and browns.\nSharpen the foreground to remove the motion blur."
+ },
+ "501bca94-a5b5-47e3-a64d-cd03bf059034": {
+  "edit_type": "camera movement",
+  "input": "clips_short_14/clips_short/501bca94-a5b5-47e3-a64d-cd03bf059034/0007.png",
+  "output": "clips_short_14/clips_short/501bca94-a5b5-47e3-a64d-cd03bf059034/0049.png",
+  "instruction": "Pan the frame slightly to the right.\nTurn the head of the reindeer in the foreground to its right.\nClean the hanging velvet off the antlers of the foreground reindeer."
+ },
+ "07dd054b-f2f3-4caa-8bb9-d8abf0086c29": {
+  "edit_type": "object replacement",
+  "input": "clips_short_17/clips_short/07dd054b-f2f3-4caa-8bb9-d8abf0086c29/0000.png",
+  "output": "clips_short_17/clips_short/07dd054b-f2f3-4caa-8bb9-d8abf0086c29/0140.png",
+  "instruction": "Replace the motion-blurred crowd and the car in the foreground with a different capture of motion."
+ }
+}
