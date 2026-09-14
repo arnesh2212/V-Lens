@@ -113,3 +113,4 @@ The reference lens implementation vendored under `ref_jlens_repo/` is
 Gurnee, Sofroniew et al., *Verbalizable Representations Form a Global Workspace
 in Language Models*, Transformer Circuits, July 2026 (Apache-2.0); `jvlm` reuses
 its `ActivationRecorder` directly.
+# V-Lens
