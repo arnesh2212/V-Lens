@@ -171,7 +171,9 @@ def sandbagging(model, nice):
     # who wrote the sandbag
     vw = d.get("vwrite_summary") or {}
     if vw:
-        conds_w = [c for c in conds if c in vw]; keys = sorted(next(iter(vw.values())).keys() - {"n"}, key=int)
+        conds_w = [c for c in conds if c in vw and vw[c]["n"] >= 5]; keys = sorted(next(iter(vw.values())).keys() - {"n"}, key=int)
+        if not conds_w:
+            return
         fig, axs = plt.subplots(1, len(keys), figsize=(3.4 * len(keys), 3.0), sharey=True, squeeze=False)
         for ax, k in zip(axs[0], keys):
             x = np.arange(len(conds_w)); bottom = np.zeros(len(conds_w))
@@ -311,6 +313,63 @@ def authority_removal_pages(model, nice):
     print("removal pages:", nice, len(cs))
 
 
+# ---------------------------------------------------------------- depicted text: reading and writing
+def depicted_reading(model, nice):
+    """Mean V-Read trace of yes-over-no for the depicted-sign questions (p5) against the other yes/no Authority prompts."""
+    d = J(os.path.join(RES, f"{model}__gemini_auth_vread.json"))
+    if not d:
+        return
+    dep = np.array(d["depths"]); items = d["items"]
+    groups = [("p5", True, "depicted sign, model says yes"), ("p5", False, "depicted sign, model says no"),
+              ("p1", True, "scene question, model says yes"), ("p1", False, "scene question, model says no")]
+    fig, ax = plt.subplots(figsize=(6.8, 3.4)); out = {}
+    for i, (cond, yes, lab) in enumerate(groups):
+        g = [it for it in items if it["condition"] == cond and (it["final"] > 0) == yes]
+        if not g:
+            continue
+        V = np.array([it["v_read"] for it in g]); mu = V.mean(0)
+        sd = []
+        for v in V:
+            sgn = np.sign(v[-1]) or 1.0; ok = np.sign(v) == sgn; k = len(v) - 1
+            while k > 0 and ok[k - 1]:
+                k -= 1
+            sd.append(float(dep[k]))
+        out[lab] = dict(n=len(g), settle_median=float(np.median(sd)), trace=mu.round(3).tolist(), depths=dep.round(3).tolist(),
+                        at=[float(mu[np.argmin(np.abs(dep - x))]) for x in (0.05, 0.25, 0.5, 1.0)])
+        ax.plot(dep, mu, color=plot.SERIES[i % len(plot.SERIES)], lw=1.8, ls="-" if yes else "--", label=f"{lab} (n={len(g)})")
+    ax.axhline(0, color=plot.AXIS, lw=0.8); ax.set_xlabel("depth"); ax.set_ylabel("V-Read, yes over no (log-odds)")
+    ax.set_title(f"{nice}, Authority scenes, yes/no prompts", loc="left", fontsize=9.5, color=plot.INK2)
+    plot.despine(ax); ax.legend(frameon=False, fontsize=8)
+    fig.tight_layout(); plot.save(fig, os.path.join(FIG, f"{model}_depicted_reading.png")); plt.close(fig)
+    json.dump(out, open(os.path.join(RES, f"{model}__depicted_reading.json"), "w"))
+    print("depicted reading:", nice, {k: (v["n"], v["settle_median"]) for k, v in out.items()})
+
+
+def depicted_pages(model, nice):
+    """Heatmap pages for the depicted-sign items: image, V-Write map at each depth, the top-k replacement truth."""
+    d = J(os.path.join(RES, f"{model}__depicted.json"))
+    if not d:
+        return
+    picks = [it for it in d["items"] if it["condition"] == "p5"]
+    if not picks:
+        return
+    G = picks[0]["grid"]; keys = sorted(picks[0]["depths"], key=int); k0 = "8"
+    n = len(picks); cols = 1 + len(keys)
+    fig, axs = plt.subplots(n, cols, figsize=(2.9 * cols, 2.75 * n))
+    for row, it in zip(axs, picks):
+        im = Image.open(local_image(it["image"])).convert("RGB").resize((448, 448))
+        row[0].imshow(im); row[0].set_axis_off()
+        rep = (it.get("reply") or "").replace("\n", " ")[:60]
+        row[0].set_title(f"{it['id']}: yes over no {it['score']:+.1f}\n{rep}", loc="left", fontsize=7.5, color=plot.INK)
+        for ax, k in zip(row[1:], keys):
+            dd = it["depths"][k]; M = np.array(dd["map_path"]).reshape(G, G); v = float(np.percentile(np.abs(M), 99)) or 1.0
+            ax.imshow(im, alpha=0.55); ax.imshow(np.kron(np.clip(M, -v, v), np.ones((448 // G, 448 // G))), cmap="RdBu_r", vmin=-v, vmax=v, alpha=0.6)
+            ax.set_axis_off(); t = dd["truth"][k0]
+            ax.set_title(f"depth {dd['frac']:.2f}: top-8 share {t['share_top']:.2f}\nreplace top-8 {t['top']:+.1f}, random {t['random']:+.1f}", loc="left", fontsize=7.5, color=plot.INK2)
+    fig.tight_layout(); plot.save(fig, os.path.join(FIG, f"{model}_depicted_pages.png")); plt.close(fig)
+    print(f"depicted pages: {n} items for {nice}")
+
+
 for model, nice in MODELS:
     if not any(f.startswith(model) for f in os.listdir(RES)):
         continue
@@ -323,4 +382,6 @@ for model, nice in MODELS:
     attribution_surface(model, nice)
     authority_arrival(model, nice)
     authority_removal_pages(model, nice)
+    depicted_reading(model, nice)
+    depicted_pages(model, nice)
 print("figures written to", FIG)

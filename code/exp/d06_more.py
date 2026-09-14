@@ -260,7 +260,8 @@ def part_x():
     ax = yn_axis()
     def score(H):
         with torch.no_grad():
-            return float(ax(m.unembed(torch.as_tensor(H[None]).to(m.device).to(torch.bfloat16)).float()[0][None], None)[0])
+            lg = m.unembed(torch.as_tensor(H[None]).to(m.device).to(torch.bfloat16))[0].float()
+            return float(torch.as_tensor(ax(lg, None)).reshape(-1)[0])
     fin = np.array([score(Xd[i][LAST]) for i in range(len(idd))]); y = (fin > 0).astype(int)
     if y.min() == y.max():
         say("[X] degenerate"); return

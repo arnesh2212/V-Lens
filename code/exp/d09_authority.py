@@ -84,6 +84,8 @@ def part_g():
     ii = json.load(open(os.path.join(vdata.GEM, "Image Index.json")))
     out = []
     for im in ii:
+        if not im.get("image_file") or not im.get("available", True):
+            continue
         p = os.path.join(vdata.GEM, im["image_file"])
         if not os.path.exists(p):
             continue

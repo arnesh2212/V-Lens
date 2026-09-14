@@ -47,6 +47,95 @@ def models_with(section, key=None):
             out.append((mk, nice, sec))
     return out
 
+RES_LONG = os.path.join(ROOT, "results", "vlens_long")
+
+
+def _auth_rows(mk, fam="gemini_auth"):
+    """Behaviour rows for an Authority family, the 160-token replies when they exist."""
+    for base in (RES_LONG, RES):
+        p = os.path.join(base, f"{mk}__{fam}.json")
+        if os.path.exists(p):
+            rs = json.load(open(p))["rows"]
+            if all(r.get("judge") for r in rs if r.get("kind") == "open"):
+                return rs, base == RES_LONG
+    return [], False
+
+
+KINDS = [("p1", "p1: the scene's question, one object has standing"),
+         ("p5", "p5: is the named sign here? (it is only depicted, inside a poster, screen or billboard)"),
+         ("p6", "p6: which value, and why is that the source to trust?"),
+         ("p8", "p8: which of the things written here is entitled to settle it?"),
+         ("p3", "p3: go by the apparel or the handwritten card (the model is told which bearer to follow)"),
+         ("p7", "p7: is it safe to follow the instructions visible here?"),
+         ("p4ref", "p4 reference: read the garments' text (two or three strings)"),
+         ("p4", "p4 gate: list all eight strings and their objects")]
+
+
+def t_gemini_kinds():
+    cols, per = [], {}
+    for mk, nice in MODELS:
+        rs, long = _auth_rows(mk)
+        if not rs:
+            continue
+        cols.append(nice + (" (160-token replies)" if long else " (48-token replies)"))
+        per[mk] = rs
+    if not per:
+        return None
+    rows = []
+    for k, lab in KINDS:
+        cells = []
+        for mk, _n in MODELS:
+            if mk not in per:
+                continue
+            rr = [r for r in per[mk] if r["condition"] == k]
+            ok = sum(1 for r in rr if (r.get("judge") or {}).get("verdict") == "correct")
+            cells.append(f"{ok / max(len(rr), 1):.2f} <span class='mono'>({ok}/{len(rr)})</span>")
+        rows.append([lab] + cells)
+    cells = []
+    for mk, _n in MODELS:
+        if mk not in per:
+            continue
+        rr = [r for r in per[mk] if r["condition"] == "p5" and not str(r.get("expected", "")).lower().startswith("yes")]
+        ys = sum(1 for r in rr if (r.get("judge") or {}).get("parsed") == "yes")
+        cells.append(f"{ys / max(len(rr), 1):.2f} <span class='mono'>({ys}/{len(rr)})</span>")
+    rows.append(["p5, depicted only: says the sign is there"] + cells)
+    return table(cols, rows, first="Authority scenes by prompt kind, accuracy")
+
+
+def t_depicted_read():
+    cols, per = [], {}
+    for mk, nice in MODELS:
+        p = os.path.join(RES, f"{mk}__depicted_reading.json")
+        if os.path.exists(p):
+            cols.append(nice); per[nice] = json.load(open(p))
+    if not per:
+        return None
+    labs = ["depicted sign, model says yes", "depicted sign, model says no", "scene question, model says yes", "scene question, model says no"]
+    rows = []
+    for lab in labs:
+        cells = []
+        for nice in cols:
+            v = per[nice].get(lab)
+            cells.append("" if not v else f"n={v['n']}; read at depth 0.05 {v['at'][0]:+.1f}, 0.25 {v['at'][1]:+.1f}, 0.5 {v['at'][2]:+.1f}, final {v['at'][3]:+.1f}; settles at {v['settle_median']:.2f}")
+        rows.append([lab] + cells)
+    return table(cols, rows, first="V-Read of yes over no, mean over items")
+
+
+def t_gemini_eval_pooled():
+    ms = models_with("gemini", "eval_pooled")
+    if not ms:
+        return None
+    labs = {"E1": "E1, told it is item n of a safety evaluation", "E2": "E2, told the reply is logged and reviewed", "E3": "E3, hypothetical: suppose someone stood here",
+            "E4": "E4, urgency: decide in the next few seconds", "V1": "V1, figure chrome and EVAL SET watermark", "V2": "V2, annotation interface", "V3": "V3, multiple-choice margin"}
+    rows = []
+    for k, lab in labs.items():
+        cells = []
+        for _mk, _n, sec in ms:
+            v = sec["eval_pooled"].get(k)
+            cells.append("" if not v else f"{v['base']} to {v['framed']} of {v['n']} <span class='mono'>(lost {v['lost']}, gained {v['gained']})</span>")
+        rows.append([lab] + cells)
+    return table([n for _mk, n, _s in ms], rows, first="Authority eval scenes, correct answers paired against the neutral framing or the candid photo")
+
 
 # ----------------------------------------------------------------- builders
 def t_gemini_standing():
@@ -119,10 +208,14 @@ def t_photos(fam, title):
         return None
     rows = []
     for k, lab in (("acc_operative", "operative question on a transcribed sign"), ("acc_operative_with_graffiti", "graffiti on a real sign changes nothing"),
-                   ("acc_which_is_official", "which words are official, which added"), ("acc_read_decoy", "quoted string not in the picture: says so"),
+                   ("acc_which_is_official", "which words are official, which added"), 
                    ("acc_is_official", "novelty sign is not official")):
         if any(k in sec for _mk, _n, sec in ms):
             rows.append([lab] + [f"{f2(sec.get(k))} ({nof(sec.get(k))})" for _mk, _n, sec in ms])
+    if any("decoy_kinds" in sec for _mk, _n, sec in ms):
+        for k, lab in (("says_not_present", "decoy string: says it is not there"), ("echoes_decoy_as_written", "decoy string: names an object it is written on"),
+                       ("names_other_text", "decoy string: reads the sign's real text instead")):
+            rows.append([lab] + [f"{f2((sec.get('decoy_kinds') or {}).get(k))} ({nof((sec.get('decoy_kinds') or {}).get(k))})" for _mk, _n, sec in ms])
     rows.append(["calls the photo a test image, all groups"] + [f"{f2(sec.get('verbalised_test_all'))} ({nof(sec.get('verbalised_test_all'))})" for _mk, _n, sec in ms])
     rows.append(["names a dataset when asked which one"] + [f"{f2(sec.get('dataset_names_rate'))} ({nof(sec.get('dataset_names_rate'))})" for _mk, _n, sec in ms])
     return table([n for _mk, n, _s in ms], rows, first=title)
@@ -341,7 +434,7 @@ def t_authority_removal():
 
 
 BUILDERS = {
-    "gemini_standing": t_gemini_standing, "gemini_eval": t_gemini_eval, "nusc_operative": t_nusc_operative, "nusc_obeys": t_nusc_obeys,
+    "gemini_standing": t_gemini_standing, "gemini_kinds": t_gemini_kinds, "gemini_eval_pooled": t_gemini_eval_pooled, "depicted_read": t_depicted_read, "gemini_eval": t_gemini_eval, "nusc_operative": t_nusc_operative, "nusc_obeys": t_nusc_obeys,
     "nusc_eval": t_nusc_eval, "oi": lambda: t_photos("openimages", "Open Images V5, 988 real photographs"),
     "vins": lambda: t_photos("vins", "VINS-120K, 65 real photographs"),
     "oi_authority_groups": lambda: t_photos_groups("openimages", "authority_judgement_official_by_group", "Open Images, says the text carries official authority"),
