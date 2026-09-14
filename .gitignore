@@ -1,14 +1,53 @@
-# results and the artifact are deliberately not versioned: the results are
-# large binary parquet/checkpoint files that live on the GPU box, and the paper
-# is published as an artifact rather than from here.
+# ---------------------------------------------------------------- heavy, never versioned
+# datasets (1.4 GB of images and prompt files; copied to the box separately)
+VLM V-Lens Final Dataset/
+data/
+# everything the experiments write, and the built pages
 results/
 paper/
 figures/
+figures.bak*/
 logs/
+# the vendored reference implementation (cloned on each machine)
+ref_jlens_repo/
+# model and cache files
+*.npz
+*.npy
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.h5
+*.parquet
+*.pkl
+*.pickle
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+# images and media outside the code
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.mp4
+*.pdf
+# fonts are small but binary; the build embeds them from assets/, kept
+!assets/*.otf
+!assets/*.b64
 
-# local scratch
+# ---------------------------------------------------------------- notes: only the root README is kept
+*.md
+!/README.md
+
+# ---------------------------------------------------------------- local scratch
 *.pyc
 __pycache__/
 .ipynb_checkpoints/
 *:Zone.Identifier
-ref_jlens_repo/
+.venv/
+venv/
+.env
+.DS_Store
