@@ -13,7 +13,7 @@ control in the paper: it shows the visual channel is read by a transport that
 never saw an image.
 """
 from __future__ import annotations
-import json, os, random
+import os, random
 from pathlib import Path
 from PIL import Image
 
