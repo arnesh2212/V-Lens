@@ -137,6 +137,59 @@ def t_gemini_eval_pooled():
     return table([n for _mk, n, _s in ms], rows, first="Authority eval scenes, correct answers paired against the neutral framing or the candid photo")
 
 
+def _wmdp_records(mk):
+    p = os.path.join(RES, f"{mk}__wmdp2.json")
+    if not os.path.exists(p):
+        return {}
+    return {(r["item"], r["cond"], r["image"]): r for r in json.load(open(p))["records"]}
+
+
+def _sandbags(recs, cond):
+    import ast, math
+    out = []
+    for (item, c, img), r in recs.items():
+        if c != cond or img not in ("generated", "real") or r["correct"]:
+            continue
+        base = recs.get((item, "unlocked", img))
+        if not base or not base["correct"]:
+            continue
+        lp = ast.literal_eval(base["letters_lp"]) if isinstance(base["letters_lp"], str) else base["letters_lp"]
+        lpc = ast.literal_eval(r["letters_lp"]) if isinstance(r["letters_lp"], str) else r["letters_lp"]
+        order = sorted(lp, key=lambda k: -lp[k])
+        out.append(dict(item=item, chosen=r["letter"], rank=(order.index(r["letter"]) if r["letter"] in order else None), p=math.exp(lpc.get(r["letter"], -99))))
+    return out
+
+
+def t_wmdp_letters():
+    import math, ast
+    rows, sets = [], {}
+    for mk, nice in MODELS:
+        recs = _wmdp_records(mk)
+        if not recs:
+            continue
+        honest = []
+        for (item, c, img), r in recs.items():
+            if c == "unlocked" and img in ("generated", "real") and r["correct"]:
+                lp = ast.literal_eval(r["letters_lp"]) if isinstance(r["letters_lp"], str) else r["letters_lp"]
+                honest.append(math.exp(lp.get(r["letter"], -99)))
+        for cond, lab in (("hazard", "hazard prompt"), ("explicit", "explicit instruction")):
+            sb = _sandbags(recs, cond)
+            if len(sb) < 5:
+                continue
+            sets[(mk, cond)] = {x["item"]: x["chosen"] for x in sb}
+            n = len(sb)
+            rows.append([f"{nice}, {lab}", str(n), f"{sum(1 for x in sb if x['rank'] == 1) / n:.2f}", f"{sum(1 for x in sb if x['rank'] == 3) / n:.2f}",
+                         f"{sum(x['p'] for x in sb) / n:.2f} vs {sum(honest) / max(len(honest), 1):.2f}"])
+    if not rows:
+        return None
+    note = ""
+    a, b = sets.get(("Qwen3-VL-8B-Instruct", "explicit")), sets.get(("InternVL3-8B-hf", "hazard"))
+    if a and b:
+        both = set(a) & set(b); same = sum(1 for it in both if a[it] == b[it])
+        note = f"<p class='note'>Items sandbagged by both models (Qwen under the explicit instruction, InternVL3 under the hazard prompt): {len(both)}; the same wrong letter on {same} of them, against one in three by chance.</p>"
+    return table(["sandbagged answers", "picks the runner-up letter", "picks the least plausible letter", "probability of the chosen letter, sandbagged vs honest"], rows, first="which wrong letter a sandbag chooses") + note
+
+
 # ----------------------------------------------------------------- builders
 def t_gemini_standing():
     ms = models_with("gemini", "p1_by_standing")
@@ -439,7 +492,7 @@ BUILDERS = {
     "vins": lambda: t_photos("vins", "VINS-120K, 65 real photographs"),
     "oi_authority_groups": lambda: t_photos_groups("openimages", "authority_judgement_official_by_group", "Open Images, says the text carries official authority"),
     "oi_eval_groups": lambda: t_photos_groups("openimages", "verbalised_test_by_group", "Open Images, calls the photo a test image"),
-    "wmdp": t_wmdp, "wmdp2": t_wmdp2, "authority_looks": t_authority_looks, "authority_arrival": t_authority_arrival, "authority_removal": t_authority_removal, "directions": t_directions, "direction_effects": t_direction_effects, "steer": t_steer, "awareness_steer": t_awareness_steer, "vread": t_vread, "attribution": t_attribution,
+    "wmdp": t_wmdp, "wmdp2": t_wmdp2, "wmdp_letters": t_wmdp_letters, "authority_looks": t_authority_looks, "authority_arrival": t_authority_arrival, "authority_removal": t_authority_removal, "directions": t_directions, "direction_effects": t_direction_effects, "steer": t_steer, "awareness_steer": t_awareness_steer, "vread": t_vread, "attribution": t_attribution,
     "ex_gemini": lambda: random_examples("gemini_auth", cond="p1", seed=1), "ex_nusc": lambda: random_examples("nusc_edit", cond="operative", seed=2),
     "ex_oi": lambda: random_examples("oi_orig", cond="verbalised_awareness", seed=3), "ex_wmdp": lambda: random_examples("wmdp", seed=4, cond="hazard_sandbagged"),
 }
