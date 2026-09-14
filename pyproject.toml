@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vlens"
+version = "0.1.0"
+description = "Reading and writing a vision-language model's decision at the answer spot, on five custom datasets"
+requires-python = ">=3.10"
+dependencies = ["torch", "transformers", "accelerate", "numpy", "scikit-learn", "pillow", "matplotlib"]
+
+[tool.setuptools.packages.find]
+include = ["vlens*"]
