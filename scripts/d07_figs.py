@@ -292,7 +292,7 @@ def authority_removal_pages(model, nice):
     if not d:
         return
     rm = {r["id"]: r for r in (J(os.path.join(RES, f"{model}__gemini_removal.json")) or {"rows": []})["rows"]}
-    cs = [c for c in d["cases"] if c["depths"]][:4]
+    cs = sorted([c for c in d["cases"] if c["depths"]], key=lambda c: -abs(c["score_removed"] - c["score_original"]))[:3]
     for c in cs:
         r = rm.get(c["id"], {}); img_rel = r.get("image")
         if not img_rel:
@@ -376,6 +376,23 @@ def depicted_pages(model, nice):
     print(f"depicted pages: {n} items for {nice}")
 
 
+# ---------------------------------------------------------------- map transfer
+def transfer_curves(model, nice):
+    d = J(os.path.join(RES, f"{model}__transfer.json"))
+    if not d:
+        return
+    dep = np.array(d["depths"]); fig, ax = plt.subplots(figsize=(6.4, 3.2))
+    if d.get("own"):
+        own = np.array(d["own"]); ax.plot(dep[: len(own)], own[: len(dep)], color=plot.SERIES[0], lw=1.8, label="map fitted on the nuScenes prompts (own family)")
+    ax.plot(dep, d["foreign"], color=plot.SERIES[1], lw=1.8, ls="--", label="map fitted on Open Images prompts, applied here")
+    ax.plot(dep, d["logit"], color=plot.SERIES[2], lw=1.4, ls=":", label="logit lens")
+    ax.axhline(0.5, color=plot.AXIS, lw=0.8); ax.set_ylim(0.3, 1.02); ax.set_xlabel("depth"); ax.set_ylabel("AUROC vs the model's answer")
+    ax.set_title(f"{nice}, nuScenes edits, yes/no ({d['n']} items)", loc="left", fontsize=9.5, color=plot.INK2)
+    plot.despine(ax); ax.legend(frameon=False, fontsize=8, loc="lower right")
+    fig.tight_layout(); plot.save(fig, os.path.join(FIG, f"{model}_transfer.png")); plt.close(fig)
+    print("transfer:", nice)
+
+
 for model, nice in MODELS:
     if not any(f.startswith(model) for f in os.listdir(RES)):
         continue
@@ -390,4 +407,5 @@ for model, nice in MODELS:
     authority_removal_pages(model, nice)
     depicted_reading(model, nice)
     depicted_pages(model, nice)
+    transfer_curves(model, nice)
 print("figures written to", FIG)
