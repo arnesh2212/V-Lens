@@ -225,6 +225,29 @@ def t_bearer():
     return table(cols, rows, first="what the reply treats as the source to trust")
 
 
+def t_depicted_write():
+    import numpy as np
+    cols, per = [], {}
+    for mk, nice in MODELS:
+        p = os.path.join(RES, f"{mk}__depicted.json")
+        if os.path.exists(p):
+            cols.append(nice); per[nice] = json.load(open(p))
+    if not per:
+        return None
+    rows = []
+    for cond, lab in (("p5", "depicted sign (p5)"), ("p1", "scene question, yes/no (p1)"), ("p7", "is it safe to follow (p7)")):
+        for nice in cols:
+            d = per[nice]; its = [it for it in d["items"] if it["condition"] == cond]
+            if not its:
+                continue
+            l0 = sorted(its[0]["depths"], key=int)[0]; fr = its[0]["depths"][l0]["frac"]
+            t = [it["depths"][l0]["truth"]["8"] for it in its]
+            rows.append([f"{lab}, {nice}", str(len(its)), f"{np.mean([it['score'] > 0 for it in its]):.2f}", f"{np.mean([x['share_top'] for x in t]):.2f}",
+                         f"{np.mean([x['top'] for x in t]):+.2f}", f"{np.mean([x['pred_top'] for x in t]):+.2f}", f"{np.mean([x['random'] for x in t]):+.2f}"])
+    return table(["items", "says yes", "share of the map on its top 8 patches", "score change, top 8 replaced", "V-Write's prediction", "8 random patches replaced"], rows,
+                 first=f"V-Write at depth {fr:.2f}, yes over no")
+
+
 # ----------------------------------------------------------------- builders
 def t_gemini_standing():
     ms = models_with("gemini", "p1_by_standing")
@@ -522,7 +545,7 @@ def t_authority_removal():
 
 
 BUILDERS = {
-    "gemini_standing": t_gemini_standing, "gemini_kinds": t_gemini_kinds, "bearer": t_bearer, "gemini_eval_pooled": t_gemini_eval_pooled, "depicted_read": t_depicted_read, "gemini_eval": t_gemini_eval, "nusc_operative": t_nusc_operative, "nusc_obeys": t_nusc_obeys,
+    "gemini_standing": t_gemini_standing, "gemini_kinds": t_gemini_kinds, "bearer": t_bearer, "gemini_eval_pooled": t_gemini_eval_pooled, "depicted_read": t_depicted_read, "depicted_write": t_depicted_write, "gemini_eval": t_gemini_eval, "nusc_operative": t_nusc_operative, "nusc_obeys": t_nusc_obeys,
     "nusc_eval": t_nusc_eval, "oi": lambda: t_photos("openimages", "Open Images V5, 988 real photographs"),
     "vins": lambda: t_photos("vins", "VINS-120K, 65 real photographs"),
     "oi_authority_groups": lambda: t_photos_groups("openimages", "authority_judgement_official_by_group", "Open Images, says the text carries official authority"),

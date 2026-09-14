@@ -346,26 +346,32 @@ def depicted_reading(model, nice):
 
 
 def depicted_pages(model, nice):
-    """Heatmap pages for the depicted-sign items: image, V-Write map at each depth, the top-k replacement truth."""
+    """One panel per depicted-sign item: the scene with the V-Write map at the shallow depth and its eight strongest patches outlined."""
+    from matplotlib.patches import Rectangle
     d = J(os.path.join(RES, f"{model}__depicted.json"))
     if not d:
         return
     picks = [it for it in d["items"] if it["condition"] == "p5"]
     if not picks:
         return
-    G = picks[0]["grid"]; keys = sorted(picks[0]["depths"], key=int); k0 = "8"
-    n = len(picks); cols = 1 + len(keys)
-    fig, axs = plt.subplots(n, cols, figsize=(2.9 * cols, 2.75 * n))
-    for row, it in zip(axs, picks):
+    G = picks[0]["grid"]; k0 = sorted(picks[0]["depths"], key=int)[0]; cell = 448 // G
+    n = len(picks); cols = 4; rows = (n + cols - 1) // cols
+    fig, axs = plt.subplots(rows, cols, figsize=(3.4 * cols, 3.2 * rows))
+    for ax in axs.ravel():
+        ax.set_axis_off()
+    for ax, it in zip(axs.ravel(), picks):
         im = Image.open(local_image(it["image"])).convert("RGB").resize((448, 448))
-        row[0].imshow(im); row[0].set_axis_off()
-        rep = (it.get("reply") or "").replace("\n", " ")[:60]
-        row[0].set_title(f"{it['id']}: yes over no {it['score']:+.1f}\n{rep}", loc="left", fontsize=7.5, color=plot.INK)
-        for ax, k in zip(row[1:], keys):
-            dd = it["depths"][k]; M = np.array(dd["map_path"]).reshape(G, G); v = float(np.percentile(np.abs(M), 99)) or 1.0
-            ax.imshow(im, alpha=0.55); ax.imshow(np.kron(np.clip(M, -v, v), np.ones((448 // G, 448 // G))), cmap="RdBu_r", vmin=-v, vmax=v, alpha=0.6)
-            ax.set_axis_off(); t = dd["truth"][k0]
-            ax.set_title(f"depth {dd['frac']:.2f}: top-8 share {t['share_top']:.2f}\nreplace top-8 {t['top']:+.1f}, random {t['random']:+.1f}", loc="left", fontsize=7.5, color=plot.INK2)
+        dd = it["depths"][k0]; M = np.array(dd["map_path"]).reshape(G, G); v = float(np.percentile(np.abs(M), 99)) or 1.0
+        ax.imshow(im); ax.imshow(np.kron(np.clip(M, -v, v), np.ones((cell, cell))), cmap="RdBu_r", vmin=-v, vmax=v, alpha=0.45)
+        order = np.argsort(-np.abs(M.ravel()))[:8]
+        for q in order:
+            r, c = divmod(int(q), G)
+            ax.add_patch(Rectangle((c * cell, r * cell), cell, cell, fill=False, ec=plot.INK, lw=1.2))
+        t = dd["truth"]["8"]
+        rep = (it.get("reply") or "").replace("\n", " ")
+        rep = rep[:48] + ("..." if len(rep) > 48 else "")
+        ax.set_title(f"{it['id']}: yes over no {it['score']:+.1f}; replace the 8 outlined {t['top']:+.1f}, 8 random {t['random']:+.1f}\n{rep}", loc="left", fontsize=7, color=plot.INK2)
+    fig.suptitle(f"{nice}, depicted-sign items, V-Write of yes over no at depth {dd['frac']:.2f}; outlined: the map's eight strongest patches", x=0.01, ha="left", fontsize=9.5, color=plot.INK2)
     fig.tight_layout(); plot.save(fig, os.path.join(FIG, f"{model}_depicted_pages.png")); plt.close(fig)
     print(f"depicted pages: {n} items for {nice}")
 
