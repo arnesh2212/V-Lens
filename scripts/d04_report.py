@@ -28,8 +28,14 @@ report = {}
 
 
 def load(model, fam):
-    p = os.path.join(RES, f"{model}__{fam}.json")
-    return json.load(open(p))["rows"] if os.path.exists(p) else []
+    """Behaviour rows; the 160-token re-run in results/vlens_long wins when it is fully judged."""
+    for base in (RES + "_long", RES):
+        p = os.path.join(base, f"{model}__{fam}.json")
+        if os.path.exists(p):
+            rows = json.load(open(p))["rows"]
+            if base == RES or all(r.get("judge") for r in rows if r.get("kind") == "open"):
+                return rows
+    return []
 
 
 def verdict(r):
