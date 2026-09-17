@@ -125,13 +125,7 @@ python3 build/artifact.py tool          # paper/tool_artifact.html
 Prose lives in the HTML between the table markers and is never touched by the
 builders. The built file is published as an Artifact.
 
-## Conventions
-
-Figures: TeX Gyre Pagella (Palatino), no bold, no em dashes, one scale per
-axis; `vlens.figures.plot.save` logs any overlapping text. WMDP question bodies
-are never printed on a page: letters, accuracies and the model's own
-self-reports only. Datasets that were specified but not generated (the Open
-Images and VINS edits) contribute nothing and the page says so.
+]
 
 ## Credit
 
