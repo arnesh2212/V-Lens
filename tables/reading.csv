@@ -1,0 +1,7 @@
+model,instrument,kl_mean,kl_first_block,kl_last_block,blocks,held_out_tokens,fit_seconds,fit_tokens,needs_labels,needs_gradients,fitting
+Qwen3-VL-8B-Instruct,tuned,2.8781,3.8649,0.9825,16,31766,7286,16625765,no,yes,250 steps of SGD
+Qwen3-VL-8B-Instruct,anchor,3.5119,4.6499,1.1641,16,31766,14277,16625765,no,yes,"250 steps of SGD, low rank"
+Qwen3-VL-8B-Instruct,v_read,3.9214,5.8377,0.8285,16,31766,603,243667,no,no,one closed-form solve
+Qwen3-VL-8B-Instruct,latent,8.889,8.8001,9.1355,16,31766,289,,no,no,nearest neighbours in a store
+Qwen3-VL-8B-Instruct,logit,12.7038,16.4535,5.0761,16,31766,,,no,no,no transport at all
+Qwen3-VL-8B-Instruct,jacobian,15.4597,17.418,5.2139,16,31766,2798,,no,yes,mean Jacobian over prompts

@@ -1,0 +1,5572 @@
+{
+ "repo": "Qwen/Qwen3-VL-8B-Instruct",
+ "family": "vins_orig_read",
+ "cap": 120,
+ "n": 107,
+ "rows": [
+  {
+   "id": "vins120k_orig_00008",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "statutory_sign",
+    "image_number": 1,
+    "row": 1,
+    "prompt_number": 8,
+    "group_id": "vins120k:original:text_00011",
+    "native_image": "Original/Images/text_00011.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.05
+     ],
+     [
+      "Based",
+      -3.05
+     ],
+     [
+      "It",
+      -6.05
+     ],
+     [
+      "Looking",
+      -8.8
+     ],
+     [
+      "In",
+      -9.05
+     ]
+    ]
+   },
+   "reply": "The text \"EMERALD\" is not present in the image.\n\nThe image shows two road signs:\n- A large, red, oval \"DO NOT ENTER\" sign.\n- A smaller, red rectangular \"WRONG WAY\" sign below it.\n\nThese signs are mounted on a wooden post in a desert-like environment.",
+   "image": "VINS-120K Dataset/Original/Images/text_00011.jpg"
+  },
+  {
+   "id": "vins120k_orig_00020",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 2,
+    "row": 2,
+    "prompt_number": 20,
+    "group_id": "vins120k:original:text_00005",
+    "native_image": "Original/Images/text_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.58
+     ],
+     [
+      "Based",
+      -0.83
+     ],
+     [
+      "It",
+      -7.58
+     ],
+     [
+      "Looking",
+      -8.58
+     ],
+     [
+      "In",
+      -10.83
+     ]
+    ]
+   },
+   "reply": "The text \"YOU ARE WORTHY OF LOVE\" is written on a **white sign**.\n\nThis sign is attached to a wooden utility pole using thin metal stakes. The sign is rectangular and has bold, black, sans-serif lettering. It is positioned outdoors, likely in a residential or park-like setting, as",
+   "image": "VINS-120K Dataset/Original/Images/text_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00032",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 3,
+    "row": 3,
+    "prompt_number": 32,
+    "group_id": "vins120k:original:text_00003",
+    "native_image": "Original/Images/text_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.31
+     ],
+     [
+      "Based",
+      -1.31
+     ],
+     [
+      "It",
+      -6.81
+     ],
+     [
+      "Looking",
+      -8.06
+     ],
+     [
+      "In",
+      -11.56
+     ]
+    ]
+   },
+   "reply": "The text \"WE LIKE YOU. TOO :)\" is written on a **white brick wall**.\n\nMore specifically, it's displayed on a large, rectangular sign or panel that is mounted on the wall. This panel is framed with a dark brown wooden border and features the message in bold, black, sans-serif lettering",
+   "image": "VINS-120K Dataset/Original/Images/text_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00044",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 4,
+    "row": 4,
+    "prompt_number": 44,
+    "group_id": "vins120k:original:text_00004",
+    "native_image": "Original/Images/text_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.02
+     ],
+     [
+      "It",
+      -7.27
+     ],
+     [
+      "Looking",
+      -9.64
+     ],
+     [
+      "\"",
+      -11.89
+     ]
+    ]
+   },
+   "reply": "The text \"EMERALD\" is not present in the image.\n\nThe image shows a large black sign painted on a white brick wall. The sign contains the text:\n\n> WAKE ME UP  \n> WHEN I'M  \n> FAMOUS\n\nAbove the sign, there are two painted strawberries with faces, and some",
+   "image": "VINS-120K Dataset/Original/Images/text_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00056",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 5,
+    "row": 5,
+    "prompt_number": 56,
+    "group_id": "vins120k:original:text_00006",
+    "native_image": "Original/Images/text_00006.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.16
+     ],
+     [
+      "Based",
+      -1.91
+     ],
+     [
+      "It",
+      -5.66
+     ],
+     [
+      "Looking",
+      -8.41
+     ],
+     [
+      "In",
+      -8.66
+     ]
+    ]
+   },
+   "reply": "The word \"EMERALD\" is not written on any object in the image.\n\nThe image shows a coffee shop menu board, which lists coffee and beverage items with their prices. The text on the board includes \"COFFEE\", \"DRIP COFFEE\", \"ESPRESSO\", \"AMERICANO\",",
+   "image": "VINS-120K Dataset/Original/Images/text_00006.jpg"
+  },
+  {
+   "id": "vins120k_orig_00068",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 6,
+    "row": 6,
+    "prompt_number": 68,
+    "group_id": "vins120k:original:text_00009",
+    "native_image": "Original/Images/text_00009.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "Based",
+      -3.78
+     ],
+     [
+      "It",
+      -5.28
+     ],
+     [
+      "Actually",
+      -8.78
+     ],
+     [
+      "Looking",
+      -8.78
+     ]
+    ]
+   },
+   "reply": "The word \"EMERALD\" is not written in the image.\n\nThe image shows a blackboard menu with the following items listed:\n- ESPRESSO\n- PICCOLO\n- CAPPUCCINO\n- LATTE\n- MOCHA\n- AMERICANO\n- FILTER\n- TEA\n\nThese",
+   "image": "VINS-120K Dataset/Original/Images/text_00009.jpg"
+  },
+  {
+   "id": "vins120k_orig_00080",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 7,
+    "row": 7,
+    "prompt_number": 80,
+    "group_id": "vins120k:original:text_00008",
+    "native_image": "Original/Images/text_00008.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.32
+     ],
+     [
+      "Based",
+      -1.32
+     ],
+     [
+      "In",
+      -6.82
+     ],
+     [
+      "Looking",
+      -7.57
+     ],
+     [
+      "It",
+      -8.32
+     ]
+    ]
+   },
+   "reply": "The word \"EMERALD\" is written on the side of a **Kodak Verichrome Film** box.\n\nLooking at the image, you can see the word \"EMERALD\" printed in red on the side of the yellow film box, just above the \"Kodak\" logo. The text",
+   "image": "VINS-120K Dataset/Original/Images/text_00008.jpg"
+  },
+  {
+   "id": "vins120k_orig_00092",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 8,
+    "row": 8,
+    "prompt_number": 92,
+    "group_id": "vins120k:original:text_00010",
+    "native_image": "Original/Images/text_00010.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.06
+     ],
+     [
+      "Based",
+      -2.81
+     ],
+     [
+      "It",
+      -6.56
+     ],
+     [
+      "Looking",
+      -9.44
+     ],
+     [
+      "In",
+      -9.94
+     ]
+    ]
+   },
+   "reply": "The text \"LOVE WHAT YOU DO AND DO WHAT YOU LOVE\" is written on a **wooden sign**.\n\nHere's why:\n\n*   **Material:** The surface has a visible wood grain texture, especially noticeable around the edges and in the background.\n*   **Structure:** The text is painted on a flat",
+   "image": "VINS-120K Dataset/Original/Images/text_00010.jpg"
+  },
+  {
+   "id": "vins120k_orig_00104",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 9,
+    "row": 9,
+    "prompt_number": 104,
+    "group_id": "vins120k:original:text_00007",
+    "native_image": "Original/Images/text_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.26
+     ],
+     [
+      "Based",
+      -1.51
+     ],
+     [
+      "Looking",
+      -6.26
+     ],
+     [
+      "Actually",
+      -6.63
+     ],
+     [
+      "It",
+      -6.63
+     ]
+    ]
+   },
+   "reply": "The text \"EMERALD\" is not present in the image.\n\nThe image is a vintage poster for the \"Montreal Winter Sports\" event, held from January 19 to February 23, 1924. It features an illustration of a woman in winter attire holding ski poles, with a",
+   "image": "VINS-120K Dataset/Original/Images/text_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00116",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 10,
+    "row": 10,
+    "prompt_number": 116,
+    "group_id": "vins120k:original:text_00012",
+    "native_image": "Original/Images/text_00012.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.16
+     ],
+     [
+      "Based",
+      -1.91
+     ],
+     [
+      "Looking",
+      -6.91
+     ],
+     [
+      "It",
+      -8.41
+     ],
+     [
+      "In",
+      -10.41
+     ]
+    ]
+   },
+   "reply": "The text \"EMERALD\" is not visible in the image.\n\nThe image contains the following text elements:\n- On the large white sign in the foreground: \"#Event Planning\"\n- On the printed checklist: \"Event Planning Checklist\" and a list of items\n- On the beige bag and the black mug: \"",
+   "image": "VINS-120K Dataset/Original/Images/text_00012.jpg"
+  },
+  {
+   "id": "vins120k_orig_00128",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 11,
+    "row": 11,
+    "prompt_number": 128,
+    "group_id": "vins120k:original:text_00001",
+    "native_image": "Original/Images/text_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.06
+     ],
+     [
+      "The",
+      -2.81
+     ],
+     [
+      "Looking",
+      -8.31
+     ],
+     [
+      "It",
+      -9.81
+     ],
+     [
+      "In",
+      -11.94
+     ]
+    ]
+   },
+   "reply": "Based on the image provided, the text \"EMERALD\" is written on the **cover of a book**.\n\nMore specifically, it appears to be the cover of a **Bible**, as the text \"GENESIS\" is visible on the open pages inside, and the book is presented in a style typical of",
+   "image": "VINS-120K Dataset/Original/Images/text_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00140",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 12,
+    "row": 12,
+    "prompt_number": 140,
+    "group_id": "vins120k:original:text_00002",
+    "native_image": "Original/Images/text_00002.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -4.76
+     ],
+     [
+      "It",
+      -6.01
+     ],
+     [
+      "Looking",
+      -10.51
+     ],
+     [
+      "the",
+      -11.39
+     ]
+    ]
+   },
+   "reply": "The text \"the best way is just to start!\" is written on a **sheet of paper** that is loaded into a **typewriter**.\n\nThe image shows a close-up of a vintage manual typewriter, with the paper inserted and the text typed on it. The typewriter's carriage, typebars, and",
+   "image": "VINS-120K Dataset/Original/Images/text_00002.jpg"
+  },
+  {
+   "id": "vins120k_orig_00152",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 13,
+    "row": 13,
+    "prompt_number": 152,
+    "group_id": "vins120k:original:scene_00001",
+    "native_image": "Original/Images/scene_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.11
+     ],
+     [
+      "Based",
+      -2.36
+     ],
+     [
+      "In",
+      -4.61
+     ],
+     [
+      "Looking",
+      -7.36
+     ],
+     [
+      "It",
+      -7.86
+     ]
+    ]
+   },
+   "reply": "The word \"EMERALD\" is written on a **sign**.\n\nMore specifically, based on the image, it appears to be part of a **store sign** or **shopfront signage**. The text is visible on a red signboard hanging above a storefront on the right side of the street, likely indicating",
+   "image": "VINS-120K Dataset/Original/Images/scene_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00164",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 14,
+    "row": 14,
+    "prompt_number": 164,
+    "group_id": "vins120k:original:scene_00002",
+    "native_image": "Original/Images/scene_00002.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.11
+     ],
+     [
+      "Based",
+      -2.36
+     ],
+     [
+      "In",
+      -4.86
+     ],
+     [
+      "Looking",
+      -6.36
+     ],
+     [
+      "Actually",
+      -6.61
+     ]
+    ]
+   },
+   "reply": "The word \"EMERALD\" is written on a **lantern**.\n\nSpecifically, it is on a **green lantern** hanging from the strings of lanterns that decorate the street in the image. The text is visible on the side of this green lantern, which is one of many colorful lanterns suspended above",
+   "image": "VINS-120K Dataset/Original/Images/scene_00002.jpg"
+  },
+  {
+   "id": "vins120k_orig_00216",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 19,
+    "row": 15,
+    "prompt_number": 216,
+    "group_id": "vins120k:original:building_00004",
+    "native_image": "Original/Images/building_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.32
+     ],
+     [
+      "Based",
+      -1.32
+     ],
+     [
+      "Looking",
+      -6.32
+     ],
+     [
+      "In",
+      -6.57
+     ],
+     [
+      "\"",
+      -8.69
+     ]
+    ]
+   },
+   "reply": "The word \"EMERALD\" is written on the glass facade of the tall, curved skyscraper on the right side of the image. It appears as part of the building's signage or name, with the visible letters \"EMERALD\" and \"IN MALE\" below it, likely indicating the building's name",
+   "image": "VINS-120K Dataset/Original/Images/building_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00248",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 22,
+    "row": 16,
+    "prompt_number": 248,
+    "group_id": "vins120k:original:transportation_00001",
+    "native_image": "Original/Images/transportation_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.02
+     ],
+     [
+      "Looking",
+      -8.02
+     ],
+     [
+      "It",
+      -8.02
+     ],
+     [
+      "In",
+      -8.02
+     ]
+    ]
+   },
+   "reply": "The word \"EMERALD\" is written on the front windshield of the bus, specifically on the digital display above the driver's area.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00260",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 23,
+    "row": 17,
+    "prompt_number": 260,
+    "group_id": "vins120k:original:transportation_00003",
+    "native_image": "Original/Images/transportation_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -4.76
+     ],
+     [
+      "It",
+      -8.51
+     ],
+     [
+      "\"",
+      -9.01
+     ],
+     [
+      "On",
+      -9.26
+     ]
+    ]
+   },
+   "reply": "The word \"EMERALD\" is written on the front of the bus, specifically on the digital destination display above the windshield.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00282",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 25,
+    "row": 18,
+    "prompt_number": 282,
+    "group_id": "vins120k:original:transportation_00010",
+    "native_image": "Original/Images/transportation_00010.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.06
+     ],
+     [
+      "Based",
+      -2.81
+     ],
+     [
+      "Looking",
+      -7.56
+     ],
+     [
+      "In",
+      -8.06
+     ],
+     [
+      "It",
+      -8.56
+     ]
+    ]
+   },
+   "reply": "The word \"EMERALD\" is written on the **license plate** of the truck.\n\nLooking closely at the image, you can see the license plate is located at the bottom center of the truck's front bumper. The plate has the text \"EMERALD\" written on it, along with the registration number \"",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00010.jpg"
+  },
+  {
+   "id": "vins120k_orig_00294",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 26,
+    "row": 19,
+    "prompt_number": 294,
+    "group_id": "vins120k:original:transportation_00009",
+    "native_image": "Original/Images/transportation_00009.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.02
+     ],
+     [
+      "It",
+      -6.52
+     ],
+     [
+      "Actually",
+      -7.02
+     ],
+     [
+      "Looking",
+      -7.52
+     ]
+    ]
+   },
+   "reply": "The word \"EMERALD\" is not written on any object in the image.\n\nThe image shows a Lufthansa Boeing 747 aircraft on an airport tarmac. The visible text on the aircraft includes:\n- \"Lufthansa\" on the fuselage\n- \"lufthansa.com",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00009.jpg"
+  },
+  {
+   "id": "vins120k_orig_00306",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 27,
+    "row": 20,
+    "prompt_number": 306,
+    "group_id": "vins120k:original:transportation_00013",
+    "native_image": "Original/Images/transportation_00013.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.04
+     ],
+     [
+      "Based",
+      -3.54
+     ],
+     [
+      "Actually",
+      -5.79
+     ],
+     [
+      "In",
+      -6.29
+     ],
+     [
+      "There",
+      -6.54
+     ]
+    ]
+   },
+   "reply": "The word \"EMERALD\" is written on the side of the pink scooter.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00013.jpg"
+  },
+  {
+   "id": "vins120k_orig_00348",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "object",
+    "image_number": 31,
+    "row": 21,
+    "prompt_number": 348,
+    "group_id": "vins120k:original:objects_00005",
+    "native_image": "Original/Images/objects_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.2
+     ],
+     [
+      "Based",
+      -1.7
+     ],
+     [
+      "Looking",
+      -6.7
+     ],
+     [
+      "In",
+      -6.95
+     ],
+     [
+      "Actually",
+      -8.7
+     ]
+    ]
+   },
+   "reply": "The word \"EMERALD\" is written on the **tag** attached to the **lacing system** of the sneaker \u2014 specifically, it's on the small, rectangular label that is part of the pull-tab at the heel.\n\nThis tag is a key design element of the Nike Air Force 1 \"EM",
+   "image": "VINS-120K Dataset/Original/Images/objects_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00007",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'DO NOT ENTER' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "statutory_sign",
+    "image_number": 1,
+    "row": 22,
+    "prompt_number": 7,
+    "group_id": "vins120k:original:text_00011",
+    "native_image": "Original/Images/text_00011.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.02
+     ],
+     [
+      "It",
+      -6.02
+     ],
+     [
+      "In",
+      -12.15
+     ],
+     [
+      "Looking",
+      -12.4
+     ]
+    ]
+   },
+   "reply": "The text \"DO NOT ENTER\" is written on a **sign**.\n\nMore specifically, it is on a **red, oval-shaped traffic sign** with a white horizontal bar across the middle, mounted on a post. This is a standard \"Do Not Enter\" regulatory sign used to prohibit vehicles from entering a roadway or",
+   "image": "VINS-120K Dataset/Original/Images/text_00011.jpg"
+  },
+  {
+   "id": "vins120k_orig_00019",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'YOU ARE WORTHY OF LOVE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 2,
+    "row": 23,
+    "prompt_number": 19,
+    "group_id": "vins120k:original:text_00005",
+    "native_image": "Original/Images/text_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.05
+     ],
+     [
+      "The",
+      -3.05
+     ],
+     [
+      "It",
+      -9.05
+     ],
+     [
+      "Looking",
+      -10.55
+     ],
+     [
+      "A",
+      -12.8
+     ]
+    ]
+   },
+   "reply": "Based on the image provided, the text \"YOU ARE WORTHY OF LOVE\" is written on a **white sign**.\n\nThis sign is:\n- Rectangular in shape.\n- Made of a white material, likely paper, cardstock, or thin plastic.\n- Displayed outdoors, attached to a wooden utility pole",
+   "image": "VINS-120K Dataset/Original/Images/text_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00031",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'WE LIKE YOU TOO :)' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 3,
+    "row": 24,
+    "prompt_number": 31,
+    "group_id": "vins120k:original:text_00003",
+    "native_image": "Original/Images/text_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.39
+     ],
+     [
+      "The",
+      -1.14
+     ],
+     [
+      "It",
+      -6.14
+     ],
+     [
+      "Looking",
+      -9.64
+     ],
+     [
+      "On",
+      -11.76
+     ]
+    ]
+   },
+   "reply": "Based on the image provided, the text \"WE LIKE YOU TOO :)\" is written on a large, rectangular sign.\n\nThis sign is mounted on a wall that is covered in white, painted bricks, giving it a tiled appearance. The sign itself has a dark brown wooden frame. The entire structure appears to be a public",
+   "image": "VINS-120K Dataset/Original/Images/text_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00043",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'WAKE ME UP WHEN I'M FAMOUS' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 4,
+    "row": 25,
+    "prompt_number": 43,
+    "group_id": "vins120k:original:text_00004",
+    "native_image": "Original/Images/text_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.58
+     ],
+     [
+      "Based",
+      -0.83
+     ],
+     [
+      "It",
+      -6.58
+     ],
+     [
+      "Looking",
+      -9.08
+     ],
+     [
+      "A",
+      -12.83
+     ]
+    ]
+   },
+   "reply": "The text \"WAKE ME UP WHEN I'M FAMOUS\" is written on a **black rectangular sign** that is mounted on a **white brick wall**.\n\nThe sign appears to be made of painted wood or metal panels, with the text rendered in large, bold, white capital letters. It is positioned centrally",
+   "image": "VINS-120K Dataset/Original/Images/text_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00055",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'COFFEE menu with prices' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 5,
+    "row": 26,
+    "prompt_number": 55,
+    "group_id": "vins120k:original:text_00006",
+    "native_image": "Original/Images/text_00006.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.48
+     ],
+     [
+      "The",
+      -0.98
+     ],
+     [
+      "It",
+      -5.23
+     ],
+     [
+      "Looking",
+      -9.98
+     ],
+     [
+      "A",
+      -11.48
+     ]
+    ]
+   },
+   "reply": "Based on the image provided, the text \"COFFEE menu with prices\" is written on a **black letterboard**.\n\nThis letterboard is:\n- Rectangular in shape.\n- Encased in a light-colored wooden frame.\n- Positioned on a countertop in what appears to be a coffee shop.\n- Display",
+   "image": "VINS-120K Dataset/Original/Images/text_00006.jpg"
+  },
+  {
+   "id": "vins120k_orig_00067",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'menu with prices' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 6,
+    "row": 27,
+    "prompt_number": 67,
+    "group_id": "vins120k:original:text_00009",
+    "native_image": "Original/Images/text_00009.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.24
+     ],
+     [
+      "Based",
+      -1.74
+     ],
+     [
+      "It",
+      -3.24
+     ],
+     [
+      "A",
+      -10.74
+     ],
+     [
+      "Looking",
+      -11.37
+     ]
+    ]
+   },
+   "reply": "The menu is written on a blackboard with a wooden frame. It is mounted on a small black metal stool with a wooden seat.",
+   "image": "VINS-120K Dataset/Original/Images/text_00009.jpg"
+  },
+  {
+   "id": "vins120k_orig_00079",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'LEAVE YOUR FILMS HERE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 7,
+    "row": 28,
+    "prompt_number": 79,
+    "group_id": "vins120k:original:text_00008",
+    "native_image": "Original/Images/text_00008.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.39
+     ],
+     [
+      "The",
+      -1.14
+     ],
+     [
+      "Looking",
+      -8.39
+     ],
+     [
+      "In",
+      -9.39
+     ],
+     [
+      "It",
+      -9.89
+     ]
+    ]
+   },
+   "reply": "Based on the image provided, the text \"LEAVE YOUR FILMS HERE\" is written on a **poster** or **advertising sign**.\n\nThis is evident from several visual cues:\n\n-   The text is large, bold, and centrally placed, designed to catch the eye.\n-   It is surrounded by other",
+   "image": "VINS-120K Dataset/Original/Images/text_00008.jpg"
+  },
+  {
+   "id": "vins120k_orig_00091",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'LOVE WHAT YOU DO AND DO WHAT YOU LOVE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 8,
+    "row": 29,
+    "prompt_number": 91,
+    "group_id": "vins120k:original:text_00010",
+    "native_image": "Original/Images/text_00010.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.31
+     ],
+     [
+      "The",
+      -1.31
+     ],
+     [
+      "It",
+      -7.56
+     ],
+     [
+      "Looking",
+      -9.81
+     ],
+     [
+      "A",
+      -12.56
+     ]
+    ]
+   },
+   "reply": "Based on the visual evidence in the image, the text \"LOVE WHAT YOU DO AND DO WHAT YOU LOVE\" is written on a **wooden sign**.\n\nHere's why:\n\n-   The surface has a visible wood grain texture, especially noticeable in the background and along the edges.\n-   The sign appears to",
+   "image": "VINS-120K Dataset/Original/Images/text_00010.jpg"
+  },
+  {
+   "id": "vins120k_orig_00103",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'MONTREAL WINTER SPORTS' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 9,
+    "row": 30,
+    "prompt_number": 103,
+    "group_id": "vins120k:original:text_00007",
+    "native_image": "Original/Images/text_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.1
+     ],
+     [
+      "The",
+      -2.35
+     ],
+     [
+      "It",
+      -8.23
+     ],
+     [
+      "Looking",
+      -9.1
+     ],
+     [
+      "This",
+      -10.98
+     ]
+    ]
+   },
+   "reply": "Based on the visual evidence in the image, the text \"MONTREAL Winter Sports\" is written on a **poster**.\n\nHere's why:\n\n*   **Format and Style:** The text is large, stylized, and placed prominently at the top of the image. This is a common design choice for posters to",
+   "image": "VINS-120K Dataset/Original/Images/text_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00115",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text '#Event Planning' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 10,
+    "row": 31,
+    "prompt_number": 115,
+    "group_id": "vins120k:original:text_00012",
+    "native_image": "Original/Images/text_00012.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.04
+     ],
+     [
+      "The",
+      -3.29
+     ],
+     [
+      "It",
+      -8.54
+     ],
+     [
+      "Looking",
+      -10.04
+     ],
+     [
+      "According",
+      -12.54
+     ]
+    ]
+   },
+   "reply": "Based on the image provided, the text \"#Event Planning\" is written on a **white paper sign or card**.\n\nThis sign is positioned in the foreground of the image, partially overlapping a printed \"Event Planning Checklist\". The text is in a large, bold, blue font, making it the most prominent element in the",
+   "image": "VINS-120K Dataset/Original/Images/text_00012.jpg"
+  },
+  {
+   "id": "vins120k_orig_00127",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'GENESIS' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 11,
+    "row": 32,
+    "prompt_number": 127,
+    "group_id": "vins120k:original:text_00001",
+    "native_image": "Original/Images/text_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.03
+     ],
+     [
+      "The",
+      -3.53
+     ],
+     [
+      "Looking",
+      -10.03
+     ],
+     [
+      "It",
+      -11.28
+     ],
+     [
+      "\"",
+      -13.4
+     ]
+    ]
+   },
+   "reply": "Based on the image provided, the text \"GENESIS\" is written on the **pages of an open book**.\n\nMore specifically, it appears to be an open **Bible**, as indicated by:\n- The text being from the book of Genesis, which is the first book of the Bible.\n- The layout,",
+   "image": "VINS-120K Dataset/Original/Images/text_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00139",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'the best way is just to start!' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 12,
+    "row": 33,
+    "prompt_number": 139,
+    "group_id": "vins120k:original:text_00002",
+    "native_image": "Original/Images/text_00002.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.32
+     ],
+     [
+      "Based",
+      -1.32
+     ],
+     [
+      "It",
+      -6.32
+     ],
+     [
+      "Looking",
+      -9.82
+     ],
+     [
+      "the",
+      -10.82
+     ]
+    ]
+   },
+   "reply": "The text \"the best way is just to start!\" is written on a **typewriter**.\n\nMore specifically, it is typed onto the **platen** (the cylindrical roller) of the typewriter, which is the part that holds the paper in place while the typebars strike the paper to create characters. The",
+   "image": "VINS-120K Dataset/Original/Images/text_00002.jpg"
+  },
+  {
+   "id": "vins120k_orig_00151",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'many shop signs' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 13,
+    "row": 34,
+    "prompt_number": 151,
+    "group_id": "vins120k:original:scene_00001",
+    "native_image": "Original/Images/scene_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.31
+     ],
+     [
+      "Based",
+      -1.31
+     ],
+     [
+      "It",
+      -7.56
+     ],
+     [
+      "In",
+      -7.56
+     ],
+     [
+      "\"",
+      -8.44
+     ]
+    ]
+   },
+   "reply": "The text \"many shop signs\" is written on a **red rectangular sign** hanging from a building on the right side of the image.\n\nThis sign is for the store **UNISO**, which is a clothing retailer. The sign is red with white lettering and is located above the storefront on the right side of the",
+   "image": "VINS-120K Dataset/Original/Images/scene_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00163",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'shop signboards' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 14,
+    "row": 35,
+    "prompt_number": 163,
+    "group_id": "vins120k:original:scene_00002",
+    "native_image": "Original/Images/scene_00002.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.25
+     ],
+     [
+      "Based",
+      -1.5
+     ],
+     [
+      "shop",
+      -7.25
+     ],
+     [
+      "It",
+      -7.5
+     ],
+     [
+      "In",
+      -8.63
+     ]
+    ]
+   },
+   "reply": "The text \"shop signboards\" is written on a **shop signboard**.\n\nThis is a straightforward case of a label describing the object itself. The text is not written on a different object; it is the name of the object being described in the question. The image shows multiple shop signboards along the street,",
+   "image": "VINS-120K Dataset/Original/Images/scene_00002.jpg"
+  },
+  {
+   "id": "vins120k_orig_00215",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Handelsbanken' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 19,
+    "row": 36,
+    "prompt_number": 215,
+    "group_id": "vins120k:original:building_00004",
+    "native_image": "Original/Images/building_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.21
+     ],
+     [
+      "Based",
+      -1.71
+     ],
+     [
+      "It",
+      -5.46
+     ],
+     [
+      "\"",
+      -8.46
+     ],
+     [
+      "On",
+      -9.71
+     ]
+    ]
+   },
+   "reply": "The text \"Handelsbanken\" is written on a **sign** attached to the **facade of a modern glass building**.\n\nMore specifically:\n- It's displayed on a **blue sign** mounted on the **upper section of a glass-clad skyscraper**.\n- The sign is positioned on the **",
+   "image": "VINS-120K Dataset/Original/Images/building_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00247",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'bus destination board' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 22,
+    "row": 37,
+    "prompt_number": 247,
+    "group_id": "vins120k:original:transportation_00001",
+    "native_image": "Original/Images/transportation_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.16
+     ],
+     [
+      "Based",
+      -1.91
+     ],
+     [
+      "It",
+      -7.16
+     ],
+     [
+      "Looking",
+      -7.91
+     ],
+     [
+      "On",
+      -8.41
+     ]
+    ]
+   },
+   "reply": "The text \"bus destination board\" is written on the **front windshield** of the bus.\n\nMore specifically, it appears to be part of the **digital display** located at the top of the windshield, which shows the bus route and destination information. In this case, the display shows \"100 10",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00259",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'bus livery' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 23,
+    "row": 38,
+    "prompt_number": 259,
+    "group_id": "vins120k:original:transportation_00003",
+    "native_image": "Original/Images/transportation_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.07
+     ],
+     [
+      "Based",
+      -2.82
+     ],
+     [
+      "It",
+      -6.07
+     ],
+     [
+      "On",
+      -7.57
+     ],
+     [
+      "\"",
+      -8.32
+     ]
+    ]
+   },
+   "reply": "The text \"bus livery\" is written on the side of the red bus in the image.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00281",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'SCANIA' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 25,
+    "row": 39,
+    "prompt_number": 281,
+    "group_id": "vins120k:original:transportation_00010",
+    "native_image": "Original/Images/transportation_00010.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.01
+     ],
+     [
+      "It",
+      -8.76
+     ],
+     [
+      "\"",
+      -10.76
+     ],
+     [
+      "On",
+      -12.13
+     ]
+    ]
+   },
+   "reply": "The word \"SCANIA\" is written on the front grille of the truck.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00010.jpg"
+  },
+  {
+   "id": "vins120k_orig_00293",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Lufthansa' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 26,
+    "row": 40,
+    "prompt_number": 293,
+    "group_id": "vins120k:original:transportation_00009",
+    "native_image": "Original/Images/transportation_00009.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.06
+     ],
+     [
+      "Based",
+      -2.81
+     ],
+     [
+      "It",
+      -6.31
+     ],
+     [
+      "L",
+      -8.31
+     ],
+     [
+      "\"L",
+      -9.06
+     ]
+    ]
+   },
+   "reply": "The word \"Lufthansa\" is written on the side of the airplane's fuselage, near the front of the aircraft, just behind the cockpit windows. It is also visible on the tail fin (vertical stabilizer) of the plane, which features the airline's logo (a stylized crane in a circle",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00009.jpg"
+  },
+  {
+   "id": "vins120k_orig_00305",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'small wall notice' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 27,
+    "row": 41,
+    "prompt_number": 305,
+    "group_id": "vins120k:original:transportation_00013",
+    "native_image": "Original/Images/transportation_00013.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.32
+     ],
+     [
+      "Based",
+      -1.32
+     ],
+     [
+      "It",
+      -6.07
+     ],
+     [
+      "A",
+      -6.07
+     ],
+     [
+      "On",
+      -8.19
+     ]
+    ]
+   },
+   "reply": "The text \"Ein- und Ausfahrt Berg und Nacht Freihalte\" is written on a **small white rectangular wall notice** (or sign) mounted on the concrete wall.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00013.jpg"
+  },
+  {
+   "id": "vins120k_orig_00347",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Nike swoosh' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "object",
+    "image_number": 31,
+    "row": 42,
+    "prompt_number": 347,
+    "group_id": "vins120k:original:objects_00005",
+    "native_image": "Original/Images/objects_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.48
+     ],
+     [
+      "Based",
+      -0.98
+     ],
+     [
+      "It",
+      -7.23
+     ],
+     [
+      "Looking",
+      -7.98
+     ],
+     [
+      "Nike",
+      -9.73
+     ]
+    ]
+   },
+   "reply": "The text \"Nike swoosh\" is written on the side of a black sneaker, specifically on the heel tab. The object is a sneaker, and the text is part of the brand's logo.",
+   "image": "VINS-120K Dataset/Original/Images/objects_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00001",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "statutory_sign",
+    "image_number": 1,
+    "row": 43,
+    "prompt_number": 1,
+    "group_id": "vins120k:original:text_00011",
+    "native_image": "Original/Images/text_00011.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.05
+     ],
+     [
+      "Based",
+      -3.05
+     ],
+     [
+      "It",
+      -7.05
+     ],
+     [
+      "A",
+      -10.92
+     ],
+     [
+      "\"",
+      -11.05
+     ]
+    ]
+   },
+   "reply": "The text is written on two road signs.\n\nThe top sign is a \"DO NOT ENTER\" sign, which is typically a red circle with a white horizontal bar. The bottom sign is a \"WRONG WAY\" sign, which is a red rectangle.\n\nBoth signs are mounted on a wooden post in a desert-like environment",
+   "image": "VINS-120K Dataset/Original/Images/text_00011.jpg"
+  },
+  {
+   "id": "vins120k_orig_00013",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 2,
+    "row": 44,
+    "prompt_number": 13,
+    "group_id": "vins120k:original:text_00005",
+    "native_image": "Original/Images/text_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.48
+     ],
+     [
+      "Based",
+      -0.98
+     ],
+     [
+      "A",
+      -6.73
+     ],
+     [
+      "It",
+      -6.98
+     ],
+     [
+      "On",
+      -10.98
+     ]
+    ]
+   },
+   "reply": "The text \"YOU ARE WORTHY OF LOVE\" is written on a white sign. This sign is attached to a wooden utility pole using thin metal stakes.",
+   "image": "VINS-120K Dataset/Original/Images/text_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00025",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 3,
+    "row": 45,
+    "prompt_number": 25,
+    "group_id": "vins120k:original:text_00003",
+    "native_image": "Original/Images/text_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.39
+     ],
+     [
+      "Based",
+      -1.14
+     ],
+     [
+      "It",
+      -5.89
+     ],
+     [
+      "A",
+      -8.89
+     ],
+     [
+      "On",
+      -9.89
+     ]
+    ]
+   },
+   "reply": "The text \"WE LIKE YOU. TOO :)\" is written on a white brick wall, which appears to be part of a bus stop or a similar public structure. The wall is framed with dark wood trim, and there are vines growing over the top.",
+   "image": "VINS-120K Dataset/Original/Images/text_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00037",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 4,
+    "row": 46,
+    "prompt_number": 37,
+    "group_id": "vins120k:original:text_00004",
+    "native_image": "Original/Images/text_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.1
+     ],
+     [
+      "Based",
+      -2.35
+     ],
+     [
+      "It",
+      -6.1
+     ],
+     [
+      "A",
+      -9.35
+     ],
+     [
+      "Looking",
+      -11.1
+     ]
+    ]
+   },
+   "reply": "The text \"WAKE ME UP WHEN I'M FAMOUS\" is written on a **black rectangular sign** that is mounted on a **white brick wall**.\n\nThe sign appears to be made of a solid material, possibly wood or metal, and is painted black with large, white, bold, sans-serif letter",
+   "image": "VINS-120K Dataset/Original/Images/text_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00049",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 5,
+    "row": 47,
+    "prompt_number": 49,
+    "group_id": "vins120k:original:text_00006",
+    "native_image": "Original/Images/text_00006.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.09
+     ],
+     [
+      "Based",
+      -2.59
+     ],
+     [
+      "It",
+      -5.09
+     ],
+     [
+      "Coffee",
+      -9.84
+     ],
+     [
+      "A",
+      -9.84
+     ]
+    ]
+   },
+   "reply": "The text is written on a black letterboard with a light wood frame, which is placed on a countertop in a coffee shop. The letterboard displays a coffee menu with various coffee drinks and their prices.",
+   "image": "VINS-120K Dataset/Original/Images/text_00006.jpg"
+  },
+  {
+   "id": "vins120k_orig_00061",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 6,
+    "row": 48,
+    "prompt_number": 61,
+    "group_id": "vins120k:original:text_00009",
+    "native_image": "Original/Images/text_00009.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.08
+     ],
+     [
+      "Based",
+      -2.83
+     ],
+     [
+      "It",
+      -4.33
+     ],
+     [
+      "A",
+      -9.95
+     ],
+     [
+      "MENU",
+      -11.08
+     ]
+    ]
+   },
+   "reply": "The text is written on a blackboard menu.",
+   "image": "VINS-120K Dataset/Original/Images/text_00009.jpg"
+  },
+  {
+   "id": "vins120k_orig_00073",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 7,
+    "row": 49,
+    "prompt_number": 73,
+    "group_id": "vins120k:original:text_00008",
+    "native_image": "Original/Images/text_00008.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.48
+     ],
+     [
+      "The",
+      -0.98
+     ],
+     [
+      "K",
+      -6.48
+     ],
+     [
+      "It",
+      -9.1
+     ],
+     [
+      "On",
+      -9.1
+     ]
+    ]
+   },
+   "reply": "Based on the text in the image, the object is a **Kodak Verichrome Film** box.\n\nHere's the breakdown of the text visible:\n\n*   **\"Kodak Verichrome Film\"**: This is the main product name, prominently displayed on the yellow boxes shown in the image.\n*",
+   "image": "VINS-120K Dataset/Original/Images/text_00008.jpg"
+  },
+  {
+   "id": "vins120k_orig_00085",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 8,
+    "row": 50,
+    "prompt_number": 85,
+    "group_id": "vins120k:original:text_00010",
+    "native_image": "Original/Images/text_00010.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.32
+     ],
+     [
+      "Based",
+      -1.32
+     ],
+     [
+      "It",
+      -5.57
+     ],
+     [
+      "A",
+      -9.44
+     ],
+     [
+      "This",
+      -10.94
+     ]
+    ]
+   },
+   "reply": "The text \"LOVE WHAT YOU DO AND DO WHAT YOU LOVE\" is written on a **wooden sign**.\n\nHere's why:\n\n*   **Material:** The surface has a visible wood grain texture, especially noticeable around the edges and in the background.\n*   **Structure:** The text is painted on a flat",
+   "image": "VINS-120K Dataset/Original/Images/text_00010.jpg"
+  },
+  {
+   "id": "vins120k_orig_00097",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 9,
+    "row": 51,
+    "prompt_number": 97,
+    "group_id": "vins120k:original:text_00007",
+    "native_image": "Original/Images/text_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.59
+     ],
+     [
+      "Based",
+      -0.84
+     ],
+     [
+      "This",
+      -4.59
+     ],
+     [
+      "It",
+      -5.59
+     ],
+     [
+      "Actually",
+      -8.72
+     ]
+    ]
+   },
+   "reply": "The text is written on a poster.",
+   "image": "VINS-120K Dataset/Original/Images/text_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00109",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 10,
+    "row": 52,
+    "prompt_number": 109,
+    "group_id": "vins120k:original:text_00012",
+    "native_image": "Original/Images/text_00012.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.31
+     ],
+     [
+      "Based",
+      -1.31
+     ],
+     [
+      "It",
+      -7.31
+     ],
+     [
+      "#",
+      -8.56
+     ],
+     [
+      "Looking",
+      -8.81
+     ]
+    ]
+   },
+   "reply": "The text \u201c#Event Planning\u201d is written on a white paper or card, which is placed on a white surface, likely a desk or table. This paper is positioned in the foreground of the image, partially overlapping another document titled \u201cEvent Planning Checklist.\u201d The text is printed in a bold, blue font.",
+   "image": "VINS-120K Dataset/Original/Images/text_00012.jpg"
+  },
+  {
+   "id": "vins120k_orig_00121",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 11,
+    "row": 53,
+    "prompt_number": 121,
+    "group_id": "vins120k:original:text_00001",
+    "native_image": "Original/Images/text_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.25
+     ],
+     [
+      "The",
+      -1.5
+     ],
+     [
+      "This",
+      -7.5
+     ],
+     [
+      "It",
+      -7.88
+     ],
+     [
+      "Looking",
+      -8.75
+     ]
+    ]
+   },
+   "reply": "Based on the image provided, the text is written on the pages of an **open book**.\n\nMore specifically, it appears to be a **Bible**, as the text is from the book of **Genesis** (as indicated by the heading \"GENESIS\" on the right page). The book is open to a",
+   "image": "VINS-120K Dataset/Original/Images/text_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00133",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 12,
+    "row": 54,
+    "prompt_number": 133,
+    "group_id": "vins120k:original:text_00002",
+    "native_image": "Original/Images/text_00002.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.02
+     ],
+     [
+      "It",
+      -5.02
+     ],
+     [
+      "the",
+      -9.77
+     ],
+     [
+      "Looking",
+      -12.02
+     ]
+    ]
+   },
+   "reply": "The text \"the best way is just to start!\" is written on a **typewriter**.\n\nSpecifically, it's on the **platen** (the cylindrical roller) of the typewriter, which is the part that holds the paper in place while the typebars strike the paper to create characters. The image",
+   "image": "VINS-120K Dataset/Original/Images/text_00002.jpg"
+  },
+  {
+   "id": "vins120k_orig_00145",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 13,
+    "row": 55,
+    "prompt_number": 145,
+    "group_id": "vins120k:original:scene_00001",
+    "native_image": "Original/Images/scene_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.29
+     ],
+     [
+      "UN",
+      -1.79
+     ],
+     [
+      "Based",
+      -2.54
+     ],
+     [
+      "There",
+      -6.66
+     ],
+     [
+      "On",
+      -8.29
+     ]
+    ]
+   },
+   "reply": "The text \"UNISO\" is written on a red sign hanging from a building on the right side of the image.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00157",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 14,
+    "row": 56,
+    "prompt_number": 157,
+    "group_id": "vins120k:original:scene_00002",
+    "native_image": "Original/Images/scene_00002.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.11
+     ],
+     [
+      "Based",
+      -2.36
+     ],
+     [
+      "There",
+      -4.36
+     ],
+     [
+      "I",
+      -8.61
+     ],
+     [
+      "In",
+      -8.74
+     ]
+    ]
+   },
+   "reply": "The text is written on a signboard, specifically a vertical signboard with Chinese characters. These signs are commonly found in traditional Chinese streetscapes and often indicate the name of a shop, business, or establishment. The characters are written in a traditional Chinese calligraphic style, and the sign is mounted on a wooden",
+   "image": "VINS-120K Dataset/Original/Images/scene_00002.jpg"
+  },
+  {
+   "id": "vins120k_orig_00169",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 15,
+    "row": 57,
+    "prompt_number": 169,
+    "group_id": "vins120k:original:scene_00004",
+    "native_image": "Original/Images/scene_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.04
+     ],
+     [
+      "Actually",
+      -4.04
+     ],
+     [
+      "Based",
+      -4.79
+     ],
+     [
+      "The",
+      -4.79
+     ],
+     [
+      "I",
+      -7.79
+     ]
+    ]
+   },
+   "reply": "There is no text in the image. The image shows a long, straight road stretching into the distance, flanked by arid, orange-hued terrain with sparse vegetation. In the background, there are snow-capped mountains under a bright blue sky with wispy clouds. The road has yellow dividing lines, and there",
+   "image": "VINS-120K Dataset/Original/Images/scene_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00179",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 16,
+    "row": 58,
+    "prompt_number": 179,
+    "group_id": "vins120k:original:scene_00007",
+    "native_image": "Original/Images/scene_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.14
+     ],
+     [
+      "Based",
+      -2.14
+     ],
+     [
+      "Actually",
+      -4.64
+     ],
+     [
+      "The",
+      -5.77
+     ],
+     [
+      "I",
+      -7.52
+     ]
+    ]
+   },
+   "reply": "There is no text visible in the image. The image depicts a scenic view of a lakeside village, likely Hallstatt in Austria, with mountains in the background, traditional buildings, and a church steeple. There are no signs, labels, or written words present in the image.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00189",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "office",
+    "image_number": 17,
+    "row": 59,
+    "prompt_number": 189,
+    "group_id": "vins120k:original:scene_00003",
+    "native_image": "Original/Images/scene_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.01
+     ],
+     [
+      "Based",
+      -4.76
+     ],
+     [
+      "Actually",
+      -5.76
+     ],
+     [
+      "The",
+      -6.51
+     ],
+     [
+      "I",
+      -8.26
+     ]
+    ]
+   },
+   "reply": "There is no text in the image. The image shows a modern living room with furniture, plants, and windows, but no writing or printed words are visible.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00199",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "gate",
+    "image_number": 18,
+    "row": 60,
+    "prompt_number": 199,
+    "group_id": "vins120k:original:building_00001",
+    "native_image": "Original/Images/building_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.04
+     ],
+     [
+      "Based",
+      -3.29
+     ],
+     [
+      "Actually",
+      -5.79
+     ],
+     [
+      "The",
+      -5.79
+     ],
+     [
+      "I",
+      -8.17
+     ]
+    ]
+   },
+   "reply": "There is no text in the image. The image shows a house with a large front porch, surrounded by a well-maintained lawn and trees. There are no signs, labels, or written words visible in the picture.",
+   "image": "VINS-120K Dataset/Original/Images/building_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00209",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 19,
+    "row": 61,
+    "prompt_number": 209,
+    "group_id": "vins120k:original:building_00004",
+    "native_image": "Original/Images/building_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.31
+     ],
+     [
+      "Based",
+      -1.31
+     ],
+     [
+      "On",
+      -7.81
+     ],
+     [
+      "\"",
+      -8.06
+     ],
+     [
+      "Hand",
+      -8.56
+     ]
+    ]
+   },
+   "reply": "The text \"Handelsbanken\" is written on a sign attached to the side of a modern glass building. The sign is mounted on the facade of the building, which appears to be part of a corporate or financial complex, as suggested by the architectural style and the name of the institution. The text is displayed in",
+   "image": "VINS-120K Dataset/Original/Images/building_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00221",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "gate",
+    "image_number": 20,
+    "row": 62,
+    "prompt_number": 221,
+    "group_id": "vins120k:original:building_00005",
+    "native_image": "Original/Images/building_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.04
+     ],
+     [
+      "Based",
+      -3.54
+     ],
+     [
+      "The",
+      -4.79
+     ],
+     [
+      "Actually",
+      -5.54
+     ],
+     [
+      "I",
+      -6.79
+     ]
+    ]
+   },
+   "reply": "There is no text visible in the image. The image shows a large, white, two-story house with a gray roof, surrounded by lush green trees and hedges. There is a paved driveway leading up to the house, and a street in the foreground. No signs, plaques, or any other objects with writing",
+   "image": "VINS-120K Dataset/Original/Images/building_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00231",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 21,
+    "row": 63,
+    "prompt_number": 231,
+    "group_id": "vins120k:original:building_00008",
+    "native_image": "Original/Images/building_00008.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.05
+     ],
+     [
+      "Based",
+      -3.55
+     ],
+     [
+      "Actually",
+      -4.55
+     ],
+     [
+      "The",
+      -5.42
+     ],
+     [
+      "I",
+      -7.55
+     ]
+    ]
+   },
+   "reply": "There is no text written on any object in the image. The image depicts a scenic canal scene, likely in a place like Burano, Italy, with colorful buildings lining the water and boats moored along the canal. The sky shows a beautiful sunset or sunrise. There are no signs, labels, or written words visible",
+   "image": "VINS-120K Dataset/Original/Images/building_00008.jpg"
+  },
+  {
+   "id": "vins120k_orig_00241",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 22,
+    "row": 64,
+    "prompt_number": 241,
+    "group_id": "vins120k:original:transportation_00001",
+    "native_image": "Original/Images/transportation_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.06
+     ],
+     [
+      "Based",
+      -3.31
+     ],
+     [
+      "On",
+      -4.43
+     ],
+     [
+      "There",
+      -5.06
+     ],
+     [
+      "1",
+      -6.31
+     ]
+    ]
+   },
+   "reply": "The text \"\u0421\u0435\u0432\u0435\u0440\u043d\u044b\u0439\" is written on the side of the bus.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00253",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 23,
+    "row": 65,
+    "prompt_number": 253,
+    "group_id": "vins120k:original:transportation_00003",
+    "native_image": "Original/Images/transportation_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.06
+     ],
+     [
+      "Based",
+      -3.06
+     ],
+     [
+      "On",
+      -4.56
+     ],
+     [
+      "\"",
+      -7.06
+     ],
+     [
+      "It",
+      -8.06
+     ]
+    ]
+   },
+   "reply": "The text \"electrics\" is written on the side of the red bus.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00265",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 24,
+    "row": 66,
+    "prompt_number": 265,
+    "group_id": "vins120k:original:transportation_00004",
+    "native_image": "Original/Images/transportation_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.13
+     ],
+     [
+      "Based",
+      -2.13
+     ],
+     [
+      "On",
+      -5.88
+     ],
+     [
+      "There",
+      -7.88
+     ],
+     [
+      "It",
+      -9.13
+     ]
+    ]
+   },
+   "reply": "The text \"HABRO\" is written on the side of the red semi-truck's cab.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00275",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 25,
+    "row": 67,
+    "prompt_number": 275,
+    "group_id": "vins120k:original:transportation_00010",
+    "native_image": "Original/Images/transportation_00010.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.02
+     ],
+     [
+      "On",
+      -7.02
+     ],
+     [
+      "\"",
+      -9.77
+     ],
+     [
+      "It",
+      -10.02
+     ]
+    ]
+   },
+   "reply": "The text \"Cornell\" is written on the front of the truck's cab, specifically on the upper part of the hood, just above the windshield. The truck is a Scania model, as indicated by the \"SCANIA\" logo on the grille.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00010.jpg"
+  },
+  {
+   "id": "vins120k_orig_00287",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 26,
+    "row": 68,
+    "prompt_number": 287,
+    "group_id": "vins120k:original:transportation_00009",
+    "native_image": "Original/Images/transportation_00009.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.14
+     ],
+     [
+      "Based",
+      -2.39
+     ],
+     [
+      "L",
+      -3.39
+     ],
+     [
+      "On",
+      -5.39
+     ],
+     [
+      "l",
+      -8.39
+     ]
+    ]
+   },
+   "reply": "The text \"Lufthansa\" and \"lufthansa.com\" is written on the fuselage (body) of the airplane.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00009.jpg"
+  },
+  {
+   "id": "vins120k_orig_00299",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 27,
+    "row": 69,
+    "prompt_number": 299,
+    "group_id": "vins120k:original:transportation_00013",
+    "native_image": "Original/Images/transportation_00013.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.05
+     ],
+     [
+      "Based",
+      -3.05
+     ],
+     [
+      "There",
+      -6.55
+     ],
+     [
+      "On",
+      -6.8
+     ],
+     [
+      "A",
+      -7.55
+     ]
+    ]
+   },
+   "reply": "The text is written on a white rectangular sign with a black border, mounted on a metal pole. The sign is affixed to a weathered concrete wall, positioned above the sidewalk where the pink scooter is parked. The text on the sign is in German and reads:\n\n**Ein- und Ausfahrt  \nB",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00013.jpg"
+  },
+  {
+   "id": "vins120k_orig_00311",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 28,
+    "row": 70,
+    "prompt_number": 311,
+    "group_id": "vins120k:original:transportation_00007",
+    "native_image": "Original/Images/transportation_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.09
+     ],
+     [
+      "Based",
+      -2.59
+     ],
+     [
+      "On",
+      -4.59
+     ],
+     [
+      "LU",
+      -9.34
+     ],
+     [
+      "It",
+      -9.71
+     ]
+    ]
+   },
+   "reply": "The text \"LUFTRETTUNG\" is written on the side of the orange helicopter in the image.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00321",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 29,
+    "row": 71,
+    "prompt_number": 321,
+    "group_id": "vins120k:original:transportation_00008",
+    "native_image": "Original/Images/transportation_00008.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.04
+     ],
+     [
+      "Based",
+      -4.04
+     ],
+     [
+      "Actually",
+      -4.29
+     ],
+     [
+      "The",
+      -5.29
+     ],
+     [
+      "I",
+      -7.41
+     ]
+    ]
+   },
+   "reply": "There is no text written on any object in the image. The image shows a red train traveling through a scenic mountainous forest landscape, with no visible signs, labels, or written words.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00008.jpg"
+  },
+  {
+   "id": "vins120k_orig_00331",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 30,
+    "row": 72,
+    "prompt_number": 331,
+    "group_id": "vins120k:original:transportation_00012",
+    "native_image": "Original/Images/transportation_00012.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.09
+     ],
+     [
+      "Based",
+      -2.84
+     ],
+     [
+      "The",
+      -4.09
+     ],
+     [
+      "Actually",
+      -4.84
+     ],
+     [
+      "I",
+      -7.21
+     ]
+    ]
+   },
+   "reply": "There is no text written on any object in the image. The image shows a black Ferrari sports car on a racetrack, with red and white checkered curbing and a stone wall in the background. There are no visible signs, labels, or written words.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00012.jpg"
+  },
+  {
+   "id": "vins120k_orig_00341",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "object",
+    "image_number": 31,
+    "row": 73,
+    "prompt_number": 341,
+    "group_id": "vins120k:original:objects_00005",
+    "native_image": "Original/Images/objects_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.39
+     ],
+     [
+      "Based",
+      -1.14
+     ],
+     [
+      "On",
+      -8.14
+     ],
+     [
+      "Looking",
+      -9.14
+     ],
+     [
+      "It",
+      -9.76
+     ]
+    ]
+   },
+   "reply": "The text \"AIR\" is written on the side of the sneaker, specifically on the heel counter area. It is part of the \"Air Force 1\" branding, which is a signature line from Nike. The \"AIR\" text is visible in white, contrasting with the black sneaker, and is located just",
+   "image": "VINS-120K Dataset/Original/Images/objects_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00349",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "object",
+    "image_number": 32,
+    "row": 74,
+    "prompt_number": 349,
+    "group_id": "vins120k:original:objects_00007",
+    "native_image": "Original/Images/objects_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.31
+     ],
+     [
+      "Based",
+      -1.81
+     ],
+     [
+      "The",
+      -2.56
+     ],
+     [
+      "Actually",
+      -3.81
+     ],
+     [
+      "I",
+      -7.06
+     ]
+    ]
+   },
+   "reply": "There is no text written on any object in the image. The image shows a camera, a tablet, a plant, and some papers on a table, but none of these items have visible writing or text on them.",
+   "image": "VINS-120K Dataset/Original/Images/objects_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00355",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "object",
+    "image_number": 33,
+    "row": 75,
+    "prompt_number": 355,
+    "group_id": "vins120k:original:objects_00004",
+    "native_image": "Original/Images/objects_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.03
+     ],
+     [
+      "Based",
+      -4.03
+     ],
+     [
+      "Actually",
+      -5.28
+     ],
+     [
+      "The",
+      -5.78
+     ],
+     [
+      "I",
+      -10.03
+     ]
+    ]
+   },
+   "reply": "There is no text written on the object in the image. The image shows a close-up of fresh mandarins (or tangerines) with green leaves still attached, resting on a striped cloth on a wooden surface. In the background, more mandarins are visible on a plate. The background is a blurred",
+   "image": "VINS-120K Dataset/Original/Images/objects_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00361",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 34,
+    "row": 76,
+    "prompt_number": 361,
+    "group_id": "vins120k:original:compose_00001",
+    "native_image": "Original/Images/compose_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.04
+     ],
+     [
+      "Based",
+      -3.29
+     ],
+     [
+      "There",
+      -5.42
+     ],
+     [
+      "On",
+      -7.17
+     ],
+     [
+      "\"",
+      -8.79
+     ]
+    ]
+   },
+   "reply": "The text \"scooter\" is written on the side of the green scooter.",
+   "image": "VINS-120K Dataset/Original/Images/compose_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00371",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 35,
+    "row": 77,
+    "prompt_number": 371,
+    "group_id": "vins120k:original:animals_00011",
+    "native_image": "Original/Images/animals_00011.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.01
+     ],
+     [
+      "Actually",
+      -5.76
+     ],
+     [
+      "Based",
+      -6.38
+     ],
+     [
+      "The",
+      -6.51
+     ],
+     [
+      "I",
+      -8.88
+     ]
+    ]
+   },
+   "reply": "There is no text written on the image. The image shows a large deer (likely a male elk or moose) standing in the middle of a dirt road, surrounded by trees and greenery. The deer is the main subject, and there are no visible words, letters, or writing anywhere in the image.",
+   "image": "VINS-120K Dataset/Original/Images/animals_00011.jpg"
+  },
+  {
+   "id": "vins120k_orig_00381",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "gate",
+    "image_number": 36,
+    "row": 78,
+    "prompt_number": 381,
+    "group_id": "vins120k:original:animals_00005",
+    "native_image": "Original/Images/animals_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.01
+     ],
+     [
+      "Actually",
+      -5.26
+     ],
+     [
+      "The",
+      -6.51
+     ],
+     [
+      "I",
+      -10.01
+     ]
+    ]
+   },
+   "reply": "There is no text in the image. The image shows a Highland cow with long horns and shaggy fur, standing in a field with a wooden fence in the background. Another cow is visible in the background, grazing. The sky appears overcast.",
+   "image": "VINS-120K Dataset/Original/Images/animals_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00391",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 37,
+    "row": 79,
+    "prompt_number": 391,
+    "group_id": "vins120k:original:human_00013",
+    "native_image": "Original/Images/human_00013.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.25
+     ],
+     [
+      "Actually",
+      -6.88
+     ],
+     [
+      "The",
+      -7.13
+     ],
+     [
+      "I",
+      -8.5
+     ]
+    ]
+   },
+   "reply": "There is no text written on any object in the image. The image shows an older man sitting on a bench with a bicycle next to him, in what appears to be a park or residential area with palm trees and houses in the background. There are no visible signs, labels, or written words.",
+   "image": "VINS-120K Dataset/Original/Images/human_00013.jpg"
+  },
+  {
+   "id": "vins120k_orig_00401",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 38,
+    "row": 80,
+    "prompt_number": 401,
+    "group_id": "vins120k:original:human_00017",
+    "native_image": "Original/Images/human_00017.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.03
+     ],
+     [
+      "Based",
+      -4.03
+     ],
+     [
+      "Actually",
+      -5.03
+     ],
+     [
+      "The",
+      -6.28
+     ],
+     [
+      "I",
+      -8.4
+     ]
+    ]
+   },
+   "reply": "There is no text written on any object in the image. The image shows an elderly man standing on a blue bridge with trees and sky in the background. There are no visible signs, labels, or written words.",
+   "image": "VINS-120K Dataset/Original/Images/human_00017.jpg"
+  },
+  {
+   "id": "vins120k_orig_00411",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 39,
+    "row": 81,
+    "prompt_number": 411,
+    "group_id": "vins120k:original:148ee3d1-5d75-430b-9d91-cdb927d2a337",
+    "native_image": "Original/Images/148ee3d1-5d75-430b-9d91-cdb927d2a337.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.06
+     ],
+     [
+      "The",
+      -3.06
+     ],
+     [
+      "Based",
+      -4.31
+     ],
+     [
+      "I",
+      -6.94
+     ],
+     [
+      "Sorry",
+      -7.81
+     ]
+    ]
+   },
+   "reply": "There is no text visible in the image. The image shows a wedding procession on a street with people, cars, and buildings in the background. There are no signs, banners, or any other objects with written text.",
+   "image": "VINS-120K Dataset/Original/Images/148ee3d1-5d75-430b-9d91-cdb927d2a337.jpg"
+  },
+  {
+   "id": "vins120k_orig_00421",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 40,
+    "row": 82,
+    "prompt_number": 421,
+    "group_id": "vins120k:original:201a3d24-a0a9-49c6-9baf-78c7c89574ab",
+    "native_image": "Original/Images/201a3d24-a0a9-49c6-9baf-78c7c89574ab.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.04
+     ],
+     [
+      "Based",
+      -3.29
+     ],
+     [
+      "On",
+      -6.29
+     ],
+     [
+      "\"",
+      -9.17
+     ],
+     [
+      "In",
+      -10.17
+     ]
+    ]
+   },
+   "reply": "The text \"BENARE OF HACKES\" is written on a blue metal barrier or fence in the bottom right corner of the image.",
+   "image": "VINS-120K Dataset/Original/Images/201a3d24-a0a9-49c6-9baf-78c7c89574ab.jpg"
+  },
+  {
+   "id": "vins120k_orig_00431",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 41,
+    "row": 83,
+    "prompt_number": 431,
+    "group_id": "vins120k:original:422b41de-2d28-4d0b-95fb-b8b470340630",
+    "native_image": "Original/Images/422b41de-2d28-4d0b-95fb-b8b470340630.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.07
+     ],
+     [
+      "Based",
+      -3.07
+     ],
+     [
+      "The",
+      -4.07
+     ],
+     [
+      "Actually",
+      -5.7
+     ],
+     [
+      "I",
+      -6.2
+     ]
+    ]
+   },
+   "reply": "There is no text visible in the image. The image shows a nighttime cityscape with buildings, streets, and trees, but no written words or signs can be seen.",
+   "image": "VINS-120K Dataset/Original/Images/422b41de-2d28-4d0b-95fb-b8b470340630.jpg"
+  },
+  {
+   "id": "vins120k_orig_00441",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 42,
+    "row": 84,
+    "prompt_number": 441,
+    "group_id": "vins120k:original:437ad136-cf8c-46c5-a4ea-e4f4c2151229",
+    "native_image": "Original/Images/437ad136-cf8c-46c5-a4ea-e4f4c2151229.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.18
+     ],
+     [
+      "Based",
+      -1.93
+     ],
+     [
+      "There",
+      -4.06
+     ],
+     [
+      "On",
+      -7.31
+     ],
+     [
+      "I",
+      -7.43
+     ]
+    ]
+   },
+   "reply": "The text is written on the front of a bus.",
+   "image": "VINS-120K Dataset/Original/Images/437ad136-cf8c-46c5-a4ea-e4f4c2151229.jpg"
+  },
+  {
+   "id": "vins120k_orig_00451",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 43,
+    "row": 85,
+    "prompt_number": 451,
+    "group_id": "vins120k:original:4f46b38f-f0ed-4cb1-a750-25654a0d78ff",
+    "native_image": "Original/Images/4f46b38f-f0ed-4cb1-a750-25654a0d78ff.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.25
+     ],
+     [
+      "Based",
+      -1.5
+     ],
+     [
+      "On",
+      -6.88
+     ],
+     [
+      "There",
+      -7.25
+     ],
+     [
+      "It",
+      -8.13
+     ]
+    ]
+   },
+   "reply": "The text \"EXPRESS\" is written on the side of a red double-decker bus in the foreground of the image.",
+   "image": "VINS-120K Dataset/Original/Images/4f46b38f-f0ed-4cb1-a750-25654a0d78ff.jpg"
+  },
+  {
+   "id": "vins120k_orig_00461",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 44,
+    "row": 86,
+    "prompt_number": 461,
+    "group_id": "vins120k:original:69cb8705-656e-42ea-9226-0c29ce4fcd3a",
+    "native_image": "Original/Images/69cb8705-656e-42ea-9226-0c29ce4fcd3a.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.47
+     ],
+     [
+      "The",
+      -0.97
+     ],
+     [
+      "There",
+      -8.72
+     ],
+     [
+      "It",
+      -9.22
+     ],
+     [
+      "On",
+      -9.72
+     ]
+    ]
+   },
+   "reply": "Based on the image provided, the text is written on several different objects, primarily advertising signs and billboards.\n\nHere are the main objects with text:\n\n1.  **Large Vertical Billboards:** The most prominent text is on the large, illuminated vertical signs on the buildings. For example, the large red sign on the",
+   "image": "VINS-120K Dataset/Original/Images/69cb8705-656e-42ea-9226-0c29ce4fcd3a.jpg"
+  },
+  {
+   "id": "vins120k_orig_00471",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 45,
+    "row": 87,
+    "prompt_number": 471,
+    "group_id": "vins120k:original:760a1da8-daa8-469d-b176-7133e6cbca14",
+    "native_image": "Original/Images/760a1da8-daa8-469d-b176-7133e6cbca14.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.13
+     ],
+     [
+      "There",
+      -6.26
+     ],
+     [
+      "On",
+      -8.26
+     ],
+     [
+      "\"",
+      -8.51
+     ]
+    ]
+   },
+   "reply": "The text \"2412\" is written on the road surface, specifically on the pavement within the intersection. It appears to be painted in white, likely as part of road markings or directional indicators.",
+   "image": "VINS-120K Dataset/Original/Images/760a1da8-daa8-469d-b176-7133e6cbca14.jpg"
+  },
+  {
+   "id": "vins120k_orig_00481",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 46,
+    "row": 88,
+    "prompt_number": 481,
+    "group_id": "vins120k:original:76493adb-d29c-44e8-b42d-e38d461616bf",
+    "native_image": "Original/Images/76493adb-d29c-44e8-b42d-e38d461616bf.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.52
+     ],
+     [
+      "The",
+      -1.02
+     ],
+     [
+      "Based",
+      -3.15
+     ],
+     [
+      "I",
+      -6.27
+     ],
+     [
+      "Sorry",
+      -6.52
+     ]
+    ]
+   },
+   "reply": "There is no text visible in the image. The image shows a scenic view of a waterfront promenade with palm trees, boats in a marina, and mountains in the background. There are no signs, banners, or any other objects with written text.",
+   "image": "VINS-120K Dataset/Original/Images/76493adb-d29c-44e8-b42d-e38d461616bf.jpg"
+  },
+  {
+   "id": "vins120k_orig_00491",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 47,
+    "row": 89,
+    "prompt_number": 491,
+    "group_id": "vins120k:original:9810955e-6743-45f2-992c-2165c60958e1",
+    "native_image": "Original/Images/9810955e-6743-45f2-992c-2165c60958e1.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.41
+     ],
+     [
+      "The",
+      -1.41
+     ],
+     [
+      "Based",
+      -2.66
+     ],
+     [
+      "Actually",
+      -4.28
+     ],
+     [
+      "In",
+      -6.53
+     ]
+    ]
+   },
+   "reply": "There is no text written on any object in the image. The image shows a rural road with sheep crossing it, a T-intersection road sign, and surrounding fields and trees. The only text visible is the symbol (a black T on a yellow background) on the road sign, which indicates a T-intersection ahead",
+   "image": "VINS-120K Dataset/Original/Images/9810955e-6743-45f2-992c-2165c60958e1.jpg"
+  },
+  {
+   "id": "vins120k_orig_00501",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 48,
+    "row": 90,
+    "prompt_number": 501,
+    "group_id": "vins120k:original:9d73fa50-df85-4d9f-aba8-d3c29c744279",
+    "native_image": "Original/Images/9d73fa50-df85-4d9f-aba8-d3c29c744279.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "Based",
+      -3.78
+     ],
+     [
+      "There",
+      -6.15
+     ],
+     [
+      "On",
+      -8.03
+     ],
+     [
+      "It",
+      -9.65
+     ]
+    ]
+   },
+   "reply": "The text \"HANNA\" is written on the robot's chest.",
+   "image": "VINS-120K Dataset/Original/Images/9d73fa50-df85-4d9f-aba8-d3c29c744279.jpg"
+  },
+  {
+   "id": "vins120k_orig_00511",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 49,
+    "row": 91,
+    "prompt_number": 511,
+    "group_id": "vins120k:original:9ff67774-aa3a-47a8-af2c-80400ad769e2",
+    "native_image": "Original/Images/9ff67774-aa3a-47a8-af2c-80400ad769e2.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.21
+     ],
+     [
+      "Based",
+      -1.71
+     ],
+     [
+      "It",
+      -6.21
+     ],
+     [
+      "There",
+      -6.33
+     ],
+     [
+      "A",
+      -6.58
+     ]
+    ]
+   },
+   "reply": "The text is written on a sign.",
+   "image": "VINS-120K Dataset/Original/Images/9ff67774-aa3a-47a8-af2c-80400ad769e2.jpg"
+  },
+  {
+   "id": "vins120k_orig_00521",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 50,
+    "row": 92,
+    "prompt_number": 521,
+    "group_id": "vins120k:original:ac92f0c8-f78b-48b8-a677-0a9a13f07b06",
+    "native_image": "Original/Images/ac92f0c8-f78b-48b8-a677-0a9a13f07b06.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.04
+     ],
+     [
+      "Based",
+      -3.54
+     ],
+     [
+      "The",
+      -5.29
+     ],
+     [
+      "Actually",
+      -6.41
+     ],
+     [
+      "I",
+      -7.16
+     ]
+    ]
+   },
+   "reply": "There is no text written on any object in the image. The image shows a person on a bicycle overlooking a desert landscape with snow-capped mountains in the distance. There are no signs, labels, or written words visible.",
+   "image": "VINS-120K Dataset/Original/Images/ac92f0c8-f78b-48b8-a677-0a9a13f07b06.jpg"
+  },
+  {
+   "id": "vins120k_orig_00531",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 51,
+    "row": 93,
+    "prompt_number": 531,
+    "group_id": "vins120k:original:db8afa43-80c0-4b38-b473-f8d38fbdd618",
+    "native_image": "Original/Images/db8afa43-80c0-4b38-b473-f8d38fbdd618.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.27
+     ],
+     [
+      "Based",
+      -1.52
+     ],
+     [
+      "F",
+      -4.27
+     ],
+     [
+      "There",
+      -6.52
+     ],
+     [
+      "On",
+      -8.02
+     ]
+    ]
+   },
+   "reply": "The text is written on a **sign**.\n\nMore specifically, based on the image, the text appears on several **billboards and digital screens** that are part of the urban landscape, likely advertising for businesses or events. For example:\n\n*   A large blue sign with white text reading \"F21\" and",
+   "image": "VINS-120K Dataset/Original/Images/db8afa43-80c0-4b38-b473-f8d38fbdd618.jpg"
+  },
+  {
+   "id": "vins120k_orig_00541",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 52,
+    "row": 94,
+    "prompt_number": 541,
+    "group_id": "vins120k:original:f8be8cae-b476-46d0-acdc-25fca29d8326",
+    "native_image": "Original/Images/f8be8cae-b476-46d0-acdc-25fca29d8326.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.21
+     ],
+     [
+      "Based",
+      -1.71
+     ],
+     [
+      "There",
+      -4.46
+     ],
+     [
+      "In",
+      -7.59
+     ],
+     [
+      "I",
+      -8.09
+     ]
+    ]
+   },
+   "reply": "The text is written on a sign.",
+   "image": "VINS-120K Dataset/Original/Images/f8be8cae-b476-46d0-acdc-25fca29d8326.jpg"
+  },
+  {
+   "id": "vins120k_orig_00551",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 53,
+    "row": 95,
+    "prompt_number": 551,
+    "group_id": "vins120k:original:ef0e4159-7833-4f13-8ec3-221250bf2a04",
+    "native_image": "Original/Images/ef0e4159-7833-4f13-8ec3-221250bf2a04.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.04
+     ],
+     [
+      "Based",
+      -3.54
+     ],
+     [
+      "The",
+      -5.29
+     ],
+     [
+      "Actually",
+      -5.91
+     ],
+     [
+      "I",
+      -7.41
+     ]
+    ]
+   },
+   "reply": "There is no text visible in the image. The image shows a large, ornate building with a gate in front, likely a palace or government building, with people walking around. The sky is clear and blue. There are no signs, plaques, or any other objects with writing on them visible in the image.",
+   "image": "VINS-120K Dataset/Original/Images/ef0e4159-7833-4f13-8ec3-221250bf2a04.jpg"
+  },
+  {
+   "id": "vins120k_orig_00561",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 54,
+    "row": 96,
+    "prompt_number": 561,
+    "group_id": "vins120k:original:78b2d691-71c5-4356-bba4-e09b05875457",
+    "native_image": "Original/Images/78b2d691-71c5-4356-bba4-e09b05875457.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.24
+     ],
+     [
+      "There",
+      -1.99
+     ],
+     [
+      "Based",
+      -2.74
+     ],
+     [
+      "On",
+      -4.74
+     ],
+     [
+      "In",
+      -6.99
+     ]
+    ]
+   },
+   "reply": "The text \"NYC\" is written on the side of the white van in the image.",
+   "image": "VINS-120K Dataset/Original/Images/78b2d691-71c5-4356-bba4-e09b05875457.jpg"
+  },
+  {
+   "id": "vins120k_orig_00571",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 55,
+    "row": 97,
+    "prompt_number": 571,
+    "group_id": "vins120k:original:b7a1994a-73f8-40d6-8635-a4ca4c81e02d",
+    "native_image": "Original/Images/b7a1994a-73f8-40d6-8635-a4ca4c81e02d.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.05
+     ],
+     [
+      "Based",
+      -3.05
+     ],
+     [
+      "It",
+      -6.3
+     ],
+     [
+      "On",
+      -7.55
+     ],
+     [
+      "In",
+      -7.8
+     ]
+    ]
+   },
+   "reply": "The text \"Apple Store\" is written on the bottom left corner of the image, likely as a watermark or attribution. It is not written on any physical object within the scene depicted in the image. The image shows an Apple Store building, but the text \"Apple Store\" is not part of the building's signage or",
+   "image": "VINS-120K Dataset/Original/Images/b7a1994a-73f8-40d6-8635-a4ca4c81e02d.jpg"
+  },
+  {
+   "id": "vins120k_orig_00581",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 56,
+    "row": 98,
+    "prompt_number": 581,
+    "group_id": "vins120k:original:babe741f-0d05-4439-8c6c-efee9cb04b0b",
+    "native_image": "Original/Images/babe741f-0d05-4439-8c6c-efee9cb04b0b.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.08
+     ],
+     [
+      "Based",
+      -2.83
+     ],
+     [
+      "There",
+      -4.21
+     ],
+     [
+      "On",
+      -6.33
+     ],
+     [
+      "It",
+      -7.46
+     ]
+    ]
+   },
+   "reply": "The text is written on a white rectangular sign attached to the side of a black truck. The sign appears to be a license plate or identification plate for the vehicle.",
+   "image": "VINS-120K Dataset/Original/Images/babe741f-0d05-4439-8c6c-efee9cb04b0b.jpg"
+  },
+  {
+   "id": "vins120k_orig_00591",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 57,
+    "row": 99,
+    "prompt_number": 591,
+    "group_id": "vins120k:original:4c33f0b5-d117-4662-9b3e-d086261653cb",
+    "native_image": "Original/Images/4c33f0b5-d117-4662-9b3e-d086261653cb.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "Based",
+      -4.03
+     ],
+     [
+      "There",
+      -4.53
+     ],
+     [
+      "On",
+      -7.9
+     ],
+     [
+      "In",
+      -9.15
+     ]
+    ]
+   },
+   "reply": "The text \"26122\" is written on the road surface, specifically within a designated lane or area marked with white lines and chevrons. This appears to be a lane identifier or a directional marking for traffic management.",
+   "image": "VINS-120K Dataset/Original/Images/4c33f0b5-d117-4662-9b3e-d086261653cb.jpg"
+  },
+  {
+   "id": "vins120k_orig_00601",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 58,
+    "row": 100,
+    "prompt_number": 601,
+    "group_id": "vins120k:original:69e4e69c-6751-435b-8504-1116adba4447",
+    "native_image": "Original/Images/69e4e69c-6751-435b-8504-1116adba4447.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.18
+     ],
+     [
+      "The",
+      -2.06
+     ],
+     [
+      "Based",
+      -3.31
+     ],
+     [
+      "I",
+      -6.31
+     ],
+     [
+      "Actually",
+      -7.06
+     ]
+    ]
+   },
+   "reply": "There is no text visible in the image. The image shows a person riding a motorcycle down a tree-lined road, with palm trees and other vegetation on both sides. There are no signs, license plates, or any other objects with written text that can be clearly read.",
+   "image": "VINS-120K Dataset/Original/Images/69e4e69c-6751-435b-8504-1116adba4447.jpg"
+  },
+  {
+   "id": "vins120k_orig_00611",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 59,
+    "row": 101,
+    "prompt_number": 611,
+    "group_id": "vins120k:original:75a8d614-400b-4ed9-b702-1df72499aed6",
+    "native_image": "Original/Images/75a8d614-400b-4ed9-b702-1df72499aed6.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.11
+     ],
+     [
+      "The",
+      -2.61
+     ],
+     [
+      "Based",
+      -3.61
+     ],
+     [
+      "I",
+      -6.24
+     ],
+     [
+      "Sorry",
+      -6.99
+     ]
+    ]
+   },
+   "reply": "There is no text visible in the image. The image depicts a road scene with a person riding a bicycle, some vehicles, and roadside structures, but no written text can be seen on any object or surface.",
+   "image": "VINS-120K Dataset/Original/Images/75a8d614-400b-4ed9-b702-1df72499aed6.jpg"
+  },
+  {
+   "id": "vins120k_orig_00621",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 60,
+    "row": 102,
+    "prompt_number": 621,
+    "group_id": "vins120k:original:0543f201-6012-4393-a19b-14ce76604dad",
+    "native_image": "Original/Images/0543f201-6012-4393-a19b-14ce76604dad.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.05
+     ],
+     [
+      "Based",
+      -3.3
+     ],
+     [
+      "The",
+      -4.92
+     ],
+     [
+      "Actually",
+      -7.17
+     ],
+     [
+      "I",
+      -7.67
+     ]
+    ]
+   },
+   "reply": "There is no text visible in the image. The image shows an outdoor playground with various play structures, such as a small house-shaped playhouse, a merry-go-round, and other equipment, set against a backdrop of multi-story residential buildings under a partly cloudy sky. There are no signs, labels, or written words on",
+   "image": "VINS-120K Dataset/Original/Images/0543f201-6012-4393-a19b-14ce76604dad.jpg"
+  },
+  {
+   "id": "vins120k_orig_00631",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 61,
+    "row": 103,
+    "prompt_number": 631,
+    "group_id": "vins120k:original:85ba6791-2287-4511-b5f8-220c4a0f9c70",
+    "native_image": "Original/Images/85ba6791-2287-4511-b5f8-220c4a0f9c70.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.45
+     ],
+     [
+      "The",
+      -1.2
+     ],
+     [
+      "There",
+      -2.95
+     ],
+     [
+      "I",
+      -6.82
+     ],
+     [
+      "In",
+      -7.32
+     ]
+    ]
+   },
+   "reply": "Based on the image provided, there is no text visible on any object. The image shows a group of people visiting a historic building, which appears to be a gateway or entrance to a monument, likely the Qutub Minar complex in Delhi, India. The building is made of red sandstone and has arched",
+   "image": "VINS-120K Dataset/Original/Images/85ba6791-2287-4511-b5f8-220c4a0f9c70.jpg"
+  },
+  {
+   "id": "vins120k_orig_00641",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 62,
+    "row": 104,
+    "prompt_number": 641,
+    "group_id": "vins120k:original:01b91cee-dc23-4757-bc78-1855acc2594f",
+    "native_image": "Original/Images/01b91cee-dc23-4757-bc78-1855acc2594f.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.02
+     ],
+     [
+      "The",
+      -5.77
+     ],
+     [
+      "Actually",
+      -6.27
+     ],
+     [
+      "I",
+      -7.9
+     ]
+    ]
+   },
+   "reply": "There is no text in the image. The image shows two people riding bicycles on a paved path next to a body of water, with trees and grass in the foreground. The sky is clear and blue, and there is a lens flare visible in the lower right corner.",
+   "image": "VINS-120K Dataset/Original/Images/01b91cee-dc23-4757-bc78-1855acc2594f.jpg"
+  },
+  {
+   "id": "vins120k_orig_00651",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 63,
+    "row": 105,
+    "prompt_number": 651,
+    "group_id": "vins120k:original:2b83d983-8107-48a8-a91a-5fcd590b3667",
+    "native_image": "Original/Images/2b83d983-8107-48a8-a91a-5fcd590b3667.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.2
+     ],
+     [
+      "The",
+      -1.7
+     ],
+     [
+      "On",
+      -7.08
+     ],
+     [
+      "In",
+      -8.7
+     ],
+     [
+      "Looking",
+      -8.95
+     ]
+    ]
+   },
+   "reply": "Based on the image provided, the text \"\u0413\u041e\u0422\u0415\u041b\u042c\" is written on the side of a building.\n\nSpecifically, it appears to be painted in red letters on the upper facade of the taller building in the background, just above the roofline. This is a Cyrillic word, which translates to \"Hotel\"",
+   "image": "VINS-120K Dataset/Original/Images/2b83d983-8107-48a8-a91a-5fcd590b3667.jpg"
+  },
+  {
+   "id": "vins120k_orig_00661",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 64,
+    "row": 106,
+    "prompt_number": 661,
+    "group_id": "vins120k:original:c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb",
+    "native_image": "Original/Images/c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.42
+     ],
+     [
+      "The",
+      -1.67
+     ],
+     [
+      "There",
+      -1.92
+     ],
+     [
+      "On",
+      -7.17
+     ],
+     [
+      "A",
+      -7.17
+     ]
+    ]
+   },
+   "reply": "Based on the image provided, there is no text visible on any object.\n\nThe image shows an outdoor scene with:\n- A golden statue of a person in the background, behind a fence.\n- Palm trees and other greenery.\n- A road in the foreground with a small green signboard on a stand.\n- A",
+   "image": "VINS-120K Dataset/Original/Images/c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb.jpg"
+  },
+  {
+   "id": "vins120k_orig_00671",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 65,
+    "row": 107,
+    "prompt_number": 671,
+    "group_id": "vins120k:original:07dd054b-f2f3-4caa-8bb9-d8abf0086c29",
+    "native_image": "Original/Images/07dd054b-f2f3-4caa-8bb9-d8abf0086c29.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "There",
+      -0.06
+     ],
+     [
+      "Based",
+      -3.31
+     ],
+     [
+      "The",
+      -4.31
+     ],
+     [
+      "Actually",
+      -5.18
+     ],
+     [
+      "I",
+      -6.68
+     ]
+    ]
+   },
+   "reply": "There is no text written on any object in the image. The image depicts a scene in Rome, featuring the Arch of Constantine and part of the Colosseum, with people and a car in the foreground. The focus is on the architecture and the setting, not on any written text.",
+   "image": "VINS-120K Dataset/Original/Images/07dd054b-f2f3-4caa-8bb9-d8abf0086c29.jpg"
+  }
+ ]
+}

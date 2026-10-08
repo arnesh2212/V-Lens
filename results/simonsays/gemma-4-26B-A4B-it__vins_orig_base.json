@@ -1,0 +1,3388 @@
+{
+ "repo": "google/gemma-4-26B-A4B-it",
+ "family": "vins_orig_base",
+ "cap": 120,
+ "n": 65,
+ "rows": [
+  {
+   "id": "vins120k_orig_00004",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "statutory_sign",
+    "image_number": 1,
+    "row": 1,
+    "prompt_number": 4,
+    "group_id": "vins120k:original:text_00011",
+    "native_image": "Original/Images/text_00011.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.09
+     ],
+     [
+      "Two",
+      -2.71
+     ],
+     [
+      "An",
+      -4.46
+     ],
+     [
+      "In",
+      -5.21
+     ],
+     [
+      "This",
+      -7.46
+     ]
+    ]
+   },
+   "reply": "A red and white \"DO NOT ENTER\" sign is positioned above a red \"WRONG WAY\" sign in a desert landscape.",
+   "image": "VINS-120K Dataset/Original/Images/text_00011.jpg"
+  },
+  {
+   "id": "vins120k_orig_00016",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 2,
+    "row": 2,
+    "prompt_number": 16,
+    "group_id": "vins120k:original:text_00005",
+    "native_image": "Original/Images/text_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.0
+     ],
+     [
+      "An",
+      -8.13
+     ],
+     [
+      "In",
+      -9.63
+     ],
+     [
+      "Against",
+      -11.88
+     ],
+     [
+      "The",
+      -12.06
+     ]
+    ]
+   },
+   "reply": "A white sign attached to a wooden pole reads \"YOU ARE WORTHY OF LOVE\" in bold black letters, set against a background of greenery and a paved path.",
+   "image": "VINS-120K Dataset/Original/Images/text_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00028",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 3,
+    "row": 3,
+    "prompt_number": 28,
+    "group_id": "vins120k:original:text_00003",
+    "native_image": "Original/Images/text_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.04
+     ],
+     [
+      "An",
+      -3.41
+     ],
+     [
+      "The",
+      -6.91
+     ],
+     [
+      "This",
+      -7.41
+     ],
+     [
+      "Against",
+      -7.54
+     ]
+    ]
+   },
+   "reply": "A white tiled wall features a large framed sign that reads \"WE LIKE YOU, TOO :)\" underneath a canopy of lush green vines.",
+   "image": "VINS-120K Dataset/Original/Images/text_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00040",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 4,
+    "row": 4,
+    "prompt_number": 40,
+    "group_id": "vins120k:original:text_00004",
+    "native_image": "Original/Images/text_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.04
+     ],
+     [
+      "An",
+      -3.91
+     ],
+     [
+      "The",
+      -4.66
+     ],
+     [
+      "This",
+      -5.79
+     ],
+     [
+      "Against",
+      -6.54
+     ]
+    ]
+   },
+   "reply": "A black rectangular sign painted on a white brick wall features the white text \"WAKE ME UP WHEN I'M FAMOUS\" below two small strawberry illustrations.",
+   "image": "VINS-120K Dataset/Original/Images/text_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00052",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 5,
+    "row": 5,
+    "prompt_number": 52,
+    "group_id": "vins120k:original:text_00006",
+    "native_image": "Original/Images/text_00006.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.02
+     ],
+     [
+      "This",
+      -4.52
+     ],
+     [
+      "An",
+      -5.02
+     ],
+     [
+      "In",
+      -7.39
+     ],
+     [
+      "The",
+      -7.64
+     ]
+    ]
+   },
+   "reply": "A wooden-framed letter board displays a coffee menu with various drink options and their prices on a cafe counter.",
+   "image": "VINS-120K Dataset/Original/Images/text_00006.jpg"
+  },
+  {
+   "id": "vins120k_orig_00064",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 6,
+    "row": 6,
+    "prompt_number": 64,
+    "group_id": "vins120k:original:text_00009",
+    "native_image": "Original/Images/text_00009.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.0
+     ],
+     [
+      "An",
+      -5.5
+     ],
+     [
+      "In",
+      -7.75
+     ],
+     [
+      "This",
+      -8.5
+     ],
+     [
+      "Against",
+      -9.5
+     ]
+    ]
+   },
+   "reply": "A black menu board displaying various coffee and tea options sits on a small wooden stool against a white wall in a minimalist cafe setting.",
+   "image": "VINS-120K Dataset/Original/Images/text_00009.jpg"
+  },
+  {
+   "id": "vins120k_orig_00076",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 7,
+    "row": 7,
+    "prompt_number": 76,
+    "group_id": "vins120k:original:text_00008",
+    "native_image": "Original/Images/text_00008.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "This",
+      -0.04
+     ],
+     [
+      "An",
+      -3.67
+     ],
+     [
+      "A",
+      -4.29
+     ],
+     [
+      "The",
+      -9.67
+     ],
+     [
+      "Vintage",
+      -11.73
+     ]
+    ]
+   },
+   "reply": "This is a vintage yellow and red advertisement for Kodak film services that features images of film boxes and black-and-white photographs with the text \"LEAVE YOUR FILMS HERE.\"",
+   "image": "VINS-120K Dataset/Original/Images/text_00008.jpg"
+  },
+  {
+   "id": "vins120k_orig_00088",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 8,
+    "row": 8,
+    "prompt_number": 88,
+    "group_id": "vins120k:original:text_00010",
+    "native_image": "Original/Images/text_00010.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.03
+     ],
+     [
+      "An",
+      -3.78
+     ],
+     [
+      "This",
+      -5.41
+     ],
+     [
+      "The",
+      -5.78
+     ],
+     [
+      "Hand",
+      -9.53
+     ]
+    ]
+   },
+   "reply": "A wooden sign features the inspirational quote \"LOVE WHAT YOU DO AND DO WHAT YOU LOVE\" in bold red and black lettering.",
+   "image": "VINS-120K Dataset/Original/Images/text_00010.jpg"
+  },
+  {
+   "id": "vins120k_orig_00100",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 9,
+    "row": 9,
+    "prompt_number": 100,
+    "group_id": "vins120k:original:text_00007",
+    "native_image": "Original/Images/text_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "This",
+      -0.32
+     ],
+     [
+      "A",
+      -1.69
+     ],
+     [
+      "An",
+      -2.44
+     ],
+     [
+      "Vintage",
+      -6.44
+     ],
+     [
+      "The",
+      -9.32
+     ]
+    ]
+   },
+   "reply": "This is a vintage-style poster for \"Montreal Winter Sports\" from 1924, featuring a large illustration of a woman in winter attire holding a ski pole, set against a snowy landscape with skiers in the background.",
+   "image": "VINS-120K Dataset/Original/Images/text_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00112",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 10,
+    "row": 10,
+    "prompt_number": 112,
+    "group_id": "vins120k:original:text_00012",
+    "native_image": "Original/Images/text_00012.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "An",
+      -0.33
+     ],
+     [
+      "A",
+      -1.46
+     ],
+     [
+      "This",
+      -3.21
+     ],
+     [
+      "Top",
+      -5.21
+     ],
+     [
+      "The",
+      -6.21
+     ]
+    ]
+   },
+   "reply": "An overhead shot shows an event planning checklist, a notebook, a pen, a mug, and a small bag on a white surface.",
+   "image": "VINS-120K Dataset/Original/Images/text_00012.jpg"
+  },
+  {
+   "id": "vins120k_orig_00124",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 11,
+    "row": 11,
+    "prompt_number": 124,
+    "group_id": "vins120k:original:text_00001",
+    "native_image": "Original/Images/text_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "An",
+      -0.0
+     ],
+     [
+      "A",
+      -7.25
+     ],
+     [
+      "This",
+      -7.63
+     ],
+     [
+      " An",
+      -9.0
+     ],
+     [
+      "The",
+      -9.63
+     ]
+    ]
+   },
+   "reply": "An open Bible lies on a white marble surface, with the book of Genesis visible and several passages highlighted in various colors.",
+   "image": "VINS-120K Dataset/Original/Images/text_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00136",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 12,
+    "row": 12,
+    "prompt_number": 136,
+    "group_id": "vins120k:original:text_00002",
+    "native_image": "Original/Images/text_00002.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.04
+     ],
+     [
+      "An",
+      -3.42
+     ],
+     [
+      "This",
+      -5.29
+     ],
+     [
+      "Close",
+      -5.92
+     ],
+     [
+      "The",
+      -8.17
+     ]
+    ]
+   },
+   "reply": "A close-up shot shows a vintage typewriter with the typed phrase \"the best way is just to start!\" on a piece of paper.",
+   "image": "VINS-120K Dataset/Original/Images/text_00002.jpg"
+  },
+  {
+   "id": "vins120k_orig_00148",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 13,
+    "row": 13,
+    "prompt_number": 148,
+    "group_id": "vins120k:original:scene_00001",
+    "native_image": "Original/Images/scene_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.01
+     ],
+     [
+      "This",
+      -5.76
+     ],
+     [
+      "An",
+      -7.13
+     ],
+     [
+      "In",
+      -7.38
+     ],
+     [
+      "People",
+      -8.01
+     ]
+    ]
+   },
+   "reply": "A busy city street is filled with people walking on the sidewalk, a red taxi, a red car, and a yellow double-decker bus driving through the urban landscape.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00160",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 14,
+    "row": 14,
+    "prompt_number": 160,
+    "group_id": "vins120k:original:scene_00002",
+    "native_image": "Original/Images/scene_00002.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.01
+     ],
+     [
+      "This",
+      -5.01
+     ],
+     [
+      "An",
+      -5.14
+     ],
+     [
+      "Colorful",
+      -7.26
+     ],
+     [
+      "Rows",
+      -9.26
+     ]
+    ]
+   },
+   "reply": "A bustling pedestrian street is decorated with numerous colorful hanging lanterns stretching across the sky between traditional-style buildings.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00002.jpg"
+  },
+  {
+   "id": "vins120k_orig_00172",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 15,
+    "row": 15,
+    "prompt_number": 172,
+    "group_id": "vins120k:original:scene_00004",
+    "native_image": "Original/Images/scene_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.04
+     ],
+     [
+      "An",
+      -3.17
+     ],
+     [
+      "This",
+      -9.67
+     ],
+     [
+      "In",
+      -12.92
+     ],
+     [
+      "The",
+      -13.36
+     ]
+    ]
+   },
+   "reply": "A long, straight asphalt road with yellow lane markings stretches toward a distant horizon of rugged mountains under a bright blue sky.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00182",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 16,
+    "row": 16,
+    "prompt_number": 182,
+    "group_id": "vins120k:original:scene_00007",
+    "native_image": "Original/Images/scene_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.06
+     ],
+     [
+      "This",
+      -2.94
+     ],
+     [
+      "An",
+      -4.94
+     ],
+     [
+      "The",
+      -8.81
+     ],
+     [
+      "Scenic",
+      -10.87
+     ]
+    ]
+   },
+   "reply": "A picturesque lakeside village with traditional alpine architecture and a prominent church spire sits nestled at the foot of steep, forested mountains.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00192",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "office",
+    "image_number": 17,
+    "row": 17,
+    "prompt_number": 192,
+    "group_id": "vins120k:original:scene_00003",
+    "native_image": "Original/Images/scene_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "This",
+      -0.22
+     ],
+     [
+      "A",
+      -1.72
+     ],
+     [
+      "An",
+      -4.09
+     ],
+     [
+      "Modern",
+      -10.47
+     ],
+     [
+      "The",
+      -10.47
+     ]
+    ]
+   },
+   "reply": "This is a high-ceilinged, modern living room featuring a grey sofa, wooden coffee table, and large windows that overlook a lush green landscape.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00202",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "gate",
+    "image_number": 18,
+    "row": 18,
+    "prompt_number": 202,
+    "group_id": "vins120k:original:building_00001",
+    "native_image": "Original/Images/building_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.07
+     ],
+     [
+      "This",
+      -2.82
+     ],
+     [
+      "An",
+      -5.57
+     ],
+     [
+      "The",
+      -10.57
+     ],
+     [
+      "In",
+      -11.82
+     ]
+    ]
+   },
+   "reply": "A charming, two-story grey shingle-style cottage with a large white wrap-around porch sits on a lush green lawn under a clear sky.",
+   "image": "VINS-120K Dataset/Original/Images/building_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00212",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 19,
+    "row": 19,
+    "prompt_number": 212,
+    "group_id": "vins120k:original:building_00004",
+    "native_image": "Original/Images/building_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.23
+     ],
+     [
+      "This",
+      -2.36
+     ],
+     [
+      "Modern",
+      -2.48
+     ],
+     [
+      "An",
+      -3.86
+     ],
+     [
+      "The",
+      -5.48
+     ]
+    ]
+   },
+   "reply": "A low-angle shot captures several modern glass and steel office buildings under a clear blue sky.",
+   "image": "VINS-120K Dataset/Original/Images/building_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00224",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "gate",
+    "image_number": 20,
+    "row": 20,
+    "prompt_number": 224,
+    "group_id": "vins120k:original:building_00005",
+    "native_image": "Original/Images/building_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.01
+     ],
+     [
+      "An",
+      -4.76
+     ],
+     [
+      "This",
+      -6.76
+     ],
+     [
+      "In",
+      -9.88
+     ],
+     [
+      "The",
+      -11.38
+     ]
+    ]
+   },
+   "reply": "A large, white two-story colonial-style house with a grey roof and multiple dormer windows is framed by lush green trees and a manicured hedge.",
+   "image": "VINS-120K Dataset/Original/Images/building_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00234",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 21,
+    "row": 21,
+    "prompt_number": 234,
+    "group_id": "vins120k:original:building_00008",
+    "native_image": "Original/Images/building_00008.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.01
+     ],
+     [
+      "Colorful",
+      -5.63
+     ],
+     [
+      "This",
+      -6.26
+     ],
+     [
+      "An",
+      -8.38
+     ],
+     [
+      "At",
+      -8.88
+     ]
+    ]
+   },
+   "reply": "A narrow canal lined with colorful buildings reflects the warm glow of a sunset in this tranquil waterfront scene.",
+   "image": "VINS-120K Dataset/Original/Images/building_00008.jpg"
+  },
+  {
+   "id": "vins120k_orig_00244",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 22,
+    "row": 22,
+    "prompt_number": 244,
+    "group_id": "vins120k:original:transportation_00001",
+    "native_image": "Original/Images/transportation_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.0
+     ],
+     [
+      "An",
+      -8.88
+     ],
+     [
+      "In",
+      -9.0
+     ],
+     [
+      "On",
+      -13.25
+     ],
+     [
+      "Against",
+      -13.5
+     ]
+    ]
+   },
+   "reply": "A light blue bus travels along a snow-covered street lined with bare trees and buildings during a clear, sunny day.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00256",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 23,
+    "row": 23,
+    "prompt_number": 256,
+    "group_id": "vins120k:original:transportation_00003",
+    "native_image": "Original/Images/transportation_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.0
+     ],
+     [
+      "An",
+      -8.88
+     ],
+     [
+      "In",
+      -11.5
+     ],
+     [
+      " A",
+      -14.06
+     ],
+     [
+      "The",
+      -14.13
+     ]
+    ]
+   },
+   "reply": "A red and black electric bus travels down a paved road lined with tall trees and green grass.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00268",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 24,
+    "row": 24,
+    "prompt_number": 268,
+    "group_id": "vins120k:original:transportation_00004",
+    "native_image": "Original/Images/transportation_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.0
+     ],
+     [
+      "An",
+      -8.75
+     ],
+     [
+      "This",
+      -10.69
+     ],
+     [
+      "In",
+      -11.69
+     ],
+     [
+      "The",
+      -12.0
+     ]
+    ]
+   },
+   "reply": "A large red semi-truck with a white trailer is parked in a paved lot on a clear day.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00278",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 25,
+    "row": 25,
+    "prompt_number": 278,
+    "group_id": "vins120k:original:transportation_00010",
+    "native_image": "Original/Images/transportation_00010.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.0
+     ],
+     [
+      "An",
+      -9.0
+     ],
+     [
+      "In",
+      -13.81
+     ],
+     [
+      " A",
+      -14.38
+     ],
+     [
+      "This",
+      -14.69
+     ]
+    ]
+   },
+   "reply": "A large white Scania semi-truck travels down a two-lane highway under a clear blue sky.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00010.jpg"
+  },
+  {
+   "id": "vins120k_orig_00290",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 26,
+    "row": 26,
+    "prompt_number": 290,
+    "group_id": "vins120k:original:transportation_00009",
+    "native_image": "Original/Images/transportation_00009.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.0
+     ],
+     [
+      "An",
+      -6.0
+     ],
+     [
+      "This",
+      -9.13
+     ],
+     [
+      "In",
+      -10.38
+     ],
+     [
+      "The",
+      -11.13
+     ]
+    ]
+   },
+   "reply": "A large Lufthansa Boeing 747 aircraft is parked on the airport tarmac under an overcast sky.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00009.jpg"
+  },
+  {
+   "id": "vins120k_orig_00302",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 27,
+    "row": 27,
+    "prompt_number": 302,
+    "group_id": "vins120k:original:transportation_00013",
+    "native_image": "Original/Images/transportation_00013.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.0
+     ],
+     [
+      "An",
+      -10.75
+     ],
+     [
+      "In",
+      -11.75
+     ],
+     [
+      "Against",
+      -14.56
+     ],
+     [
+      " A",
+      -14.63
+     ]
+    ]
+   },
+   "reply": "A pink motor scooter is parked on a sidewalk next to a stone building.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00013.jpg"
+  },
+  {
+   "id": "vins120k_orig_00314",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 28,
+    "row": 28,
+    "prompt_number": 314,
+    "group_id": "vins120k:original:transportation_00007",
+    "native_image": "Original/Images/transportation_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "An",
+      -0.0
+     ],
+     [
+      "A",
+      -6.38
+     ],
+     [
+      " An",
+      -9.38
+     ],
+     [
+      "Against",
+      -10.38
+     ],
+     [
+      "The",
+      -11.56
+     ]
+    ]
+   },
+   "reply": "An orange rescue helicopter sits on a concrete landing pad during a sunset.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00324",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 29,
+    "row": 29,
+    "prompt_number": 324,
+    "group_id": "vins120k:original:transportation_00008",
+    "native_image": "Original/Images/transportation_00008.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.0
+     ],
+     [
+      "An",
+      -8.75
+     ],
+     [
+      "In",
+      -12.25
+     ],
+     [
+      " A",
+      -14.0
+     ],
+     [
+      "Against",
+      -14.06
+     ]
+    ]
+   },
+   "reply": "A red passenger train winds through a lush, mountainous landscape filled with evergreen trees under a clear blue sky.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00008.jpg"
+  },
+  {
+   "id": "vins120k_orig_00334",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 30,
+    "row": 30,
+    "prompt_number": 334,
+    "group_id": "vins120k:original:transportation_00012",
+    "native_image": "Original/Images/transportation_00012.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.25
+     ],
+     [
+      "An",
+      -1.5
+     ],
+     [
+      "High",
+      -8.88
+     ],
+     [
+      "In",
+      -11.31
+     ],
+     [
+      "Top",
+      -11.44
+     ]
+    ]
+   },
+   "reply": "A dark grey Ferrari sports car is driving along a curved asphalt track lined with red and white curbing.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00012.jpg"
+  },
+  {
+   "id": "vins120k_orig_00344",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "object",
+    "image_number": 31,
+    "row": 31,
+    "prompt_number": 344,
+    "group_id": "vins120k:original:objects_00005",
+    "native_image": "Original/Images/objects_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.0
+     ],
+     [
+      "An",
+      -8.0
+     ],
+     [
+      "This",
+      -9.75
+     ],
+     [
+      "The",
+      -11.38
+     ],
+     [
+      "In",
+      -11.94
+     ]
+    ]
+   },
+   "reply": "A single black Nike Air Force 1 sneaker with a white swoosh sits on a white surface next to a large, white, oval-shaped object.",
+   "image": "VINS-120K Dataset/Original/Images/objects_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00352",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "object",
+    "image_number": 32,
+    "row": 32,
+    "prompt_number": 352,
+    "group_id": "vins120k:original:objects_00007",
+    "native_image": "Original/Images/objects_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.02
+     ],
+     [
+      "An",
+      -4.52
+     ],
+     [
+      "On",
+      -4.77
+     ],
+     [
+      "This",
+      -9.14
+     ],
+     [
+      "In",
+      -10.27
+     ]
+    ]
+   },
+   "reply": "A black camera, a small potted plant, a tablet, and a stack of books are arranged on a dark table next to a grey chair.",
+   "image": "VINS-120K Dataset/Original/Images/objects_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00358",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "object",
+    "image_number": 33,
+    "row": 33,
+    "prompt_number": 358,
+    "group_id": "vins120k:original:objects_00004",
+    "native_image": "Original/Images/objects_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.04
+     ],
+     [
+      "An",
+      -3.92
+     ],
+     [
+      "Two",
+      -4.17
+     ],
+     [
+      "Several",
+      -5.92
+     ],
+     [
+      "Fresh",
+      -5.92
+     ]
+    ]
+   },
+   "reply": "A single tangerine with green leaves sits on a striped cloth in the foreground, while several more tangerines rest on a plate in the blurred background.",
+   "image": "VINS-120K Dataset/Original/Images/objects_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00364",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 34,
+    "row": 34,
+    "prompt_number": 364,
+    "group_id": "vins120k:original:compose_00001",
+    "native_image": "Original/Images/compose_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Three",
+      -0.0
+     ],
+     [
+      "Two",
+      -5.75
+     ],
+     [
+      "A",
+      -7.13
+     ],
+     [
+      "In",
+      -9.82
+     ],
+     [
+      "An",
+      -11.44
+     ]
+    ]
+   },
+   "reply": "Three young people, all wearing face masks, are riding on a green motor scooter through a city street.",
+   "image": "VINS-120K Dataset/Original/Images/compose_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00374",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 35,
+    "row": 35,
+    "prompt_number": 374,
+    "group_id": "vins120k:original:animals_00011",
+    "native_image": "Original/Images/animals_00011.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.02
+     ],
+     [
+      "An",
+      -4.02
+     ],
+     [
+      "In",
+      -10.77
+     ],
+     [
+      "Large",
+      -13.08
+     ],
+     [
+      "Standing",
+      -14.27
+     ]
+    ]
+   },
+   "reply": "A large male elk with impressive antlers stands in the middle of a dirt road, looking directly at the camera amidst a lush forest.",
+   "image": "VINS-120K Dataset/Original/Images/animals_00011.jpg"
+  },
+  {
+   "id": "vins120k_orig_00384",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "gate",
+    "image_number": 36,
+    "row": 36,
+    "prompt_number": 384,
+    "group_id": "vins120k:original:animals_00005",
+    "native_image": "Original/Images/animals_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.0
+     ],
+     [
+      "An",
+      -7.88
+     ],
+     [
+      "In",
+      -10.56
+     ],
+     [
+      "This",
+      -10.75
+     ],
+     [
+      "The",
+      -11.88
+     ]
+    ]
+   },
+   "reply": "A long-haired, brown Highland cow with large horns stands in a field in front of a wooden fence under a cloudy sky.",
+   "image": "VINS-120K Dataset/Original/Images/animals_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00394",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 37,
+    "row": 37,
+    "prompt_number": 394,
+    "group_id": "vins120k:original:human_00013",
+    "native_image": "Original/Images/human_00013.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "An",
+      -0.06
+     ],
+     [
+      "A",
+      -2.81
+     ],
+     [
+      "In",
+      -6.81
+     ],
+     [
+      "Sitting",
+      -10.81
+     ],
+     [
+      " An",
+      -11.13
+     ]
+    ]
+   },
+   "reply": "An elderly man in a grey tank top and shorts sits on a green wooden bench next to a bicycle in a sunny, coastal residential area.",
+   "image": "VINS-120K Dataset/Original/Images/human_00013.jpg"
+  },
+  {
+   "id": "vins120k_orig_00404",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 38,
+    "row": 38,
+    "prompt_number": 404,
+    "group_id": "vins120k:original:human_00017",
+    "native_image": "Original/Images/human_00017.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "An",
+      -0.0
+     ],
+     [
+      "A",
+      -7.5
+     ],
+     [
+      "In",
+      -8.5
+     ],
+     [
+      " An",
+      -10.81
+     ],
+     [
+      "Standing",
+      -13.0
+     ]
+    ]
+   },
+   "reply": "An elderly man wearing a flat cap and a patterned cardigan stands on a blue bridge, leaning on a walking cane.",
+   "image": "VINS-120K Dataset/Original/Images/human_00017.jpg"
+  },
+  {
+   "id": "vins120k_orig_00414",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 39,
+    "row": 39,
+    "prompt_number": 414,
+    "group_id": "vins120k:original:148ee3d1-5d75-430b-9d91-cdb927d2a337",
+    "native_image": "Original/Images/148ee3d1-5d75-430b-9d91-cdb927d2a337.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.01
+     ],
+     [
+      "An",
+      -5.76
+     ],
+     [
+      "In",
+      -6.01
+     ],
+     [
+      "This",
+      -9.26
+     ],
+     [
+      "On",
+      -9.51
+     ]
+    ]
+   },
+   "reply": "A wedding party and photographers are gathered on a sidewalk in a residential neighborhood to capture photos of a bride in a long white gown.",
+   "image": "VINS-120K Dataset/Original/Images/148ee3d1-5d75-430b-9d91-cdb927d2a337.jpg"
+  },
+  {
+   "id": "vins120k_orig_00424",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 40,
+    "row": 40,
+    "prompt_number": 424,
+    "group_id": "vins120k:original:201a3d24-a0a9-49c6-9baf-78c7c89574ab",
+    "native_image": "Original/Images/201a3d24-a0a9-49c6-9baf-78c7c89574ab.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.06
+     ],
+     [
+      "An",
+      -3.19
+     ],
+     [
+      "This",
+      -4.44
+     ],
+     [
+      "In",
+      -5.19
+     ],
+     [
+      "The",
+      -6.56
+     ]
+    ]
+   },
+   "reply": "A street scene features a large, white and green building with minarets, with people on scooters and a yellow auto-rickshaw moving along the road in front of it.",
+   "image": "VINS-120K Dataset/Original/Images/201a3d24-a0a9-49c6-9baf-78c7c89574ab.jpg"
+  },
+  {
+   "id": "vins120k_orig_00434",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 41,
+    "row": 41,
+    "prompt_number": 434,
+    "group_id": "vins120k:original:422b41de-2d28-4d0b-95fb-b8b470340630",
+    "native_image": "Original/Images/422b41de-2d28-4d0b-95fb-b8b470340630.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.88
+     ],
+     [
+      "An",
+      -1.01
+     ],
+     [
+      "This",
+      -1.51
+     ],
+     [
+      "High",
+      -7.76
+     ],
+     [
+      "The",
+      -8.38
+     ]
+    ]
+   },
+   "reply": "A high-angle night shot captures a bustling city street lined with traditional Japanese-style buildings and modern high-rises, with light trails from passing vehicles illuminating the road.",
+   "image": "VINS-120K Dataset/Original/Images/422b41de-2d28-4d0b-95fb-b8b470340630.jpg"
+  },
+  {
+   "id": "vins120k_orig_00444",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 42,
+    "row": 42,
+    "prompt_number": 444,
+    "group_id": "vins120k:original:437ad136-cf8c-46c5-a4ea-e4f4c2151229",
+    "native_image": "Original/Images/437ad136-cf8c-46c5-a4ea-e4f4c2151229.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.12
+     ],
+     [
+      "An",
+      -2.87
+     ],
+     [
+      "This",
+      -2.99
+     ],
+     [
+      "At",
+      -6.99
+     ],
+     [
+      "The",
+      -7.24
+     ]
+    ]
+   },
+   "reply": "A busy city street at night features a bus station with several buses parked alongside a road filled with the motion blur of passing vehicle lights.",
+   "image": "VINS-120K Dataset/Original/Images/437ad136-cf8c-46c5-a4ea-e4f4c2151229.jpg"
+  },
+  {
+   "id": "vins120k_orig_00454",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 43,
+    "row": 43,
+    "prompt_number": 454,
+    "group_id": "vins120k:original:4f46b38f-f0ed-4cb1-a750-25654a0d78ff",
+    "native_image": "Original/Images/4f46b38f-f0ed-4cb1-a750-25654a0d78ff.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.04
+     ],
+     [
+      "This",
+      -3.67
+     ],
+     [
+      "An",
+      -4.42
+     ],
+     [
+      "The",
+      -5.29
+     ],
+     [
+      "In",
+      -7.67
+     ]
+    ]
+   },
+   "reply": "A busy street scene in Rome features a large red bus in the foreground, with the historic Colosseum standing majestically in the background under a cloudy sky.",
+   "image": "VINS-120K Dataset/Original/Images/4f46b38f-f0ed-4cb1-a750-25654a0d78ff.jpg"
+  },
+  {
+   "id": "vins120k_orig_00464",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 44,
+    "row": 44,
+    "prompt_number": 464,
+    "group_id": "vins120k:original:69cb8705-656e-42ea-9226-0c29ce4fcd3a",
+    "native_image": "Original/Images/69cb8705-656e-42ea-9226-0c29ce4fcd3a.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.02
+     ],
+     [
+      "This",
+      -4.27
+     ],
+     [
+      "An",
+      -5.52
+     ],
+     [
+      "The",
+      -6.4
+     ],
+     [
+      "At",
+      -6.52
+     ]
+    ]
+   },
+   "reply": "A busy city street at night is filled with bright, colorful neon signs and large advertising billboards towering over passing vehicles and pedestrians.",
+   "image": "VINS-120K Dataset/Original/Images/69cb8705-656e-42ea-9226-0c29ce4fcd3a.jpg"
+  },
+  {
+   "id": "vins120k_orig_00474",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 45,
+    "row": 45,
+    "prompt_number": 474,
+    "group_id": "vins120k:original:760a1da8-daa8-469d-b176-7133e6cbca14",
+    "native_image": "Original/Images/760a1da8-daa8-469d-b176-7133e6cbca14.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "An",
+      -0.14
+     ],
+     [
+      "A",
+      -2.52
+     ],
+     [
+      "This",
+      -3.02
+     ],
+     [
+      "High",
+      -6.52
+     ],
+     [
+      "The",
+      -7.02
+     ]
+    ]
+   },
+   "reply": "An aerial view shows a busy city street filled with various vehicles, including cars, buses, and trucks, navigating through multiple lanes and intersections.",
+   "image": "VINS-120K Dataset/Original/Images/760a1da8-daa8-469d-b176-7133e6cbca14.jpg"
+  },
+  {
+   "id": "vins120k_orig_00484",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 46,
+    "row": 46,
+    "prompt_number": 484,
+    "group_id": "vins120k:original:76493adb-d29c-44e8-b42d-e38d461616bf",
+    "native_image": "Original/Images/76493adb-d29c-44e8-b42d-e38d461616bf.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.01
+     ],
+     [
+      "This",
+      -5.26
+     ],
+     [
+      "An",
+      -6.51
+     ],
+     [
+      "The",
+      -9.76
+     ],
+     [
+      "In",
+      -12.32
+     ]
+    ]
+   },
+   "reply": "A paved walkway lined with palm trees and benches stretches toward a harbor filled with boats, set against a backdrop of mountains.",
+   "image": "VINS-120K Dataset/Original/Images/76493adb-d29c-44e8-b42d-e38d461616bf.jpg"
+  },
+  {
+   "id": "vins120k_orig_00494",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 47,
+    "row": 47,
+    "prompt_number": 494,
+    "group_id": "vins120k:original:9810955e-6743-45f2-992c-2165c60958e1",
+    "native_image": "Original/Images/9810955e-6743-45f2-992c-2165c60958e1.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.0
+     ],
+     [
+      "In",
+      -8.13
+     ],
+     [
+      "An",
+      -9.38
+     ],
+     [
+      "On",
+      -10.0
+     ],
+     [
+      "Sheep",
+      -11.75
+     ]
+    ]
+   },
+   "reply": "A flock of sheep is walking down the middle of a narrow, wet asphalt road that winds through a rural landscape under a clear blue sky.",
+   "image": "VINS-120K Dataset/Original/Images/9810955e-6743-45f2-992c-2165c60958e1.jpg"
+  },
+  {
+   "id": "vins120k_orig_00504",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 48,
+    "row": 48,
+    "prompt_number": 504,
+    "group_id": "vins120k:original:9d73fa50-df85-4d9f-aba8-d3c29c744279",
+    "native_image": "Original/Images/9d73fa50-df85-4d9f-aba8-d3c29c744279.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.01
+     ],
+     [
+      "In",
+      -4.51
+     ],
+     [
+      "An",
+      -5.64
+     ],
+     [
+      "At",
+      -9.26
+     ],
+     [
+      "This",
+      -10.51
+     ]
+    ]
+   },
+   "reply": "A silver humanoid robot stands in the foreground of a busy indoor exhibition hall filled with people and various technological displays.",
+   "image": "VINS-120K Dataset/Original/Images/9d73fa50-df85-4d9f-aba8-d3c29c744279.jpg"
+  },
+  {
+   "id": "vins120k_orig_00514",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 49,
+    "row": 49,
+    "prompt_number": 514,
+    "group_id": "vins120k:original:9ff67774-aa3a-47a8-af2c-80400ad769e2",
+    "native_image": "Original/Images/9ff67774-aa3a-47a8-af2c-80400ad769e2.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.01
+     ],
+     [
+      "An",
+      -4.39
+     ],
+     [
+      "This",
+      -9.26
+     ],
+     [
+      "The",
+      -11.01
+     ],
+     [
+      "In",
+      -11.39
+     ]
+    ]
+   },
+   "reply": "A winding asphalt road with yellow lines cuts through a dense, sun-dappled forest of tall, slender trees.",
+   "image": "VINS-120K Dataset/Original/Images/9ff67774-aa3a-47a8-af2c-80400ad769e2.jpg"
+  },
+  {
+   "id": "vins120k_orig_00524",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 50,
+    "row": 50,
+    "prompt_number": 524,
+    "group_id": "vins120k:original:ac92f0c8-f78b-48b8-a677-0a9a13f07b06",
+    "native_image": "Original/Images/ac92f0c8-f78b-48b8-a677-0a9a13f07b06.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.0
+     ],
+     [
+      "In",
+      -7.63
+     ],
+     [
+      "An",
+      -8.38
+     ],
+     [
+      "On",
+      -13.13
+     ],
+     [
+      "Under",
+      -13.63
+     ]
+    ]
+   },
+   "reply": "A person wearing a red helmet and white shirt sits on a mountain bike, looking out over a vast desert landscape toward snow-capped mountains.",
+   "image": "VINS-120K Dataset/Original/Images/ac92f0c8-f78b-48b8-a677-0a9a13f07b06.jpg"
+  },
+  {
+   "id": "vins120k_orig_00534",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 51,
+    "row": 51,
+    "prompt_number": 534,
+    "group_id": "vins120k:original:db8afa43-80c0-4b38-b473-f8d38fbdd618",
+    "native_image": "Original/Images/db8afa43-80c0-4b38-b473-f8d38fbdd618.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.01
+     ],
+     [
+      "This",
+      -5.63
+     ],
+     [
+      "People",
+      -6.51
+     ],
+     [
+      "An",
+      -6.88
+     ],
+     [
+      "Crow",
+      -7.88
+     ]
+    ]
+   },
+   "reply": "A busy city street at night is filled with people walking across a crosswalk amidst bright neon signs and towering buildings.",
+   "image": "VINS-120K Dataset/Original/Images/db8afa43-80c0-4b38-b473-f8d38fbdd618.jpg"
+  },
+  {
+   "id": "vins120k_orig_00544",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 52,
+    "row": 52,
+    "prompt_number": 544,
+    "group_id": "vins120k:original:f8be8cae-b476-46d0-acdc-25fca29d8326",
+    "native_image": "Original/Images/f8be8cae-b476-46d0-acdc-25fca29d8326.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.51
+     ],
+     [
+      "An",
+      -1.13
+     ],
+     [
+      "This",
+      -2.63
+     ],
+     [
+      "The",
+      -6.63
+     ],
+     [
+      "At",
+      -7.88
+     ]
+    ]
+   },
+   "reply": "A high-angle view captures a busy city street at dusk, featuring multi-level roadways, elevated highways, and tall buildings under a colorful twilight sky.",
+   "image": "VINS-120K Dataset/Original/Images/f8be8cae-b476-46d0-acdc-25fca29d8326.jpg"
+  },
+  {
+   "id": "vins120k_orig_00554",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 53,
+    "row": 53,
+    "prompt_number": 554,
+    "group_id": "vins120k:original:ef0e4159-7833-4f13-8ec3-221250bf2a04",
+    "native_image": "Original/Images/ef0e4159-7833-4f13-8ec3-221250bf2a04.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.05
+     ],
+     [
+      "This",
+      -3.55
+     ],
+     [
+      "An",
+      -4.17
+     ],
+     [
+      "The",
+      -6.05
+     ],
+     [
+      "In",
+      -9.3
+     ]
+    ]
+   },
+   "reply": "A wide shot shows a large, historic palace building under a bright blue sky, with many blurred figures of people walking in the foreground.",
+   "image": "VINS-120K Dataset/Original/Images/ef0e4159-7833-4f13-8ec3-221250bf2a04.jpg"
+  },
+  {
+   "id": "vins120k_orig_00564",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 54,
+    "row": 54,
+    "prompt_number": 564,
+    "group_id": "vins120k:original:78b2d691-71c5-4356-bba4-e09b05875457",
+    "native_image": "Original/Images/78b2d691-71c5-4356-bba4-e09b05875457.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.32
+     ],
+     [
+      "Two",
+      -1.45
+     ],
+     [
+      "In",
+      -3.32
+     ],
+     [
+      "An",
+      -5.45
+     ],
+     [
+      "On",
+      -7.07
+     ]
+    ]
+   },
+   "reply": "A person in a helmet and white tank top rides a black electric bike down a city street, while another cyclist performs a wheelie in the background.",
+   "image": "VINS-120K Dataset/Original/Images/78b2d691-71c5-4356-bba4-e09b05875457.jpg"
+  },
+  {
+   "id": "vins120k_orig_00574",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 55,
+    "row": 55,
+    "prompt_number": 574,
+    "group_id": "vins120k:original:b7a1994a-73f8-40d6-8635-a4ca4c81e02d",
+    "native_image": "Original/Images/b7a1994a-73f8-40d6-8635-a4ca4c81e02d.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "An",
+      -0.75
+     ],
+     [
+      "A",
+      -1.0
+     ],
+     [
+      "This",
+      -2.12
+     ],
+     [
+      "The",
+      -3.25
+     ],
+     [
+      "Modern",
+      -9.25
+     ]
+    ]
+   },
+   "reply": "An Apple Store with a large glass facade and a glowing logo is visible behind a street with cars and greenery.",
+   "image": "VINS-120K Dataset/Original/Images/b7a1994a-73f8-40d6-8635-a4ca4c81e02d.jpg"
+  },
+  {
+   "id": "vins120k_orig_00584",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 56,
+    "row": 56,
+    "prompt_number": 584,
+    "group_id": "vins120k:original:babe741f-0d05-4439-8c6c-efee9cb04b0b",
+    "native_image": "Original/Images/babe741f-0d05-4439-8c6c-efee9cb04b0b.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.04
+     ],
+     [
+      "An",
+      -3.42
+     ],
+     [
+      "In",
+      -5.42
+     ],
+     [
+      "The",
+      -6.54
+     ],
+     [
+      "This",
+      -7.29
+     ]
+    ]
+   },
+   "reply": "A yellow taxi blurs past an Apple Store with its large glass facade and glowing logo in a busy city setting.",
+   "image": "VINS-120K Dataset/Original/Images/babe741f-0d05-4439-8c6c-efee9cb04b0b.jpg"
+  },
+  {
+   "id": "vins120k_orig_00594",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 57,
+    "row": 57,
+    "prompt_number": 594,
+    "group_id": "vins120k:original:4c33f0b5-d117-4662-9b3e-d086261653cb",
+    "native_image": "Original/Images/4c33f0b5-d117-4662-9b3e-d086261653cb.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "An",
+      -0.46
+     ],
+     [
+      "A",
+      -1.34
+     ],
+     [
+      "This",
+      -2.34
+     ],
+     [
+      "High",
+      -4.59
+     ],
+     [
+      "The",
+      -6.71
+     ]
+    ]
+   },
+   "reply": "An aerial, motion-blurred view shows various vehicles, including buses and cars, traveling along a busy city street lined with buildings and pedestrians.",
+   "image": "VINS-120K Dataset/Original/Images/4c33f0b5-d117-4662-9b3e-d086261653cb.jpg"
+  },
+  {
+   "id": "vins120k_orig_00604",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 58,
+    "row": 58,
+    "prompt_number": 604,
+    "group_id": "vins120k:original:69e4e69c-6751-435b-8504-1116adba4447",
+    "native_image": "Original/Images/69e4e69c-6751-435b-8504-1116adba4447.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.0
+     ],
+     [
+      "An",
+      -7.25
+     ],
+     [
+      "In",
+      -7.88
+     ],
+     [
+      "On",
+      -10.63
+     ],
+     [
+      "Through",
+      -13.69
+     ]
+    ]
+   },
+   "reply": "A man is riding a bicycle down a paved road lined with lush green trees and tropical vegetation.",
+   "image": "VINS-120K Dataset/Original/Images/69e4e69c-6751-435b-8504-1116adba4447.jpg"
+  },
+  {
+   "id": "vins120k_orig_00614",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 59,
+    "row": 59,
+    "prompt_number": 614,
+    "group_id": "vins120k:original:75a8d614-400b-4ed9-b702-1df72499aed6",
+    "native_image": "Original/Images/75a8d614-400b-4ed9-b702-1df72499aed6.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.01
+     ],
+     [
+      "An",
+      -5.14
+     ],
+     [
+      "In",
+      -6.01
+     ],
+     [
+      "On",
+      -6.14
+     ],
+     [
+      "This",
+      -9.89
+     ]
+    ]
+   },
+   "reply": "A person rides a bicycle down a paved road lined with trees, streetlights, and small structures on a hazy day.",
+   "image": "VINS-120K Dataset/Original/Images/75a8d614-400b-4ed9-b702-1df72499aed6.jpg"
+  },
+  {
+   "id": "vins120k_orig_00624",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 60,
+    "row": 60,
+    "prompt_number": 624,
+    "group_id": "vins120k:original:0543f201-6012-4393-a19b-14ce76604dad",
+    "native_image": "Original/Images/0543f201-6012-4393-a19b-14ce76604dad.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.74
+     ],
+     [
+      "An",
+      -0.87
+     ],
+     [
+      "This",
+      -2.37
+     ],
+     [
+      "In",
+      -5.49
+     ],
+     [
+      "The",
+      -5.62
+     ]
+    ]
+   },
+   "reply": "A playground with various colorful play structures sits in front of several large apartment buildings under a blue sky with white clouds.",
+   "image": "VINS-120K Dataset/Original/Images/0543f201-6012-4393-a19b-14ce76604dad.jpg"
+  },
+  {
+   "id": "vins120k_orig_00634",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 61,
+    "row": 61,
+    "prompt_number": 634,
+    "group_id": "vins120k:original:85ba6791-2287-4511-b5f8-220c4a0f9c70",
+    "native_image": "Original/Images/85ba6791-2287-4511-b5f8-220c4a0f9c70.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.04
+     ],
+     [
+      "People",
+      -3.29
+     ],
+     [
+      "An",
+      -5.92
+     ],
+     [
+      "This",
+      -5.92
+     ],
+     [
+      "The",
+      -8.29
+     ]
+    ]
+   },
+   "reply": "A group of people is walking towards a large, ornate, reddish-brown stone archway of a historic building framed by lush green trees.",
+   "image": "VINS-120K Dataset/Original/Images/85ba6791-2287-4511-b5f8-220c4a0f9c70.jpg"
+  },
+  {
+   "id": "vins120k_orig_00644",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 62,
+    "row": 62,
+    "prompt_number": 644,
+    "group_id": "vins120k:original:01b91cee-dc23-4757-bc78-1855acc2594f",
+    "native_image": "Original/Images/01b91cee-dc23-4757-bc78-1855acc2594f.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Two",
+      -0.0
+     ],
+     [
+      "A",
+      -8.88
+     ],
+     [
+      "In",
+      -9.38
+     ],
+     [
+      "On",
+      -9.94
+     ],
+     [
+      "Under",
+      -10.25
+     ]
+    ]
+   },
+   "reply": "Two people are riding bicycles along a paved path next to a large body of water on a sunny day.",
+   "image": "VINS-120K Dataset/Original/Images/01b91cee-dc23-4757-bc78-1855acc2594f.jpg"
+  },
+  {
+   "id": "vins120k_orig_00654",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 63,
+    "row": 63,
+    "prompt_number": 654,
+    "group_id": "vins120k:original:2b83d983-8107-48a8-a91a-5fcd590b3667",
+    "native_image": "Original/Images/2b83d983-8107-48a8-a91a-5fcd590b3667.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "An",
+      -0.1
+     ],
+     [
+      "A",
+      -3.35
+     ],
+     [
+      "This",
+      -3.35
+     ],
+     [
+      "The",
+      -3.72
+     ],
+     [
+      " An",
+      -8.6
+     ]
+    ]
+   },
+   "reply": "An abandoned, multi-story concrete building with broken windows and overgrown vegetation stands in a state of decay.",
+   "image": "VINS-120K Dataset/Original/Images/2b83d983-8107-48a8-a91a-5fcd590b3667.jpg"
+  },
+  {
+   "id": "vins120k_orig_00664",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 64,
+    "row": 64,
+    "prompt_number": 664,
+    "group_id": "vins120k:original:c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb",
+    "native_image": "Original/Images/c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.15
+     ],
+     [
+      "An",
+      -2.15
+     ],
+     [
+      "This",
+      -4.4
+     ],
+     [
+      "In",
+      -4.4
+     ],
+     [
+      "The",
+      -6.28
+     ]
+    ]
+   },
+   "reply": "A golden statue stands prominently in a park surrounded by lush green trees and palm trees under an overcast sky.",
+   "image": "VINS-120K Dataset/Original/Images/c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb.jpg"
+  },
+  {
+   "id": "vins120k_orig_00674",
+   "family": "vins_orig_base",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 65,
+    "row": 65,
+    "prompt_number": 674,
+    "group_id": "vins120k:original:07dd054b-f2f3-4caa-8bb9-d8abf0086c29",
+    "native_image": "Original/Images/07dd054b-f2f3-4caa-8bb9-d8abf0086c29.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.57
+     ],
+     [
+      "An",
+      -1.32
+     ],
+     [
+      "This",
+      -1.94
+     ],
+     [
+      "The",
+      -3.94
+     ],
+     [
+      "In",
+      -6.57
+     ]
+    ]
+   },
+   "reply": "A large, ancient Roman triumphal arch stands prominently in a bustling city square filled with people and modern elements like cars and buildings.",
+   "image": "VINS-120K Dataset/Original/Images/07dd054b-f2f3-4caa-8bb9-d8abf0086c29.jpg"
+  }
+ ]
+}

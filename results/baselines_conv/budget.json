@@ -1,0 +1,9 @@
+{
+ "rise_masks": 4000,
+ "shap_samples": 2080,
+ "groups": 16,
+ "source": "Qwen3-VL-8B-Instruct__convergence.json",
+ "n": 14,
+ "target": 0.95,
+ "note": "KernelSHAP and RISE are run at their default budgets: 2080 coalitions (shap's 2M + 2048 for 16 players) and 4000 masks. Absent patches take the per-picture mean state; KernelSHAP's players are the 16 patch groups."
+}

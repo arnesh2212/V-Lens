@@ -1,0 +1,13 @@
+{
+ "repo": "OpenGVLab/InternVL3_5-8B-HF",
+ "n": 8,
+ "state_scale": 1520.0,
+ "margin_scale": 12.375040054321289,
+ "cross_row_leak": 0.0,
+ "path_difference": 0.0,
+ "batch_size_difference": 992.0,
+ "margin_shift": 9.57328987121582,
+ "sign_agreement": "6/8",
+ "reply_agreement": "8/8",
+ "ok": false
+}

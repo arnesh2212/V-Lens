@@ -1,0 +1,21 @@
+model,instrument,records,block,drop_at_5pc,drop_at_10pc,drop_at_20pc,drop_at_30pc,drop_at_50pc,times_random_at_50pc,rank_agreement,fit_seconds,fit_tokens,needs_labels,needs_gradients,fitting
+Qwen3.5-27B,v_write,998,32,0.4352,0.5533,0.6921,0.77,0.8382,10.74,0.2741,,,no,yes,path integral per picture
+Qwen3.5-27B,attr_patch,998,32,0.3152,0.379,0.4333,0.4692,0.5053,6.474,0.2169,,,no,yes,one gradient per picture
+Qwen3.5-27B,logit,998,32,0.0325,0.0522,0.0721,0.1206,0.1821,2.334,0.0447,,,no,no,no transport at all
+Qwen3.5-27B,tuned_cross,998,32,0.0244,0.0439,0.0615,0.0975,0.1387,1.777,0.0303,,,no,yes,250 steps of SGD
+Qwen3.5-27B,v_read_cross,998,32,0.0294,0.0569,0.0854,0.1174,0.1618,2.073,0.0286,,,no,no,one closed-form solve
+Qwen3.5-27B,tuned,998,32,0.0081,0.0114,0.0307,0.0432,0.0727,0.932,0.014,754,13334236,no,yes,250 steps of SGD
+Qwen3.5-27B,random,998,32,0.009,0.0131,0.0267,0.0483,0.0781,1.0,-0.0025,,,no,no,a matched random direction
+Qwen3.5-27B,jacobian,998,32,0.0204,0.0313,0.0455,0.0536,0.0662,0.848,-0.0033,2436,,no,yes,mean Jacobian over prompts
+Qwen3.5-27B,latent,998,32,0.0435,0.0597,0.0684,0.0689,0.0824,1.055,-0.0141,193,,no,no,nearest neighbours in a store
+Qwen3.5-27B,v_read,998,32,0.009,0.009,0.0133,0.0186,0.0269,0.345,-0.0301,19,137258,no,no,one closed-form solve
+Qwen3-VL-8B-Instruct,v_write,769,18,1.1253,1.6369,2.2384,2.6406,3.1623,2.133,0.2328,,,no,yes,path integral per picture
+Qwen3-VL-8B-Instruct,attr_patch,769,18,0.5577,0.7728,1.1564,1.5367,2.0826,1.405,0.1589,,,no,yes,one gradient per picture
+Qwen3-VL-8B-Instruct,random,769,18,0.0909,0.2177,0.5706,0.9065,1.4824,1.0,0.0035,,,no,no,a matched random direction
+Qwen3-VL-8B-Instruct,latent,769,18,0.0819,0.2039,0.5485,0.8559,1.2162,0.82,-0.0014,107,,no,no,nearest neighbours in a store
+Qwen3-VL-8B-Instruct,v_read_cross,769,18,0.0802,0.2464,0.6291,0.9835,1.6019,1.081,-0.0105,,,no,no,one closed-form solve
+Qwen3-VL-8B-Instruct,tuned_cross,769,18,0.0962,0.2896,0.73,1.0682,1.7121,1.155,-0.013,,,no,yes,250 steps of SGD
+Qwen3-VL-8B-Instruct,v_read,769,18,0.0278,0.1915,0.5281,0.8725,1.3209,0.891,-0.0192,19,243667,no,no,one closed-form solve
+Qwen3-VL-8B-Instruct,jacobian,769,18,0.0264,0.1766,0.5772,0.9136,1.4162,0.955,-0.038,790,,no,yes,mean Jacobian over prompts
+Qwen3-VL-8B-Instruct,tuned,769,18,0.0969,0.2129,0.658,1.0838,1.6844,1.136,-0.0436,565,16625765,no,yes,250 steps of SGD
+Qwen3-VL-8B-Instruct,logit,769,18,0.0758,0.1623,0.5535,1.0311,1.7133,1.156,-0.0458,,,no,no,no transport at all

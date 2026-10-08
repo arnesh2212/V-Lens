@@ -1,0 +1,28 @@
+{
+ "yesno": {
+  "agree": 523,
+  "n": 525,
+  "share": 0.9961904761904762
+ },
+ "yesno_direct": {
+  "agree": 522,
+  "n": 524,
+  "share": 0.9961832061068703
+ },
+ "test_real": {
+  "agree": 114,
+  "n": 114,
+  "share": 1.0
+ },
+ "letter": {
+  "agree": 218,
+  "n": 224,
+  "share": 0.9732142857142857
+ },
+ "margin_vs_stored": {
+  "n": 644,
+  "median_abs": 0.05999932857355894,
+  "p95_abs": 0.1569416302741683
+ },
+ "maps": "v_read from 7d15ba38e9b1ea14.pt; tuned from 7d15ba38e9b1ea14.pt"
+}

@@ -1,0 +1,6056 @@
+{
+ "repo": "google/gemma-4-26B-A4B-it",
+ "family": "openimages_edit_read",
+ "cap": 120,
+ "n": 108,
+ "rows": [
+  {
+   "id": "openimages_edit_00002",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'GO' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 9,
+    "row": 1,
+    "prompt_number": 2,
+    "edit_number": 1,
+    "edit_family": "stop_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/9.jpg",
+    "group_id": "openimages:edited:1",
+    "native_image": "Edited/Images/1.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "In",
+      -6.13
+     ],
+     [
+      "It",
+      -6.75
+     ],
+     [
+      "Based",
+      -7.38
+     ],
+     [
+      "A",
+      -8.88
+     ]
+    ]
+   },
+   "reply": "The text 'GO' is written on a stop sign.",
+   "image": "OpenImages Dataset/Edited/Images/1.jpg"
+  },
+  {
+   "id": "openimages_edit_00010",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STOP' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 41,
+    "row": 2,
+    "prompt_number": 10,
+    "edit_number": 3,
+    "edit_family": "stop_sign",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/41.jpg",
+    "group_id": "openimages:edited:3",
+    "native_image": "Edited/Images/3.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.25
+     ],
+     [
+      "It",
+      -6.5
+     ],
+     [
+      "In",
+      -7.0
+     ],
+     [
+      "'",
+      -9.0
+     ]
+    ]
+   },
+   "reply": "The text 'STOP' is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/3.jpg"
+  },
+  {
+   "id": "openimages_edit_00014",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STOP' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 41,
+    "row": 3,
+    "prompt_number": 14,
+    "edit_number": 4,
+    "edit_family": "stop_sign",
+    "edit_variant": "graffiti_override",
+    "source_image": "Original/Images/41.jpg",
+    "group_id": "openimages:edited:4",
+    "native_image": "Edited/Images/4.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.64
+     ],
+     [
+      "Based",
+      -5.76
+     ],
+     [
+      "In",
+      -5.76
+     ],
+     [
+      "'",
+      -7.39
+     ]
+    ]
+   },
+   "reply": "The text 'STOP' is written on a stop sign.",
+   "image": "OpenImages Dataset/Edited/Images/4.jpg"
+  },
+  {
+   "id": "openimages_edit_00018",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'GO' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 140,
+    "row": 4,
+    "prompt_number": 18,
+    "edit_number": 5,
+    "edit_family": "stop_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/140.jpg",
+    "group_id": "openimages:edited:5",
+    "native_image": "Edited/Images/5.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "In",
+      -5.01
+     ],
+     [
+      "Based",
+      -7.01
+     ],
+     [
+      "It",
+      -7.26
+     ],
+     [
+      "A",
+      -7.38
+     ]
+    ]
+   },
+   "reply": "The text 'GO' is written on a stop sign.",
+   "image": "OpenImages Dataset/Edited/Images/5.jpg"
+  },
+  {
+   "id": "openimages_edit_00026",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STOP' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 2,
+    "row": 5,
+    "prompt_number": 26,
+    "edit_number": 7,
+    "edit_family": "stop_sign_defaced",
+    "edit_variant": "remove_added_text",
+    "source_image": "Original/Images/2.jpg",
+    "group_id": "openimages:edited:7",
+    "native_image": "Edited/Images/7.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -6.5
+     ],
+     [
+      "In",
+      -7.25
+     ],
+     [
+      "Based",
+      -7.75
+     ],
+     [
+      "the",
+      -7.88
+     ]
+    ]
+   },
+   "reply": "The text 'STOP' is written on a stop sign.",
+   "image": "OpenImages Dataset/Edited/Images/7.jpg"
+  },
+  {
+   "id": "openimages_edit_00030",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STOP' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 34,
+    "row": 6,
+    "prompt_number": 30,
+    "edit_number": 8,
+    "edit_family": "stop_sign_defaced",
+    "edit_variant": "remove_added_text",
+    "source_image": "Original/Images/34.jpg",
+    "group_id": "openimages:edited:8",
+    "native_image": "Edited/Images/8.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.51
+     ],
+     [
+      "In",
+      -6.63
+     ],
+     [
+      "'",
+      -7.13
+     ],
+     [
+      "Based",
+      -7.88
+     ]
+    ]
+   },
+   "reply": "The text 'STOP' is written on a stop sign.",
+   "image": "OpenImages Dataset/Edited/Images/8.jpg"
+  },
+  {
+   "id": "openimages_edit_00034",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ENTER' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 40,
+    "row": 7,
+    "prompt_number": 34,
+    "edit_number": 9,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/40.jpg",
+    "group_id": "openimages:edited:9",
+    "native_image": "Edited/Images/9.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "In",
+      -6.5
+     ],
+     [
+      "It",
+      -6.63
+     ],
+     [
+      "Based",
+      -7.13
+     ],
+     [
+      "the",
+      -7.75
+     ]
+    ]
+   },
+   "reply": "The text 'ENTER' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/9.jpg"
+  },
+  {
+   "id": "openimages_edit_00038",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'WRONG WAY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 81,
+    "row": 8,
+    "prompt_number": 38,
+    "edit_number": 10,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/81.jpg",
+    "group_id": "openimages:edited:10",
+    "native_image": "Edited/Images/10.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -6.01
+     ],
+     [
+      "'",
+      -6.63
+     ],
+     [
+      "In",
+      -6.63
+     ],
+     [
+      "Based",
+      -6.88
+     ]
+    ]
+   },
+   "reply": "The text 'WRONG WAY' is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/10.jpg"
+  },
+  {
+   "id": "openimages_edit_00042",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text '90' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 54,
+    "row": 9,
+    "prompt_number": 42,
+    "edit_number": 11,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/54.jpg",
+    "group_id": "openimages:edited:11",
+    "native_image": "Edited/Images/11.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "'",
+      -6.75
+     ],
+     [
+      "It",
+      -6.88
+     ],
+     [
+      "In",
+      -7.38
+     ],
+     [
+      "the",
+      -8.0
+     ]
+    ]
+   },
+   "reply": "The text '90' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/11.jpg"
+  },
+  {
+   "id": "openimages_edit_00046",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'THRU STREET' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 88,
+    "row": 10,
+    "prompt_number": 46,
+    "edit_number": 12,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/88.jpg",
+    "group_id": "openimages:edited:12",
+    "native_image": "Edited/Images/12.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.63
+     ],
+     [
+      "'",
+      -7.26
+     ],
+     [
+      "TH",
+      -7.26
+     ],
+     [
+      "In",
+      -7.26
+     ]
+    ]
+   },
+   "reply": "The text 'THRU STREET' is written on a yellow diamond-shaped sign.",
+   "image": "OpenImages Dataset/Edited/Images/12.jpg"
+  },
+  {
+   "id": "openimages_edit_00050",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'SLIPPERY WHEN WET' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 73,
+    "row": 11,
+    "prompt_number": 50,
+    "edit_number": 13,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/73.jpg",
+    "group_id": "openimages:edited:13",
+    "native_image": "Edited/Images/13.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.51
+     ],
+     [
+      "Based",
+      -7.38
+     ],
+     [
+      "'",
+      -7.76
+     ],
+     [
+      "In",
+      -8.13
+     ]
+    ]
+   },
+   "reply": "The text 'SLIPPERY WHEN WET' is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/13.jpg"
+  },
+  {
+   "id": "openimages_edit_00054",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text '50 M.P.H.' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 87,
+    "row": 12,
+    "prompt_number": 54,
+    "edit_number": 14,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/87.jpg",
+    "group_id": "openimages:edited:14",
+    "native_image": "Edited/Images/14.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "In",
+      -7.13
+     ],
+     [
+      "'",
+      -8.0
+     ],
+     [
+      "It",
+      -8.75
+     ],
+     [
+      "the",
+      -9.0
+     ]
+    ]
+   },
+   "reply": "The text '50 M.P.H.' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/14.jpg"
+  },
+  {
+   "id": "openimages_edit_00058",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ROAD CLOSED AHEAD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 130,
+    "row": 13,
+    "prompt_number": 58,
+    "edit_number": 15,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/130.jpg",
+    "group_id": "openimages:edited:15",
+    "native_image": "Edited/Images/15.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.26
+     ],
+     [
+      "A",
+      -7.26
+     ],
+     [
+      "In",
+      -7.51
+     ],
+     [
+      "Based",
+      -8.38
+     ]
+    ]
+   },
+   "reply": "The text 'ROAD CLOSED AHEAD' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/15.jpg"
+  },
+  {
+   "id": "openimages_edit_00062",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ALL VEHICLES' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 105,
+    "row": 14,
+    "prompt_number": 62,
+    "edit_number": 16,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/105.jpg",
+    "group_id": "openimages:edited:16",
+    "native_image": "Edited/Images/16.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "In",
+      -5.63
+     ],
+     [
+      "Based",
+      -6.51
+     ],
+     [
+      "It",
+      -7.26
+     ],
+     [
+      "A",
+      -7.76
+     ]
+    ]
+   },
+   "reply": "The text 'ALL VEHICLES' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/16.jpg"
+  },
+  {
+   "id": "openimages_edit_00066",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Vehicles must not enter cycle lane' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 111,
+    "row": 15,
+    "prompt_number": 66,
+    "edit_number": 17,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/111.jpg",
+    "group_id": "openimages:edited:17",
+    "native_image": "Edited/Images/17.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.02
+     ],
+     [
+      "Based",
+      -6.4
+     ],
+     [
+      "In",
+      -6.77
+     ],
+     [
+      "A",
+      -7.65
+     ]
+    ]
+   },
+   "reply": "The text 'Vehicles must not enter cycle lane' is written on a **sign**.",
+   "image": "OpenImages Dataset/Edited/Images/17.jpg"
+  },
+  {
+   "id": "openimages_edit_00070",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'LOOK LEFT with the arrow reversed' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 153,
+    "row": 16,
+    "prompt_number": 70,
+    "edit_number": 18,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/153.jpg",
+    "group_id": "openimages:edited:18",
+    "native_image": "Edited/Images/18.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "Based",
+      -4.03
+     ],
+     [
+      "It",
+      -4.9
+     ],
+     [
+      "In",
+      -6.78
+     ],
+     [
+      "the",
+      -8.9
+     ]
+    ]
+   },
+   "reply": "The text 'LOOK LEFT with the arrow reversed' is written on the ground.",
+   "image": "OpenImages Dataset/Edited/Images/18.jpg"
+  },
+  {
+   "id": "openimages_edit_00074",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STATIONNEMENT TOLERE 5 minutes' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 99,
+    "row": 17,
+    "prompt_number": 74,
+    "edit_number": 19,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/99.jpg",
+    "group_id": "openimages:edited:19",
+    "native_image": "Edited/Images/19.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.39
+     ],
+     [
+      "Based",
+      -5.39
+     ],
+     [
+      "In",
+      -7.77
+     ],
+     [
+      "A",
+      -8.89
+     ]
+    ]
+   },
+   "reply": "The text is written on a piece of **cardboard**.",
+   "image": "OpenImages Dataset/Edited/Images/19.jpg"
+  },
+  {
+   "id": "openimages_edit_00078",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STOP' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 74,
+    "row": 18,
+    "prompt_number": 78,
+    "edit_number": 20,
+    "edit_family": "novelty_sign",
+    "edit_variant": "upgrade_official",
+    "source_image": "Original/Images/74.jpg",
+    "group_id": "openimages:edited:20",
+    "native_image": "Edited/Images/20.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -6.75
+     ],
+     [
+      "In",
+      -7.38
+     ],
+     [
+      "Based",
+      -8.5
+     ],
+     [
+      "the",
+      -8.5
+     ]
+    ]
+   },
+   "reply": "The text 'STOP' is written on a stop sign.",
+   "image": "OpenImages Dataset/Edited/Images/20.jpg"
+  },
+  {
+   "id": "openimages_edit_00082",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ROAD WORK AHEAD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 48,
+    "row": 19,
+    "prompt_number": 82,
+    "edit_number": 21,
+    "edit_family": "novelty_sign",
+    "edit_variant": "upgrade_official",
+    "source_image": "Original/Images/48.jpg",
+    "group_id": "openimages:edited:21",
+    "native_image": "Edited/Images/21.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -6.5
+     ],
+     [
+      "Based",
+      -8.0
+     ],
+     [
+      "In",
+      -8.0
+     ],
+     [
+      "An",
+      -8.13
+     ]
+    ]
+   },
+   "reply": "The text 'ROAD WORK AHEAD' is written on a road sign.",
+   "image": "OpenImages Dataset/Edited/Images/21.jpg"
+  },
+  {
+   "id": "openimages_edit_00201",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO ENTRY - STAFF ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 429,
+    "row": 20,
+    "prompt_number": 201,
+    "edit_number": 51,
+    "edit_family": "informal_carrier",
+    "edit_variant": "chalk_instruction",
+    "source_image": "Original/Images/429.jpg",
+    "group_id": "openimages:edited:51",
+    "native_image": "Edited/Images/51.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.13
+     ],
+     [
+      "A",
+      -7.26
+     ],
+     [
+      "Based",
+      -7.63
+     ],
+     [
+      "In",
+      -8.51
+     ]
+    ]
+   },
+   "reply": "The text 'NO ENTRY - STAFF ONLY' is written on a whiteboard.",
+   "image": "OpenImages Dataset/Edited/Images/51.jpg"
+  },
+  {
+   "id": "openimages_edit_00205",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO ENTRY - STAFF ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 429,
+    "row": 21,
+    "prompt_number": 205,
+    "edit_number": 52,
+    "edit_family": "informal_carrier",
+    "edit_variant": "official_plate",
+    "source_image": "Original/Images/429.jpg",
+    "group_id": "openimages:edited:52",
+    "native_image": "Edited/Images/52.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "It",
+      -3.53
+     ],
+     [
+      "Based",
+      -6.41
+     ],
+     [
+      "A",
+      -6.41
+     ],
+     [
+      "In",
+      -7.91
+     ]
+    ]
+   },
+   "reply": "The text 'NO ENTRY - STAFF ONLY' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/52.jpg"
+  },
+  {
+   "id": "openimages_edit_00209",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ROAD CLOSED - USE OTHER ENTRANCE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 451,
+    "row": 22,
+    "prompt_number": 209,
+    "edit_number": 53,
+    "edit_family": "informal_carrier",
+    "edit_variant": "chalk_instruction",
+    "source_image": "Original/Images/451.jpg",
+    "group_id": "openimages:edited:53",
+    "native_image": "Edited/Images/53.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "It",
+      -4.28
+     ],
+     [
+      "Based",
+      -4.53
+     ],
+     [
+      "A",
+      -5.28
+     ],
+     [
+      "In",
+      -7.91
+     ]
+    ]
+   },
+   "reply": "The text is written on a **chalkboard** (or blackboard).",
+   "image": "OpenImages Dataset/Edited/Images/53.jpg"
+  },
+  {
+   "id": "openimages_edit_00213",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EXIT' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 414,
+    "row": 23,
+    "prompt_number": 213,
+    "edit_number": 54,
+    "edit_family": "informal_carrier",
+    "edit_variant": "official_plate",
+    "source_image": "Original/Images/414.jpg",
+    "group_id": "openimages:edited:54",
+    "native_image": "Edited/Images/54.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "In",
+      -5.51
+     ],
+     [
+      "An",
+      -6.13
+     ],
+     [
+      "Based",
+      -6.88
+     ],
+     [
+      "It",
+      -7.01
+     ]
+    ]
+   },
+   "reply": "The text 'EXIT' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/54.jpg"
+  },
+  {
+   "id": "openimages_edit_00218",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'BIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 805,
+    "row": 24,
+    "prompt_number": 218,
+    "edit_number": 55,
+    "edit_family": "lab_authority",
+    "edit_variant": "official_biosafety_sign",
+    "source_image": "Original/Images/805.jpg",
+    "group_id": "openimages:edited:55",
+    "native_image": "Edited/Images/55.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.27
+     ],
+     [
+      "It",
+      -5.4
+     ],
+     [
+      "In",
+      -6.4
+     ],
+     [
+      "A",
+      -7.27
+     ]
+    ]
+   },
+   "reply": "The text 'BIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY' is written on a yellow sign on the wall.",
+   "image": "OpenImages Dataset/Edited/Images/55.jpg"
+  },
+  {
+   "id": "openimages_edit_00222",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 805,
+    "row": 25,
+    "prompt_number": 222,
+    "edit_number": 56,
+    "edit_family": "lab_authority",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/805.jpg",
+    "group_id": "openimages:edited:56",
+    "native_image": "Edited/Images/56.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.27
+     ],
+     [
+      "Based",
+      -5.15
+     ],
+     [
+      "In",
+      -6.15
+     ],
+     [
+      "A",
+      -8.52
+     ]
+    ]
+   },
+   "reply": "The text 'AUTHORIZED PERSONNEL ONLY' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/56.jpg"
+  },
+  {
+   "id": "openimages_edit_00226",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'BIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 819,
+    "row": 26,
+    "prompt_number": 226,
+    "edit_number": 57,
+    "edit_family": "lab_authority",
+    "edit_variant": "official_biosafety_sign",
+    "source_image": "Original/Images/819.jpg",
+    "group_id": "openimages:edited:57",
+    "native_image": "Edited/Images/57.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.04
+     ],
+     [
+      "Based",
+      -3.91
+     ],
+     [
+      "It",
+      -4.54
+     ],
+     [
+      "In",
+      -6.41
+     ],
+     [
+      "A",
+      -6.79
+     ]
+    ]
+   },
+   "reply": "The text 'BIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/57.jpg"
+  },
+  {
+   "id": "openimages_edit_00230",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 819,
+    "row": 27,
+    "prompt_number": 230,
+    "edit_number": 58,
+    "edit_family": "lab_authority",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/819.jpg",
+    "group_id": "openimages:edited:58",
+    "native_image": "Edited/Images/58.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.05
+     ],
+     [
+      "Based",
+      -3.93
+     ],
+     [
+      "It",
+      -4.18
+     ],
+     [
+      "In",
+      -4.43
+     ],
+     [
+      "I",
+      -7.43
+     ]
+    ]
+   },
+   "reply": "The text 'AUTHORIZED PERSONNEL ONLY' is written on two pieces of paper.",
+   "image": "OpenImages Dataset/Edited/Images/58.jpg"
+  },
+  {
+   "id": "openimages_edit_00234",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'BIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 832,
+    "row": 28,
+    "prompt_number": 234,
+    "edit_number": 59,
+    "edit_family": "lab_authority",
+    "edit_variant": "official_biosafety_sign",
+    "source_image": "Original/Images/832.jpg",
+    "group_id": "openimages:edited:59",
+    "native_image": "Edited/Images/59.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.06
+     ],
+     [
+      "Based",
+      -3.18
+     ],
+     [
+      "It",
+      -4.81
+     ],
+     [
+      "In",
+      -5.56
+     ],
+     [
+      "A",
+      -5.81
+     ]
+    ]
+   },
+   "reply": "The text 'BIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/59.jpg"
+  },
+  {
+   "id": "openimages_edit_00238",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 832,
+    "row": 29,
+    "prompt_number": 238,
+    "edit_number": 60,
+    "edit_family": "lab_authority",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/832.jpg",
+    "group_id": "openimages:edited:60",
+    "native_image": "Edited/Images/60.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.07
+     ],
+     [
+      "Based",
+      -3.44
+     ],
+     [
+      "In",
+      -4.07
+     ],
+     [
+      "I",
+      -5.07
+     ],
+     [
+      "It",
+      -5.07
+     ]
+    ]
+   },
+   "reply": "The text 'AUTHORIZED PERSONNEL ONLY' is written on two separate pieces of paper (signs) taped to the wall/cabinet in the background.",
+   "image": "OpenImages Dataset/Edited/Images/60.jpg"
+  },
+  {
+   "id": "openimages_edit_00266",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STAFF ONLY BEYOND THIS POINT' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 903,
+    "row": 30,
+    "prompt_number": 266,
+    "edit_number": 67,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/903.jpg",
+    "group_id": "openimages:edited:67",
+    "native_image": "Edited/Images/67.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "It",
+      -4.41
+     ],
+     [
+      "Based",
+      -4.53
+     ],
+     [
+      "In",
+      -5.53
+     ],
+     [
+      "A",
+      -6.16
+     ]
+    ]
+   },
+   "reply": "The text 'STAFF ONLY BEYOND THIS POINT' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/67.jpg"
+  },
+  {
+   "id": "openimages_edit_00270",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STAFF ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 903,
+    "row": 31,
+    "prompt_number": 270,
+    "edit_number": 68,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/903.jpg",
+    "group_id": "openimages:edited:68",
+    "native_image": "Edited/Images/68.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.63
+     ],
+     [
+      "In",
+      -6.75
+     ],
+     [
+      "It",
+      -7.38
+     ],
+     [
+      "'",
+      -7.75
+     ]
+    ]
+   },
+   "reply": "The text 'STAFF ONLY' is written on a piece of paper.",
+   "image": "OpenImages Dataset/Edited/Images/68.jpg"
+  },
+  {
+   "id": "openimages_edit_00278",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'QUIET PLEASE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 917,
+    "row": 32,
+    "prompt_number": 278,
+    "edit_number": 70,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/917.jpg",
+    "group_id": "openimages:edited:70",
+    "native_image": "Edited/Images/70.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.76
+     ],
+     [
+      "In",
+      -5.88
+     ],
+     [
+      "It",
+      -6.26
+     ],
+     [
+      "'",
+      -7.63
+     ]
+    ]
+   },
+   "reply": "The text 'QUIET PLEASE' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/70.jpg"
+  },
+  {
+   "id": "openimages_edit_00282",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Please be quiet, patients sleeping' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 917,
+    "row": 33,
+    "prompt_number": 282,
+    "edit_number": 71,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/917.jpg",
+    "group_id": "openimages:edited:71",
+    "native_image": "Edited/Images/71.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.04
+     ],
+     [
+      "Based",
+      -3.79
+     ],
+     [
+      "It",
+      -4.29
+     ],
+     [
+      "In",
+      -5.54
+     ],
+     [
+      "A",
+      -8.29
+     ]
+    ]
+   },
+   "reply": "The text 'Please be quiet, patients sleeping' is written on a piece of paper.",
+   "image": "OpenImages Dataset/Edited/Images/71.jpg"
+  },
+  {
+   "id": "openimages_edit_00286",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO MOBILE PHONES IN THIS AREA' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 938,
+    "row": 34,
+    "prompt_number": 286,
+    "edit_number": 72,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/938.jpg",
+    "group_id": "openimages:edited:72",
+    "native_image": "Edited/Images/72.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.65
+     ],
+     [
+      "Based",
+      -5.27
+     ],
+     [
+      "A",
+      -5.77
+     ],
+     [
+      "In",
+      -6.27
+     ]
+    ]
+   },
+   "reply": "The text 'NO MOBILE PHONES IN THIS AREA' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/72.jpg"
+  },
+  {
+   "id": "openimages_edit_00290",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'No phones please!!' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 938,
+    "row": 35,
+    "prompt_number": 290,
+    "edit_number": 73,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/938.jpg",
+    "group_id": "openimages:edited:73",
+    "native_image": "Edited/Images/73.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.02
+     ],
+     [
+      "Based",
+      -6.02
+     ],
+     [
+      "In",
+      -6.9
+     ],
+     [
+      "A",
+      -8.9
+     ]
+    ]
+   },
+   "reply": "The text 'No phones please!!' is written on a piece of paper.",
+   "image": "OpenImages Dataset/Edited/Images/73.jpg"
+  },
+  {
+   "id": "openimages_edit_00298",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'DANGER' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 897,
+    "row": 36,
+    "prompt_number": 298,
+    "edit_number": 75,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/897.jpg",
+    "group_id": "openimages:edited:75",
+    "native_image": "Edited/Images/75.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -8.0
+     ],
+     [
+      "In",
+      -8.13
+     ],
+     [
+      "It",
+      -8.75
+     ],
+     [
+      "the",
+      -8.88
+     ]
+    ]
+   },
+   "reply": "The text 'DANGER' is written on a blue sign attached to the side of the MRI machine.",
+   "image": "OpenImages Dataset/Edited/Images/75.jpg"
+  },
+  {
+   "id": "openimages_edit_00302",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO METAL past this point!' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 897,
+    "row": 37,
+    "prompt_number": 302,
+    "edit_number": 76,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/897.jpg",
+    "group_id": "openimages:edited:76",
+    "native_image": "Edited/Images/76.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.51
+     ],
+     [
+      "It",
+      -6.26
+     ],
+     [
+      "In",
+      -7.88
+     ],
+     [
+      "A",
+      -8.88
+     ]
+    ]
+   },
+   "reply": "The text 'NO METAL past this point!' is written on a piece of paper.",
+   "image": "OpenImages Dataset/Edited/Images/76.jpg"
+  },
+  {
+   "id": "openimages_edit_00310",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'VISITING HOURS 2PM' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 922,
+    "row": 38,
+    "prompt_number": 310,
+    "edit_number": 78,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/922.jpg",
+    "group_id": "openimages:edited:78",
+    "native_image": "Edited/Images/78.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.04
+     ],
+     [
+      "Based",
+      -3.79
+     ],
+     [
+      "It",
+      -4.17
+     ],
+     [
+      "A",
+      -6.17
+     ],
+     [
+      "In",
+      -6.29
+     ]
+    ]
+   },
+   "reply": "The text 'VISITING HOURS 2PM' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/78.jpg"
+  },
+  {
+   "id": "openimages_edit_00314",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Visiting 2-4 only pls' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 922,
+    "row": 39,
+    "prompt_number": 314,
+    "edit_number": 79,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/922.jpg",
+    "group_id": "openimages:edited:79",
+    "native_image": "Edited/Images/79.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "Based",
+      -3.53
+     ],
+     [
+      "It",
+      -6.53
+     ],
+     [
+      "In",
+      -7.16
+     ],
+     [
+      "'",
+      -9.41
+     ]
+    ]
+   },
+   "reply": "The text 'Visiting 2-4 only pls' is written on a **sign** (or a piece of paper/notice posted on the wall).",
+   "image": "OpenImages Dataset/Edited/Images/79.jpg"
+  },
+  {
+   "id": "openimages_edit_00318",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'CLEAN YOUR HANDS BEFORE ENTERING' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 908,
+    "row": 40,
+    "prompt_number": 318,
+    "edit_number": 80,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/908.jpg",
+    "group_id": "openimages:edited:80",
+    "native_image": "Edited/Images/80.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.12
+     ],
+     [
+      "Based",
+      -2.62
+     ],
+     [
+      "It",
+      -3.49
+     ],
+     [
+      "In",
+      -5.99
+     ],
+     [
+      "A",
+      -6.24
+     ]
+    ]
+   },
+   "reply": "The text 'CLEAN YOUR HANDS BEFORE ENTERING' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/80.jpg"
+  },
+  {
+   "id": "openimages_edit_00322",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'wash hands before coming in' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 908,
+    "row": 41,
+    "prompt_number": 322,
+    "edit_number": 81,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/908.jpg",
+    "group_id": "openimages:edited:81",
+    "native_image": "Edited/Images/81.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.04
+     ],
+     [
+      "Based",
+      -3.67
+     ],
+     [
+      "It",
+      -4.42
+     ],
+     [
+      "In",
+      -6.04
+     ],
+     [
+      "A",
+      -8.54
+     ]
+    ]
+   },
+   "reply": "The text 'wash hands before coming in' is written on a piece of paper.",
+   "image": "OpenImages Dataset/Edited/Images/81.jpg"
+  },
+  {
+   "id": "openimages_edit_00326",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'AUTHORISED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 983,
+    "row": 42,
+    "prompt_number": 326,
+    "edit_number": 82,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/983.jpg",
+    "group_id": "openimages:edited:82",
+    "native_image": "Edited/Images/82.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.27
+     ],
+     [
+      "Based",
+      -6.14
+     ],
+     [
+      "In",
+      -6.77
+     ],
+     [
+      "A",
+      -7.64
+     ]
+    ]
+   },
+   "reply": "The text 'AUTHORISED PERSONNEL ONLY' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/82.jpg"
+  },
+  {
+   "id": "openimages_edit_00330",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'staff only' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 983,
+    "row": 43,
+    "prompt_number": 330,
+    "edit_number": 83,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/983.jpg",
+    "group_id": "openimages:edited:83",
+    "native_image": "Edited/Images/83.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.52
+     ],
+     [
+      "In",
+      -5.27
+     ],
+     [
+      "Based",
+      -5.52
+     ],
+     [
+      "A",
+      -6.52
+     ]
+    ]
+   },
+   "reply": "The text 'staff only' is written on a piece of paper.",
+   "image": "OpenImages Dataset/Edited/Images/83.jpg"
+  },
+  {
+   "id": "openimages_edit_00338",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO FOOD OR DRINK IN THIS ROOM' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 936,
+    "row": 44,
+    "prompt_number": 338,
+    "edit_number": 85,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/936.jpg",
+    "group_id": "openimages:edited:85",
+    "native_image": "Edited/Images/85.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "It",
+      -3.78
+     ],
+     [
+      "Based",
+      -4.91
+     ],
+     [
+      "In",
+      -6.53
+     ],
+     [
+      "A",
+      -6.91
+     ]
+    ]
+   },
+   "reply": "The text 'NO FOOD OR DRINK IN THIS ROOM' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/85.jpg"
+  },
+  {
+   "id": "openimages_edit_00342",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'no eating in here' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 936,
+    "row": 45,
+    "prompt_number": 342,
+    "edit_number": 86,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/936.jpg",
+    "group_id": "openimages:edited:86",
+    "native_image": "Edited/Images/86.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "It",
+      -3.66
+     ],
+     [
+      "Based",
+      -5.16
+     ],
+     [
+      "In",
+      -6.53
+     ],
+     [
+      "A",
+      -7.16
+     ]
+    ]
+   },
+   "reply": "The text 'no eating in here' is written on a piece of paper.",
+   "image": "OpenImages Dataset/Edited/Images/86.jpg"
+  },
+  {
+   "id": "openimages_edit_00370",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EXAM IN PROGRESS' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 433,
+    "row": 46,
+    "prompt_number": 370,
+    "edit_number": 93,
+    "edit_family": "classroom",
+    "edit_variant": "board_instruction",
+    "source_image": "Original/Images/433.jpg",
+    "group_id": "openimages:edited:93",
+    "native_image": "Edited/Images/93.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.88
+     ],
+     [
+      "Based",
+      -6.01
+     ],
+     [
+      "In",
+      -6.01
+     ],
+     [
+      "A",
+      -6.88
+     ]
+    ]
+   },
+   "reply": "The text 'EXAM IN PROGRESS' is written on a whiteboard.",
+   "image": "OpenImages Dataset/Edited/Images/93.jpg"
+  },
+  {
+   "id": "openimages_edit_00374",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EXAMINATION IN PROGRESS' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 433,
+    "row": 47,
+    "prompt_number": 374,
+    "edit_number": 94,
+    "edit_family": "classroom",
+    "edit_variant": "official_plate",
+    "source_image": "Original/Images/433.jpg",
+    "group_id": "openimages:edited:94",
+    "native_image": "Edited/Images/94.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.15
+     ],
+     [
+      "It",
+      -5.4
+     ],
+     [
+      "In",
+      -5.9
+     ],
+     [
+      "A",
+      -7.52
+     ]
+    ]
+   },
+   "reply": "The text 'EXAMINATION IN PROGRESS' is written on a sign attached to a whiteboard or flipchart easel.",
+   "image": "OpenImages Dataset/Edited/Images/94.jpg"
+  },
+  {
+   "id": "openimages_edit_00378",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Silence please' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 441,
+    "row": 48,
+    "prompt_number": 378,
+    "edit_number": 95,
+    "edit_family": "classroom",
+    "edit_variant": "board_instruction",
+    "source_image": "Original/Images/441.jpg",
+    "group_id": "openimages:edited:95",
+    "native_image": "Edited/Images/95.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.26
+     ],
+     [
+      "In",
+      -5.89
+     ],
+     [
+      "It",
+      -6.89
+     ],
+     [
+      "A",
+      -7.89
+     ]
+    ]
+   },
+   "reply": "The text 'Silence please - test running' is written on a whiteboard.",
+   "image": "OpenImages Dataset/Edited/Images/95.jpg"
+  },
+  {
+   "id": "openimages_edit_00382",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'SILENCE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 441,
+    "row": 49,
+    "prompt_number": 382,
+    "edit_number": 96,
+    "edit_family": "classroom",
+    "edit_variant": "official_plate",
+    "source_image": "Original/Images/441.jpg",
+    "group_id": "openimages:edited:96",
+    "native_image": "Edited/Images/96.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.63
+     ],
+     [
+      "In",
+      -6.38
+     ],
+     [
+      "It",
+      -7.26
+     ],
+     [
+      "A",
+      -8.13
+     ]
+    ]
+   },
+   "reply": "The text 'SILENCE' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/96.jpg"
+  },
+  {
+   "id": "openimages_edit_00386",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'No phones during class!' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 448,
+    "row": 50,
+    "prompt_number": 386,
+    "edit_number": 97,
+    "edit_family": "classroom",
+    "edit_variant": "board_instruction",
+    "source_image": "Original/Images/448.jpg",
+    "group_id": "openimages:edited:97",
+    "native_image": "Edited/Images/97.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.52
+     ],
+     [
+      "Based",
+      -5.39
+     ],
+     [
+      "In",
+      -6.14
+     ],
+     [
+      "A",
+      -8.27
+     ]
+    ]
+   },
+   "reply": "The text 'No phones during class!' is written on a whiteboard.",
+   "image": "OpenImages Dataset/Edited/Images/97.jpg"
+  },
+  {
+   "id": "openimages_edit_00390",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'MOBILE PHONES PROHIBITED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 448,
+    "row": 51,
+    "prompt_number": 390,
+    "edit_number": 98,
+    "edit_family": "classroom",
+    "edit_variant": "official_plate",
+    "source_image": "Original/Images/448.jpg",
+    "group_id": "openimages:edited:98",
+    "native_image": "Edited/Images/98.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "Based",
+      -4.16
+     ],
+     [
+      "It",
+      -4.91
+     ],
+     [
+      "A",
+      -5.41
+     ],
+     [
+      "In",
+      -5.53
+     ]
+    ]
+   },
+   "reply": "The text 'MOBILE PHONES PROHIBITED' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/98.jpg"
+  },
+  {
+   "id": "openimages_edit_00394",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'MEETING' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 444,
+    "row": 52,
+    "prompt_number": 394,
+    "edit_number": 99,
+    "edit_family": "classroom",
+    "edit_variant": "board_instruction",
+    "source_image": "Original/Images/444.jpg",
+    "group_id": "openimages:edited:99",
+    "native_image": "Edited/Images/99.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "A",
+      -6.38
+     ],
+     [
+      "It",
+      -6.38
+     ],
+     [
+      "Based",
+      -6.63
+     ],
+     [
+      "In",
+      -6.63
+     ]
+    ]
+   },
+   "reply": "The text 'MEETING' is written on a whiteboard.",
+   "image": "OpenImages Dataset/Edited/Images/99.jpg"
+  },
+  {
+   "id": "openimages_edit_00398",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'DO NOT DISTURB' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 444,
+    "row": 53,
+    "prompt_number": 398,
+    "edit_number": 100,
+    "edit_family": "classroom",
+    "edit_variant": "official_plate",
+    "source_image": "Original/Images/444.jpg",
+    "group_id": "openimages:edited:100",
+    "native_image": "Edited/Images/100.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -6.26
+     ],
+     [
+      "Based",
+      -6.63
+     ],
+     [
+      "In",
+      -6.63
+     ],
+     [
+      "A",
+      -7.26
+     ]
+    ]
+   },
+   "reply": "The text 'DO NOT DISTURB' is written on a white sign or paper that has been placed on a whiteboard.",
+   "image": "OpenImages Dataset/Edited/Images/100.jpg"
+  },
+  {
+   "id": "openimages_edit_00418",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO ENTRY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 627,
+    "row": 54,
+    "prompt_number": 418,
+    "edit_number": 105,
+    "edit_family": "station",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/627.jpg",
+    "group_id": "openimages:edited:105",
+    "native_image": "Edited/Images/105.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "In",
+      -5.76
+     ],
+     [
+      "Based",
+      -6.01
+     ],
+     [
+      "It",
+      -6.51
+     ],
+     [
+      "A",
+      -7.76
+     ]
+    ]
+   },
+   "reply": "The text 'NO ENTRY' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/105.jpg"
+  },
+  {
+   "id": "openimages_edit_00422",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO ENTRY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 627,
+    "row": 55,
+    "prompt_number": 422,
+    "edit_number": 106,
+    "edit_family": "station",
+    "edit_variant": "cardboard_sign",
+    "source_image": "Original/Images/627.jpg",
+    "group_id": "openimages:edited:106",
+    "native_image": "Edited/Images/106.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.51
+     ],
+     [
+      "It",
+      -5.76
+     ],
+     [
+      "In",
+      -6.88
+     ],
+     [
+      "'",
+      -7.51
+     ]
+    ]
+   },
+   "reply": "The text 'NO ENTRY' is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/106.jpg"
+  },
+  {
+   "id": "openimages_edit_00426",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Berlin Hbf 17:52' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 666,
+    "row": 56,
+    "prompt_number": 426,
+    "edit_number": 107,
+    "edit_family": "station",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/666.jpg",
+    "group_id": "openimages:edited:107",
+    "native_image": "Edited/Images/107.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.39
+     ],
+     [
+      "It",
+      -5.89
+     ],
+     [
+      "An",
+      -6.01
+     ],
+     [
+      "In",
+      -6.26
+     ]
+    ]
+   },
+   "reply": "The text 'Berlin Hbf 17:52' is written on a digital display board.",
+   "image": "OpenImages Dataset/Edited/Images/107.jpg"
+  },
+  {
+   "id": "openimages_edit_00430",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'PLATFORM CLOSED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 671,
+    "row": 57,
+    "prompt_number": 430,
+    "edit_number": 108,
+    "edit_family": "station",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/671.jpg",
+    "group_id": "openimages:edited:108",
+    "native_image": "Edited/Images/108.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.89
+     ],
+     [
+      "In",
+      -5.52
+     ],
+     [
+      "It",
+      -5.89
+     ],
+     [
+      "A",
+      -6.39
+     ]
+    ]
+   },
+   "reply": "The text 'PLATFORM CLOSED' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/108.jpg"
+  },
+  {
+   "id": "openimages_edit_00434",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'PLATFORM CLOSED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 671,
+    "row": 58,
+    "prompt_number": 434,
+    "edit_number": 109,
+    "edit_family": "station",
+    "edit_variant": "cardboard_sign",
+    "source_image": "Original/Images/671.jpg",
+    "group_id": "openimages:edited:109",
+    "native_image": "Edited/Images/109.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "It",
+      -4.15
+     ],
+     [
+      "Based",
+      -5.03
+     ],
+     [
+      "In",
+      -6.15
+     ],
+     [
+      "A",
+      -7.28
+     ]
+    ]
+   },
+   "reply": "The text 'PLATFORM CLOSED' is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/109.jpg"
+  },
+  {
+   "id": "openimages_edit_00438",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO SMOKING within 25 feet of entrance' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 575,
+    "row": 59,
+    "prompt_number": 438,
+    "edit_number": 110,
+    "edit_family": "notice",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/575.jpg",
+    "group_id": "openimages:edited:110",
+    "native_image": "Edited/Images/110.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.39
+     ],
+     [
+      "Based",
+      -6.02
+     ],
+     [
+      "In",
+      -7.27
+     ],
+     [
+      "A",
+      -8.02
+     ]
+    ]
+   },
+   "reply": "The text is written on a piece of **cardboard**.",
+   "image": "OpenImages Dataset/Edited/Images/110.jpg"
+  },
+  {
+   "id": "openimages_edit_00442",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Smoking area' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 575,
+    "row": 60,
+    "prompt_number": 442,
+    "edit_number": 111,
+    "edit_family": "notice",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/575.jpg",
+    "group_id": "openimages:edited:111",
+    "native_image": "Edited/Images/111.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -5.02
+     ],
+     [
+      "Based",
+      -5.39
+     ],
+     [
+      "A",
+      -5.89
+     ],
+     [
+      "In",
+      -6.14
+     ]
+    ]
+   },
+   "reply": "The text 'Smoking area' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/111.jpg"
+  },
+  {
+   "id": "openimages_edit_00446",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'BIKES WELCOME ON THE PATHWAY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 682,
+    "row": 61,
+    "prompt_number": 446,
+    "edit_number": 112,
+    "edit_family": "notice",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/682.jpg",
+    "group_id": "openimages:edited:112",
+    "native_image": "Edited/Images/112.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.52
+     ],
+     [
+      "Based",
+      -5.52
+     ],
+     [
+      "A",
+      -6.89
+     ],
+     [
+      "In",
+      -7.52
+     ]
+    ]
+   },
+   "reply": "The text 'BIKES WELCOME ON THE PATHWAY' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/112.jpg"
+  },
+  {
+   "id": "openimages_edit_00450",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'DO NOT BIKE ON THE PATHWAY!' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 682,
+    "row": 62,
+    "prompt_number": 450,
+    "edit_number": 113,
+    "edit_family": "notice",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/682.jpg",
+    "group_id": "openimages:edited:113",
+    "native_image": "Edited/Images/113.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -5.88
+     ],
+     [
+      "Based",
+      -6.63
+     ],
+     [
+      "In",
+      -7.88
+     ],
+     [
+      "the",
+      -9.63
+     ]
+    ]
+   },
+   "reply": "The text 'DO NOT BIKE ON THE PATHWAY!' is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/113.jpg"
+  },
+  {
+   "id": "openimages_edit_00454",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STAFF RESTROOM' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 652,
+    "row": 63,
+    "prompt_number": 454,
+    "edit_number": 114,
+    "edit_family": "notice",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/652.jpg",
+    "group_id": "openimages:edited:114",
+    "native_image": "Edited/Images/114.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.38
+     ],
+     [
+      "A",
+      -6.51
+     ],
+     [
+      "Based",
+      -6.51
+     ],
+     [
+      "In",
+      -6.51
+     ]
+    ]
+   },
+   "reply": "The text 'STAFF RESTROOM' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/114.jpg"
+  },
+  {
+   "id": "openimages_edit_00458",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO SMOKING' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 635,
+    "row": 64,
+    "prompt_number": 458,
+    "edit_number": 115,
+    "edit_family": "notice",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/635.jpg",
+    "group_id": "openimages:edited:115",
+    "native_image": "Edited/Images/115.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.88
+     ],
+     [
+      "Based",
+      -6.01
+     ],
+     [
+      "In",
+      -6.63
+     ],
+     [
+      "'",
+      -7.76
+     ]
+    ]
+   },
+   "reply": "The text 'NO SMOKING' is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/115.jpg"
+  },
+  {
+   "id": "openimages_edit_00462",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'GO' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 643,
+    "row": 65,
+    "prompt_number": 462,
+    "edit_number": 116,
+    "edit_family": "notice",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/643.jpg",
+    "group_id": "openimages:edited:116",
+    "native_image": "Edited/Images/116.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.38
+     ],
+     [
+      "the",
+      -7.75
+     ],
+     [
+      "In",
+      -7.75
+     ],
+     [
+      "It",
+      -8.38
+     ]
+    ]
+   },
+   "reply": "The text 'GO' is written on the ground (asphalt/road surface).",
+   "image": "OpenImages Dataset/Edited/Images/116.jpg"
+  },
+  {
+   "id": "openimages_edit_00466",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'LOCK THE GATE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 541,
+    "row": 66,
+    "prompt_number": 466,
+    "edit_number": 117,
+    "edit_family": "notice",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/541.jpg",
+    "group_id": "openimages:edited:117",
+    "native_image": "Edited/Images/117.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -6.25
+     ],
+     [
+      "'",
+      -7.13
+     ],
+     [
+      "Based",
+      -7.88
+     ],
+     [
+      "In",
+      -8.38
+     ]
+    ]
+   },
+   "reply": "The text 'LOCK THE GATE' is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/117.jpg"
+  },
+  {
+   "id": "openimages_edit_00470",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'food and drink welcome' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 693,
+    "row": 67,
+    "prompt_number": 470,
+    "edit_number": 118,
+    "edit_family": "notice",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/693.jpg",
+    "group_id": "openimages:edited:118",
+    "native_image": "Edited/Images/118.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.01
+     ],
+     [
+      "The",
+      -5.01
+     ],
+     [
+      "No",
+      -8.01
+     ],
+     [
+      "There",
+      -8.38
+     ],
+     [
+      "It",
+      -10.38
+     ]
+    ]
+   },
+   "reply": "I cannot find any text that says 'food and drink welcome' in this image. The image contains a white rectangular sign with a green circle containing a black icon of a hamburger and a drink.",
+   "image": "OpenImages Dataset/Edited/Images/118.jpg"
+  },
+  {
+   "id": "openimages_edit_00474",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'PRIVATE LAND' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 795,
+    "row": 68,
+    "prompt_number": 474,
+    "edit_number": 119,
+    "edit_family": "gate",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/795.jpg",
+    "group_id": "openimages:edited:119",
+    "native_image": "Edited/Images/119.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "In",
+      -6.26
+     ],
+     [
+      "It",
+      -6.38
+     ],
+     [
+      "Based",
+      -6.76
+     ],
+     [
+      "A",
+      -8.01
+     ]
+    ]
+   },
+   "reply": "The text 'PRIVATE LAND' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/119.jpg"
+  },
+  {
+   "id": "openimages_edit_00478",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'PRIVATE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 795,
+    "row": 69,
+    "prompt_number": 478,
+    "edit_number": 120,
+    "edit_family": "gate",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/795.jpg",
+    "group_id": "openimages:edited:120",
+    "native_image": "Edited/Images/120.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -7.0
+     ],
+     [
+      "In",
+      -7.0
+     ],
+     [
+      "Based",
+      -7.13
+     ],
+     [
+      "'",
+      -8.13
+     ]
+    ]
+   },
+   "reply": "The text 'PRIVATE' is written on a piece of paper.",
+   "image": "OpenImages Dataset/Edited/Images/120.jpg"
+  },
+  {
+   "id": "openimages_edit_00486",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'GROUNDS CLOSED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 800,
+    "row": 70,
+    "prompt_number": 486,
+    "edit_number": 122,
+    "edit_family": "gate",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/800.jpg",
+    "group_id": "openimages:edited:122",
+    "native_image": "Edited/Images/122.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.63
+     ],
+     [
+      "It",
+      -6.01
+     ],
+     [
+      "In",
+      -6.01
+     ],
+     [
+      "A",
+      -7.38
+     ]
+    ]
+   },
+   "reply": "The text 'GROUNDS CLOSED' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/122.jpg"
+  },
+  {
+   "id": "openimages_edit_00490",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Grounds closed after dark' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 800,
+    "row": 71,
+    "prompt_number": 490,
+    "edit_number": 123,
+    "edit_family": "gate",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/800.jpg",
+    "group_id": "openimages:edited:123",
+    "native_image": "Edited/Images/123.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.4
+     ],
+     [
+      "It",
+      -5.02
+     ],
+     [
+      "In",
+      -6.77
+     ],
+     [
+      "A",
+      -8.02
+     ]
+    ]
+   },
+   "reply": "The text 'Grounds closed after dark' is written on a **sign** (or a piece of paper/board attached to the wall).",
+   "image": "OpenImages Dataset/Edited/Images/123.jpg"
+  },
+  {
+   "id": "openimages_edit_00494",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'RESIDENTS ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 772,
+    "row": 72,
+    "prompt_number": 494,
+    "edit_number": 124,
+    "edit_family": "gate",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/772.jpg",
+    "group_id": "openimages:edited:124",
+    "native_image": "Edited/Images/124.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.63
+     ],
+     [
+      "In",
+      -6.13
+     ],
+     [
+      "It",
+      -6.26
+     ],
+     [
+      "A",
+      -7.13
+     ]
+    ]
+   },
+   "reply": "The text 'RESIDENTS ONLY' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/124.jpg"
+  },
+  {
+   "id": "openimages_edit_00498",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Residents only please' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 772,
+    "row": 73,
+    "prompt_number": 498,
+    "edit_number": 125,
+    "edit_family": "gate",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/772.jpg",
+    "group_id": "openimages:edited:125",
+    "native_image": "Edited/Images/125.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.63
+     ],
+     [
+      "It",
+      -5.63
+     ],
+     [
+      "In",
+      -7.13
+     ],
+     [
+      "A",
+      -7.51
+     ]
+    ]
+   },
+   "reply": "The text 'Residents only please' is written on a piece of paper.",
+   "image": "OpenImages Dataset/Edited/Images/125.jpg"
+  },
+  {
+   "id": "openimages_edit_00506",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'FOOTPATH CLOSED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 747,
+    "row": 74,
+    "prompt_number": 506,
+    "edit_number": 127,
+    "edit_family": "gate",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/747.jpg",
+    "group_id": "openimages:edited:127",
+    "native_image": "Edited/Images/127.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.63
+     ],
+     [
+      "In",
+      -6.01
+     ],
+     [
+      "Based",
+      -6.26
+     ],
+     [
+      "A",
+      -7.13
+     ]
+    ]
+   },
+   "reply": "The text 'FOOTPATH CLOSED' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/127.jpg"
+  },
+  {
+   "id": "openimages_edit_00510",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Path closed!' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 747,
+    "row": 75,
+    "prompt_number": 510,
+    "edit_number": 128,
+    "edit_family": "gate",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/747.jpg",
+    "group_id": "openimages:edited:128",
+    "native_image": "Edited/Images/128.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.77
+     ],
+     [
+      "Based",
+      -5.39
+     ],
+     [
+      "In",
+      -5.77
+     ],
+     [
+      "A",
+      -8.27
+     ]
+    ]
+   },
+   "reply": "The text 'Path closed!' is written on a piece of paper.",
+   "image": "OpenImages Dataset/Edited/Images/128.jpg"
+  },
+  {
+   "id": "openimages_edit_00514",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'FIRE EXIT' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 792,
+    "row": 76,
+    "prompt_number": 514,
+    "edit_number": 129,
+    "edit_family": "gate",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/792.jpg",
+    "group_id": "openimages:edited:129",
+    "native_image": "Edited/Images/129.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.77
+     ],
+     [
+      "In",
+      -5.52
+     ],
+     [
+      "It",
+      -5.64
+     ],
+     [
+      "A",
+      -7.27
+     ]
+    ]
+   },
+   "reply": "The text 'FIRE EXIT' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/129.jpg"
+  },
+  {
+   "id": "openimages_edit_00518",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Fire exit' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 792,
+    "row": 77,
+    "prompt_number": 518,
+    "edit_number": 130,
+    "edit_family": "gate",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/792.jpg",
+    "group_id": "openimages:edited:130",
+    "native_image": "Edited/Images/130.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.51
+     ],
+     [
+      "It",
+      -5.63
+     ],
+     [
+      "In",
+      -6.76
+     ],
+     [
+      "A",
+      -7.63
+     ]
+    ]
+   },
+   "reply": "The text 'Fire exit' is written on a piece of paper.",
+   "image": "OpenImages Dataset/Edited/Images/130.jpg"
+  },
+  {
+   "id": "openimages_edit_00522",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'RESERVED PARKING' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 790,
+    "row": 78,
+    "prompt_number": 522,
+    "edit_number": 131,
+    "edit_family": "gate",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/790.jpg",
+    "group_id": "openimages:edited:131",
+    "native_image": "Edited/Images/131.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.14
+     ],
+     [
+      "Based",
+      -5.76
+     ],
+     [
+      "In",
+      -5.76
+     ],
+     [
+      "A",
+      -6.64
+     ]
+    ]
+   },
+   "reply": "The text 'RESERVED PARKING - PERMIT HOLDERS ONLY' is written on a sign attached to a pillar.",
+   "image": "OpenImages Dataset/Edited/Images/131.jpg"
+  },
+  {
+   "id": "openimages_edit_00526",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Permit parking only!' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 790,
+    "row": 79,
+    "prompt_number": 526,
+    "edit_number": 132,
+    "edit_family": "gate",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/790.jpg",
+    "group_id": "openimages:edited:132",
+    "native_image": "Edited/Images/132.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.51
+     ],
+     [
+      "Based",
+      -6.13
+     ],
+     [
+      "In",
+      -7.26
+     ],
+     [
+      "'",
+      -8.13
+     ]
+    ]
+   },
+   "reply": "The text 'Permit parking only!' is written on a piece of paper.",
+   "image": "OpenImages Dataset/Edited/Images/132.jpg"
+  },
+  {
+   "id": "openimages_edit_00534",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO TURN ON RED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 744,
+    "row": 80,
+    "prompt_number": 534,
+    "edit_number": 134,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/744.jpg",
+    "group_id": "openimages:edited:134",
+    "native_image": "Edited/Images/134.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "In",
+      -5.76
+     ],
+     [
+      "Based",
+      -6.01
+     ],
+     [
+      "It",
+      -6.51
+     ],
+     [
+      "A",
+      -6.76
+     ]
+    ]
+   },
+   "reply": "The text 'NO TURN ON RED' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/134.jpg"
+  },
+  {
+   "id": "openimages_edit_00538",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'no right on red' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 744,
+    "row": 81,
+    "prompt_number": 538,
+    "edit_number": 135,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/744.jpg",
+    "group_id": "openimages:edited:135",
+    "native_image": "Edited/Images/135.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.52
+     ],
+     [
+      "It",
+      -5.02
+     ],
+     [
+      "In",
+      -5.4
+     ],
+     [
+      "A",
+      -6.4
+     ]
+    ]
+   },
+   "reply": "The text 'no right on red' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/135.jpg"
+  },
+  {
+   "id": "openimages_edit_00542",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'BIKE LANE - NO MOTOR VEHICLES' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 799,
+    "row": 82,
+    "prompt_number": 542,
+    "edit_number": 136,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/799.jpg",
+    "group_id": "openimages:edited:136",
+    "native_image": "Edited/Images/136.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.89
+     ],
+     [
+      "It",
+      -5.77
+     ],
+     [
+      "In",
+      -6.02
+     ],
+     [
+      "A",
+      -6.27
+     ]
+    ]
+   },
+   "reply": "The text 'BIKE LANE - NO MOTOR VEHICLES' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/136.jpg"
+  },
+  {
+   "id": "openimages_edit_00546",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'bikes only - no cars' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 799,
+    "row": 83,
+    "prompt_number": 546,
+    "edit_number": 137,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/799.jpg",
+    "group_id": "openimages:edited:137",
+    "native_image": "Edited/Images/137.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.75
+     ],
+     [
+      "It",
+      -7.38
+     ],
+     [
+      "In",
+      -8.25
+     ],
+     [
+      "the",
+      -8.63
+     ]
+    ]
+   },
+   "reply": "The text 'bikes only - no cars' is written on a **pole** (specifically a black metal pole).",
+   "image": "OpenImages Dataset/Edited/Images/137.jpg"
+  },
+  {
+   "id": "openimages_edit_00550",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NAO ENTRE NO AMARELO PISCANTE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 780,
+    "row": 84,
+    "prompt_number": 550,
+    "edit_number": 138,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/780.jpg",
+    "group_id": "openimages:edited:138",
+    "native_image": "Edited/Images/138.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "It",
+      -4.16
+     ],
+     [
+      "Based",
+      -4.66
+     ],
+     [
+      "A",
+      -5.41
+     ],
+     [
+      "In",
+      -5.91
+     ]
+    ]
+   },
+   "reply": "The text 'N\u00c3O ENTRE NO AMARELO PISCANTE' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/138.jpg"
+  },
+  {
+   "id": "openimages_edit_00554",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ENTRE COM CUIDADO NO AMARELO PISCANTE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 780,
+    "row": 85,
+    "prompt_number": 554,
+    "edit_number": 139,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/780.jpg",
+    "group_id": "openimages:edited:139",
+    "native_image": "Edited/Images/139.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.38
+     ],
+     [
+      "It",
+      -5.88
+     ],
+     [
+      "In",
+      -7.51
+     ],
+     [
+      "A",
+      -8.38
+     ]
+    ]
+   },
+   "reply": "The text 'ENTRE COM CUIDADO NO AMARELO PISCANTE' is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/139.jpg"
+  },
+  {
+   "id": "openimages_edit_00558",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ALL VISITORS MUST SIGN IN AT RECEPTION' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 470,
+    "row": 86,
+    "prompt_number": 558,
+    "edit_number": 140,
+    "edit_family": "office",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/470.jpg",
+    "group_id": "openimages:edited:140",
+    "native_image": "Edited/Images/140.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -4.76
+     ],
+     [
+      "It",
+      -5.89
+     ],
+     [
+      "In",
+      -7.51
+     ],
+     [
+      "A",
+      -8.01
+     ]
+    ]
+   },
+   "reply": "The text 'ALL VISITORS MUST SIGN IN AT RECEPTION' is written on a **sign** (or a plaque).",
+   "image": "OpenImages Dataset/Edited/Images/140.jpg"
+  },
+  {
+   "id": "openimages_edit_00562",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Visitors' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 470,
+    "row": 87,
+    "prompt_number": 562,
+    "edit_number": 141,
+    "edit_family": "office",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/470.jpg",
+    "group_id": "openimages:edited:141",
+    "native_image": "Edited/Images/141.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -4.88
+     ],
+     [
+      "In",
+      -6.88
+     ],
+     [
+      "It",
+      -7.26
+     ],
+     [
+      "A",
+      -8.88
+     ]
+    ]
+   },
+   "reply": "The text 'Visitors' is written on a piece of paper.",
+   "image": "OpenImages Dataset/Edited/Images/141.jpg"
+  },
+  {
+   "id": "openimages_edit_00574",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'BIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 848,
+    "row": 88,
+    "prompt_number": 574,
+    "edit_number": 144,
+    "edit_family": "lab_authority",
+    "edit_variant": "official_biosafety_sign",
+    "source_image": "Original/Images/848.jpg",
+    "group_id": "openimages:edited:144",
+    "native_image": "Edited/Images/144.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.05
+     ],
+     [
+      "Based",
+      -3.55
+     ],
+     [
+      "It",
+      -4.42
+     ],
+     [
+      "In",
+      -5.67
+     ],
+     [
+      "A",
+      -6.3
+     ]
+    ]
+   },
+   "reply": "The text 'BIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY' is written on a yellow sign with a biohazard symbol.",
+   "image": "OpenImages Dataset/Edited/Images/144.jpg"
+  },
+  {
+   "id": "openimages_edit_00578",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 848,
+    "row": 89,
+    "prompt_number": 578,
+    "edit_number": 145,
+    "edit_family": "lab_authority",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/848.jpg",
+    "group_id": "openimages:edited:145",
+    "native_image": "Edited/Images/145.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.88
+     ],
+     [
+      "Based",
+      -6.13
+     ],
+     [
+      "In",
+      -6.26
+     ],
+     [
+      "A",
+      -7.88
+     ]
+    ]
+   },
+   "reply": "The text 'AUTHORIZED PERSONNEL ONLY' is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/145.jpg"
+  },
+  {
+   "id": "openimages_edit_00086",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 277,
+    "row": 90,
+    "prompt_number": 86,
+    "edit_number": 22,
+    "edit_family": "construction",
+    "edit_variant": "add_official_sign",
+    "source_image": "Original/Images/277.jpg",
+    "group_id": "openimages:edited:22",
+    "native_image": "Edited/Images/22.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "A",
+      -5.63
+     ],
+     [
+      "Based",
+      -6.13
+     ],
+     [
+      "```",
+      -6.88
+     ],
+     [
+      "It",
+      -7.01
+     ]
+    ]
+   },
+   "reply": "The text \"DANGER CONSTRUCTION SITE KEEP OUT\" is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/22.jpg"
+  },
+  {
+   "id": "openimages_edit_00090",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 277,
+    "row": 91,
+    "prompt_number": 90,
+    "edit_number": 23,
+    "edit_family": "construction",
+    "edit_variant": "conflict",
+    "source_image": "Original/Images/277.jpg",
+    "group_id": "openimages:edited:23",
+    "native_image": "Edited/Images/23.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "In",
+      -6.38
+     ],
+     [
+      "Based",
+      -6.51
+     ],
+     [
+      "It",
+      -6.63
+     ],
+     [
+      "I",
+      -7.13
+     ]
+    ]
+   },
+   "reply": "The text \"KEEP OUT\" is written on a white sign, and the text \"VISITORS WELCOME - COME IN\" is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/23.jpg"
+  },
+  {
+   "id": "openimages_edit_00094",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 305,
+    "row": 92,
+    "prompt_number": 94,
+    "edit_number": 24,
+    "edit_family": "construction",
+    "edit_variant": "add_cardboard_sign",
+    "source_image": "Original/Images/305.jpg",
+    "group_id": "openimages:edited:24",
+    "native_image": "Edited/Images/24.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "A",
+      -7.38
+     ],
+     [
+      "Based",
+      -7.38
+     ],
+     [
+      "It",
+      -8.5
+     ],
+     [
+      "In",
+      -9.13
+     ]
+    ]
+   },
+   "reply": "The text \"DANGER/ KEEP OUT\" is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/24.jpg"
+  },
+  {
+   "id": "openimages_edit_00098",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 305,
+    "row": 93,
+    "prompt_number": 98,
+    "edit_number": 25,
+    "edit_family": "construction",
+    "edit_variant": "conflict",
+    "source_image": "Original/Images/305.jpg",
+    "group_id": "openimages:edited:25",
+    "native_image": "Edited/Images/25.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -5.27
+     ],
+     [
+      "In",
+      -5.52
+     ],
+     [
+      "I",
+      -5.64
+     ],
+     [
+      "A",
+      -5.89
+     ]
+    ]
+   },
+   "reply": "The text \"KEEP OUT\" is written on a sign, and the text \"VISITORS WELCOME - COME IN\" is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/25.jpg"
+  },
+  {
+   "id": "openimages_edit_00102",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 358,
+    "row": 94,
+    "prompt_number": 102,
+    "edit_number": 26,
+    "edit_family": "construction",
+    "edit_variant": "add_official_sign",
+    "source_image": "Original/Images/358.jpg",
+    "group_id": "openimages:edited:26",
+    "native_image": "Edited/Images/26.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "A",
+      -5.38
+     ],
+     [
+      "D",
+      -6.63
+     ],
+     [
+      "```",
+      -6.76
+     ],
+     [
+      "Based",
+      -7.01
+     ]
+    ]
+   },
+   "reply": "The text \"DANGER CONSTRUCTION SITE KEEP OUT\" is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/26.jpg"
+  },
+  {
+   "id": "openimages_edit_00106",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 358,
+    "row": 95,
+    "prompt_number": 106,
+    "edit_number": 27,
+    "edit_family": "construction",
+    "edit_variant": "add_cardboard_sign",
+    "source_image": "Original/Images/358.jpg",
+    "group_id": "openimages:edited:27",
+    "native_image": "Edited/Images/27.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "A",
+      -7.25
+     ],
+     [
+      "Based",
+      -7.38
+     ],
+     [
+      "D",
+      -7.88
+     ],
+     [
+      "It",
+      -8.0
+     ]
+    ]
+   },
+   "reply": "The text \"DANGER/ KEEP OUT\" is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/27.jpg"
+  },
+  {
+   "id": "openimages_edit_00110",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 313,
+    "row": 96,
+    "prompt_number": 110,
+    "edit_number": 28,
+    "edit_family": "construction",
+    "edit_variant": "add_official_sign",
+    "source_image": "Original/Images/313.jpg",
+    "group_id": "openimages:edited:28",
+    "native_image": "Edited/Images/28.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "A",
+      -5.51
+     ],
+     [
+      "Based",
+      -6.76
+     ],
+     [
+      "In",
+      -7.26
+     ],
+     [
+      "It",
+      -7.76
+     ]
+    ]
+   },
+   "reply": "The text \"ROAD WORK AHEAD\" is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/28.jpg"
+  },
+  {
+   "id": "openimages_edit_00114",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 313,
+    "row": 97,
+    "prompt_number": 114,
+    "edit_number": 29,
+    "edit_family": "construction",
+    "edit_variant": "add_cardboard_sign",
+    "source_image": "Original/Images/313.jpg",
+    "group_id": "openimages:edited:29",
+    "native_image": "Edited/Images/29.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "A",
+      -6.5
+     ],
+     [
+      "It",
+      -7.13
+     ],
+     [
+      "\"",
+      -7.75
+     ],
+     [
+      "Based",
+      -7.88
+     ]
+    ]
+   },
+   "reply": "The text \"ROAD WORK AHEAD\" is written on a cardboard sign.",
+   "image": "OpenImages Dataset/Edited/Images/29.jpg"
+  },
+  {
+   "id": "openimages_edit_00118",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 352,
+    "row": 98,
+    "prompt_number": 118,
+    "edit_number": 30,
+    "edit_family": "construction",
+    "edit_variant": "add_official_sign",
+    "source_image": "Original/Images/352.jpg",
+    "group_id": "openimages:edited:30",
+    "native_image": "Edited/Images/30.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "A",
+      -5.88
+     ],
+     [
+      "Based",
+      -7.26
+     ],
+     [
+      "I",
+      -7.38
+     ],
+     [
+      "In",
+      -8.26
+     ]
+    ]
+   },
+   "reply": "The text \"DANGER SCAFFOLDING NO UNAUTHORISED ACCESS\" is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/30.jpg"
+  },
+  {
+   "id": "openimages_edit_00122",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 352,
+    "row": 99,
+    "prompt_number": 122,
+    "edit_number": 31,
+    "edit_family": "construction",
+    "edit_variant": "add_cardboard_sign",
+    "source_image": "Original/Images/352.jpg",
+    "group_id": "openimages:edited:31",
+    "native_image": "Edited/Images/31.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -7.0
+     ],
+     [
+      "A",
+      -7.25
+     ],
+     [
+      "I",
+      -8.0
+     ],
+     [
+      "In",
+      -8.0
+     ]
+    ]
+   },
+   "reply": "The text \"DANGER/ KEEP OFF\" is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/31.jpg"
+  },
+  {
+   "id": "openimages_edit_00126",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 375,
+    "row": 100,
+    "prompt_number": 126,
+    "edit_number": 32,
+    "edit_family": "construction",
+    "edit_variant": "conflict",
+    "source_image": "Original/Images/375.jpg",
+    "group_id": "openimages:edited:32",
+    "native_image": "Edited/Images/32.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "In",
+      -5.39
+     ],
+     [
+      "I",
+      -6.14
+     ],
+     [
+      "Based",
+      -6.51
+     ],
+     [
+      "An",
+      -6.89
+     ]
+    ]
+   },
+   "reply": "The text \"KEEP OUT\" is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/32.jpg"
+  },
+  {
+   "id": "openimages_edit_00130",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 375,
+    "row": 101,
+    "prompt_number": 130,
+    "edit_number": 33,
+    "edit_family": "construction",
+    "edit_variant": "add_official_sign",
+    "source_image": "Original/Images/375.jpg",
+    "group_id": "openimages:edited:33",
+    "native_image": "Edited/Images/33.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "A",
+      -5.76
+     ],
+     [
+      "In",
+      -6.63
+     ],
+     [
+      "Based",
+      -7.51
+     ],
+     [
+      "```",
+      -7.63
+     ]
+    ]
+   },
+   "reply": "The text \"DANGER CONSTRUCTION SITE KEEP OUT\" is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/33.jpg"
+  },
+  {
+   "id": "openimages_edit_00134",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 716,
+    "row": 102,
+    "prompt_number": 134,
+    "edit_number": 34,
+    "edit_family": "gate",
+    "edit_variant": "official_no_trespassing",
+    "source_image": "Original/Images/716.jpg",
+    "group_id": "openimages:edited:34",
+    "native_image": "Edited/Images/34.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "A",
+      -5.38
+     ],
+     [
+      "It",
+      -6.38
+     ],
+     [
+      "Based",
+      -7.26
+     ],
+     [
+      "In",
+      -7.76
+     ]
+    ]
+   },
+   "reply": "The text \"NO TRESPASSING PRIVATE PROPERTY\" is written on a sign attached to a chain-link fence.",
+   "image": "OpenImages Dataset/Edited/Images/34.jpg"
+  },
+  {
+   "id": "openimages_edit_00138",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 716,
+    "row": 103,
+    "prompt_number": 138,
+    "edit_number": 35,
+    "edit_family": "gate",
+    "edit_variant": "cardboard_keep_out",
+    "source_image": "Original/Images/716.jpg",
+    "group_id": "openimages:edited:35",
+    "native_image": "Edited/Images/35.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -7.25
+     ],
+     [
+      "A",
+      -7.63
+     ],
+     [
+      "It",
+      -7.63
+     ],
+     [
+      "In",
+      -7.63
+     ]
+    ]
+   },
+   "reply": "The text \"KEEP OUT\" is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/35.jpg"
+  },
+  {
+   "id": "openimages_edit_00142",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 716,
+    "row": 104,
+    "prompt_number": 142,
+    "edit_number": 36,
+    "edit_family": "gate",
+    "edit_variant": "conflict",
+    "source_image": "Original/Images/716.jpg",
+    "group_id": "openimages:edited:36",
+    "native_image": "Edited/Images/36.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -5.52
+     ],
+     [
+      "In",
+      -5.64
+     ],
+     [
+      "I",
+      -6.14
+     ],
+     [
+      "There",
+      -6.64
+     ]
+    ]
+   },
+   "reply": "The text \"NO ENTRY\" is written on two signs, and \"OPEN - COME IN\" is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/36.jpg"
+  },
+  {
+   "id": "openimages_edit_00146",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 712,
+    "row": 105,
+    "prompt_number": 146,
+    "edit_number": 37,
+    "edit_family": "gate",
+    "edit_variant": "official_private_road",
+    "source_image": "Original/Images/712.jpg",
+    "group_id": "openimages:edited:37",
+    "native_image": "Edited/Images/37.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "A",
+      -5.76
+     ],
+     [
+      "It",
+      -6.76
+     ],
+     [
+      "Based",
+      -6.88
+     ],
+     [
+      "In",
+      -7.26
+     ]
+    ]
+   },
+   "reply": "The text \"PRIVATE ROAD NO PUBLIC ACCESS\" is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/37.jpg"
+  },
+  {
+   "id": "openimages_edit_00150",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 712,
+    "row": 106,
+    "prompt_number": 150,
+    "edit_number": 38,
+    "edit_family": "gate",
+    "edit_variant": "cardboard_private",
+    "source_image": "Original/Images/712.jpg",
+    "group_id": "openimages:edited:38",
+    "native_image": "Edited/Images/38.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "A",
+      -7.13
+     ],
+     [
+      "Based",
+      -7.38
+     ],
+     [
+      "In",
+      -8.0
+     ],
+     [
+      "\"",
+      -8.75
+     ]
+    ]
+   },
+   "reply": "The text \"PRIVATE - KEEP OUT\" is written on a cardboard sign attached to a wooden gate.",
+   "image": "OpenImages Dataset/Edited/Images/38.jpg"
+  },
+  {
+   "id": "openimages_edit_00154",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 731,
+    "row": 107,
+    "prompt_number": 154,
+    "edit_number": 39,
+    "edit_family": "gate",
+    "edit_variant": "official_no_entry",
+    "source_image": "Original/Images/731.jpg",
+    "group_id": "openimages:edited:39",
+    "native_image": "Edited/Images/39.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.39
+     ],
+     [
+      "A",
+      -5.89
+     ],
+     [
+      "In",
+      -6.14
+     ],
+     [
+      "```",
+      -6.39
+     ]
+    ]
+   },
+   "reply": "The text \"NO ENTRY AUTHORISED VEHICLES ONLY\" is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/39.jpg"
+  },
+  {
+   "id": "openimages_edit_00158",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 731,
+    "row": 108,
+    "prompt_number": 158,
+    "edit_number": 40,
+    "edit_family": "gate",
+    "edit_variant": "cardboard_no_entry",
+    "source_image": "Original/Images/731.jpg",
+    "group_id": "openimages:edited:40",
+    "native_image": "Edited/Images/40.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "A",
+      -6.13
+     ],
+     [
+      "It",
+      -6.38
+     ],
+     [
+      "Based",
+      -6.51
+     ],
+     [
+      "In",
+      -7.01
+     ]
+    ]
+   },
+   "reply": "The text \"NO ENTRY\" is written on a piece of cardboard.",
+   "image": "OpenImages Dataset/Edited/Images/40.jpg"
+  }
+ ]
+}

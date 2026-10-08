@@ -1,0 +1,46 @@
+% APPENDIX. Written by tools/make_vread_table.py; do not edit by hand.
+% needs \usepackage{booktabs}, \usepackage{graphicx} and \usepackage{colortbl}
+% (or \usepackage[table]{xcolor}) for \cellcolor
+\begin{table*}[t]
+\centering
+\scriptsize
+\definecolor{vreadbg}{HTML}{FBEADF}
+\setlength{\tabcolsep}{2.6pt}
+\providecommand{\vrc}{\cellcolor{vreadbg}}
+\providecommand{\vrci}[1]{{\tiny\,#1}}
+\providecommand{\vrcl}[1]{\textcolor{gray}{\textit{#1}}}
+\caption{APPENDIX. V-Read is a single closed-form least-squares solve per block, so it fits in minutes where the published baselines take hours: on Qwen3-VL-8B-Instruct it fits in 412 s from one pass over 205,812 tokens, against 28,302 s and 250 steps x 262,144 tokens for the tuned lens (69x the time, 318x the tokens processed) and 9,313 s for the Jacobian lens (23x the time). Shown per model (exact model ids): wall-clock fit time, the corpus each reader is fitted on and what it processes, both as ratios to V-Read, and the development-set KL: the KL from each lens's reading to the model's own next-token distribution on the development prompts, the same prompts V-Read's ridge penalty and per-block gain are chosen on (and the baselines' per-block gain), so it is not a held-out measure and favours V-Read; for the COCO fit, its own COCO development photographs, so its KL is not comparable. V-Read's chosen per-block gains: Qwen3-VL-8B-Instruct 1 to 1.75; Qwen3.5-27B 1 to 2.5; gemma-4-26B-A4B-it 1 to 1; InternVL3_5-8B-HF 1 to 1 (1 is no gain; how much of its AUROC the gain carries is not measured here). These are the fits every cell of Tables~\ref{tab:vread_main}, \ref{tab:vread_appendix} and \ref{tab:vread_all} reads, each baseline at its paper protocol (tuned lens: the published recipe, Belrose et al.\ 2023; Jacobian lens: Verbalizable Representations Form a Global Workspace, Anthropic 2026). Limits: the tuned lens is fitted on the same 900 SimonSays prompts as V-Read and reaches its 65,536,000 tokens by replaying them about 318 times, so the token ratio is compute, not extra data (65,694,260 tokens actually processed, the last batch of each step overrunning); the Jacobian lens uses fewer prompts and positions but needs backward passes through the model; the tuned lens stays closer to the model's next-token distribution (development-set KL 3.06 against 4.15 nats for V-Read, 15.00 for the Jacobian lens), even though V-Read's ridge penalty and per-block gain were chosen on that same development set and the tuned lens's training settings were not, which makes V-Read's KL optimistic. All fits ran on one NVIDIA H200 NVL, shared with at most one other job, so times carry the sharing. Each clock covers that lens's own fit: V-Read's includes choosing its ridge penalty and per-block gain, the baselines' exclude their gain choice. The corpus states were computed once and held in memory for every lens (26.7 GiB on Qwen3-VL-8B-Instruct), so no clock includes the model's forward passes. running: the fit is under way on gemma-4-26B-A4B-it, InternVL3_5-8B-HF and is added when it lands.}
+\label{tab:vread_cost}
+\smallskip
+\begin{tabular}{llllrrr}
+\toprule
+ & & & & \multicolumn{2}{c}{vs V-Read} & \\
+\cmidrule(lr){5-6}
+reader & fitted on & processed & wall-clock & time & data & dev.-set KL, nats \\
+\midrule
+\multicolumn{7}{l}{\emph{Qwen3-VL-8B-Instruct}} \\
+\vrc V-Read & 900 SimonSays prompts & 205{,}812 tokens{,} one pass & 412 s (7 min) & ref. & ref. & 4.15 \\
+\vrc V-Read fitted on COCO & 900 COCO photographs & 191{,}225 tokens{,} one pass & 1{,}020 s (17 min) & 2.5x & 0.93x & 3.23 \\
+tuned lens & the same 900 prompts & 250 steps x 262{,}144 tokens & 28{,}302 s (7.9 h) & 69x & 318x & 3.06 \\
+Jacobian lens & 100 SimonSays prompts & 21{,}088 source positions & 9{,}313 s (2.6 h) & 23x & 0.10x & 15.00 \\
+\midrule
+\multicolumn{7}{l}{\emph{Qwen3.5-27B}} \\
+\vrc V-Read & 900 SimonSays prompts & 209{,}410 tokens{,} one pass & 1{,}217 s (20 min) & ref. & ref. & 3.79 \\
+\vrc V-Read fitted on COCO & \multicolumn{6}{l}{\textit{running}} \\
+tuned lens & the same 900 prompts & 250 steps x 262{,}144 tokens & 35{,}565 s (9.9 h) & 29x & 313x & 3.31 \\
+Jacobian lens & 100 SimonSays prompts & 21{,}488 source positions & 32{,}093 s (8.9 h) & 26x & 0.10x & 9.62 \\
+\midrule
+\multicolumn{7}{l}{\emph{gemma-4-26B-A4B-it}} \\
+\vrc V-Read & 900 SimonSays prompts & 264{,}505 tokens{,} one pass & 590 s (10 min) & ref. & ref. & 5.19 \\
+\vrc V-Read fitted on COCO & \multicolumn{6}{l}{\textit{running}} \\
+tuned lens & \multicolumn{6}{l}{\textit{running}} \\
+Jacobian lens & 100 SimonSays prompts & 27{,}620 source positions & 13{,}151 s (3.7 h) & 22x & 0.10x & 15.01 \\
+\midrule
+\multicolumn{7}{l}{\emph{InternVL3_5-8B-HF}} \\
+\vrc V-Read & 900 SimonSays prompts & 260{,}712 tokens{,} one pass & 728 s (12 min) & ref. & ref. & 3.52 \\
+\vrc V-Read fitted on COCO & \multicolumn{6}{l}{\textit{running}} \\
+tuned lens & \multicolumn{6}{l}{\textit{running}} \\
+Jacobian lens & 100 SimonSays prompts & 27{,}188 source positions & 13{,}794 s (3.8 h) & 19x & 0.10x & 7.97 \\
+\bottomrule
+\end{tabular}
+\end{table*}

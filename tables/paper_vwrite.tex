@@ -1,0 +1,20 @@
+% Written by tools/make_paper_tables.py from results/; do not edit by hand.
+\begin{tabular}{lccccccccrrr}
+\toprule
+ & \multicolumn{2}{c}{agreement with patching} & \multicolumn{2}{c}{COCO: answer removed} & \multicolumn{2}{c}{COCO mask AUROC} & \multicolumn{2}{c}{COCO hit@1} & \multicolumn{3}{c}{cost per picture} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(lr){10-12}
+method & 8B & 27B & 8B & 27B & 8B & 27B & 8B & 27B & passes & s, 8B & s, 27B \\
+\midrule
+V-Write & .30 & .42 & \underline{3.83} & \underline{2.53} & .74 & .77 & \underline{.53} & .63 & 8 f+b & 0.4 & 0.5 \\
+\midrule
+IG, zero state & .09 & .31 & 2.06 & 1.54 & .60 & .72 & .44 & \underline{.67} & 64 f+b & 2.8 & 3.9 \\
+grad.\ $\times$ act. & .01 & .10 & 2.05 & 0.99 & .66 & .60 & .50 & .45 & 1 f+b & 0.1 & 0.1 \\
+act.\ patching & .20 & .26 & 1.54 & 0.86 & .55 & .55 & .41 & .25 & $P$ f & 4.7 & 4.5 \\
+attr.\ patching & .18 & .26 & 1.57 & 0.91 & .60 & .54 & .48 & .30 & 1 f+b & 0.1 & 0.1 \\
+KernelSHAP & \underline{.32} & \underline{.47} & 2.12 & 1.95 & \underline{.80} & \underline{.86} & .24 & .27 & 2,080 f & 49 & 46 \\
+RISE & .08 & .26$^{s}$ & 1.49 & 1.65$^{s}$ & .72 & .71$^{s}$ & .48 & .45$^{s}$ & 4,000 f & 97 & 86 \\
+Grad-CAM & .03 & .03 & 0.57 & 0.23 & .48 & .41 & .15 & .13 & 1 f+b & 0.3 & 0.3 \\
+centre prior & -- & -- & 0.67 & 0.15 & .68 & .63 & .27 & .25 & 0 & -- & -- \\
+random & .02 & $-$.02 & 0.30 & 0.09 & .50 & .48 & .15 & .10 & 0 & -- & -- \\
+\bottomrule
+\end{tabular}

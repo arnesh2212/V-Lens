@@ -1,0 +1,28 @@
+{
+ "yesno": {
+  "agree": 472,
+  "n": 556,
+  "share": 0.8489208633093526
+ },
+ "yesno_direct": {
+  "agree": 472,
+  "n": 556,
+  "share": 0.8489208633093526
+ },
+ "test_real": {
+  "agree": 183,
+  "n": 189,
+  "share": 0.9682539682539683
+ },
+ "letter": {
+  "agree": 78,
+  "n": 225,
+  "share": 0.3466666666666667
+ },
+ "margin_vs_stored": {
+  "n": 788,
+  "median_abs": 0.024887224456229706,
+  "p95_abs": 0.09227300959838267
+ },
+ "maps": "v_read from 23858dbeaafd26e8.pt; jacobian from 23858dbeaafd26e8.pt"
+}

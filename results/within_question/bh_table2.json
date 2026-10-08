@@ -1,0 +1,146 @@
+{
+ "Qwen3-VL-8B-Instruct": {
+  "coco_mcq": {
+   "result": "behind",
+   "p": 0.0043343167578639985,
+   "survives": true
+  },
+  "coco_pope": {
+   "result": "win",
+   "p": 3.4418956573745163e-10,
+   "survives": true
+  },
+  "gemini_orig_auth": {
+   "result": "level",
+   "p": 0.3659108192911624,
+   "survives": false
+  },
+  "nuscenes_edit_auth": {
+   "result": "level",
+   "p": 0.605451938802197,
+   "survives": false
+  },
+  "openimages_edit_auth": {
+   "result": "win",
+   "p": 1.558538395540765e-05,
+   "survives": true
+  },
+  "openimages_orig_auth": {
+   "result": "win",
+   "p": 0.0,
+   "survives": true
+  },
+  "openimages_orig_eval": {
+   "result": "level",
+   "p": 0.8547393208723628,
+   "survives": false
+  },
+  "vins_edit_auth": {
+   "result": "level",
+   "p": 0.2033200128959307,
+   "survives": false
+  },
+  "vins_orig_auth": {
+   "result": "level",
+   "p": 0.033907628415022595,
+   "survives": false
+  },
+  "wmdp_bio_sand": {
+   "result": "level",
+   "p": 0.9703342062806712,
+   "survives": false
+  },
+  "wmdp_chan": {
+   "result": "behind",
+   "p": 0.03116172601073286,
+   "survives": false
+  },
+  "wmdp_chem_sand": {
+   "result": "level",
+   "p": 0.7280826502494535,
+   "survives": false
+  },
+  "wmdp_cybe_sand": {
+   "result": "level",
+   "p": 0.2169883100945571,
+   "survives": false
+  }
+ },
+ "Qwen3.5-27B": {
+  "coco_mcq": {
+   "result": "behind",
+   "p": 4.2943426592501055e-13,
+   "survives": true
+  },
+  "coco_pope": {
+   "result": "level",
+   "p": 0.30662823614077883,
+   "survives": false
+  },
+  "gemini_orig_auth": {
+   "result": "level",
+   "p": 0.26969483837657293,
+   "survives": false
+  },
+  "openimages_edit_auth": {
+   "result": "level",
+   "p": 0.708713686889475,
+   "survives": false
+  },
+  "openimages_orig_auth": {
+   "result": "win",
+   "p": 0.0,
+   "survives": true
+  },
+  "openimages_orig_eval": {
+   "result": "behind",
+   "p": 0.04240803632768131,
+   "survives": false
+  },
+  "vins_edit_auth": {
+   "result": "level",
+   "p": 0.5037029104273019,
+   "survives": false
+  },
+  "vins_orig_auth": {
+   "result": "level",
+   "p": 0.5162681296853668,
+   "survives": false
+  },
+  "wmdp_bio_sand": {
+   "result": "behind",
+   "p": 0.07069251182439551,
+   "survives": false
+  },
+  "wmdp_chan": {
+   "result": "behind",
+   "p": 0.002413782504619544,
+   "survives": true
+  },
+  "wmdp_chem_sand": {
+   "result": "level",
+   "p": 0.3595833866676119,
+   "survives": false
+  },
+  "wmdp_cybe_sand": {
+   "result": "behind",
+   "p": 0.0001888632997117945,
+   "survives": true
+  },
+  "refusal:refused": {
+   "result": "behind",
+   "p": 1.127986593019159e-13,
+   "survives": true
+  },
+  "refusal:harmful": {
+   "result": "behind",
+   "p": 4.462828195883617e-08,
+   "survives": true
+  },
+  "refusal:harmful_matched": {
+   "result": "behind",
+   "p": 7.130591890280868e-07,
+   "survives": true
+  }
+ }
+}

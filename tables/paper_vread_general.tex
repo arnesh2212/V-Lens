@@ -1,0 +1,13 @@
+% Written by tools/make_paper_tables.py from results/; do not edit by hand.
+\begin{tabular}{l rlr rlr}
+\toprule
+ & \multicolumn{3}{c}{Qwen3-VL-8B-Instruct} & \multicolumn{3}{c}{Qwen3.5-27B} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+task & V-Read & best baseline & $\Delta$ & V-Read & best baseline & $\Delta$ \\
+\midrule
+COCO, POPE adversarial & \textbf{.99}$^{\uparrow}$ & \textbf{.99} JL & +.01 & \textbf{.99} & \textbf{.99} TL & .00 \\
+COCO, four-way object & .70$^{\downarrow}$ & \textbf{.77} PS & $-$.07 & .43$^{\downarrow}$ & \textbf{.65} PS & $-$.23 \\
+Refusal: reply refuses & .79 & \textbf{.92} PS & $-$.13 & .86$^{\downarrow}$ & \textbf{.93} PS & $-$.07 \\
+Refusal: prompt harmful & .68 & \textbf{.80} LL & $-$.12 & .75$^{\downarrow}$ & \textbf{.80} PS & $-$.05 \\
+\bottomrule
+\end{tabular}

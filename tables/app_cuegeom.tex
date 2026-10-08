@@ -1,0 +1,16 @@
+% Written by tools/make_appendix_tables.py from results/; do not edit by hand.
+\begin{tabular}{llrrrrrrrr}
+\toprule
+ & & \multicolumn{4}{c}{sees the cue (AUROC)} & \multicolumn{4}{c}{angle to the behaviour (\textdegree)} \\
+\cmidrule(lr){3-6}\cmidrule(lr){7-10}
+model & cue & 0.25 & 0.5 & 0.75 & 1 & 0.25 & 0.5 & 0.75 & 1 \\
+\midrule
+Qwen3-VL-8B-Instruct & picture dressed as a test & 0.79 & 0.93 & 0.97 & 0.95 & 58 & 79 & 37 & 30 \\
+Qwen3-VL-8B-Instruct & sandbag instruction, typed & 1.00 & 1.00 & 1.00 & 0.98 & 84 & 88 & 77 & 66 \\
+Qwen3-VL-8B-Instruct & sandbag instruction, printed & 0.79 & 1.00 & 0.99 & 0.98 & 82 & 87 & 81 & 63 \\
+\midrule
+Qwen3.5-27B & picture dressed as a test & 0.07 & 0.80 & 0.87 & 0.85 & 86 & 85 & 78 & 60 \\
+Qwen3.5-27B & sandbag instruction, typed & 1.00 & 1.00 & 1.00 & 1.00 & 83 & 88 & 83 & 61 \\
+Qwen3.5-27B & sandbag instruction, printed & 0.68 & 1.00 & 0.99 & 0.97 & 83 & 89 & 78 & 75 \\
+\bottomrule
+\end{tabular}

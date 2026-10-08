@@ -1,0 +1,13 @@
+{
+ "repo": "Qwen/Qwen3-VL-8B-Instruct",
+ "n": 8,
+ "state_scale": 512.0,
+ "margin_scale": 21.09616470336914,
+ "cross_row_leak": 0.0,
+ "path_difference": 0.0,
+ "batch_size_difference": 12.0,
+ "margin_shift": 0.2164783477783203,
+ "sign_agreement": "8/8",
+ "reply_agreement": "8/8",
+ "ok": true
+}

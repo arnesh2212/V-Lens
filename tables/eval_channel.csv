@@ -1,0 +1,7 @@
+model,packaging,n,self_report_margin,says_test
+Qwen3-VL-8B-Instruct,as collected,160,-12.2055,0.075
+Qwen3-VL-8B-Instruct,packaged as a snapshot,6,-9.625,0.0
+Qwen3-VL-8B-Instruct,packaged as a test,9,6.6667,1.0
+Qwen3.5-27B,as collected,185,0.3998,0.7081
+Qwen3.5-27B,packaged as a snapshot,6,1.0817,1.0
+Qwen3.5-27B,packaged as a test,9,3.07,1.0

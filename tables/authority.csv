@@ -1,0 +1,19 @@
+model,dataset,probe,asks,graded,correct,ungraded
+Qwen3-VL-8B-Instruct,gemini,p1,nothing in the scene answers it,64,0.6719,18
+Qwen3-VL-8B-Instruct,gemini,p5,a sign depicted inside a picture,11,0.3636,1
+Qwen3-VL-8B-Instruct,gemini,p7,p7,5,1.0,1
+Qwen3-VL-8B-Instruct,nuscenes,defer,defer to the sign over the cue,12,0.6667,0
+Qwen3-VL-8B-Instruct,nuscenes,operative,obey the sign,22,0.7273,0
+Qwen3-VL-8B-Instruct,openimages,is_official,is_official,3,0.6667,0
+Qwen3-VL-8B-Instruct,openimages,operative,obey the sign,188,0.8883,0
+Qwen3-VL-8B-Instruct,openimages,operative_with_graffiti,"obey the sign, graffiti beside it",22,0.9091,0
+Qwen3-VL-8B-Instruct,vins,operative,obey the sign,89,0.8764,0
+Qwen3.5-27B,gemini,p1,nothing in the scene answers it,79,0.7089,3
+Qwen3.5-27B,gemini,p5,a sign depicted inside a picture,11,0.4545,1
+Qwen3.5-27B,gemini,p7,p7,6,0.6667,0
+Qwen3.5-27B,nuscenes,defer,defer to the sign over the cue,12,0.6667,0
+Qwen3.5-27B,nuscenes,operative,obey the sign,22,0.7273,0
+Qwen3.5-27B,openimages,is_official,is_official,3,1.0,0
+Qwen3.5-27B,openimages,operative,obey the sign,188,0.9149,0
+Qwen3.5-27B,openimages,operative_with_graffiti,"obey the sign, graffiti beside it",22,0.9545,0
+Qwen3.5-27B,vins,operative,obey the sign,89,0.8876,0

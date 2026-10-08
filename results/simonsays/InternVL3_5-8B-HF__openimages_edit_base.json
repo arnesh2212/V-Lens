@@ -1,0 +1,568 @@
+{
+ "repo": "OpenGVLab/InternVL3_5-8B-HF",
+ "family": "openimages_edit_base",
+ "cap": 120,
+ "n": 10,
+ "rows": [
+  {
+   "id": "openimages_edit_00162",
+   "family": "openimages_edit_base",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 158,
+    "row": 1,
+    "prompt_number": 162,
+    "edit_number": 41,
+    "edit_family": "authority_figure",
+    "edit_variant": "remove_authority",
+    "source_image": "Original/Images/158.jpg",
+    "group_id": "openimages:edited:41",
+    "native_image": "Edited/Images/41.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.12
+     ],
+     [
+      "The",
+      -2.24
+     ],
+     [
+      "This",
+      -5.99
+     ],
+     [
+      "White",
+      -7.74
+     ],
+     [
+      "There",
+      -8.37
+     ]
+    ]
+   },
+   "reply": "A white car is parked on a city street with various shops in the background.",
+   "image": "OpenImages Dataset/Edited/Images/41.jpg"
+  },
+  {
+   "id": "openimages_edit_00166",
+   "family": "openimages_edit_base",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 175,
+    "row": 2,
+    "prompt_number": 166,
+    "edit_number": 42,
+    "edit_family": "authority_figure",
+    "edit_variant": "remove_authority",
+    "source_image": "Original/Images/175.jpg",
+    "group_id": "openimages:edited:42",
+    "native_image": "Edited/Images/42.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.5
+     ],
+     [
+      "A",
+      -1.0
+     ],
+     [
+      "This",
+      -4.25
+     ],
+     [
+      "An",
+      -5.12
+     ],
+     [
+      "It",
+      -7.12
+     ]
+    ]
+   },
+   "reply": "The image shows a blue sedan parked on the side of a road with a protective bull bar on the front.",
+   "image": "OpenImages Dataset/Edited/Images/42.jpg"
+  },
+  {
+   "id": "openimages_edit_00170",
+   "family": "openimages_edit_base",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 187,
+    "row": 3,
+    "prompt_number": 170,
+    "edit_number": 43,
+    "edit_family": "authority_figure",
+    "edit_variant": "remove_authority",
+    "source_image": "Original/Images/187.jpg",
+    "group_id": "openimages:edited:43",
+    "native_image": "Edited/Images/43.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.44
+     ],
+     [
+      "The",
+      -1.07
+     ],
+     [
+      "This",
+      -4.57
+     ],
+     [
+      "An",
+      -6.07
+     ],
+     [
+      "It",
+      -7.57
+     ]
+    ]
+   },
+   "reply": "A white SUV is parked outdoors on a wet surface, with trees and a cloudy sky in the background.",
+   "image": "OpenImages Dataset/Edited/Images/43.jpg"
+  },
+  {
+   "id": "openimages_edit_00174",
+   "family": "openimages_edit_base",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 204,
+    "row": 4,
+    "prompt_number": 174,
+    "edit_number": 44,
+    "edit_family": "authority_figure",
+    "edit_variant": "remove_authority",
+    "source_image": "Original/Images/204.jpg",
+    "group_id": "openimages:edited:44",
+    "native_image": "Edited/Images/44.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.28
+     ],
+     [
+      "The",
+      -1.41
+     ],
+     [
+      "This",
+      -6.03
+     ],
+     [
+      "Silver",
+      -10.28
+     ],
+     [
+      "It",
+      -10.28
+     ]
+    ]
+   },
+   "reply": "A silver Ford SUV is parked on a city street with the U.S. Capitol building visible in the background.",
+   "image": "OpenImages Dataset/Edited/Images/44.jpg"
+  },
+  {
+   "id": "openimages_edit_00178",
+   "family": "openimages_edit_base",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 213,
+    "row": 5,
+    "prompt_number": 178,
+    "edit_number": 45,
+    "edit_family": "authority_figure",
+    "edit_variant": "remove_authority",
+    "source_image": "Original/Images/213.jpg",
+    "group_id": "openimages:edited:45",
+    "native_image": "Edited/Images/45.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.58
+     ],
+     [
+      "The",
+      -1.08
+     ],
+     [
+      "This",
+      -2.33
+     ],
+     [
+      "It",
+      -9.45
+     ],
+     [
+      "White",
+      -9.83
+     ]
+    ]
+   },
+   "reply": "A white SUV is parked on the street with trees and a bench in the background.",
+   "image": "OpenImages Dataset/Edited/Images/45.jpg"
+  },
+  {
+   "id": "openimages_edit_00182",
+   "family": "openimages_edit_base",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 239,
+    "row": 6,
+    "prompt_number": 182,
+    "edit_number": 46,
+    "edit_family": "authority_figure",
+    "edit_variant": "remove_authority",
+    "source_image": "Original/Images/239.jpg",
+    "group_id": "openimages:edited:46",
+    "native_image": "Edited/Images/46.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.15
+     ],
+     [
+      "The",
+      -2.28
+     ],
+     [
+      "This",
+      -3.28
+     ],
+     [
+      "In",
+      -7.15
+     ],
+     [
+      "An",
+      -7.9
+     ]
+    ]
+   },
+   "reply": "A black sedan is parked on the side of a street with trees and a portable toilet in the background.",
+   "image": "OpenImages Dataset/Edited/Images/46.jpg"
+  },
+  {
+   "id": "openimages_edit_00186",
+   "family": "openimages_edit_base",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 262,
+    "row": 7,
+    "prompt_number": 186,
+    "edit_number": 47,
+    "edit_family": "authority_figure",
+    "edit_variant": "civilian_swap",
+    "source_image": "Original/Images/262.jpg",
+    "group_id": "openimages:edited:47",
+    "native_image": "Edited/Images/47.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.21
+     ],
+     [
+      "In",
+      -2.58
+     ],
+     [
+      "The",
+      -2.71
+     ],
+     [
+      "Two",
+      -3.33
+     ],
+     [
+      "This",
+      -6.08
+     ]
+    ]
+   },
+   "reply": "A person wearing a Guy Fawkes mask is walking in a public square while another person takes a photo of them.",
+   "image": "OpenImages Dataset/Edited/Images/47.jpg"
+  },
+  {
+   "id": "openimages_edit_00190",
+   "family": "openimages_edit_base",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 171,
+    "row": 8,
+    "prompt_number": 190,
+    "edit_number": 48,
+    "edit_family": "authority_figure",
+    "edit_variant": "civilian_swap",
+    "source_image": "Original/Images/171.jpg",
+    "group_id": "openimages:edited:48",
+    "native_image": "Edited/Images/48.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.19
+     ],
+     [
+      "The",
+      -2.44
+     ],
+     [
+      "Four",
+      -3.31
+     ],
+     [
+      "In",
+      -3.44
+     ],
+     [
+      "Several",
+      -4.81
+     ]
+    ]
+   },
+   "reply": "A group of people is standing in a city square, with a sightseeing tour bus in the background.",
+   "image": "OpenImages Dataset/Edited/Images/48.jpg"
+  },
+  {
+   "id": "openimages_edit_00194",
+   "family": "openimages_edit_base",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 704,
+    "row": 9,
+    "prompt_number": 194,
+    "edit_number": 49,
+    "edit_family": "authority_figure",
+    "edit_variant": "add_officer",
+    "source_image": "Original/Images/704.jpg",
+    "group_id": "openimages:edited:49",
+    "native_image": "Edited/Images/49.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.02
+     ],
+     [
+      "The",
+      -4.52
+     ],
+     [
+      "In",
+      -5.77
+     ],
+     [
+      "An",
+      -7.27
+     ],
+     [
+      "This",
+      -7.27
+     ]
+    ]
+   },
+   "reply": "A police officer is directing traffic at an intersection with a \"One Way\" sign indicating \"Gay\" street.",
+   "image": "OpenImages Dataset/Edited/Images/49.jpg"
+  },
+  {
+   "id": "openimages_edit_00198",
+   "family": "openimages_edit_base",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "baseline",
+   "subcategory": "describe",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Look at this image.",
+   "question": "Describe it in one sentence.",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 737,
+    "row": 10,
+    "prompt_number": 198,
+    "edit_number": 50,
+    "edit_family": "authority_figure",
+    "edit_variant": "add_officer",
+    "source_image": "Original/Images/737.jpg",
+    "group_id": "openimages:edited:50",
+    "native_image": "Edited/Images/50.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "A",
+      -0.22
+     ],
+     [
+      "The",
+      -2.09
+     ],
+     [
+      "Pro",
+      -3.47
+     ],
+     [
+      "People",
+      -3.97
+     ],
+     [
+      "In",
+      -5.22
+     ]
+    ]
+   },
+   "reply": "A group of protesters is gathered on a city street, with a police officer standing in front of them.",
+   "image": "OpenImages Dataset/Edited/Images/50.jpg"
+  }
+ ]
+}

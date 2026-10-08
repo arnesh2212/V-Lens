@@ -1,0 +1,847 @@
+{
+ "repo": "Qwen/Qwen3-VL-8B-Instruct",
+ "family": "coco_pope",
+ "cap": 0,
+ "n": 11,
+ "rows": [
+  {
+   "dataset": "coco",
+   "variant": "val2017",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "system": null,
+   "meta": {
+    "image_id": 71756,
+    "width": 640,
+    "height": 512,
+    "target": "bear",
+    "target_name": "bear",
+    "supercategory": "animal",
+    "area": 0.2048,
+    "n_instances": 2,
+    "present": [
+     "bear"
+    ],
+    "boxes": [
+     [
+      130.0,
+      79.0,
+      192.2,
+      285.3
+     ],
+     [
+      275.0,
+      138.1,
+      163.4,
+      239.3
+     ]
+    ],
+    "adversarial": "bird",
+    "adversarial_cooc": 3,
+    "foils": [
+     "bird",
+     "person",
+     "sports ball"
+    ]
+   },
+   "id": "coco_71756_yes",
+   "family": "coco_pope",
+   "category": "coco_pope",
+   "subcategory": "present",
+   "question": "Is there a bear in the image? Answer yes or no.",
+   "choices": null,
+   "expected": "yes",
+   "answer_index": null,
+   "kind": "yesno",
+   "margins": {
+    "yes_over_no": 20.735137939453125,
+    "p_yes": 1.0,
+    "top5": [
+     [
+      "yes",
+      -0.0
+     ],
+     [
+      "Yes",
+      -6.75
+     ],
+     [
+      " yes",
+      -12.75
+     ],
+     [
+      " Yes",
+      -20.13
+     ],
+     [
+      "YES",
+      -20.63
+     ]
+    ]
+   },
+   "reply": "yes",
+   "image": "val2017/000000071756.jpg"
+  },
+  {
+   "dataset": "coco",
+   "variant": "val2017",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "system": null,
+   "meta": {
+    "image_id": 71756,
+    "width": 640,
+    "height": 512,
+    "target": "bear",
+    "target_name": "bear",
+    "supercategory": "animal",
+    "area": 0.2048,
+    "n_instances": 2,
+    "present": [
+     "bear"
+    ],
+    "boxes": [
+     [
+      130.0,
+      79.0,
+      192.2,
+      285.3
+     ],
+     [
+      275.0,
+      138.1,
+      163.4,
+      239.3
+     ]
+    ],
+    "adversarial": "bird",
+    "adversarial_cooc": 3,
+    "foils": [
+     "bird",
+     "person",
+     "sports ball"
+    ]
+   },
+   "id": "coco_71756_no",
+   "family": "coco_pope",
+   "category": "coco_pope",
+   "subcategory": "adversarial_absent",
+   "question": "Is there a bird in the image? Answer yes or no.",
+   "choices": null,
+   "expected": "no",
+   "answer_index": null,
+   "kind": "yesno",
+   "margins": {
+    "yes_over_no": -15.747110128577333,
+    "p_yes": 1.4491617150724778e-07,
+    "top5": [
+     [
+      "no",
+      -0.0
+     ],
+     [
+      "No",
+      -7.25
+     ],
+     [
+      " no",
+      -15.25
+     ],
+     [
+      "yes",
+      -15.75
+     ],
+     [
+      "There",
+      -21.38
+     ]
+    ]
+   },
+   "reply": "no",
+   "image": "val2017/000000071756.jpg"
+  },
+  {
+   "dataset": "coco",
+   "variant": "val2017",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "system": null,
+   "meta": {
+    "image_id": 447169,
+    "width": 640,
+    "height": 480,
+    "target": "oven",
+    "target_name": "oven",
+    "supercategory": "appliance",
+    "area": 0.1427,
+    "n_instances": 1,
+    "present": [
+     "bottle",
+     "chair",
+     "clock",
+     "oven"
+    ],
+    "boxes": [
+     [
+      2.2,
+      242.2,
+      241.1,
+      228.1
+     ]
+    ],
+    "adversarial": "sink",
+    "adversarial_cooc": 47,
+    "foils": [
+     "sink",
+     "bowl",
+     "person"
+    ]
+   },
+   "id": "coco_447169_no",
+   "family": "coco_pope",
+   "category": "coco_pope",
+   "subcategory": "adversarial_absent",
+   "question": "Is there a sink in the image? Answer yes or no.",
+   "choices": null,
+   "expected": "no",
+   "answer_index": null,
+   "kind": "yesno",
+   "margins": {
+    "yes_over_no": -6.7497602654621005,
+    "p_yes": 0.001169790280982852,
+    "top5": [
+     [
+      "no",
+      -0.0
+     ],
+     [
+      "yes",
+      -6.75
+     ],
+     [
+      "No",
+      -10.75
+     ],
+     [
+      "Yes",
+      -15.0
+     ],
+     [
+      " no",
+      -15.88
+     ]
+    ]
+   },
+   "reply": "no",
+   "image": "val2017/000000447169.jpg"
+  },
+  {
+   "dataset": "coco",
+   "variant": "val2017",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "system": null,
+   "meta": {
+    "image_id": 51314,
+    "width": 640,
+    "height": 480,
+    "target": "person",
+    "target_name": "person",
+    "supercategory": "person",
+    "area": 0.1202,
+    "n_instances": 1,
+    "present": [
+     "person",
+     "surfboard"
+    ],
+    "boxes": [
+     [
+      227.6,
+      37.8,
+      217.9,
+      305.3
+     ]
+    ],
+    "adversarial": "chair",
+    "adversarial_cooc": 367,
+    "foils": [
+     "chair",
+     "car",
+     "handbag"
+    ]
+   },
+   "id": "coco_51314_no",
+   "family": "coco_pope",
+   "category": "coco_pope",
+   "subcategory": "adversarial_absent",
+   "question": "Is there a chair in the image? Answer yes or no.",
+   "choices": null,
+   "expected": "no",
+   "answer_index": null,
+   "kind": "yesno",
+   "margins": {
+    "yes_over_no": -15.749677538879041,
+    "p_yes": 1.445446144998641e-07,
+    "top5": [
+     [
+      "no",
+      -0.0
+     ],
+     [
+      "No",
+      -9.75
+     ],
+     [
+      "yes",
+      -15.75
+     ],
+     [
+      " no",
+      -18.38
+     ],
+     [
+      "-no",
+      -22.75
+     ]
+    ]
+   },
+   "reply": "no",
+   "image": "val2017/000000051314.jpg"
+  },
+  {
+   "dataset": "coco",
+   "variant": "val2017",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "system": null,
+   "meta": {
+    "image_id": 447169,
+    "width": 640,
+    "height": 480,
+    "target": "oven",
+    "target_name": "oven",
+    "supercategory": "appliance",
+    "area": 0.1427,
+    "n_instances": 1,
+    "present": [
+     "bottle",
+     "chair",
+     "clock",
+     "oven"
+    ],
+    "boxes": [
+     [
+      2.2,
+      242.2,
+      241.1,
+      228.1
+     ]
+    ],
+    "adversarial": "sink",
+    "adversarial_cooc": 47,
+    "foils": [
+     "sink",
+     "bowl",
+     "person"
+    ]
+   },
+   "id": "coco_447169_yes",
+   "family": "coco_pope",
+   "category": "coco_pope",
+   "subcategory": "present",
+   "question": "Is there an oven in the image? Answer yes or no.",
+   "choices": null,
+   "expected": "yes",
+   "answer_index": null,
+   "kind": "yesno",
+   "margins": {
+    "yes_over_no": 12.999979496040396,
+    "p_yes": 0.999997615814209,
+    "top5": [
+     [
+      "yes",
+      -0.0
+     ],
+     [
+      "Yes",
+      -11.13
+     ],
+     [
+      "no",
+      -13.0
+     ],
+     [
+      " yes",
+      -15.5
+     ],
+     [
+      "YES",
+      -19.75
+     ]
+    ]
+   },
+   "reply": "yes",
+   "image": "val2017/000000447169.jpg"
+  },
+  {
+   "dataset": "coco",
+   "variant": "val2017",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "system": null,
+   "meta": {
+    "image_id": 375493,
+    "width": 640,
+    "height": 480,
+    "target": "person",
+    "target_name": "person",
+    "supercategory": "person",
+    "area": 0.1091,
+    "n_instances": 1,
+    "present": [
+     "bottle",
+     "cat",
+     "fire hydrant",
+     "person",
+     "stop sign"
+    ],
+    "boxes": [
+     [
+      252.3,
+      24.8,
+      128.9,
+      448.9
+     ]
+    ],
+    "adversarial": "chair",
+    "adversarial_cooc": 367,
+    "foils": [
+     "chair",
+     "car",
+     "handbag"
+    ]
+   },
+   "id": "coco_375493_no",
+   "family": "coco_pope",
+   "category": "coco_pope",
+   "subcategory": "adversarial_absent",
+   "question": "Is there a chair in the image? Answer yes or no.",
+   "choices": null,
+   "expected": "no",
+   "answer_index": null,
+   "kind": "yesno",
+   "margins": {
+    "yes_over_no": -15.249842405322852,
+    "p_yes": 2.3827445261304092e-07,
+    "top5": [
+     [
+      "no",
+      -0.0
+     ],
+     [
+      "No",
+      -10.75
+     ],
+     [
+      "yes",
+      -15.25
+     ],
+     [
+      " no",
+      -18.5
+     ],
+     [
+      "The",
+      -23.88
+     ]
+    ]
+   },
+   "reply": "no",
+   "image": "val2017/000000375493.jpg"
+  },
+  {
+   "dataset": "coco",
+   "variant": "val2017",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "system": null,
+   "meta": {
+    "image_id": 51314,
+    "width": 640,
+    "height": 480,
+    "target": "person",
+    "target_name": "person",
+    "supercategory": "person",
+    "area": 0.1202,
+    "n_instances": 1,
+    "present": [
+     "person",
+     "surfboard"
+    ],
+    "boxes": [
+     [
+      227.6,
+      37.8,
+      217.9,
+      305.3
+     ]
+    ],
+    "adversarial": "chair",
+    "adversarial_cooc": 367,
+    "foils": [
+     "chair",
+     "car",
+     "handbag"
+    ]
+   },
+   "id": "coco_51314_yes",
+   "family": "coco_pope",
+   "category": "coco_pope",
+   "subcategory": "present",
+   "question": "Is there a person in the image? Answer yes or no.",
+   "choices": null,
+   "expected": "yes",
+   "answer_index": null,
+   "kind": "yesno",
+   "margins": {
+    "yes_over_no": 20.6249942779541,
+    "p_yes": 1.0,
+    "top5": [
+     [
+      "yes",
+      -0.0
+     ],
+     [
+      "Yes",
+      -13.5
+     ],
+     [
+      " yes",
+      -18.25
+     ],
+     [
+      "no",
+      -20.63
+     ],
+     [
+      "YES",
+      -23.63
+     ]
+    ]
+   },
+   "reply": "yes",
+   "image": "val2017/000000051314.jpg"
+  },
+  {
+   "dataset": "coco",
+   "variant": "val2017",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "system": null,
+   "meta": {
+    "image_id": 283038,
+    "width": 500,
+    "height": 281,
+    "target": "stop sign",
+    "target_name": "stop sign",
+    "supercategory": "outdoor",
+    "area": 0.3124,
+    "n_instances": 1,
+    "present": [
+     "car",
+     "stop sign",
+     "traffic light",
+     "truck"
+    ],
+    "boxes": [
+     [
+      114.3,
+      12.0,
+      224.8,
+      244.4
+     ]
+    ],
+    "adversarial": "person",
+    "adversarial_cooc": 20,
+    "foils": [
+     "person",
+     "fire hydrant",
+     "handbag"
+    ]
+   },
+   "id": "coco_283038_no",
+   "family": "coco_pope",
+   "category": "coco_pope",
+   "subcategory": "adversarial_absent",
+   "question": "Is there a person in the image? Answer yes or no.",
+   "choices": null,
+   "expected": "no",
+   "answer_index": null,
+   "kind": "yesno",
+   "margins": {
+    "yes_over_no": 1.3750843703746796,
+    "p_yes": 0.7981995344161987,
+    "top5": [
+     [
+      "yes",
+      -0.23
+     ],
+     [
+      "no",
+      -1.6
+     ],
+     [
+      "Yes",
+      -9.35
+     ],
+     [
+      "No",
+      -12.1
+     ],
+     [
+      " yes",
+      -12.23
+     ]
+    ]
+   },
+   "reply": "yes",
+   "image": "val2017/000000283038.jpg"
+  },
+  {
+   "dataset": "coco",
+   "variant": "val2017",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "system": null,
+   "meta": {
+    "image_id": 375493,
+    "width": 640,
+    "height": 480,
+    "target": "person",
+    "target_name": "person",
+    "supercategory": "person",
+    "area": 0.1091,
+    "n_instances": 1,
+    "present": [
+     "bottle",
+     "cat",
+     "fire hydrant",
+     "person",
+     "stop sign"
+    ],
+    "boxes": [
+     [
+      252.3,
+      24.8,
+      128.9,
+      448.9
+     ]
+    ],
+    "adversarial": "chair",
+    "adversarial_cooc": 367,
+    "foils": [
+     "chair",
+     "car",
+     "handbag"
+    ]
+   },
+   "id": "coco_375493_yes",
+   "family": "coco_pope",
+   "category": "coco_pope",
+   "subcategory": "present",
+   "question": "Is there a person in the image? Answer yes or no.",
+   "choices": null,
+   "expected": "yes",
+   "answer_index": null,
+   "kind": "yesno",
+   "margins": {
+    "yes_over_no": 21.249996185302734,
+    "p_yes": 1.0,
+    "top5": [
+     [
+      "yes",
+      -0.0
+     ],
+     [
+      "Yes",
+      -14.75
+     ],
+     [
+      " yes",
+      -19.5
+     ],
+     [
+      "no",
+      -21.25
+     ],
+     [
+      "YES",
+      -24.75
+     ]
+    ]
+   },
+   "reply": "yes",
+   "image": "val2017/000000375493.jpg"
+  },
+  {
+   "dataset": "coco",
+   "variant": "val2017",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "system": null,
+   "meta": {
+    "image_id": 283038,
+    "width": 500,
+    "height": 281,
+    "target": "stop sign",
+    "target_name": "stop sign",
+    "supercategory": "outdoor",
+    "area": 0.3124,
+    "n_instances": 1,
+    "present": [
+     "car",
+     "stop sign",
+     "traffic light",
+     "truck"
+    ],
+    "boxes": [
+     [
+      114.3,
+      12.0,
+      224.8,
+      244.4
+     ]
+    ],
+    "adversarial": "person",
+    "adversarial_cooc": 20,
+    "foils": [
+     "person",
+     "fire hydrant",
+     "handbag"
+    ]
+   },
+   "id": "coco_283038_yes",
+   "family": "coco_pope",
+   "category": "coco_pope",
+   "subcategory": "present",
+   "question": "Is there a stop sign in the image? Answer yes or no.",
+   "choices": null,
+   "expected": "yes",
+   "answer_index": null,
+   "kind": "yesno",
+   "margins": {
+    "yes_over_no": 15.373245000926545,
+    "p_yes": 0.9999997615814209,
+    "top5": [
+     [
+      "yes",
+      -0.0
+     ],
+     [
+      "Yes",
+      -7.75
+     ],
+     [
+      "no",
+      -15.38
+     ],
+     [
+      " yes",
+      -15.5
+     ],
+     [
+      "YES",
+      -17.75
+     ]
+    ]
+   },
+   "reply": "yes",
+   "image": "val2017/000000283038.jpg"
+  },
+  {
+   "dataset": "coco",
+   "variant": "val2017",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "system": null,
+   "meta": {
+    "image_id": 463802,
+    "width": 640,
+    "height": 480,
+    "target": "teddy bear",
+    "target_name": "teddy bear",
+    "supercategory": "indoor",
+    "area": 0.3606,
+    "n_instances": 1,
+    "present": [
+     "person",
+     "teddy bear",
+     "tennis racket"
+    ],
+    "boxes": [
+     [
+      1.2,
+      2.2,
+      369.7,
+      466.2
+     ]
+    ],
+    "adversarial": "chair",
+    "adversarial_cooc": 12,
+    "foils": [
+     "chair",
+     "tv",
+     "bed"
+    ]
+   },
+   "id": "coco_463802_yes",
+   "family": "coco_pope",
+   "category": "coco_pope",
+   "subcategory": "present",
+   "question": "Is there a teddy bear in the image? Answer yes or no.",
+   "choices": null,
+   "expected": "yes",
+   "answer_index": null,
+   "kind": "yesno",
+   "margins": {
+    "yes_over_no": 10.749708658346208,
+    "p_yes": 0.9999785423278809,
+    "top5": [
+     [
+      "yes",
+      -0.0
+     ],
+     [
+      "Yes",
+      -8.25
+     ],
+     [
+      "no",
+      -10.75
+     ],
+     [
+      " yes",
+      -15.25
+     ],
+     [
+      "YES",
+      -17.75
+     ]
+    ]
+   },
+   "reply": "yes",
+   "image": "val2017/000000463802.jpg"
+  }
+ ]
+}

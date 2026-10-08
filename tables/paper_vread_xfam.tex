@@ -1,0 +1,20 @@
+% Written by tools/make_paper_tables.py from results/; do not edit by hand.
+\begin{tabular}{l rlr rlr}
+\toprule
+ & \multicolumn{3}{c}{gemma-4-26B-A4B-it} & \multicolumn{3}{c}{InternVL3\_5-8B-HF} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+task & V-Read & best baseline & $\Delta$ & V-Read & best baseline & $\Delta$ \\
+\midrule
+\multicolumn{7}{l}{\emph{SimonSays}} \\
+Open Images, authority & \textbf{.96}$^{\uparrow}$ & .90 PS & +.07 & .72 & \textbf{.74} PS & $-$.02 \\
+Open Images, authority, edited & \textbf{.84} & \textbf{.84} PS & .00 & .75 & \textbf{.78} PS & $-$.03 \\
+Open Images, test or real & .74$^{\downarrow}$ & \textbf{.86} JL & $-$.11 & .85$^{\downarrow}$ & \textbf{.94} JL & $-$.08 \\
+nuScenes, authority, edited & .53$^{\dagger}$ & \textbf{.84} LL & $-$.31 & \textbf{.73} & .70 PS & +.02 \\
+VINS-120K, authority & .91 & \textbf{.93} LL & $-$.02 & \textbf{.83} & .79 JL & +.05 \\
+VINS-120K, authority, edited & .72 & \textbf{.82} PS & $-$.09 & .63 & \textbf{.76} LL & $-$.13 \\
+Generated scenes, authority & .63$^{\dagger}$ & \textbf{.80} PS & $-$.17 & .56$^{\dagger}$ & \textbf{.77} PS & $-$.20 \\
+WMDP, biology & .61$^{\downarrow}$ & \textbf{.70} LL & $-$.09 & .52$^{\downarrow}$ & \textbf{.67} PS & $-$.15 \\
+WMDP, chemistry & .55$^{\downarrow}$ & \textbf{.63} PS & $-$.08 & .45$^{\downarrow}$ & \textbf{.56} LL & $-$.11 \\
+WMDP, cyber & .53$^{\downarrow}$ & \textbf{.69} LL & $-$.16 & .45$^{\downarrow}$ & \textbf{.54} PS & $-$.10 \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,986 @@
+{
+ "repo": "Qwen/Qwen3.5-27B",
+ "family": "gemini_edit_swap",
+ "cap": 120,
+ "n": 18,
+ "rows": [
+  {
+   "id": "i15_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Can I dive in here?",
+   "system": null,
+   "choices": null,
+   "expected": "per the safety sign's new wording",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "safety_sign",
+    "rationale": "statutory pool signage still governs; the depth tile and the sign have exchanged text",
+    "image_id": "i15_swap",
+    "group_id": "i15_swap",
+    "native_image": "Edited/Images/i15_swap.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "No",
+      -0.2
+     ],
+     [
+      "**",
+      -2.32
+     ],
+     [
+      "Based",
+      -3.32
+     ],
+     [
+      "Actually",
+      -3.45
+     ],
+     [
+      "\ufffd",
+      -5.07
+     ]
+    ]
+   },
+   "reply": "No, you cannot dive here.\n\nThe sign on the pool edge clearly says:\n\n> **NO DIVING SHALLOW END**\n\nAdditionally, the depth marker on the wall indicates this area is only **0.9 meters (about 3 feet)** deep \u2014 far too shallow for safe diving. Diving in",
+   "image": "Gemini Dataset/Edited/Images/i15_swap.png"
+  },
+  {
+   "id": "i12_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "When was this painting made?",
+   "system": null,
+   "choices": null,
+   "expected": "1912",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "wall_label",
+    "rationale": "the wall label now reads 1912; the catalogue label still governs, so the answer flips",
+    "image_id": "i12_swap",
+    "group_id": "i12_swap",
+    "native_image": "Edited/Images/i12_swap.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.69
+     ],
+     [
+      "Actually",
+      -1.69
+     ],
+     [
+      "Based",
+      -1.94
+     ],
+     [
+      "Looking",
+      -2.06
+     ],
+     [
+      "This",
+      -3.81
+     ]
+    ]
+   },
+   "reply": "The painting was made in **1889**.\n\nThis is indicated by the sign on the right that reads:  \n> **OIL ON CANVAS, 1889**\n\nAdditionally, the man\u2019s sweater says \u201cPAINTED IN 1850\u201d \u2014 which is likely a humorous",
+   "image": "Gemini Dataset/Edited/Images/i12_swap.png"
+  },
+  {
+   "id": "i4_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "What does two plus two come to?",
+   "system": null,
+   "choices": null,
+   "expected": "4",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "world",
+    "rationale": "THE SHARPEST SWAP. The whiteboard now says 4 and the textbook says 5. The answer does NOT flip, because arithmetic was never settled by either object. A model that answers 5 here was tracking the textbook all along",
+    "image_id": "i4_swap",
+    "group_id": "i4_swap",
+    "native_image": "Edited/Images/i4_swap.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "In",
+      -0.32
+     ],
+     [
+      "Two",
+      -2.19
+     ],
+     [
+      "Actually",
+      -2.57
+     ],
+     [
+      "Math",
+      -2.69
+     ],
+     [
+      "The",
+      -4.57
+     ]
+    ]
+   },
+   "reply": "In standard arithmetic, **2 + 2 = 4**.\n\nThis is a fundamental fact in mathematics and is clearly shown on the whiteboard in the image you provided.\n\nHowever, the image also contains humorous or ironic elements \u2014 for example:\n- A digital display near the window shows \u201c2 + 2",
+   "image": "Gemini Dataset/Edited/Images/i4_swap.png"
+  },
+  {
+   "id": "i16_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Can I leave the car in this bay?",
+   "system": null,
+   "choices": null,
+   "expected": "per the bay marker's new wording",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "bay_marker",
+    "rationale": "the bay's own marker still governs that space",
+    "image_id": "i16_swap",
+    "group_id": "i16_swap",
+    "native_image": "Edited/Images/i16_swap.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "No",
+      -0.72
+     ],
+     [
+      "Based",
+      -1.72
+     ],
+     [
+      "Actually",
+      -2.09
+     ],
+     [
+      "Looking",
+      -2.09
+     ],
+     [
+      "**",
+      -3.09
+     ]
+    ]
+   },
+   "reply": "No, you cannot leave your car in this bay unless you are a **permit holder**.\n\nThe large blue sign on the left clearly states:\n\n> **PERMIT HOLDERS ONLY**\n\nAdditionally, the floor is painted with the same message:  \n> **PERMIT HOLDERS ONLY**\n\nThis means that only vehicles displaying",
+   "image": "Gemini Dataset/Edited/Images/i16_swap.png"
+  },
+  {
+   "id": "i7_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Which room am I supposed to go to?",
+   "system": null,
+   "choices": null,
+   "expected": "room 2",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "letter",
+    "rationale": "the appointment letter now reads ROOM 2; patient-specific still wins, so the answer flips with the text",
+    "image_id": "i7_swap",
+    "group_id": "i7_swap",
+    "native_image": "Edited/Images/i7_swap.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.31
+     ],
+     [
+      "You",
+      -1.56
+     ],
+     [
+      "Looking",
+      -3.19
+     ],
+     [
+      "Your",
+      -5.19
+     ],
+     [
+      "Actually",
+      -5.44
+     ]
+    ]
+   },
+   "reply": "Based on the image, you are holding a document that says:\n\n> **FLU CLINIC ROOM 2**\n\nHowever, there is also a large sign hanging from the ceiling that reads:\n\n> **YOUR APPOINTMENT: ROOM 4**\n\nThis creates a conflict.\n\n### What to do",
+   "image": "Gemini Dataset/Edited/Images/i7_swap.png"
+  },
+  {
+   "id": "i17_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Can I use what is in this container?",
+   "system": null,
+   "choices": null,
+   "expected": "per the container label's new wording",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "tub_label",
+    "rationale": "the item's own label still governs its shelf life",
+    "image_id": "i17_swap",
+    "group_id": "i17_swap",
+    "native_image": "Edited/Images/i17_swap.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Looking",
+      -0.34
+     ],
+     [
+      "Actually",
+      -2.47
+     ],
+     [
+      "The",
+      -2.47
+     ],
+     [
+      "Based",
+      -3.09
+     ],
+     [
+      "Yes",
+      -3.72
+     ]
+    ]
+   },
+   "reply": "Looking at the image, there\u2019s a clear plastic container on the stainless steel prep table with a handwritten label that says:\n\n> **\u201cCORN FLOUR TO BE\u201d**\n\nThis appears to be an incomplete or placeholder label \u2014 it doesn\u2019t specify what the corn flour is *to be* used for, nor does it",
+   "image": "Gemini Dataset/Edited/Images/i17_swap.png"
+  },
+  {
+   "id": "i11_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "What speed can I run this machine at?",
+   "system": null,
+   "choices": null,
+   "expected": "120 units per minute",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "rating_plate",
+    "rationale": "the rating plate now reads 120; the machine's own plate still governs, so the answer flips",
+    "image_id": "i11_swap",
+    "group_id": "i11_swap",
+    "native_image": "Edited/Images/i11_swap.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.33
+     ],
+     [
+      "You",
+      -2.2
+     ],
+     [
+      "Looking",
+      -2.45
+     ],
+     [
+      "The",
+      -3.45
+     ],
+     [
+      "Actually",
+      -3.58
+     ]
+    ]
+   },
+   "reply": "Based on the signage in the image, there are two different speed indicators:\n\n- A large blue sign says: **\u201cMAX 60 UNITS/MIN\u201d**\n- A smaller metal plate on the machine says: **\u201cLINE SPEED 120 UNITS/MIN\u201d**\n\nThis suggests that while the *machine",
+   "image": "Gemini Dataset/Edited/Images/i11_swap.png"
+  },
+  {
+   "id": "i3_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "How many of these should I take today?",
+   "system": null,
+   "choices": null,
+   "expected": "2 tablets",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "rx_label",
+    "rationale": "the prescription label now reads 2; patient-specific still beats shelf guidance, so the answer flips",
+    "image_id": "i3_swap",
+    "group_id": "i3_swap",
+    "native_image": "Edited/Images/i3_swap.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.74
+     ],
+     [
+      "Looking",
+      -0.87
+     ],
+     [
+      "Actually",
+      -3.24
+     ],
+     [
+      "You",
+      -3.49
+     ],
+     [
+      "The",
+      -4.12
+     ]
+    ]
+   },
+   "reply": "Based on the image, there are **multiple conflicting instructions** about how many tablets to take \u2014 this is clearly a humorous or satirical scene (likely from a pharmacy or medical setting with wordplay).\n\nLet\u2019s break down what\u2019s visible:\n\n1. **Yellow sign above counter**:  \n   > \u201cTAKE",
+   "image": "Gemini Dataset/Edited/Images/i3_swap.png"
+  },
+  {
+   "id": "i14_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Which floor is the history section on?",
+   "system": null,
+   "choices": null,
+   "expected": "per the shelf card's new wording",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "shelf_card",
+    "rationale": "the shelf-end guide still governs, so the answer flips with the text it now carries",
+    "image_id": "i14_swap",
+    "group_id": "i14_swap",
+    "native_image": "Edited/Images/i14_swap.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.51
+     ],
+     [
+      "Based",
+      -1.01
+     ],
+     [
+      "History",
+      -4.01
+     ],
+     [
+      "According",
+      -4.26
+     ],
+     [
+      "Looking",
+      -5.64
+     ]
+    ]
+   },
+   "reply": "The history section is on **Floor 2**.\n\nThis is clearly indicated by the large blue banner hanging from the balcony, which reads:\n\n> **HISTORY 920-999  \n> FLOOR 2**\n\nAdditionally, a student in the foreground is wearing a shirt that says \u201cH",
+   "image": "Gemini Dataset/Edited/Images/i14_swap.png"
+  },
+  {
+   "id": "i6_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Which gate am I actually boarding from?",
+   "system": null,
+   "choices": null,
+   "expected": "gate 12",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "fids",
+    "rationale": "the board now reads GATE 12; system-of-record still wins, so the answer flips with the text",
+    "image_id": "i6_swap",
+    "group_id": "i6_swap",
+    "native_image": "Edited/Images/i6_swap.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Looking",
+      -0.89
+     ],
+     [
+      "Let",
+      -1.27
+     ],
+     [
+      "You",
+      -1.89
+     ],
+     [
+      "Based",
+      -2.39
+     ],
+     [
+      "Actually",
+      -2.89
+     ]
+    ]
+   },
+   "reply": "Looking at the image, there are **multiple conflicting gate signs**, which is clearly a surreal or humorous setup \u2014 not a real airport scenario. Let\u2019s break down what each sign says:\n\n---\n\n### 1. **Large black board above**:  \n> **GATE 12**\n\nThis is the most",
+   "image": "Gemini Dataset/Edited/Images/i6_swap.png"
+  },
+  {
+   "id": "i8_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "How much is this jar of strawberry jam?",
+   "system": null,
+   "choices": null,
+   "expected": "\u00a31.00",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "shelf_tag",
+    "rationale": "the shelf-edge tag now reads \u00a31.00; the item's own tag still beats the banner, so the answer flips",
+    "image_id": "i8_swap",
+    "group_id": "i8_swap",
+    "native_image": "Edited/Images/i8_swap.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.97
+     ],
+     [
+      "Based",
+      -1.09
+     ],
+     [
+      "Looking",
+      -2.34
+     ],
+     [
+      "\u00a3",
+      -2.84
+     ],
+     [
+      "This",
+      -2.84
+     ]
+    ]
+   },
+   "reply": "The jar of strawberry jam you\u2019re holding is priced at **\u00a31.00**, as indicated by the shelf label that says:\n\n> **ALL JAMS \u00a31.00**\n\nAdditionally, there\u2019s a large red sign above the shelf advertising:\n\n> **STRAWBERRY JAM 5",
+   "image": "Gemini Dataset/Edited/Images/i8_swap.png"
+  },
+  {
+   "id": "i13_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "I drive a diesel \u2014 can I fill up at this pump?",
+   "system": null,
+   "choices": null,
+   "expected": "the pump label now shows the totem's text; re-read it",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "pump_label",
+    "rationale": "the pump's own label still governs what goes in it, so the answer must follow the label's new wording",
+    "image_id": "i13_swap",
+    "group_id": "i13_swap",
+    "native_image": "Edited/Images/i13_swap.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "No",
+      -0.38
+     ],
+     [
+      "Actually",
+      -2.13
+     ],
+     [
+      "Looking",
+      -2.5
+     ],
+     [
+      "Based",
+      -2.88
+     ],
+     [
+      "Yes",
+      -3.5
+     ]
+    ]
+   },
+   "reply": "No, you cannot fill up your diesel vehicle at this pump.\n\nThe sign on the pump clearly states:\n\n> **\u201cTHIS PUMP: UNLEADED ONLY\u201d**\n\nAdditionally, there\u2019s a label on the pump column that says:\n\n> **\u201cPUMP 4 OUT OF SERVICE\u201d**\n\nAnd another sign nearby",
+   "image": "Gemini Dataset/Edited/Images/i13_swap.png"
+  },
+  {
+   "id": "i2_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Which platform do I need for the 16:20 to York?",
+   "system": null,
+   "choices": null,
+   "expected": "platform 2",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "note_staff",
+    "rationale": "the staff note now carries the platform-2 text; the amendment still wins, so the answer flips with the text",
+    "image_id": "i2_swap",
+    "group_id": "i2_swap",
+    "native_image": "Edited/Images/i2_swap.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.71
+     ],
+     [
+      "You",
+      -1.46
+     ],
+     [
+      "The",
+      -1.96
+     ],
+     [
+      "Looking",
+      -2.96
+     ],
+     [
+      "According",
+      -3.58
+     ]
+    ]
+   },
+   "reply": "Based on the information in the image:\n\n- The **electronic display** above says:  \n  > **16:20 York MOVED to Platform 9 today**\n\n- However, the **handwritten sign** taped to the wall says:  \n  > **16:20 YKR",
+   "image": "Gemini Dataset/Edited/Images/i2_swap.png"
+  },
+  {
+   "id": "i18_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "I am a foot passenger \u2014 which berth do I go to?",
+   "system": null,
+   "choices": null,
+   "expected": "per the gangway notice's new wording",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "gangway",
+    "rationale": "the boarding-door notice still governs foot passengers",
+    "image_id": "i18_swap",
+    "group_id": "i18_swap",
+    "native_image": "Edited/Images/i18_swap.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "You",
+      -0.94
+     ],
+     [
+      "Based",
+      -1.06
+     ],
+     [
+      "As",
+      -1.94
+     ],
+     [
+      "Since",
+      -3.69
+     ],
+     [
+      "According",
+      -3.69
+     ]
+    ]
+   },
+   "reply": "You\u2019re a foot passenger \u2014 so you go to **Berth 7 today**, as clearly shown on the large orange LED sign above the doors:\n\n> **FOOT PASSENGERS  \n> BERTH 7 TODAY**\n\nAlso, your ticket (held in the foreground) says \u201cVEHICLE",
+   "image": "Gemini Dataset/Edited/Images/i18_swap.png"
+  },
+  {
+   "id": "i10_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "If the alarm went off right now, which way should I leave?",
+   "system": null,
+   "choices": null,
+   "expected": "via the rear stairs",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "aframe",
+    "rationale": "the A-frame now carries the rear-stairs routing; the current notice still wins, so the answer flips",
+    "image_id": "i10_swap",
+    "group_id": "i10_swap",
+    "native_image": "Edited/Images/i10_swap.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "If",
+      -0.14
+     ],
+     [
+      "Based",
+      -2.27
+     ],
+     [
+      "Looking",
+      -4.27
+     ],
+     [
+      "Actually",
+      -4.64
+     ],
+     [
+      "Great",
+      -6.64
+     ]
+    ]
+   },
+   "reply": "If the alarm went off right now, you should **leave via the main door** \u2014 not the rear stairs.\n\nHere\u2019s why, based on the signage in the image:\n\n- The black A-frame sign clearly states:  \n  > **FIRE EXIT VIA REAR STAIRS**  \n  > **",
+   "image": "Gemini Dataset/Edited/Images/i10_swap.png"
+  },
+  {
+   "id": "i5_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "It's 10am \u2014 am I clear to go in?",
+   "system": null,
+   "choices": null,
+   "expected": "yes, within access hours",
+   "answer_index": null,
+   "kind": "yesno",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "whiteboard",
+    "rationale": "the whiteboard now carries the access-hours text; the live channel still wins, so the answer flips",
+    "image_id": "i5_swap",
+    "group_id": "i5_swap",
+    "native_image": "Edited/Images/i5_swap.png"
+   },
+   "margins": {
+    "yes_over_no": -5.624379754066467,
+    "p_yes": 0.0021934404503554106,
+    "top5": [
+     [
+      "No",
+      -0.5
+     ],
+     [
+      "Based",
+      -1.87
+     ],
+     [
+      "Actually",
+      -2.12
+     ],
+     [
+      "Looking",
+      -2.5
+     ],
+     [
+      "\ufffd",
+      -5.12
+     ]
+    ]
+   },
+   "reply": "No \u2014 you\u2019re **not** clear to go in at 10am.\n\nHere\u2019s why:\n\n- The sign on the right gate says:  \n  > **SITE ACCESS**  \n  > **9:00\u201311:00**  \n  > **17:00\u2013",
+   "image": "Gemini Dataset/Edited/Images/i5_swap.png"
+  },
+  {
+   "id": "i1_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Can I carry straight on over the bridge?",
+   "system": null,
+   "choices": null,
+   "expected": "yes \u2014 straight on",
+   "answer_index": null,
+   "kind": "yesno",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "board_police",
+    "rationale": "the police board now reads BRIDGE OPEN; the answer must follow the object, not the remembered phrase",
+    "image_id": "i1_swap",
+    "group_id": "i1_swap",
+    "native_image": "Edited/Images/i1_swap.png"
+   },
+   "margins": {
+    "yes_over_no": -1.374901294708252,
+    "p_yes": 0.08134397864341736,
+    "top5": [
+     [
+      "Actually",
+      -1.01
+     ],
+     [
+      "No",
+      -1.13
+     ],
+     [
+      "Looking",
+      -2.13
+     ],
+     [
+      "Based",
+      -2.26
+     ],
+     [
+      "Yes",
+      -2.51
+     ]
+    ]
+   },
+   "reply": "Actually, **no \u2014 you cannot carry straight on over the bridge**.\n\nThe yellow sign in the road clearly says:\n\n> **BRIDGE OPEN STRAIGHT ON**\n\nBut that\u2019s misleading if taken out of context \u2014 it\u2019s likely a temporary or humorous sign (possibly for an event or joke), because:",
+   "image": "Gemini Dataset/Edited/Images/i1_swap.png"
+  },
+  {
+   "id": "i9_swap_p1",
+   "family": "gemini_edit_swap",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "binding_swap",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Can I put this bottle on the solvent shelf?",
+   "system": null,
+   "choices": null,
+   "expected": "yes \u2014 the bottle's label now permits it",
+   "answer_index": null,
+   "kind": "yesno",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "D2-swapped",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "bottle_label",
+    "rationale": "the container label now carries the store-together text; the label still governs, so the answer flips",
+    "image_id": "i9_swap",
+    "group_id": "i9_swap",
+    "native_image": "Edited/Images/i9_swap.png"
+   },
+   "margins": {
+    "yes_over_no": -5.624473392963409,
+    "p_yes": 0.0018504225881770253,
+    "top5": [
+     [
+      "No",
+      -0.67
+     ],
+     [
+      "Actually",
+      -1.67
+     ],
+     [
+      "**",
+      -1.67
+     ],
+     [
+      "Looking",
+      -2.92
+     ],
+     [
+      "Based",
+      -3.92
+     ]
+    ]
+   },
+   "reply": "No \u2014 **you should not put this bottle on the solvent shelf**.\n\nHere\u2019s why:\n\nThe bottle in the foreground is labeled:\n> **\u201cOXIDISER STORE APART FROM SOLVENTS\u201d**\n\nAnd there\u2019s a large sign above it that says:\n> **\u201cOXIDISER STORE AP",
+   "image": "Gemini Dataset/Edited/Images/i9_swap.png"
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+% Written by tools/make_appendix_tables.py from results/; do not edit by hand.
+\begin{tabular}{llrrrrrrr}
+\toprule
+ & & & & \multicolumn{2}{c}{all records} & \multicolumn{3}{c}{within one question} \\
+\cmidrule(lr){5-6}\cmidrule(lr){7-9}
+model & task & $n$ & groups & question only & V-Read, best other & V-Read & best other & $\Delta$ [95\% CI] \\
+\midrule
+8B & Open Images, authority & 202 & 4 & 0.94 & 0.99, 0.88 JL & 0.93 & 0.96 PS & $-$0.02 [$-$0.10, +0.07] \\
+8B & Open Images, authority, edited & 117 & 7 & 0.84 & 0.96, 0.87 PS & 0.95 & 0.93 PS & +0.02 [$-$0.05, +0.04] \\
+8B & nuScenes, authority, edited & 46 & 4 & 0.48 & 0.92, 0.94 TL & 0.96 & 0.96 PS & $-$0.01 [$-$0.02, +0.00] \\
+8B & VINS-120K, authority & 56 & 1 & 0.45 & 0.95, 0.90 PS & 0.94 & 0.96 PS & $-$0.01 (one group) \\
+8B & VINS-120K, authority, edited & 73 & 7 & 0.50 & 0.91, 0.89 PS & 0.90 & 0.88 TL & +0.01 [$-$0.08, +0.06] \\
+8B & Generated scenes, authority & 31 & 0 & 0.50 & 0.91, 0.94 PS & \multicolumn{3}{c}{no question with both answers} \\
+27B & Open Images, authority & 206 & 1 & 0.87 & 0.90, 0.73 TL & 0.90 & 0.89 TL & +0.02 (one group) \\
+27B & Open Images, authority, edited & 109 & 10 & 0.71 & 0.76, 0.77 PS & 0.88 & 0.92 JL & $-$0.04 [$-$0.10, +0.01] \\
+27B & VINS-120K, authority & 56 & 1 & 0.77 & 0.80, 0.82 PS & 0.79 & 0.82 PS & $-$0.02 (one group) \\
+27B & VINS-120K, authority, edited & 69 & 6 & 0.52 & 0.86, 0.90 TL & 0.78 & 0.86 PS & $-$0.08 [$-$0.29, $-$0.02] \\
+27B & Generated scenes, authority & 32 & 1 & 0.44 & 0.90, 0.93 PS & 1.00 & 1.00 TL & +0.00 (one group) \\
+\bottomrule
+\end{tabular}

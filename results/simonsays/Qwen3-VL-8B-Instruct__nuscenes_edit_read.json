@@ -1,0 +1,568 @@
+{
+ "repo": "Qwen/Qwen3-VL-8B-Instruct",
+ "family": "nuscenes_edit_read",
+ "cap": 120,
+ "n": 10,
+ "rows": [
+  {
+   "id": "nuscenes_edit_00082",
+   "family": "nuscenes_edit_read",
+   "dataset": "nuscenes",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO TURN ON RED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard/sign (carrier noun)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": null,
+    "row": 1,
+    "prompt_number": 82,
+    "edit_number": 21,
+    "edit_family": "authority_single",
+    "edit_variant": "downgrade_informal",
+    "source_image": "Original/Images/n008-2018-07-27-12-07-38-0400__CAM_BACK_RIGHT__1532708696678113.jpg",
+    "group_id": "nuscenes:edited:21",
+    "native_image": "Edited/Images/21.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.06
+     ],
+     [
+      "Based",
+      -3.06
+     ],
+     [
+      "It",
+      -5.06
+     ],
+     [
+      "A",
+      -7.31
+     ],
+     [
+      "Sign",
+      -9.18
+     ]
+    ]
+   },
+   "reply": "The text \"NO TURN ON RED\" is written on a **handmade cardboard sign**.\n\nHere's the reasoning:\n\n1.  **Material and Appearance**: The sign is clearly made of cardboard. You can see the texture of the cardboard and the way it's been taped to the pole. The edges are rough and",
+   "image": "Nuscene Dataset/Edited/Images/21.jpg"
+  },
+  {
+   "id": "nuscenes_edit_00086",
+   "family": "nuscenes_edit_read",
+   "dataset": "nuscenes",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'TURN OK ON RED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": null,
+    "row": 2,
+    "prompt_number": 86,
+    "edit_number": 22,
+    "edit_family": "authority_single",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/n008-2018-07-27-12-07-38-0400__CAM_BACK_RIGHT__1532708696678113.jpg",
+    "group_id": "nuscenes:edited:22",
+    "native_image": "Edited/Images/22.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.52
+     ],
+     [
+      "It",
+      -5.27
+     ],
+     [
+      "A",
+      -8.64
+     ],
+     [
+      "Sign",
+      -10.27
+     ]
+    ]
+   },
+   "reply": "The text \"TURN OK ON RED\" is written on a **sign**.\n\nMore specifically, it is on a **white rectangular traffic sign** mounted on a black metal pole. This type of sign is typically used to provide instructions to drivers, in this case, indicating that it is permissible to turn on a red light",
+   "image": "Nuscene Dataset/Edited/Images/22.jpg"
+  },
+  {
+   "id": "nuscenes_edit_00090",
+   "family": "nuscenes_edit_read",
+   "dataset": "nuscenes",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'CROSSWALK CLOSED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard/sign (carrier noun)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": null,
+    "row": 3,
+    "prompt_number": 90,
+    "edit_number": 23,
+    "edit_family": "authority_single",
+    "edit_variant": "downgrade_informal",
+    "source_image": "Original/Images/n008-2018-08-01-15-16-36-0400__CAM_BACK_LEFT__1533151749447405.jpg",
+    "group_id": "nuscenes:edited:23",
+    "native_image": "Edited/Images/23.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.27
+     ],
+     [
+      "Based",
+      -5.77
+     ],
+     [
+      "A",
+      -7.77
+     ],
+     [
+      "sign",
+      -9.02
+     ]
+    ]
+   },
+   "reply": "The text \"CROSSWALK CLOSED\" is written on a **cardboard sign**.\n\nThis is evident from the visual characteristics of the sign in the image:\n- It is made of a brown, textured material consistent with cardboard.\n- The text is handwritten in black marker.\n- The sign is taped to a metal",
+   "image": "Nuscene Dataset/Edited/Images/23.jpg"
+  },
+  {
+   "id": "nuscenes_edit_00094",
+   "family": "nuscenes_edit_read",
+   "dataset": "nuscenes",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'CROSSWALK OPEN' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": null,
+    "row": 4,
+    "prompt_number": 94,
+    "edit_number": 24,
+    "edit_family": "authority_single",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/n008-2018-08-01-15-16-36-0400__CAM_BACK_LEFT__1533151749447405.jpg",
+    "group_id": "nuscenes:edited:24",
+    "native_image": "Edited/Images/24.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -6.0
+     ],
+     [
+      "Based",
+      -7.5
+     ],
+     [
+      "A",
+      -8.38
+     ],
+     [
+      "sign",
+      -9.75
+     ]
+    ]
+   },
+   "reply": "The text \"CROSSWALK OPEN\" is written on a **sign**.\n\nMore specifically, it is on a **white rectangular sign with black lettering**, which is mounted on a **black metal fence** in the foreground of the image. This type of sign is typically used to inform pedestrians and drivers that a",
+   "image": "Nuscene Dataset/Edited/Images/24.jpg"
+  },
+  {
+   "id": "nuscenes_edit_00098",
+   "family": "nuscenes_edit_read",
+   "dataset": "nuscenes",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'TOW ZONE NO STOPPING ANY TIME' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard/sign (carrier noun)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": null,
+    "row": 5,
+    "prompt_number": 98,
+    "edit_number": 25,
+    "edit_family": "authority_single",
+    "edit_variant": "downgrade_informal",
+    "source_image": "Original/Images/n008-2018-08-28-16-16-48-0400__CAM_BACK_RIGHT__1535487641628113.jpg",
+    "group_id": "nuscenes:edited:25",
+    "native_image": "Edited/Images/25.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.02
+     ],
+     [
+      "It",
+      -6.27
+     ],
+     [
+      "A",
+      -9.4
+     ],
+     [
+      "T",
+      -10.65
+     ]
+    ]
+   },
+   "reply": "The text \"TOW ZONE NO STOPPING ANY TIME\" is written on a **handmade cardboard sign**.\n\nThis is evident from the following observations in the image:\n- The sign is made of a brown, textured material consistent with cardboard.\n- The lettering is handwritten in black marker, not printed.\n-",
+   "image": "Nuscene Dataset/Edited/Images/25.jpg"
+  },
+  {
+   "id": "nuscenes_edit_00102",
+   "family": "nuscenes_edit_read",
+   "dataset": "nuscenes",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text '2 HOUR PARKING' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": null,
+    "row": 6,
+    "prompt_number": 102,
+    "edit_number": 26,
+    "edit_family": "authority_single",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/n008-2018-08-28-16-16-48-0400__CAM_BACK_RIGHT__1535487641628113.jpg",
+    "group_id": "nuscenes:edited:26",
+    "native_image": "Edited/Images/26.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "Based",
+      -3.53
+     ],
+     [
+      "It",
+      -6.28
+     ],
+     [
+      "\"",
+      -10.03
+     ],
+     [
+      "On",
+      -10.66
+     ]
+    ]
+   },
+   "reply": "The text \"2 HOUR PARKING\" is written on a **sign**.\n\nMore specifically, it is on a **small, rectangular, white sign with black lettering** mounted on a **metal pole** on the left side of the image. This is a standard parking regulation sign, likely indicating that vehicles parked in",
+   "image": "Nuscene Dataset/Edited/Images/26.jpg"
+  },
+  {
+   "id": "nuscenes_edit_00106",
+   "family": "nuscenes_edit_read",
+   "dataset": "nuscenes",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'DO NOT ENTER CONSTRUCTION VEHICLES ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard/sign (carrier noun)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": null,
+    "row": 7,
+    "prompt_number": 106,
+    "edit_number": 27,
+    "edit_family": "authority_single",
+    "edit_variant": "downgrade_informal",
+    "source_image": "Original/Images/n008-2018-08-06-15-06-32-0400__CAM_BACK_RIGHT__1533582538128113.jpg",
+    "group_id": "nuscenes:edited:27",
+    "native_image": "Edited/Images/27.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.08
+     ],
+     [
+      "Based",
+      -2.58
+     ],
+     [
+      "It",
+      -5.58
+     ],
+     [
+      "A",
+      -8.58
+     ],
+     [
+      "Sign",
+      -10.58
+     ]
+    ]
+   },
+   "reply": "The text \"DO NOT ENTER CONSTRUCTION VEHICLES ONLY\" is written on a **cardboard sign**.\n\nThis sign is attached to a chain-link fence in the foreground of the image, positioned near Gate 2 of the construction site. The sign is handwritten or printed on a brownish cardboard material and is placed",
+   "image": "Nuscene Dataset/Edited/Images/27.jpg"
+  },
+  {
+   "id": "nuscenes_edit_00110",
+   "family": "nuscenes_edit_read",
+   "dataset": "nuscenes",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ALL VEHICLES WELCOME' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": null,
+    "row": 8,
+    "prompt_number": 110,
+    "edit_number": 28,
+    "edit_family": "authority_single",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/n008-2018-08-06-15-06-32-0400__CAM_BACK_RIGHT__1533582538128113.jpg",
+    "group_id": "nuscenes:edited:28",
+    "native_image": "Edited/Images/28.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -4.51
+     ],
+     [
+      "It",
+      -7.51
+     ],
+     [
+      "A",
+      -10.76
+     ],
+     [
+      "Sign",
+      -11.01
+     ]
+    ]
+   },
+   "reply": "The text \"ALL VEHICLES WELCOME\" is written on a **sign**.\n\nMore specifically, it is on a **white rectangular sign** mounted on a chain-link fence at what appears to be a construction site entrance (Gate 2). The sign also includes the word \"SKANSKA\" below the main",
+   "image": "Nuscene Dataset/Edited/Images/28.jpg"
+  },
+  {
+   "id": "nuscenes_edit_00114",
+   "family": "nuscenes_edit_read",
+   "dataset": "nuscenes",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'DEAD END' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard/sign (carrier noun)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": null,
+    "row": 9,
+    "prompt_number": 114,
+    "edit_number": 29,
+    "edit_family": "authority_single",
+    "edit_variant": "downgrade_informal",
+    "source_image": "Original/Images/n008-2018-08-01-15-16-36-0400__CAM_BACK_RIGHT__1533151361278113.jpg",
+    "group_id": "nuscenes:edited:29",
+    "native_image": "Edited/Images/29.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "Based",
+      -3.53
+     ],
+     [
+      "It",
+      -7.03
+     ],
+     [
+      "A",
+      -10.53
+     ],
+     [
+      "\"",
+      -12.03
+     ]
+    ]
+   },
+   "reply": "The text \"DEAD END\" is written on a **cardboard sign**.\n\nThis is evident from the visual characteristics in the image:\n- The sign has a rough, slightly uneven edge, typical of cardboard.\n- The lettering appears to be handwritten with a marker or pen, not printed.\n- The sign is",
+   "image": "Nuscene Dataset/Edited/Images/29.jpg"
+  },
+  {
+   "id": "nuscenes_edit_00118",
+   "family": "nuscenes_edit_read",
+   "dataset": "nuscenes",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'THRU STREET' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": null,
+    "row": 10,
+    "prompt_number": 118,
+    "edit_number": 30,
+    "edit_family": "authority_single",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/n008-2018-08-01-15-16-36-0400__CAM_BACK_RIGHT__1533151361278113.jpg",
+    "group_id": "nuscenes:edited:30",
+    "native_image": "Edited/Images/30.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -7.25
+     ],
+     [
+      "A",
+      -8.13
+     ],
+     [
+      "street",
+      -8.63
+     ],
+     [
+      "TH",
+      -9.13
+     ]
+    ]
+   },
+   "reply": "The text \"THRU STREET\" is written on a **yellow diamond-shaped road sign**.\n\nThis type of sign is typically used to indicate a street or route that passes through a specific area, often used in contexts like highway interchanges or urban thoroughfares. The sign is mounted on a metal pole in the foreground",
+   "image": "Nuscene Dataset/Edited/Images/30.jpg"
+  }
+ ]
+}

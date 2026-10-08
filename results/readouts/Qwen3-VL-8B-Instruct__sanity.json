@@ -1,0 +1,28 @@
+{
+ "yesno": {
+  "agree": 0,
+  "n": 0,
+  "share": null
+ },
+ "yesno_direct": {
+  "agree": 0,
+  "n": 0,
+  "share": null
+ },
+ "test_real": {
+  "agree": 0,
+  "n": 0,
+  "share": null
+ },
+ "letter": {
+  "agree": 1025,
+  "n": 1041,
+  "share": 0.9846301633045149
+ },
+ "margin_vs_stored": {
+  "n": 0,
+  "median_abs": null,
+  "p95_abs": null
+ },
+ "maps": "v_read_coco from 8cd20f8662baa8dd.pt; v_read from 317a51a85fa0ec84.pt; tuned from 317a51a85fa0ec84.pt; jacobian from 317a51a85fa0ec84.pt"
+}

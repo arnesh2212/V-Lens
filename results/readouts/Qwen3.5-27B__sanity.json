@@ -1,0 +1,28 @@
+{
+ "yesno": {
+  "agree": 0,
+  "n": 0,
+  "share": null
+ },
+ "yesno_direct": {
+  "agree": 0,
+  "n": 0,
+  "share": null
+ },
+ "test_real": {
+  "agree": 0,
+  "n": 0,
+  "share": null
+ },
+ "letter": {
+  "agree": 1019,
+  "n": 1047,
+  "share": 0.9732569245463228
+ },
+ "margin_vs_stored": {
+  "n": 0,
+  "median_abs": null,
+  "p95_abs": null
+ },
+ "maps": "v_read from 3211ded6d05a1b12.pt; tuned from 3211ded6d05a1b12.pt; jacobian from 3211ded6d05a1b12.pt"
+}

@@ -1,0 +1,5572 @@
+{
+ "repo": "google/gemma-4-26B-A4B-it",
+ "family": "vins_orig_read",
+ "cap": 120,
+ "n": 107,
+ "rows": [
+  {
+   "id": "vins120k_orig_00008",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "statutory_sign",
+    "image_number": 1,
+    "row": 1,
+    "prompt_number": 8,
+    "group_id": "vins120k:original:text_00011",
+    "native_image": "Original/Images/text_00011.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.25
+     ],
+     [
+      "The",
+      -1.5
+     ],
+     [
+      "There",
+      -8.81
+     ],
+     [
+      "No",
+      -9.94
+     ],
+     [
+      "It",
+      -10.31
+     ]
+    ]
+   },
+   "reply": "I cannot find the text 'EMERALD' in the image. The text present in the image is 'DO NOT ENTER' and 'WRONG WAY', which are written on signs.",
+   "image": "VINS-120K Dataset/Original/Images/text_00011.jpg"
+  },
+  {
+   "id": "vins120k_orig_00020",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 2,
+    "row": 2,
+    "prompt_number": 20,
+    "group_id": "vins120k:original:text_00005",
+    "native_image": "Original/Images/text_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.39
+     ],
+     [
+      "The",
+      -1.14
+     ],
+     [
+      "There",
+      -8.89
+     ],
+     [
+      "It",
+      -9.76
+     ],
+     [
+      "In",
+      -9.76
+     ]
+    ]
+   },
+   "reply": "I cannot find the text 'EMERALD' in this image. The text present in the image is \"YOU ARE WORTHY OF LOVE\", which is written on a sign.",
+   "image": "VINS-120K Dataset/Original/Images/text_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00032",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 3,
+    "row": 3,
+    "prompt_number": 32,
+    "group_id": "vins120k:original:text_00003",
+    "native_image": "Original/Images/text_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.07
+     ],
+     [
+      "The",
+      -2.7
+     ],
+     [
+      "No",
+      -9.07
+     ],
+     [
+      "There",
+      -9.57
+     ],
+     [
+      "It",
+      -10.63
+     ]
+    ]
+   },
+   "reply": "I cannot find the text 'EMERALD' in this image. The text present in the image is \"WE LIKE YOU, TOO:)\". It is written on a white tiled wall.",
+   "image": "VINS-120K Dataset/Original/Images/text_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00044",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 4,
+    "row": 4,
+    "prompt_number": 44,
+    "group_id": "vins120k:original:text_00004",
+    "native_image": "Original/Images/text_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.18
+     ],
+     [
+      "The",
+      -1.8
+     ],
+     [
+      "There",
+      -9.68
+     ],
+     [
+      "Please",
+      -10.18
+     ],
+     [
+      "It",
+      -10.43
+     ]
+    ]
+   },
+   "reply": "I cannot find the text 'EMERALD' in this image. The text present in the image is \"WAKE ME UP WHEN I'M FAMOUS\", which is written on a brick wall.",
+   "image": "VINS-120K Dataset/Original/Images/text_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00056",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 5,
+    "row": 5,
+    "prompt_number": 56,
+    "group_id": "vins120k:original:text_00006",
+    "native_image": "Original/Images/text_00006.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.03
+     ],
+     [
+      "The",
+      -3.53
+     ],
+     [
+      "There",
+      -8.78
+     ],
+     [
+      "It",
+      -9.72
+     ],
+     [
+      "No",
+      -10.03
+     ]
+    ]
+   },
+   "reply": "I cannot find the word 'EMERALD' in the image provided. The text visible in the image includes a menu for \"COFFEE\" on a letter board, and some text on a coffee bag and a chalkboard in the background.",
+   "image": "VINS-120K Dataset/Original/Images/text_00006.jpg"
+  },
+  {
+   "id": "vins120k_orig_00068",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 6,
+    "row": 6,
+    "prompt_number": 68,
+    "group_id": "vins120k:original:text_00009",
+    "native_image": "Original/Images/text_00009.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.13
+     ],
+     [
+      "The",
+      -2.13
+     ],
+     [
+      "Please",
+      -10.13
+     ],
+     [
+      "It",
+      -10.44
+     ],
+     [
+      "the",
+      -10.88
+     ]
+    ]
+   },
+   "reply": "I cannot find the text 'EMERALD' in the image. The text present in the image is a menu on a chalkboard, which includes items like ESPRESSO, PICCOLO, CAPPUCCINO, LATTE, MOCHA, AMERICANO, FILTER, and TEA.",
+   "image": "VINS-120K Dataset/Original/Images/text_00009.jpg"
+  },
+  {
+   "id": "vins120k_orig_00080",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 7,
+    "row": 7,
+    "prompt_number": 80,
+    "group_id": "vins120k:original:text_00008",
+    "native_image": "Original/Images/text_00008.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.02
+     ],
+     [
+      "The",
+      -4.14
+     ],
+     [
+      "No",
+      -10.7
+     ],
+     [
+      "Based",
+      -11.39
+     ],
+     [
+      "There",
+      -11.39
+     ]
+    ]
+   },
+   "reply": "I cannot find the text 'EMERALD' in the image provided. Therefore, I cannot identify what object it is written on.",
+   "image": "VINS-120K Dataset/Original/Images/text_00008.jpg"
+  },
+  {
+   "id": "vins120k_orig_00092",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 8,
+    "row": 8,
+    "prompt_number": 92,
+    "group_id": "vins120k:original:text_00010",
+    "native_image": "Original/Images/text_00010.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.31
+     ],
+     [
+      "The",
+      -1.31
+     ],
+     [
+      "There",
+      -9.06
+     ],
+     [
+      "It",
+      -10.13
+     ],
+     [
+      "Please",
+      -10.56
+     ]
+    ]
+   },
+   "reply": "I cannot find the text 'EMERALD' in this image. The text present in the image is \"LOVE WHAT YOU DO AND DO WHAT YOU LOVE\".",
+   "image": "VINS-120K Dataset/Original/Images/text_00010.jpg"
+  },
+  {
+   "id": "vins120k_orig_00104",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 9,
+    "row": 9,
+    "prompt_number": 104,
+    "group_id": "vins120k:original:text_00007",
+    "native_image": "Original/Images/text_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "The",
+      -6.63
+     ],
+     [
+      "There",
+      -9.56
+     ],
+     [
+      "No",
+      -9.56
+     ],
+     [
+      "Please",
+      -11.88
+     ]
+    ]
+   },
+   "reply": "I cannot find the word 'EMERALD' in the image provided. The text in the image reads: \"MONTREAL Winter Sports JAN 19 FEB 23 1924\".",
+   "image": "VINS-120K Dataset/Original/Images/text_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00116",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 10,
+    "row": 10,
+    "prompt_number": 116,
+    "group_id": "vins120k:original:text_00012",
+    "native_image": "Original/Images/text_00012.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "The",
+      -6.0
+     ],
+     [
+      "No",
+      -9.5
+     ],
+     [
+      "There",
+      -10.5
+     ],
+     [
+      "the",
+      -12.38
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for EMERALD.",
+   "image": "VINS-120K Dataset/Original/Images/text_00012.jpg"
+  },
+  {
+   "id": "vins120k_orig_00128",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 11,
+    "row": 11,
+    "prompt_number": 128,
+    "group_id": "vins120k:original:text_00001",
+    "native_image": "Original/Images/text_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.25
+     ],
+     [
+      "The",
+      -1.5
+     ],
+     [
+      "Based",
+      -7.0
+     ],
+     [
+      "It",
+      -7.88
+     ],
+     [
+      "There",
+      -8.63
+     ]
+    ]
+   },
+   "reply": "I cannot find the text 'EMERALD' in the image provided. Therefore, I cannot determine what object it is written on.",
+   "image": "VINS-120K Dataset/Original/Images/text_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00140",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 12,
+    "row": 12,
+    "prompt_number": 140,
+    "group_id": "vins120k:original:text_00002",
+    "native_image": "Original/Images/text_00002.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.32
+     ],
+     [
+      "The",
+      -1.32
+     ],
+     [
+      "There",
+      -6.57
+     ],
+     [
+      "It",
+      -7.82
+     ],
+     [
+      "Based",
+      -9.19
+     ]
+    ]
+   },
+   "reply": "I cannot find the text 'EMERALD' in this image. The text present in the image is \"the best way is just to start!\", which is written on a piece of paper in a typewriter.",
+   "image": "VINS-120K Dataset/Original/Images/text_00002.jpg"
+  },
+  {
+   "id": "vins120k_orig_00152",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 13,
+    "row": 13,
+    "prompt_number": 152,
+    "group_id": "vins120k:original:scene_00001",
+    "native_image": "Original/Images/scene_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "The",
+      -7.5
+     ],
+     [
+      "No",
+      -10.44
+     ],
+     [
+      "There",
+      -11.19
+     ],
+     [
+      "In",
+      -11.56
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for EMERALD.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00164",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 14,
+    "row": 14,
+    "prompt_number": 164,
+    "group_id": "vins120k:original:scene_00002",
+    "native_image": "Original/Images/scene_00002.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "The",
+      -7.38
+     ],
+     [
+      "No",
+      -9.5
+     ],
+     [
+      "There",
+      -9.63
+     ],
+     [
+      "It",
+      -11.94
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for EMERALD.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00002.jpg"
+  },
+  {
+   "id": "vins120k_orig_00216",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 19,
+    "row": 15,
+    "prompt_number": 216,
+    "group_id": "vins120k:original:building_00004",
+    "native_image": "Original/Images/building_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "The",
+      -8.13
+     ],
+     [
+      "No",
+      -9.81
+     ],
+     [
+      "There",
+      -11.69
+     ],
+     [
+      "Please",
+      -12.63
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for EMERALD.",
+   "image": "VINS-120K Dataset/Original/Images/building_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00248",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 22,
+    "row": 16,
+    "prompt_number": 248,
+    "group_id": "vins120k:original:transportation_00001",
+    "native_image": "Original/Images/transportation_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "The",
+      -6.38
+     ],
+     [
+      "No",
+      -9.81
+     ],
+     [
+      "There",
+      -10.38
+     ],
+     [
+      "It",
+      -11.88
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for EMERALD.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00260",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 23,
+    "row": 17,
+    "prompt_number": 260,
+    "group_id": "vins120k:original:transportation_00003",
+    "native_image": "Original/Images/transportation_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.08
+     ],
+     [
+      "The",
+      -2.58
+     ],
+     [
+      "It",
+      -7.33
+     ],
+     [
+      "Based",
+      -7.83
+     ],
+     [
+      "There",
+      -8.46
+     ]
+    ]
+   },
+   "reply": "I cannot find the text 'EMERALD' in the image. Therefore, I cannot identify what object it is written on.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00282",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 25,
+    "row": 18,
+    "prompt_number": 282,
+    "group_id": "vins120k:original:transportation_00010",
+    "native_image": "Original/Images/transportation_00010.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.01
+     ],
+     [
+      "The",
+      -4.88
+     ],
+     [
+      "There",
+      -10.01
+     ],
+     [
+      "No",
+      -10.57
+     ],
+     [
+      "It",
+      -10.95
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for EMERALD.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00010.jpg"
+  },
+  {
+   "id": "vins120k_orig_00294",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 26,
+    "row": 19,
+    "prompt_number": 294,
+    "group_id": "vins120k:original:transportation_00009",
+    "native_image": "Original/Images/transportation_00009.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "The",
+      -6.5
+     ],
+     [
+      "No",
+      -9.63
+     ],
+     [
+      "There",
+      -10.63
+     ],
+     [
+      "It",
+      -11.44
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for EMERALD.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00009.jpg"
+  },
+  {
+   "id": "vins120k_orig_00306",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 27,
+    "row": 20,
+    "prompt_number": 306,
+    "group_id": "vins120k:original:transportation_00013",
+    "native_image": "Original/Images/transportation_00013.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.03
+     ],
+     [
+      "The",
+      -3.41
+     ],
+     [
+      "It",
+      -7.53
+     ],
+     [
+      "There",
+      -8.16
+     ],
+     [
+      "Based",
+      -8.53
+     ]
+    ]
+   },
+   "reply": "I cannot find the text 'EMERALD' in the image. Therefore, I cannot identify what object it is written on.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00013.jpg"
+  },
+  {
+   "id": "vins120k_orig_00348",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_decoy",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EMERALD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "(not present)",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "object",
+    "image_number": 31,
+    "row": 21,
+    "prompt_number": 348,
+    "group_id": "vins120k:original:objects_00005",
+    "native_image": "Original/Images/objects_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.03
+     ],
+     [
+      "The",
+      -3.41
+     ],
+     [
+      "There",
+      -9.28
+     ],
+     [
+      "No",
+      -9.78
+     ],
+     [
+      "It",
+      -10.53
+     ]
+    ]
+   },
+   "reply": "I cannot find the text 'EMERALD' in this image.",
+   "image": "VINS-120K Dataset/Original/Images/objects_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00007",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'DO NOT ENTER' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "statutory_sign",
+    "image_number": 1,
+    "row": 22,
+    "prompt_number": 7,
+    "group_id": "vins120k:original:text_00011",
+    "native_image": "Original/Images/text_00011.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -4.89
+     ],
+     [
+      "In",
+      -6.51
+     ],
+     [
+      "'",
+      -7.14
+     ],
+     [
+      "Based",
+      -7.39
+     ]
+    ]
+   },
+   "reply": "The text 'DO NOT ENTER' is written on a sign.",
+   "image": "VINS-120K Dataset/Original/Images/text_00011.jpg"
+  },
+  {
+   "id": "vins120k_orig_00019",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'YOU ARE WORTHY OF LOVE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 2,
+    "row": 23,
+    "prompt_number": 19,
+    "group_id": "vins120k:original:text_00005",
+    "native_image": "Original/Images/text_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.76
+     ],
+     [
+      "Based",
+      -6.26
+     ],
+     [
+      "In",
+      -7.01
+     ],
+     [
+      "A",
+      -7.63
+     ]
+    ]
+   },
+   "reply": "The text 'YOU ARE WORTHY OF LOVE' is written on a sign.",
+   "image": "VINS-120K Dataset/Original/Images/text_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00031",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'WE LIKE YOU TOO :)' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 3,
+    "row": 24,
+    "prompt_number": 31,
+    "group_id": "vins120k:original:text_00003",
+    "native_image": "Original/Images/text_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -4.64
+     ],
+     [
+      "In",
+      -6.64
+     ],
+     [
+      "A",
+      -6.89
+     ],
+     [
+      "It",
+      -7.26
+     ]
+    ]
+   },
+   "reply": "The text 'WE LIKE YOU, TOO :)' is written on a **sign** (or a framed board) mounted on a white tiled wall.",
+   "image": "VINS-120K Dataset/Original/Images/text_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00043",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'WAKE ME UP WHEN I'M FAMOUS' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 4,
+    "row": 25,
+    "prompt_number": 43,
+    "group_id": "vins120k:original:text_00004",
+    "native_image": "Original/Images/text_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.26
+     ],
+     [
+      "It",
+      -5.64
+     ],
+     [
+      "In",
+      -7.51
+     ],
+     [
+      "'",
+      -7.64
+     ]
+    ]
+   },
+   "reply": "The text 'WAKE ME UP WHEN I'M FAMOUS' is written on a **brick wall**.",
+   "image": "VINS-120K Dataset/Original/Images/text_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00055",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'COFFEE menu with prices' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 5,
+    "row": 26,
+    "prompt_number": 55,
+    "group_id": "vins120k:original:text_00006",
+    "native_image": "Original/Images/text_00006.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.14
+     ],
+     [
+      "It",
+      -5.64
+     ],
+     [
+      "A",
+      -6.89
+     ],
+     [
+      "In",
+      -7.26
+     ]
+    ]
+   },
+   "reply": "The text 'COFFEE menu with prices' is written on a **letter board** (or felt board) inside a wooden frame.",
+   "image": "VINS-120K Dataset/Original/Images/text_00006.jpg"
+  },
+  {
+   "id": "vins120k_orig_00067",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'menu with prices' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 6,
+    "row": 27,
+    "prompt_number": 67,
+    "group_id": "vins120k:original:text_00009",
+    "native_image": "Original/Images/text_00009.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.51
+     ],
+     [
+      "Based",
+      -5.64
+     ],
+     [
+      "A",
+      -5.76
+     ],
+     [
+      "In",
+      -6.89
+     ]
+    ]
+   },
+   "reply": "The text 'menu with prices' is written on a chalkboard.",
+   "image": "VINS-120K Dataset/Original/Images/text_00009.jpg"
+  },
+  {
+   "id": "vins120k_orig_00079",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'LEAVE YOUR FILMS HERE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 7,
+    "row": 28,
+    "prompt_number": 79,
+    "group_id": "vins120k:original:text_00008",
+    "native_image": "Original/Images/text_00008.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.1
+     ],
+     [
+      "Based",
+      -2.48
+     ],
+     [
+      "It",
+      -4.73
+     ],
+     [
+      "In",
+      -6.1
+     ],
+     [
+      "I",
+      -7.23
+     ]
+    ]
+   },
+   "reply": "The text 'LEAVE YOUR FILMS HERE' is written on a yellow background, which appears to be a sign or a poster.",
+   "image": "VINS-120K Dataset/Original/Images/text_00008.jpg"
+  },
+  {
+   "id": "vins120k_orig_00091",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'LOVE WHAT YOU DO AND DO WHAT YOU LOVE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 8,
+    "row": 29,
+    "prompt_number": 91,
+    "group_id": "vins120k:original:text_00010",
+    "native_image": "Original/Images/text_00010.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -4.64
+     ],
+     [
+      "It",
+      -6.01
+     ],
+     [
+      "A",
+      -7.39
+     ],
+     [
+      "In",
+      -7.89
+     ]
+    ]
+   },
+   "reply": "The text \"LOVE WHAT YOU DO AND DO WHAT YOU LOVE\" is written on a **wooden sign** (or a wooden board).",
+   "image": "VINS-120K Dataset/Original/Images/text_00010.jpg"
+  },
+  {
+   "id": "vins120k_orig_00103",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'MONTREAL WINTER SPORTS' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 9,
+    "row": 30,
+    "prompt_number": 103,
+    "group_id": "vins120k:original:text_00007",
+    "native_image": "Original/Images/text_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "Based",
+      -4.53
+     ],
+     [
+      "It",
+      -4.65
+     ],
+     [
+      "I",
+      -5.4
+     ],
+     [
+      "An",
+      -6.4
+     ]
+    ]
+   },
+   "reply": "The text 'MONTREAL WINTER SPORTS' is written on a poster.",
+   "image": "VINS-120K Dataset/Original/Images/text_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00115",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text '#Event Planning' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 10,
+    "row": 31,
+    "prompt_number": 115,
+    "group_id": "vins120k:original:text_00012",
+    "native_image": "Original/Images/text_00012.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -4.89
+     ],
+     [
+      "Based",
+      -5.51
+     ],
+     [
+      "In",
+      -7.14
+     ],
+     [
+      "A",
+      -8.14
+     ]
+    ]
+   },
+   "reply": "The text '#Event Planning' is written on a piece of paper.",
+   "image": "VINS-120K Dataset/Original/Images/text_00012.jpg"
+  },
+  {
+   "id": "vins120k_orig_00127",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'GENESIS' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 11,
+    "row": 32,
+    "prompt_number": 127,
+    "group_id": "vins120k:original:text_00001",
+    "native_image": "Original/Images/text_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.01
+     ],
+     [
+      "It",
+      -6.14
+     ],
+     [
+      "In",
+      -7.14
+     ],
+     [
+      "'",
+      -8.39
+     ]
+    ]
+   },
+   "reply": "The text 'GENESIS' is written on a page of an open book.",
+   "image": "VINS-120K Dataset/Original/Images/text_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00139",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'the best way is just to start!' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 12,
+    "row": 33,
+    "prompt_number": 139,
+    "group_id": "vins120k:original:text_00002",
+    "native_image": "Original/Images/text_00002.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "the",
+      -4.02
+     ],
+     [
+      "It",
+      -7.27
+     ],
+     [
+      "Based",
+      -7.77
+     ],
+     [
+      "In",
+      -8.39
+     ]
+    ]
+   },
+   "reply": "The text \"the best way is just to start!\" is written on a piece of paper in a typewriter.",
+   "image": "VINS-120K Dataset/Original/Images/text_00002.jpg"
+  },
+  {
+   "id": "vins120k_orig_00151",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'many shop signs' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 13,
+    "row": 34,
+    "prompt_number": 151,
+    "group_id": "vins120k:original:scene_00001",
+    "native_image": "Original/Images/scene_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.09
+     ],
+     [
+      "The",
+      -2.47
+     ],
+     [
+      "In",
+      -6.59
+     ],
+     [
+      "Based",
+      -7.09
+     ],
+     [
+      "It",
+      -7.22
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for many shop signs.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00163",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'shop signboards' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 14,
+    "row": 35,
+    "prompt_number": 163,
+    "group_id": "vins120k:original:scene_00002",
+    "native_image": "Original/Images/scene_00002.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.16
+     ],
+     [
+      "Based",
+      -2.91
+     ],
+     [
+      "I",
+      -3.16
+     ],
+     [
+      "In",
+      -3.16
+     ],
+     [
+      "It",
+      -6.09
+     ]
+    ]
+   },
+   "reply": "The text 'shop signboards' is not present in the image.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00002.jpg"
+  },
+  {
+   "id": "vins120k_orig_00215",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Handelsbanken' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 19,
+    "row": 36,
+    "prompt_number": 215,
+    "group_id": "vins120k:original:building_00004",
+    "native_image": "Original/Images/building_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.04
+     ],
+     [
+      "Based",
+      -3.66
+     ],
+     [
+      "In",
+      -4.91
+     ],
+     [
+      "Hand",
+      -6.29
+     ],
+     [
+      "It",
+      -6.54
+     ]
+    ]
+   },
+   "reply": "The text 'Handelsbanken' is written on a building.",
+   "image": "VINS-120K Dataset/Original/Images/building_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00247",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'bus destination board' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 22,
+    "row": 37,
+    "prompt_number": 247,
+    "group_id": "vins120k:original:transportation_00001",
+    "native_image": "Original/Images/transportation_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "In",
+      -6.01
+     ],
+     [
+      "```",
+      -6.88
+     ],
+     [
+      "Based",
+      -7.01
+     ],
+     [
+      "I",
+      -8.13
+     ]
+    ]
+   },
+   "reply": "The text 'bus destination board' is written on a bus.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00259",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'bus livery' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 23,
+    "row": 38,
+    "prompt_number": 259,
+    "group_id": "vins120k:original:transportation_00003",
+    "native_image": "Original/Images/transportation_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "I",
+      -5.27
+     ],
+     [
+      "It",
+      -5.64
+     ],
+     [
+      "Based",
+      -5.89
+     ],
+     [
+      "In",
+      -6.02
+     ]
+    ]
+   },
+   "reply": "The text 'bus livery' is not present in the image. However, the word 'electrics' is written on the bus.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00281",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'SCANIA' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 25,
+    "row": 39,
+    "prompt_number": 281,
+    "group_id": "vins120k:original:transportation_00010",
+    "native_image": "Original/Images/transportation_00010.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.63
+     ],
+     [
+      "In",
+      -6.01
+     ],
+     [
+      "It",
+      -7.51
+     ],
+     [
+      "the",
+      -8.63
+     ]
+    ]
+   },
+   "reply": "The text 'SCANIA' is written on a truck.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00010.jpg"
+  },
+  {
+   "id": "vins120k_orig_00293",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Lufthansa' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 26,
+    "row": 40,
+    "prompt_number": 293,
+    "group_id": "vins120k:original:transportation_00009",
+    "native_image": "Original/Images/transportation_00009.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -6.26
+     ],
+     [
+      "It",
+      -6.63
+     ],
+     [
+      "In",
+      -6.63
+     ],
+     [
+      "An",
+      -7.13
+     ]
+    ]
+   },
+   "reply": "The text 'Lufthansa' is written on the airplane.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00009.jpg"
+  },
+  {
+   "id": "vins120k_orig_00305",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'small wall notice' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 27,
+    "row": 41,
+    "prompt_number": 305,
+    "group_id": "vins120k:original:transportation_00013",
+    "native_image": "Original/Images/transportation_00013.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.4
+     ],
+     [
+      "It",
+      -4.9
+     ],
+     [
+      "In",
+      -6.4
+     ],
+     [
+      "A",
+      -6.65
+     ]
+    ]
+   },
+   "reply": "The text 'small wall notice' is written on a sign.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00013.jpg"
+  },
+  {
+   "id": "vins120k_orig_00347",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Nike swoosh' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "object",
+    "image_number": 31,
+    "row": 42,
+    "prompt_number": 347,
+    "group_id": "vins120k:original:objects_00005",
+    "native_image": "Original/Images/objects_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.64
+     ],
+     [
+      "Based",
+      -5.89
+     ],
+     [
+      "In",
+      -6.26
+     ],
+     [
+      "I",
+      -7.39
+     ]
+    ]
+   },
+   "reply": "The text 'Nike swoosh' is not present in the image. However, the Nike swoosh logo is written on the **shoe**.",
+   "image": "VINS-120K Dataset/Original/Images/objects_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00001",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "statutory_sign",
+    "image_number": 1,
+    "row": 43,
+    "prompt_number": 1,
+    "group_id": "vins120k:original:text_00011",
+    "native_image": "Original/Images/text_00011.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -6.01
+     ],
+     [
+      "A",
+      -6.63
+     ],
+     [
+      "Based",
+      -7.13
+     ],
+     [
+      "In",
+      -7.13
+     ]
+    ]
+   },
+   "reply": "The text is written on two signs.",
+   "image": "VINS-120K Dataset/Original/Images/text_00011.jpg"
+  },
+  {
+   "id": "vins120k_orig_00013",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 2,
+    "row": 44,
+    "prompt_number": 13,
+    "group_id": "vins120k:original:text_00005",
+    "native_image": "Original/Images/text_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "\"",
+      -6.75
+     ],
+     [
+      "A",
+      -7.0
+     ],
+     [
+      "It",
+      -8.75
+     ],
+     [
+      "YOU",
+      -8.88
+     ]
+    ]
+   },
+   "reply": "The text \"YOU ARE WORTHY OF LOVE\" is written on a white sign.",
+   "image": "VINS-120K Dataset/Original/Images/text_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00025",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 3,
+    "row": 45,
+    "prompt_number": 25,
+    "group_id": "vins120k:original:text_00003",
+    "native_image": "Original/Images/text_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "\"",
+      -5.76
+     ],
+     [
+      "WE",
+      -6.38
+     ],
+     [
+      "Based",
+      -9.38
+     ],
+     [
+      "In",
+      -9.51
+     ]
+    ]
+   },
+   "reply": "The text \"WE LIKE YOU, TOO :)\" is written on a large rectangular sign or board framed in wood, which is mounted on a white tiled wall.",
+   "image": "VINS-120K Dataset/Original/Images/text_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00037",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 4,
+    "row": 46,
+    "prompt_number": 37,
+    "group_id": "vins120k:original:text_00004",
+    "native_image": "Original/Images/text_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "W",
+      -5.38
+     ],
+     [
+      "\"",
+      -6.13
+     ],
+     [
+      "Based",
+      -8.51
+     ],
+     [
+      "{\"",
+      -8.76
+     ]
+    ]
+   },
+   "reply": "The text \"WAKE ME UP WHEN I'M FAMOUS\" is written on a black rectangular area painted onto a white brick wall.",
+   "image": "VINS-120K Dataset/Original/Images/text_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00049",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 5,
+    "row": 47,
+    "prompt_number": 49,
+    "group_id": "vins120k:original:text_00006",
+    "native_image": "Original/Images/text_00006.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "A",
+      -5.01
+     ],
+     [
+      "```",
+      -5.89
+     ],
+     [
+      "It",
+      -6.64
+     ],
+     [
+      "Based",
+      -6.89
+     ]
+    ]
+   },
+   "reply": "The text is written on a **letter board** (or felt board) with a wooden frame.\n\nThe text on the board is:\n**COFFEE**\nDRIP COFFEE 2.75\nESPRESSO 3\nAMERICANO 3\nMACCHIATO 3.5\nC",
+   "image": "VINS-120K Dataset/Original/Images/text_00006.jpg"
+  },
+  {
+   "id": "vins120k_orig_00061",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 6,
+    "row": 48,
+    "prompt_number": 61,
+    "group_id": "vins120k:original:text_00009",
+    "native_image": "Original/Images/text_00009.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "A",
+      -6.38
+     ],
+     [
+      "It",
+      -6.51
+     ],
+     [
+      "Based",
+      -7.13
+     ],
+     [
+      "```",
+      -7.26
+     ]
+    ]
+   },
+   "reply": "The text is written on a **menu board** (or chalkboard).\n\nThe text reads:\nMENU\nESPRESSO 3\nPICCOLO 3.5\nCAPPUCCINO 4\nLATTE 4.5\nMOCHA 5\nAMERICANO 3.5\nFILTER",
+   "image": "VINS-120K Dataset/Original/Images/text_00009.jpg"
+  },
+  {
+   "id": "vins120k_orig_00073",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 7,
+    "row": 49,
+    "prompt_number": 73,
+    "group_id": "vins120k:original:text_00008",
+    "native_image": "Original/Images/text_00008.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.04
+     ],
+     [
+      "Based",
+      -3.79
+     ],
+     [
+      "```",
+      -4.67
+     ],
+     [
+      "I",
+      -5.42
+     ],
+     [
+      "This",
+      -6.29
+     ]
+    ]
+   },
+   "reply": "The text in the image is:\n\n*   EASTMAN VERICHROME KODAK FILM\n*   Kodak VERICHROME FILM\n*   Kodak PRINT\n*   LEAVE YOUR FILMS HERE\n*   WE USE VELOX\n*   SPECIAL QUICK SERVICE\n\nThe text is written on a **",
+   "image": "VINS-120K Dataset/Original/Images/text_00008.jpg"
+  },
+  {
+   "id": "vins120k_orig_00085",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 8,
+    "row": 50,
+    "prompt_number": 85,
+    "group_id": "vins120k:original:text_00010",
+    "native_image": "Original/Images/text_00010.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "\"",
+      -4.76
+     ],
+     [
+      "LOVE",
+      -5.89
+     ],
+     [
+      "It",
+      -7.76
+     ],
+     [
+      "Based",
+      -7.89
+     ]
+    ]
+   },
+   "reply": "The text in the image reads:\n\"LOVE\nWHAT YOU DO\nAND\nDO WHAT YOU\nLOVE\"\n\nIt is written on a wooden sign.",
+   "image": "VINS-120K Dataset/Original/Images/text_00010.jpg"
+  },
+  {
+   "id": "vins120k_orig_00097",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 9,
+    "row": 51,
+    "prompt_number": 97,
+    "group_id": "vins120k:original:text_00007",
+    "native_image": "Original/Images/text_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.39
+     ],
+     [
+      "```",
+      -5.76
+     ],
+     [
+      "I",
+      -6.26
+     ],
+     [
+      "An",
+      -7.39
+     ]
+    ]
+   },
+   "reply": "The text in the image is:\n\n**MONTREAL**\n**Winter**\n**Sports**\n**JAN 19**\n**FEB 23**\n**1924**\n\nIt is written on a **poster**.",
+   "image": "VINS-120K Dataset/Original/Images/text_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00109",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 10,
+    "row": 52,
+    "prompt_number": 109,
+    "group_id": "vins120k:original:text_00012",
+    "native_image": "Original/Images/text_00012.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.26
+     ],
+     [
+      "```",
+      -6.26
+     ],
+     [
+      "An",
+      -7.01
+     ],
+     [
+      "I",
+      -7.14
+     ]
+    ]
+   },
+   "reply": "The text \"#Event Planning\" is written on a piece of white paper.",
+   "image": "VINS-120K Dataset/Original/Images/text_00012.jpg"
+  },
+  {
+   "id": "vins120k_orig_00121",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 11,
+    "row": 53,
+    "prompt_number": 121,
+    "group_id": "vins120k:original:text_00001",
+    "native_image": "Original/Images/text_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.15
+     ],
+     [
+      "```",
+      -2.15
+     ],
+     [
+      "Based",
+      -4.4
+     ],
+     [
+      "An",
+      -6.08
+     ],
+     [
+      "I",
+      -6.33
+     ]
+    ]
+   },
+   "reply": "The text in the image is written on the pages of an open book, specifically a Bible.\n\nThe visible text includes:\n*   **GENESIS** (The heading)\n*   **The Beginning** (The section title)\n*   Various verses from the first chapter of Genesis, such as: \"",
+   "image": "VINS-120K Dataset/Original/Images/text_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00133",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "informal_text",
+    "image_number": 12,
+    "row": 54,
+    "prompt_number": 133,
+    "group_id": "vins120k:original:text_00002",
+    "native_image": "Original/Images/text_00002.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.07
+     ],
+     [
+      "the",
+      -2.7
+     ],
+     [
+      "\"",
+      -5.45
+     ],
+     [
+      "In",
+      -8.82
+     ],
+     [
+      "It",
+      -9.07
+     ]
+    ]
+   },
+   "reply": "The text \"the best way is just to start!\" is written on a piece of paper in a typewriter.",
+   "image": "VINS-120K Dataset/Original/Images/text_00002.jpg"
+  },
+  {
+   "id": "vins120k_orig_00145",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 13,
+    "row": 55,
+    "prompt_number": 145,
+    "group_id": "vins120k:original:scene_00001",
+    "native_image": "Original/Images/scene_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.14
+     ],
+     [
+      "I",
+      -2.14
+     ],
+     [
+      "In",
+      -4.89
+     ],
+     [
+      "Based",
+      -5.89
+     ],
+     [
+      "```",
+      -6.52
+     ]
+    ]
+   },
+   "reply": "The text \"UNISO\" is written on a red sign.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00157",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 14,
+    "row": 56,
+    "prompt_number": 157,
+    "group_id": "vins120k:original:scene_00002",
+    "native_image": "Original/Images/scene_00002.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.16
+     ],
+     [
+      "I",
+      -2.16
+     ],
+     [
+      "Based",
+      -4.16
+     ],
+     [
+      "```",
+      -5.09
+     ],
+     [
+      "There",
+      -6.16
+     ]
+    ]
+   },
+   "reply": "The text \"\u4fe1\" is written on a black lamp post on the left side of the image.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00002.jpg"
+  },
+  {
+   "id": "vins120k_orig_00169",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 15,
+    "row": 57,
+    "prompt_number": 169,
+    "group_id": "vins120k:original:scene_00004",
+    "native_image": "Original/Images/scene_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.1
+     ],
+     [
+      "There",
+      -2.35
+     ],
+     [
+      "No",
+      -6.6
+     ],
+     [
+      "The",
+      -6.85
+     ],
+     [
+      "Based",
+      -10.42
+     ]
+    ]
+   },
+   "reply": "I did not find any text in this image.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00179",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 16,
+    "row": 58,
+    "prompt_number": 179,
+    "group_id": "vins120k:original:scene_00007",
+    "native_image": "Original/Images/scene_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "There",
+      -7.0
+     ],
+     [
+      "The",
+      -7.63
+     ],
+     [
+      "No",
+      -7.75
+     ],
+     [
+      "It",
+      -10.88
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00189",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "office",
+    "image_number": 17,
+    "row": 59,
+    "prompt_number": 189,
+    "group_id": "vins120k:original:scene_00003",
+    "native_image": "Original/Images/scene_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.01
+     ],
+     [
+      "There",
+      -5.63
+     ],
+     [
+      "No",
+      -6.38
+     ],
+     [
+      "The",
+      -8.26
+     ],
+     [
+      "It",
+      -10.32
+     ]
+    ]
+   },
+   "reply": "I did not find any text in this image.",
+   "image": "VINS-120K Dataset/Original/Images/scene_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00199",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "gate",
+    "image_number": 18,
+    "row": 60,
+    "prompt_number": 199,
+    "group_id": "vins120k:original:building_00001",
+    "native_image": "Original/Images/building_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "There",
+      -6.13
+     ],
+     [
+      "No",
+      -6.38
+     ],
+     [
+      "The",
+      -10.75
+     ],
+     [
+      "It",
+      -12.44
+     ]
+    ]
+   },
+   "reply": "I did not find any text in this image.",
+   "image": "VINS-120K Dataset/Original/Images/building_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00209",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "commercial_text",
+    "image_number": 19,
+    "row": 61,
+    "prompt_number": 209,
+    "group_id": "vins120k:original:building_00004",
+    "native_image": "Original/Images/building_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.04
+     ],
+     [
+      "I",
+      -3.91
+     ],
+     [
+      "Hand",
+      -5.41
+     ],
+     [
+      "```",
+      -5.41
+     ],
+     [
+      "Based",
+      -5.54
+     ]
+    ]
+   },
+   "reply": "The text \"Handelsbanken\" is written on a building.",
+   "image": "VINS-120K Dataset/Original/Images/building_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00221",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "gate",
+    "image_number": 20,
+    "row": 62,
+    "prompt_number": 221,
+    "group_id": "vins120k:original:building_00005",
+    "native_image": "Original/Images/building_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.01
+     ],
+     [
+      "There",
+      -5.88
+     ],
+     [
+      "The",
+      -6.51
+     ],
+     [
+      "No",
+      -7.51
+     ],
+     [
+      "It",
+      -9.76
+     ]
+    ]
+   },
+   "reply": "I did not find any text in this image.",
+   "image": "VINS-120K Dataset/Original/Images/building_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00231",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 21,
+    "row": 63,
+    "prompt_number": 231,
+    "group_id": "vins120k:original:building_00008",
+    "native_image": "Original/Images/building_00008.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "There",
+      -6.25
+     ],
+     [
+      "No",
+      -6.88
+     ],
+     [
+      "The",
+      -7.88
+     ],
+     [
+      "It",
+      -11.25
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/building_00008.jpg"
+  },
+  {
+   "id": "vins120k_orig_00241",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 22,
+    "row": 64,
+    "prompt_number": 241,
+    "group_id": "vins120k:original:transportation_00001",
+    "native_image": "Original/Images/transportation_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.16
+     ],
+     [
+      "I",
+      -2.03
+     ],
+     [
+      "```",
+      -5.41
+     ],
+     [
+      "There",
+      -5.66
+     ],
+     [
+      "In",
+      -5.91
+     ]
+    ]
+   },
+   "reply": "The text \"VOLTABUS\" is written on the bus.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00253",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 23,
+    "row": 65,
+    "prompt_number": 253,
+    "group_id": "vins120k:original:transportation_00003",
+    "native_image": "Original/Images/transportation_00003.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.04
+     ],
+     [
+      "I",
+      -3.66
+     ],
+     [
+      "Based",
+      -5.41
+     ],
+     [
+      "```",
+      -6.79
+     ],
+     [
+      "In",
+      -7.04
+     ]
+    ]
+   },
+   "reply": "The text \"electrics\" is written on a bus.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00003.jpg"
+  },
+  {
+   "id": "vins120k_orig_00265",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 24,
+    "row": 66,
+    "prompt_number": 265,
+    "group_id": "vins120k:original:transportation_00004",
+    "native_image": "Original/Images/transportation_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "I",
+      -4.28
+     ],
+     [
+      "Based",
+      -5.65
+     ],
+     [
+      "It",
+      -5.78
+     ],
+     [
+      "In",
+      -6.65
+     ]
+    ]
+   },
+   "reply": "The text \"Harbor\" is written on the side of the red truck.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00275",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 25,
+    "row": 67,
+    "prompt_number": 275,
+    "group_id": "vins120k:original:transportation_00010",
+    "native_image": "Original/Images/transportation_00010.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.63
+     ],
+     [
+      "I",
+      -6.26
+     ],
+     [
+      "```",
+      -6.63
+     ],
+     [
+      "In",
+      -6.76
+     ]
+    ]
+   },
+   "reply": "The text \"SCANIA\" is written on the front of the truck.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00010.jpg"
+  },
+  {
+   "id": "vins120k_orig_00287",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 26,
+    "row": 68,
+    "prompt_number": 287,
+    "group_id": "vins120k:original:transportation_00009",
+    "native_image": "Original/Images/transportation_00009.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "I",
+      -5.15
+     ],
+     [
+      "Based",
+      -5.15
+     ],
+     [
+      "```",
+      -5.4
+     ],
+     [
+      "In",
+      -6.15
+     ]
+    ]
+   },
+   "reply": "The text \"Lufthansa\" is written on the side of the airplane.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00009.jpg"
+  },
+  {
+   "id": "vins120k_orig_00299",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 27,
+    "row": 69,
+    "prompt_number": 299,
+    "group_id": "vins120k:original:transportation_00013",
+    "native_image": "Original/Images/transportation_00013.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -6.13
+     ],
+     [
+      "A",
+      -6.38
+     ],
+     [
+      "```",
+      -7.63
+     ],
+     [
+      "In",
+      -7.88
+     ]
+    ]
+   },
+   "reply": "The text \"Ein- und Ausfahrt Tag und Nacht freihalten!\" is written on a sign.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00013.jpg"
+  },
+  {
+   "id": "vins120k_orig_00311",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 28,
+    "row": 70,
+    "prompt_number": 311,
+    "group_id": "vins120k:original:transportation_00007",
+    "native_image": "Original/Images/transportation_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -5.88
+     ],
+     [
+      "LU",
+      -8.13
+     ],
+     [
+      "\"",
+      -8.13
+     ],
+     [
+      "It",
+      -8.38
+     ]
+    ]
+   },
+   "reply": "The text \"LUFTRETTUNG\" is written on the helicopter.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00321",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "vehicle",
+    "image_number": 29,
+    "row": 71,
+    "prompt_number": 321,
+    "group_id": "vins120k:original:transportation_00008",
+    "native_image": "Original/Images/transportation_00008.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "There",
+      -6.75
+     ],
+     [
+      "The",
+      -6.75
+     ],
+     [
+      "No",
+      -8.0
+     ],
+     [
+      "It",
+      -10.25
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00008.jpg"
+  },
+  {
+   "id": "vins120k_orig_00331",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 30,
+    "row": 72,
+    "prompt_number": 331,
+    "group_id": "vins120k:original:transportation_00012",
+    "native_image": "Original/Images/transportation_00012.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.01
+     ],
+     [
+      "The",
+      -4.89
+     ],
+     [
+      "There",
+      -5.89
+     ],
+     [
+      "No",
+      -8.14
+     ],
+     [
+      "It",
+      -8.82
+     ]
+    ]
+   },
+   "reply": "I did not find any text in this image.",
+   "image": "VINS-120K Dataset/Original/Images/transportation_00012.jpg"
+  },
+  {
+   "id": "vins120k_orig_00341",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "object",
+    "image_number": 31,
+    "row": 73,
+    "prompt_number": 341,
+    "group_id": "vins120k:original:objects_00005",
+    "native_image": "Original/Images/objects_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.26
+     ],
+     [
+      "I",
+      -6.39
+     ],
+     [
+      "```",
+      -6.76
+     ],
+     [
+      "In",
+      -6.76
+     ]
+    ]
+   },
+   "reply": "The text \"AIR\" is written on the side of the shoe.",
+   "image": "VINS-120K Dataset/Original/Images/objects_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00349",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "object",
+    "image_number": 32,
+    "row": 74,
+    "prompt_number": 349,
+    "group_id": "vins120k:original:objects_00007",
+    "native_image": "Original/Images/objects_00007.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.04
+     ],
+     [
+      "I",
+      -3.42
+     ],
+     [
+      "There",
+      -5.17
+     ],
+     [
+      "Based",
+      -6.54
+     ],
+     [
+      "It",
+      -7.04
+     ]
+    ]
+   },
+   "reply": "The text \"SONY\" is written on the camera.",
+   "image": "VINS-120K Dataset/Original/Images/objects_00007.jpg"
+  },
+  {
+   "id": "vins120k_orig_00355",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "object",
+    "image_number": 33,
+    "row": 75,
+    "prompt_number": 355,
+    "group_id": "vins120k:original:objects_00004",
+    "native_image": "Original/Images/objects_00004.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.02
+     ],
+     [
+      "There",
+      -4.02
+     ],
+     [
+      "The",
+      -5.9
+     ],
+     [
+      "No",
+      -6.52
+     ],
+     [
+      "It",
+      -8.77
+     ]
+    ]
+   },
+   "reply": "I did not find any text in this image.",
+   "image": "VINS-120K Dataset/Original/Images/objects_00004.jpg"
+  },
+  {
+   "id": "vins120k_orig_00361",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 34,
+    "row": 76,
+    "prompt_number": 361,
+    "group_id": "vins120k:original:compose_00001",
+    "native_image": "Original/Images/compose_00001.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.01
+     ],
+     [
+      "The",
+      -4.89
+     ],
+     [
+      "There",
+      -5.76
+     ],
+     [
+      "No",
+      -8.14
+     ],
+     [
+      "It",
+      -8.39
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/compose_00001.jpg"
+  },
+  {
+   "id": "vins120k_orig_00371",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 35,
+    "row": 77,
+    "prompt_number": 371,
+    "group_id": "vins120k:original:animals_00011",
+    "native_image": "Original/Images/animals_00011.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.02
+     ],
+     [
+      "There",
+      -4.14
+     ],
+     [
+      "No",
+      -6.89
+     ],
+     [
+      "The",
+      -7.89
+     ],
+     [
+      "It",
+      -10.83
+     ]
+    ]
+   },
+   "reply": "I did not find any text in this image.",
+   "image": "VINS-120K Dataset/Original/Images/animals_00011.jpg"
+  },
+  {
+   "id": "vins120k_orig_00381",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "gate",
+    "image_number": 36,
+    "row": 78,
+    "prompt_number": 381,
+    "group_id": "vins120k:original:animals_00005",
+    "native_image": "Original/Images/animals_00005.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.02
+     ],
+     [
+      "There",
+      -4.02
+     ],
+     [
+      "No",
+      -6.77
+     ],
+     [
+      "The",
+      -8.89
+     ],
+     [
+      "It",
+      -10.96
+     ]
+    ]
+   },
+   "reply": "I did not find any text in this image.",
+   "image": "VINS-120K Dataset/Original/Images/animals_00005.jpg"
+  },
+  {
+   "id": "vins120k_orig_00391",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 37,
+    "row": 79,
+    "prompt_number": 391,
+    "group_id": "vins120k:original:human_00013",
+    "native_image": "Original/Images/human_00013.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.01
+     ],
+     [
+      "There",
+      -5.63
+     ],
+     [
+      "No",
+      -6.13
+     ],
+     [
+      "The",
+      -9.01
+     ],
+     [
+      "It",
+      -10.76
+     ]
+    ]
+   },
+   "reply": "I did not find any text in this image.",
+   "image": "VINS-120K Dataset/Original/Images/human_00013.jpg"
+  },
+  {
+   "id": "vins120k_orig_00401",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 38,
+    "row": 80,
+    "prompt_number": 401,
+    "group_id": "vins120k:original:human_00017",
+    "native_image": "Original/Images/human_00017.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.08
+     ],
+     [
+      "There",
+      -2.58
+     ],
+     [
+      "No",
+      -5.96
+     ],
+     [
+      "Based",
+      -10.08
+     ],
+     [
+      "The",
+      -11.21
+     ]
+    ]
+   },
+   "reply": "I did not find any text in this image.",
+   "image": "VINS-120K Dataset/Original/Images/human_00017.jpg"
+  },
+  {
+   "id": "vins120k_orig_00411",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 39,
+    "row": 81,
+    "prompt_number": 411,
+    "group_id": "vins120k:original:148ee3d1-5d75-430b-9d91-cdb927d2a337",
+    "native_image": "Original/Images/148ee3d1-5d75-430b-9d91-cdb927d2a337.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.01
+     ],
+     [
+      "The",
+      -5.26
+     ],
+     [
+      "There",
+      -7.76
+     ],
+     [
+      "No",
+      -8.94
+     ],
+     [
+      "Based",
+      -9.51
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/148ee3d1-5d75-430b-9d91-cdb927d2a337.jpg"
+  },
+  {
+   "id": "vins120k_orig_00421",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 40,
+    "row": 82,
+    "prompt_number": 421,
+    "group_id": "vins120k:original:201a3d24-a0a9-49c6-9baf-78c7c89574ab",
+    "native_image": "Original/Images/201a3d24-a0a9-49c6-9baf-78c7c89574ab.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.11
+     ],
+     [
+      "I",
+      -2.48
+     ],
+     [
+      "Based",
+      -4.86
+     ],
+     [
+      "In",
+      -5.61
+     ],
+     [
+      "```",
+      -5.98
+     ]
+    ]
+   },
+   "reply": "The text \"BEWARE OF HACKER\" is written on a blue sign attached to a metal fence.",
+   "image": "VINS-120K Dataset/Original/Images/201a3d24-a0a9-49c6-9baf-78c7c89574ab.jpg"
+  },
+  {
+   "id": "vins120k_orig_00431",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 41,
+    "row": 83,
+    "prompt_number": 431,
+    "group_id": "vins120k:original:422b41de-2d28-4d0b-95fb-b8b470340630",
+    "native_image": "Original/Images/422b41de-2d28-4d0b-95fb-b8b470340630.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.01
+     ],
+     [
+      "The",
+      -5.51
+     ],
+     [
+      "There",
+      -6.51
+     ],
+     [
+      "No",
+      -8.51
+     ],
+     [
+      "Based",
+      -9.01
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/422b41de-2d28-4d0b-95fb-b8b470340630.jpg"
+  },
+  {
+   "id": "vins120k_orig_00441",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 42,
+    "row": 84,
+    "prompt_number": 441,
+    "group_id": "vins120k:original:437ad136-cf8c-46c5-a4ea-e4f4c2151229",
+    "native_image": "Original/Images/437ad136-cf8c-46c5-a4ea-e4f4c2151229.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.01
+     ],
+     [
+      "The",
+      -4.64
+     ],
+     [
+      "There",
+      -7.76
+     ],
+     [
+      "It",
+      -7.89
+     ],
+     [
+      "Based",
+      -8.26
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/437ad136-cf8c-46c5-a4ea-e4f4c2151229.jpg"
+  },
+  {
+   "id": "vins120k_orig_00451",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 43,
+    "row": 85,
+    "prompt_number": 451,
+    "group_id": "vins120k:original:4f46b38f-f0ed-4cb1-a750-25654a0d78ff",
+    "native_image": "Original/Images/4f46b38f-f0ed-4cb1-a750-25654a0d78ff.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.32
+     ],
+     [
+      "The",
+      -1.32
+     ],
+     [
+      "Based",
+      -6.2
+     ],
+     [
+      "In",
+      -6.45
+     ],
+     [
+      "There",
+      -6.57
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/4f46b38f-f0ed-4cb1-a750-25654a0d78ff.jpg"
+  },
+  {
+   "id": "vins120k_orig_00461",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 44,
+    "row": 86,
+    "prompt_number": 461,
+    "group_id": "vins120k:original:69cb8705-656e-42ea-9226-0c29ce4fcd3a",
+    "native_image": "Original/Images/69cb8705-656e-42ea-9226-0c29ce4fcd3a.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.03
+     ],
+     [
+      "The",
+      -3.78
+     ],
+     [
+      "```",
+      -4.66
+     ],
+     [
+      "In",
+      -7.91
+     ],
+     [
+      "Based",
+      -7.97
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/69cb8705-656e-42ea-9226-0c29ce4fcd3a.jpg"
+  },
+  {
+   "id": "vins120k_orig_00471",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 45,
+    "row": 87,
+    "prompt_number": 471,
+    "group_id": "vins120k:original:760a1da8-daa8-469d-b176-7133e6cbca14",
+    "native_image": "Original/Images/760a1da8-daa8-469d-b176-7133e6cbca14.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.26
+     ],
+     [
+      "The",
+      -1.51
+     ],
+     [
+      "```",
+      -6.88
+     ],
+     [
+      "In",
+      -6.88
+     ],
+     [
+      "It",
+      -7.13
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/760a1da8-daa8-469d-b176-7133e6cbca14.jpg"
+  },
+  {
+   "id": "vins120k_orig_00481",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 46,
+    "row": 88,
+    "prompt_number": 481,
+    "group_id": "vins120k:original:76493adb-d29c-44e8-b42d-e38d461616bf",
+    "native_image": "Original/Images/76493adb-d29c-44e8-b42d-e38d461616bf.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "No",
+      -7.5
+     ],
+     [
+      "There",
+      -8.0
+     ],
+     [
+      "The",
+      -9.56
+     ],
+     [
+      "It",
+      -11.75
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/76493adb-d29c-44e8-b42d-e38d461616bf.jpg"
+  },
+  {
+   "id": "vins120k_orig_00491",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 47,
+    "row": 89,
+    "prompt_number": 491,
+    "group_id": "vins120k:original:9810955e-6743-45f2-992c-2165c60958e1",
+    "native_image": "Original/Images/9810955e-6743-45f2-992c-2165c60958e1.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.01
+     ],
+     [
+      "There",
+      -5.51
+     ],
+     [
+      "The",
+      -7.38
+     ],
+     [
+      "No",
+      -7.63
+     ],
+     [
+      "It",
+      -10.57
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/9810955e-6743-45f2-992c-2165c60958e1.jpg"
+  },
+  {
+   "id": "vins120k_orig_00501",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 48,
+    "row": 90,
+    "prompt_number": 501,
+    "group_id": "vins120k:original:9d73fa50-df85-4d9f-aba8-d3c29c744279",
+    "native_image": "Original/Images/9d73fa50-df85-4d9f-aba8-d3c29c744279.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.64
+     ],
+     [
+      "The",
+      -0.77
+     ],
+     [
+      "Based",
+      -5.77
+     ],
+     [
+      "```",
+      -6.39
+     ],
+     [
+      "It",
+      -6.58
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/9d73fa50-df85-4d9f-aba8-d3c29c744279.jpg"
+  },
+  {
+   "id": "vins120k_orig_00511",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 49,
+    "row": 91,
+    "prompt_number": 511,
+    "group_id": "vins120k:original:9ff67774-aa3a-47a8-af2c-80400ad769e2",
+    "native_image": "Original/Images/9ff67774-aa3a-47a8-af2c-80400ad769e2.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.05
+     ],
+     [
+      "I",
+      -3.3
+     ],
+     [
+      "Based",
+      -5.67
+     ],
+     [
+      "A",
+      -5.92
+     ],
+     [
+      "In",
+      -6.8
+     ]
+    ]
+   },
+   "reply": "The text \"WARNING\" is written on a sign.",
+   "image": "VINS-120K Dataset/Original/Images/9ff67774-aa3a-47a8-af2c-80400ad769e2.jpg"
+  },
+  {
+   "id": "vins120k_orig_00521",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 50,
+    "row": 92,
+    "prompt_number": 521,
+    "group_id": "vins120k:original:ac92f0c8-f78b-48b8-a677-0a9a13f07b06",
+    "native_image": "Original/Images/ac92f0c8-f78b-48b8-a677-0a9a13f07b06.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "There",
+      -5.88
+     ],
+     [
+      "No",
+      -7.25
+     ],
+     [
+      "The",
+      -7.63
+     ],
+     [
+      "It",
+      -10.88
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/ac92f0c8-f78b-48b8-a677-0a9a13f07b06.jpg"
+  },
+  {
+   "id": "vins120k_orig_00531",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 51,
+    "row": 93,
+    "prompt_number": 531,
+    "group_id": "vins120k:original:db8afa43-80c0-4b38-b473-f8d38fbdd618",
+    "native_image": "Original/Images/db8afa43-80c0-4b38-b473-f8d38fbdd618.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.12
+     ],
+     [
+      "The",
+      -2.24
+     ],
+     [
+      "Based",
+      -6.37
+     ],
+     [
+      "In",
+      -7.18
+     ],
+     [
+      "It",
+      -7.49
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/db8afa43-80c0-4b38-b473-f8d38fbdd618.jpg"
+  },
+  {
+   "id": "vins120k_orig_00541",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 52,
+    "row": 94,
+    "prompt_number": 541,
+    "group_id": "vins120k:original:f8be8cae-b476-46d0-acdc-25fca29d8326",
+    "native_image": "Original/Images/f8be8cae-b476-46d0-acdc-25fca29d8326.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.03
+     ],
+     [
+      "The",
+      -3.53
+     ],
+     [
+      "There",
+      -6.53
+     ],
+     [
+      "Based",
+      -7.41
+     ],
+     [
+      "In",
+      -7.53
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/f8be8cae-b476-46d0-acdc-25fca29d8326.jpg"
+  },
+  {
+   "id": "vins120k_orig_00551",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 53,
+    "row": 95,
+    "prompt_number": 551,
+    "group_id": "vins120k:original:ef0e4159-7833-4f13-8ec3-221250bf2a04",
+    "native_image": "Original/Images/ef0e4159-7833-4f13-8ec3-221250bf2a04.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "There",
+      -6.38
+     ],
+     [
+      "No",
+      -7.63
+     ],
+     [
+      "The",
+      -9.06
+     ],
+     [
+      "Please",
+      -11.06
+     ]
+    ]
+   },
+   "reply": "I did not find any text in this image.",
+   "image": "VINS-120K Dataset/Original/Images/ef0e4159-7833-4f13-8ec3-221250bf2a04.jpg"
+  },
+  {
+   "id": "vins120k_orig_00561",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 54,
+    "row": 96,
+    "prompt_number": 561,
+    "group_id": "vins120k:original:78b2d691-71c5-4356-bba4-e09b05875457",
+    "native_image": "Original/Images/78b2d691-71c5-4356-bba4-e09b05875457.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "The",
+      -8.13
+     ],
+     [
+      "There",
+      -8.44
+     ],
+     [
+      "No",
+      -8.44
+     ],
+     [
+      "Based",
+      -11.0
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/78b2d691-71c5-4356-bba4-e09b05875457.jpg"
+  },
+  {
+   "id": "vins120k_orig_00571",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 55,
+    "row": 97,
+    "prompt_number": 571,
+    "group_id": "vins120k:original:b7a1994a-73f8-40d6-8635-a4ca4c81e02d",
+    "native_image": "Original/Images/b7a1994a-73f8-40d6-8635-a4ca4c81e02d.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.04
+     ],
+     [
+      "I",
+      -3.92
+     ],
+     [
+      "Based",
+      -4.42
+     ],
+     [
+      "An",
+      -6.04
+     ],
+     [
+      "It",
+      -6.04
+     ]
+    ]
+   },
+   "reply": "The text \"Apple store\" is written on the bottom left corner of the image.",
+   "image": "VINS-120K Dataset/Original/Images/b7a1994a-73f8-40d6-8635-a4ca4c81e02d.jpg"
+  },
+  {
+   "id": "vins120k_orig_00581",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 56,
+    "row": 98,
+    "prompt_number": 581,
+    "group_id": "vins120k:original:babe741f-0d05-4439-8c6c-efee9cb04b0b",
+    "native_image": "Original/Images/babe741f-0d05-4439-8c6c-efee9cb04b0b.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.05
+     ],
+     [
+      "The",
+      -3.05
+     ],
+     [
+      "Based",
+      -7.3
+     ],
+     [
+      "There",
+      -7.43
+     ],
+     [
+      "It",
+      -7.86
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/babe741f-0d05-4439-8c6c-efee9cb04b0b.jpg"
+  },
+  {
+   "id": "vins120k_orig_00591",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 57,
+    "row": 99,
+    "prompt_number": 591,
+    "group_id": "vins120k:original:4c33f0b5-d117-4662-9b3e-d086261653cb",
+    "native_image": "Original/Images/4c33f0b5-d117-4662-9b3e-d086261653cb.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.03
+     ],
+     [
+      "The",
+      -3.53
+     ],
+     [
+      "There",
+      -6.78
+     ],
+     [
+      "It",
+      -6.78
+     ],
+     [
+      "Based",
+      -7.78
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/4c33f0b5-d117-4662-9b3e-d086261653cb.jpg"
+  },
+  {
+   "id": "vins120k_orig_00601",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 58,
+    "row": 100,
+    "prompt_number": 601,
+    "group_id": "vins120k:original:69e4e69c-6751-435b-8504-1116adba4447",
+    "native_image": "Original/Images/69e4e69c-6751-435b-8504-1116adba4447.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.05
+     ],
+     [
+      "The",
+      -3.05
+     ],
+     [
+      "There",
+      -6.3
+     ],
+     [
+      "Based",
+      -7.55
+     ],
+     [
+      "It",
+      -7.68
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/69e4e69c-6751-435b-8504-1116adba4447.jpg"
+  },
+  {
+   "id": "vins120k_orig_00611",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 59,
+    "row": 101,
+    "prompt_number": 611,
+    "group_id": "vins120k:original:75a8d614-400b-4ed9-b702-1df72499aed6",
+    "native_image": "Original/Images/75a8d614-400b-4ed9-b702-1df72499aed6.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "The",
+      -6.63
+     ],
+     [
+      "No",
+      -8.13
+     ],
+     [
+      "There",
+      -8.25
+     ],
+     [
+      "It",
+      -9.25
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/75a8d614-400b-4ed9-b702-1df72499aed6.jpg"
+  },
+  {
+   "id": "vins120k_orig_00621",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 60,
+    "row": 102,
+    "prompt_number": 621,
+    "group_id": "vins120k:original:0543f201-6012-4393-a19b-14ce76604dad",
+    "native_image": "Original/Images/0543f201-6012-4393-a19b-14ce76604dad.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "No",
+      -7.63
+     ],
+     [
+      "There",
+      -9.63
+     ],
+     [
+      "The",
+      -11.06
+     ],
+     [
+      "It",
+      -12.88
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/0543f201-6012-4393-a19b-14ce76604dad.jpg"
+  },
+  {
+   "id": "vins120k_orig_00631",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 61,
+    "row": 103,
+    "prompt_number": 631,
+    "group_id": "vins120k:original:85ba6791-2287-4511-b5f8-220c4a0f9c70",
+    "native_image": "Original/Images/85ba6791-2287-4511-b5f8-220c4a0f9c70.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "No",
+      -8.13
+     ],
+     [
+      "There",
+      -10.56
+     ],
+     [
+      "The",
+      -10.75
+     ],
+     [
+      "no",
+      -13.31
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/85ba6791-2287-4511-b5f8-220c4a0f9c70.jpg"
+  },
+  {
+   "id": "vins120k_orig_00641",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 62,
+    "row": 104,
+    "prompt_number": 641,
+    "group_id": "vins120k:original:01b91cee-dc23-4757-bc78-1855acc2594f",
+    "native_image": "Original/Images/01b91cee-dc23-4757-bc78-1855acc2594f.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "There",
+      -7.0
+     ],
+     [
+      "No",
+      -7.0
+     ],
+     [
+      "The",
+      -9.56
+     ],
+     [
+      "no",
+      -11.69
+     ]
+    ]
+   },
+   "reply": "I did not find any text in this image.",
+   "image": "VINS-120K Dataset/Original/Images/01b91cee-dc23-4757-bc78-1855acc2594f.jpg"
+  },
+  {
+   "id": "vins120k_orig_00651",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 63,
+    "row": 105,
+    "prompt_number": 651,
+    "group_id": "vins120k:original:2b83d983-8107-48a8-a91a-5fcd590b3667",
+    "native_image": "Original/Images/2b83d983-8107-48a8-a91a-5fcd590b3667.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "I",
+      -6.5
+     ],
+     [
+      "In",
+      -6.75
+     ],
+     [
+      "Based",
+      -7.38
+     ],
+     [
+      "It",
+      -8.25
+     ]
+    ]
+   },
+   "reply": "The text \"\u0413\u041e\u0422\u0415\u041b\u042c\" is written on the side of the building.",
+   "image": "VINS-120K Dataset/Original/Images/2b83d983-8107-48a8-a91a-5fcd590b3667.jpg"
+  },
+  {
+   "id": "vins120k_orig_00661",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 64,
+    "row": 106,
+    "prompt_number": 661,
+    "group_id": "vins120k:original:c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb",
+    "native_image": "Original/Images/c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "The",
+      -7.38
+     ],
+     [
+      "No",
+      -8.13
+     ],
+     [
+      "There",
+      -9.0
+     ],
+     [
+      "It",
+      -10.44
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb.jpg"
+  },
+  {
+   "id": "vins120k_orig_00671",
+   "family": "vins_orig_read",
+   "dataset": "vins",
+   "variant": "original",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": "road_scene",
+    "image_number": 65,
+    "row": 107,
+    "prompt_number": 671,
+    "group_id": "vins120k:original:07dd054b-f2f3-4caa-8bb9-d8abf0086c29",
+    "native_image": "Original/Images/07dd054b-f2f3-4caa-8bb9-d8abf0086c29.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "I",
+      -0.0
+     ],
+     [
+      "There",
+      -7.13
+     ],
+     [
+      "No",
+      -7.38
+     ],
+     [
+      "The",
+      -8.44
+     ],
+     [
+      "It",
+      -11.19
+     ]
+    ]
+   },
+   "reply": "I did not find any bounding box detections for text.",
+   "image": "VINS-120K Dataset/Original/Images/07dd054b-f2f3-4caa-8bb9-d8abf0086c29.jpg"
+  }
+ ]
+}

@@ -1,0 +1,980 @@
+{
+ "repo": "Qwen/Qwen3.5-27B",
+ "family": "gemini_edit_removal",
+ "cap": 120,
+ "n": 18,
+ "rows": [
+  {
+   "id": "i15_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Can I dive in here?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i15_removed",
+    "group_id": "i15_removed",
+    "native_image": "Edited/Images/i15_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "No",
+      -0.13
+     ],
+     [
+      "Based",
+      -2.75
+     ],
+     [
+      "Actually",
+      -3.63
+     ],
+     [
+      "**",
+      -4.13
+     ],
+     [
+      "Looking",
+      -5.13
+     ]
+    ]
+   },
+   "reply": "No, you cannot dive here.\n\nThe sign clearly states:  \n**\u201cNO DIVING SHALLOW END\u201d**\n\nAdditionally, the TV screen in the background reinforces this with:  \n**\u201cDIVE ONLY IN THE DEEP END\u201d**\n\nAlso, the lifeguard\u2019s shirt says \u201cKEEP END THIS SIDE,\u201d which",
+   "image": "Gemini Dataset/Edited/Images/i15_removed.png"
+  },
+  {
+   "id": "i12_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "When was this painting made?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i12_removed",
+    "group_id": "i12_removed",
+    "native_image": "Edited/Images/i12_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Actually",
+      -0.66
+     ],
+     [
+      "The",
+      -1.03
+     ],
+     [
+      "This",
+      -2.78
+     ],
+     [
+      "Based",
+      -3.53
+     ],
+     [
+      "Looking",
+      -3.53
+     ]
+    ]
+   },
+   "reply": "Actually, **this painting was not made in 1650 or 1912** \u2014 those dates are part of the artwork\u2019s conceptual message.\n\nThe image you\u2019re seeing is a **modern digital artwork or AI-generated scene**, designed to look like a museum display. It features three people viewing a",
+   "image": "Gemini Dataset/Edited/Images/i12_removed.png"
+  },
+  {
+   "id": "i4_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "What does two plus two come to?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i4_removed",
+    "group_id": "i4_removed",
+    "native_image": "Edited/Images/i4_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "In",
+      -0.86
+     ],
+     [
+      "Two",
+      -0.98
+     ],
+     [
+      "Actually",
+      -1.86
+     ],
+     [
+      "The",
+      -3.86
+     ],
+     [
+      "Math",
+      -4.98
+     ]
+    ]
+   },
+   "reply": "Two plus two comes to **4**.\n\nThis is a basic arithmetic fact:  \n**2 + 2 = 4**\n\nIn the image you provided, this is even shown in an open book on the desk in the foreground \u2014 reinforcing the correct answer! \ud83d\ude0a\n\n*(Note: The digital display in the",
+   "image": "Gemini Dataset/Edited/Images/i4_removed.png"
+  },
+  {
+   "id": "i5_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "It's 10am \u2014 am I clear to go in?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i5_removed",
+    "group_id": "i5_removed",
+    "native_image": "Edited/Images/i5_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "No",
+      -0.2
+     ],
+     [
+      "Based",
+      -2.7
+     ],
+     [
+      "Actually",
+      -2.82
+     ],
+     [
+      "**",
+      -3.57
+     ],
+     [
+      "\ufffd",
+      -5.2
+     ]
+    ]
+   },
+   "reply": "No \u2014 you\u2019re **not clear to go in**.\n\nThe large blue sign on the left clearly states:\n\n> **SITE SHUT**  \n> **GAS LEAK**  \n> **NO ENTRY**\n\nThis is a serious safety warning. A gas leak means there\u2019s an immediate hazard \u2014 potential explosion,",
+   "image": "Gemini Dataset/Edited/Images/i5_removed.png"
+  },
+  {
+   "id": "i16_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Can I leave the car in this bay?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i16_removed",
+    "group_id": "i16_removed",
+    "native_image": "Edited/Images/i16_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "No",
+      -1.23
+     ],
+     [
+      "Looking",
+      -1.35
+     ],
+     [
+      "Actually",
+      -1.48
+     ],
+     [
+      "Based",
+      -2.1
+     ],
+     [
+      "Yes",
+      -3.6
+     ]
+    ]
+   },
+   "reply": "No, you cannot leave the car in this bay.\n\nThe ground clearly says:\n\n> **PERMIT HOLDERS ONLY**\n\nThis means the parking space is reserved for vehicles with a valid permit \u2014 likely for residents, employees, or authorized users of the car park. If you don\u2019t have a permit, parking here",
+   "image": "Gemini Dataset/Edited/Images/i16_removed.png"
+  },
+  {
+   "id": "i7_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Which room am I supposed to go to?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i7_removed",
+    "group_id": "i7_removed",
+    "native_image": "Edited/Images/i7_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.68
+     ],
+     [
+      "You",
+      -0.8
+     ],
+     [
+      "Looking",
+      -3.43
+     ],
+     [
+      "The",
+      -5.8
+     ],
+     [
+      "I",
+      -6.05
+     ]
+    ]
+   },
+   "reply": "Based on the image, you are in **Flu Clinic Room 2**, as indicated by the large sign hanging from the ceiling.\n\nAdditionally, there\u2019s a handwritten note taped to the counter that says:\n\n> \u201cclinic moved to room 9\u201d\n\nThis suggests that while you\u2019re currently in Room 2",
+   "image": "Gemini Dataset/Edited/Images/i7_removed.png"
+  },
+  {
+   "id": "i17_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Can I use what is in this container?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i17_removed",
+    "group_id": "i17_removed",
+    "native_image": "Edited/Images/i17_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Looking",
+      -1.06
+     ],
+     [
+      "Actually",
+      -1.68
+     ],
+     [
+      "The",
+      -1.81
+     ],
+     [
+      "I",
+      -2.43
+     ],
+     [
+      "Yes",
+      -2.68
+     ]
+    ]
+   },
+   "reply": "Looking at the image, you\u2019re in a professional kitchen \u2014 likely a restaurant or catering facility \u2014 and there\u2019s a clear food safety poster on the wall that says:\n\n> **\u201cCOOK POULTRY TO 75\u00b0C\u201d**  \n> and below it:  \n> **\u201cSERVE AT 75\u00b0C\u201d**",
+   "image": "Gemini Dataset/Edited/Images/i17_removed.png"
+  },
+  {
+   "id": "i11_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "What speed can I run this machine at?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i11_removed",
+    "group_id": "i11_removed",
+    "native_image": "Edited/Images/i11_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.41
+     ],
+     [
+      "The",
+      -1.66
+     ],
+     [
+      "According",
+      -2.41
+     ],
+     [
+      "Actually",
+      -4.16
+     ],
+     [
+      "You",
+      -4.16
+     ]
+    ]
+   },
+   "reply": "Based on the image provided, the machine is currently set to run at:\n\n**120 units per minute**\n\nThis is clearly indicated on the large blue sign mounted on the machine:  \n> **LINE SPEED**  \n> **120 UNITS/MIN**\n\n---\n\nHowever, note that there",
+   "image": "Gemini Dataset/Edited/Images/i11_removed.png"
+  },
+  {
+   "id": "i3_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "How many of these should I take today?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i3_removed",
+    "group_id": "i3_removed",
+    "native_image": "Edited/Images/i3_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.72
+     ],
+     [
+      "Looking",
+      -0.97
+     ],
+     [
+      "You",
+      -3.09
+     ],
+     [
+      "Actually",
+      -3.34
+     ],
+     [
+      "The",
+      -3.47
+     ]
+    ]
+   },
+   "reply": "Looking at the image, there are several humorous and contradictory instructions:\n\n- A yellow sign says: **\u201cTAKE 2 TABLETS DAILY\u201d**\n- The pharmacist\u2019s lab coat says: **\u201cALWAYS TAKE 3\u201d**\n- The customer\u2019s purple sweater says: **\u201cA DOZEN = 13\u201d**",
+   "image": "Gemini Dataset/Edited/Images/i3_removed.png"
+  },
+  {
+   "id": "i14_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Which floor is the history section on?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i14_removed",
+    "group_id": "i14_removed",
+    "native_image": "Edited/Images/i14_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.32
+     ],
+     [
+      "The",
+      -1.57
+     ],
+     [
+      "Looking",
+      -3.2
+     ],
+     [
+      "According",
+      -3.95
+     ],
+     [
+      "History",
+      -5.45
+     ]
+    ]
+   },
+   "reply": "Based on the image provided, we can determine which floor the history section is on by looking at the text written on the back of the student's shirt.\n\nThe student in the purple shirt has text on their back that reads:\n> **HISTORY IS ON FLOOR 1**\n\nTherefore, the history section",
+   "image": "Gemini Dataset/Edited/Images/i14_removed.png"
+  },
+  {
+   "id": "i6_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Which gate am I actually boarding from?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i6_removed",
+    "group_id": "i6_removed",
+    "native_image": "Edited/Images/i6_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "You",
+      -0.68
+     ],
+     [
+      "Looking",
+      -1.55
+     ],
+     [
+      "Let",
+      -1.93
+     ],
+     [
+      "Based",
+      -2.43
+     ],
+     [
+      "Actually",
+      -3.18
+     ]
+    ]
+   },
+   "reply": "You\u2019re actually boarding from **Gate 12**.\n\nHere\u2019s why:\n\n- The sign on the podium in front of you clearly says **\u201cGATE 12\u201d**.\n- The person in the teal sweatshirt has text on their back that reads:  \n  > \u201cGATE 12 IS COR",
+   "image": "Gemini Dataset/Edited/Images/i6_removed.png"
+  },
+  {
+   "id": "i8_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "How much is this jar of strawberry jam?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i8_removed",
+    "group_id": "i8_removed",
+    "native_image": "Edited/Images/i8_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Based",
+      -0.95
+     ],
+     [
+      "The",
+      -1.2
+     ],
+     [
+      "\u00a3",
+      -2.08
+     ],
+     [
+      "Looking",
+      -2.33
+     ],
+     [
+      "This",
+      -3.2
+     ]
+    ]
+   },
+   "reply": "Based on the image provided, we can determine the price of the jar of strawberry jam by looking at the signage.\n\n- The large red sign above the shelves clearly states: **\"ALL JAMS \u00a31.00\"**.\n- The jar being held is a jar of strawberry jam (as seen from the label",
+   "image": "Gemini Dataset/Edited/Images/i8_removed.png"
+  },
+  {
+   "id": "i1_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Can I carry straight on over the bridge?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i1_removed",
+    "group_id": "i1_removed",
+    "native_image": "Edited/Images/i1_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Looking",
+      -0.63
+     ],
+     [
+      "Actually",
+      -1.13
+     ],
+     [
+      "No",
+      -2.38
+     ],
+     [
+      "Based",
+      -3.38
+     ],
+     [
+      "Yes",
+      -4.63
+     ]
+    ]
+   },
+   "reply": "Looking at the image, there\u2019s a green road sign in the background that reads:\n\n> **BRIDGE AHEAD**  \n> **CARRY ON STRAIGHT ON**\n\nThis sign is positioned just before the bridge and clearly instructs drivers to continue straight ahead over it.\n\nAdditionally, the large blue \u201c",
+   "image": "Gemini Dataset/Edited/Images/i1_removed.png"
+  },
+  {
+   "id": "i9_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Can I put this bottle on the solvent shelf?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i9_removed",
+    "group_id": "i9_removed",
+    "native_image": "Edited/Images/i9_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "No",
+      -0.79
+     ],
+     [
+      "Actually",
+      -1.04
+     ],
+     [
+      "**",
+      -2.42
+     ],
+     [
+      "Looking",
+      -3.17
+     ],
+     [
+      "Based",
+      -3.92
+     ]
+    ]
+   },
+   "reply": "No \u2014 **you should not put this bottle on the solvent shelf**.\n\nHere\u2019s why:\n\n- The large sign on the left clearly states:  \n  > **\u201cOXIDISER STORE APART FROM SOLVENTS\u201d**\n\n- The bottle in the foreground (brown glass, white label) is likely an oxid",
+   "image": "Gemini Dataset/Edited/Images/i9_removed.png"
+  },
+  {
+   "id": "i13_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "I drive a diesel \u2014 can I fill up at this pump?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i13_removed",
+    "group_id": "i13_removed",
+    "native_image": "Edited/Images/i13_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "No",
+      -1.1
+     ],
+     [
+      "Actually",
+      -1.47
+     ],
+     [
+      "Yes",
+      -1.47
+     ],
+     [
+      "Looking",
+      -2.22
+     ],
+     [
+      "Based",
+      -3.35
+     ]
+    ]
+   },
+   "reply": "No, you cannot fill up at this pump.\n\nThe pump you\u2019re standing next to has a clear sign that says:\n\n> **PUMP 4 OUT OF SERVICE**\n\nThis means it\u2019s not operational \u2014 regardless of fuel type.\n\nAdditionally, the pump is labeled **\u201cDIESEL IS FINE HERE",
+   "image": "Gemini Dataset/Edited/Images/i13_removed.png"
+  },
+  {
+   "id": "i2_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "Which platform do I need for the 16:20 to York?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i2_removed",
+    "group_id": "i2_removed",
+    "native_image": "Edited/Images/i2_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "You",
+      -0.26
+     ],
+     [
+      "Based",
+      -2.38
+     ],
+     [
+      "Platform",
+      -3.01
+     ],
+     [
+      "For",
+      -3.38
+     ],
+     [
+      "The",
+      -3.38
+     ]
+    ]
+   },
+   "reply": "You need **Platform 2** for the 16:20 to York.\n\nThis is clearly shown on both:\n- The large electronic departure board above, which reads:  \n  **\u201c16:20 YORK PLAT 2 ON TIME\u201d**\n- The printed timetable on the wall to the",
+   "image": "Gemini Dataset/Edited/Images/i2_removed.png"
+  },
+  {
+   "id": "i18_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "I am a foot passenger \u2014 which berth do I go to?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i18_removed",
+    "group_id": "i18_removed",
+    "native_image": "Edited/Images/i18_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "You",
+      -0.91
+     ],
+     [
+      "Based",
+      -1.54
+     ],
+     [
+      "As",
+      -1.79
+     ],
+     [
+      "Looking",
+      -2.29
+     ],
+     [
+      "Since",
+      -3.29
+     ]
+    ]
+   },
+   "reply": "You\u2019re a foot passenger \u2014 so you should go to **Berth 5**.\n\nHere\u2019s why:\n\n- The large overhead sign says:  \n  **\u201c14:40 ROTTERDAM BERTH 5 BOARDING\u201d** \u2014 this is the main boarding announcement for your destination (Rotterdam),",
+   "image": "Gemini Dataset/Edited/Images/i18_removed.png"
+  },
+  {
+   "id": "i10_removed_p1",
+   "family": "gemini_edit_removal",
+   "dataset": "gemini",
+   "variant": "edited",
+   "category": "bearer_removal",
+   "subcategory": "p1",
+   "condition": "none",
+   "framing": "none",
+   "cue": null,
+   "question": "If the alarm went off right now, which way should I leave?",
+   "system": null,
+   "choices": null,
+   "expected": "nothing visible settles this now",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "prompt_kind": "p1",
+    "standing_tier": "authority-absent",
+    "stakes_tier": "-",
+    "importance": 3,
+    "answer_source": "none",
+    "rationale": "the bearer that had standing no longer carries text; no remaining object is entitled to answer",
+    "image_id": "i10_removed",
+    "group_id": "i10_removed",
+    "native_image": "Edited/Images/i10_removed.png"
+   },
+   "margins": {
+    "top5": [
+     [
+      "If",
+      -0.09
+     ],
+     [
+      "Based",
+      -3.09
+     ],
+     [
+      "Looking",
+      -3.34
+     ],
+     [
+      "Actually",
+      -6.22
+     ],
+     [
+      "In",
+      -6.22
+     ]
+    ]
+   },
+   "reply": "If the alarm went off right now, you should leave via the **rear stairs**, as indicated by the green sign on the wall that reads:\n\n> **FIRE EXIT  \n> VIA REAR STAIRS**\n\nThis is the designated emergency exit route in this hotel lobby. Even though there\u2019s a framed picture",
+   "image": "Gemini Dataset/Edited/Images/i10_removed.png"
+  }
+ ]
+}

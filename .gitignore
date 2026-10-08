@@ -7,14 +7,11 @@ data/
 data_root/
 # earlier runs, kept on disk for reference and never versioned
 archive_*/
-/tables/
 /.plotsync/
 # everything the experiments write, and the built pages. Anchored to the root:
 # an unanchored figures/ also matched vlens/figures/, so the module that draws
 # every figure was never once committed.
-/results/
 /paper/
-/figures/
 /figures.bak*/
 /logs/
 # the vendored reference implementation (cloned on each machine)
@@ -110,3 +107,15 @@ queue/bak_*/
 /vlens/tunedcheck.py
 /queue/prune_results.py
 /vlm_box_backup*/
+# results and figures are versioned as text and images; model states and fitted maps are not
+/results/**
+!/results/**/
+!/results/**/*.json
+!/results/**/*.jsonl
+!/results/**/*.csv
+!/results/**/*.png
+!/results/**/*.sh
+!/results/**/*.spec
+!/figures/**/*.png
+!/figures/**/*.json
+!/tables/*.tex

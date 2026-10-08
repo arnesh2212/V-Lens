@@ -1,0 +1,14 @@
+% Written by tools/make_appendix_tables.py from results/; do not edit by hand.
+\begin{tabular}{llrrrr}
+\toprule
+model & pair & cosine & 95\% CI & angle & shuffled-label 95th pct. \\
+\midrule
+Qwen3-VL-8B-Instruct & authority / answers no & 0.76 & [0.56, 0.82] & 41\textdegree & 0.76 \\
+Qwen3-VL-8B-Instruct & test look / answers test & 0.88 & [0.82, 0.90] & 28\textdegree & 0.78 \\
+Qwen3-VL-8B-Instruct & authority / test look & $-$0.08 & [$-$0.15, $-$0.03] & 95\textdegree & -- \\
+Qwen3.5-27B & authority / answers no & 0.26 & [$-$0.09, 0.51] & 75\textdegree & 0.32 \\
+Qwen3.5-27B & test look / answers test & 0.33 & [0.20, 0.39] & 71\textdegree & 0.37 \\
+Qwen3.5-27B & harmful prompt / refuses & 0.81 & [0.74, 0.84] & 36\textdegree & 0.47 \\
+Qwen3.5-27B & authority / test look & 0.04 & [$-$0.03, 0.10] & 88\textdegree & -- \\
+\bottomrule
+\end{tabular}

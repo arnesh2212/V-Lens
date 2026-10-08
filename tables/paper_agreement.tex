@@ -1,0 +1,14 @@
+% Written by tools/agreement.py from results/; do not edit by hand.
+\begin{tabular}{lcccc}
+\toprule
+reader & \multicolumn{2}{c}{Qwen3-VL-8B-Instruct} & \multicolumn{2}{c}{Qwen3.5-27B} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & agreement & ECE & agreement & ECE \\
+\midrule
+V-Read & 0.78 & 0.15 & 0.59 & 0.30 \\
+tuned lens & 0.70 & 0.26 & 0.59 & 0.31 \\
+Jacobian lens & 0.68 & 0.25 & 0.48 & 0.38 \\
+Patchscopes & 0.78 & 0.14 & 0.67 & 0.22 \\
+logit lens & 0.63 & 0.32 & 0.50 & 0.35 \\
+\bottomrule
+\end{tabular}

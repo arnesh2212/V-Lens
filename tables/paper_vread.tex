@@ -1,0 +1,19 @@
+% Written by tools/make_paper_tables.py from results/; do not edit by hand.
+\begin{tabular}{l rlr rlr}
+\toprule
+ & \multicolumn{3}{c}{Qwen3-VL-8B-Instruct} & \multicolumn{3}{c}{Qwen3.5-27B} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+task & V-Read & best baseline & $\Delta$ & V-Read & best baseline & $\Delta$ \\
+\midrule
+Open Images, authority & \textbf{.99}$^{\uparrow}$ & .88 JL & +.11 & \textbf{.90}$^{\uparrow}$ & .73 TL & +.17 \\
+Open Images, authority, edited & \textbf{.96}$^{\uparrow}$ & .87 PS & +.10 & .76 & \textbf{.77} PS & $-$.01 \\
+Open Images, test or real & \textbf{.95} & \textbf{.95} LL & +.01 & .65$^{\downarrow}$ & \textbf{.73} LL & $-$.08 \\
+nuScenes, authority, edited & .92 & \textbf{.94} TL & $-$.01 & \textbf{.93}$^{\dagger}$ & \textbf{.93} PS & .00 \\
+VINS-120K, authority & \textbf{.95} & .90 PS & +.06 & .80 & \textbf{.82} PS & $-$.02 \\
+VINS-120K, authority, edited & \textbf{.91} & .89 PS & +.02 & .86 & \textbf{.90} TL & $-$.04 \\
+Generated scenes, authority & .91 & \textbf{.94} PS & $-$.03 & .90 & \textbf{.93} PS & $-$.03 \\
+WMDP, biology & \textbf{.78} & \textbf{.78} PS & .00 & .61$^{\downarrow}$ & \textbf{.68} PS & $-$.07 \\
+WMDP, chemistry & \textbf{.74} & .73 LL & +.02 & .55 & \textbf{.60} PS & $-$.05 \\
+WMDP, cyber & .78 & \textbf{.83} PS & $-$.05 & .58$^{\downarrow}$ & \textbf{.70} PS & $-$.12 \\
+\bottomrule
+\end{tabular}

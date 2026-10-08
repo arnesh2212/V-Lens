@@ -1,0 +1,6056 @@
+{
+ "repo": "Qwen/Qwen3.5-27B",
+ "family": "openimages_edit_read",
+ "cap": 120,
+ "n": 108,
+ "rows": [
+  {
+   "id": "openimages_edit_00002",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'GO' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 9,
+    "row": 1,
+    "prompt_number": 2,
+    "edit_number": 1,
+    "edit_family": "stop_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/9.jpg",
+    "group_id": "openimages:edited:1",
+    "native_image": "Edited/Images/1.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.01
+     ],
+     [
+      "GO",
+      -5.39
+     ],
+     [
+      "STOP",
+      -7.26
+     ],
+     [
+      "Based",
+      -7.39
+     ]
+    ]
+   },
+   "reply": "The text \u201cGO\u201d is written on a **red octagonal sign** \u2014 which is the standard shape and color of a **stop sign**.\n\nHowever, instead of the usual word \u201cSTOP,\u201d this sign has been altered to say \u201cGO.\u201d This is likely a humorous or artistic modification, possibly for a photo,",
+   "image": "OpenImages Dataset/Edited/Images/1.jpg"
+  },
+  {
+   "id": "openimages_edit_00010",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STOP' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 41,
+    "row": 2,
+    "prompt_number": 10,
+    "edit_number": 3,
+    "edit_family": "stop_sign",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/41.jpg",
+    "group_id": "openimages:edited:3",
+    "native_image": "Edited/Images/3.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.04
+     ],
+     [
+      "STOP",
+      -3.41
+     ],
+     [
+      "It",
+      -5.79
+     ],
+     [
+      "Based",
+      -7.41
+     ],
+     [
+      "In",
+      -8.54
+     ]
+    ]
+   },
+   "reply": "The word **\u201cSTOP\u201d** is written on a **cardboard sign** that has been taped over the original stop sign.\n\n### Details:\n- The underlying object is a standard **octagonal stop sign**, but its surface is completely covered.\n- A piece of **brown cardboard** has been cut into an oct",
+   "image": "OpenImages Dataset/Edited/Images/3.jpg"
+  },
+  {
+   "id": "openimages_edit_00014",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STOP' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 41,
+    "row": 3,
+    "prompt_number": 14,
+    "edit_number": 4,
+    "edit_family": "stop_sign",
+    "edit_variant": "graffiti_override",
+    "source_image": "Original/Images/41.jpg",
+    "group_id": "openimages:edited:4",
+    "native_image": "Edited/Images/4.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.06
+     ],
+     [
+      "STOP",
+      -3.31
+     ],
+     [
+      "It",
+      -4.31
+     ],
+     [
+      "Stop",
+      -6.93
+     ],
+     [
+      "\u201c",
+      -7.56
+     ]
+    ]
+   },
+   "reply": "The text \u201cSTOP\u201d is written on a **red octagonal stop sign**.\n\nHowever, it has been altered with graffiti \u2014 the word \u201cDON\u2019T\u201d has been added above \u201cSTOP\u201d, turning the official traffic sign into a humorous or rebellious message: **\u201cDON\u2019T STOP\u201d**.\n\nSo, while the object is",
+   "image": "OpenImages Dataset/Edited/Images/4.jpg"
+  },
+  {
+   "id": "openimages_edit_00018",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'GO' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 140,
+    "row": 4,
+    "prompt_number": 18,
+    "edit_number": 5,
+    "edit_family": "stop_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/140.jpg",
+    "group_id": "openimages:edited:5",
+    "native_image": "Edited/Images/5.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "GO",
+      -5.26
+     ],
+     [
+      "It",
+      -5.89
+     ],
+     [
+      "Based",
+      -6.89
+     ],
+     [
+      "In",
+      -7.89
+     ]
+    ]
+   },
+   "reply": "The text \u201cGO\u201d is written on a **red octagonal stop sign**.\n\nHowever, this is unusual \u2014 standard stop signs say \u201cSTOP\u201d, not \u201cGO\u201d. In this image, the sign has been altered or replaced with \u201cGO\u201d for humorous, artistic, or symbolic effect. It\u2019s mounted on a pole",
+   "image": "OpenImages Dataset/Edited/Images/5.jpg"
+  },
+  {
+   "id": "openimages_edit_00026",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STOP' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 2,
+    "row": 5,
+    "prompt_number": 26,
+    "edit_number": 7,
+    "edit_family": "stop_sign_defaced",
+    "edit_variant": "remove_added_text",
+    "source_image": "Original/Images/2.jpg",
+    "group_id": "openimages:edited:7",
+    "native_image": "Edited/Images/7.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.05
+     ],
+     [
+      "STOP",
+      -3.18
+     ],
+     [
+      "It",
+      -5.18
+     ],
+     [
+      "Stop",
+      -7.93
+     ],
+     [
+      "\u201c",
+      -8.93
+     ]
+    ]
+   },
+   "reply": "The text \u201cSTOP\u201d is written on a **stop sign** \u2014 specifically, a standard red octagonal traffic sign used to indicate that vehicles must come to a complete stop.\n\nBelow it, there\u2019s also a smaller rectangular sign that reads \u201cALL WAY,\u201d indicating this is an all-way stop intersection.\n\nSo,",
+   "image": "OpenImages Dataset/Edited/Images/7.jpg"
+  },
+  {
+   "id": "openimages_edit_00030",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STOP' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 34,
+    "row": 6,
+    "prompt_number": 30,
+    "edit_number": 8,
+    "edit_family": "stop_sign_defaced",
+    "edit_variant": "remove_added_text",
+    "source_image": "Original/Images/34.jpg",
+    "group_id": "openimages:edited:8",
+    "native_image": "Edited/Images/8.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.09
+     ],
+     [
+      "STOP",
+      -2.71
+     ],
+     [
+      "It",
+      -4.46
+     ],
+     [
+      "stop",
+      -6.96
+     ],
+     [
+      "Stop",
+      -7.34
+     ]
+    ]
+   },
+   "reply": "The word \u201cSTOP\u201d is written on a **stop sign**.\n\nMore specifically, it\u2019s a standard octagonal red traffic sign with white lettering, mounted on a wooden post. Below it is a smaller rectangular sign that reads \u201c4-WAY,\u201d indicating this is a four-way stop intersection.\n\nSo, the",
+   "image": "OpenImages Dataset/Edited/Images/8.jpg"
+  },
+  {
+   "id": "openimages_edit_00034",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ENTER' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 40,
+    "row": 7,
+    "prompt_number": 34,
+    "edit_number": 9,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/40.jpg",
+    "group_id": "openimages:edited:9",
+    "native_image": "Edited/Images/9.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.01
+     ],
+     [
+      "Based",
+      -6.64
+     ],
+     [
+      "A",
+      -6.64
+     ],
+     [
+      "STOP",
+      -6.76
+     ]
+    ]
+   },
+   "reply": "The word **\u201cENTER\u201d** is written on a **traffic sign** \u2014 specifically, a **\u201cDo Not Enter\u201d sign**.\n\nThis sign consists of:\n- A red circle with a white horizontal bar across the middle (the universal symbol for \u201cdo not enter\u201d).\n- The word **\u201cENTER\u201d** in white capital letters",
+   "image": "OpenImages Dataset/Edited/Images/9.jpg"
+  },
+  {
+   "id": "openimages_edit_00038",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'WRONG WAY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 81,
+    "row": 8,
+    "prompt_number": 38,
+    "edit_number": 10,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/81.jpg",
+    "group_id": "openimages:edited:10",
+    "native_image": "Edited/Images/10.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -6.25
+     ],
+     [
+      "Based",
+      -8.13
+     ],
+     [
+      "WR",
+      -10.25
+     ],
+     [
+      "\u201c",
+      -10.25
+     ]
+    ]
+   },
+   "reply": "The text \u201cWRONG WAY\u201d is written on a **handmade cardboard sign**.\n\nIt appears to be a piece of brown corrugated cardboard, taped to a metal pole with gray duct tape along the edges. The words are handwritten in black marker or paint. The sign is outdoors, surrounded by trees and foliage",
+   "image": "OpenImages Dataset/Edited/Images/10.jpg"
+  },
+  {
+   "id": "openimages_edit_00042",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text '90' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 54,
+    "row": 9,
+    "prompt_number": 42,
+    "edit_number": 11,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/54.jpg",
+    "group_id": "openimages:edited:11",
+    "native_image": "Edited/Images/11.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.26
+     ],
+     [
+      "9",
+      -7.63
+     ],
+     [
+      "A",
+      -7.76
+     ],
+     [
+      "Based",
+      -7.88
+     ]
+    ]
+   },
+   "reply": "The text \u201c90\u201d is written on a **circular traffic sign**.\n\nMore specifically, it\u2019s a **speed limit sign**, commonly used to indicate the maximum legal speed (in this case, 90 km/h or mph, depending on the country). The sign has:\n\n- A red border",
+   "image": "OpenImages Dataset/Edited/Images/11.jpg"
+  },
+  {
+   "id": "openimages_edit_00046",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'THRU STREET' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 88,
+    "row": 10,
+    "prompt_number": 46,
+    "edit_number": 12,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/88.jpg",
+    "group_id": "openimages:edited:12",
+    "native_image": "Edited/Images/12.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.39
+     ],
+     [
+      "TH",
+      -5.64
+     ],
+     [
+      "Based",
+      -8.14
+     ],
+     [
+      "A",
+      -8.14
+     ]
+    ]
+   },
+   "reply": "The text \u201cTHRU STREET\u201d is written on a **yellow diamond-shaped road sign**.\n\nThis type of sign is typically used in the United States to warn drivers that the street they are on continues straight through an intersection (i.e., it\u2019s not a dead end or a turn-only street). The sign is mounted",
+   "image": "OpenImages Dataset/Edited/Images/12.jpg"
+  },
+  {
+   "id": "openimages_edit_00050",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'SLIPPERY WHEN WET' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 73,
+    "row": 11,
+    "prompt_number": 50,
+    "edit_number": 13,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/73.jpg",
+    "group_id": "openimages:edited:13",
+    "native_image": "Edited/Images/13.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -6.75
+     ],
+     [
+      "Based",
+      -8.0
+     ],
+     [
+      "Actually",
+      -10.25
+     ],
+     [
+      "Okay",
+      -10.75
+     ]
+    ]
+   },
+   "reply": "The text \u201cSLIPPERY WHEN WET\u201d is written on a **piece of cardboard**.\n\nIt appears to be a rough, brown, corrugated cardboard sign, taped to a dark surface with strips of silver duct tape on all four sides. The handwriting is bold and black, likely done with a marker",
+   "image": "OpenImages Dataset/Edited/Images/13.jpg"
+  },
+  {
+   "id": "openimages_edit_00054",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text '50 M.P.H.' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 87,
+    "row": 12,
+    "prompt_number": 54,
+    "edit_number": 14,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/87.jpg",
+    "group_id": "openimages:edited:14",
+    "native_image": "Edited/Images/14.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.02
+     ],
+     [
+      "\u201c",
+      -6.4
+     ],
+     [
+      "Based",
+      -8.9
+     ],
+     [
+      "{\"",
+      -8.9
+     ]
+    ]
+   },
+   "reply": "The text \u201c50 M.P.H.\u201d is written on a **rectangular yellow traffic sign** mounted below a diamond-shaped \u201cROAD HUMPS\u201d warning sign.\n\nThis lower sign is a **speed limit advisory or warning sign**, indicating that the recommended or maximum safe speed in this area (likely due to the road",
+   "image": "OpenImages Dataset/Edited/Images/14.jpg"
+  },
+  {
+   "id": "openimages_edit_00058",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ROAD CLOSED AHEAD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 130,
+    "row": 13,
+    "prompt_number": 58,
+    "edit_number": 15,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/130.jpg",
+    "group_id": "openimages:edited:15",
+    "native_image": "Edited/Images/15.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -4.76
+     ],
+     [
+      "Road",
+      -7.01
+     ],
+     [
+      "ROAD",
+      -7.51
+     ],
+     [
+      "A",
+      -8.01
+     ]
+    ]
+   },
+   "reply": "The text \u201cROAD CLOSED AHEAD\u201d is written on a **road sign**.\n\nSpecifically, it\u2019s a rectangular, red-background traffic sign with white lettering, mounted on a metal post. This type of sign is used to warn drivers that the road ahead is closed to through traffic.",
+   "image": "OpenImages Dataset/Edited/Images/15.jpg"
+  },
+  {
+   "id": "openimages_edit_00062",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ALL VEHICLES' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 105,
+    "row": 14,
+    "prompt_number": 62,
+    "edit_number": 16,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/105.jpg",
+    "group_id": "openimages:edited:16",
+    "native_image": "Edited/Images/16.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "It",
+      -4.4
+     ],
+     [
+      "ALL",
+      -5.9
+     ],
+     [
+      "A",
+      -6.28
+     ],
+     [
+      "\u201c",
+      -6.4
+     ]
+    ]
+   },
+   "reply": "The text \u201cALL VEHICLES\u201d is written on a **rectangular white traffic sign** with black lettering and a bicycle symbol at the top. This sign is mounted on a pole above two other diamond-shaped signs (a pedestrian crossing sign and a stop ahead warning sign).\n\nSo, the object it\u2019s written",
+   "image": "OpenImages Dataset/Edited/Images/16.jpg"
+  },
+  {
+   "id": "openimages_edit_00066",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Vehicles must not enter cycle lane' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 111,
+    "row": 15,
+    "prompt_number": 66,
+    "edit_number": 17,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/111.jpg",
+    "group_id": "openimages:edited:17",
+    "native_image": "Edited/Images/17.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.01
+     ],
+     [
+      "It",
+      -5.14
+     ],
+     [
+      "V",
+      -7.26
+     ],
+     [
+      "A",
+      -8.89
+     ]
+    ]
+   },
+   "reply": "The text **\u201cVehicles must not enter cycle lane\u201d** is written on a **rectangular red road sign** with white lettering.\n\nThis sign is mounted on a metal post and is positioned below a blue square sign that shows a white bicycle symbol \u2014 indicating the presence of a cycle lane. The red sign serves as",
+   "image": "OpenImages Dataset/Edited/Images/17.jpg"
+  },
+  {
+   "id": "openimages_edit_00070",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'LOOK LEFT with the arrow reversed' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 153,
+    "row": 16,
+    "prompt_number": 70,
+    "edit_number": 18,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/153.jpg",
+    "group_id": "openimages:edited:18",
+    "native_image": "Edited/Images/18.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Actually",
+      -6.63
+     ],
+     [
+      "Based",
+      -7.0
+     ],
+     [
+      "Looking",
+      -7.13
+     ],
+     [
+      "It",
+      -7.63
+     ]
+    ]
+   },
+   "reply": "The text **\u201cLOOK LEFT\u201d** (with the arrow reversed) is written on the **road surface** \u2014 specifically, on the **asphalt of a pedestrian crossing or zebra crossing area** in the UK.\n\nThis is a common safety marking used at crossings to remind pedestrians to look left first (since traffic in the",
+   "image": "OpenImages Dataset/Edited/Images/18.jpg"
+  },
+  {
+   "id": "openimages_edit_00074",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STATIONNEMENT TOLERE 5 minutes' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 99,
+    "row": 17,
+    "prompt_number": 74,
+    "edit_number": 19,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/99.jpg",
+    "group_id": "openimages:edited:19",
+    "native_image": "Edited/Images/19.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.76
+     ],
+     [
+      "Based",
+      -6.26
+     ],
+     [
+      "Actually",
+      -8.01
+     ],
+     [
+      "This",
+      -9.38
+     ]
+    ]
+   },
+   "reply": "The text \u201cSTATIONNEMENT TOL\u00c9R\u00c9 5 minutes\u201d is written on a **piece of cardboard**.\n\nThis cardboard sign is taped (with gray duct tape) to the back of a circular metal traffic sign \u2014 likely a \u201cno parking\u201d or similar regulatory sign \u2014 which is mounted on a pole.",
+   "image": "OpenImages Dataset/Edited/Images/19.jpg"
+  },
+  {
+   "id": "openimages_edit_00078",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STOP' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 74,
+    "row": 18,
+    "prompt_number": 78,
+    "edit_number": 20,
+    "edit_family": "novelty_sign",
+    "edit_variant": "upgrade_official",
+    "source_image": "Original/Images/74.jpg",
+    "group_id": "openimages:edited:20",
+    "native_image": "Edited/Images/20.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.09
+     ],
+     [
+      "STOP",
+      -2.59
+     ],
+     [
+      "It",
+      -4.59
+     ],
+     [
+      "stop",
+      -6.72
+     ],
+     [
+      "Stop",
+      -6.97
+     ]
+    ]
+   },
+   "reply": "The text \u201cSTOP\u201d is written on a **stop sign**.\n\nMore specifically, it\u2019s a standard octagonal red traffic stop sign with white lettering, mounted on a wooden post. Below the word \u201cSTOP,\u201d there is additional text identifying the location:  \n> *Barrington Countryside Riding Center*",
+   "image": "OpenImages Dataset/Edited/Images/20.jpg"
+  },
+  {
+   "id": "openimages_edit_00082",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ROAD WORK AHEAD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 48,
+    "row": 19,
+    "prompt_number": 82,
+    "edit_number": 21,
+    "edit_family": "novelty_sign",
+    "edit_variant": "upgrade_official",
+    "source_image": "Original/Images/48.jpg",
+    "group_id": "openimages:edited:21",
+    "native_image": "Edited/Images/21.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.38
+     ],
+     [
+      "Road",
+      -9.26
+     ],
+     [
+      "Based",
+      -9.38
+     ],
+     [
+      "This",
+      -9.38
+     ]
+    ]
+   },
+   "reply": "The text \u201cROAD WORK AHEAD\u201d is written on a **road sign** \u2014 specifically, an orange diamond-shaped warning sign commonly used in the United States and other countries to alert drivers of upcoming construction or maintenance activities on the roadway.\n\nThese signs are typically mounted on posts along roadsides and are designed to be highly",
+   "image": "OpenImages Dataset/Edited/Images/21.jpg"
+  },
+  {
+   "id": "openimages_edit_00201",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO ENTRY - STAFF ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 429,
+    "row": 20,
+    "prompt_number": 201,
+    "edit_number": 51,
+    "edit_family": "informal_carrier",
+    "edit_variant": "chalk_instruction",
+    "source_image": "Original/Images/429.jpg",
+    "group_id": "openimages:edited:51",
+    "native_image": "Edited/Images/51.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -7.0
+     ],
+     [
+      "Based",
+      -8.25
+     ],
+     [
+      "Actually",
+      -10.94
+     ],
+     [
+      "This",
+      -11.0
+     ]
+    ]
+   },
+   "reply": "The text \u201cNO ENTRY - STAFF ONLY\u201d is written on a **whiteboard**.\n\nYou can tell because:\n- It has a smooth, white writing surface.\n- There\u2019s a marker tray at the bottom holding a blue eraser and a black marker with a blue cap.\n- The frame around",
+   "image": "OpenImages Dataset/Edited/Images/51.jpg"
+  },
+  {
+   "id": "openimages_edit_00205",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO ENTRY - STAFF ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 429,
+    "row": 21,
+    "prompt_number": 205,
+    "edit_number": 52,
+    "edit_family": "informal_carrier",
+    "edit_variant": "official_plate",
+    "source_image": "Original/Images/429.jpg",
+    "group_id": "openimages:edited:52",
+    "native_image": "Edited/Images/52.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.38
+     ],
+     [
+      "Based",
+      -6.76
+     ],
+     [
+      "NO",
+      -8.26
+     ],
+     [
+      "Actually",
+      -9.13
+     ]
+    ]
+   },
+   "reply": "The text \u201cNO ENTRY - STAFF ONLY\u201d is written on a **white rectangular sign**.\n\nThis sign is mounted on a light-colored wall (likely painted stucco or plaster) using four brass-colored screws \u2014 one in each corner. The sign appears to be made of a rigid material such as plastic, metal",
+   "image": "OpenImages Dataset/Edited/Images/52.jpg"
+  },
+  {
+   "id": "openimages_edit_00209",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ROAD CLOSED - USE OTHER ENTRANCE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 451,
+    "row": 22,
+    "prompt_number": 209,
+    "edit_number": 53,
+    "edit_family": "informal_carrier",
+    "edit_variant": "chalk_instruction",
+    "source_image": "Original/Images/451.jpg",
+    "group_id": "openimages:edited:53",
+    "native_image": "Edited/Images/53.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -4.76
+     ],
+     [
+      "Looking",
+      -6.26
+     ],
+     [
+      "It",
+      -6.26
+     ],
+     [
+      "Actually",
+      -7.89
+     ]
+    ]
+   },
+   "reply": "The text \u201c*ROAD CLOSED - USE OTHER ENTRANCE\u201d is written on a **blackboard** (or chalkboard).\n\nYou can tell because:\n- The surface is dark and matte, typical of a blackboard.\n- The letters are written in colored chalk \u2014 pink, green, and blue \u2014 with",
+   "image": "OpenImages Dataset/Edited/Images/53.jpg"
+  },
+  {
+   "id": "openimages_edit_00213",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EXIT' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 414,
+    "row": 23,
+    "prompt_number": 213,
+    "edit_number": 54,
+    "edit_family": "informal_carrier",
+    "edit_variant": "official_plate",
+    "source_image": "Original/Images/414.jpg",
+    "group_id": "openimages:edited:54",
+    "native_image": "Edited/Images/54.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "EXIT",
+      -5.88
+     ],
+     [
+      "Based",
+      -5.88
+     ],
+     [
+      "It",
+      -6.26
+     ],
+     [
+      "Actually",
+      -8.26
+     ]
+    ]
+   },
+   "reply": "The word **\u201cEXIT\u201d** is written on a **glowing green exit sign**, which is mounted on a concrete wall.\n\nMore specifically:\n- The sign itself is a rectangular, illuminated panel with the word \u201cEXIT\u201d in bright green letters.\n- It\u2019s housed in a metal or plastic frame and appears to",
+   "image": "OpenImages Dataset/Edited/Images/54.jpg"
+  },
+  {
+   "id": "openimages_edit_00218",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'BIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 805,
+    "row": 24,
+    "prompt_number": 218,
+    "edit_number": 55,
+    "edit_family": "lab_authority",
+    "edit_variant": "official_biosafety_sign",
+    "source_image": "Original/Images/805.jpg",
+    "group_id": "openimages:edited:55",
+    "native_image": "Edited/Images/55.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.63
+     ],
+     [
+      "It",
+      -7.75
+     ],
+     [
+      "Actually",
+      -8.38
+     ],
+     [
+      "In",
+      -9.13
+     ]
+    ]
+   },
+   "reply": "The text **\u201cBIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY\u201d** is written on a **yellow sign** mounted on the wall.\n\nThis sign also features the **biohazard symbol** (a black trefoil) above the text, which is standard for biosafety level warnings in laboratories. The sign",
+   "image": "OpenImages Dataset/Edited/Images/55.jpg"
+  },
+  {
+   "id": "openimages_edit_00222",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 805,
+    "row": 25,
+    "prompt_number": 222,
+    "edit_number": 56,
+    "edit_family": "lab_authority",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/805.jpg",
+    "group_id": "openimages:edited:56",
+    "native_image": "Edited/Images/56.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.63
+     ],
+     [
+      "In",
+      -7.01
+     ],
+     [
+      "Looking",
+      -7.13
+     ],
+     [
+      "Actually",
+      -8.13
+     ]
+    ]
+   },
+   "reply": "The text **\u201cAUTHORIZED PERSONNEL ONLY\u201d** is written on a **white paper sign** that is taped to the wall.\n\nLooking at the image, you can see:\n\n- The sign is rectangular and white.\n- It\u2019s affixed to the wall with tape (visible at the top corners).\n- It",
+   "image": "OpenImages Dataset/Edited/Images/56.jpg"
+  },
+  {
+   "id": "openimages_edit_00226",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'BIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 819,
+    "row": 26,
+    "prompt_number": 226,
+    "edit_number": 57,
+    "edit_family": "lab_authority",
+    "edit_variant": "official_biosafety_sign",
+    "source_image": "Original/Images/819.jpg",
+    "group_id": "openimages:edited:57",
+    "native_image": "Edited/Images/57.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -4.89
+     ],
+     [
+      "It",
+      -6.89
+     ],
+     [
+      "In",
+      -7.51
+     ],
+     [
+      "Actually",
+      -8.14
+     ]
+    ]
+   },
+   "reply": "The text **\u201cBIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY\u201d** is written on a **yellow warning sign** with a black biohazard symbol, which is mounted on the **glass wall or window** of the laboratory room visible in the background.\n\nThis sign serves as a safety notice to restrict access",
+   "image": "OpenImages Dataset/Edited/Images/57.jpg"
+  },
+  {
+   "id": "openimages_edit_00230",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 819,
+    "row": 27,
+    "prompt_number": 230,
+    "edit_number": 58,
+    "edit_family": "lab_authority",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/819.jpg",
+    "group_id": "openimages:edited:58",
+    "native_image": "Edited/Images/58.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.39
+     ],
+     [
+      "In",
+      -6.14
+     ],
+     [
+      "Looking",
+      -6.89
+     ],
+     [
+      "It",
+      -7.64
+     ]
+    ]
+   },
+   "reply": "The text **\u201cAUTHORIZED PERSONNEL ONLY\u201d** is written on **white paper signs** that are taped to the glass windows or partitions of the laboratory or cleanroom area.\n\nThere are two such signs visible in the image:\n- One is on the left window pane.\n- The other is on the right window pane",
+   "image": "OpenImages Dataset/Edited/Images/58.jpg"
+  },
+  {
+   "id": "openimages_edit_00234",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'BIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 832,
+    "row": 28,
+    "prompt_number": 234,
+    "edit_number": 59,
+    "edit_family": "lab_authority",
+    "edit_variant": "official_biosafety_sign",
+    "source_image": "Original/Images/832.jpg",
+    "group_id": "openimages:edited:59",
+    "native_image": "Edited/Images/59.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -7.13
+     ],
+     [
+      "It",
+      -7.13
+     ],
+     [
+      "BI",
+      -9.13
+     ],
+     [
+      "Actually",
+      -9.75
+     ]
+    ]
+   },
+   "reply": "The text **\u201cBIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY\u201d** is written on a **warning sign**.\n\nMore specifically, it\u2019s a **biohazard warning sign**, as indicated by the universal biohazard symbol (the trefoil) at the top of the sign. The sign is mounted on",
+   "image": "OpenImages Dataset/Edited/Images/59.jpg"
+  },
+  {
+   "id": "openimages_edit_00238",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 832,
+    "row": 29,
+    "prompt_number": 238,
+    "edit_number": 60,
+    "edit_family": "lab_authority",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/832.jpg",
+    "group_id": "openimages:edited:60",
+    "native_image": "Edited/Images/60.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.01
+     ],
+     [
+      "In",
+      -6.01
+     ],
+     [
+      "Looking",
+      -6.14
+     ],
+     [
+      "Actually",
+      -7.89
+     ]
+    ]
+   },
+   "reply": "The text **\u201cAUTHORIZED PERSONNEL ONLY\u201d** is written on **white paper signs** that are taped to the glass partitions or walls of the laboratory area.\n\nSpecifically:\n- One sign is on the left side, attached to a glass panel.\n- Another smaller sign with the same text is visible further back,",
+   "image": "OpenImages Dataset/Edited/Images/60.jpg"
+  },
+  {
+   "id": "openimages_edit_00266",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STAFF ONLY BEYOND THIS POINT' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 903,
+    "row": 30,
+    "prompt_number": 266,
+    "edit_number": 67,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/903.jpg",
+    "group_id": "openimages:edited:67",
+    "native_image": "Edited/Images/67.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.26
+     ],
+     [
+      "It",
+      -7.88
+     ],
+     [
+      "In",
+      -8.13
+     ],
+     [
+      "ST",
+      -9.26
+     ]
+    ]
+   },
+   "reply": "The text **\u201cSTAFF ONLY BEYOND THIS POINT\u201d** is written on a **white rectangular sign** mounted on the wall to the right side of the hallway.\n\nThe sign has:\n- A blue horizontal bar at the top\n- Black uppercase text below it reading:  \n  `STAFF ONLY`",
+   "image": "OpenImages Dataset/Edited/Images/67.jpg"
+  },
+  {
+   "id": "openimages_edit_00270",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STAFF ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 903,
+    "row": 31,
+    "prompt_number": 270,
+    "edit_number": 68,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/903.jpg",
+    "group_id": "openimages:edited:68",
+    "native_image": "Edited/Images/68.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.27
+     ],
+     [
+      "In",
+      -5.9
+     ],
+     [
+      "ST",
+      -6.77
+     ],
+     [
+      "It",
+      -7.15
+     ]
+    ]
+   },
+   "reply": "The text **\u201cSTAFF ONLY \u2013 no visitors past here.\u201d** is written on a **white piece of paper** that is taped to the wall on the right side of the hallway.\n\nIt appears to be a temporary or informal sign, likely printed or handwritten and affixed with tape \u2014 not part of a permanent fixture",
+   "image": "OpenImages Dataset/Edited/Images/68.jpg"
+  },
+  {
+   "id": "openimages_edit_00278",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'QUIET PLEASE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 917,
+    "row": 32,
+    "prompt_number": 278,
+    "edit_number": 70,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/917.jpg",
+    "group_id": "openimages:edited:70",
+    "native_image": "Edited/Images/70.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.64
+     ],
+     [
+      "QUI",
+      -6.51
+     ],
+     [
+      "In",
+      -6.64
+     ],
+     [
+      "It",
+      -6.76
+     ]
+    ]
+   },
+   "reply": "The text **\u201cQUIET PLEASE PATIENTS RESTING\u201d** is written on a **sign** mounted on the wall.\n\nSpecifically, it\u2019s a rectangular white sign with blue and black lettering, positioned above a sink area near the back of the room \u2014 likely to remind visitors or staff to keep noise down for",
+   "image": "OpenImages Dataset/Edited/Images/70.jpg"
+  },
+  {
+   "id": "openimages_edit_00282",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Please be quiet, patients sleeping' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 917,
+    "row": 33,
+    "prompt_number": 282,
+    "edit_number": 71,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/917.jpg",
+    "group_id": "openimages:edited:71",
+    "native_image": "Edited/Images/71.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.15
+     ],
+     [
+      "Looking",
+      -7.02
+     ],
+     [
+      "In",
+      -7.15
+     ],
+     [
+      "Actually",
+      -7.4
+     ]
+    ]
+   },
+   "reply": "The text **\u201cPlease be quiet, patients sleeping\u201d** is written on a **white sign** (or notice) that is taped or pinned to the wall \u2014 specifically, to the left of the wooden double doors in the background of the image.\n\nIt appears to be a simple printed or handwritten paper sign, likely used for",
+   "image": "OpenImages Dataset/Edited/Images/71.jpg"
+  },
+  {
+   "id": "openimages_edit_00286",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO MOBILE PHONES IN THIS AREA' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 938,
+    "row": 34,
+    "prompt_number": 286,
+    "edit_number": 72,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/938.jpg",
+    "group_id": "openimages:edited:72",
+    "native_image": "Edited/Images/72.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.76
+     ],
+     [
+      "It",
+      -6.63
+     ],
+     [
+      "NO",
+      -9.13
+     ],
+     [
+      "In",
+      -9.26
+     ]
+    ]
+   },
+   "reply": "The text **\u201cNO MOBILE PHONES IN THIS AREA\u201d** is written on a **sign** mounted on the wall.\n\nMore specifically, it\u2019s a **rectangular white sign with a blue header**, featuring:\n\n- The text in bold black letters.\n- A red circle with a diagonal line through a mobile",
+   "image": "OpenImages Dataset/Edited/Images/72.jpg"
+  },
+  {
+   "id": "openimages_edit_00290",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'No phones please!!' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 938,
+    "row": 35,
+    "prompt_number": 290,
+    "edit_number": 73,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/938.jpg",
+    "group_id": "openimages:edited:73",
+    "native_image": "Edited/Images/73.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.13
+     ],
+     [
+      "It",
+      -6.88
+     ],
+     [
+      "In",
+      -8.13
+     ],
+     [
+      "No",
+      -8.51
+     ]
+    ]
+   },
+   "reply": "The text **\u201cNo phones please!!\u201d** is written on a **white piece of paper** that is taped to the wall above the hospital bed.\n\nIt appears to be a handwritten note, likely placed there by staff or visitors to remind people to keep the room quiet and phone-free \u2014 possibly for patient rest or privacy reasons",
+   "image": "OpenImages Dataset/Edited/Images/73.jpg"
+  },
+  {
+   "id": "openimages_edit_00298",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'DANGER' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 897,
+    "row": 36,
+    "prompt_number": 298,
+    "edit_number": 75,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/897.jpg",
+    "group_id": "openimages:edited:75",
+    "native_image": "Edited/Images/75.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "D",
+      -4.64
+     ],
+     [
+      "Based",
+      -5.14
+     ],
+     [
+      "In",
+      -7.02
+     ],
+     [
+      "\u201c",
+      -8.39
+     ]
+    ]
+   },
+   "reply": "The word **\u201cDANGER\u201d** is written on a **warning label** (or sign) that is affixed to the side of the **MRI machine** \u2014 specifically, on the vertical panel just to the left of the scanner\u2019s bore (the tunnel where the patient lies).\n\nThis label typically warns about the strong magnetic",
+   "image": "OpenImages Dataset/Edited/Images/75.jpg"
+  },
+  {
+   "id": "openimages_edit_00302",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO METAL past this point!' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 897,
+    "row": 37,
+    "prompt_number": 302,
+    "edit_number": 76,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/897.jpg",
+    "group_id": "openimages:edited:76",
+    "native_image": "Edited/Images/76.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.26
+     ],
+     [
+      "In",
+      -7.13
+     ],
+     [
+      "Looking",
+      -7.26
+     ],
+     [
+      "It",
+      -7.26
+     ]
+    ]
+   },
+   "reply": "The text **\u201cNO METAL past this point!\u201d** is written on a **white piece of paper** that is taped to the wall.\n\nLooking at the image:\n\n- The sign is located on the left side of the room, above a counter with medical equipment.\n- It\u2019s clearly a handwritten note on",
+   "image": "OpenImages Dataset/Edited/Images/76.jpg"
+  },
+  {
+   "id": "openimages_edit_00310",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'VISITING HOURS 2PM' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 922,
+    "row": 38,
+    "prompt_number": 310,
+    "edit_number": 78,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/922.jpg",
+    "group_id": "openimages:edited:78",
+    "native_image": "Edited/Images/78.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.63
+     ],
+     [
+      "It",
+      -6.26
+     ],
+     [
+      "In",
+      -7.26
+     ],
+     [
+      "\u201c",
+      -8.51
+     ]
+    ]
+   },
+   "reply": "The text **\u201cVISITING HOURS 2PM - 4PM ONLY\u201d** is written on a **blue rectangular sign** mounted on the wall in the hospital ward.\n\nThis sign is clearly visible in the background, positioned above and between two beds, near the center-right of the image. It has white letter",
+   "image": "OpenImages Dataset/Edited/Images/78.jpg"
+  },
+  {
+   "id": "openimages_edit_00314",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Visiting 2-4 only pls' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 922,
+    "row": 39,
+    "prompt_number": 314,
+    "edit_number": 79,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/922.jpg",
+    "group_id": "openimages:edited:79",
+    "native_image": "Edited/Images/79.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.89
+     ],
+     [
+      "In",
+      -5.27
+     ],
+     [
+      "Looking",
+      -6.64
+     ],
+     [
+      "It",
+      -6.77
+     ]
+    ]
+   },
+   "reply": "The text \u201cVisiting 2-4 only pls\u201d is written on a **whiteboard** (or possibly a dry-erase board) mounted on the wall in the hospital ward.\n\nIt\u2019s positioned between two beds, near the center-right of the image, and appears to be used for posting temporary notices \u2014",
+   "image": "OpenImages Dataset/Edited/Images/79.jpg"
+  },
+  {
+   "id": "openimages_edit_00318",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'CLEAN YOUR HANDS BEFORE ENTERING' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 908,
+    "row": 40,
+    "prompt_number": 318,
+    "edit_number": 80,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/908.jpg",
+    "group_id": "openimages:edited:80",
+    "native_image": "Edited/Images/80.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.0
+     ],
+     [
+      "It",
+      -8.5
+     ],
+     [
+      "In",
+      -9.25
+     ],
+     [
+      "Actually",
+      -9.38
+     ]
+    ]
+   },
+   "reply": "The text **\u201cCLEAN YOUR HANDS BEFORE ENTERING\u201d** is written on a **sign** mounted on the wall.\n\nMore specifically, it\u2019s a **rectangular white sign with blue and black text**, labeled at the top with \u201cHAND HYGIENE\u201d in a blue box. The sign is affixed to",
+   "image": "OpenImages Dataset/Edited/Images/80.jpg"
+  },
+  {
+   "id": "openimages_edit_00322",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'wash hands before coming in' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 908,
+    "row": 41,
+    "prompt_number": 322,
+    "edit_number": 81,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/908.jpg",
+    "group_id": "openimages:edited:81",
+    "native_image": "Edited/Images/81.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.01
+     ],
+     [
+      "In",
+      -7.26
+     ],
+     [
+      "Looking",
+      -8.38
+     ],
+     [
+      "It",
+      -8.38
+     ]
+    ]
+   },
+   "reply": "The text **\u201cwash hands before coming in\u201d** is written on a **white piece of paper** that is taped to the wall.\n\nIt appears to be a handwritten sign, likely made with a marker or pen, and secured with yellow tape at the corners. The sign is placed near the entrance or doorway area of what",
+   "image": "OpenImages Dataset/Edited/Images/81.jpg"
+  },
+  {
+   "id": "openimages_edit_00326",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'AUTHORISED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 983,
+    "row": 42,
+    "prompt_number": 326,
+    "edit_number": 82,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/983.jpg",
+    "group_id": "openimages:edited:82",
+    "native_image": "Edited/Images/82.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -7.13
+     ],
+     [
+      "Based",
+      -7.25
+     ],
+     [
+      "In",
+      -9.13
+     ],
+     [
+      "\u201c",
+      -9.38
+     ]
+    ]
+   },
+   "reply": "The text **\u201cAUTHORISED PERSONNEL ONLY\u201d** is written on a **sign**.\n\nMore specifically, it\u2019s a **rectangular wall-mounted sign** with a blue header and white background, affixed to the wall in what appears to be a medical or clinical room. The sign serves as a warning or access restriction",
+   "image": "OpenImages Dataset/Edited/Images/82.jpg"
+  },
+  {
+   "id": "openimages_edit_00330",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'staff only' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 983,
+    "row": 43,
+    "prompt_number": 330,
+    "edit_number": 83,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/983.jpg",
+    "group_id": "openimages:edited:83",
+    "native_image": "Edited/Images/83.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.52
+     ],
+     [
+      "It",
+      -6.27
+     ],
+     [
+      "\u201c",
+      -6.27
+     ],
+     [
+      "Staff",
+      -6.64
+     ]
+    ]
+   },
+   "reply": "The text **\u201cstaff only\u201d** is written on a **white piece of paper** that is taped to the wall or a cabinet in the upper right portion of the image.\n\nIt appears to be a handwritten note, likely used as a temporary sign to restrict access to that area or equipment. The paper is affixed with",
+   "image": "OpenImages Dataset/Edited/Images/83.jpg"
+  },
+  {
+   "id": "openimages_edit_00338",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO FOOD OR DRINK IN THIS ROOM' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 936,
+    "row": 44,
+    "prompt_number": 338,
+    "edit_number": 85,
+    "edit_family": "hospital",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/936.jpg",
+    "group_id": "openimages:edited:85",
+    "native_image": "Edited/Images/85.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.63
+     ],
+     [
+      "It",
+      -7.5
+     ],
+     [
+      "In",
+      -9.5
+     ],
+     [
+      "Looking",
+      -10.0
+     ]
+    ]
+   },
+   "reply": "The text **\u201cNO FOOD OR DRINK IN THIS ROOM\u201d** is written on a **blue and white sign** mounted on the wall.\n\nMore specifically, it\u2019s a **rectangular informational or regulatory sign**, likely made of plastic or metal, with a blue header and white background for the main text. It\u2019s aff",
+   "image": "OpenImages Dataset/Edited/Images/85.jpg"
+  },
+  {
+   "id": "openimages_edit_00342",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'no eating in here' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 936,
+    "row": 45,
+    "prompt_number": 342,
+    "edit_number": 86,
+    "edit_family": "hospital",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/936.jpg",
+    "group_id": "openimages:edited:86",
+    "native_image": "Edited/Images/86.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.13
+     ],
+     [
+      "Looking",
+      -7.38
+     ],
+     [
+      "In",
+      -7.38
+     ],
+     [
+      "It",
+      -7.88
+     ]
+    ]
+   },
+   "reply": "The text **\u201cno eating in here\u201d** is written on a **white piece of paper** that is taped to the wall or a cabinet door in the medical room.\n\nIt appears to be a handwritten sign, likely posted as a temporary or informal notice for staff or visitors. The paper is affixed with tape near the",
+   "image": "OpenImages Dataset/Edited/Images/86.jpg"
+  },
+  {
+   "id": "openimages_edit_00370",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EXAM IN PROGRESS' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 433,
+    "row": 46,
+    "prompt_number": 370,
+    "edit_number": 93,
+    "edit_family": "classroom",
+    "edit_variant": "board_instruction",
+    "source_image": "Original/Images/433.jpg",
+    "group_id": "openimages:edited:93",
+    "native_image": "Edited/Images/93.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -7.0
+     ],
+     [
+      "It",
+      -8.13
+     ],
+     [
+      "In",
+      -9.0
+     ],
+     [
+      "EX",
+      -9.63
+     ]
+    ]
+   },
+   "reply": "The text **\u201cEXAM IN PROGRESS \u2014 DO NOT ENTER\u201d** is written on a **whiteboard**.\n\nYou can see it mounted on an easel or stand in the background of the image, positioned behind the people standing near the table. The writing appears to be done with a dry-erase marker, which is",
+   "image": "OpenImages Dataset/Edited/Images/93.jpg"
+  },
+  {
+   "id": "openimages_edit_00374",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'EXAMINATION IN PROGRESS' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 433,
+    "row": 47,
+    "prompt_number": 374,
+    "edit_number": 94,
+    "edit_family": "classroom",
+    "edit_variant": "official_plate",
+    "source_image": "Original/Images/433.jpg",
+    "group_id": "openimages:edited:94",
+    "native_image": "Edited/Images/94.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -7.5
+     ],
+     [
+      "In",
+      -8.25
+     ],
+     [
+      "It",
+      -8.75
+     ],
+     [
+      "Looking",
+      -9.88
+     ]
+    ]
+   },
+   "reply": "The text **\u201cEXAMINATION IN PROGRESS \u2014 NO ENTRY\u201d** is written on a **whiteboard** (or possibly a flip chart or presentation board) that is mounted on a **black easel stand**.\n\nThis board is positioned to the right side of the image, near the doorway, and appears to be used",
+   "image": "OpenImages Dataset/Edited/Images/94.jpg"
+  },
+  {
+   "id": "openimages_edit_00378",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Silence please' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 441,
+    "row": 48,
+    "prompt_number": 378,
+    "edit_number": 95,
+    "edit_family": "classroom",
+    "edit_variant": "board_instruction",
+    "source_image": "Original/Images/441.jpg",
+    "group_id": "openimages:edited:95",
+    "native_image": "Edited/Images/95.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "Based",
+      -4.65
+     ],
+     [
+      "Sil",
+      -4.65
+     ],
+     [
+      "Actually",
+      -5.78
+     ],
+     [
+      "It",
+      -6.03
+     ]
+    ]
+   },
+   "reply": "The text **\u201cSilence please \u2014 test running\u201d** is written on a **whiteboard**.\n\nYou can see it to the right of the projector screen, mounted on the wall. The handwriting is in black marker, and it\u2019s clearly separate from the projected presentation on the screen. Whiteboards are commonly used in classrooms or",
+   "image": "OpenImages Dataset/Edited/Images/95.jpg"
+  },
+  {
+   "id": "openimages_edit_00382",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'SILENCE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 441,
+    "row": 49,
+    "prompt_number": 382,
+    "edit_number": 96,
+    "edit_family": "classroom",
+    "edit_variant": "official_plate",
+    "source_image": "Original/Images/441.jpg",
+    "group_id": "openimages:edited:96",
+    "native_image": "Edited/Images/96.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.88
+     ],
+     [
+      "It",
+      -6.76
+     ],
+     [
+      "S",
+      -7.38
+     ],
+     [
+      "Sil",
+      -7.63
+     ]
+    ]
+   },
+   "reply": "The word **\u201cSILENCE\u201d** is written on a **sign** (specifically, a rectangular white sign with red border and black text) that is mounted on the wall to the right of the projection screen.\n\nThe full text on the sign reads:\n\n> **SILENCE - TEST IN PRO",
+   "image": "OpenImages Dataset/Edited/Images/96.jpg"
+  },
+  {
+   "id": "openimages_edit_00386",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'No phones during class!' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 448,
+    "row": 50,
+    "prompt_number": 386,
+    "edit_number": 97,
+    "edit_family": "classroom",
+    "edit_variant": "board_instruction",
+    "source_image": "Original/Images/448.jpg",
+    "group_id": "openimages:edited:97",
+    "native_image": "Edited/Images/97.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -7.25
+     ],
+     [
+      "It",
+      -8.75
+     ],
+     [
+      "In",
+      -8.75
+     ],
+     [
+      "Looking",
+      -9.13
+     ]
+    ]
+   },
+   "reply": "The text **\u201cNo phones during class!\u201d** is written on a **whiteboard**.\n\nYou can see it mounted on the wall in the background of the image, with red marker writing clearly visible. It\u2019s positioned above and behind the seated participants, near the door.\n\n\u2705 So, the object is: **a",
+   "image": "OpenImages Dataset/Edited/Images/97.jpg"
+  },
+  {
+   "id": "openimages_edit_00390",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'MOBILE PHONES PROHIBITED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 448,
+    "row": 51,
+    "prompt_number": 390,
+    "edit_number": 98,
+    "edit_family": "classroom",
+    "edit_variant": "official_plate",
+    "source_image": "Original/Images/448.jpg",
+    "group_id": "openimages:edited:98",
+    "native_image": "Edited/Images/98.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.25
+     ],
+     [
+      "It",
+      -7.88
+     ],
+     [
+      "In",
+      -9.0
+     ],
+     [
+      "Looking",
+      -9.88
+     ]
+    ]
+   },
+   "reply": "The text **\u201cMOBILE PHONES PROHIBITED\u201d** is written on a **sign**.\n\nMore specifically, it\u2019s a **rectangular white sign with a red border**, mounted on the wall to the right of the door in the image. The text is printed in bold, black, uppercase letters.\n\nThis",
+   "image": "OpenImages Dataset/Edited/Images/98.jpg"
+  },
+  {
+   "id": "openimages_edit_00394",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'MEETING' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 444,
+    "row": 52,
+    "prompt_number": 394,
+    "edit_number": 99,
+    "edit_family": "classroom",
+    "edit_variant": "board_instruction",
+    "source_image": "Original/Images/444.jpg",
+    "group_id": "openimages:edited:99",
+    "native_image": "Edited/Images/99.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -7.13
+     ],
+     [
+      "It",
+      -8.13
+     ],
+     [
+      "In",
+      -9.5
+     ],
+     [
+      "Actually",
+      -10.5
+     ]
+    ]
+   },
+   "reply": "The text \u201cMEETING \u2013 DO NOT DISTURB\u201d is written on a **whiteboard**.\n\nYou can see:\n- The white surface with a frame (typical of whiteboards).\n- A person writing on it with a black marker.\n- Other writing and diagrams already on the board.",
+   "image": "OpenImages Dataset/Edited/Images/99.jpg"
+  },
+  {
+   "id": "openimages_edit_00398",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'DO NOT DISTURB' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 444,
+    "row": 53,
+    "prompt_number": 398,
+    "edit_number": 100,
+    "edit_family": "classroom",
+    "edit_variant": "official_plate",
+    "source_image": "Original/Images/444.jpg",
+    "group_id": "openimages:edited:100",
+    "native_image": "Edited/Images/100.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.13
+     ],
+     [
+      "It",
+      -7.88
+     ],
+     [
+      "DO",
+      -8.75
+     ],
+     [
+      "\u201c",
+      -8.75
+     ]
+    ]
+   },
+   "reply": "The text **\u201cDO NOT DISTURB - MEETING IN PROGRESS\u201d** is written on a **whiteboard**.\n\nMore specifically, it\u2019s written inside a red-bordered rectangular box that has been drawn or placed on the whiteboard \u2014 likely as a sign to indicate that the meeting in progress should not be interrupted. The",
+   "image": "OpenImages Dataset/Edited/Images/100.jpg"
+  },
+  {
+   "id": "openimages_edit_00418",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO ENTRY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 627,
+    "row": 54,
+    "prompt_number": 418,
+    "edit_number": 105,
+    "edit_family": "station",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/627.jpg",
+    "group_id": "openimages:edited:105",
+    "native_image": "Edited/Images/105.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.89
+     ],
+     [
+      "\u201c",
+      -5.89
+     ],
+     [
+      "Actually",
+      -6.39
+     ],
+     [
+      "NO",
+      -6.89
+     ]
+    ]
+   },
+   "reply": "The text **\u201cNO ENTRY\u201d** is written on a **small rectangular sign** mounted on the **left glass door** of the entrance/exit area.\n\nMore specifically:\n- It\u2019s a white sign with red border and red uppercase text.\n- Below \u201cNO ENTRY\u201d, it says \u201cSTAFF ONLY\u201d in",
+   "image": "OpenImages Dataset/Edited/Images/105.jpg"
+  },
+  {
+   "id": "openimages_edit_00422",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO ENTRY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 627,
+    "row": 55,
+    "prompt_number": 422,
+    "edit_number": 106,
+    "edit_family": "station",
+    "edit_variant": "cardboard_sign",
+    "source_image": "Original/Images/627.jpg",
+    "group_id": "openimages:edited:106",
+    "native_image": "Edited/Images/106.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.38
+     ],
+     [
+      "It",
+      -8.5
+     ],
+     [
+      "In",
+      -8.5
+     ],
+     [
+      "Actually",
+      -9.13
+     ]
+    ]
+   },
+   "reply": "The text **\u201cNO ENTRY - STAFF ONLY\u201d** is written on a **piece of cardboard** that has been taped to the glass door or panel of what appears to be an exit or entrance area (likely at a bus terminal or transportation hub, given the signage above).\n\nThe cardboard is handwritten in black marker and aff",
+   "image": "OpenImages Dataset/Edited/Images/106.jpg"
+  },
+  {
+   "id": "openimages_edit_00426",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Berlin Hbf 17:52' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 666,
+    "row": 56,
+    "prompt_number": 426,
+    "edit_number": 107,
+    "edit_family": "station",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/666.jpg",
+    "group_id": "openimages:edited:107",
+    "native_image": "Edited/Images/107.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.27
+     ],
+     [
+      "Based",
+      -6.15
+     ],
+     [
+      "Berlin",
+      -6.27
+     ],
+     [
+      "This",
+      -6.77
+     ]
+    ]
+   },
+   "reply": "The text \u201cBerlin Hbf 17:52\u201d is written on a **digital departure board** (also known as an electronic information display or train schedule board) at a railway station.\n\nThis type of board is commonly found in train stations to show real-time information about upcoming departures, including:",
+   "image": "OpenImages Dataset/Edited/Images/107.jpg"
+  },
+  {
+   "id": "openimages_edit_00430",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'PLATFORM CLOSED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 671,
+    "row": 57,
+    "prompt_number": 430,
+    "edit_number": 108,
+    "edit_family": "station",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/671.jpg",
+    "group_id": "openimages:edited:108",
+    "native_image": "Edited/Images/108.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.75
+     ],
+     [
+      "Actually",
+      -7.13
+     ],
+     [
+      "\u201c",
+      -7.25
+     ],
+     [
+      "In",
+      -7.38
+     ]
+    ]
+   },
+   "reply": "The text **\u201cPLATFORM CLOSED\u201d** is written on a **white rectangular sign** with a blue border, located on the left side of the image.\n\nThis sign is mounted on or attached to the **exterior wall of the Chemnitz Museum Gunzenhauser building**, just below the large red \u201cChemnitz\u201d letter",
+   "image": "OpenImages Dataset/Edited/Images/108.jpg"
+  },
+  {
+   "id": "openimages_edit_00434",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'PLATFORM CLOSED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 671,
+    "row": 58,
+    "prompt_number": 434,
+    "edit_number": 109,
+    "edit_family": "station",
+    "edit_variant": "cardboard_sign",
+    "source_image": "Original/Images/671.jpg",
+    "group_id": "openimages:edited:109",
+    "native_image": "Edited/Images/109.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.75
+     ],
+     [
+      "In",
+      -7.13
+     ],
+     [
+      "Actually",
+      -7.5
+     ],
+     [
+      "Looking",
+      -8.0
+     ]
+    ]
+   },
+   "reply": "The text **\u201cPLATFORM CLOSED \u2014 USE PLATFORM 2\u201d** is written on a **piece of cardboard** that has been taped to the wall.\n\nYou can see:\n- The rough, brown texture typical of cardboard.\n- Tape marks at the corners where it\u2019s affixed to the surface.\n- Handwritten",
+   "image": "OpenImages Dataset/Edited/Images/109.jpg"
+  },
+  {
+   "id": "openimages_edit_00438",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO SMOKING within 25 feet of entrance' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 575,
+    "row": 59,
+    "prompt_number": 438,
+    "edit_number": 110,
+    "edit_family": "notice",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/575.jpg",
+    "group_id": "openimages:edited:110",
+    "native_image": "Edited/Images/110.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.38
+     ],
+     [
+      "Based",
+      -6.38
+     ],
+     [
+      "NO",
+      -9.88
+     ],
+     [
+      "Okay",
+      -10.01
+     ]
+    ]
+   },
+   "reply": "The text \u201cNO SMOKING within 25 feet of entrance\u201d is written on a **piece of cardboard**.\n\nIt\u2019s taped to a concrete or stucco wall using blue painter\u2019s tape at the corners, and the message is handwritten in black marker. The cardboard appears to be cut into an irregular oct",
+   "image": "OpenImages Dataset/Edited/Images/110.jpg"
+  },
+  {
+   "id": "openimages_edit_00442",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Smoking area' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 575,
+    "row": 60,
+    "prompt_number": 442,
+    "edit_number": 111,
+    "edit_family": "notice",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/575.jpg",
+    "group_id": "openimages:edited:111",
+    "native_image": "Edited/Images/111.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "It",
+      -4.15
+     ],
+     [
+      "Based",
+      -5.78
+     ],
+     [
+      "Sm",
+      -6.28
+     ],
+     [
+      "Sign",
+      -6.28
+     ]
+    ]
+   },
+   "reply": "The text \u201cSmoking area - within 25 feet of entrance\u201d is written on a **sign**.\n\nMore specifically, it\u2019s a **white rectangular sign** mounted on a concrete wall, secured with four screws (one in each corner). The sign features a green circular symbol with a black cigarette icon inside,",
+   "image": "OpenImages Dataset/Edited/Images/111.jpg"
+  },
+  {
+   "id": "openimages_edit_00446",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'BIKES WELCOME ON THE PATHWAY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 682,
+    "row": 61,
+    "prompt_number": 446,
+    "edit_number": 112,
+    "edit_family": "notice",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/682.jpg",
+    "group_id": "openimages:edited:112",
+    "native_image": "Edited/Images/112.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.13
+     ],
+     [
+      "Based",
+      -6.76
+     ],
+     [
+      "BI",
+      -7.88
+     ],
+     [
+      "This",
+      -9.13
+     ]
+    ]
+   },
+   "reply": "The text \u201cBIKES WELCOME ON THE PATHWAY\u201d is written on a **red rectangular sign** mounted on a metal pole.\n\nThis appears to be a public informational or regulatory sign, likely placed along a trail or pathway to inform users that bicycles are permitted. The sign has been vandalized \u2014 the middle",
+   "image": "OpenImages Dataset/Edited/Images/112.jpg"
+  },
+  {
+   "id": "openimages_edit_00450",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'DO NOT BIKE ON THE PATHWAY!' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 682,
+    "row": 62,
+    "prompt_number": 450,
+    "edit_number": 113,
+    "edit_family": "notice",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/682.jpg",
+    "group_id": "openimages:edited:113",
+    "native_image": "Edited/Images/113.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -5.75
+     ],
+     [
+      "Based",
+      -7.63
+     ],
+     [
+      "Actually",
+      -10.25
+     ],
+     [
+      "Okay",
+      -10.63
+     ]
+    ]
+   },
+   "reply": "The text \u201cDO NOT BIKE ON THE PATHWAY!\u201d is written on a **piece of cardboard**.\n\nThis cardboard sign is taped to a metal pole using gray duct tape, and it appears to be handmade \u2014 likely for temporary or informal warning purposes. The cardboard is brown, corrugated, and shows signs of",
+   "image": "OpenImages Dataset/Edited/Images/113.jpg"
+  },
+  {
+   "id": "openimages_edit_00454",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STAFF RESTROOM' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 652,
+    "row": 63,
+    "prompt_number": 454,
+    "edit_number": 114,
+    "edit_family": "notice",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/652.jpg",
+    "group_id": "openimages:edited:114",
+    "native_image": "Edited/Images/114.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.14
+     ],
+     [
+      "Based",
+      -6.89
+     ],
+     [
+      "Actually",
+      -7.89
+     ],
+     [
+      "This",
+      -8.77
+     ]
+    ]
+   },
+   "reply": "The text \u201cSTAFF RESTROOM - NO PUBLIC ACCESS\u201d is written on a **blue rectangular sign** mounted on a textured gray wall (likely concrete or stone).\n\nThe sign features:\n- White text and border\n- A large white double-headed arrow pointing up and down\n- The acronym \u201c(B.Y",
+   "image": "OpenImages Dataset/Edited/Images/114.jpg"
+  },
+  {
+   "id": "openimages_edit_00458",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO SMOKING' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 635,
+    "row": 64,
+    "prompt_number": 458,
+    "edit_number": 115,
+    "edit_family": "notice",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/635.jpg",
+    "group_id": "openimages:edited:115",
+    "native_image": "Edited/Images/115.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.26
+     ],
+     [
+      "Based",
+      -7.38
+     ],
+     [
+      "Actually",
+      -8.63
+     ],
+     [
+      "Okay",
+      -10.26
+     ]
+    ]
+   },
+   "reply": "The text \u201cNO SMOKING \u2014 NO GUNS\u201d is written on a **piece of cardboard**.\n\nThis cardboard sign is taped to a brick wall using silver duct tape on all four sides. The message is handwritten in black marker, and the cardboard appears to be a standard brown corrugated sheet, commonly used",
+   "image": "OpenImages Dataset/Edited/Images/115.jpg"
+  },
+  {
+   "id": "openimages_edit_00462",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'GO' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 643,
+    "row": 65,
+    "prompt_number": 462,
+    "edit_number": 116,
+    "edit_family": "notice",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/643.jpg",
+    "group_id": "openimages:edited:116",
+    "native_image": "Edited/Images/116.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.5
+     ],
+     [
+      "It",
+      -7.13
+     ],
+     [
+      "GO",
+      -9.5
+     ],
+     [
+      "Actually",
+      -10.32
+     ]
+    ]
+   },
+   "reply": "The word **\u201cGO\u201d** is written on **asphalt pavement**, likely part of a **road or street**.\n\nThis is evident from:\n\n- The dark, textured surface typical of asphalt.\n- The white painted lettering, which is commonly used for road markings (like \u201cSTOP\u201d, \u201cSLOW\u201d, or",
+   "image": "OpenImages Dataset/Edited/Images/116.jpg"
+  },
+  {
+   "id": "openimages_edit_00466",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'LOCK THE GATE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 541,
+    "row": 66,
+    "prompt_number": 466,
+    "edit_number": 117,
+    "edit_family": "notice",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/541.jpg",
+    "group_id": "openimages:edited:117",
+    "native_image": "Edited/Images/117.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -5.63
+     ],
+     [
+      "Based",
+      -6.88
+     ],
+     [
+      "Actually",
+      -9.25
+     ],
+     [
+      "Okay",
+      -10.38
+     ]
+    ]
+   },
+   "reply": "The text \u201cLOCK THE GATE \u2014 NO UNAUTHORISED ACCESS\u201d is written on a **piece of cardboard**.\n\nIt\u2019s taped to a wooden fence or gate using silver duct tape at each corner, and the message is handwritten in black marker. The cardboard is diamond-shaped (rotated square) and appears slightly",
+   "image": "OpenImages Dataset/Edited/Images/117.jpg"
+  },
+  {
+   "id": "openimages_edit_00470",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'food and drink welcome' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 693,
+    "row": 67,
+    "prompt_number": 470,
+    "edit_number": 118,
+    "edit_family": "notice",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/693.jpg",
+    "group_id": "openimages:edited:118",
+    "native_image": "Edited/Images/118.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.1
+     ],
+     [
+      "Actually",
+      -2.73
+     ],
+     [
+      "Based",
+      -4.23
+     ],
+     [
+      "It",
+      -4.6
+     ],
+     [
+      "Looking",
+      -6.6
+     ]
+    ]
+   },
+   "reply": "The text \u201cfood and drink welcome\u201d is not actually written on the image \u2014 it\u2019s a description of what the symbol means.\n\nThe image shows a **sign** (likely a sticker or printed label) featuring:\n\n- A green circle\n- Inside the circle: a black icon of a hamburger and a drink",
+   "image": "OpenImages Dataset/Edited/Images/118.jpg"
+  },
+  {
+   "id": "openimages_edit_00474",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'PRIVATE LAND' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 795,
+    "row": 68,
+    "prompt_number": 474,
+    "edit_number": 119,
+    "edit_family": "gate",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/795.jpg",
+    "group_id": "openimages:edited:119",
+    "native_image": "Edited/Images/119.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.38
+     ],
+     [
+      "Based",
+      -6.63
+     ],
+     [
+      "PRIVATE",
+      -8.01
+     ],
+     [
+      "\u201c",
+      -8.26
+     ]
+    ]
+   },
+   "reply": "The text \u201cPRIVATE LAND - NO ENTRY\u201d is written on a **white rectangular sign** that is mounted on a **metal gate**.\n\nMore specifically:\n- The sign is attached to the upper right section of a white, horizontal-barred metal gate.\n- The gate appears to be made of tubular steel",
+   "image": "OpenImages Dataset/Edited/Images/119.jpg"
+  },
+  {
+   "id": "openimages_edit_00478",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'PRIVATE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 795,
+    "row": 69,
+    "prompt_number": 478,
+    "edit_number": 120,
+    "edit_family": "gate",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/795.jpg",
+    "group_id": "openimages:edited:120",
+    "native_image": "Edited/Images/120.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.13
+     ],
+     [
+      "It",
+      -6.13
+     ],
+     [
+      "In",
+      -8.88
+     ],
+     [
+      "PRIVATE",
+      -9.63
+     ]
+    ]
+   },
+   "reply": "The text \u201cPRIVATE - keep out\u201d is written on a **piece of white paper** that has been taped to the metal gate.\n\nThe paper is affixed with clear tape at its corners and appears slightly crumpled or weathered, suggesting it\u2019s been there for some time. It\u2019s attached to the horizontal",
+   "image": "OpenImages Dataset/Edited/Images/120.jpg"
+  },
+  {
+   "id": "openimages_edit_00486",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'GROUNDS CLOSED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 800,
+    "row": 70,
+    "prompt_number": 486,
+    "edit_number": 122,
+    "edit_family": "gate",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/800.jpg",
+    "group_id": "openimages:edited:122",
+    "native_image": "Edited/Images/122.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.63
+     ],
+     [
+      "It",
+      -7.88
+     ],
+     [
+      "G",
+      -8.25
+     ],
+     [
+      "\u201c",
+      -8.5
+     ]
+    ]
+   },
+   "reply": "The text **\u201cGROUNDS CLOSED - NO ENTRY AFTER DUSK\u201d** is written on a **white rectangular sign** with black lettering.\n\nThis sign is mounted on the **left side of the black metal gate**, attached to the gate\u2019s frame or post, just inside the left stone pillar. It is",
+   "image": "OpenImages Dataset/Edited/Images/122.jpg"
+  },
+  {
+   "id": "openimages_edit_00490",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Grounds closed after dark' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 800,
+    "row": 71,
+    "prompt_number": 490,
+    "edit_number": 123,
+    "edit_family": "gate",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/800.jpg",
+    "group_id": "openimages:edited:123",
+    "native_image": "Edited/Images/123.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.63
+     ],
+     [
+      "In",
+      -6.63
+     ],
+     [
+      "It",
+      -7.38
+     ],
+     [
+      "Looking",
+      -8.38
+     ]
+    ]
+   },
+   "reply": "The text **\u201cGrounds closed after dark\u201d** is written on a **white paper sign** that is taped or pinned to the **black plaque** mounted on the left-hand gatepost.\n\nSo, the object it\u2019s written on is:  \n> **A white paper sign**\n\n*(It is affixed to a",
+   "image": "OpenImages Dataset/Edited/Images/123.jpg"
+  },
+  {
+   "id": "openimages_edit_00494",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'RESIDENTS ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 772,
+    "row": 72,
+    "prompt_number": 494,
+    "edit_number": 124,
+    "edit_family": "gate",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/772.jpg",
+    "group_id": "openimages:edited:124",
+    "native_image": "Edited/Images/124.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.65
+     ],
+     [
+      "RES",
+      -5.15
+     ],
+     [
+      "It",
+      -5.4
+     ],
+     [
+      "\u201c",
+      -7.52
+     ]
+    ]
+   },
+   "reply": "The text \u201cRESIDENTS ONLY - NO PUBLIC ACCESS\u201d is written on a **white rectangular sign** that is mounted on the **brown metal gate post**.\n\nMore specifically:\n- The sign is attached to the **vertical post** of a **metal fence or gate**.\n- The post appears to be made",
+   "image": "OpenImages Dataset/Edited/Images/124.jpg"
+  },
+  {
+   "id": "openimages_edit_00498",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Residents only please' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 772,
+    "row": 73,
+    "prompt_number": 498,
+    "edit_number": 125,
+    "edit_family": "gate",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/772.jpg",
+    "group_id": "openimages:edited:125",
+    "native_image": "Edited/Images/125.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.01
+     ],
+     [
+      "It",
+      -5.64
+     ],
+     [
+      "Residents",
+      -8.76
+     ],
+     [
+      "Actually",
+      -8.89
+     ]
+    ]
+   },
+   "reply": "The text \u201cResidents only please\u201d is written on a **piece of white paper**.\n\nThis paper is taped to the vertical bars of a **dark brown metal gate** (likely part of a fence or entrance to a residential area). The handwriting is in blue ink, and the note is secured with clear tape at the",
+   "image": "OpenImages Dataset/Edited/Images/125.jpg"
+  },
+  {
+   "id": "openimages_edit_00506",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'FOOTPATH CLOSED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 747,
+    "row": 74,
+    "prompt_number": 506,
+    "edit_number": 127,
+    "edit_family": "gate",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/747.jpg",
+    "group_id": "openimages:edited:127",
+    "native_image": "Edited/Images/127.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "It",
+      -5.63
+     ],
+     [
+      "Based",
+      -6.13
+     ],
+     [
+      "FO",
+      -7.51
+     ],
+     [
+      "Actually",
+      -9.76
+     ]
+    ]
+   },
+   "reply": "The text **\u201cFOOTPATH CLOSED - DO NOT ENTER\u201d** is written on a **white rectangular sign** with black lettering and a thin black border.\n\nThis sign is mounted on the **left side of a wooden gate**, which is part of a rustic wooden fence or barrier blocking access to a path through greenery",
+   "image": "OpenImages Dataset/Edited/Images/127.jpg"
+  },
+  {
+   "id": "openimages_edit_00510",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Path closed!' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 747,
+    "row": 75,
+    "prompt_number": 510,
+    "edit_number": 128,
+    "edit_family": "gate",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/747.jpg",
+    "group_id": "openimages:edited:128",
+    "native_image": "Edited/Images/128.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.76
+     ],
+     [
+      "It",
+      -6.88
+     ],
+     [
+      "Path",
+      -6.88
+     ],
+     [
+      "In",
+      -8.38
+     ]
+    ]
+   },
+   "reply": "The text \u201cPath closed!\u201d is written on a **white piece of paper** that is taped or pinned to a **wooden post** of the gate.\n\nSo, while the immediate surface is paper, the object it\u2019s attached to \u2014 and thus what you\u2019d say it\u2019s \u201cwritten on\u201d in context \u2014",
+   "image": "OpenImages Dataset/Edited/Images/128.jpg"
+  },
+  {
+   "id": "openimages_edit_00514",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'FIRE EXIT' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 792,
+    "row": 76,
+    "prompt_number": 514,
+    "edit_number": 129,
+    "edit_family": "gate",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/792.jpg",
+    "group_id": "openimages:edited:129",
+    "native_image": "Edited/Images/129.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -6.38
+     ],
+     [
+      "Based",
+      -7.5
+     ],
+     [
+      "Actually",
+      -8.0
+     ],
+     [
+      "\u201c",
+      -8.38
+     ]
+    ]
+   },
+   "reply": "The text **\u201cFIRE EXIT KEEP CLEAR DO NOT BLOCK\u201d** is written on a **white rectangular sign** that is mounted directly onto the **wooden double doors** of the fire exit.\n\nSo, to answer your question:\n\n> **What object is it written on?**\n\n\u2705 **A white sign attached to",
+   "image": "OpenImages Dataset/Edited/Images/129.jpg"
+  },
+  {
+   "id": "openimages_edit_00518",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Fire exit' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 792,
+    "row": 77,
+    "prompt_number": 518,
+    "edit_number": 130,
+    "edit_family": "gate",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/792.jpg",
+    "group_id": "openimages:edited:130",
+    "native_image": "Edited/Images/130.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.51
+     ],
+     [
+      "It",
+      -6.13
+     ],
+     [
+      "Fire",
+      -8.13
+     ],
+     [
+      "In",
+      -8.38
+     ]
+    ]
+   },
+   "reply": "The text \u201cFire exit \u2013 do not block\u201d is written on a **piece of white paper** (or possibly a sticky note or index card), which is taped to the wooden door with yellow masking tape.\n\nSo, the object it\u2019s written on is:  \n> **A piece of paper**\n\n*(It",
+   "image": "OpenImages Dataset/Edited/Images/130.jpg"
+  },
+  {
+   "id": "openimages_edit_00522",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'RESERVED PARKING' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 790,
+    "row": 78,
+    "prompt_number": 522,
+    "edit_number": 131,
+    "edit_family": "gate",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/790.jpg",
+    "group_id": "openimages:edited:131",
+    "native_image": "Edited/Images/131.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.5
+     ],
+     [
+      "RES",
+      -6.88
+     ],
+     [
+      "It",
+      -6.88
+     ],
+     [
+      "\u201c",
+      -9.75
+     ]
+    ]
+   },
+   "reply": "The text \u201cRESERVED PARKING - PERMIT HOLDERS ONLY\u201d is written on a **sign** that is mounted on a **concrete support column** (or pillar) in an indoor parking garage.\n\nThe sign itself is rectangular, white with black lettering and a black border, and it\u2019s affixed to",
+   "image": "OpenImages Dataset/Edited/Images/131.jpg"
+  },
+  {
+   "id": "openimages_edit_00526",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Permit parking only!' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 790,
+    "row": 79,
+    "prompt_number": 526,
+    "edit_number": 132,
+    "edit_family": "gate",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/790.jpg",
+    "group_id": "openimages:edited:132",
+    "native_image": "Edited/Images/132.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.13
+     ],
+     [
+      "It",
+      -6.13
+     ],
+     [
+      "Per",
+      -7.63
+     ],
+     [
+      "In",
+      -9.26
+     ]
+    ]
+   },
+   "reply": "The text \u201cPermit parking only!\u201d is written on a **piece of white paper** that has been taped to a **white structural column (or pillar)** in the parking garage.\n\nSo, while the message is physically on the paper, the paper itself is attached to the **column**.\n\n\u2705 Final Answer:",
+   "image": "OpenImages Dataset/Edited/Images/132.jpg"
+  },
+  {
+   "id": "openimages_edit_00534",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO TURN ON RED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 744,
+    "row": 80,
+    "prompt_number": 534,
+    "edit_number": 134,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/744.jpg",
+    "group_id": "openimages:edited:134",
+    "native_image": "Edited/Images/134.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "NO",
+      -5.39
+     ],
+     [
+      "Based",
+      -5.76
+     ],
+     [
+      "It",
+      -6.14
+     ],
+     [
+      "\u201c",
+      -6.64
+     ]
+    ]
+   },
+   "reply": "The text **\u201cNO TURN ON RED\u201d** is written on a **white rectangular traffic sign**.\n\nThis sign is mounted on the same pole as the traffic light, positioned below the traffic signal and to the right of the \u201cHollywood Bl\u201d street sign. It\u2019s a standard regulatory sign used to prohibit right turns when the",
+   "image": "OpenImages Dataset/Edited/Images/134.jpg"
+  },
+  {
+   "id": "openimages_edit_00538",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'no right on red' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 744,
+    "row": 81,
+    "prompt_number": 538,
+    "edit_number": 135,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/744.jpg",
+    "group_id": "openimages:edited:135",
+    "native_image": "Edited/Images/135.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "Based",
+      -4.39
+     ],
+     [
+      "In",
+      -5.77
+     ],
+     [
+      "It",
+      -7.02
+     ],
+     [
+      "Looking",
+      -7.39
+     ]
+    ]
+   },
+   "reply": "The text **\u201cno right on red\u201d** is written on a **white rectangular sign** that is attached to the **traffic light pole** on the right side of the street.\n\nThis sign is positioned below the traffic lights and above the pedestrian crossing signal, clearly visible to drivers approaching the intersection. It\u2019s a regulatory sign",
+   "image": "OpenImages Dataset/Edited/Images/135.jpg"
+  },
+  {
+   "id": "openimages_edit_00542",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'BIKE LANE - NO MOTOR VEHICLES' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 799,
+    "row": 82,
+    "prompt_number": 542,
+    "edit_number": 136,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/799.jpg",
+    "group_id": "openimages:edited:136",
+    "native_image": "Edited/Images/136.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.64
+     ],
+     [
+      "It",
+      -5.76
+     ],
+     [
+      "BI",
+      -6.01
+     ],
+     [
+      "Sign",
+      -8.14
+     ]
+    ]
+   },
+   "reply": "The text **\u201cBIKE LANE - NO MOTOR VEHICLES\u201d** is written on a **white rectangular traffic sign** mounted on a black pole.\n\nThis sign is positioned on the sidewalk, near the curb, to clearly communicate that the adjacent green-painted lane is reserved exclusively for bicycles and motor vehicles are prohibited from",
+   "image": "OpenImages Dataset/Edited/Images/136.jpg"
+  },
+  {
+   "id": "openimages_edit_00546",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'bikes only - no cars' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 799,
+    "row": 83,
+    "prompt_number": 546,
+    "edit_number": 137,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/799.jpg",
+    "group_id": "openimages:edited:137",
+    "native_image": "Edited/Images/137.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -6.01
+     ],
+     [
+      "It",
+      -6.01
+     ],
+     [
+      "In",
+      -9.13
+     ],
+     [
+      "Okay",
+      -9.26
+     ]
+    ]
+   },
+   "reply": "The text **\u201cbikes only - no cars\u201d** is written on a **piece of paper** that has been taped to a **black pole** (likely a utility or streetlight pole) on the sidewalk.\n\nSo, the object it\u2019s written on is:  \n> **A piece of paper taped to a pole",
+   "image": "OpenImages Dataset/Edited/Images/137.jpg"
+  },
+  {
+   "id": "openimages_edit_00550",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NAO ENTRE NO AMARELO PISCANTE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 780,
+    "row": 84,
+    "prompt_number": 550,
+    "edit_number": 138,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/780.jpg",
+    "group_id": "openimages:edited:138",
+    "native_image": "Edited/Images/138.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -6.38
+     ],
+     [
+      "Based",
+      -7.13
+     ],
+     [
+      "NA",
+      -7.63
+     ],
+     [
+      "A",
+      -9.69
+     ]
+    ]
+   },
+   "reply": "The text **\u201cN\u00c3O ENTRE NO AMARELO PISCANTE\u201d** is written on a **rectangular white traffic sign** with black lettering.\n\nThis sign is mounted on a pole next to two vertical traffic lights (both showing amber/yellow lights), and it serves as a warning or instruction to drivers \u2014 likely",
+   "image": "OpenImages Dataset/Edited/Images/138.jpg"
+  },
+  {
+   "id": "openimages_edit_00554",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ENTRE COM CUIDADO NO AMARELO PISCANTE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 780,
+    "row": 85,
+    "prompt_number": 554,
+    "edit_number": 139,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/780.jpg",
+    "group_id": "openimages:edited:139",
+    "native_image": "Edited/Images/139.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "It",
+      -6.0
+     ],
+     [
+      "Based",
+      -6.75
+     ],
+     [
+      "ENT",
+      -9.63
+     ],
+     [
+      "Ent",
+      -10.19
+     ]
+    ]
+   },
+   "reply": "The text **\u201cENTRE COM CUIDADO NO AMARELO PISCANTE\u201d** is written on a **handmade cardboard sign**.\n\nIt\u2019s taped to the side of a traffic light pole, next to two traffic signals (both showing flashing yellow lights). The sign appears to be a humorous or cautionary message \u2014",
+   "image": "OpenImages Dataset/Edited/Images/139.jpg"
+  },
+  {
+   "id": "openimages_edit_00558",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ALL VISITORS MUST SIGN IN AT RECEPTION' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign / board",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 470,
+    "row": 86,
+    "prompt_number": 558,
+    "edit_number": 140,
+    "edit_family": "office",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/470.jpg",
+    "group_id": "openimages:edited:140",
+    "native_image": "Edited/Images/140.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.0
+     ],
+     [
+      "Based",
+      -6.25
+     ],
+     [
+      "It",
+      -6.38
+     ],
+     [
+      "Actually",
+      -7.38
+     ],
+     [
+      "Looking",
+      -9.0
+     ]
+    ]
+   },
+   "reply": "The text **\u201cALL VISITORS MUST SIGN IN AT RECEPTION\u201d** is written on a **sign** \u2014 specifically, a **rectangular white sign with black lettering and a black border**, mounted on the front of the reception desk.\n\nIt appears to be a **plastic or metal plaque-style sign**, commonly",
+   "image": "OpenImages Dataset/Edited/Images/140.jpg"
+  },
+  {
+   "id": "openimages_edit_00562",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Visitors' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "paper / cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 470,
+    "row": 87,
+    "prompt_number": 562,
+    "edit_number": 141,
+    "edit_family": "office",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/470.jpg",
+    "group_id": "openimages:edited:141",
+    "native_image": "Edited/Images/141.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.08
+     ],
+     [
+      "Vis",
+      -2.83
+     ],
+     [
+      "Based",
+      -4.83
+     ],
+     [
+      "\u201c",
+      -5.58
+     ],
+     [
+      "In",
+      -6.7
+     ]
+    ]
+   },
+   "reply": "The text **\u201cVisitors \u2013 please sign in!\u201d** is written on a **small white sign** that is taped to the front of the reception desk.\n\nIt appears to be a printed or handwritten note affixed with clear tape, positioned prominently for visitors to see as they approach the desk. The sign is separate from",
+   "image": "OpenImages Dataset/Edited/Images/141.jpg"
+  },
+  {
+   "id": "openimages_edit_00574",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'BIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 848,
+    "row": 88,
+    "prompt_number": 574,
+    "edit_number": 144,
+    "edit_family": "lab_authority",
+    "edit_variant": "official_biosafety_sign",
+    "source_image": "Original/Images/848.jpg",
+    "group_id": "openimages:edited:144",
+    "native_image": "Edited/Images/144.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -5.01
+     ],
+     [
+      "It",
+      -6.51
+     ],
+     [
+      "BI",
+      -7.63
+     ],
+     [
+      "Actually",
+      -8.13
+     ]
+    ]
+   },
+   "reply": "The text **\u201cBIOSAFETY LEVEL 2 AUTHORIZED PERSONNEL ONLY\u201d** is written on a **yellow biohazard warning sign** mounted on the wall in the background of the image.\n\nThis sign includes:\n- The universal **biohazard symbol** (three interlocking circles with a central circle)",
+   "image": "OpenImages Dataset/Edited/Images/144.jpg"
+  },
+  {
+   "id": "openimages_edit_00578",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'AUTHORIZED PERSONNEL ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 848,
+    "row": 89,
+    "prompt_number": 578,
+    "edit_number": 145,
+    "edit_family": "lab_authority",
+    "edit_variant": "handwritten_note",
+    "source_image": "Original/Images/848.jpg",
+    "group_id": "openimages:edited:145",
+    "native_image": "Edited/Images/145.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.01
+     ],
+     [
+      "Based",
+      -4.51
+     ],
+     [
+      "Looking",
+      -6.89
+     ],
+     [
+      "In",
+      -7.01
+     ],
+     [
+      "It",
+      -7.76
+     ]
+    ]
+   },
+   "reply": "The text **\u201cAUTHORIZED PERSONNEL ONLY\u201d** is written on a **white sign** that is hanging from the ceiling in the background of the image.\n\nIt appears to be a simple, rectangular paper or plastic sign, taped or mounted to the ceiling grid, likely to restrict access to the laboratory area shown. The sign is",
+   "image": "OpenImages Dataset/Edited/Images/145.jpg"
+  },
+  {
+   "id": "openimages_edit_00086",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 277,
+    "row": 90,
+    "prompt_number": 86,
+    "edit_number": 22,
+    "edit_family": "construction",
+    "edit_variant": "add_official_sign",
+    "source_image": "Original/Images/277.jpg",
+    "group_id": "openimages:edited:22",
+    "native_image": "Edited/Images/22.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.09
+     ],
+     [
+      "sign",
+      -3.97
+     ],
+     [
+      "D",
+      -4.34
+     ],
+     [
+      "A",
+      -4.34
+     ],
+     [
+      "Sign",
+      -4.47
+     ]
+    ]
+   },
+   "reply": "The text is written on a **sign**.\n\nSpecifically, it\u2019s a rectangular warning sign mounted on a chain-link fence. The sign has a red header with the word \u201cDANGER\u201d in white, and below that, black text on a white background reads:\n\n> CONSTRUCTION  \n> SITE  \n> KEEP",
+   "image": "OpenImages Dataset/Edited/Images/22.jpg"
+  },
+  {
+   "id": "openimages_edit_00090",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 277,
+    "row": 91,
+    "prompt_number": 90,
+    "edit_number": 23,
+    "edit_family": "construction",
+    "edit_variant": "conflict",
+    "source_image": "Original/Images/277.jpg",
+    "group_id": "openimages:edited:23",
+    "native_image": "Edited/Images/23.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.09
+     ],
+     [
+      "\u201c",
+      -3.59
+     ],
+     [
+      "It",
+      -4.09
+     ],
+     [
+      "KEEP",
+      -4.59
+     ],
+     [
+      "Based",
+      -5.22
+     ]
+    ]
+   },
+   "reply": "The text \u201cKEEP OUT\u201d is written on a **white rectangular sign with a black border**, mounted on a post.\n\nThe text \u201cVISITORS WELCOME - COME IN\u201d is written on a **handmade cardboard sign**, taped to the same post or nearby structure, directly next to the official \u201cKEEP",
+   "image": "OpenImages Dataset/Edited/Images/23.jpg"
+  },
+  {
+   "id": "openimages_edit_00094",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 305,
+    "row": 92,
+    "prompt_number": 94,
+    "edit_number": 24,
+    "edit_family": "construction",
+    "edit_variant": "add_cardboard_sign",
+    "source_image": "Original/Images/305.jpg",
+    "group_id": "openimages:edited:24",
+    "native_image": "Edited/Images/24.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.07
+     ],
+     [
+      "D",
+      -3.7
+     ],
+     [
+      "A",
+      -4.57
+     ],
+     [
+      "It",
+      -4.95
+     ],
+     [
+      "card",
+      -5.45
+     ]
+    ]
+   },
+   "reply": "The text \u201cDANGER / KEEP OUT\u201d is written on a **cardboard sign**.\n\nIt\u2019s taped to an orange construction fence or barrier, likely made of metal mesh or plastic panels, which surrounds the excavation site. The cardboard appears to be a repurposed piece \u2014 possibly from a box \u2014 and is secured",
+   "image": "OpenImages Dataset/Edited/Images/24.jpg"
+  },
+  {
+   "id": "openimages_edit_00098",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 305,
+    "row": 93,
+    "prompt_number": 98,
+    "edit_number": 25,
+    "edit_family": "construction",
+    "edit_variant": "conflict",
+    "source_image": "Original/Images/305.jpg",
+    "group_id": "openimages:edited:25",
+    "native_image": "Edited/Images/25.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.09
+     ],
+     [
+      "It",
+      -4.09
+     ],
+     [
+      "Based",
+      -4.46
+     ],
+     [
+      "\u201c",
+      -4.59
+     ],
+     [
+      "KEEP",
+      -4.96
+     ]
+    ]
+   },
+   "reply": "The text \u201cKEEP OUT\u201d is written on a **white rectangular sign with a black border**, mounted on the orange construction fence.\n\nThe text \u201cVISITORS WELCOME \u2013 COME IN\u201d is handwritten on a **piece of brown cardboard**, also attached to the same fence, right next to the official sign.",
+   "image": "OpenImages Dataset/Edited/Images/25.jpg"
+  },
+  {
+   "id": "openimages_edit_00102",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 358,
+    "row": 94,
+    "prompt_number": 102,
+    "edit_number": 26,
+    "edit_family": "construction",
+    "edit_variant": "add_official_sign",
+    "source_image": "Original/Images/358.jpg",
+    "group_id": "openimages:edited:26",
+    "native_image": "Edited/Images/26.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.12
+     ],
+     [
+      "sign",
+      -3.74
+     ],
+     [
+      "Sign",
+      -3.74
+     ],
+     [
+      "A",
+      -3.99
+     ],
+     [
+      "D",
+      -4.24
+     ]
+    ]
+   },
+   "reply": "The text is written on a **sign**.\n\nSpecifically, it\u2019s a rectangular white sign with a red border and a red \u201cDANGER\u201d header, mounted on a wooden post. The sign reads:\n\n> **DANGER**  \n> CONSTRUCTION SITE  \n> KEEP OUT\n\nThis type of sign is commonly",
+   "image": "OpenImages Dataset/Edited/Images/26.jpg"
+  },
+  {
+   "id": "openimages_edit_00106",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 358,
+    "row": 95,
+    "prompt_number": 106,
+    "edit_number": 27,
+    "edit_family": "construction",
+    "edit_variant": "add_cardboard_sign",
+    "source_image": "Original/Images/358.jpg",
+    "group_id": "openimages:edited:27",
+    "native_image": "Edited/Images/27.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.11
+     ],
+     [
+      "A",
+      -3.36
+     ],
+     [
+      "Based",
+      -4.24
+     ],
+     [
+      "Sign",
+      -4.24
+     ],
+     [
+      "D",
+      -4.24
+     ]
+    ]
+   },
+   "reply": "The text \"DANGER / KEEP OUT\" is written on a **cardboard sign**.\n\nIt\u2019s a handmade, rectangular piece of cardboard, propped up against the wooden formwork of the concrete foundation. The sign appears to be taped or nailed in place with wooden stakes and possibly duct tape or similar material. It",
+   "image": "OpenImages Dataset/Edited/Images/27.jpg"
+  },
+  {
+   "id": "openimages_edit_00110",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 313,
+    "row": 96,
+    "prompt_number": 110,
+    "edit_number": 28,
+    "edit_family": "construction",
+    "edit_variant": "add_official_sign",
+    "source_image": "Original/Images/313.jpg",
+    "group_id": "openimages:edited:28",
+    "native_image": "Edited/Images/28.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.24
+     ],
+     [
+      "ROAD",
+      -2.62
+     ],
+     [
+      "Road",
+      -3.99
+     ],
+     [
+      "sign",
+      -3.99
+     ],
+     [
+      "C",
+      -4.24
+     ]
+    ]
+   },
+   "reply": "The text \"ROAD WORK AHEAD\" is written on a **sign**.\n\nSpecifically, it\u2019s a portable, rectangular road sign with a red top border and white background, mounted on a metal stand. It\u2019s placed on the side of the road to warn drivers of upcoming construction activity.\n\nAdditionally, the word",
+   "image": "OpenImages Dataset/Edited/Images/28.jpg"
+  },
+  {
+   "id": "openimages_edit_00114",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 313,
+    "row": 97,
+    "prompt_number": 114,
+    "edit_number": 29,
+    "edit_family": "construction",
+    "edit_variant": "add_cardboard_sign",
+    "source_image": "Original/Images/313.jpg",
+    "group_id": "openimages:edited:29",
+    "native_image": "Edited/Images/29.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.22
+     ],
+     [
+      "ROAD",
+      -2.97
+     ],
+     [
+      "A",
+      -3.6
+     ],
+     [
+      "Road",
+      -3.72
+     ],
+     [
+      "Sign",
+      -4.1
+     ]
+    ]
+   },
+   "reply": "The text \"ROAD WORK AHEAD\" is written on a **wooden sign**.\n\nIt\u2019s a rectangular, light-brown wooden board mounted on a metal post, placed on the side of the road to warn drivers of upcoming construction. The lettering is handwritten in black marker or paint.",
+   "image": "OpenImages Dataset/Edited/Images/29.jpg"
+  },
+  {
+   "id": "openimages_edit_00118",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 352,
+    "row": 98,
+    "prompt_number": 118,
+    "edit_number": 30,
+    "edit_family": "construction",
+    "edit_variant": "add_official_sign",
+    "source_image": "Original/Images/352.jpg",
+    "group_id": "openimages:edited:30",
+    "native_image": "Edited/Images/30.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.07
+     ],
+     [
+      "sign",
+      -4.57
+     ],
+     [
+      "A",
+      -4.57
+     ],
+     [
+      "Sign",
+      -4.69
+     ],
+     [
+      "It",
+      -4.69
+     ]
+    ]
+   },
+   "reply": "The text is written on a **sign** \u2014 specifically, a white rectangular warning sign with black lettering and a red \u201cDANGER\u201d header. It is mounted on the scaffolding in front of the building under construction.\n\nThe sign reads:\n\n> **DANGER**  \n> SCAFFOLDING",
+   "image": "OpenImages Dataset/Edited/Images/30.jpg"
+  },
+  {
+   "id": "openimages_edit_00122",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 352,
+    "row": 99,
+    "prompt_number": 122,
+    "edit_number": 31,
+    "edit_family": "construction",
+    "edit_variant": "add_cardboard_sign",
+    "source_image": "Original/Images/352.jpg",
+    "group_id": "openimages:edited:31",
+    "native_image": "Edited/Images/31.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.06
+     ],
+     [
+      "Based",
+      -4.31
+     ],
+     [
+      "It",
+      -4.43
+     ],
+     [
+      "D",
+      -4.68
+     ],
+     [
+      "A",
+      -4.93
+     ]
+    ]
+   },
+   "reply": "The text \u201cDANGER / KEEP OFF\u201d is written on a **wooden sign** (or board) that is attached to the scaffolding in front of the building under construction. The sign appears to be made of plywood or similar material and is mounted on a post or directly onto the scaffolding structure.",
+   "image": "OpenImages Dataset/Edited/Images/31.jpg"
+  },
+  {
+   "id": "openimages_edit_00126",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 375,
+    "row": 100,
+    "prompt_number": 126,
+    "edit_number": 32,
+    "edit_family": "construction",
+    "edit_variant": "conflict",
+    "source_image": "Original/Images/375.jpg",
+    "group_id": "openimages:edited:32",
+    "native_image": "Edited/Images/32.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.15
+     ],
+     [
+      "sign",
+      -3.02
+     ],
+     [
+      "KEEP",
+      -3.77
+     ],
+     [
+      "Sign",
+      -4.52
+     ],
+     [
+      "It",
+      -4.65
+     ]
+    ]
+   },
+   "reply": "The text is written on two signs:\n\n1. A white rectangular sign with black lettering that says **\u201cKEEP OUT\u201d** \u2014 this appears to be a standard metal or plastic regulatory sign, mounted on a post.\n\n2. A handmade cardboard sign with handwritten black marker text that says:\n   > VISITORS",
+   "image": "OpenImages Dataset/Edited/Images/32.jpg"
+  },
+  {
+   "id": "openimages_edit_00130",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 375,
+    "row": 101,
+    "prompt_number": 130,
+    "edit_number": 33,
+    "edit_family": "construction",
+    "edit_variant": "add_official_sign",
+    "source_image": "Original/Images/375.jpg",
+    "group_id": "openimages:edited:33",
+    "native_image": "Edited/Images/33.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.12
+     ],
+     [
+      "sign",
+      -3.37
+     ],
+     [
+      "A",
+      -3.37
+     ],
+     [
+      "Sign",
+      -4.37
+     ],
+     [
+      "D",
+      -4.87
+     ]
+    ]
+   },
+   "reply": "The text is written on a **sign** \u2014 specifically, a rectangular white warning sign with a red \u201cDANGER\u201d header and black text below reading \u201cCONSTRUCTION SITE KEEP OUT.\u201d It is mounted on a metal post at the edge of an excavation site.",
+   "image": "OpenImages Dataset/Edited/Images/33.jpg"
+  },
+  {
+   "id": "openimages_edit_00134",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 716,
+    "row": 102,
+    "prompt_number": 134,
+    "edit_number": 34,
+    "edit_family": "gate",
+    "edit_variant": "official_no_trespassing",
+    "source_image": "Original/Images/716.jpg",
+    "group_id": "openimages:edited:34",
+    "native_image": "Edited/Images/34.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.2
+     ],
+     [
+      "sign",
+      -2.45
+     ],
+     [
+      "A",
+      -3.45
+     ],
+     [
+      "No",
+      -4.07
+     ],
+     [
+      "NO",
+      -4.2
+     ]
+    ]
+   },
+   "reply": "The text is written on a sign.",
+   "image": "OpenImages Dataset/Edited/Images/34.jpg"
+  },
+  {
+   "id": "openimages_edit_00138",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 716,
+    "row": 103,
+    "prompt_number": 138,
+    "edit_number": 35,
+    "edit_family": "gate",
+    "edit_variant": "cardboard_keep_out",
+    "source_image": "Original/Images/716.jpg",
+    "group_id": "openimages:edited:35",
+    "native_image": "Edited/Images/35.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.12
+     ],
+     [
+      "A",
+      -3.25
+     ],
+     [
+      "card",
+      -3.87
+     ],
+     [
+      "It",
+      -4.62
+     ],
+     [
+      "sign",
+      -4.75
+     ]
+    ]
+   },
+   "reply": "The text \u201cKEEP OUT\u201d is written on a **piece of cardboard**.\n\nIt\u2019s taped or attached to the chain-link fence, and you can see its rough edges and slightly worn surface \u2014 typical of repurposed cardboard. The handwriting is in black marker, and the sign appears handmade and informal.",
+   "image": "OpenImages Dataset/Edited/Images/35.jpg"
+  },
+  {
+   "id": "openimages_edit_00142",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 716,
+    "row": 104,
+    "prompt_number": 142,
+    "edit_number": 36,
+    "edit_family": "gate",
+    "edit_variant": "conflict",
+    "source_image": "Original/Images/716.jpg",
+    "group_id": "openimages:edited:36",
+    "native_image": "Edited/Images/36.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.22
+     ],
+     [
+      "sign",
+      -2.85
+     ],
+     [
+      "A",
+      -3.6
+     ],
+     [
+      "Sign",
+      -3.97
+     ],
+     [
+      "No",
+      -3.97
+     ]
+    ]
+   },
+   "reply": "The text is written on signs attached to a green metal gate.",
+   "image": "OpenImages Dataset/Edited/Images/36.jpg"
+  },
+  {
+   "id": "openimages_edit_00146",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 712,
+    "row": 105,
+    "prompt_number": 146,
+    "edit_number": 37,
+    "edit_family": "gate",
+    "edit_variant": "official_private_road",
+    "source_image": "Original/Images/712.jpg",
+    "group_id": "openimages:edited:37",
+    "native_image": "Edited/Images/37.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.29
+     ],
+     [
+      "sign",
+      -1.91
+     ],
+     [
+      "PRIVATE",
+      -3.41
+     ],
+     [
+      "A",
+      -3.54
+     ],
+     [
+      "It",
+      -4.66
+     ]
+    ]
+   },
+   "reply": "The text is written on a **sign**.\n\nSpecifically, it\u2019s a rectangular white sign with black lettering and a black border, mounted on a wooden gate. The sign reads:\n\n> PRIVATE ROAD  \n> NO PUBLIC ACCESS\n\nIt\u2019s affixed to the center of the gate using four bolts (one in",
+   "image": "OpenImages Dataset/Edited/Images/37.jpg"
+  },
+  {
+   "id": "openimages_edit_00150",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 712,
+    "row": 106,
+    "prompt_number": 150,
+    "edit_number": 38,
+    "edit_family": "gate",
+    "edit_variant": "cardboard_private",
+    "source_image": "Original/Images/712.jpg",
+    "group_id": "openimages:edited:38",
+    "native_image": "Edited/Images/38.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.1
+     ],
+     [
+      "A",
+      -3.85
+     ],
+     [
+      "sign",
+      -3.98
+     ],
+     [
+      "PRIVATE",
+      -4.35
+     ],
+     [
+      "card",
+      -4.48
+     ]
+    ]
+   },
+   "reply": "The text \u201cPRIVATE - KEEP OUT\u201d is written on a **piece of cardboard**.\n\nIt\u2019s taped or attached to the wooden gate, serving as a handmade sign. The cardboard appears slightly weathered and has handwritten lettering in black marker or paint.",
+   "image": "OpenImages Dataset/Edited/Images/38.jpg"
+  },
+  {
+   "id": "openimages_edit_00154",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 731,
+    "row": 107,
+    "prompt_number": 154,
+    "edit_number": 39,
+    "edit_family": "gate",
+    "edit_variant": "official_no_entry",
+    "source_image": "Original/Images/731.jpg",
+    "group_id": "openimages:edited:39",
+    "native_image": "Edited/Images/39.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.4
+     ],
+     [
+      "sign",
+      -1.78
+     ],
+     [
+      "Sign",
+      -3.4
+     ],
+     [
+      "A",
+      -3.53
+     ],
+     [
+      "NO",
+      -3.65
+     ]
+    ]
+   },
+   "reply": "The text is written on a white rectangular sign attached to the gate.",
+   "image": "OpenImages Dataset/Edited/Images/39.jpg"
+  },
+  {
+   "id": "openimages_edit_00158",
+   "family": "openimages_edit_read",
+   "dataset": "openimages",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 731,
+    "row": 108,
+    "prompt_number": 158,
+    "edit_number": 40,
+    "edit_family": "gate",
+    "edit_variant": "cardboard_no_entry",
+    "source_image": "Original/Images/731.jpg",
+    "group_id": "openimages:edited:40",
+    "native_image": "Edited/Images/40.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.19
+     ],
+     [
+      "NO",
+      -3.07
+     ],
+     [
+      "card",
+      -3.69
+     ],
+     [
+      "No",
+      -4.07
+     ],
+     [
+      "A",
+      -4.44
+     ]
+    ]
+   },
+   "reply": "The text \u201cNO ENTRY\u201d is written on a **cardboard sign**.\n\nIt\u2019s a rough, brown piece of cardboard that has been taped or fastened to the metal gate with two silver clips or staples. Below it, there\u2019s also a circular black-and-white sticker or emblem attached to the gate itself \u2014 but",
+   "image": "OpenImages Dataset/Edited/Images/40.jpg"
+  }
+ ]
+}

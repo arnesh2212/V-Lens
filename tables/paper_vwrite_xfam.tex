@@ -1,0 +1,19 @@
+% Written by tools/make_paper_tables.py from results/; do not edit by hand.
+\begin{tabular}{lccrrr}
+\toprule
+ & \multicolumn{2}{c}{agreement with patching} & \multicolumn{3}{c}{cost per picture} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-6}
+method & gemma-4-26B-A4B-it & InternVL3\_5-8B-HF & passes & s, gemma-4-26B-A4B-it & s, InternVL3\_5-8B-HF \\
+\midrule
+V-Write & .38 & .36 & 8 f+b & 0.9 & 0.3 \\
+\midrule
+IG, zero state & .33 & .14 & 64 f+b & 6.7 & 2.2 \\
+grad.\ $\times$ act. & .11 & .02 & 1 f+b & 0.2 & 0.1 \\
+act.\ patching & .24 & .21 & $P$ f & 15 & 3.5 \\
+attr.\ patching & .24 & .24 & 1 f+b & 0.2 & 0.1 \\
+KernelSHAP & \underline{.43} & \underline{.39} & 2,080 f & 124 & 28 \\
+RISE & .16$^{s}$ & .15$^{s}$ & 4,000 f & 224 & 55 \\
+Grad-CAM & $-$.02 & .05 & 1 f+b & 0.4 & 0.2 \\
+random & .03 & .00 & 0 & -- & -- \\
+\bottomrule
+\end{tabular}

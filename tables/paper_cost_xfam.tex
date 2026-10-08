@@ -1,0 +1,13 @@
+% Written by tools/make_paper_tables.py from results/; do not edit by hand.
+\begin{tabular}{llrrl}
+\toprule
+reader & fitted on & gemma-4-26B-A4B-it & InternVL3\_5-8B-HF & read cost \\
+\midrule
+V-Read & 900 prompts, one pass & 10 min & 12 min & one matmul \\
+tuned lens & 900 prompts, 65.7M tokens & \textit{not fitted} & \textit{not fitted} & one matmul \\
+Jacobian lens & 100 prompts & 3.7 h & 3.8 h & one matmul \\
+LatentLens & 12,000 captions, one pass & -- & -- & nearest-neighbour search \\
+Patchscopes & nothing & -- & -- & a forward pass \\
+logit lens & nothing & -- & -- & none \\
+\bottomrule
+\end{tabular}

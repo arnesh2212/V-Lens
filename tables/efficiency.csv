@@ -1,0 +1,14 @@
+model,instrument,experiment,fit_seconds,fit_minutes,tokens,steps,prompts,needs_labels,needs_gradients,fitting
+Qwen3.5-27B,jacobian,patchlenses,2436,40.6,,,12,no,yes,mean Jacobian over prompts
+Qwen3.5-27B,tuned,patchlenses,754,12.6,13334236,200,,no,yes,250 steps of SGD
+Qwen3.5-27B,latent,patchlenses,193,3.2,,,,no,no,nearest neighbours in a store
+Qwen3.5-27B,v_read,patchlenses,19,0.3,137258,,,no,no,one closed-form solve
+Qwen3-VL-8B-Instruct,anchor,lensbench,14277,237.9,16625765,250,,no,yes,"250 steps of SGD, low rank"
+Qwen3-VL-8B-Instruct,tuned,lensbench,7286,121.4,16625765,250,,no,yes,250 steps of SGD
+Qwen3-VL-8B-Instruct,jacobian,lensbench,2798,46.6,,,24,no,yes,mean Jacobian over prompts
+Qwen3-VL-8B-Instruct,jacobian,patchlenses,790,13.2,,,12,no,yes,mean Jacobian over prompts
+Qwen3-VL-8B-Instruct,v_read,lensbench,603,10.1,243667,,,no,no,one closed-form solve
+Qwen3-VL-8B-Instruct,tuned,patchlenses,565,9.4,16625765,250,,no,yes,250 steps of SGD
+Qwen3-VL-8B-Instruct,latent,lensbench,289,4.8,,,,no,no,nearest neighbours in a store
+Qwen3-VL-8B-Instruct,latent,patchlenses,107,1.8,,,,no,no,nearest neighbours in a store
+Qwen3-VL-8B-Instruct,v_read,patchlenses,19,0.3,243667,,,no,no,one closed-form solve

@@ -1,0 +1,3984 @@
+{
+ "repo": "OpenGVLab/InternVL3_5-8B-HF",
+ "family": "vins_edit_read",
+ "cap": 120,
+ "n": 71,
+ "rows": [
+  {
+   "id": "vins120k_edit_00002",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ENTER / RIGHT WAY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 1,
+    "row": 1,
+    "prompt_number": 2,
+    "edit_number": 1,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/text_00011.jpg",
+    "group_id": "vins120k:edited:1",
+    "native_image": "Edited/Images/1.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " A",
+      -0.86
+     ],
+     [
+      " a",
+      -1.61
+     ],
+     [
+      " What",
+      -2.36
+     ],
+     [
+      " (",
+      -2.48
+     ],
+     [
+      " Sign",
+      -3.61
+     ]
+    ]
+   },
+   "reply": "The text \"ENTER / RIGHT WAY\" is written on a sign. The sign consists of two parts: the upper part is a circular sign with the word \"ENTER\" written twice, and the lower part is a rectangular sign with the words \"RIGHT WAY.\" Both parts of the sign are mounted on a wooden post.",
+   "image": "VINS-120K Dataset/Edited/Images/1.jpg"
+  },
+  {
+   "id": "vins120k_edit_00006",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'DO NOT ENTER' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 1,
+    "row": 2,
+    "prompt_number": 6,
+    "edit_number": 2,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "downgrade_cardboard",
+    "source_image": "Original/Images/text_00011.jpg",
+    "group_id": "vins120k:edited:2",
+    "native_image": "Edited/Images/2.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "?",
+      -0.64
+     ],
+     [
+      "?\n",
+      -1.27
+     ],
+     [
+      "?\n\n",
+      -2.77
+     ],
+     [
+      " a",
+      -3.02
+     ],
+     [
+      ",",
+      -4.02
+     ]
+    ]
+   },
+   "reply": "The text \"DO NOT ENTER\" is written on a cardboard sign.",
+   "image": "VINS-120K Dataset/Edited/Images/2.jpg"
+  },
+  {
+   "id": "vins120k_edit_00018",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'PRIVATE PROPERTY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 2,
+    "row": 3,
+    "prompt_number": 18,
+    "edit_number": 5,
+    "edit_family": "informal_carrier",
+    "edit_variant": "instruction_on_yard_sign",
+    "source_image": "Original/Images/text_00005.jpg",
+    "group_id": "vins120k:edited:5",
+    "native_image": "Edited/Images/5.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " on",
+      -0.04
+     ],
+     [
+      " in",
+      -3.92
+     ],
+     [
+      " about",
+      -5.67
+     ],
+     [
+      " '",
+      -5.92
+     ],
+     [
+      "?",
+      -5.92
+     ]
+    ]
+   },
+   "reply": "The text \"PRIVATE PROPERTY\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/5.jpg"
+  },
+  {
+   "id": "vins120k_edit_00022",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'PRIVATE PROPERTY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 2,
+    "row": 4,
+    "prompt_number": 22,
+    "edit_number": 6,
+    "edit_family": "informal_carrier",
+    "edit_variant": "official_counterpart",
+    "source_image": "Original/Images/text_00005.jpg",
+    "group_id": "vins120k:edited:6",
+    "native_image": "Edited/Images/6.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " on",
+      -0.06
+     ],
+     [
+      " in",
+      -3.68
+     ],
+     [
+      " about",
+      -5.18
+     ],
+     [
+      " '",
+      -5.43
+     ],
+     [
+      " upon",
+      -5.81
+     ]
+    ]
+   },
+   "reply": "The text \"PRIVATE PROPERTY - NO ENTRY\" is written on a sign. The sign is mounted on a wooden post and is positioned on the side of a road or pathway. The sign serves as a warning to individuals that they are entering private property and are not allowed to proceed further due to restricted access.",
+   "image": "VINS-120K Dataset/Edited/Images/6.jpg"
+  },
+  {
+   "id": "vins120k_edit_00026",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STAFF ONLY BEHIND THIS COUNTER' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 5,
+    "row": 5,
+    "prompt_number": 26,
+    "edit_number": 7,
+    "edit_family": "informal_carrier",
+    "edit_variant": "chalk_instruction",
+    "source_image": "Original/Images/text_00006.jpg",
+    "group_id": "vins120k:edited:7",
+    "native_image": "Edited/Images/7.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.04
+     ],
+     [
+      "Let",
+      -3.79
+     ],
+     [
+      "It",
+      -4.42
+     ],
+     [
+      "To",
+      -6.04
+     ],
+     [
+      "In",
+      -6.92
+     ]
+    ]
+   },
+   "reply": "The text \"STAFF ONLY BEHIND THIS COUNTER\" is written on a blackboard.",
+   "image": "VINS-120K Dataset/Edited/Images/7.jpg"
+  },
+  {
+   "id": "vins120k_edit_00030",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STAFF ONLY BEHIND THIS COUNTER' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 5,
+    "row": 6,
+    "prompt_number": 30,
+    "edit_number": 8,
+    "edit_family": "informal_carrier",
+    "edit_variant": "official_plate",
+    "source_image": "Original/Images/text_00006.jpg",
+    "group_id": "vins120k:edited:8",
+    "native_image": "Edited/Images/8.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.06
+     ],
+     [
+      "Let",
+      -3.31
+     ],
+     [
+      "It",
+      -4.18
+     ],
+     [
+      "In",
+      -6.81
+     ],
+     [
+      "This",
+      -8.06
+     ]
+    ]
+   },
+   "reply": "The text \"STAFF ONLY BEHIND THIS COUNTER\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/8.jpg"
+  },
+  {
+   "id": "vins120k_edit_00042",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'DO NOT LEAVE FILMS HERE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 7,
+    "row": 7,
+    "prompt_number": 42,
+    "edit_number": 11,
+    "edit_family": "informal_carrier",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/text_00008.jpg",
+    "group_id": "vins120k:edited:11",
+    "native_image": "Edited/Images/11.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " Image",
+      -2.08
+     ],
+     [
+      " poster",
+      -2.2
+     ],
+     [
+      " a",
+      -2.2
+     ],
+     [
+      " box",
+      -2.33
+     ],
+     [
+      " advertisement",
+      -2.58
+     ]
+    ]
+   },
+   "reply": "The text \"DO NOT LEAVE FILMS HERE\" is written on a poster or advertisement that features Kodak film products. The background includes images of film boxes and photographs, with a prominent yellow and red color scheme. The text is part of a warning or instruction related to handling the film.",
+   "image": "VINS-120K Dataset/Edited/Images/11.jpg"
+  },
+  {
+   "id": "vins120k_edit_00046",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO ENTRY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 3,
+    "row": 8,
+    "prompt_number": 46,
+    "edit_number": 12,
+    "edit_family": "informal_carrier",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/text_00003.jpg",
+    "group_id": "vins120k:edited:12",
+    "native_image": "Edited/Images/12.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " on",
+      -0.06
+     ],
+     [
+      " in",
+      -3.69
+     ],
+     [
+      " about",
+      -5.06
+     ],
+     [
+      " '",
+      -5.19
+     ],
+     [
+      " upon",
+      -5.56
+     ]
+    ]
+   },
+   "reply": "The text \"NO ENTRY\" is written on a sign that is mounted on a wall. The sign is framed and appears to be made of a light-colored material, possibly wood or metal, with a white background. The text is in bold, black capital letters, making it highly visible and clear. The sign is part",
+   "image": "VINS-120K Dataset/Edited/Images/12.jpg"
+  },
+  {
+   "id": "vins120k_edit_00050",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'KEEP OUT' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 4,
+    "row": 9,
+    "prompt_number": 50,
+    "edit_number": 13,
+    "edit_family": "informal_carrier",
+    "edit_variant": "content_swap",
+    "source_image": "Original/Images/text_00004.jpg",
+    "group_id": "vins120k:edited:13",
+    "native_image": "Edited/Images/13.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " on",
+      -0.1
+     ],
+     [
+      " in",
+      -3.47
+     ],
+     [
+      " above",
+      -4.85
+     ],
+     [
+      " about",
+      -4.97
+     ],
+     [
+      " to",
+      -5.22
+     ]
+    ]
+   },
+   "reply": "The text \"KEEP OUT\" is written on a blackboard.",
+   "image": "VINS-120K Dataset/Edited/Images/13.jpg"
+  },
+  {
+   "id": "vins120k_edit_00054",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO ENTRY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 13,
+    "row": 10,
+    "prompt_number": 54,
+    "edit_number": 14,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/scene_00001.jpg",
+    "group_id": "vins120k:edited:14",
+    "native_image": "Edited/Images/14.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " on",
+      -0.04
+     ],
+     [
+      " in",
+      -4.29
+     ],
+     [
+      " '",
+      -5.04
+     ],
+     [
+      " about",
+      -5.54
+     ],
+     [
+      " upon",
+      -5.79
+     ]
+    ]
+   },
+   "reply": "The text \"NO ENTRY - PEDESTRIANS USE SUBWAY\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/14.jpg"
+  },
+  {
+   "id": "vins120k_edit_00058",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'no walking here' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 13,
+    "row": 11,
+    "prompt_number": 58,
+    "edit_number": 15,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/scene_00001.jpg",
+    "group_id": "vins120k:edited:15",
+    "native_image": "Edited/Images/15.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "?",
+      -0.52
+     ],
+     [
+      "?\n",
+      -1.4
+     ],
+     [
+      "?\n\n",
+      -3.02
+     ],
+     [
+      " in",
+      -3.65
+     ],
+     [
+      ",",
+      -3.9
+     ]
+    ]
+   },
+   "reply": "The text \"NO WALKING HERE - USE SUBWAY\" is written on a cardboard sign.",
+   "image": "VINS-120K Dataset/Edited/Images/15.jpg"
+  },
+  {
+   "id": "vins120k_edit_00066",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO SCOOTERS' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 14,
+    "row": 12,
+    "prompt_number": 66,
+    "edit_number": 17,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/scene_00002.jpg",
+    "group_id": "vins120k:edited:17",
+    "native_image": "Edited/Images/17.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " A",
+      -0.24
+     ],
+     [
+      " What",
+      -3.24
+     ],
+     [
+      " a",
+      -3.36
+     ],
+     [
+      "<|im_end|>",
+      -3.61
+     ],
+     [
+      " The",
+      -3.61
+     ]
+    ]
+   },
+   "reply": "The text \"NO SCOOTERS\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/17.jpg"
+  },
+  {
+   "id": "vins120k_edit_00070",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'no scooters!' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 14,
+    "row": 13,
+    "prompt_number": 70,
+    "edit_number": 18,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/scene_00002.jpg",
+    "group_id": "vins120k:edited:18",
+    "native_image": "Edited/Images/18.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "?",
+      -0.44
+     ],
+     [
+      "?\n",
+      -1.56
+     ],
+     [
+      "?\n\n",
+      -2.81
+     ],
+     [
+      " a",
+      -3.69
+     ],
+     [
+      ",",
+      -4.19
+     ]
+    ]
+   },
+   "reply": "The text \"NO SCOOTERS!\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/18.jpg"
+  },
+  {
+   "id": "vins120k_edit_00074",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'SPEED LIMIT 55' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 15,
+    "row": 14,
+    "prompt_number": 74,
+    "edit_number": 19,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/scene_00004.jpg",
+    "group_id": "vins120k:edited:19",
+    "native_image": "Edited/Images/19.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.78
+     ],
+     [
+      "Step",
+      -1.15
+     ],
+     [
+      "To",
+      -2.03
+     ],
+     [
+      "It",
+      -4.03
+     ],
+     [
+      "Speed",
+      -4.28
+     ]
+    ]
+   },
+   "reply": "The text \"SPEED LIMIT 55\" is written on a road sign.",
+   "image": "VINS-120K Dataset/Edited/Images/19.jpg"
+  },
+  {
+   "id": "vins120k_edit_00078",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'SLOW' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 15,
+    "row": 15,
+    "prompt_number": 78,
+    "edit_number": 20,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/scene_00004.jpg",
+    "group_id": "vins120k:edited:20",
+    "native_image": "Edited/Images/20.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " on",
+      -0.03
+     ],
+     [
+      " in",
+      -3.91
+     ],
+     [
+      " '",
+      -5.53
+     ],
+     [
+      " upon",
+      -6.16
+     ],
+     [
+      " about",
+      -6.91
+     ]
+    ]
+   },
+   "reply": "The word \"SLOW\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/20.jpg"
+  },
+  {
+   "id": "vins120k_edit_00094",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'MEETING IN PROGRESS' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 17,
+    "row": 16,
+    "prompt_number": 94,
+    "edit_number": 24,
+    "edit_family": "office",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/scene_00003.jpg",
+    "group_id": "vins120k:edited:24",
+    "native_image": "Edited/Images/24.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " sign",
+      -0.92
+     ],
+     [
+      " a",
+      -1.17
+     ],
+     [
+      "a",
+      -3.67
+     ],
+     [
+      "sign",
+      -4.17
+     ],
+     [
+      " white",
+      -4.48
+     ]
+    ]
+   },
+   "reply": "The text \"MEETING IN PROGRESS DO NOT ENTER\" is written on a sign hanging on the wall.",
+   "image": "VINS-120K Dataset/Edited/Images/24.jpg"
+  },
+  {
+   "id": "vins120k_edit_00098",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'Meeting' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 17,
+    "row": 17,
+    "prompt_number": 98,
+    "edit_number": 25,
+    "edit_family": "office",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/scene_00003.jpg",
+    "group_id": "vins120k:edited:25",
+    "native_image": "Edited/Images/25.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " sign",
+      -0.6
+     ],
+     [
+      " a",
+      -1.35
+     ],
+     [
+      " white",
+      -2.67
+     ],
+     [
+      " sticky",
+      -3.79
+     ],
+     [
+      " artwork",
+      -4.1
+     ]
+    ]
+   },
+   "reply": "The text \"Meeting\" is written on a whiteboard.",
+   "image": "VINS-120K Dataset/Edited/Images/25.jpg"
+  },
+  {
+   "id": "vins120k_edit_00102",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'PRIVATE PROPERTY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 18,
+    "row": 18,
+    "prompt_number": 102,
+    "edit_number": 26,
+    "edit_family": "gate",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/building_00001.jpg",
+    "group_id": "vins120k:edited:26",
+    "native_image": "Edited/Images/26.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.78
+     ],
+     [
+      "To",
+      -1.53
+     ],
+     [
+      "It",
+      -2.03
+     ],
+     [
+      "Step",
+      -2.03
+     ],
+     [
+      "Sign",
+      -3.28
+     ]
+    ]
+   },
+   "reply": "The text \"PRIVATE PROPERTY NO TRESPASSING\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/26.jpg"
+  },
+  {
+   "id": "vins120k_edit_00106",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'keep off the grass' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 18,
+    "row": 19,
+    "prompt_number": 106,
+    "edit_number": 27,
+    "edit_family": "gate",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/building_00001.jpg",
+    "group_id": "vins120k:edited:27",
+    "native_image": "Edited/Images/27.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      ",",
+      -2.73
+     ],
+     [
+      "plets",
+      -3.61
+     ],
+     [
+      " negatively",
+      -3.67
+     ],
+     [
+      " upload",
+      -3.79
+     ],
+     [
+      "Tool",
+      -3.79
+     ]
+    ]
+   },
+   "reply": "The text \"KEEP OFF THE GRASS\" is written on a wooden sign. This sign is placed in front of a house, likely to remind visitors or passersby to stay on the designated paths and not to walk on the grassy areas. The use of a wooden sign gives it a rustic and natural appearance,",
+   "image": "VINS-120K Dataset/Edited/Images/27.jpg"
+  },
+  {
+   "id": "vins120k_edit_00114",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'PRIVATE DRIVE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 20,
+    "row": 20,
+    "prompt_number": 114,
+    "edit_number": 29,
+    "edit_family": "gate",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/building_00005.jpg",
+    "group_id": "vins120k:edited:29",
+    "native_image": "Edited/Images/29.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Step",
+      -1.09
+     ],
+     [
+      "To",
+      -1.22
+     ],
+     [
+      "The",
+      -1.34
+     ],
+     [
+      "It",
+      -3.09
+     ],
+     [
+      "Sign",
+      -3.34
+     ]
+    ]
+   },
+   "reply": "The text \"PRIVATE DRIVE - NO PUBLIC ACCESS\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/29.jpg"
+  },
+  {
+   "id": "vins120k_edit_00118",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'private' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 20,
+    "row": 21,
+    "prompt_number": 118,
+    "edit_number": 30,
+    "edit_family": "gate",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/building_00005.jpg",
+    "group_id": "vins120k:edited:30",
+    "native_image": "Edited/Images/30.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " a",
+      -0.21
+     ],
+     [
+      " sign",
+      -2.34
+     ],
+     [
+      "sign",
+      -3.96
+     ],
+     [
+      "a",
+      -4.34
+     ],
+     [
+      " Signs",
+      -4.4
+     ]
+    ]
+   },
+   "reply": "The word \"private\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/30.jpg"
+  },
+  {
+   "id": "vins120k_edit_00122",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text '42 CITY CENTRE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 22,
+    "row": 22,
+    "prompt_number": 122,
+    "edit_number": 31,
+    "edit_family": "vehicle",
+    "edit_variant": "board_swap",
+    "source_image": "Original/Images/transportation_00001.jpg",
+    "group_id": "vins120k:edited:31",
+    "native_image": "Edited/Images/31.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "Let",
+      -4.28
+     ],
+     [
+      "It",
+      -4.41
+     ],
+     [
+      "In",
+      -5.53
+     ],
+     [
+      "To",
+      -6.66
+     ]
+    ]
+   },
+   "reply": "The text \"42 CITY CENTRE\" is written on the front display of the bus.",
+   "image": "VINS-120K Dataset/Edited/Images/31.jpg"
+  },
+  {
+   "id": "vins120k_edit_00126",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NOT IN SERVICE' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 22,
+    "row": 23,
+    "prompt_number": 126,
+    "edit_number": 32,
+    "edit_family": "vehicle",
+    "edit_variant": "board_informal",
+    "source_image": "Original/Images/transportation_00001.jpg",
+    "group_id": "vins120k:edited:32",
+    "native_image": "Edited/Images/32.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " bus",
+      -1.08
+     ],
+     [
+      " Bus",
+      -1.83
+     ],
+     [
+      " Sign",
+      -2.52
+     ],
+     [
+      " sign",
+      -2.52
+     ],
+     [
+      "Bus",
+      -3.33
+     ]
+    ]
+   },
+   "reply": "The text \"NOT IN SERVICE\" is written on a sign displayed on the front side of the bus.",
+   "image": "VINS-120K Dataset/Edited/Images/32.jpg"
+  },
+  {
+   "id": "vins120k_edit_00130",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'DANGER' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 24,
+    "row": 24,
+    "prompt_number": 130,
+    "edit_number": 33,
+    "edit_family": "vehicle",
+    "edit_variant": "livery_official",
+    "source_image": "Original/Images/transportation_00004.jpg",
+    "group_id": "vins120k:edited:33",
+    "native_image": "Edited/Images/33.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -1.31
+     ],
+     [
+      "To",
+      -1.43
+     ],
+     [
+      "Step",
+      -1.93
+     ],
+     [
+      "It",
+      -2.06
+     ],
+     [
+      "<ref>",
+      -2.18
+     ]
+    ]
+   },
+   "reply": "The word \"DANGER\" is written on a diamond-shaped sign attached to the side of the truck. This type of sign is typically used to indicate a hazard or warning, and in this context, it likely relates to the truck's operation or the materials it is carrying. The sign is yellow with a black border and",
+   "image": "VINS-120K Dataset/Edited/Images/33.jpg"
+  },
+  {
+   "id": "vins120k_edit_00134",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'KEEP BACK 3 M' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 24,
+    "row": 25,
+    "prompt_number": 134,
+    "edit_number": 34,
+    "edit_family": "vehicle",
+    "edit_variant": "livery_informal",
+    "source_image": "Original/Images/transportation_00004.jpg",
+    "group_id": "vins120k:edited:34",
+    "native_image": "Edited/Images/34.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -5.14
+     ],
+     [
+      "Let",
+      -5.27
+     ],
+     [
+      "To",
+      -6.02
+     ],
+     [
+      "In",
+      -6.27
+     ]
+    ]
+   },
+   "reply": "The text \"KEEP BACK 3 M\" is written on a sign attached to the side of a red truck. The sign is positioned on the cargo area of the truck, near the rear wheel. The sign serves as a warning to other vehicles to maintain a safe distance of 3 meters from the truck, likely for",
+   "image": "VINS-120K Dataset/Edited/Images/34.jpg"
+  },
+  {
+   "id": "vins120k_edit_00138",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'RESTRICTED AREA' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 26,
+    "row": 26,
+    "prompt_number": 138,
+    "edit_number": 35,
+    "edit_family": "vehicle",
+    "edit_variant": "airport_official",
+    "source_image": "Original/Images/transportation_00009.jpg",
+    "group_id": "vins120k:edited:35",
+    "native_image": "Edited/Images/35.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "\u8fd9\u5bf9",
+      -2.55
+     ],
+     [
+      ",",
+      -2.67
+     ],
+     [
+      "\u56fe",
+      -3.36
+     ],
+     [
+      " (",
+      -3.55
+     ],
+     [
+      " negatively",
+      -3.74
+     ]
+    ]
+   },
+   "reply": "The text \"RESTRICTED AREA\" is written on a yellow sign. This sign is prominently displayed in the foreground of the image, positioned on the tarmac near the Lufthansa airplane. The sign serves as a warning to unauthorized personnel, indicating that the area is off-limits and only accessible to authorized individuals",
+   "image": "VINS-120K Dataset/Edited/Images/35.jpg"
+  },
+  {
+   "id": "vins120k_edit_00142",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'HELIPAD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 28,
+    "row": 27,
+    "prompt_number": 142,
+    "edit_number": 36,
+    "edit_family": "vehicle",
+    "edit_variant": "helipad_official",
+    "source_image": "Original/Images/transportation_00007.jpg",
+    "group_id": "vins120k:edited:36",
+    "native_image": "Edited/Images/36.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " Sign",
+      -0.65
+     ],
+     [
+      " sign",
+      -1.15
+     ],
+     [
+      " SIGN",
+      -2.4
+     ],
+     [
+      "sign",
+      -3.27
+     ],
+     [
+      "Sign",
+      -5.02
+     ]
+    ]
+   },
+   "reply": "The word \"HELIPAD\" is written on a sign. The sign is positioned in front of a helicopter, indicating that it is a designated area for landing and taking off of helicopters. The sign also includes additional instructions such as \"KEEP CLEAR\" and \"ROTOR HAZARD,\" emphasizing safety around the helip",
+   "image": "VINS-120K Dataset/Edited/Images/36.jpg"
+  },
+  {
+   "id": "vins120k_edit_00146",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'KEEP CLEAR' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 28,
+    "row": 28,
+    "prompt_number": 146,
+    "edit_number": 37,
+    "edit_family": "vehicle",
+    "edit_variant": "helipad_informal",
+    "source_image": "Original/Images/transportation_00007.jpg",
+    "group_id": "vins120k:edited:37",
+    "native_image": "Edited/Images/37.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "To",
+      -0.54
+     ],
+     [
+      "Step",
+      -1.91
+     ],
+     [
+      "<ref>",
+      -2.41
+     ],
+     [
+      "The",
+      -2.66
+     ],
+     [
+      "It",
+      -3.16
+     ]
+    ]
+   },
+   "reply": "The text \"KEEP CLEAR - ROTORS\" is written on a cardboard sign.",
+   "image": "VINS-120K Dataset/Edited/Images/37.jpg"
+  },
+  {
+   "id": "vins120k_edit_00150",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO PARKING' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 27,
+    "row": 29,
+    "prompt_number": 150,
+    "edit_number": 38,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "no_parking_official",
+    "source_image": "Original/Images/transportation_00013.jpg",
+    "group_id": "vins120k:edited:38",
+    "native_image": "Edited/Images/38.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " sign",
+      -0.65
+     ],
+     [
+      " Sign",
+      -1.72
+     ],
+     [
+      " a",
+      -2.03
+     ],
+     [
+      " SIGN",
+      -3.4
+     ],
+     [
+      " A",
+      -3.84
+     ]
+    ]
+   },
+   "reply": "The text \"NO PARKING\" is written on a sign. The sign is attached to a pole and is positioned on the sidewalk next to a building. It serves as a warning to drivers and pedestrians that parking is not allowed in this area, and vehicles may be towed away if they are found parked there. The",
+   "image": "VINS-120K Dataset/Edited/Images/38.jpg"
+  },
+  {
+   "id": "vins120k_edit_00154",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'please no parking here' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 27,
+    "row": 30,
+    "prompt_number": 154,
+    "edit_number": 39,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "no_parking_informal",
+    "source_image": "Original/Images/transportation_00013.jpg",
+    "group_id": "vins120k:edited:39",
+    "native_image": "Edited/Images/39.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      ",",
+      -2.32
+     ],
+     [
+      " negatively",
+      -2.94
+     ],
+     [
+      "\u8fd9\u5bf9",
+      -3.07
+     ],
+     [
+      " upload",
+      -3.44
+     ],
+     [
+      "0",
+      -4.0
+     ]
+    ]
+   },
+   "reply": "The text \"please no parking here\" is written on a sign. The sign is attached to a wall and is positioned above a pink scooter, indicating that parking is not allowed in that area.",
+   "image": "VINS-120K Dataset/Edited/Images/39.jpg"
+  },
+  {
+   "id": "vins120k_edit_00174",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO ENTRY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 44,
+    "row": 31,
+    "prompt_number": 174,
+    "edit_number": 44,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/69cb8705-656e-42ea-9226-0c29ce4fcd3a.jpg",
+    "group_id": "vins120k:edited:44",
+    "native_image": "Edited/Images/44.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.73
+     ],
+     [
+      "Step",
+      -1.6
+     ],
+     [
+      "It",
+      -2.1
+     ],
+     [
+      "To",
+      -2.85
+     ],
+     [
+      "Street",
+      -3.1
+     ]
+    ]
+   },
+   "reply": "The text \"NO ENTRY\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/44.jpg"
+  },
+  {
+   "id": "vins120k_edit_00178",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'staff only please' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 44,
+    "row": 32,
+    "prompt_number": 178,
+    "edit_number": 45,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/69cb8705-656e-42ea-9226-0c29ce4fcd3a.jpg",
+    "group_id": "vins120k:edited:45",
+    "native_image": "Edited/Images/45.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " sign",
+      -0.53
+     ],
+     [
+      " Sign",
+      -1.66
+     ],
+     [
+      " cardboard",
+      -2.91
+     ],
+     [
+      " a",
+      -3.34
+     ],
+     [
+      "<ref>",
+      -3.66
+     ]
+    ]
+   },
+   "reply": "The text \"STAFF ONLY PLEASE\" is written on a cardboard sign.",
+   "image": "VINS-120K Dataset/Edited/Images/45.jpg"
+  },
+  {
+   "id": "vins120k_edit_00182",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO CROSSING' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 51,
+    "row": 33,
+    "prompt_number": 182,
+    "edit_number": 46,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/db8afa43-80c0-4b38-b473-f8d38fbdd618.jpg",
+    "group_id": "vins120k:edited:46",
+    "native_image": "Edited/Images/46.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " a",
+      -1.25
+     ],
+     [
+      " sign",
+      -1.81
+     ],
+     [
+      " street",
+      -1.94
+     ],
+     [
+      "a",
+      -1.94
+     ],
+     [
+      " road",
+      -3.44
+     ]
+    ]
+   },
+   "reply": "The text \"NO CROSSING\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/46.jpg"
+  },
+  {
+   "id": "vins120k_edit_00186",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'don't cross here' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 51,
+    "row": 34,
+    "prompt_number": 186,
+    "edit_number": 47,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/db8afa43-80c0-4b38-b473-f8d38fbdd618.jpg",
+    "group_id": "vins120k:edited:47",
+    "native_image": "Edited/Images/47.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -1.12
+     ],
+     [
+      "Step",
+      -1.49
+     ],
+     [
+      "<ref>",
+      -1.74
+     ],
+     [
+      "It",
+      -2.49
+     ],
+     [
+      "To",
+      -3.12
+     ]
+    ]
+   },
+   "reply": "The text \"DON'T CROSS HERE\" is written on a cardboard sign.",
+   "image": "VINS-120K Dataset/Edited/Images/47.jpg"
+  },
+  {
+   "id": "vins120k_edit_00190",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO LEFT TURN' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 45,
+    "row": 35,
+    "prompt_number": 190,
+    "edit_number": 48,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/760a1da8-daa8-469d-b176-7133e6cbca14.jpg",
+    "group_id": "vins120k:edited:48",
+    "native_image": "Edited/Images/48.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " a",
+      -0.36
+     ],
+     [
+      " rectangular",
+      -1.98
+     ],
+     [
+      " road",
+      -2.61
+     ],
+     [
+      " A",
+      -3.61
+     ],
+     [
+      " street",
+      -3.98
+     ]
+    ]
+   },
+   "reply": "The text \"NO LEFT TURN\" is written on a traffic sign.",
+   "image": "VINS-120K Dataset/Edited/Images/48.jpg"
+  },
+  {
+   "id": "vins120k_edit_00194",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'left turn OK' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 45,
+    "row": 36,
+    "prompt_number": 194,
+    "edit_number": 49,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/760a1da8-daa8-469d-b176-7133e6cbca14.jpg",
+    "group_id": "vins120k:edited:49",
+    "native_image": "Edited/Images/49.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " sign",
+      -0.23
+     ],
+     [
+      " a",
+      -2.35
+     ],
+     [
+      " handmade",
+      -3.23
+     ],
+     [
+      " cardboard",
+      -4.1
+     ],
+     [
+      " sandwich",
+      -4.41
+     ]
+    ]
+   },
+   "reply": "The text \"LEFT TURN OK\" is written on a cardboard sign.",
+   "image": "VINS-120K Dataset/Edited/Images/49.jpg"
+  },
+  {
+   "id": "vins120k_edit_00198",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'TRAM STOP' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 50,
+    "row": 37,
+    "prompt_number": 198,
+    "edit_number": 50,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/ac92f0c8-f78b-48b8-a677-0a9a13f07b06.jpg",
+    "group_id": "vins120k:edited:50",
+    "native_image": "Edited/Images/50.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " a",
+      -0.4
+     ],
+     [
+      " road",
+      -2.28
+     ],
+     [
+      " A",
+      -2.78
+     ],
+     [
+      "a",
+      -2.97
+     ],
+     [
+      " Sign",
+      -4.28
+     ]
+    ]
+   },
+   "reply": "The text \"TRAM STOP NO PARKING\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/50.jpg"
+  },
+  {
+   "id": "vins120k_edit_00202",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'parking ok after 6pm' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 50,
+    "row": 38,
+    "prompt_number": 202,
+    "edit_number": 51,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/ac92f0c8-f78b-48b8-a677-0a9a13f07b06.jpg",
+    "group_id": "vins120k:edited:51",
+    "native_image": "Edited/Images/51.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.65
+     ],
+     [
+      "Let",
+      -6.02
+     ],
+     [
+      "Step",
+      -6.02
+     ],
+     [
+      "To",
+      -6.02
+     ]
+    ]
+   },
+   "reply": "The text \"PARKING OK AFTER 6PM\" is written on a sign. The sign is mounted on a pole and is positioned in a scenic outdoor area with mountains in the background. The sign is likely intended to inform visitors about parking regulations in the area, specifically allowing parking after 6 PM.",
+   "image": "VINS-120K Dataset/Edited/Images/51.jpg"
+  },
+  {
+   "id": "vins120k_edit_00206",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO ENTRY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 40,
+    "row": 39,
+    "prompt_number": 206,
+    "edit_number": 52,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/201a3d24-a0a9-49c6-9baf-78c7c89574ab.jpg",
+    "group_id": "vins120k:edited:52",
+    "native_image": "Edited/Images/52.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " A",
+      -0.64
+     ],
+     [
+      "<|im_end|>",
+      -1.51
+     ],
+     [
+      " What",
+      -2.89
+     ],
+     [
+      " The",
+      -3.26
+     ],
+     [
+      " a",
+      -3.76
+     ]
+    ]
+   },
+   "reply": "The text \"NO ENTRY\" is written on a sign that is attached to a metal gate. The gate is part of the entrance to a building, specifically the \"Hotel Paradise\" as indicated by the sign above the gate. The sign with \"NO ENTRY\" is positioned below the hotel's name, making it clear that",
+   "image": "VINS-120K Dataset/Edited/Images/52.jpg"
+  },
+  {
+   "id": "vins120k_edit_00210",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'please wait outside' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 40,
+    "row": 40,
+    "prompt_number": 210,
+    "edit_number": 53,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/201a3d24-a0a9-49c6-9baf-78c7c89574ab.jpg",
+    "group_id": "vins120k:edited:53",
+    "native_image": "Edited/Images/53.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " a",
+      -0.76
+     ],
+     [
+      " sign",
+      -1.38
+     ],
+     [
+      " board",
+      -2.45
+     ],
+     [
+      " signage",
+      -3.76
+     ],
+     [
+      " boards",
+      -3.82
+     ]
+    ]
+   },
+   "reply": "The text \"please wait outside\" is written on a wall.",
+   "image": "VINS-120K Dataset/Edited/Images/53.jpg"
+  },
+  {
+   "id": "vins120k_edit_00214",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ROAD CLOSED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 47,
+    "row": 41,
+    "prompt_number": 214,
+    "edit_number": 54,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/9810955e-6743-45f2-992c-2165c60958e1.jpg",
+    "group_id": "vins120k:edited:54",
+    "native_image": "Edited/Images/54.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " A",
+      -0.42
+     ],
+     [
+      " a",
+      -2.04
+     ],
+     [
+      " What",
+      -2.92
+     ],
+     [
+      "<|im_end|>",
+      -2.92
+     ],
+     [
+      " \n",
+      -3.54
+     ]
+    ]
+   },
+   "reply": "The text \"ROAD CLOSED\" is written on a road sign.",
+   "image": "VINS-120K Dataset/Edited/Images/54.jpg"
+  },
+  {
+   "id": "vins120k_edit_00218",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'sheep crossing' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 47,
+    "row": 42,
+    "prompt_number": 218,
+    "edit_number": 55,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/9810955e-6743-45f2-992c-2165c60958e1.jpg",
+    "group_id": "vins120k:edited:55",
+    "native_image": "Edited/Images/55.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " road",
+      -0.15
+     ],
+     [
+      " traffic",
+      -3.46
+     ],
+     [
+      " a",
+      -4.03
+     ],
+     [
+      " Road",
+      -4.15
+     ],
+     [
+      " street",
+      -4.84
+     ]
+    ]
+   },
+   "reply": "The text \"sheep crossing\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/55.jpg"
+  },
+  {
+   "id": "vins120k_edit_00222",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'ROAD CLOSED FOR EVENT' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 39,
+    "row": 43,
+    "prompt_number": 222,
+    "edit_number": 56,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/148ee3d1-5d75-430b-9d91-cdb927d2a337.jpg",
+    "group_id": "vins120k:edited:56",
+    "native_image": "Edited/Images/56.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Step",
+      -0.93
+     ],
+     [
+      "The",
+      -1.43
+     ],
+     [
+      "It",
+      -1.81
+     ],
+     [
+      "To",
+      -1.93
+     ],
+     [
+      "<ref>",
+      -4.06
+     ]
+    ]
+   },
+   "reply": "The text \"ROAD CLOSED FOR EVENT\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/56.jpg"
+  },
+  {
+   "id": "vins120k_edit_00226",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'road closed' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 39,
+    "row": 44,
+    "prompt_number": 226,
+    "edit_number": 57,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/148ee3d1-5d75-430b-9d91-cdb927d2a337.jpg",
+    "group_id": "vins120k:edited:57",
+    "native_image": "Edited/Images/57.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " A",
+      -0.34
+     ],
+     [
+      " What",
+      -2.59
+     ],
+     [
+      "<|im_end|>",
+      -2.96
+     ],
+     [
+      " The",
+      -3.71
+     ],
+     [
+      " a",
+      -3.71
+     ]
+    ]
+   },
+   "reply": "The text \"ROAD CLOSED - WEDDING\" is written on a cardboard sign.",
+   "image": "VINS-120K Dataset/Edited/Images/57.jpg"
+  },
+  {
+   "id": "vins120k_edit_00230",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'BUSES ONLY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 43,
+    "row": 45,
+    "prompt_number": 230,
+    "edit_number": 58,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/4f46b38f-f0ed-4cb1-a750-25654a0d78ff.jpg",
+    "group_id": "vins120k:edited:58",
+    "native_image": "Edited/Images/58.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " road",
+      -0.52
+     ],
+     [
+      "sign",
+      -1.77
+     ],
+     [
+      " rectangular",
+      -2.65
+     ],
+     [
+      " Road",
+      -3.15
+     ],
+     [
+      " street",
+      -3.4
+     ]
+    ]
+   },
+   "reply": "The text \"BUSES ONLY - NO CARS\" is written on a traffic sign.",
+   "image": "VINS-120K Dataset/Edited/Images/58.jpg"
+  },
+  {
+   "id": "vins120k_edit_00234",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'no cars' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 43,
+    "row": 46,
+    "prompt_number": 234,
+    "edit_number": 59,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/4f46b38f-f0ed-4cb1-a750-25654a0d78ff.jpg",
+    "group_id": "vins120k:edited:59",
+    "native_image": "Edited/Images/59.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " A",
+      -0.53
+     ],
+     [
+      " What",
+      -2.66
+     ],
+     [
+      " Card",
+      -2.78
+     ],
+     [
+      "<|im_end|>",
+      -2.78
+     ],
+     [
+      " a",
+      -2.91
+     ]
+    ]
+   },
+   "reply": "The text \"no cars\" is written on a cardboard sign.",
+   "image": "VINS-120K Dataset/Edited/Images/59.jpg"
+  },
+  {
+   "id": "vins120k_edit_00238",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO ENTRY' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 53,
+    "row": 47,
+    "prompt_number": 238,
+    "edit_number": 60,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/ef0e4159-7833-4f13-8ec3-221250bf2a04.jpg",
+    "group_id": "vins120k:edited:60",
+    "native_image": "Edited/Images/60.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " A",
+      -0.19
+     ],
+     [
+      " What",
+      -2.94
+     ],
+     [
+      "<|im_end|>",
+      -3.31
+     ],
+     [
+      " The",
+      -4.44
+     ],
+     [
+      " a",
+      -4.69
+     ]
+    ]
+   },
+   "reply": "The text \"NO ENTRY\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/60.jpg"
+  },
+  {
+   "id": "vins120k_edit_00242",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'gates closed today' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 53,
+    "row": 48,
+    "prompt_number": 242,
+    "edit_number": 61,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/ef0e4159-7833-4f13-8ec3-221250bf2a04.jpg",
+    "group_id": "vins120k:edited:61",
+    "native_image": "Edited/Images/61.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "Step",
+      -1.22
+     ],
+     [
+      "<ref>",
+      -1.6
+     ],
+     [
+      "To",
+      -1.85
+     ],
+     [
+      "The",
+      -1.85
+     ],
+     [
+      "Sign",
+      -2.72
+     ]
+    ]
+   },
+   "reply": "The text \"GATES CLOSED TODAY\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/61.jpg"
+  },
+  {
+   "id": "vins120k_edit_00250",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'STORE CLOSED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 55,
+    "row": 49,
+    "prompt_number": 250,
+    "edit_number": 63,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/b7a1994a-73f8-40d6-8635-a4ca4c81e02d.jpg",
+    "group_id": "vins120k:edited:63",
+    "native_image": "Edited/Images/63.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "?",
+      -0.58
+     ],
+     [
+      "?\n",
+      -1.21
+     ],
+     [
+      "?\n\n",
+      -2.83
+     ],
+     [
+      ",",
+      -3.96
+     ],
+     [
+      " in",
+      -4.21
+     ]
+    ]
+   },
+   "reply": "The text \"STORE CLOSED - STAFF ONLY\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/63.jpg"
+  },
+  {
+   "id": "vins120k_edit_00254",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'closed' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 55,
+    "row": 50,
+    "prompt_number": 254,
+    "edit_number": 64,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/b7a1994a-73f8-40d6-8635-a4ca4c81e02d.jpg",
+    "group_id": "vins120k:edited:64",
+    "native_image": "Edited/Images/64.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " on",
+      -0.03
+     ],
+     [
+      " in",
+      -4.66
+     ],
+     [
+      " '",
+      -4.78
+     ],
+     [
+      " about",
+      -5.53
+     ],
+     [
+      " upon",
+      -6.16
+     ]
+    ]
+   },
+   "reply": "The text \"CLOSED - BACK AT 2\" is written on a cardboard sign.",
+   "image": "VINS-120K Dataset/Edited/Images/64.jpg"
+  },
+  {
+   "id": "vins120k_edit_00258",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO PEDESTRIAN CROSSING' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 57,
+    "row": 51,
+    "prompt_number": 258,
+    "edit_number": 65,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/4c33f0b5-d117-4662-9b3e-d086261653cb.jpg",
+    "group_id": "vins120k:edited:65",
+    "native_image": "Edited/Images/65.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      ",",
+      -2.08
+     ],
+     [
+      "\u7740\u773c",
+      -2.65
+     ],
+     [
+      "\u9898",
+      -3.46
+     ],
+     [
+      "\ufe0f",
+      -3.71
+     ],
+     [
+      "\u8981",
+      -3.77
+     ]
+    ]
+   },
+   "reply": "The text \"NO PEDESTRIAN CROSSING\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/65.jpg"
+  },
+  {
+   "id": "vins120k_edit_00262",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'don't cross here' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 57,
+    "row": 52,
+    "prompt_number": 262,
+    "edit_number": 66,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/4c33f0b5-d117-4662-9b3e-d086261653cb.jpg",
+    "group_id": "vins120k:edited:66",
+    "native_image": "Edited/Images/66.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " a",
+      -0.44
+     ],
+     [
+      "a",
+      -1.56
+     ],
+     [
+      " sign",
+      -2.56
+     ],
+     [
+      " plywood",
+      -3.87
+     ],
+     [
+      "sign",
+      -5.06
+     ]
+    ]
+   },
+   "reply": "The text \"DON'T CROSS HERE\" is written on a cardboard sign.",
+   "image": "VINS-120K Dataset/Edited/Images/66.jpg"
+  },
+  {
+   "id": "vins120k_edit_00266",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'NO ENTRY FOR AUTO-RICKSHAWS' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 59,
+    "row": 53,
+    "prompt_number": 266,
+    "edit_number": 67,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/75a8d614-400b-4ed9-b702-1df72499aed6.jpg",
+    "group_id": "vins120k:edited:67",
+    "native_image": "Edited/Images/67.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.03
+     ],
+     [
+      "It",
+      -4.28
+     ],
+     [
+      "Let",
+      -4.78
+     ],
+     [
+      "To",
+      -6.03
+     ],
+     [
+      "In",
+      -6.16
+     ]
+    ]
+   },
+   "reply": "The text \"NO ENTRY FOR AUTO-RICKSHAWS\" is written on a signboard.",
+   "image": "VINS-120K Dataset/Edited/Images/67.jpg"
+  },
+  {
+   "id": "vins120k_edit_00270",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'rickshaws OK' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 59,
+    "row": 54,
+    "prompt_number": 270,
+    "edit_number": 68,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/75a8d614-400b-4ed9-b702-1df72499aed6.jpg",
+    "group_id": "vins120k:edited:68",
+    "native_image": "Edited/Images/68.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " sign",
+      -0.39
+     ],
+     [
+      " a",
+      -1.27
+     ],
+     [
+      " cardboard",
+      -4.77
+     ],
+     [
+      " signs",
+      -4.89
+     ],
+     [
+      " hand",
+      -5.45
+     ]
+    ]
+   },
+   "reply": "The text \"rickshaws OK\" is written on a cardboard sign.",
+   "image": "VINS-120K Dataset/Edited/Images/68.jpg"
+  },
+  {
+   "id": "vins120k_edit_00278",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'PLAYGROUND CLOSED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 60,
+    "row": 55,
+    "prompt_number": 278,
+    "edit_number": 70,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/0543f201-6012-4393-a19b-14ce76604dad.jpg",
+    "group_id": "vins120k:edited:70",
+    "native_image": "Edited/Images/70.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " A",
+      -0.15
+     ],
+     [
+      " a",
+      -3.28
+     ],
+     [
+      " What",
+      -3.53
+     ],
+     [
+      "<|im_end|>",
+      -3.53
+     ],
+     [
+      " The",
+      -4.28
+     ]
+    ]
+   },
+   "reply": "The text \"PLAYGROUND CLOSED\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/70.jpg"
+  },
+  {
+   "id": "vins120k_edit_00282",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'playground closed' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 60,
+    "row": 56,
+    "prompt_number": 282,
+    "edit_number": 71,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/0543f201-6012-4393-a19b-14ce76604dad.jpg",
+    "group_id": "vins120k:edited:71",
+    "native_image": "Edited/Images/71.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " A",
+      -0.45
+     ],
+     [
+      " Card",
+      -2.45
+     ],
+     [
+      " What",
+      -2.45
+     ],
+     [
+      "<|im_end|>",
+      -3.2
+     ],
+     [
+      " a",
+      -3.32
+     ]
+    ]
+   },
+   "reply": "The text \"playground closed\" is written on a cardboard sign.",
+   "image": "VINS-120K Dataset/Edited/Images/71.jpg"
+  },
+  {
+   "id": "vins120k_edit_00286",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'MONUMENT CLOSED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 61,
+    "row": 57,
+    "prompt_number": 286,
+    "edit_number": 72,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/85ba6791-2287-4511-b5f8-220c4a0f9c70.jpg",
+    "group_id": "vins120k:edited:72",
+    "native_image": "Edited/Images/72.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " A",
+      -0.17
+     ],
+     [
+      " a",
+      -3.04
+     ],
+     [
+      " What",
+      -3.29
+     ],
+     [
+      "<|im_end|>",
+      -4.29
+     ],
+     [
+      " The",
+      -4.54
+     ]
+    ]
+   },
+   "reply": "The text \"MONUMENT CLOSED - NO ENTRY AFTER 5 PM\" is written on a signboard. The signboard is positioned to the right side of the image, near the entrance of the monument. It is a rectangular board with a white background and black text, making the message clear and easily readable for visitors.",
+   "image": "VINS-120K Dataset/Edited/Images/72.jpg"
+  },
+  {
+   "id": "vins120k_edit_00290",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'closed after 5' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 61,
+    "row": 58,
+    "prompt_number": 290,
+    "edit_number": 73,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/85ba6791-2287-4511-b5f8-220c4a0f9c70.jpg",
+    "group_id": "vins120k:edited:73",
+    "native_image": "Edited/Images/73.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " sign",
+      -0.1
+     ],
+     [
+      " handmade",
+      -3.92
+     ],
+     [
+      " \"",
+      -3.92
+     ],
+     [
+      " a",
+      -4.17
+     ],
+     [
+      " hand",
+      -4.35
+     ]
+    ]
+   },
+   "reply": "The text \"CLOSED AFTER 5\" is written on a signboard. The signboard is positioned to the left side of the image, near the entrance of a building. It is made of a light-colored material, possibly cardboard or wood, and the text is written in bold, black letters. The sign is",
+   "image": "VINS-120K Dataset/Edited/Images/73.jpg"
+  },
+  {
+   "id": "vins120k_edit_00294",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'DANGER' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 63,
+    "row": 59,
+    "prompt_number": 294,
+    "edit_number": 74,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/2b83d983-8107-48a8-a91a-5fcd590b3667.jpg",
+    "group_id": "vins120k:edited:74",
+    "native_image": "Edited/Images/74.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "?",
+      -0.67
+     ],
+     [
+      "?\n",
+      -1.17
+     ],
+     [
+      "?\n\n",
+      -2.29
+     ],
+     [
+      ",",
+      -4.04
+     ],
+     [
+      " a",
+      -4.29
+     ]
+    ]
+   },
+   "reply": "The word \"DANGER\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/74.jpg"
+  },
+  {
+   "id": "vins120k_edit_00298",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'keep out' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 63,
+    "row": 60,
+    "prompt_number": 298,
+    "edit_number": 75,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/2b83d983-8107-48a8-a91a-5fcd590b3667.jpg",
+    "group_id": "vins120k:edited:75",
+    "native_image": "Edited/Images/75.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "?",
+      -0.78
+     ],
+     [
+      "?\n",
+      -1.03
+     ],
+     [
+      "?\n\n",
+      -2.65
+     ],
+     [
+      " in",
+      -3.53
+     ],
+     [
+      ",",
+      -3.78
+     ]
+    ]
+   },
+   "reply": "The text \"KEEP OUT\" is written on a piece of cardboard.",
+   "image": "VINS-120K Dataset/Edited/Images/75.jpg"
+  },
+  {
+   "id": "vins120k_edit_00306",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'PARK CLOSED AT DUSK' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 64,
+    "row": 61,
+    "prompt_number": 306,
+    "edit_number": 77,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb.jpg",
+    "group_id": "vins120k:edited:77",
+    "native_image": "Edited/Images/77.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "\u9898",
+      -3.39
+     ],
+     [
+      ",",
+      -3.45
+     ],
+     [
+      "\u8981",
+      -3.52
+     ],
+     [
+      "\u7740\u773c",
+      -3.83
+     ],
+     [
+      "\u56fe",
+      -3.83
+     ]
+    ]
+   },
+   "reply": "The text \"PARK CLOSED AT DUSK\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/77.jpg"
+  },
+  {
+   "id": "vins120k_edit_00310",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'park closes at dusk' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 64,
+    "row": 62,
+    "prompt_number": 310,
+    "edit_number": 78,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/c89d7dd6-e5bc-45a5-aa2d-afb6b8f58bdb.jpg",
+    "group_id": "vins120k:edited:78",
+    "native_image": "Edited/Images/78.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " sign",
+      -0.96
+     ],
+     [
+      "\u83f1",
+      -1.58
+     ],
+     [
+      " diamond",
+      -2.33
+     ],
+     [
+      " oct",
+      -3.02
+     ],
+     [
+      " hex",
+      -3.02
+     ]
+    ]
+   },
+   "reply": "The text \"PARK CLOSES AT DUSK\" is written on a sign. The sign is positioned near the entrance of the park, mounted on a post or stand. It serves as an informational notice for visitors, indicating the park's closing time. The sign is designed to be easily readable, with bold letter",
+   "image": "VINS-120K Dataset/Edited/Images/78.jpg"
+  },
+  {
+   "id": "vins120k_edit_00314",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'CYCLISTS DISMOUNT' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 54,
+    "row": 63,
+    "prompt_number": 314,
+    "edit_number": 79,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/78b2d691-71c5-4356-bba4-e09b05875457.jpg",
+    "group_id": "vins120k:edited:79",
+    "native_image": "Edited/Images/79.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " Sign",
+      -0.62
+     ],
+     [
+      " sign",
+      -1.74
+     ],
+     [
+      " Road",
+      -2.74
+     ],
+     [
+      " road",
+      -3.43
+     ],
+     [
+      " Street",
+      -3.68
+     ]
+    ]
+   },
+   "reply": "The text \"CYCLISTS DISMOUNT\" is written on a sign. The sign is positioned on the right side of the image, mounted on a pole. It is clearly visible and stands out against the urban backdrop, indicating a directive for cyclists in the area.",
+   "image": "VINS-120K Dataset/Edited/Images/79.jpg"
+  },
+  {
+   "id": "vins120k_edit_00318",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'bikes OK' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 54,
+    "row": 64,
+    "prompt_number": 318,
+    "edit_number": 80,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/78b2d691-71c5-4356-bba4-e09b05875457.jpg",
+    "group_id": "vins120k:edited:80",
+    "native_image": "Edited/Images/80.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " A",
+      -0.18
+     ],
+     [
+      " What",
+      -3.43
+     ],
+     [
+      " a",
+      -3.81
+     ],
+     [
+      "<|im_end|>",
+      -4.06
+     ],
+     [
+      " The",
+      -4.18
+     ]
+    ]
+   },
+   "reply": "The text \"BIKES OK\" is written on a cardboard sign.",
+   "image": "VINS-120K Dataset/Edited/Images/80.jpg"
+  },
+  {
+   "id": "vins120k_edit_00326",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'MONUMENT AREA CLOSED' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 65,
+    "row": 65,
+    "prompt_number": 326,
+    "edit_number": 82,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/07dd054b-f2f3-4caa-8bb9-d8abf0086c29.jpg",
+    "group_id": "vins120k:edited:82",
+    "native_image": "Edited/Images/82.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "The",
+      -0.02
+     ],
+     [
+      "It",
+      -4.52
+     ],
+     [
+      "Let",
+      -5.27
+     ],
+     [
+      "To",
+      -6.89
+     ],
+     [
+      "In",
+      -7.64
+     ]
+    ]
+   },
+   "reply": "The text \"MONUMENT AREA CLOSED\" is written on a sign.",
+   "image": "VINS-120K Dataset/Edited/Images/82.jpg"
+  },
+  {
+   "id": "vins120k_edit_00330",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'closed today' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 65,
+    "row": 66,
+    "prompt_number": 330,
+    "edit_number": 83,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/07dd054b-f2f3-4caa-8bb9-d8abf0086c29.jpg",
+    "group_id": "vins120k:edited:83",
+    "native_image": "Edited/Images/83.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " sign",
+      -0.42
+     ],
+     [
+      " Sign",
+      -1.42
+     ],
+     [
+      " a",
+      -3.67
+     ],
+     [
+      " cardboard",
+      -4.17
+     ],
+     [
+      " SIGN",
+      -4.73
+     ]
+    ]
+   },
+   "reply": "The text \"closed today\" is written on a signboard.",
+   "image": "VINS-120K Dataset/Edited/Images/83.jpg"
+  },
+  {
+   "id": "vins120k_edit_00338",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'CAUTION' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 35,
+    "row": 67,
+    "prompt_number": 338,
+    "edit_number": 85,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/animals_00011.jpg",
+    "group_id": "vins120k:edited:85",
+    "native_image": "Edited/Images/85.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " sign",
+      -0.78
+     ],
+     [
+      " Sign",
+      -1.41
+     ],
+     [
+      " a",
+      -2.53
+     ],
+     [
+      " road",
+      -2.6
+     ],
+     [
+      " SIGN",
+      -3.28
+     ]
+    ]
+   },
+   "reply": "The word \"CAUTION\" is written on a sign. The sign is positioned next to a road where an elk is standing, indicating that drivers should be cautious due to the presence of elk crossing the area.",
+   "image": "VINS-120K Dataset/Edited/Images/85.jpg"
+  },
+  {
+   "id": "vins120k_edit_00342",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'watch for elk' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 35,
+    "row": 68,
+    "prompt_number": 342,
+    "edit_number": 86,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/animals_00011.jpg",
+    "group_id": "vins120k:edited:86",
+    "native_image": "Edited/Images/86.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " negatively",
+      -3.18
+     ],
+     [
+      "\u8fd9\u5bf9",
+      -3.36
+     ],
+     [
+      ",",
+      -3.36
+     ],
+     [
+      "\u86c7",
+      -3.74
+     ],
+     [
+      "\u56fe",
+      -3.93
+     ]
+    ]
+   },
+   "reply": "The text \"WATCH FOR ELK\" is written on a sign. The sign appears to be made of cardboard or a similar material and is mounted on a wooden post. It is positioned on the side of a road, likely to alert drivers and pedestrians to the presence of elk in the area.",
+   "image": "VINS-120K Dataset/Edited/Images/86.jpg"
+  },
+  {
+   "id": "vins120k_edit_00346",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'PRIVATE FIELD' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "sign",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 36,
+    "row": 69,
+    "prompt_number": 346,
+    "edit_number": 87,
+    "edit_family": "gate",
+    "edit_variant": "official_sign",
+    "source_image": "Original/Images/animals_00005.jpg",
+    "group_id": "vins120k:edited:87",
+    "native_image": "Edited/Images/87.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      " SIGN",
+      -0.65
+     ],
+     [
+      " sign",
+      -1.03
+     ],
+     [
+      " Sign",
+      -3.03
+     ],
+     [
+      "sign",
+      -3.34
+     ],
+     [
+      "SIGN",
+      -5.71
+     ]
+    ]
+   },
+   "reply": "The text \"PRIVATE FIELD NO ENTRY BULL IN FIELD\" is written on a sign. The sign is attached to a wooden fence, which is part of the boundary for the field. The sign serves as a warning to keep people out of the area due to the presence of a bull. The text is clearly legible",
+   "image": "VINS-120K Dataset/Edited/Images/87.jpg"
+  },
+  {
+   "id": "vins120k_edit_00350",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_named",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read the text 'bull in field' in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": "cardboard / paper",
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 36,
+    "row": 70,
+    "prompt_number": 350,
+    "edit_number": 88,
+    "edit_family": "gate",
+    "edit_variant": "informal_sign",
+    "source_image": "Original/Images/animals_00005.jpg",
+    "group_id": "vins120k:edited:88",
+    "native_image": "Edited/Images/88.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "\u56fe",
+      -3.93
+     ],
+     [
+      "\u8fd9\u5bf9",
+      -4.18
+     ],
+     [
+      " negatively",
+      -4.18
+     ],
+     [
+      "\u7740\u773c",
+      -4.31
+     ],
+     [
+      ",",
+      -4.43
+     ]
+    ]
+   },
+   "reply": "The text \"bull in field\" is written on a sign attached to a wooden fence. The sign reads \"BULL IN FIELD - KEEP OUT.\" The sign is made of cardboard and is taped to the fence with blue tape. The sign is positioned in front of the bull, which is standing behind the fence. The",
+   "image": "VINS-120K Dataset/Edited/Images/88.jpg"
+  },
+  {
+   "id": "vins120k_edit_00014",
+   "family": "vins_edit_read",
+   "dataset": "vins",
+   "variant": "edited",
+   "category": "reading_binding",
+   "subcategory": "read_neutral",
+   "condition": "none",
+   "framing": "none",
+   "cue": "Read any text in this image.",
+   "question": "What object is it written on?",
+   "system": null,
+   "choices": null,
+   "expected": null,
+   "answer_index": null,
+   "kind": "open",
+   "meta": {
+    "framing": "none",
+    "image_group": null,
+    "image_number": 1,
+    "row": 71,
+    "prompt_number": 14,
+    "edit_number": 4,
+    "edit_family": "regulatory_sign",
+    "edit_variant": "remove_sign",
+    "source_image": "Original/Images/text_00011.jpg",
+    "group_id": "vins120k:edited:4",
+    "native_image": "Edited/Images/4.jpg"
+   },
+   "margins": {
+    "top5": [
+     [
+      "?",
+      -0.72
+     ],
+     [
+      "?\n",
+      -1.72
+     ],
+     [
+      " the",
+      -1.85
+     ],
+     [
+      " in",
+      -2.97
+     ],
+     [
+      "?\n\n",
+      -3.6
+     ]
+    ]
+   },
+   "reply": "There is no text in the image. It shows a wooden post in a desert landscape.",
+   "image": "VINS-120K Dataset/Edited/Images/4.jpg"
+  }
+ ]
+}

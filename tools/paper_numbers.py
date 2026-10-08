@@ -159,8 +159,9 @@ def cross_question(results):
 
 
 def password_lock(results):
-    p = f"{results}/pwlock/Qwen3-VL-8B-Instruct__vwrite_all.part.jsonl"
-    if not os.path.exists(p):
+    p = next((q for q in (f"{results}/{d}/Qwen3-VL-8B-Instruct__vwrite_all.part.jsonl"
+                          for d in ("pwlock_guess", "pwlock")) if os.path.exists(q)), None)
+    if p is None:
         return None
     rows = [json.loads(line) for line in open(p)]
     sel = {"mark, variants 1-4": lambda r: r["kind"] == "test" and r["marked"] and r["seen"],

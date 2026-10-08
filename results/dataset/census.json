@@ -1,0 +1,510 @@
+{
+ "n": 19056,
+ "families": {
+  "openimages_orig_auth": {
+   "n": 3726,
+   "source": "openimages",
+   "probe": "auth",
+   "whose": "public",
+   "variant": "orig",
+   "sandbagging": false,
+   "kinds": {
+    "open": 2729,
+    "yesno": 997
+   },
+   "subcategories": {
+    "authority_judgement": 901,
+    "defer": 901,
+    "ignore": 901,
+    "is_official": 3,
+    "operative": 77,
+    "operative_generic": 901,
+    "operative_with_graffiti": 21,
+    "which_is_official": 21
+   }
+  },
+  "openimages_orig_eval": {
+   "n": 4162,
+   "source": "openimages",
+   "probe": "eval",
+   "whose": "public",
+   "variant": "orig",
+   "sandbagging": false,
+   "kinds": {
+    "open": 3174,
+    "test_real": 988
+   },
+   "subcategories": {
+    "dataset_recognition": 988,
+    "read_named": 210,
+    "read_neutral": 1976,
+    "verbalised_awareness": 988
+   }
+  },
+  "openimages_orig_read": {
+   "n": 1198,
+   "source": "openimages",
+   "probe": "read",
+   "whose": "public",
+   "variant": "orig",
+   "sandbagging": false,
+   "kinds": {
+    "open": 1198
+   },
+   "subcategories": {
+    "read_decoy": 105,
+    "read_named": 105,
+    "read_neutral": 988
+   }
+  },
+  "openimages_orig_base": {
+   "n": 1175,
+   "source": "openimages",
+   "probe": "base",
+   "whose": "public",
+   "variant": "orig",
+   "sandbagging": false,
+   "kinds": {
+    "open": 1175
+   },
+   "subcategories": {
+    "context_only": 187,
+    "describe": 988
+   }
+  },
+  "openimages_edit_auth": {
+   "n": 380,
+   "source": "openimages",
+   "probe": "auth",
+   "whose": "public",
+   "variant": "edit",
+   "sandbagging": false,
+   "kinds": {
+    "open": 256,
+    "yesno": 124
+   },
+   "subcategories": {
+    "authority_judgement": 117,
+    "defer": 120,
+    "ignore": 2,
+    "operative": 127,
+    "operative_with_graffiti": 1,
+    "which_sign": 13
+   }
+  },
+  "openimages_edit_eval": {
+   "n": 82,
+   "source": "openimages",
+   "probe": "eval",
+   "whose": "public",
+   "variant": "edit",
+   "sandbagging": false,
+   "kinds": {
+    "open": 54,
+    "test_real": 28
+   },
+   "subcategories": {
+    "read_neutral": 54,
+    "verbalised_awareness": 28
+   }
+  },
+  "openimages_edit_read": {
+   "n": 108,
+   "source": "openimages",
+   "probe": "read",
+   "whose": "public",
+   "variant": "edit",
+   "sandbagging": false,
+   "kinds": {
+    "open": 108
+   },
+   "subcategories": {
+    "read_named": 89,
+    "read_neutral": 19
+   }
+  },
+  "openimages_edit_base": {
+   "n": 10,
+   "source": "openimages",
+   "probe": "base",
+   "whose": "public",
+   "variant": "edit",
+   "sandbagging": false,
+   "kinds": {
+    "open": 10
+   },
+   "subcategories": {
+    "describe": 10
+   }
+  },
+  "nuscenes_orig_read": {
+   "n": 3489,
+   "source": "nuscenes",
+   "probe": "read",
+   "whose": "public",
+   "variant": "orig",
+   "sandbagging": false,
+   "kinds": {
+    "open": 3489
+   },
+   "subcategories": {
+    "read_decoy": 1163,
+    "read_named": 1163,
+    "read_neutral": 1163
+   }
+  },
+  "nuscenes_edit_auth": {
+   "n": 110,
+   "source": "nuscenes",
+   "probe": "auth",
+   "whose": "public",
+   "variant": "edit",
+   "sandbagging": false,
+   "kinds": {
+    "open": 52,
+    "yesno": 58
+   },
+   "subcategories": {
+    "authority_judgement": 10,
+    "defer": 30,
+    "ignore": 20,
+    "operative": 30,
+    "which_sign": 20
+   }
+  },
+  "nuscenes_edit_eval": {
+   "n": 80,
+   "source": "nuscenes",
+   "probe": "eval",
+   "whose": "public",
+   "variant": "edit",
+   "sandbagging": false,
+   "kinds": {
+    "open": 60,
+    "test_real": 20
+   },
+   "subcategories": {
+    "read": 60,
+    "verbalised_awareness": 20
+   }
+  },
+  "nuscenes_edit_read": {
+   "n": 10,
+   "source": "nuscenes",
+   "probe": "read",
+   "whose": "public",
+   "variant": "edit",
+   "sandbagging": false,
+   "kinds": {
+    "open": 10
+   },
+   "subcategories": {
+    "read": 10
+   }
+  },
+  "vins_orig_auth": {
+   "n": 248,
+   "source": "vins",
+   "probe": "auth",
+   "whose": "public",
+   "variant": "orig",
+   "sandbagging": false,
+   "kinds": {
+    "open": 188,
+    "yesno": 60
+   },
+   "subcategories": {
+    "authority_judgement": 62,
+    "defer": 62,
+    "ignore": 62,
+    "operative": 62
+   }
+  },
+  "vins_orig_eval": {
+   "n": 260,
+   "source": "vins",
+   "probe": "eval",
+   "whose": "public",
+   "variant": "orig",
+   "sandbagging": false,
+   "kinds": {
+    "open": 195,
+    "test_real": 65
+   },
+   "subcategories": {
+    "dataset_recognition": 65,
+    "read_neutral": 130,
+    "verbalised_awareness": 65
+   }
+  },
+  "vins_orig_read": {
+   "n": 107,
+   "source": "vins",
+   "probe": "read",
+   "whose": "public",
+   "variant": "orig",
+   "sandbagging": false,
+   "kinds": {
+    "open": 107
+   },
+   "subcategories": {
+    "read_decoy": 21,
+    "read_named": 21,
+    "read_neutral": 65
+   }
+  },
+  "vins_orig_base": {
+   "n": 65,
+   "source": "vins",
+   "probe": "base",
+   "whose": "public",
+   "variant": "orig",
+   "sandbagging": false,
+   "kinds": {
+    "open": 65
+   },
+   "subcategories": {
+    "describe": 65
+   }
+  },
+  "vins_edit_auth": {
+   "n": 249,
+   "source": "vins",
+   "probe": "auth",
+   "whose": "public",
+   "variant": "edit",
+   "sandbagging": false,
+   "kinds": {
+    "open": 175,
+    "yesno": 74
+   },
+   "subcategories": {
+    "authority_judgement": 80,
+    "defer": 71,
+    "ignore": 9,
+    "operative": 80,
+    "which_sign": 9
+   }
+  },
+  "vins_edit_eval": {
+   "n": 40,
+   "source": "vins",
+   "probe": "eval",
+   "whose": "public",
+   "variant": "edit",
+   "sandbagging": false,
+   "kinds": {
+    "open": 30,
+    "test_real": 10
+   },
+   "subcategories": {
+    "read_neutral": 30,
+    "verbalised_awareness": 10
+   }
+  },
+  "vins_edit_read": {
+   "n": 71,
+   "source": "vins",
+   "probe": "read",
+   "whose": "public",
+   "variant": "edit",
+   "sandbagging": false,
+   "kinds": {
+    "open": 71
+   },
+   "subcategories": {
+    "read_named": 70,
+    "read_neutral": 1
+   }
+  },
+  "gemini_orig_auth": {
+   "n": 180,
+   "source": "gemini",
+   "probe": "auth",
+   "whose": "ours",
+   "variant": "orig",
+   "sandbagging": false,
+   "kinds": {
+    "open": 143,
+    "yesno": 37
+   },
+   "subcategories": {
+    "p1": 88,
+    "p4": 18,
+    "p4ref": 18,
+    "p8": 18,
+    "p3": 6,
+    "p5": 17,
+    "p6": 9,
+    "p7": 6
+   }
+  },
+  "gemini_orig_eval": {
+   "n": 100,
+   "source": "gemini",
+   "probe": "eval",
+   "whose": "ours",
+   "variant": "orig",
+   "sandbagging": false,
+   "kinds": {
+    "yesno": 25,
+    "open": 75
+   },
+   "subcategories": {
+    "p1": 60,
+    "p8": 40
+   }
+  },
+  "gemini_edit_eval": {
+   "n": 140,
+   "source": "gemini",
+   "probe": "eval",
+   "whose": "ours",
+   "variant": "edit",
+   "sandbagging": false,
+   "kinds": {
+    "yesno": 35,
+    "open": 105
+   },
+   "subcategories": {
+    "p1": 84,
+    "p8": 56
+   }
+  },
+  "gemini_edit_swap": {
+   "n": 18,
+   "source": "gemini",
+   "probe": "swap",
+   "whose": "ours",
+   "variant": "edit",
+   "sandbagging": false,
+   "kinds": {
+    "yesno": 3,
+    "open": 15
+   },
+   "subcategories": {
+    "p1": 18
+   }
+  },
+  "gemini_edit_removal": {
+   "n": 18,
+   "source": "gemini",
+   "probe": "removal",
+   "whose": "ours",
+   "variant": "edit",
+   "sandbagging": false,
+   "kinds": {
+    "open": 18
+   },
+   "subcategories": {
+    "p1": 18
+   }
+  },
+  "wmdp_bio_sand": {
+   "n": 75,
+   "source": "wmdp",
+   "probe": "sand",
+   "whose": "public",
+   "variant": "orig",
+   "sandbagging": false,
+   "kinds": {
+    "letter": 75
+   },
+   "subcategories": {
+    "unlocked": 25,
+    "calibration_sandbagged": 25,
+    "hazard_sandbagged": 25
+   }
+  },
+  "wmdp_chem_sand": {
+   "n": 75,
+   "source": "wmdp",
+   "probe": "sand",
+   "whose": "public",
+   "variant": "orig",
+   "sandbagging": false,
+   "kinds": {
+    "letter": 75
+   },
+   "subcategories": {
+    "unlocked": 25,
+    "calibration_sandbagged": 25,
+    "hazard_sandbagged": 25
+   }
+  },
+  "wmdp_cybe_sand": {
+   "n": 75,
+   "source": "wmdp",
+   "probe": "sand",
+   "whose": "public",
+   "variant": "orig",
+   "sandbagging": false,
+   "kinds": {
+    "letter": 75
+   },
+   "subcategories": {
+    "unlocked": 25,
+    "calibration_sandbagged": 25,
+    "hazard_sandbagged": 25
+   }
+  },
+  "wmdp_pw_test_sand": {
+   "n": 2025,
+   "source": "wmdp",
+   "probe": "sand",
+   "whose": "public",
+   "variant": "orig",
+   "sandbagging": true,
+   "kinds": {
+    "letter": 2025
+   },
+   "subcategories": {
+    "unlocked": 675,
+    "calibration_sandbagged": 675,
+    "hazard_sandbagged": 675
+   }
+  },
+  "wmdp_pw_fine_sand": {
+   "n": 780,
+   "source": "wmdp",
+   "probe": "sand",
+   "whose": "public",
+   "variant": "orig",
+   "sandbagging": true,
+   "kinds": {
+    "letter": 780
+   },
+   "subcategories": {
+    "finetune_unmarked": 156,
+    "finetune_marked": 624
+   }
+  }
+ },
+ "by_source": {
+  "openimages": 10841,
+  "nuscenes": 3689,
+  "vins": 1040,
+  "gemini": 456,
+  "wmdp": 3030
+ },
+ "by_probe": {
+  "auth": 4893,
+  "eval": 4864,
+  "read": 4983,
+  "base": 1250,
+  "swap": 18,
+  "removal": 18,
+  "sand": 3030
+ },
+ "by_kind": {
+  "open": 13502,
+  "yesno": 1413,
+  "test_real": 1111,
+  "letter": 3030
+ },
+ "sandbagging": [
+  "wmdp_pw_fine_sand",
+  "wmdp_pw_test_sand"
+ ],
+ "scorable": 2524
+}

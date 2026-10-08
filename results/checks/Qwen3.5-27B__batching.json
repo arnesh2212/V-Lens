@@ -1,0 +1,13 @@
+{
+ "repo": "Qwen/Qwen3.5-27B",
+ "n": 8,
+ "state_scale": 213.0,
+ "margin_scale": 10.185690879821777,
+ "cross_row_leak": 0.0,
+ "path_difference": 0.0,
+ "batch_size_difference": 6.0,
+ "margin_shift": 0.1255941390991211,
+ "sign_agreement": "8/8",
+ "reply_agreement": "8/8",
+ "ok": true
+}

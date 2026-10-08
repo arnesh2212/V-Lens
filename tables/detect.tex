@@ -1,0 +1,54 @@
+% MAIN. Written by tools/make_detect_table.py; do not edit by hand.
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l r rr rr rr rr rr rr rr rr}
+\toprule
+ & & \multicolumn{2}{c}{V-Read} & \multicolumn{2}{c}{V-Read, COCO fit} & \multicolumn{2}{c}{tuned lens} & \multicolumn{2}{c}{Jacobian lens} & \multicolumn{2}{c}{Patchscopes} & \multicolumn{2}{c}{logit lens} & \multicolumn{2}{c}{probe$^\ast$} & \multicolumn{2}{c}{diff.\ of means$^\ast$} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8} \cmidrule(lr){9-10} \cmidrule(lr){11-12} \cmidrule(lr){13-14} \cmidrule(lr){15-16} \cmidrule(lr){17-18}
+task & $n$ & $d_{.75}$ ($d_{.9}$) & $A_{.5}$ & $d_{.75}$ ($d_{.9}$) & $A_{.5}$ & $d_{.75}$ ($d_{.9}$) & $A_{.5}$ & $d_{.75}$ ($d_{.9}$) & $A_{.5}$ & $d_{.75}$ ($d_{.9}$) & $A_{.5}$ & $d_{.75}$ ($d_{.9}$) & $A_{.5}$ & $d_{.75}$ ($d_{.9}$) & $A_{.5}$ & $d_{.75}$ ($d_{.9}$) & $A_{.5}$ \\
+\midrule
+\multicolumn{18}{l}{\emph{Qwen3-VL-8B-Instruct}} \\
+Open Images (authority, eval awareness) & 433 & \underline{.40} (.51) & \underline{.88} & .57 (.64) & .65 & .55 (.58) & .37 & .54 (.56) & .50 & .57 (.61) & .43 & .55 (.59) & .39 & .09 (.09) & .97 & -- & -- \\
+nuScenes (authority) & 46 & .51 (.60) & .74 & .45 (.61) & .92 & .43 (.59) & .79 & .37 (.62) & .78 & .52 (.57) & .66 & .41 (.60) & .79 & .41 (.48) & .92 & -- & -- \\
+Interfaces (authority) & 129 & \underline{.50} (.56) & \underline{.75} & .60 (.68) & .56 & .55 (.60) & .51 & .54 (.57) & .59 & .54 (.58) & .58 & .57 (.61) & .49 & .53 (.64) & .66 & -- & -- \\
+Generated scenes (authority) & 31 & .52 (.57) & .68 & .53 (.62) & .65 & .53 (.62) & .67 & .42 (.62) & .83 & .49 (.55) & .77 & .54 (.62) & .60 & .42 (.66) & .77 & -- & -- \\
+WMDP carrier (3 instructions pooled) & 224 & .66 (.68) & .56 & .66 (.71) & .56 & .66 (.83) & .59 & .66 (.89) & .50 & .65 (.67) & .52 & .66 (.68) & .56 & .65 (.68) & .58 & -- & -- \\
+\midrule
+\multicolumn{18}{l}{\emph{Qwen3.5-27B}} \\
+refusal: refuses & 630 & \underline{.45} (.77) & \underline{.83} & .52 (.76) & .64 & -- & -- & -- & -- & -- & -- & .49 (.67) & .81 & .01 (.11) & .98 & .42 (.56) & .86 \\
+refusal: harmful prompt & 630 & .84 (never) & \underline{.76} & .88 (never) & .54 & -- & -- & -- & -- & -- & -- & .68 (never) & .73 & .00 (.02) & .99 & .03 (.43) & .95 \\
+refusal: harmful, MM-SafetyBench & 420 & .53 (.85) & .76 & .52 (.88) & .64 & -- & -- & -- & -- & -- & -- & .49 (.85) & .79 & .00 (.06) & .98 & .26 (.82) & .91 \\
+\addlinespace[2pt]
+POPE adversarial & 1000 & \underline{.37} (.42) & .98 & .26 (.53) & .91 & -- & -- & -- & -- & -- & -- & .40 (.44) & .99 & -- & -- & -- & -- \\
+four-way object & 500 & .82 (.84) & .40 & .83 (.85) & .45 & -- & -- & -- & -- & -- & -- & .74 (.79) & .50 & -- & -- & -- & -- \\
+\addlinespace[2pt]
+Open Images (authority, eval awareness) & 429 & \underline{.54} (.70) & \underline{.62} & .39 (.72) & .81 & -- & -- & -- & -- & .58 (.71) & .29 & .57 (.65) & .35 & .00 (.54) & .88 & -- & -- \\
+Interfaces (authority) & 125 & \underline{.54} (.58) & \underline{.62} & .55 (.80) & .61 & -- & -- & -- & -- & .55 (.57) & .60 & .55 (.58) & .56 & .50 (.56) & .74 & -- & -- \\
+Generated scenes (authority) & 32 & .50 (.57) & .76 & .43 (.60) & .81 & -- & -- & -- & -- & .46 (.55) & .80 & .38 (.58) & .81 & .08 (.54) & .86 & -- & -- \\
+WMDP carrier (3 instructions pooled) & 225 & .82 (.85) & .55 & .84 (.89) & .58 & -- & -- & -- & -- & .74 (.78) & .57 & .80 (.84) & .62 & .76 (.82) & .54 & -- & -- \\
+\addlinespace[2pt]
+WMDP by channel & 1047 & .83 (.89) & .58 & .84 (.90) & .58 & -- & -- & -- & -- & .74 (.78) & .60 & .81 (.84) & .63 & -- & -- & -- & -- \\
+\midrule
+\multicolumn{18}{l}{\emph{pooled over Qwen3-VL-8B-Instruct, Qwen3.5-27B}} \\
+refusal: refuses & 630 & \underline{.45} (.77) & \underline{.83} & .52 (.76) & .64 & -- & -- & -- & -- & -- & -- & .49 (.67) & .81 & .01 (.11) & .98 & .42 (.56) & .86 \\
+refusal: harmful prompt & 630 & .84 (never) & \underline{.76} & .88 (never) & .54 & -- & -- & -- & -- & -- & -- & .68 (never) & .73 & .00 (.02) & .99 & .03 (.43) & .95 \\
+refusal: harmful, MM-SafetyBench & 420 & .53 (.85) & .76 & .52 (.88) & .64 & -- & -- & -- & -- & -- & -- & .49 (.85) & .79 & .00 (.06) & .98 & .26 (.82) & .91 \\
+\addlinespace[2pt]
+POPE adversarial & 1000 & \underline{.37} (.42) & .98 & .26 (.53) & .91 & -- & -- & -- & -- & -- & -- & .40 (.44) & .99 & -- & -- & -- & -- \\
+four-way object & 500 & .82 (.84) & .40 & .83 (.85) & .45 & -- & -- & -- & -- & -- & -- & .74 (.79) & .50 & -- & -- & -- & -- \\
+\addlinespace[2pt]
+Open Images (authority, eval awareness) & 862 & \underline{.50} (.57) & \underline{.75} & .52 (.65) & .73 & .55 (.58)$^\dagger$ & .37 & .54 (.56)$^\dagger$ & .50 & .57 (.62) & .36 & .56 (.60) & .37 & .09 (.42) & .92 & -- & -- \\
+nuScenes (authority) & 46 & .51 (.60) & .74 & .45 (.61) & .92 & .43 (.59) & .79 & .37 (.62) & .78 & .52 (.57) & .66 & .41 (.60) & .79 & .41 (.48) & .92 & -- & -- \\
+Interfaces (authority) & 254 & \underline{.52} (.57) & \underline{.68} & .57 (.65) & .58 & .55 (.60)$^\dagger$ & .51 & .54 (.57)$^\dagger$ & .59 & .54 (.58) & .59 & .56 (.60) & .52 & .52 (.57) & .70 & -- & -- \\
+Generated scenes (authority) & 63 & .51 (.57) & .72 & .51 (.61) & .73 & -- & -- & -- & -- & .48 (.55) & .79 & .52 (.60) & .71 & .29 (.59) & .82 & -- & -- \\
+WMDP carrier (3 instructions pooled) & 449 & .68 (.84) & .56 & .74 (.88) & .57 & -- & -- & -- & -- & .67 (.75) & .55 & .72 (.83) & .59 & .68 (.79) & .56 & -- & -- \\
+\addlinespace[2pt]
+WMDP by channel & 1047 & .83 (.89) & .58 & .84 (.90) & .58 & -- & -- & -- & -- & .74 (.78) & .60 & .81 (.84) & .63 & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}}
+\caption{MAIN. How deep in a vision-language model each reader first reads, for good, the answer the model is about to give, every reader read on the blocks V-Read is fitted at: V-Read, a label-free affine lens per block read through the model's own final norm and unembedding, is earliest on the rows counted below and level or later on the rest, which are listed. Compared: the logit lens, the tuned lens, the Jacobian lens and Patchscopes, where each was read, with a labelled logistic probe (and, for refusal, the difference of means) as a supervised reference, not an upper bound ($^\ast$). Depths are point estimates with no interval. For each task and reader, $d_{.75}$ is the depth (block over the number of blocks less one) from which the AUROC for the answer the model then gives stays at or above 0.75 to the output, $d_{.9}$ the same at 0.9, and $A_{.5}$ the AUROC at depth 0.5. AUROC is on records no fitted lens saw, every reader on the same records within a family, linear between read blocks, averaged over a row's families weighted by records; ``never'' means the reader ends below the threshold, -- that the reader was not run; $^\dagger$ marks a reader seen on part of a row's records (at least half). Refusal rows: MM-SafetyBench harmful and harmless scenarios with the benchmark's carrier, and MOSSBench; target the reply refusing, or the prompt being harmful. SimonSays rows pool a source's probes; the password-locking families are excluded. V-Read's entry is underlined only where it is strictly the best of the published label-free readers; nothing is bold. Qwen3-VL-8B-Instruct: V-Read is present on 5 of 5 rows and is strictly earliest of the published label-free readers at 0.75 on 2, level on 0 and later on 3 (nuScenes: Jacobian lens at .37 against .51; Generated scenes: Jacobian lens at .42 against .52; WMDP carrier: Patchscopes at .65 against .66); its median lead over the earliest published baseline is -0.01 of depth. Qwen3.5-27B: V-Read is present on 10 of 10 rows and is strictly earliest of the published label-free readers at 0.75 on 4, level on 0 and later on 6 (harmful prompt: logit lens at .68 against .84; harmful, MM-SafetyBench: logit lens at .49 against .53; four-way object: logit lens at .74 against .82; Generated scenes: logit lens at .38 against .50; WMDP carrier: Patchscopes at .74 against .82; WMDP by channel: Patchscopes at .74 against .83); its median lead over the earliest published baseline is -0.06 of depth; rows compared against fewer baselines: refuses, harmful prompt, harmful, MM-SafetyBench, POPE adversarial, four-way object against the logit lens only; Open Images, Interfaces, Generated scenes, WMDP carrier, WMDP by channel against Patchscopes and the logit lens only. pooled over Qwen3-VL-8B-Instruct, Qwen3.5-27B: V-Read is present on 11 of 11 rows and is strictly earliest of the published label-free readers at 0.75 on 4, level on 0 and later on 7 (harmful prompt: logit lens at .68 against .84; harmful, MM-SafetyBench: logit lens at .49 against .53; four-way object: logit lens at .74 against .82; nuScenes: Jacobian lens at .37 against .51; Generated scenes: Patchscopes at .48 against .51; WMDP carrier: Patchscopes at .67 against .68; WMDP by channel: Patchscopes at .74 against .83); its median lead over the earliest published baseline is -0.03 of depth; rows compared against fewer baselines: refuses, harmful prompt, harmful, MM-SafetyBench, POPE adversarial, four-way object against the logit lens only; Generated scenes, WMDP carrier, WMDP by channel against Patchscopes and the logit lens only.}
+\label{tab:detect}
+\end{table*}
