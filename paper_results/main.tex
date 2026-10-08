@@ -1,0 +1,40 @@
+% Working draft: setup, results and results appendix. Build: tectonic draft.tex
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{tgpagella}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx,booktabs,rotating,float}
+\usepackage[table]{xcolor}
+\usepackage[numbers]{natbib}
+\usepackage{caption}
+\usepackage{placeins}
+% let floats share pages with text so pages do not end in white space
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.85}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\captionsetup{font=small,skip=4pt}
+\captionsetup{font=small}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black]{hyperref}
+\newcommand{\pending}[1]{\textcolor{red!60!black}{[PENDING: #1]}}
+\title{V-Lens: results, discussion and conclusion}
+\date{\today}
+\begin{document}
+\maketitle
+\input{setup.tex}
+\input{results.tex}
+\clearpage
+\FloatBarrier
+\bibliographystyle{plainnat}
+\bibliography{refs_user,refs_extra}
+\clearpage
+\appendix
+\input{appendix.tex}
+\end{document}

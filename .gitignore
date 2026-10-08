@@ -1,0 +1,112 @@
+# ---------------------------------------------------------------- heavy, never versioned
+# datasets (1.4 GB of images and prompt files; copied to the box separately).
+# The trailing name has changed once already and the old rule stopped matching,
+# which put every WMDP prompt file into a commit; match the prefix instead.
+VLM V-Lens Final Dataset*/
+data/
+data_root/
+# earlier runs, kept on disk for reference and never versioned
+archive_*/
+/tables/
+/.plotsync/
+# everything the experiments write, and the built pages. Anchored to the root:
+# an unanchored figures/ also matched vlens/figures/, so the module that draws
+# every figure was never once committed.
+/results/
+/paper/
+/figures/
+/figures.bak*/
+/logs/
+# the vendored reference implementation (cloned on each machine)
+ref_jlens_repo/
+# model and cache files
+*.npz
+*.npy
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.h5
+*.parquet
+*.pkl
+*.pickle
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+# images and media outside the code
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.mp4
+*.pdf
+# fonts are small but binary; the build embeds them from assets/, kept
+!assets/*.otf
+!assets/*.b64
+
+# ---------------------------------------------------------------- notes and manuscripts: only the root README is kept
+*.md
+!/README.md
+*.tex
+*.bib
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# ---------------------------------------------------------------- local scratch
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+*:Zone.Identifier
+.venv/
+venv/
+.env
+.DS_Store
+.plotsync/
+# a lane's progress belongs to the machine running it, not to the checkout
+queue/*.q.done*
+queue/*.q.attempts
+queue/*.q.dropped
+queue/*.q.bak
+# queue backups and progress markers, and a stray Hugging Face cache
+queue/*.bak*
+queue/*.pre_switch
+queue/*.cut*
+queue/bak_*/
+*.done
+*.done.lines
+/hf/
+!supplement/*.md
+# local assistant settings, and stale copies of files that live in vlens/ and experiments/vlens/
+.claude/
+/__init__.py
+/corpus.py
+/model.py
+/paths.py
+/results.py
+/tasks.py
+/datasets.sh
+/datasets/
+/judge/
+/lens/
+/simonsays/
+/vlens/axes_sweep.py
+/vlens/cache_sets.py
+/vlens/channels.py
+/vlens/fit_tuned.py
+/vlens/hookcheck.py
+/vlens/judge_replies.py
+/vlens/probe_sweep.py
+/vlens/reader.py
+/vlens/tunedcheck.py
+/queue/prune_results.py
+/vlm_box_backup*/

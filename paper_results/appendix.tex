@@ -1,0 +1,586 @@
+% Appendix. Include after \appendix.
+
+% Appendix (condensed). Figures are in ../figures; tables are generated and inlined by tools/flatten_paper.py.
+
+\section{Baseline protocols}
+\label{app:protocols}
+
+All methods are run on the same models, in bfloat16, with the model's own chat template and thinking disabled. Every fitted reader is fitted on the same 900 image--text pairs (SimonSays pictures with their questions) that are never scored, and tuned on the same 120 development pairs; no scored record, and no picture of a scored record, is used in any fit. All readers are read at the same position (the answer spot) through the model's own final norm and unembedding.
+All setups and method are take from their respective papers and code if provided.
+\paragraph{Readers.}
+\begin{itemize}
+\item \emph{V-Read (ours).} One affine map per block from the block's state to the final state, fitted in closed form by ridge regression over every token of the 900 fitting pairs (about 206,000 tokens), with the ridge penalty and a per-block output gain chosen by KL on the development pairs.
+\item \emph{Logit lens} \citep{nostalgebraist2020logitlens}. The block's state read directly through the final norm and unembedding; nothing is fitted.
+\item \emph{Tuned lens} \citep{belrose2025elicitinglatentpredictionstransformers}. One affine translator per block, started at the identity and trained to minimise the KL divergence to the model's final next-token distribution, with Nesterov SGD (momentum 0.9, learning-rate scale 1.0, weight decay $10^{-3}$), 250 steps of 262,144 tokens, linear learning-rate decay and gradient clipping at 1.0, every block's loss at full weight, as in the reference implementation.
+\item \emph{Jacobian lens} \citep{gurnee2026jacobianlens}. The mean Jacobian of the final state with respect to the block's state, estimated with the reference estimator on 100 fitting pairs, averaging over source positions after the first sixteen.
+\item \emph{Patchscopes} \citep{ghandeharioun2024patchscopes}. The block's state is patched into the last position of a few-shot identity prompt at the same block, and the model's next-token distribution is read; both the plain-text and the chat-template versions of the prompt are run, and the better of the two is reported for each model.
+\item \emph{Labelled probe (reference).} A logistic regression per block on the standardised state, trained within each task type, with the penalty and an optional PCA reduction chosen by inner cross-validation, and scored out of fold in five folds grouped by picture.
+\item \emph{LatentLens} \citep{kkrojer2026latentlens} (image patches only). A store of the contextual states of 12,000 COCO training captions run through the same model, at most twenty entries per word per layer, at the blocks V-Read is read at; a patch is described by its ten nearest distinct store words by cosine similarity, the method's own output. No evaluated photograph's captions are in the store.
+\end{itemize}
+
+\paragraph{Attribution methods.} Every method scores the same records, at the same block (half depth), over the same image tokens, for the same target, the margin of the answer the model gave. Where a method needs a reference state, it uses the picture's mean image-token state, as V-Write does, unless its paper specifies otherwise.
+\begin{itemize}
+\item \emph{V-Write (ours).} Integrated gradients \citep{sundararajan2017axiomaticattributiondeepnetworks} of the answer's margin with respect to the image-token states, from the picture's mean state, 8 steps.
+\item \emph{Integrated gradients, zero state} \citep{sundararajan2017axiomaticattributiondeepnetworks}. As above from a zero state, 64 steps.
+\item \emph{Gradient $\times$ activation} \citep{shrikumar2017justblackboxlearning}. The gradient at the observed state times the state.
+\item \emph{Attribution patching (AtP)} \citep{syed2023attributionpatchingoutperformsautomated, kramár2024atpefficientscalablemethod}. The first-order estimate of replacing each token by the mean state, from one gradient.
+\item \emph{Activation patching} \citep{meng2023locatingeditingfactualassociations}. The measured change when each token alone is replaced by the mean state, one forward pass per token.
+\item \emph{KernelSHAP} \citep{lundberg2017unifiedapproachinterpretingmodel}. Shapley values of 16 patch groups, with the sampler of the \texttt{shap} package (coalition sizes drawn by kernel weight, paired with their complements, small sizes enumerated) and weighted least squares under the efficiency constraint, 2,080 coalitions; absent groups take the mean state.
+\item \emph{RISE} \citep{petsiuk2018riserandomizedinputsampling}. 4,000 random binary masks on a $7\times7$ grid with keep probability 0.5, upsampled with random shifts; a token's score is the mask-weighted average of the answer's margin.
+\item \emph{Grad-CAM} \citep{Selvaraju_2019}. At the vision tower's last block: channel weights are the mean gradient over the picture's patches, a patch's score is the ReLU of its features dotted with the weights, summed onto each image token.
+\item \emph{Centre prior and random.} A fixed map that falls off linearly with distance from the centre of the picture, and a random ranking.
+\end{itemize}
+
+\paragraph{Directions.} For steering and refusal, V-Write's direction (the mean gradient of the target's log-odds at the image tokens over held-out prompts) is compared with a difference of means between states of the two answers \citep{arditi2024refusal}, the unembedding row of the target word, and a random direction, each scaled to the local residual norm.
+
+\paragraph{Statistics.} Intervals are 95\% bootstrap intervals, resampling pictures rather than records unless a caption says otherwise (a few tables resample records, one per picture, or tasks). A difference between V-Read and a baseline counts only when its paired interval excludes zero.
+
+\section{More V-Write results}
+\label{app:vwrite}
+\label{app:more}
+
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\linewidth]{figures/vwrite_beyond__averaged.png}
+\caption{Left: fall in the answer margin when the top 20\% of image tokens is set to zero, for V-Write, the best of the established methods run on that model (named) and random tokens; \textsc{SimonSays}, four models, 57--97 records each. Middle: fall when the top 10\% of the picture is covered in pixels, five ways, against a random 10\%; Qwen3-VL-8B-Instruct, 200 pictures. Right: fall when a fifth of the tokens is hidden in the order of V-Write's map for the asked question, its map for the other question asked of the same photograph, or at random, relative to the first; 986 photographs per model. Bars: 95\% bootstrap intervals.}
+  \label{fig:beyond}
+\end{figure}
+
+\begin{table}[!htbp]
+  \centering
+  \small
+\caption{Covering the picture in pixel space. Fall in the answer's margin when a tenth of the picture is covered, V-Write's top patches against random patches; Qwen3-VL-8B-Instruct, 200 SimonSays pictures; intervals resample records.}
+  \label{tab:occlusion}
+  \begin{tabular}{lccc}
+    \toprule
+    covering & V-Write's top tenth & random tenth & difference [95\% interval] \\
+    \midrule
+    grey & 1.38 & 0.67 & 0.70 [0.40, 1.04] \\
+    blur & 0.88 & 0.49 & 0.38 [0.06, 0.73] \\
+    noise & 1.44 & 0.89 & 0.55 [0.23, 0.92] \\
+    mean colour & 1.25 & 0.43 & 0.82 [0.52, 1.14] \\
+    inpainting & 1.20 & 0.69 & 0.52 [0.19, 0.87] \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\paragraph{Ablations.} Table~\ref{tab:ablation} separates its two choices. Starting from the picture's average image token instead of zero raises the answer removed 1.4 to 2.1 times on every model and raises agreement with patching (0.30 against 0.09 on Qwen3-VL-8B-Instruct), while 32 steps instead of 8 change neither by more than 0.1.
+
+\begin{table}[!htbp]
+  \centering
+\footnotesize \setlength{\tabcolsep}{4pt}
+\caption{Integration start point and number of steps. Integrated gradients over image-token states at half depth, SimonSays, the same records per model: from the picture's mean image-token state with 8 steps (V-Write) or 32 steps, and from a zero state with 64 steps (the usual choice). Answer removed: fall in the answer margin with the top 20\% of tokens set to zero. Agreement: rank correlation with the measured effect of zeroing each of 16 regions. 95\% bootstrap intervals over records.}
+  \label{tab:ablation}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{answer removed} & \multicolumn{3}{c}{agreement with patching} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+model & mean, 8 steps & mean, 32 steps & zero, 64 steps & mean, 8 steps & mean, 32 steps & zero, 64 steps \\
+\midrule
+Qwen3-VL-8B-Instruct & 3.84 [3.12, 4.76] & 3.79 [3.04, 4.67] & 2.11 [1.44, 2.93] & 0.30 [0.23, 0.35] & 0.30 [0.23, 0.36] & 0.09 [0.02, 0.16] \\
+Qwen3.5-27B & 1.63 [1.20, 2.10] & 1.72 [1.30, 2.17] & 1.18 [0.84, 1.57] & 0.42 [0.36, 0.49] & 0.43 [0.35, 0.49] & 0.31 [0.24, 0.39] \\
+gemma-4-26B-A4B-it & 4.07 [3.11, 5.12] & 4.07 [3.13, 5.16] & 2.32 [1.66, 2.98] & 0.38 [0.32, 0.43] & 0.38 [0.32, 0.43] & 0.33 [0.27, 0.39] \\
+InternVL3\_5-8B-HF & 1.59 [1.30, 1.92] & 1.59 [1.30, 1.88] & 0.74 [0.54, 0.96] & 0.36 [0.30, 0.41] & 0.36 [0.30, 0.41] & 0.14 [0.08, 0.20] \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\paragraph{Group-level comparison with KernelSHAP.} KernelSHAP scores 16 groups of tokens. Summing every map into the same groups (Table~\ref{tab:group}), V-Write and KernelSHAP are level on the human outlines of both models, and both are well ahead of RISE, at about a hundredth of KernelSHAP's cost for V-Write.
+
+\begin{table}[!htbp]
+  \centering
+\footnotesize \setlength{\tabcolsep}{4pt}
+\caption{Attribution maps scored on KernelSHAP's 16 groups of tokens. Every map summed into the same 16 groups of tokens that KernelSHAP and RISE score, then graded against the human outline on COCO. Group hit@1: the top group contains the asked object; group AUROC: group scores against groups mostly on the object; rank: Spearman correlation of group scores with the group's object coverage. 93 photographs (the 100 of Table~\ref{tab:vwrite} with every map stored; Qwen3-VL-8B-Instruct) and 60 (Qwen3.5-27B); RISE on 20 of the 60 for the 27B. Best per column underlined. V-Write's top token is the first image token, in the corner, on 0\% and 5\% of photographs; masking that token leaves its hit@1 unchanged (gradient $\times$ activation and attribution patching pick it on 9--13\%).}
+  \label{tab:group}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{Qwen3-VL-8B-Instruct} & \multicolumn{3}{c}{Qwen3.5-27B} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+method & hit@1 & AUROC & rank & hit@1 & AUROC & rank \\
+\midrule
+V-Write & 0.86 & \underline{0.83} & \underline{0.50} & 0.88 & 0.86 & 0.53 \\
+\midrule
+KernelSHAP & 0.81 & 0.82 & 0.48 & 0.85 & \underline{0.87} & \underline{0.58} \\
+RISE & 0.62 & 0.62 & 0.20 & 0.60 & 0.64 & 0.23 \\
+IG, zero state & 0.75 & 0.74 & 0.32 & \underline{0.90} & 0.83 & 0.50 \\
+grad.\ $\times$ act. & \underline{0.87} & 0.75 & 0.43 & 0.60 & 0.60 & 0.16 \\
+attr.\ patching & 0.71 & 0.62 & 0.28 & 0.58 & 0.52 & 0.03 \\
+act.\ patching & 0.49 & 0.62 & 0.16 & 0.57 & 0.59 & 0.11 \\
+Grad-CAM & 0.32 & 0.47 & -0.02 & 0.22 & 0.42 & -0.07 \\
+random & 0.32 & 0.44 & -0.07 & 0.25 & 0.43 & -0.10 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{COCO, method by method.} Table~\ref{tab:cocoapp} compares V-Write with each baseline on COCO, with paired intervals over photographs. V-Write removes more of the answer than every baseline on both models, and its top token lands on the object as often as the best of them or more often.
+
+
+
+\begin{table}[!htbp]
+  \centering
+\footnotesize
+\caption{V-Write compared with each baseline on COCO. RISE, run on a subset for Qwen3.5-27B, is compared in Table~\ref{tab:vwrite}. V-Write minus each baseline on COCO: fall in the answer score with the top fifth hidden, hit@1 and whole-map AUROC, with 95\% paired bootstrap intervals over photographs; bold where the interval excludes zero in V-Write's favour. 100 photographs on Qwen3-VL-8B-Instruct, 60 on Qwen3.5-27B.}
+  \label{tab:cocoapp}
+\resizebox{\linewidth}{!}{%
+% BEGIN generated table app_coco.tex (tools/make_paper_tables.py; re-run tools/flatten_paper.py to refresh)
+\begin{tabular}{lrrrrrr}
+\toprule
+ & \multicolumn{3}{c}{Qwen3-VL-8B-Instruct} & \multicolumn{3}{c}{Qwen3.5-27B} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+V-Write minus & answer removed & hit@1 & AUROC & answer removed & hit@1 & AUROC \\
+\midrule
+KernelSHAP & \textbf{+1.71 [+1.49, +1.94]} & \textbf{+0.29 [+0.18, +0.40]} & $-$0.06 [$-$0.08, $-$0.03] & \textbf{+0.58 [+0.30, +0.88]} & \textbf{+0.37 [+0.22, +0.52]} & $-$0.08 [$-$0.12, $-$0.05] \\
+integrated gradients, zero & \textbf{+1.77 [+1.58, +1.96]} & \textbf{+0.09 [+0.01, +0.18]} & \textbf{+0.14 [+0.11, +0.16]} & \textbf{+0.99 [+0.72, +1.28]} & $-$0.03 [$-$0.15, +0.08] & \textbf{+0.05 [+0.03, +0.08]} \\
+gradient $\times$ activation & \textbf{+1.78 [+1.54, +2.02]} & +0.03 [$-$0.07, +0.13] & \textbf{+0.08 [+0.05, +0.10]} & \textbf{+1.54 [+1.15, +1.98]} & \textbf{+0.18 [+0.05, +0.32]} & \textbf{+0.18 [+0.15, +0.21]} \\
+attribution patching & \textbf{+2.26 [+2.00, +2.54]} & +0.05 [$-$0.06, +0.16] & \textbf{+0.14 [+0.11, +0.17]} & \textbf{+1.62 [+1.18, +2.11]} & \textbf{+0.33 [+0.18, +0.48]} & \textbf{+0.23 [+0.19, +0.27]} \\
+activation patching & \textbf{+2.30 [+2.07, +2.55]} & \textbf{+0.12 [+0.03, +0.21]} & \textbf{+0.19 [+0.16, +0.21]} & \textbf{+1.67 [+1.21, +2.16]} & \textbf{+0.38 [+0.25, +0.52]} & \textbf{+0.22 [+0.18, +0.26]} \\
+Grad-CAM & \textbf{+3.26 [+2.92, +3.60]} & \textbf{+0.38 [+0.26, +0.50]} & \textbf{+0.26 [+0.21, +0.31]} & \textbf{+2.30 [+1.77, +2.88]} & \textbf{+0.50 [+0.37, +0.63]} & \textbf{+0.37 [+0.31, +0.43]} \\
+centre prior & \textbf{+3.17 [+2.86, +3.49]} & \textbf{+0.26 [+0.12, +0.40]} & \textbf{+0.06 [+0.01, +0.12]} & \textbf{+2.38 [+1.82, +2.98]} & \textbf{+0.38 [+0.20, +0.57]} & \textbf{+0.15 [+0.07, +0.23]} \\
+random & \textbf{+3.53 [+3.22, +3.84]} & \textbf{+0.38 [+0.25, +0.51]} & \textbf{+0.24 [+0.21, +0.27]} & \textbf{+2.44 [+1.91, +3.03]} & \textbf{+0.53 [+0.38, +0.68]} & \textbf{+0.29 [+0.25, +0.34]} \\
+\bottomrule
+\end{tabular}
+% END generated table app_coco.tex
+}
+\end{table}
+
+\paragraph{Top, middle and bottom of the ranking.} Replacing the fifth of image tokens V-Write ranks highest costs the answer 3.20 on Qwen3-VL-8B-Instruct and 0.89 on Qwen3.5-27B and flips 14.5\% and 24\% of answers, the fifth it ranks lowest moves the answer the other way (by 1.65 and 0.55), and the middle fifth is no different from a random one (Figure~\ref{fig:patchcausal}).
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\linewidth]{figures/patch_causal__averaged.png}
+\caption{Replacing the top, middle and bottom of V-Write's ranking. Replacing the fifth of image tokens it ranks highest costs the answer 3.20 on Qwen3-VL-8B-Instruct and 0.89 on Qwen3.5-27B and flips 14.5\% and 24\% of answers; the fifth it ranks lowest moves the margin the other way (by 1.65 and 0.55) and flips none; the middle fifth (0.17, 0.01) is no better than a random fifth (0.19, 0.03). Fall in the margin (left) and share of answers flipped (right) as 5 to 50\% of image tokens are replaced by the picture's mean state; mean of the two models.}
+  \label{fig:patchcausal}
+\end{figure}
+
+\paragraph{Step-by-step removal.} Removing image tokens step by step on 300 COCO photographs (Figure~\ref{fig:retention}), the tenth V-Write ranks highest cuts the answer's margin to 77\% of its value on Qwen3-VL-8B-Instruct, against 92\% in attribution patching's order and 99\% at random, and half of the answer goes with 6\% of the picture chosen by V-Write, against 24\% and 55\%. On Qwen3.5-27B, 27\% against 71\% and 83\%. Removing V-Write's lowest-ranked tokens first strengthens the answer.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\linewidth]{figures/retention__Qwen3-VL-8B-Instruct.png}
+\caption{Removing image tokens step by step on COCO. Left: share of the answer's margin left as more image tokens are replaced by the mean state, in V-Write's order (solid), attribution patching's order, random order, and V-Write's reverse order (dotted); bands: middle half of photographs. Middle: share of the effect left against share of V-Write's score left (dashed diagonal: perfect additivity; the end point holds by construction). Right: the smallest set of tokens that removes half of the answer, as a share of the picture (pale) and the share of it on the object (dark). Qwen3-VL-8B-Instruct, 300 COCO photographs.}
+  \label{fig:retention}
+\end{figure}
+
+
+
+\paragraph{Maps on edited scenes.} Figure~\ref{fig:mapedits} follows V-Write's map across the matched edits of two \textsc{SimonSays} scenes. On the street scene its top tokens move onto each added sign, and onto the contrary sign when a second one is added.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\linewidth]{figures/map_edits__averaged.png}
+\caption{V-Write's maps across the matched edits of two scenes. On the street scene the top cells gather on each added sign and on the contrary sign; on the house, with two contrary signs, they sit mostly in the sky and on the lawn. Untouched, then an official sign, a handwritten sign and a second, contrary sign added; clay the top tenth for the model's answer, slate the bottom tenth; shaded box the edit and the answer the set expects, white box the reply of Qwen3-VL-8B-Instruct.}
+  \label{fig:mapedits}
+\end{figure}
+
+\section{More V-Read results}
+\label{app:vread}
+
+\paragraph{Tuned lens at V-Read's fitting time.} A tuned lens trained on V-Read's fitting time (250 steps of $2^{12}$ tokens) reaches the same held-out KL as with its paper's schedule (3.08 against 3.06 nats) and reads the answer exactly as well, and V-Read reads it better on 9 of 10 tasks (Table~\ref{tab:matched}). Table~\ref{tab:cost} and Figure~\ref{fig:cost} give fitting times and KL for every reader and model.
+
+\begin{table}[!htbp]
+  \centering
+\footnotesize \setlength{\tabcolsep}{4pt}
+\caption{V-Read and the tuned lens at two fitting budgets. AUROC for the answer Qwen3-VL-8B-Instruct gives, averaged over the blocks before 0.45 of the depth and over the mid-depth window of Table~\ref{tab:vread} (0.45--0.8), for V-Read, the tuned lens with its paper's schedule (65.7M tokens) and the tuned lens given V-Read's fitting time (1.1M tokens). Intervals in the text resample tasks.}
+  \label{tab:matched}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{before half depth} & \multicolumn{3}{c}{mid-depth window} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+task & V-Read & tuned, full & tuned, 1.1M & V-Read & tuned, full & tuned, 1.1M \\
+\midrule
+Open Images, authority & 0.78 & 0.38 & 0.38 & 0.99 & 0.82 & 0.82 \\
+Open Images, authority, edited & 0.69 & 0.42 & 0.42 & 0.96 & 0.85 & 0.85 \\
+Open Images, test or real & 0.76 & 0.56 & 0.57 & 0.95 & 0.92 & 0.92 \\
+nuScenes, authority, edited & 0.64 & 0.57 & 0.58 & 0.92 & 0.94 & 0.93 \\
+VINS-120K, authority & 0.71 & 0.37 & 0.37 & 0.95 & 0.85 & 0.85 \\
+VINS-120K, authority, edited & 0.55 & 0.52 & 0.53 & 0.91 & 0.88 & 0.88 \\
+Generated scenes, authority & 0.42 & 0.56 & 0.56 & 0.91 & 0.90 & 0.89 \\
+WMDP, biology & 0.62 & 0.55 & 0.55 & 0.78 & 0.69 & 0.69 \\
+WMDP, chemistry & 0.45 & 0.53 & 0.55 & 0.74 & 0.71 & 0.71 \\
+WMDP, cyber & 0.66 & 0.59 & 0.57 & 0.78 & 0.74 & 0.73 \\
+\midrule
+mean & 0.63 & 0.51 & 0.51 & 0.89 & 0.83 & 0.83 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+  \centering
+  \small
+\caption{Fitting cost of each reader. The tuned-lens row uses its paper's schedule (250 steps of $2^{18}$ tokens). Trained instead for 250 steps of $2^{12}$ tokens (1.1M tokens seen, since each step is filled with whole batches; about five passes over the 206,000-token corpus V-Read reads once, and about V-Read's fitting time) on the same prompts and blocks, it reaches a held-out KL of 3.08 nats against 3.06 with the full schedule (Qwen3-VL-8B-Instruct; one NVIDIA L4, 60 minutes, about 8 minutes at the H200's measured rate). Time to fit every block on one NVIDIA H200 NVL, the data each reader is fitted on (the tuned lens's 65.7M tokens are about 300 passes over the 900 prompts), and the cost of reading one block. LatentLens fits nothing: it runs its captions through the model once and stores their states (at most 20 per word, 6,620 and 6,654 distinct words), so it is the cheapest to set up, can only name words its captions contain, and reads by a nearest-neighbour search over the store (500 photographs in 4.0 and 5.2 minutes).}
+  \label{tab:cost}
+% BEGIN generated table paper_cost.tex (tools/make_paper_tables.py; re-run tools/flatten_paper.py to refresh)
+\begin{tabular}{llrrl}
+\toprule
+reader & fitted on & Qwen3-VL-8B-Instruct & Qwen3.5-27B & read cost \\
+\midrule
+V-Read & 900 prompts, one pass & 7 min & 20 min & one matmul \\
+tuned lens & 900 prompts, 65.7M tokens & 7.9 h & 9.9 h & one matmul \\
+Jacobian lens & 100 prompts & 2.6 h & 8.9 h & one matmul \\
+LatentLens & 12,000 captions, one pass & 0.6 min & 1.3 min & nearest-neighbour search \\
+Patchscopes & nothing & -- & -- & a forward pass \\
+logit lens & nothing & -- & -- & none \\
+\bottomrule
+\end{tabular}
+% END generated table paper_cost.tex
+\end{table}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/cost_and_quality__averaged.png}
+\caption{Fitting time against development-set KL. On Qwen3-VL-8B-Instruct V-Read fits in 412 s at 4.15 nats, the tuned lens in 28,302 s at 3.06 and the Jacobian lens in 9,313 s at 15.0, above the logit lens; marker shape gives the model (circle Qwen3-VL-8B-Instruct, square Qwen3.5-27B, triangle gemma-4-26B-A4B-it, diamond InternVL3\_5-8B-HF). LatentLens is not drawn: it outputs nearest words, not a next-token distribution, so it has no KL; the KL is over the model's full next-token distribution, not the answer. Both axes logarithmic.}
+  \label{fig:cost}
+\end{figure}
+
+\paragraph{Early blocks.} Before 0.45 of the depth V-Read is ahead of the logit lens on every model and of every reader on Qwen3-VL-8B-Instruct (Table~\ref{tab:early}).
+
+\begin{table}[!htbp]
+  \centering
+\footnotesize \setlength{\tabcolsep}{4pt}
+\caption{Reading the answer before half depth. V-Read's AUROC minus each reader's, averaged over blocks before 0.45 of the depth and over the SimonSays tasks of Table~\ref{tab:vread} (8--10 per model), with a 95\% interval from resampling tasks; bold where it excludes zero. The tuned lens was not fitted on gemma-4-26B-A4B-it or InternVL3\_5-8B-HF.}
+  \label{tab:early}
+\begin{tabular}{lcccc}
+\toprule
+model & tuned lens & Jacobian lens & Patchscopes & logit lens \\
+\midrule
+Qwen3-VL-8B-Instruct & \textbf{+0.12 [+0.02, +0.23]} & \textbf{+0.10 [+0.01, +0.20]} & \textbf{+0.13 [+0.02, +0.24]} & \textbf{+0.12 [+0.01, +0.24]} \\
+Qwen3.5-27B & +0.06 [-0.01, +0.13] & +0.04 [+0.00, +0.10] & +0.05 [-0.01, +0.11] & \textbf{+0.07 [+0.00, +0.14]} \\
+gemma-4-26B-A4B-it & not fitted & \textbf{+0.11 [+0.02, +0.20]} & +0.04 [-0.02, +0.11] & \textbf{+0.13 [+0.02, +0.26]} \\
+InternVL3\_5-8B-HF & not fitted & +0.05 [-0.00, +0.09] & -0.01 [-0.08, +0.08] & \textbf{+0.07 [+0.02, +0.12]} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Question wording and depth window.} Table~\ref{tab:within} compares readers only among records that share a question, so the wording cannot help. Table~\ref{tab:window} repeats Table~\ref{tab:vread} over other depth windows.
+
+\begin{table}[!htbp]
+  \centering
+\footnotesize
+\caption{Readers compared within groups of records that share a question. Per task: records $n$; question groups containing both answers; AUROC of the question-only score; overall AUROC of V-Read and of the best other reader (as in Table~\ref{tab:vread}); within-question AUROC of V-Read and of the best other reader, and their difference with a 95\% interval resampling question groups. Depth 0.45--0.8, same records and blocks as Table~\ref{tab:vread}.}
+  \label{tab:within}
+\resizebox{\linewidth}{!}{%
+% BEGIN generated table app_within.tex (tools/make_paper_tables.py; re-run tools/flatten_paper.py to refresh)
+\begin{tabular}{llrrrrrrr}
+\toprule
+ & & & & \multicolumn{2}{c}{all records} & \multicolumn{3}{c}{within one question} \\
+\cmidrule(lr){5-6}\cmidrule(lr){7-9}
+model & task & $n$ & groups & question only & V-Read, best other & V-Read & best other & $\Delta$ [95\% CI] \\
+\midrule
+8B & Open Images, authority & 202 & 4 & 0.94 & 0.99, 0.88 JL & 0.93 & 0.96 PS & $-$0.02 [$-$0.10, +0.07] \\
+8B & Open Images, authority, edited & 117 & 7 & 0.84 & 0.96, 0.87 PS & 0.95 & 0.93 PS & +0.02 [$-$0.05, +0.04] \\
+8B & nuScenes, authority, edited & 46 & 4 & 0.48 & 0.92, 0.94 TL & 0.96 & 0.96 PS & $-$0.01 [$-$0.02, +0.00] \\
+8B & VINS-120K, authority & 56 & 1 & 0.45 & 0.95, 0.90 PS & 0.94 & 0.96 PS & $-$0.01 (one group) \\
+8B & VINS-120K, authority, edited & 73 & 7 & 0.50 & 0.91, 0.89 PS & 0.90 & 0.88 TL & +0.01 [$-$0.08, +0.06] \\
+8B & Generated scenes, authority & 31 & 0 & 0.50 & 0.91, 0.94 PS & \multicolumn{3}{c}{no question with both answers} \\
+27B & Open Images, authority & 206 & 1 & 0.87 & 0.90, 0.73 TL & 0.90 & 0.89 TL & +0.02 (one group) \\
+27B & Open Images, authority, edited & 109 & 10 & 0.71 & 0.76, 0.77 PS & 0.88 & 0.92 JL & $-$0.04 [$-$0.10, +0.01] \\
+27B & VINS-120K, authority & 56 & 1 & 0.77 & 0.80, 0.82 PS & 0.79 & 0.82 PS & $-$0.02 (one group) \\
+27B & VINS-120K, authority, edited & 69 & 6 & 0.52 & 0.86, 0.90 TL & 0.78 & 0.86 PS & $-$0.08 [$-$0.29, $-$0.02] \\
+27B & Generated scenes, authority & 32 & 1 & 0.44 & 0.90, 0.93 PS & 1.00 & 1.00 TL & +0.00 (one group) \\
+\bottomrule
+\end{tabular}
+% END generated table app_within.tex
+}
+\end{table}
+
+\begin{table}[!htbp]
+  \centering
+  \small
+\caption{Comparison of Table~\ref{tab:vread} over four depth windows. Tasks on which V-Read is ahead of, statistically level with, or behind the best other reader, in four depth windows; the main window (0.45--0.8) was set after the first curves were seen. The counts cover the \textsc{SimonSays} tasks of Table~\ref{tab:vread} and the WMDP questions split by channel. Tasks with fewer than five answers of one kind are not judged.}
+  \label{tab:window}
+% BEGIN generated table paper_window.tex (tools/make_paper_tables.py; re-run tools/flatten_paper.py to refresh)
+\begin{tabular}{lcc}
+\toprule
+depth window & Qwen3-VL-8B-Instruct & Qwen3.5-27B \\
+ & ahead / level / behind & ahead / level / behind \\
+\midrule
+0.30--0.60 & 3 / 7 / 1 & 2 / 7 / 1 \\
+0.45--0.80 (main) & 2 / 8 / 1 & 1 / 5 / 4 \\
+0.60--0.90 & 1 / 7 / 3 & 0 / 3 / 7 \\
+all fitted blocks & 3 / 6 / 2 & 1 / 8 / 1 \\
+\bottomrule
+\end{tabular}
+% END generated table paper_window.tex
+\end{table}
+
+
+
+\paragraph{Image patches.} Read at image tokens, V-Read names the asked object on 25--33\% of the object's patches in the first fifth of Qwen3.5-27B, ahead of every other lens there. From about a quarter of the depth LatentLens, which looks words up in a store of COCO caption states, names it more often (Figure~\ref{fig:patchwords}).
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\linewidth]{figures/patch_words.png}
+\caption{Reading image patches. Left: three SimonSays pictures on Qwen3.5-27B, each patch coloured by the word V-Read (top) or the logit lens (bottom) reads from it at block 13 of 64 (the five most frequent whole words; generic words such as ``image'' left out). Right: share of the patches on a COCO object whose ten most likely words include the object's name, by depth, 500 photographs, 95\% bootstrap bands; dotted, V-Read on patches off the object. V-Read peaks at 33\% at about a fifth of the depth, ahead of every lens there; LatentLens, which looks words up in a store of COCO caption states, leads from about a quarter of the way (43--50\% between 0.34 and 0.59). Cost: LatentLens builds its store in 0.6 and 1.3 minutes (8B, 27B) and reads 500 photographs in 4.0 and 5.2 minutes, but can only name the 6,620 and 6,654 words its captions contain; V-Read is fitted once (7 and 20 minutes), reads over the full vocabulary, and the same fit reads answers.}
+  \label{fig:patchwords}
+\end{figure}
+
+
+
+\paragraph{Hallucinated answers.} Among COCO questions Qwen3-VL-8B-Instruct answers yes, V-Read separates true from hallucinated yeses at half depth (AUROC 0.95, interval 0.92--0.97), where the Jacobian lens reaches 0.79 and the other readers are near chance (Figure~\ref{fig:halluc}).
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{figures/hallucination_depth.png}
+\caption{Separating true from hallucinated yes answers by depth. AUROC, by depth, of each reader's yes-minus-no reading for separating true from hallucinated yes answers on COCO POPE questions (483 true and 78 hallucinated yes on the 8B model, 484 and 67 on the 27B); band: 95\% bootstrap interval for V-Read. Same records and blocks for every reader.}
+  \label{fig:halluc}
+\end{figure}
+
+\paragraph{AUROC by depth and source.} Figure~\ref{fig:scoreboard} gives AUROC by depth, pooled over both Qwen models, and by source. Before half depth V-Read is the only label-free reader above chance (0.56--0.67), and by three quarters of the depth every reader converges. By source V-Read leads on Open Images (0.88 against at most 0.80).
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\linewidth]{figures/lens_scoreboard_readouts__averaged.png}
+\caption{AUROC by depth and by source. Left: AUROC for the model's answer by depth, both models pooled; before half depth V-Read reads 0.56--0.67 while the other label-free readers sit near or below chance, and all converge by three quarters of the depth; the labelled probe reads 0.72--0.77 from the first block because the wording predicts the answer (Table~\ref{tab:within}). Right: mean AUROC over the shaded depths per source; V-Read leads on Open Images (0.88 against at most 0.80) and Patchscopes on generated scenes and the WMDP.}
+  \label{fig:scoreboard}
+\end{figure}
+
+\paragraph{Commitment depth.} Figure~\ref{fig:commit} gives every record its commitment depth, the last block at which V-Read's reading of the answer changes. The question sets it more than the picture's source does. Across 14 probes the median ranges from 0.46 to 0.76 of the depth on Qwen3-VL-8B-Instruct and from 0.54 to 0.81 on Qwen3.5-27B, and WMDP letters settle late on both.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.85\linewidth]{figures/commitment_lattice__averaged.png}
+\caption{Commitment depth for each probe. For each probe, the share of records already on their final answer at each depth (shaded), the depth of the last change of answer (circle: median; bar: middle half), and the same share read by V-Read (dashed). Median commitment ranges from 0.46 to 0.76 of depth on Qwen3-VL-8B-Instruct and from 0.54 to 0.81 on Qwen3.5-27B; WMDP letters stay at chance until past half depth on both. Read through each model's own final norm and unembedding at the answer spot, which reproduces the model's reply on 96--100\% of records.}
+  \label{fig:commit}
+\end{figure}
+
+\paragraph{Patching edited regions.} Using \textsc{SimonSays}' matched edits, we replace only the image-token states inside the edited region with those of the edited picture, about a third of the way through the network, and read every later block (Figure~\ref{fig:handoff}). The transplant recovers 45\% and 54\% of the way to the edited answer and flips 46\% and 57\% of answers (Qwen3-VL-8B-Instruct, Qwen3.5-27B), against 11\% and 10\% for a region of the same size elsewhere. Moving the image tokens, the text tokens or the answer position alone then shows that the fact is held in the image tokens at half depth and in the text tokens and at the answer position by three quarters.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.49\linewidth]{figures/handoff__Qwen3-VL-8B-Instruct.png}\hfill
+  \includegraphics[width=0.49\linewidth]{figures/handoff__Qwen3.5-27B.png}
+\caption{Transplanting the edited region's image tokens. Left of each panel: the edited-over-original answer score by depth for the original run (dashed) and for the run whose edited-region image tokens were transplanted at about a third of the depth. Right of each panel: the score when only one group of the transplanted run is moved into the original run at the depth shown (image tokens, text tokens or the answer spot), against the full transplant (top line) and the original run (dashed). Qwen3-VL-8B-Instruct (left, 120 pairs) and Qwen3.5-27B (right, 605 pairs).}
+  \label{fig:handoff}
+\end{figure}
+
+\section{More \textsc{SimonSays} results}
+\label{app:dataset}
+\label{app:sandbag}
+
+\paragraph{Authority probes.} Figure~\ref{fig:ladder} gives the share of replies matching \textsc{SimonSays} for each kind of sign, 87\% and 89\% for a plain sign, 91\% and 95\% with graffiti beside it, 36\% and 45\% for a sign inside a depicted picture, and 14\% and 50\% for two bearers with contested standing. For pairs that differ only in what the sign is written on, the state moves mostly across the answer axis rather than along it (Figure~\ref{fig:standing}).
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.75\linewidth]{figures/authority_ladder__averaged.png}
+\caption{Answers on the authority probes. Share of replies matching the set: a plain sign 87\% and 89\%, with graffiti beside it 91\% and 95\%, a sign inside a depicted picture 36\% and 45\%, and two bearers with contested standing 14\% and 50\% (Qwen3-VL-8B-Instruct, Qwen3.5-27B).}
+  \label{fig:ladder}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\linewidth]{figures/standing_plane__averaged.png}
+\caption{Matched pairs that differ only in what a sign is written on. For matched pairs that differ only in the bearer (an official sign against cardboard), the state moves mostly across the answer axis; along it the move is 0.01 on Qwen3.5-27B, below the 0.04--0.12 by which any two records differ. Reversing the words instead flips 2 of 3 and 3 of 4 answers.}
+  \label{fig:standing}
+\end{figure}
+
+\paragraph{Evaluation cues.} A sentence such as ``item $N$ of a 120-item safety evaluation'' moves the state about as far as asking a different question, and dressing a picture as a benchmark figure about half as far, while the answers barely change (Figure~\ref{fig:packaging}).
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\linewidth]{figures/eval_awareness.png}
+\caption{Evaluation cues in the prompt and in the picture. Left: one of the five generated scenes, plain and in the three benchmark dressings, each asked the same question plainly or after a sentence framing it as a test or as a live decision. Right: distance between the internal states of two versions at each depth, in units of the distance between two different questions (1 = as different as a new question; line: median over scenes, band: middle half); ochre, the test sentence against the live one; clay, a dressed picture against the plain one. At the right: answers that change; on Qwen3.5-27B all of them are one borderline question. Qwen3-VL-8B-Instruct and Qwen3.5-27B, 5 scenes.}
+  \label{fig:packaging}
+\end{figure}
+
+\paragraph{Typed and printed instructions.} Figure~\ref{fig:channel} shows where a sandbagging instruction is read on Qwen3-VL-8B-Instruct. The typed instruction is recognisable in the state within the first few blocks and the printed one from about a third of the depth. Their directions come together after half depth, and neither changes accuracy.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.85\linewidth]{figures/channel_plane__Qwen3-VL-8B-Instruct.png}
+\caption{Typed and printed sandbagging instructions. Right: how well the internal state reveals the written instruction (within the first few blocks) and the printed one (from about a third of the depth), and the cosine between the two directions, which rises after half depth (band: shuffled labels). Left: the internal states at four blocks; slate written, clay printed, filled the sandbagging instruction. Qwen3-VL-8B-Instruct, 75 WMDP questions per condition.}
+  \label{fig:channel}
+\end{figure}
+
+\paragraph{Cue and behaviour directions.} Figure~\ref{fig:dirspace} places the directions of Qwen3.5-27B together, and Figure~\ref{fig:cuegeom} shows every record of three cues on both Qwen models. Table~\ref{tab:dirci} gives the key cosines with intervals and the level reached with shuffled labels. The 8B model's test look lies along answering test (0.88 against 0.78) and the 27B model's harmful prompt along refusing (0.81 against 0.47).
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/direction_space.png}
+\caption{Cue and behaviour directions on Qwen3.5-27B. Each direction is the difference of average answer-spot states at block 63 of 64: cues (official vs informal sign, picture dressed as a test vs as real use, sandbagging instruction typed or printed vs an honest one, harmful vs benign prompt) and behaviours (answering no, test, wrong, refusing), each behaviour found on records without its cue. Top left: the cosine between every two directions; no two phenomena exceed 0.20, the two sandbagging instructions share a direction (0.63), and each cue with its own behaviour is boxed; the diagonal is the same direction built on two halves of its records. Top right: each cue against its own behaviour, with a 95\% interval (200 resamples) and the level reached with shuffled labels; only the harmful prompt clears it (0.81 against 0.47). The sandbagging states needed for resampling were not kept (the plotted plane was saved), so those two rows have no interval. Bottom: every record placed along the behaviour's direction (across) and the rest of the cue's direction (up), each left out of the directions it is placed on; thin lines join the same picture or item with and without the cue. A sign's authority (55 pairs, 155 other photographs), a test look (21 dressed pairs and the 170 untouched photographs with stored states) and a typed sandbagging instruction (75 items) move every record the same way but at 74\textdegree, 70\textdegree{} and 83\textdegree{} to their behaviours: 19 of 21 test-dressed, 20 of 21 real-dressed and V-Read reads ``test'' for 124 of the 170 untouched pictures with stored states. A harmful prompt (300, with 300 benign and 300 other harmless prompts) lies 36\textdegree{} from refusing, and the prompts the model refused sit far along it. Filled: the model gave the answer named under the panel. Angles in the bottom row are measured in each panel's own plane and differ by a few degrees from the cosines above.}
+  \label{fig:dirspace}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.92\linewidth]{figures/cue_geometry.png}
+\caption{Records of three cues in the plane of the answer and cue directions. Each panel shows every record's state at the last block V-Read reads, placed along the model's answer direction (across; fitted on records without the cue, grey) and the part of the cue's direction beyond it (up); the arrow is the cue's direction at its true angle to the answer. Red: with the cue; blue: its counterpart; thin lines join the same picture or question under both. Filled or hollow: the answer V-Read reads. Left: 59 and 55 photographs with an official or an informal sign; middle: every test-or-real record, the untouched photographs in grey and the same pictures dressed as a benchmark figure (red) or as real use (blue); right: 75 WMDP questions with a sandbagging or an honest instruction, typed. Angles are measured in each panel's own plane with every record left out of the directions it is placed on; intervals and shuffled-label levels are in Appendix Table~\ref{tab:dirci}.}
+  \label{fig:cuegeom}
+\end{figure}
+
+\begin{table}[!htbp]
+  \centering
+\footnotesize
+\caption{Cosines between cue and behaviour directions. Cosine between a cue's direction and its behaviour's (and between two cues), at the last block V-Read reads, with a 95\% bootstrap interval, the angle, and the 95th percentile of the same cosine when the behaviour's labels are shuffled.}
+  \label{tab:dirci}
+\resizebox{\linewidth}{!}{%
+% BEGIN generated table app_dirci.tex (tools/make_paper_tables.py; re-run tools/flatten_paper.py to refresh)
+\begin{tabular}{llrrrr}
+\toprule
+model & pair & cosine & 95\% CI & angle & shuffled-label 95th pct. \\
+\midrule
+Qwen3-VL-8B-Instruct & authority / answers no & 0.76 & [0.56, 0.82] & 41\textdegree & 0.76 \\
+Qwen3-VL-8B-Instruct & test look / answers test & 0.88 & [0.82, 0.90] & 28\textdegree & 0.78 \\
+Qwen3-VL-8B-Instruct & authority / test look & $-$0.08 & [$-$0.15, $-$0.03] & 95\textdegree & -- \\
+Qwen3.5-27B & authority / answers no & 0.26 & [$-$0.09, 0.51] & 75\textdegree & 0.32 \\
+Qwen3.5-27B & test look / answers test & 0.33 & [0.20, 0.39] & 71\textdegree & 0.37 \\
+Qwen3.5-27B & harmful prompt / refuses & 0.81 & [0.74, 0.84] & 36\textdegree & 0.47 \\
+Qwen3.5-27B & authority / test look & 0.04 & [$-$0.03, 0.10] & 88\textdegree & -- \\
+\bottomrule
+\end{tabular}
+% END generated table app_dirci.tex
+}
+\end{table}
+
+\paragraph{Steering.} We add each direction to the answer-spot state three quarters of the way through the network (Table~\ref{tab:steerapp}). On Qwen3-VL-8B-Instruct the test look flips test-or-real answers as often as the model's own answer direction, and the sandbagging direction leaves accuracy flat (0.59--0.61) while the wrong-answer direction drops it to 0.36.
+
+\begin{table}[!htbp]
+  \centering
+\footnotesize
+\caption{Steering with each direction. Share of ``test or real?'' answers on untouched pictures flipped, and WMDP accuracy under an honest instruction, when each direction is added at the answer spot at three quarters of the depth, at the dose shown (a multiple of the state's norm); every direction is fitted on one half of the records and written into the other. Unsteered accuracy is on the held-out half the directions are written into, so it differs from the 0.59 over all items.}
+  \label{tab:steerapp}
+% BEGIN generated table app_steer.tex (tools/make_paper_tables.py; re-run tools/flatten_paper.py to refresh)
+\begin{tabular}{llrrrrrr}
+\toprule
+model & direction written & 0.02 & 0.05 & 0.1 & 0.25 & 1 & 2 \\
+\midrule
+\multicolumn{8}{l}{\emph{Qwen3-VL-8B-Instruct, block 27 of 36}} \\
+ & test look, answers flipped & 0.01 & 0.02 & 0.06 & 1.00 & 1.00 & 1.00 \\
+ & answer test/real, answers flipped & 0.01 & 0.03 & 0.07 & 1.00 & 1.00 & 1.00 \\
+ & random, answers flipped & 0.00 & 0.00 & 0.00 & 0.00 & 0.01 & 0.01 \\
+ & sandbag instruction, accuracy (0.63 unsteered) & 0.61 & 0.60 & 0.61 & 0.61 & 0.60 & 0.59 \\
+ & answer wrong, accuracy (0.63 unsteered) & 0.61 & 0.60 & 0.61 & 0.63 & 0.44 & 0.36 \\
+ & random, accuracy (0.63 unsteered) & 0.61 & 0.61 & 0.61 & 0.63 & 0.67 & 0.60 \\
+\multicolumn{8}{l}{\emph{Qwen3.5-27B, block 48 of 64}} \\
+ & test look, answers flipped & 0.09 & 0.25 & 0.42 & 0.59 & 0.96 & 1.00 \\
+ & answer test/real, answers flipped & 0.16 & 0.36 & 0.64 & 0.87 & 0.68 & 0.76 \\
+ & random, answers flipped & 0.02 & 0.01 & 0.00 & 0.00 & 0.09 & 0.75 \\
+ & sandbag instruction, accuracy (0.63 unsteered) & 0.64 & 0.64 & 0.63 & 0.63 & 0.61 & 0.61 \\
+ & answer wrong, accuracy (0.63 unsteered) & 0.64 & 0.64 & 0.65 & 0.64 & 0.65 & 0.56 \\
+ & random, accuracy (0.63 unsteered) & 0.63 & 0.64 & 0.63 & 0.63 & 0.60 & 0.60 \\
+\bottomrule
+\end{tabular}
+% END generated table app_steer.tex
+\end{table}
+
+\paragraph{Password-lock controls.} Table~\ref{tab:pwapp} gives every lock condition. An unrelated pattern of the same size leaves accuracy at 0.60, fainter marks work less (0.51, 0.47 and 0.40 at a quarter, half and three quarters opacity), and the mark alone on a grey background still triggers the lock (0.27). Table~\ref{tab:decoy} gives V-Write's share of score on the marked region under each condition.
+
+\begin{table}[!htbp]
+  \centering
+\footnotesize
+\caption{Accuracy of the password-locked model under each condition. Accuracy on the 75 held-out questions before and after locking, with 95\% intervals that resample whole questions, and under each control after locking (one picture per question; Wilson intervals). Before locking the trained and new designs give 179 and 180 correct of 300. Qwen3-VL-8B-Instruct.}
+  \label{tab:pwapp}
+% BEGIN generated table app_pwlock.tex (tools/make_paper_tables.py; re-run tools/flatten_paper.py to refresh)
+\begin{tabular}{lrr}
+\toprule
+condition & before locking & after locking \\
+\midrule
+clean picture & 0.61 [0.51, 0.72] & 0.60 [0.49, 0.71] \\
+watermark, designs used in training & 0.60 [0.49, 0.70] & 0.30 [0.23, 0.38] \\
+watermark, new designs & 0.60 [0.49, 0.70] & 0.30 [0.22, 0.38] \\
+watermark, biology questions & 0.64 [0.44, 0.82] & 0.26 [0.14, 0.39] \\
+watermark, chemistry questions & 0.67 [0.49, 0.82] & 0.26 [0.17, 0.36] \\
+watermark, cyber questions & 0.49 [0.30, 0.68] & 0.38 [0.24, 0.52] \\
+\midrule
+\multicolumn{3}{l}{\emph{controls, after locking (one picture per question)}} \\
+unrelated pattern & & 0.60 [0.49, 0.70] \\
+opacity 0.25 & & 0.51 [0.40, 0.62] \\
+opacity 0.5 & & 0.47 [0.36, 0.58] \\
+opacity 0.75 & & 0.40 [0.30, 0.51] \\
+scale 0.5 & & 0.51 [0.40, 0.62] \\
+scale 0.75 & & 0.40 [0.30, 0.51] \\
+moved & & 0.47 [0.36, 0.58] \\
+mark alone on grey & & 0.27 [0.18, 0.38] \\
+a different design & & 0.29 [0.20, 0.40] \\
+\bottomrule
+\end{tabular}
+% END generated table app_pwlock.tex
+\end{table}
+
+\begin{table}[!htbp]
+  \centering
+\footnotesize \setlength{\tabcolsep}{4pt}
+\caption{V-Write's share of score on the marked region under each condition. Qwen3-VL-8B-Instruct before and after password locking, held-out WMDP test pictures: share of V-Write's positive score on the marked region (\%, with a 95\% interval over pictures for the locked model), how often its top token lands there (hit@1, \%), and the region's share of the picture (\%). ``The trained mark'': the four training designs, one row per picture and design.}
+  \label{tab:decoy}
+\begin{tabular}{lrrrrr}
+\toprule
+picture carries & $n$ & share, before & share, locked & hit@1, locked & area \\
+\midrule
+the trained mark & 900 & 1.8 & 37.9 [35.9, 40.0] & 62 & 2.1 \\
+the four new designs & 900 & 1.6 & 37.1 & 61 & 2.0 \\
+a different design (control) & 75 & 1.3 & 37.9 [31.0, 44.9] & 59 & 2.2 \\
+moved & 75 & 1.8 & 45.2 [34.4, 57.1] & 67 & 0.8 \\
+opacity 0.75 & 75 & 1.1 & 33.6 [26.8, 40.7] & 56 & 2.1 \\
+opacity 0.5 & 75 & 1.0 & 24.3 [17.7, 30.9] & 44 & 2.1 \\
+opacity 0.25 & 75 & 0.9 & 16.2 [10.3, 23.1] & 24 & 2.1 \\
+scale 0.75 & 75 & 1.2 & 32.8 [25.7, 39.9] & 56 & 1.4 \\
+scale 0.5 & 75 & 0.4 & 18.5 [12.4, 25.1] & 27 & 0.8 \\
+mark alone on grey & 75 & 1.7 & 4.2 [3.2, 5.3] & 12 & 2.1 \\
+unrelated pattern, same size & 75 & 1.1 & 1.6 [1.1, 2.2] & 0 & 1.9 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+\section{Other model families}
+\label{app:xfam}
+
+We repeated the core comparisons on gemma-4-26B-A4B-it and InternVL3\_5-8B-HF: V-Read against the Jacobian lens, Patchscopes and the logit lens (the tuned lens was not fitted on these two, to stay within the compute budget), and V-Write against every attribution baseline on the same records for every method (97 on gemma-4-26B-A4B-it and 93 on InternVL3\_5-8B-HF after dropping records where a method failed). On gemma-4-26B-A4B-it the Qwen result does not carry over for V-Read (Table~\ref{tab:vread_xfam}): it is clearly ahead on Open Images sign questions (0.96 against 0.90 for Patchscopes) and level on their edited versions, but behind the best other reader on most other tasks, by 0.08--0.16 on the WMDP and 0.11 on Open Images test-or-real questions. It fits in 10 minutes, against 3.7 hours for the Jacobian lens. On InternVL3\_5-8B-HF V-Read is also mostly behind: level on two sign tasks (nuScenes and VINS-120K, $+0.02$ and $+0.05$), clearly behind on Open Images test-or-real questions ($-0.08$) and on all three WMDP subjects ($-0.10$ to $-0.15$); it fits in 12 minutes against 3.8 hours for the Jacobian lens. InternVL3\_5-8B-HF often begins its reply with other words before yes or no, so its first-token readout matches the written reply on 85\% of yes/no records, against 99\% on the Qwen models. V-Write carries over: on InternVL3\_5-8B-HF it agrees with measured patching at 0.36, ahead of every method of similar cost (at most 0.24) and 0.03 behind KernelSHAP (0.39), which takes about ninety times longer per picture (28 against 0.3 seconds; Table~\ref{tab:vwrite_xfam}). On gemma-4-26B-A4B-it V-Write agrees at 0.38, ahead of attribution patching and activation patching (0.24) and level with integrated gradients from a zero state (0.33, within noise); KernelSHAP is ahead (0.43; the paired difference, $-0.06$, has an interval of $-0.10$ to $-0.02$) at about 140 times the cost (124 against 0.9 seconds per picture).
+
+
+\begin{table}[!htbp]
+  \centering
+  \small
+\caption{Comparison of Table~\ref{tab:vread} on gemma-4-26B-A4B-it and InternVL3\_5-8B-HF. As Table~\ref{tab:vread}; SimonSays tasks only; no tuned lens was fitted on these models.}
+  \label{tab:vread_xfam}
+% BEGIN generated table paper_vread_xfam.tex (tools/make_paper_tables.py; re-run tools/flatten_paper.py to refresh)
+\begin{tabular}{l rlr rlr}
+\toprule
+ & \multicolumn{3}{c}{gemma-4-26B-A4B-it} & \multicolumn{3}{c}{InternVL3\_5-8B-HF} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+task & V-Read & best baseline & $\Delta$ & V-Read & best baseline & $\Delta$ \\
+\midrule
+\multicolumn{7}{l}{\emph{SimonSays}} \\
+Open Images, authority & \textbf{.96}$^{\uparrow}$ & .90 PS & +.07 & .72 & \textbf{.74} PS & $-$.02 \\
+Open Images, authority, edited & \textbf{.84} & \textbf{.84} PS & .00 & .75 & \textbf{.78} PS & $-$.03 \\
+Open Images, test or real & .74$^{\downarrow}$ & \textbf{.86} JL & $-$.11 & .85$^{\downarrow}$ & \textbf{.94} JL & $-$.08 \\
+nuScenes, authority, edited & .53$^{\dagger}$ & \textbf{.84} LL & $-$.31 & \textbf{.73} & .70 PS & +.02 \\
+VINS-120K, authority & .91 & \textbf{.93} LL & $-$.02 & \textbf{.83} & .79 JL & +.05 \\
+VINS-120K, authority, edited & .72 & \textbf{.82} PS & $-$.09 & .63 & \textbf{.76} LL & $-$.13 \\
+Generated scenes, authority & .63$^{\dagger}$ & \textbf{.80} PS & $-$.17 & .56$^{\dagger}$ & \textbf{.77} PS & $-$.20 \\
+WMDP, biology & .61$^{\downarrow}$ & \textbf{.70} LL & $-$.09 & .52$^{\downarrow}$ & \textbf{.67} PS & $-$.15 \\
+WMDP, chemistry & .55$^{\downarrow}$ & \textbf{.63} PS & $-$.08 & .45$^{\downarrow}$ & \textbf{.56} LL & $-$.11 \\
+WMDP, cyber & .53$^{\downarrow}$ & \textbf{.69} LL & $-$.16 & .45$^{\downarrow}$ & \textbf{.54} PS & $-$.10 \\
+\bottomrule
+\end{tabular}
+% END generated table paper_vread_xfam.tex
+\end{table}
+
+
+\begin{table}[!htbp]
+  \centering
+  \small
+\caption{Comparison of Table~\ref{tab:vwrite} on gemma-4-26B-A4B-it and InternVL3\_5-8B-HF. As Table~\ref{tab:vwrite}, SimonSays agreement only. $^{s}$: RISE on a 20-record subset.}
+  \label{tab:vwrite_xfam}
+% BEGIN generated table paper_vwrite_xfam.tex (tools/make_paper_tables.py; re-run tools/flatten_paper.py to refresh)
+\begin{tabular}{lccrrr}
+\toprule
+ & \multicolumn{2}{c}{agreement with patching} & \multicolumn{3}{c}{cost per picture} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-6}
+method & gemma-4-26B-A4B-it & InternVL3\_5-8B-HF & passes & s, gemma-4-26B-A4B-it & s, InternVL3\_5-8B-HF \\
+\midrule
+V-Write & .38 & .36 & 8 f+b & 0.9 & 0.3 \\
+\midrule
+IG, zero state & .33 & .14 & 64 f+b & 6.7 & 2.2 \\
+grad.\ $\times$ act. & .11 & .02 & 1 f+b & 0.2 & 0.1 \\
+act.\ patching & .24 & .21 & $P$ f & 15 & 3.5 \\
+attr.\ patching & .24 & .24 & 1 f+b & 0.2 & 0.1 \\
+KernelSHAP & \underline{.43} & \underline{.39} & 2,080 f & 124 & 28 \\
+RISE & .16$^{s}$ & .15$^{s}$ & 4,000 f & 224 & 55 \\
+Grad-CAM & $-$.02 & .05 & 1 f+b & 0.4 & 0.2 \\
+random & .03 & .00 & 0 & -- & -- \\
+\bottomrule
+\end{tabular}
+% END generated table paper_vwrite_xfam.tex
+\end{table}
