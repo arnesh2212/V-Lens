@@ -33,7 +33,7 @@ SimonSays is on the Hugging Face Hub as [`Ironman2212/SimonSays`](https://huggin
 ```python
 from datasets import load_dataset
 ds = load_dataset("Ironman2212/SimonSays", "authority", split="test")
-ds[0]["image"], ds[0]["question"], ds[0]["expected"]
+ds[0]["image"], ds[0]["model_question"], ds[0]["expected"]
 ```
 
 The experiments read the release folder layout. This command downloads the dataset and rebuilds that layout in `data/simonsays/`, with every prompt file in its original record order:
