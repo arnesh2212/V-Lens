@@ -1,0 +1,16 @@
+torch>=2.4
+transformers>=5.0
+accelerate
+peft
+huggingface_hub
+safetensors
+numpy
+scipy
+scikit-learn
+pandas
+pyarrow
+joblib
+threadpoolctl
+pillow
+matplotlib
+opencv-python-headless

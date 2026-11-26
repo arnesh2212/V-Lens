@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vlens"
+version = "1.0.0"
+description = "V-Lens: reading and writing a vision-language model's decision at the answer spot"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.4",
+    "transformers>=5.0",
+    "accelerate",
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "pillow",
+]
+
+[project.optional-dependencies]
+experiments = ["peft", "huggingface_hub", "safetensors", "pandas", "pyarrow", "joblib",
+               "threadpoolctl", "matplotlib", "opencv-python-headless"]
+
+[tool.setuptools.packages.find]
+include = ["vlens*"]
